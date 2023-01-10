@@ -5,11 +5,11 @@ show_solution: true
 data_info: sp22-midterm/data-info
 problems:
   - sp22-midterm/q01
-  # - sp22-midterm/q02
-  # - sp22-midterm/q03
-  # - sp22-midterm/q04
-  # - sp22-midterm/q05
-  # - sp22-midterm/q06
+  - sp22-midterm/q02
+  - sp22-midterm/q03
+  - sp22-midterm/q04
+  - sp22-midterm/q05
+  - sp22-midterm/q06
   # - sp22-midterm/q07
   # - sp22-midterm/q08
   # - sp22-midterm/q09

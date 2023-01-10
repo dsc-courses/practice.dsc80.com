@@ -17,6 +17,69 @@
       margin: 0 0.8em 0.2em -1.6em;
       vertical-align: middle;
     }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="..\assets\theme.css" />
   <script defer=""
@@ -146,6 +209,259 @@ King Triton likes them, but that doesn’t make colors ordinal!</p>
 </div>
 </div>
 <p><br></p>
+<hr />
+<h2 id="problem-2">Problem 2</h2>
+<p>Write a single line of code that evaluates to the most common value
+in the <code>"High School"</code> column of <code>students</code>, as a
+string. Assume there are no ties.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="true" aria-controls="collapse2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse2" class="accordion-collapse collapse collapse"
+aria-labelledby="heading2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong>
+<code>students["High School"].value_counts().idxmax()</code> or
+<code>students.groupby("High School")["Name"].count().sort_values().index[-1]</code></p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 89%.</p>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="problem-3">Problem 3</h2>
+<p>Fill in the blank so that the result evaluates to a Series indexed by
+<code>"Email"</code> that contains a <strong>list</strong> of the
+universities that each student <strong>was admitted to</strong>. If a
+student wasn’t admitted to any universities, they should have an empty
+list.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    students.groupby(<span class="st">&quot;Email&quot;</span>).<span class="bu">apply</span>(_____)</span></code></pre></div>
+<p>What goes in the blank?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="true" aria-controls="collapse3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse3" class="accordion-collapse collapse collapse"
+aria-labelledby="heading3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong>
+<code>lambda df: df.loc[df["Admit"] == "Y", "University"].tolist()</code></p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 53%.</p>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="problem-4">Problem 4</h2>
+<p>Which of the following blocks of code correctly assign
+<code>max_AP</code> to the maximum number of APs taken by a student who
+was rejected by UC San Diego?</p>
+<p>Option 1:</p>
+<pre><code>cond1 = students[&quot;Admit&quot;] == &quot;N&quot;
+cond2 = students[&quot;University&quot;] == &quot;UC San Diego&quot;
+max_AP = students.loc[cond1 &amp; cond2, &quot;APs&quot;].sort_values().iloc[-1]</code></pre>
+<p>Option 2:</p>
+<pre><code>cond1 = students[&quot;Admit&quot;] == &quot;N&quot;
+cond2 = students[&quot;University&quot;] == &quot;UC San Diego&quot;
+d3 = students.groupby([&quot;University&quot;, &quot;Admit&quot;]).max().reset_index()
+max_AP = d3.loc[cond1 &amp; cond2, &quot;APs&quot;].iloc[0]</code></pre>
+<p>Option 3:</p>
+<pre><code>p = students.pivot_table(index=&quot;Admit&quot;, 
+                         columns=&quot;University&quot;, 
+                         values=&quot;APs&quot;, 
+                         aggfunc=&quot;max&quot;)
+max_AP = p.loc[&quot;N&quot;, &quot;UC San Diego&quot;]</code></pre>
+<p>Option 4:</p>
+<pre><code># .last() returns the element at the end of a Series it is called on
+groups = students.sort_values([&quot;APs&quot;, &quot;Admit&quot;]).groupby(&quot;University&quot;)
+max_AP = groups[&quot;APs&quot;].last()[&quot;UC San Diego&quot;]</code></pre>
+<p><strong>Select all that apply.</strong> There is at least one correct
+option.</p>
+<ul class="task-list">
+<li><p><input type="checkbox" disabled="" /> Option 1</p></li>
+<li><p><input type="checkbox" disabled="" /> Option 2</p></li>
+<li><p><input type="checkbox" disabled="" /> Option 3</p></li>
+<li><p><input type="checkbox" disabled="" /> Option 4</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="true" aria-controls="collapse4">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4" class="accordion-collapse collapse collapse"
+aria-labelledby="heading4" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> Option 1 and Option 3</p>
+<ul>
+<li><p>Option 1 works correctly, it is probably the most straightforward
+way of answering the question. <code>cond1</code> is <code>True</code>
+for all rows in which students were rejected, and <code>cond2</code> is
+<code>True</code> for all rows in which students applied to UCSD. As
+such, <code>students.loc[cond1 &amp; cond2]</code> contains only the
+rows where students were rejected from UCSD. Then,
+<code>students.loc[cond1 &amp; cond2, "APs"].sort_values()</code> sorts
+by the number of <code>"APs"</code> taken in increasing order, and
+<code>.iloc[-1]</code> gets the largest number of <code>"APs"</code>
+taken.</p></li>
+<li><p>Option 2 doesn’t work because the lengths of <code>cond1</code>
+and <code>cond2</code> are not the same as the length of
+<code>d3</code>, so this causes an error.</p></li>
+<li><p>Option 3 works correctly. For each combination of
+<code>"Admit"</code> status (<code>"Y"</code>, <code>"N"</code>,
+<code>"W"</code>) and <code>"University"</code> (including UC San
+Diego), it computes the max number of <code>"APs"</code>. The usage of
+<code>.loc["N", "UC San Diego"]</code> is correct too.</p></li>
+<li><p>Option 4 doesn’t work. It currently returns the maximum number of
+<code>"APs"</code> taken by someone who applied to UC San Diego; it does
+not factor in whether they were admitted, rejected, or
+waitlisted.</p></li>
+</ul>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 85%.</p>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="problem-5">Problem 5</h2>
+<p>Currently, <code>students</code> has a lot of repeated information —
+for instance, if a student applied to 10 universities, their GPA appears
+10 times in <code>students</code>.</p>
+<p>We want to generate a DataFrame that contains a single row for each
+student, indexed by <code>"Email"</code>, that contains their
+<code>"Name"</code>, <code>"High School"</code>, <code>"GPA"</code>, and
+<code>"APs"</code>.</p>
+<p>One attempt to create such a DataFrame is below.</p>
+<pre><code>students.groupby(&quot;Email&quot;).aggregate({&quot;Name&quot;: &quot;max&quot;,
+                                     &quot;High School&quot;: &quot;mean&quot;,
+                                     &quot;GPA&quot;: &quot;mean&quot;,
+                                     &quot;APs&quot;: &quot;max&quot;})</code></pre>
+<p>There is exactly one issue with the line of code above. <strong>In
+one sentence</strong>, explain what needs to be changed about the line
+of code above so that the desired DataFrame is created.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading5">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="true" aria-controls="collapse5">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse5" class="accordion-collapse collapse collapse"
+aria-labelledby="heading5" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> The problem right now is that aggregating
+High School by mean doesn’t work since you can’t aggregate a column with
+strings using <code>"mean"</code>. Thus changing it to something that
+works for strings like <code>"max"</code> or <code>"min"</code> would
+fix the issue.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 79%.</p>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="problem-6">Problem 6</h2>
+<p>Consider the following snippet of code.</p>
+<pre><code>pivoted = students.assign(Admit=students[&quot;Admit&quot;] == &quot;Y&quot;) \
+                  .pivot_table(index=&quot;High School&quot;, 
+                               columns=&quot;University&quot;, 
+                               values=&quot;Admit&quot;, 
+                               aggfunc=&quot;sum&quot;)</code></pre>
+<p>Some of the rows and columns of <code>pivoted</code> are shown
+below.</p>
+<div class="center">
+<figure>
+<img src="pivot.png" style="width:90.0%" alt="image" />
+<figcaption aria-hidden="true">image</figcaption>
+</figure>
+</div>
+<p>No students from Warren High were admitted to Columbia or Stanford.
+However,<br />
+<code>pivoted.loc["Warren High", "Columbia"]</code> and
+<code>pivoted.loc["Warren High", "Stanford"]</code> evaluate to
+different values. What is the reason for this difference?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> Some students from Warren High applied to Stanford, and some
+others</p></li>
+<li><p><input type="radio" disabled="" /> Some students from Warren High applied to Stanford but none
+applied</p></li>
+<li><p><input type="radio" disabled="" /> Some students from Warren High applied to Columbia but none
+applied</p></li>
+<li><p><input type="radio" disabled="" /> The students from Warren High that applied to both Columbia and</p></li>
+<li><p><input type="radio" disabled="" /> When using <code>pivot_table</code>, <code>pandas</code> was not able
+to sum strings of</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading6">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6" aria-expanded="true" aria-controls="collapse6">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse6" class="accordion-collapse collapse collapse"
+aria-labelledby="heading6" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> Option 3</p>
+<p><code>pivoted.loc["Warren High", "Stanford"]</code> is
+<code>NaN</code> because there were no rows in <code>students</code> in
+which the <code>"High School"</code> was <code>"Warren High"</code> and
+the <code>"University"</code> was <code>"Stanford"</code>, because
+nobody from Warren High applied to Stanford. However,
+<code>pivoted.loc["Warren High", "Columbia"]</code> is not
+<code>NaN</code> because there was at least one row in
+<code>students</code> in which the <code>"High School"</code> was
+<code>"Warren High"</code> and the <code>"University"</code> was
+<code>"Columbia"</code>. This means that at least one student from
+Warren High applied to Columbia.</p>
+<p>Option 3 is the only option consistent with this logic.</p>
+<hr/>
+<h5>Difficulty: ⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 93%.</p>
+</div>
+</div>
+</div>
+</div>
 <hr />
 <h2 id="section"><span class="math display"> </span></h2>
 <h4
