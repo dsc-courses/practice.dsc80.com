@@ -458,6 +458,559 @@ Warren High applied to Columbia.</p>
 </div>
 </div>
 <hr />
+<h2 id="problem-7">Problem 7</h2>
+<p>Define <code>small_students</code> to be the DataFrame with 8 rows
+and 2 columns shown directly below to the <strong>left</strong>, and
+define <code>districts</code> to be the DataFrame with 3 rows and 2
+columns shown below to the <strong>right</strong>.</p>
+<center><img src='../assets/images/sp22-midterm/small_students.png' width=40%></center>
+<center><img src='../assets/images/sp22-midterm/districts.png' width=35%></center>
+<p>Consider the DataFrame <code>merged</code>, defined below.</p>
+<pre><code>    merged = small_students.merge(districts, 
+                                  left_on=&quot;High School&quot;, 
+                                  right_on=&quot;school&quot;, 
+                                  how=&quot;outer&quot;)</code></pre>
+<p><br></p>
+<h3 id="problem-7.1">Problem 7.1</h3>
+<p>How many total <code>NaN</code> values does <code>merged</code>
+contain? Give your answer as an integer.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading7_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_1" aria-expanded="true" aria-controls="collapse7_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse7_1" class="accordion-collapse collapse collapse"
+aria-labelledby="heading7_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong>4</p>
+<p><code>merged</code> is shown below.</p>
+<center><img src="../assets/images/sp22-midterm/merge-ans-1.png" width="70%"/></center>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 13%.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-7.2">Problem 7.2</h3>
+<p>Consider the DataFrame <code>concatted</code>, defined below.</p>
+<pre><code>concatted = pd.concat([small_students, districts], axis=1)</code></pre>
+<p>How many total <code>NaN</code> values does <code>concatted</code>
+contain? Give your answer as an integer.</p>
+<p><em>Hint: Draw out what <code>concatted</code> looks like. Also,
+remember that the default <code>axis</code> argument to
+<code>pd.concat</code> is <code>axis=0</code>.</em></p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading7_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_2" aria-expanded="true" aria-controls="collapse7_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse7_2" class="accordion-collapse collapse collapse"
+aria-labelledby="heading7_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong>10</p>
+<p><code>concatted</code> is shown below.</p>
+<center><img src="../assets/images/sp22-midterm/merge-ans-2.png" width="70%"/></center>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 76%.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-8">Problem 8</h2>
+<p>Let’s consider admissions at UC San Diego and UC Santa Barbara for
+two high schools in particular.</p>
+<center><img src='../assets/images/sp22-midterm/simpson.png' width=70%></center>
+<p>For instance, the above table tells us that 200 students from La
+Jolla Private applied to UC San Diego, and 50 were admitted.</p>
+<p>What is the largest possible integer value of <span
+class="math inline">N</span> such that:</p>
+<ul>
+<li><p>UC Santa Barbara has a strictly higher admit rate for
+<strong>both</strong> La Jolla Private and Sun God Memorial High
+individually, but</p></li>
+<li><p>UC San Diego has a strictly higher admit rate overall?</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading8">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8" aria-expanded="true" aria-controls="collapse8">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse8" class="accordion-collapse collapse collapse"
+aria-labelledby="heading8" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong>124</p>
+<p>Let’s consider the two conditions separately.</p>
+<p>First, UC Santa Barbara needs to have a higher admit rate for both
+high schools. This is already true for La Jolla Private (<span class="math inline">\frac{100}{300} &gt; \frac{50}{200}</span>); for Sun
+God Memorial High, we just need to ensure that <span class="math inline">\frac{N}{150} &gt; \frac{200}{300}</span>. This
+means that <span class="math inline">N &gt; 100</span>.</p>
+<p>Now, UC San Diego needs to have a higher admit rate overall. The UC
+San Diego admit rate is <span class="math inline">\frac{50+200}{200+300}
+= \frac{250}{500} = \frac{1}{2}</span>, while the UC Santa Barbara admit
+rate is <span class="math inline">\frac{100 + N}{450}</span>. This means
+that we must require that <span class="math inline">\frac{1}{2} =
+\frac{225}{450} &gt; \frac{100+N}{450}</span>. This means that <span class="math inline">225 &gt; 100 + N</span>, i.e. that <span class="math inline">N &lt; 125</span>.</p>
+<p>So there are two conditions on <span class="math inline">N</span>:
+<span class="math inline">N &gt; 100</span> and <span class="math inline">N &lt; 125</span>. The largest integer <span class="math inline">N</span> that satisfies these conditions is <span class="math inline">N=124</span>, which is the final answer.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 72%.</p>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="problem-9">Problem 9</h2>
+<p>Valentina has over 1000 students. When a student signs up for
+Valentina’s college counseling, they must provide a variety of
+information about themselves and their parents. Valentina keeps track of
+all of this information in a table, with one row per student. (Note that
+this is <strong>not</strong> the <code>students</code> DataFrame from
+earlier in the exam.)</p>
+<p><br></p>
+<h3 id="problem-9.1">Problem 9.1</h3>
+<p>Valentina asks each her students for the university that their
+parents attended for undergrad. The <code>"father’s university"</code>
+column of Valentina’s table contains missing values. Valentina believes
+that values in this column are missing because not all students’ fathers
+attended university.</p>
+<p>According to Valentina’s interpretation, what is the missingness
+mechanism of <code>"father’s university"</code>?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> Missing by design</p></li>
+<li><p><input type="radio" disabled="" /> Not missing at random</p></li>
+<li><p><input type="radio" disabled="" /> Missing at random</p></li>
+<li><p><input type="radio" disabled="" /> Missing completely at random</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading9_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_1" aria-expanded="true" aria-controls="collapse9_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse9_1" class="accordion-collapse collapse collapse"
+aria-labelledby="heading9_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong>Not missing at random</p>
+<p>Per Valentina’s interpretation, the reason for the missingness in the
+<code>"father’s university"</code> column is that not all fathers
+attended university, and hence they opted not to fill out the survey.
+Here, the likelihood that values are missing depends on the values
+themselves, so the data are NMAR.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 81%.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-9.2">Problem 9.2</h3>
+<p>The <code>"mother’s phone number"</code> column of Valentina’s table
+contains missing values. Valentina knows for a fact that all of her
+students’ mothers have phone numbers. She looks at her dataset and draws
+the following visualization, relating the missingness of
+<code>"mother’s phone number"</code> to <code>"district"</code> (the
+school district that the student’s family lives in):</p>
+<center><img src='../assets/images/sp22-midterm/missingness.png' width=70%></center>
+<p>Given just the above information, what is the missingness mechanism
+of <code>"mother’s phone number"</code>?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> Missing by design</p></li>
+<li><p><input type="radio" disabled="" /> Not missing at random</p></li>
+<li><p><input type="radio" disabled="" /> Missing at random</p></li>
+<li><p><input type="radio" disabled="" /> Missing completely at random</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading9_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_2" aria-expanded="true" aria-controls="collapse9_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse9_2" class="accordion-collapse collapse collapse"
+aria-labelledby="heading9_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> Missing at random</p>
+<p>Here, the distribution of <code>"district"</code> is different when
+<code>"mother’s phone number"</code> is missing and when
+<code>"mother’s phone number"</code> is present (the two distributions
+plotted look quite different. As such, we conclude that the missingness
+of <code>"mother’s phone number"</code> depends on
+<code>"district"</code>, and hence the data are MAR.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 88%.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-9.3">Problem 9.3</h3>
+<p>UC Hicago, a new private campus of the UC, has an annual tuition of
+$80,000. UC Hicago states that if an admitted student’s parents’
+combined income is under $80,000, they will provide that student a
+scholarship for the difference.</p>
+<p>Valentina keeps track of each student’s parents’ incomes along with
+the scholarship that UC Hicago promises them in a table. The first few
+rows of her table are shown below.</p>
+<center><img src='../assets/images/sp22-midterm/scholarship.png' width=70%></center>
+<p>Given just the above information, what is the missingness mechanism
+of <code>"scholarship"</code>?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> Missing by design</p></li>
+<li><p><input type="radio" disabled="" /> Not missing at random</p></li>
+<li><p><input type="radio" disabled="" /> Missing at random</p></li>
+<li><p><input type="radio" disabled="" /> Missing completely at random</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading9_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_3" aria-expanded="true" aria-controls="collapse9_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse9_3" class="accordion-collapse collapse collapse"
+aria-labelledby="heading9_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> Missing by design</p>
+<p>Here, the data are missing by design because you can 100% of the time
+predict whether a <code>"scholarship"</code> will be missing by looking
+at the <code>"mother’s income"</code> and <code>"father’s income"</code>
+columns. If the sum of <code>"mother’s income"</code> and
+<code>"father’s income"</code> is at least $80,000,
+<code>"scholarship"</code> will be missing; otherwise, it will not be
+missing.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 88%.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-10">Problem 10</h2>
+<p>Consider the following pair of hypotheses.</p>
+<ul>
+<li><p><strong>Null hypothesis:</strong> The average GPA of UC San Diego
+admits from La Jolla Private is equal to the average GPA of UC San Diego
+admits from all schools.</p></li>
+<li><p><strong>Alternative hypothesis:</strong> The average GPA of UC
+San Diego admits from La Jolla Private is less than the average GPA of
+UC San Diego admits from all schools.</p></li>
+</ul>
+<p><br></p>
+<h3 id="problem-10.1">Problem 10.1</h3>
+<p>What type of test is this?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> Hypothesis test</p></li>
+<li><p><input type="radio" disabled="" /> Permutation test</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading10_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10_1" aria-expanded="true" aria-controls="collapse10_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse10_1" class="accordion-collapse collapse collapse"
+aria-labelledby="heading10_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> Hypothesis test</p>
+<p>Here, we are asking if one sample is a random sample of a known
+population. While this may seem like a permutation test in which we
+compare two samples, there is really only one sample here — the GPAs of
+admits from La Jolla Private. To simulate new data, we sample from the
+distribution of all GPAs.</p>
+<p>Note that this is similar to the bill lengths on Torgersen Island
+example from Lecture 6 (in Spring 2022, at least).</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 75%.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-10.2">Problem 10.2</h3>
+<p>Which of the following test statistics would be appropriate to use in
+this test? <strong>Select all valid options.</strong></p>
+<ul class="task-list">
+<li><p><input type="checkbox" disabled="" /> La Jolla Private mean GPA</p></li>
+<li><p><input type="checkbox" disabled="" /> Difference between La Jolla Private mean GPA and overall mean GPA</p></li>
+<li><p><input type="checkbox" disabled="" /> Absolute difference between La Jolla Private mean GPA and overall
+mean GPA</p></li>
+<li><p><input type="checkbox" disabled="" /> Total variation distance (TVD)</p></li>
+<li><p><input type="checkbox" disabled="" /> Kolmogorov-Smirnov (K-S) statistic</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading10_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10_2" aria-expanded="true" aria-controls="collapse10_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse10_2" class="accordion-collapse collapse collapse"
+aria-labelledby="heading10_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> Option 1 and 2</p>
+<ul>
+<li><p>In hypothesis tests where we test to see if a sample came from a
+larger distribution, we often use the sample mean as the test statistic
+(again, see the Torgersen Island bill lengths example from Lecture 12).
+Hence, the La Jolla Private mean GPA is a valid option.</p></li>
+<li><p>Note that in this hypothesis test, we will simulate new data by
+generating random samples, each one being the same size as the number of
+applications from La Jolla Private. The <strong>overall</strong> mean
+GPA will not change on each simulation, as it is a constant. Hence,
+Option 2 reduces to Option 1 minus a constant, which purely shifts the
+distribution of the test statistic and the observed statistic
+horizontally but does not change their relative positions to one
+another. Hence, the difference between the La Jolla Private mean GPA and
+overall mean GPA is also a valid test statistic.</p></li>
+<li><p>Option 3 is not valid because our alternative hypothesis has a
+<strong>direction</strong> (that the mean GPA of La Jolla Private admits
+is less than the mean GPA of all admits). The absolute difference would
+be appropriate for a directionless alternative hypothesis, e.g. that the
+mean GPA of La Jolla Private admits is different than the mean GPA of
+all admits.</p></li>
+<li><p>Option 4 doesn’t work because we are not dealing with categorical
+distributions.</p></li>
+<li><p>Option 5 doesn’t work because we are not running a permutation
+test to test if two samples come from the underlying population
+distribution; rather, here we are testing if one sample comes from a
+larger population (and our hypotheses explicitly mentioned the
+mean).</p></li>
+</ul>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 81%.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-11">Problem 11</h2>
+<p>Consider the following pair of hypotheses.</p>
+<ul>
+<li><p><strong>Null hypothesis:</strong> The distribution of admitted,
+waitlisted, and rejected students at UC San Diego from Warren High is
+equal to the distribution of admitted, waitlisted, and rejected students
+at UC San Diego from La Jolla Private.</p></li>
+<li><p><strong>Alternative hypothesis:</strong> The distribution of
+admitted, waitlisted, and rejected students at UC San Diego from Warren
+High is different from the distribution of admitted, waitlisted, and
+rejected students at UC San Diego from La Jolla Private.</p></li>
+</ul>
+<p><br></p>
+<h3 id="problem-11.1">Problem 11.1</h3>
+<p>What type of test is this?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> Hypothesis test</p></li>
+<li><p><input type="radio" disabled="" /> Permutation test</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading11_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse11_1" aria-expanded="true" aria-controls="collapse11_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse11_1" class="accordion-collapse collapse collapse"
+aria-labelledby="heading11_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> Permutation test</p>
+<p>There are two relevant distributions at play here:</p>
+<ul>
+<li><p>The distribution of admit/waitlist/reject proportions at Warren
+High.</p></li>
+<li><p>The distribution of admit/waitlist/reject proportions at La Jolla
+Private.</p></li>
+</ul>
+<p>To generate new data under the null, we need to
+<strong>shuffle</strong> the group labels, i.e. randomly assign students
+to groups.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 89%.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-11.2">Problem 11.2</h3>
+<p>Which of the following test statistics would be appropriate to use in
+this test? <strong>Select all valid options.</strong></p>
+<ul class="task-list">
+<li><p><input type="checkbox" disabled="" /> Warren High admit rate</p></li>
+<li><p><input type="checkbox" disabled="" /> Difference between Warren High and La Jolla Private admit rates</p></li>
+<li><p><input type="checkbox" disabled="" /> Absolute difference between Warren High and La Jolla Private admit
+rates</p></li>
+<li><p><input type="checkbox" disabled="" /> Total variation distance (TVD)</p></li>
+<li><p><input type="checkbox" disabled="" /> Kolmogorov-Smirnov (K-S) statistic</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading11_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse11_2" aria-expanded="true" aria-controls="collapse11_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse11_2" class="accordion-collapse collapse collapse"
+aria-labelledby="heading11_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> Option 4</p>
+<p>The two distributions described in 11(a) are categorical, and the TVD
+is the only test statistic that measures the "distance" between two
+categorical distributions.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 79%.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-12">Problem 12</h2>
+<p>After getting bored of working with her students, Valentina decides
+to experiment with different ways of simulating data for the following
+pair of hypotheses:</p>
+<ul>
+<li><p><strong>Null hypothesis:</strong> The coin is fair.</p></li>
+<li><p><strong>Alternative hypothesis:</strong> The coin is biased in
+favor of heads.</p></li>
+</ul>
+<p>As her test statistic, Valentina uses the number of heads. She
+defines the 2-D array <code>A</code> as follows:</p>
+<pre><code># .flatten() reshapes from 50 x 2 to 1 x 100
+A = np.array([
+    np.array([np.random.permutation([0, 1]) for _ in range(50)]).flatten() 
+    for _ in range(3000)
+])</code></pre>
+<p>She also defines the 2-D array <code>B</code> as follows:</p>
+<pre><code># .flatten() reshapes from 50 x 2 to 1 x 100
+B = np.array([
+    np.array([np.random.choice([0, 1], 2) for _ in range(50)]).flatten() 
+    for _ in range(3000)
+])</code></pre>
+<p>Below, we see a histogram of the distribution of her test
+statistics.</p>
+<center><img src='../assets/images/sp22-midterm/hist.png' width=60%></center>
+<p>Which one of the following arrays are visualized above?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> <code>A.sum(axis=1)</code></p></li>
+<li><p><input type="radio" disabled="" /> <code>B.sum(axis=1)</code></p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading12">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse12" aria-expanded="true" aria-controls="collapse12">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse12" class="accordion-collapse collapse collapse"
+aria-labelledby="heading12" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> Option 2</p>
+<p>Note that <code>arr.sum(axis=1)</code> takes the sum of each
+<strong>row</strong> of <code>arr</code>.</p>
+<p>The difference comes down to the behavior of
+<code>np.random.permutation([0, 1])</code> and
+<code>np.random.choice([0, 1])</code>.</p>
+<p>Each call to <code>np.random.permutation([0, 1])</code> will either
+return <code>array([0, 1]</code> or <code>array([1, 0])</code> — one
+head and one tail. As a result, each row of <code>A</code> will consist
+of 50 1s and 50 0s, and so the sum of each row of <code>A</code> will be
+exactly 50. If we drew a histogram of this distribution, it would be a
+single spike at the number 50.</p>
+<p>On the other hand, each call to
+<code>np.random.choice([0, 1], 2)</code> could either return
+<code>array([0, 0])</code>, <code>array([0, 1])</code>,
+<code>array([1, 0])</code>, or <code>array([1, 1])</code>. Each of these
+are returned with equal probabilities. In effect,
+<code>np.random.choice([0, 1], 2)</code> flips a fair coin twice, so
+<code>[np.random.choice([0, 1], 2) for _ in range(50)]</code> flips a
+fair coin 100 times. When we take the sum of each row of <code>B</code>,
+we will get the number of heads in 100 coin flips; the histogram drawn
+is consistent with this interpretation.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 83%.</p>
+</div>
+</div>
+</div>
+</div>
+<hr />
 <h2 id="section"><span class="math display"> </span></h2>
 <h4
 id="feedback-find-an-error-still-confused-have-a-suggestion-let-us-know-here.">👋
