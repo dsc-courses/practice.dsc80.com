@@ -73,26 +73,20 @@ Select all true statements below.
 [ ] The specific combination of hyperparameters in `best_params_` had
 the highest average training accuracy among all combinations of
 hyperparameters in `hyp_grid`.
-
 [ ] The specific combination of hyperparameters in `best_params_` had
 the highest average validation accuracy among all combinations of
 hyperparameters in `hyp_grid`.
-
 [ ] The specific combination of hyperparameters in `best_params_` had
 the highest training accuracy among all combinations of hyperparameters
 in `hyp_grid`, in each of the 4 folds of the training data.
-
 [ ] The specific combination of hyperparameters in `best_params_` had
 the highest validation accuracy among all combinations of
 hyperparameters in `hyp_grid`, in each of the 4 folds of the training
 data.
-
 [ ] A `BillyClassifier` that is fit using the specific combination of
 hyperparameters in `best_params_` is guaranteed to have the best
 accuracy on unseen testing data among all combinations of
 hyperparameters in `hyp_grid`.
-
-# END SUBPROB
 
 # BEGIN SOLN
 
@@ -103,5 +97,7 @@ across all four folds of the data. That is, by definition, how
 be true.
 
 # END SOLN
+
+# END SUBPROB
 
 # END PROB

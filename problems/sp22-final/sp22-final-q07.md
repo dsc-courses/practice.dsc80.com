@@ -69,16 +69,19 @@ Consider the following regular expression.
 expression above.
 
 [ ] `"billy4/Za"`
-
 [ ] `"billy4/za"`
-
 [ ] `"DAI_s2154/pacific"`
-
 [ ] `"daisy/ZZZZZ"`
-
 [ ] `"bi_/_lly98"`
-
 [ ] `"!@__!14/atlantic"`
+
+# BEGIN SOLN
+
+**Answer: **
+
+<average>52</average>
+
+# END SOLN
 
 # END SUBPROB
 
@@ -94,35 +97,20 @@ Consider the following string and regular expressions:
 
 1.  What does `len(re.findall(exp_1, song_str))` evaluate to?
 
-    # BEGIN SOLN
-
-    `"\backslashb"` matches "word boundaries\", which are any locations
-    that separate words. As such, there are 4 matches ---
-    `["doja", "cat", "you", "right"]`.
-
-    # END SOLN
-
 2.  What does `len(re.findall(exp_2, song_str))` evaluate to?
-
-    # BEGIN SOLN
-
-    The 3 matches are `[" cat", " you", " right"]`.
-
-    # END SOLN
 
 3.  What does `len(re.findall(exp_3, song_str))` evaluate to?
 
-    # BEGIN SOLN
+# BEGIN SOLN
 
-    This was quite tricky! The key is remembering that `re.findall` only
-    finds **non-overlapping matches** (if you look at the solutions to
-    the above two parts, none of the matches overlapped). Reading from
-    left to right, there is only a single non-overlapping match:
-    `" cat "`. Sure, `" you "` also matches the pattern, but since the
-    space after `"cat"` was already "found\" by `re.findall`, it cannot
-    be included in any future matches.
+    1. `"\backslashb"` matches "word boundaries\", which are any locations that separate words. As such, there are 4 matches --- `["doja", "cat", "you", "right"]`.
 
-    # END SOLN
+    2. The 3 matches are `[" cat", " you", " right"]`.
+
+    3. This was quite tricky! The key is remembering that `re.findall` only finds **non-overlapping matches** (if you look at the solutions to the above two parts, none of the matches overlapped). Reading from left to right, there is only a single non-overlapping match: `"cat"`. Sure, `" you "` also matches the pattern, but since the space after `"cat"` was already "found\" by `re.findall`, it cannot be included in any future matches.
+
+
+# END SOLN
 
 # END SUBPROB
 

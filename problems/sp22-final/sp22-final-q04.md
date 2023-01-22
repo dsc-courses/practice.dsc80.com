@@ -122,6 +122,14 @@ purposes of this question, you can assume that no two different
 
 (1 pt\*) What goes in blank (d)?
 
+# BEGIN SOLN
+
+**Answer: **
+
+<average>53</average>
+
+# END SOLN
+
 # END SUBPROB
 
 # END PROB

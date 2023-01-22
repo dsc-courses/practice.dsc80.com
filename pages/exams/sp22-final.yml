@@ -2,17 +2,17 @@ title: 'Spring 2022 Final Exam'
 instructors: Suraj Rampure
 context: This exam was administered in-person. The exam was closed-notes, except students were allowed to bring a single two-sided cheat sheet. No calculators were allowed. Students had **50 minutes** to take this exam.
 show_solution: true
-data_info: sp22-midterm/data-info
+data_info: sp22-final/sp22-final-data-info
 problems:
-  - sp22-midterm/q01
-  - sp22-midterm/q02
-  - sp22-midterm/q03
-  - sp22-midterm/q04
-  - sp22-midterm/q05
-  - sp22-midterm/q06
-  - sp22-midterm/q07
-  - sp22-midterm/q08
-  - sp22-midterm/q09
-  - sp22-midterm/q10
-  - sp22-midterm/q11
-  - sp22-midterm/q12
+  - sp22-final/sp22-final-q01
+  - sp22-final/sp22-final-q02
+  - sp22-final/sp22-final-q03
+  - sp22-final/sp22-final-q04
+  - sp22-final/sp22-final-q05
+  - sp22-final/sp22-final-q06
+  - sp22-final/sp22-final-q07
+  - sp22-final/sp22-final-q08
+  - sp22-final/sp22-final-q09
+  - sp22-final/sp22-final-q10
+  - sp22-final/sp22-final-q11
+  - sp22-final/sp22-final-q12

@@ -52,7 +52,6 @@ True or False: In order for a binary classifier's precision and recall
 to be equal, the number of mistakes it makes must be an even number.
 
 ( ) True
-
 ( ) False
 
 # BEGIN SOLN
@@ -85,11 +84,8 @@ are also "Kiss Me thru the Phone.\"
 Complete the sentence: Our classifier has\...
 
 ( ) low precision and low recall.
-
 ( ) low precision and high recall.
-
 ( ) high precision and low recall.
-
 ( ) high precision and high recall.
 
 # BEGIN SOLN

@@ -119,15 +119,14 @@ a string containing a URL to some online data source.
 string containing the HTML source code of the site at `url`.
 
 ( ) True
-
 ( ) False
-
-# END SUBPROB
 
 # BEGIN SOLN
 
 The response could be JSON, it is not necessarily HTML.
 
 # END SOLN
+
+# END SUBPROB
 
 # END PROB

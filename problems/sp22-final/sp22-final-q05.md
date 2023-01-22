@@ -26,6 +26,14 @@ parts (a) and (d).
 
 (1.5 pts) In which option was unconditional mean imputation used?
 
+# BEGIN SOLN
+
+**Answer: **
+
+<average>89</average>
+
+# END SOLN
+
 # END SUBPROB
 
 # BEGIN SUBPROB
@@ -33,12 +41,28 @@ parts (a) and (d).
 (1.5 pts) In which option was mean imputation conditional on `"genre"`
 used?
 
+# BEGIN SOLN
+
+**Answer: **
+
+<average>89</average>
+
+# END SOLN
+
 # END SUBPROB
 
 # BEGIN SUBPROB
 
 (1.5 pts) In which option was unconditional probabilistic imputation
 used?
+
+# BEGIN SOLN
+
+**Answer: **
+
+<average>89</average>
+
+# END SOLN
 
 # END SUBPROB
 
@@ -73,6 +97,8 @@ used?
     imputation conditional on `"genre"` must have been used in Option D
     and thus probabilistic imputation conditional on `"genre"` must have
     been used in Option A.
+
+<average>100</average>
 
 # END SOLN
 
@@ -110,11 +136,8 @@ likely **depends on** `"genre"`. Which imputation technique should we
 choose if we want to preserve the variance of the `"genre rank"` column?
 
 ( ) Unconditional mean imputation
-
 ( ) Mean imputation conditional on `"genre"`
-
 ( ) Unconditional probabilistic imputation
-
 ( ) Probabilistic imputation conditional on `"genre"`
 
 # BEGIN SOLN
@@ -150,11 +173,8 @@ The `"yest"` column contains missing values. What is the most likely
 missingness mechanism for `"yest"`?
 
 ( ) Missing by design
-
 ( ) Not missing at random
-
 ( ) Missing at random
-
 ( ) Missing completely at random
 
 # BEGIN SOLN

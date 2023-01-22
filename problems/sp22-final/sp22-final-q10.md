@@ -49,7 +49,6 @@ than\
 the training data.
 
 ( ) True
-
 ( ) False
 
 # BEGIN SOLN
@@ -149,9 +148,7 @@ Fill in the blank:
 `lr_no_drop.score(X_test, y_test)`.
 
 ( ) likely greater than
-
 ( ) roughly equal to
-
 ( ) likely less than
 
 # BEGIN SOLN

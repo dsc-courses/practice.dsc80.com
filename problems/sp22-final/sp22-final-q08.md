@@ -35,15 +35,10 @@ $$\text{TF-IDF} = \frac{1}{6} \cdot 1 = \frac{1}{6}$$
 (1.5 pts) Which word in Song 0's title has the highest TF-IDF?
 
 ( ) `"i"`
-
 ( ) `"hate"`
-
 ( ) `"you"`
-
 ( ) `"love"`
-
 ( ) `"that"`
-
 ( ) Two or more words are tied for the highest TF-IDF in Song 0's title
 
 # BEGIN SOLN
@@ -68,9 +63,7 @@ in document $d$.
 **Select all** correct answers below.
 
 [ ] If $\text{tfidf}(t, d) = 0$, then $\text{bow}(t, d) = 0$.
-
 [ ] If $\text{bow}(t, d) = 0$, then $\text{tfidf}(t, d) = 0$.
-
 [ ] Neither of the above statements are necessarily true.
 
 # BEGIN SOLN
@@ -107,9 +100,7 @@ Which song's title has the highest cosine similarity with Song 0's
 title?
 
 ( ) Song 1
-
 ( ) Song 2
-
 ( ) Song 3
 
 # BEGIN SOLN
