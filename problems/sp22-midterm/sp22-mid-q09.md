@@ -47,7 +47,7 @@ following visualization, relating the missingness of
 `"mother’s phone number"` to `"district"` (the school district that the
 student's family lives in):
 
-<center><img src='../assets/images/sp22-midterm/missingness.png' width=70%></center>
+<center><img src='../assets/images/sp22-midterm/missingness.png' width=50%></center>
 
 Given just the above information, what is the missingness mechanism of
 `"mother’s phone number"`?
@@ -84,7 +84,7 @@ Valentina keeps track of each student's parents' incomes along with the
 scholarship that UC Hicago promises them in a table. The first few rows
 of her table are shown below.
 
-<center><img src='../assets/images/sp22-midterm/scholarship.png' width=70%></center>
+<center><img src='../assets/images/sp22-midterm/scholarship.png' width=50%></center>
 
 Given just the above information, what is the missingness mechanism of
 `"scholarship"`?

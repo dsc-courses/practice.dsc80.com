@@ -7,7 +7,7 @@ their `"genre"`**. For instance, "the real slim shady\" is the
 20th-ranked Hip-Hop/Rap song in the Top 200 today. `random_10` is shown
 below in its entirety.
 
-<center><img src='../assets/images/sp22-final/imp-with-nan.png' width=50%></center>
+<center><img src='../assets/images/sp22-final/imp-with-nan.png' width=35%></center>
 
 The `"genre_rank"` column of `random_10` contains missing values. Below,
 we provide four different imputed `"genre_rank"` columns, each of which
@@ -15,7 +15,7 @@ was created using a different imputation technique. On the next page,
 match each of the four options to the imputation technique that was used
 in the option.
 
-<center><img src='../assets/images/sp22-final/imp-options-grid.png' width=108%></center>
+<center><img src='../assets/images/sp22-final/imp-options-grid.png' width=80%></center>
 
 Note that each option (A, B, C, D) should be used exactly once between
 parts (a) and (d).
@@ -179,7 +179,7 @@ songs yesterday.
 
 The first few rows of `trends` are shown below.
 
-<center><img src='../assets/images/sp22-final/streams_yday.png' width=85%></center>
+<center><img src='../assets/images/sp22-final/streams_yday.png' width=70%></center>
 
 The `"yest"` column contains missing values. What is the most likely
 missingness mechanism for `"yest"`?

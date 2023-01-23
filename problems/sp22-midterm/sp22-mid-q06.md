@@ -10,7 +10,7 @@ Consider the following snippet of code.
 
 Some of the rows and columns of `pivoted` are shown below.
 
-<center><img src='../assets/images/sp22-midterm/pivot.png' width=60%></center>
+<center><img src='../assets/images/sp22-midterm/pivot.png' width=55%></center>
 
 No students from Warren High were admitted to Columbia or Stanford.
 However,\

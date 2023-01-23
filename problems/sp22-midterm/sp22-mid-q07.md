@@ -4,8 +4,8 @@ Define `small_students` to be the DataFrame with 8 rows and 2 columns
 shown directly below, and define `districts` to be the DataFrame
 with 3 rows and 2 columns shown below `small_students`.
 
-<center><img src='../assets/images/sp22-midterm/small_students.png' width=40%></center>
-<center><img src='../assets/images/sp22-midterm/districts.png' width=35%></center>
+<center><img src='../assets/images/sp22-midterm/small_students.png' width=30%></center>
+<center><img src='../assets/images/sp22-midterm/districts.png' width=30%></center>
 
 Consider the DataFrame `merged`, defined below.
 
@@ -25,7 +25,7 @@ an integer.
 
 `merged` is shown below.
 
-<center><img src='../assets/images/sp22-midterm/merge-ans-1.png' width=70%></center>
+<center><img src='../assets/images/sp22-midterm/merge-ans-1.png' width=45%></center>
 
 <average>13</average>
 
@@ -51,7 +51,7 @@ default `axis` argument to `pd.concat` is `axis=0`.*
 
 `concatted` is shown below.
 
-<center><img src='../assets/images/sp22-midterm/merge-ans-2.png' width=70%></center>
+<center><img src='../assets/images/sp22-midterm/merge-ans-2.png' width=45%></center>
 
 <average>76</average>
 

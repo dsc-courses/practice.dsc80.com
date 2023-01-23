@@ -37,13 +37,13 @@ below.
     >>> re.findall(exp, "18_USA-2009-05-16")
     []
 
-`exp = r"^` `$"`
+`exp = r"^`  `$"`
 
 # BEGIN SOLN
 
 **Answer: ** One solution is given below.
 
-<center><img src='../assets/images/sp22-final/regex101-1.png' width=60%></center>
+<center><img src='../assets/images/sp22-final/regex101-1.png' width=50%></center>
 
 Click [this link](https://regex101.com/r/K88ddE/1) to interact with the
 solution on regex101.

@@ -89,7 +89,7 @@ on Spotify that day</p></li>
 <p>The first few rows of <code>streams</code> are shown below. Since
 there were 31 days in May and 200 songs per day, <code>streams</code>
 has 6200 rows in total.</p>
-<center><img src='../assets/images/sp22-final/streams.png' width=60%></center>
+<center><img src='../assets/images/sp22-final/streams.png' width=50%></center>
 <p>Note that:</p>
 <ul>
 <li><p><code>streams</code> is already sorted in a very particular way —
@@ -310,7 +310,7 @@ and one row for <code>"olivia rodrigo"</code> and
 <code>"deja vu"</code>.</p>
 <p>Another DataFrame, <code>genres</code>, is shown below in its
 entirety.</p>
-<center><img src='../assets/images/sp22-final/genres.png' width=35%></center>
+<center><img src='../assets/images/sp22-final/genres.png' width=25%></center>
 <p><br></p>
 <h3 id="problem-2.1">Problem 2.1</h3>
 <p>Suppose we perform an <strong>inner</strong> merge between
@@ -806,13 +806,13 @@ songs in Spotify’s Top 200 today, along with their
 instance, “the real slim shady" is the 20th-ranked Hip-Hop/Rap song in
 the Top 200 today. <code>random_10</code> is shown below in its
 entirety.</p>
-<center><img src='../assets/images/sp22-final/imp-with-nan.png' width=50%></center>
+<center><img src='../assets/images/sp22-final/imp-with-nan.png' width=35%></center>
 <p>The <code>"genre_rank"</code> column of <code>random_10</code>
 contains missing values. Below, we provide four different imputed
 <code>"genre_rank"</code> columns, each of which was created using a
 different imputation technique. On the next page, match each of the four
 options to the imputation technique that was used in the option.</p>
-<center><img src='../assets/images/sp22-final/imp-options-grid.png' width=108%></center>
+<center><img src='../assets/images/sp22-final/imp-options-grid.png' width=80%></center>
 <p>Note that each option (A, B, C, D) should be used exactly once
 between parts (a) and (d).</p>
 <p><br></p>
@@ -1044,7 +1044,7 @@ yesterday (<code>"day_before_yest"</code>) for songs in Spotify’s Top
 200. Remember, a song was in the Top 200 yesterday if it was one of the
 200 most streamed songs yesterday.</p>
 <p>The first few rows of <code>trends</code> are shown below.</p>
-<center><img src='../assets/images/sp22-final/streams_yday.png' width=85%></center>
+<center><img src='../assets/images/sp22-final/streams_yday.png' width=70%></center>
 <p>The <code>"yest"</code> column contains missing values. What is the
 most likely missingness mechanism for <code>"yest"</code>?</p>
 <ul class="task-list">
@@ -1363,7 +1363,7 @@ aria-labelledby="heading7_1" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer: </strong> One solution is given below.</p>
-<center><img src="../assets/images/sp22-final/regex101-1.png" width="60%"/></center>
+<center><img src="../assets/images/sp22-final/regex101-1.png" width="50%"/></center>
 <p>Click <a href="https://regex101.com/r/K88ddE/1">this link</a> to
 interact with the solution on regex101.</p>
 <p>While grading, we were not particular about students’ treatment of
@@ -1479,7 +1479,7 @@ aria-labelledby="heading7_3" data-bs-parent="#accordionExample">
 <h2 id="problem-8">Problem 8</h2>
 <p>The DataFrame below contains a corpus of four song titles, labeled
 from 0 to 3.</p>
-<center><img src='../assets/images/sp22-final/love_songs.png' width=50%></center>
+<center><img src='../assets/images/sp22-final/love_songs.png' width=35%></center>
 <p><br></p>
 <h3 id="problem-8.1">Problem 8.1</h3>
 <p>What is the TF-IDF of the word <code>"hate"</code> in Song 0’s title?
@@ -1615,7 +1615,7 @@ option is not necessarily true.</p>
 <h3 id="problem-8.4">Problem 8.4</h3>
 <p>Below, we’ve encoded the corpus from the previous page using the
 bag-of-words model.</p>
-<center><img src='../assets/images/sp22-final/bag_words.png' width=70%></center>
+<center><img src='../assets/images/sp22-final/bag-words.png' width=40%></center>
 <p>Note that in the above DataFrame, each row has been normalized to
 have a length of 1 (i.e. <span class="math inline">|\vec{v}| = 1</span>
 for all four row vectors).</p>
@@ -1742,7 +1742,6 @@ name}) \cdot P(\text{what $|$ name is}) \cdot P(\text{my $|$ is what})
 </div>
 <hr />
 <h2 id="problem-10">Problem 10</h2>
-<p>[(10 pts)]</p>
 <p>The DataFrame <code>new_releases</code> contains the following
 information for songs that were recently released:</p>
 <ul>
@@ -1765,7 +1764,7 @@ had on Spotify in the first month it was released</p></li>
 <p>The first few rows of <code>new_releases</code> are shown below
 (though <code>new_releases</code> has many more rows than are shown
 below).</p>
-<center><img src='../assets/images/sp22-final/new_releases.png' width=75%></center>
+<center><img src='../assets/images/sp22-final/new_releases.png' width=55%></center>
 <p>We decide to build a linear regression model that predicts
 <code>"first_month"</code> given all other information. To start, we
 conduct a train-test split, splitting <code>new_releases</code> into
@@ -2194,7 +2193,7 @@ options are guaranteed to be true.</p>
 <p>After fitting our <code>BillyClassifier</code> from the previous
 question, we use it to make predictions on an unseen test set. Our
 results are summarized in the following confusion matrix.</p>
-<center><img src='../assets/images/sp22-final/confusion-2.png' width=70%></center>
+<center><img src='../assets/images/sp22-final/confusion-2.png' width=50%></center>
 <p><br></p>
 <h3 id="problem-12.1">Problem 12.1</h3>
 <p>What is the recall of our classifier? Give your answer as a fraction

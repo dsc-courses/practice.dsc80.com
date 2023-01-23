@@ -27,7 +27,7 @@ She also defines the 2-D array `B` as follows:
 
 Below, we see a histogram of the distribution of her test statistics.
 
-<center><img src='../assets/images/sp22-midterm/hist.png' width=60%></center>
+<center><img src='../assets/images/sp22-midterm/hist.png' width=45%></center>
 
 Which one of the following arrays are visualized above?
 

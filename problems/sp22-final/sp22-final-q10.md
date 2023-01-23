@@ -1,7 +1,5 @@
 # BEGIN PROB
 
-\[(10 pts)\]
-
 The DataFrame `new_releases` contains the following information for
 songs that were recently released:
 
@@ -25,7 +23,7 @@ songs that were recently released:
 The first few rows of `new_releases` are shown below (though
 `new_releases` has many more rows than are shown below).
 
-<center><img src='../assets/images/sp22-final/new_releases.png' width=75%></center>
+<center><img src='../assets/images/sp22-final/new_releases.png' width=55%></center>
 
 We decide to build a linear regression model that predicts
 `"first_month"` given all other information. To start, we conduct a

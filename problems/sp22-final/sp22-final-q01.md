@@ -17,7 +17,7 @@ Spotify that day. The columns in `streams` are as follows:
 The first few rows of `streams` are shown below. Since there were 31
 days in May and 200 songs per day, `streams` has 6200 rows in total.
 
-<center><img src='../assets/images/sp22-final/streams.png' width=60%></center>
+<center><img src='../assets/images/sp22-final/streams.png' width=50%></center>
 
 Note that:
 

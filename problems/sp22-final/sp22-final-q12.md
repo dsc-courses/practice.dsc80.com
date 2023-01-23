@@ -4,7 +4,7 @@ After fitting our `BillyClassifier` from the previous question, we use
 it to make predictions on an unseen test set. Our results are summarized
 in the following confusion matrix.
 
-<center><img src='../assets/images/sp22-final/confusion-2.png' width=70%></center>
+<center><img src='../assets/images/sp22-final/confusion-2.png' width=50%></center>
 
 # BEGIN SUBPROB
 

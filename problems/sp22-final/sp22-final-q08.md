@@ -3,7 +3,7 @@
 The DataFrame below contains a corpus of four song titles, labeled from
 0 to 3.
 
-<center><img src='../assets/images/sp22-final/love_songs.png' width=50%></center>
+<center><img src='../assets/images/sp22-final/love_songs.png' width=35%></center>
 
 # BEGIN SUBPROB
 
@@ -99,7 +99,7 @@ $t$ is in every document), so the first option is not necessarily true.
 Below, we've encoded the corpus from the previous page using
 the bag-of-words model.
 
-<center><img src='../assets/images/sp22-final/bag_words.png' width=70%></center>
+<center><img src='../assets/images/sp22-final/bag-words.png' width=40%></center>
 
 Note that in the above DataFrame, each row has been normalized to have a
 length of 1 (i.e. $|\vec{v}| = 1$ for all four row vectors).

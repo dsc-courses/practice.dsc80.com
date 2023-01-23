@@ -9,7 +9,7 @@ row for `"olivia rodrigo"` and `"drivers license"`, and one row for
 
 Another DataFrame, `genres`, is shown below in its entirety.
 
-<center><img src='../assets/images/sp22-final/genres.png' width=35%></center>
+<center><img src='../assets/images/sp22-final/genres.png' width=25%></center>
 
 # BEGIN SUBPROB
 
