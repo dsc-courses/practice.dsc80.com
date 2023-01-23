@@ -13,7 +13,7 @@ Another DataFrame, `genres`, is shown below in its entirety.
 
 # BEGIN SUBPROB
 
-(2 pts\*) Suppose we perform an **inner** merge between `today` and
+Suppose we perform an **inner** merge between `today` and
 `genres` on `"artist_names"`. If the five `"artist_names"` in `today`
 are the same as the five `"artist_names"` in `genres`, what fraction of
 the rows in the merged DataFrame will contain `"Pop"` in the `"genre"`
@@ -43,7 +43,7 @@ contained `"Pop"` in `genres["genre"]`, too).
 
 # BEGIN SUBPROB
 
-(2 pts\*) Suppose we perform an **inner** merge between `today` and
+Suppose we perform an **inner** merge between `today` and
 `genres` on `"artist_names"`. Furthermore, suppose that the only
 overlapping `"artist_names"` between `today` and `genres` are `"drake"`
 and `"olivia rodrigo"`. What fraction of the rows in the merged
@@ -67,7 +67,7 @@ $\frac{3}{6} = \frac{1}{2}$.
 
 # BEGIN SUBPROB
 
-(3 pts\*) Suppose we perform an **outer** merge between `today` and
+Suppose we perform an **outer** merge between `today` and
 `genres` on `"artist_names"`. Furthermore, suppose that the only
 overlapping `"artist_names"` between `today` and `genres` are `"drake"`
 and `"olivia rodrigo"`. What fraction of the rows in the merged

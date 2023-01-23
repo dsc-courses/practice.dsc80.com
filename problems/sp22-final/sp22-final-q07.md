@@ -1,7 +1,5 @@
 # BEGIN PROB
 
-\[(12 pts)\]
-
 # BEGIN SUBPROB
 
 Each Spotify charts webpage is specific to a particular country (as
@@ -43,17 +41,17 @@ below.
 
 # BEGIN SOLN
 
-One solution is given below.
+**Answer: ** One solution is given below.
 
-::: center
-![image](final-images/regex101-1.png){width="60%"}
-:::
+<center><img src='../assets/images/sp22-final/regex101-1.png' width=60%></center>
 
 Click [this link](https://regex101.com/r/K88ddE/1) to interact with the
 solution on regex101.
 
 While grading, we were not particular about students' treatment of
 uppercase characters in country names.
+
+<average>76</average>
 
 # END SOLN
 
@@ -77,9 +75,20 @@ expression above.
 
 # BEGIN SOLN
 
-**Answer: **
+**Answer: ** Option B, Option C, and Option E
 
-<average>52</average>
+Let's first dissect the regular expression into manageable groups:
+
+-   `"^"` matches the regex to its right at the start of a given string
+-   `"\w{2,5}"` matches alphanumeric characters (a-Z, 0-9 and _) 2 to 5 times inclusively. (Note the that it does indeed match with the underscore)
+-   `"."` is a basic wildcard
+-   `"\d*"` matches digits (0-9), at least 0 times
+-   `"\/"` matches the `"/"` character
+-   `"[^A-Z5]{1,}"` matches any character that isn't (A-Z or 5) at least once.
+
+Thus using these rules, it's not hard to verify that Options B, C and E are matches.
+
+<average>85</average>
 
 # END SOLN
 
@@ -103,12 +112,15 @@ Consider the following string and regular expressions:
 
 # BEGIN SOLN
 
-    1. `"\backslashb"` matches "word boundaries\", which are any locations that separate words. As such, there are 4 matches --- `["doja", "cat", "you", "right"]`.
+**Answer: ** See below
 
-    2. The 3 matches are `[" cat", " you", " right"]`.
+    1. `"\b"` matches "word boundaries\", which are any locations that separate words. As such, there are 4 matches --- `["doja", "cat", "you", "right"]`. Thus the answer is 4.
 
-    3. This was quite tricky! The key is remembering that `re.findall` only finds **non-overlapping matches** (if you look at the solutions to the above two parts, none of the matches overlapped). Reading from left to right, there is only a single non-overlapping match: `"cat"`. Sure, `" you "` also matches the pattern, but since the space after `"cat"` was already "found\" by `re.findall`, it cannot be included in any future matches.
+    2. The 3 matches are `[" cat", " you", " right"]`. Thus the answer is 3.
 
+    3. This was quite tricky! The key is remembering that `re.findall` only finds **non-overlapping matches** (if you look at the solutions to the above two parts, none of the matches overlapped). Reading from left to right, there is only a single non-overlapping match: `"cat"`. Sure, `" you "` also matches the pattern, but since the space after `"cat"` was already "found\" by `re.findall`, it cannot be included in any future matches. Thus the answer is 1.
+
+<average>60</average>
 
 # END SOLN
 

@@ -63,7 +63,7 @@ purposes of this question, you can assume that no two different
 
 # BEGIN SUBPROB
 
-(1 pt\*) What goes in blank (a)?
+What goes in blank (a)?
 
 ( ) `"year"`
 ( ) `"artist_names"`
@@ -72,7 +72,9 @@ purposes of this question, you can assume that no two different
 
 # BEGIN SOLN
 
-**Answer: **
+**Answer: ** Option C: `"track_name"`
+
+The first thing to notice is that first line in the function filters for all the rap songs in df. Next, since the helper function is supposed to return the number of unique Hip-Hop/Rap songs in a given DataFrame, we group by `"track_name"` so that each group/category is a unique song. Grouping by `"year"`, `"artist_names"`, or `"genre"` won't help us compute the number of unique songs. 
 
 <average>89</average>
 
@@ -82,7 +84,7 @@ purposes of this question, you can assume that no two different
 
 # BEGIN SUBPROB
 
-(1.5 pts\*) What goes in blank (b)?
+What goes in blank (b)?
 
 ( ) `.shape`
 ( ) `.loc`
@@ -91,7 +93,9 @@ purposes of this question, you can assume that no two different
 
 # BEGIN SOLN
 
-**Answer: **
+**Answer: ** Option A: `.shape`
+
+Note that after grouping by `"track_name"`, each individual row in the resulting dataframe is a unique song within the rap genre. Thus the number of rows in the resulting dataframe is just the number of unique rap songs in a dataframe. To get the number of rows of a dataframe, we simply do `.shape[0]`
 
 <average>89</average>
 
@@ -101,7 +105,7 @@ purposes of this question, you can assume that no two different
 
 # BEGIN SUBPROB
 
-(1.5 pts\*) What goes in blank (c)?
+What goes in blank (c)?
 
 ( ) `count_2021.shape[0]`
 ( ) `200`
@@ -110,7 +114,11 @@ purposes of this question, you can assume that no two different
 
 # BEGIN SOLN
 
-**Answer: **
+**Answer: ** Option D: `200 * 365`
+
+Consider the following statement from the problem: "To generate data under the null, you decide to treat the songs that were in the Top 200 in 2021 as a random sample from the songs that were in the Top 200 in all ten years." Thus it follows that we need to generate `200 * 365` songs since there are `200 * 365` songs in the Top 200 in 2021. 
+
+Alternatively, it makes sense to sample `200 * 365` songs from `all_years` because we use the number of unique rap songs as a test statistic for each sample. Thus our sample should be the same size as the number of songs in the Top 200 in 2021.
 
 <average>52</average>
 
@@ -120,11 +128,13 @@ purposes of this question, you can assume that no two different
 
 # BEGIN SUBPROB
 
-(1 pt\*) What goes in blank (d)?
+What goes in blank (d)?
 
 # BEGIN SOLN
 
-**Answer: **
+**Answer: ** `(counts < count_2021)`
+
+Note that `counts` is a np.array that contains the number of Rap songs from each sample. Because our alternative hypothesis is that "The number of unique Hip-Hop/Rap songs that were popular in 2021 is greater than the average number of unique Hip-Hop/Rap songs that were popular each year between 2012 and 2021", simply doing `(counts < count_2021)` will return an array of booleans denoting whether or not `count_2021` was greater than the number of rap songs in each sample. The `.mean()` will simply compute the appropriate proportion, or p-value. 
 
 <average>53</average>
 

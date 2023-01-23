@@ -4,19 +4,21 @@ After fitting our `BillyClassifier` from the previous question, we use
 it to make predictions on an unseen test set. Our results are summarized
 in the following confusion matrix.
 
-::: center
-![image](final-images/confusion-2.png){width="70%"}
-:::
+<center><img src='../assets/images/sp22-final/confusion-2.png' width=70%></center>
 
 # BEGIN SUBPROB
 
-(1.5 pts) What is the recall of our classifier? Give your answer as a
+What is the recall of our classifier? Give your answer as a
 fraction (it does not need to be simplified).
 
 # BEGIN SOLN
 
+**Answer: ** $\frac{35}{57}$
+
 There are 105 true positives and 66 false negatives. Hence, the recall
 is $\frac{105}{105 + 66} = \frac{105}{171} = \frac{35}{57}$.
+
+<average>89</average>
 
 # END SOLN
 
@@ -24,11 +26,13 @@ is $\frac{105}{105 + 66} = \frac{105}{171} = \frac{35}{57}$.
 
 # BEGIN SUBPROB
 
-(2.5 pts) The accuracy of our classifier is $\frac{69}{117}$. How many
+The accuracy of our classifier is $\frac{69}{117}$. How many
 **true negatives** did our classifier have? Give your answer as an
 integer.
 
 # BEGIN SOLN
+
+**Answer: ** 33
 
 Let $x$ be the number of true negatives. The number of correctly
 classified data points is $105 + x$, and the total number of data points
@@ -41,6 +45,8 @@ Multiply $\frac{69}{117}$ by $\frac{2}{2}$ to yield $\frac{138}{234}$.
 Then, conveniently, setting $x = 33$ in $\frac{105 + x}{201 + x}$ also
 yields $\frac{138}{234}$, so $x = 33$ and hence the number of true
 negatives our classifier has is 33.
+
+<average>84</average>
 
 # END SOLN
 
@@ -56,6 +62,8 @@ to be equal, the number of mistakes it makes must be an even number.
 
 # BEGIN SOLN
 
+**Answer: ** True
+
 Remember that $\text{precision} = \frac{TP}{TP + FP}$ and
 $\text{recall} = \frac{TP}{TP + FN}$. In order for precision to be the
 same as recall, it must be the case that $FP = FN$, i.e. that our
@@ -67,6 +75,8 @@ $$\text{mistakes} = FP + FN = FP + FP = 2 \cdot FP$$
 
 2 times any integer must be an even integer, so the number of mistakes
 must be even.
+
+<average>100</average>
 
 # END SOLN
 
@@ -90,6 +100,8 @@ Complete the sentence: Our classifier has\...
 
 # BEGIN SOLN
 
+**Answer: ** Option B: low precision and high recall.
+
 Our classifier is good at identifying when the input stream is "Kiss Me
 thru the Phone\", i.e. it is good at identifying true positives amongst
 all positives. This means it has high recall.
@@ -100,6 +112,8 @@ that's not what the input stream is --- it has many false positives, so
 its precision is low.
 
 Thus, our classifier has low precision and high recall.
+
+<average>91</average>
 
 # END SOLN
 

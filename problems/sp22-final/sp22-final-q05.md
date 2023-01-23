@@ -1,7 +1,5 @@
 # BEGIN PROB
 
-\[(10 pts)\]
-
 The DataFrame `random_10` contains the `"track_name"` and `"genre"` of
 10 randomly-chosen songs in Spotify's Top 200 today, along with their
 `"genre_rank"`, which is their rank in the Top 200 **among songs in
@@ -24,13 +22,15 @@ parts (a) and (d).
 
 # BEGIN SUBPROB
 
-(1.5 pts) In which option was unconditional mean imputation used?
+In which option was unconditional mean imputation used?
 
 # BEGIN SOLN
 
-**Answer: **
+**Answer: ** Option B
 
-<average>89</average>
+Explanation given in part d) below
+
+<average>99</average>
 
 # END SOLN
 
@@ -38,14 +38,16 @@ parts (a) and (d).
 
 # BEGIN SUBPROB
 
-(1.5 pts) In which option was mean imputation conditional on `"genre"`
+In which option was mean imputation conditional on `"genre"`
 used?
 
 # BEGIN SOLN
 
-**Answer: **
+**Answer: ** Option D
 
-<average>89</average>
+Explanation given in part d) below
+
+<average>96</average>
 
 # END SOLN
 
@@ -53,14 +55,16 @@ used?
 
 # BEGIN SUBPROB
 
-(1.5 pts) In which option was unconditional probabilistic imputation
+In which option was unconditional probabilistic imputation
 used?
 
 # BEGIN SOLN
 
-**Answer: **
+**Answer: ** Option C
 
-<average>89</average>
+Explanation given in part d) below
+
+<average>92</average>
 
 # END SOLN
 
@@ -68,10 +72,12 @@ used?
 
 # BEGIN SUBPROB
 
-(1.5 pts) In which option was probabilistic imputation conditional on
+In which option was probabilistic imputation conditional on
 `"genre"` used?
 
 # BEGIN SOLN
+
+**Answer: ** Option A
 
 -   First, note that in Option B, all three missing values are filled in
     with the same number, 7. The mean of the observed values in
@@ -98,7 +104,7 @@ used?
     and thus probabilistic imputation conditional on `"genre"` must have
     been used in Option A.
 
-<average>100</average>
+<average>92</average>
 
 # END SOLN
 
@@ -110,9 +116,11 @@ determine whether the missingness of `"genre rank"` depends on
 
 # BEGIN SUBPROB
 
-(1 pt\*) Name a valid test statistic for this permutation test.
+Name a valid test statistic for this permutation test.
 
 # BEGIN SOLN
+
+**Answer: ** Total Variation Distance (TVD)
 
 We are comparing two distributions:
 
@@ -125,13 +133,15 @@ distributions are also categorical. The only test statistic we have for
 comparing categorical distributions is the total variation distance
 (TVD).
 
+<average>63</average>
+
 # END SOLN
 
 # END SUBPROB
 
 # BEGIN SUBPROB
 
-(1.5 pts) Suppose we conclude that the missingness of `"genre rank"`
+Suppose we conclude that the missingness of `"genre rank"`
 likely **depends on** `"genre"`. Which imputation technique should we
 choose if we want to preserve the variance of the `"genre rank"` column?
 
@@ -142,6 +152,8 @@ choose if we want to preserve the variance of the `"genre rank"` column?
 
 # BEGIN SOLN
 
+**Answer: ** Option D: Probabilistic imputation conditional on `"genre"`
+
 Mean imputation does not preserve the variance of the imputed values ---
 since it fills in all missing numbers with the same number (either
 overall, or within each group), the variance of the imputed dataset is
@@ -151,13 +163,15 @@ the missingness of `"genre rank"` was found to be dependent on
 `"genre"`, we perform probabilistic imputation **conditional** on
 `"genre"`, i.e. impute `"genre rank"`s randomly within each `"genre"`.
 
+<average>75</average>
+
 # END SOLN
 
 # END SUBPROB
 
 # BEGIN SUBPROB
 
-(1.5 pts\*) The DataFrame `trends` contains the the number of streams
+The DataFrame `trends` contains the the number of streams
 yesterday (`"yest"`) and the number of streams the day before yesterday
 (`"day_before_yest"`) for songs in Spotify's Top 200. Remember, a song
 was in the Top 200 yesterday if it was one of the 200 most streamed
@@ -165,9 +179,7 @@ songs yesterday.
 
 The first few rows of `trends` are shown below.
 
-::: center
-![image](final-images/streams_yday.png){width="85%"}
-:::
+<center><img src='../assets/images/sp22-final/streams_yday.png' width=85%></center>
 
 The `"yest"` column contains missing values. What is the most likely
 missingness mechanism for `"yest"`?
@@ -178,6 +190,8 @@ missingness mechanism for `"yest"`?
 ( ) Missing completely at random
 
 # BEGIN SOLN
+
+**Answer: ** Option B: NMAR or Option C: MAR
 
 We accepted two answers here --- not missing at random and missing at
 random.
@@ -202,6 +216,8 @@ random.
     predict if `"yest"` will be missing just by looking at
     `"day_before_yest"`; this would need to be the case if `"yest"` were
     missing by design.
+
+<average>64</average>
 
 # END SOLN
 

@@ -3,9 +3,7 @@
 The DataFrame below contains a corpus of four song titles, labeled from
 0 to 3.
 
-::: center
-![image](final-images/love_songs.png){width="50%"}
-:::
+<center><img src='../assets/images/sp22-final/love_songs.png' width=50%></center>
 
 # BEGIN SUBPROB
 
@@ -13,6 +11,8 @@ The DataFrame below contains a corpus of four song titles, labeled from
 base 2 in your logarithm, and give your answer as a simplified fraction.
 
 # BEGIN SOLN
+
+**Answer: ** $\frac{1}{6}$
 
 There are 12 words in Song 0's title, and 2 of them are `"hate"`, so the
 term frequency of `"hate"` in Song 0's title is
@@ -25,6 +25,8 @@ in the corpus is $\log_2 \left( \frac{4}{2} \right) = \log_2 (2) = 1$.
 Then, the TF-IDF of `"hate"` in Song 0's title is
 
 $$\text{TF-IDF} = \frac{1}{6} \cdot 1 = \frac{1}{6}$$
+
+<average>86</average>
 
 # END SOLN
 
@@ -43,12 +45,16 @@ $$\text{TF-IDF} = \frac{1}{6} \cdot 1 = \frac{1}{6}$$
 
 # BEGIN SOLN
 
+**Answer: ** Option A: `"i"`
+
 It was not necessary to compute the TF-IDFs of all words in Song 0's
 title to determine the answer. $\text{tfidf}(t, d)$ is high when $t$
 occurs often in $d$ but rarely overall. That is the case with `"i"` ---
 it is the most common word in Song 0's title (with 4 appearances), but
 it does not appear in any other document. As such, it must be the word
 with the highest TF-IDF in Song 0's title.
+
+<average>84</average>
 
 # END SOLN
 
@@ -68,9 +74,11 @@ in document $d$.
 
 # BEGIN SOLN
 
+**Answer: ** Option B
+
 Recall that $\text{tfidf}(t, d) = \text{tf}(t, d) \cdot \text{idf}(t)$,
 and note that $\text{tf}(t, d)$ is just
-$\frac{1}{\text{# words in $d$}} \cdot \text{bow}(t, d)$. Thus,
+$\frac{1}{\text{# words in d}} \cdot \text{bow}(t, d)$. Thus,
 $\text{tfidf}(t, d)$ is 0 is if either $\text{bow}(t, d) = 0$ or
 $\text{idf}(t) = 0$.
 
@@ -79,6 +87,8 @@ $\text{tfidf}(t, d) = 0$, so the second option is true. However, if
 $\text{tfidf}(t, d) = 0$, it could be the case that
 $\text{bow}(t, d) > 0$ and $\text{idf}(t) = 0$ (which happens when term
 $t$ is in every document), so the first option is not necessarily true.
+
+<average>91</average>
 
 # END SOLN
 
@@ -89,9 +99,7 @@ $t$ is in every document), so the first option is not necessarily true.
 (1.5 pts) Below, we've encoded the corpus from the previous page using
 the bag-of-words model.
 
-::: center
-![image](final-images/bag-words.png){width="70%"}
-:::
+<center><img src='../assets/images/sp22-final/bag_words.png' width=70%></center>
 
 Note that in the above DataFrame, each row has been normalized to have a
 length of 1 (i.e. $|\vec{v}| = 1$ for all four row vectors).
@@ -104,6 +112,8 @@ title?
 ( ) Song 3
 
 # BEGIN SOLN
+
+**Answer: ** Option B: Song 2
 
 Recall, the cosine similarity between two vectors $\vec{a}, \vec{b}$ is
 computed as
@@ -124,6 +134,8 @@ Without using a calculator (which students did not have access to during
 the exam), it is clear that the dot product between Song 0's title and
 Song 2's title is the highest, hence Song 2's title is the most similar
 to Song 0's.
+
+<average>87</average>
 
 # END SOLN
 

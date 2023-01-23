@@ -20,7 +20,7 @@ $P(\text{name is what my})$.*
 
 # BEGIN SOLN
 
-**Answer: **
+**Answer: ** $\frac{1}{12}$
 
 Since we are using a trigram model, to compute the conditional
 probability of a token, we must condition on the prior two tokens. For
@@ -49,7 +49,7 @@ P(\text{name is what my}) &= P(\text{name}) \cdot P(\text{is $|$ name}) \cdot P(
 Thus: $$\begin{aligned}
 P(\text{name is what my}) &= P(\text{name}) \cdot P(\text{is $|$ name}) \cdot P(\text{what $|$ name is}) \cdot P(\text{my $|$ is what}) \\ &= \frac{2}{12} \cdot 1 \cdot \frac{1}{2} \cdot 1 \\ &= \frac{1}{12}  \end{aligned}$$
 
-<average>52</average>
+<average>57</average>
 
 # END SOLN
 

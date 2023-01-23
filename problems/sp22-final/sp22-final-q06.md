@@ -38,13 +38,17 @@ instantiated using the document above.
 
 # BEGIN SUBPROB
 
-(1.5 pts) How many leaf nodes are there in the DOM tree of the previous
+How many leaf nodes are there in the DOM tree of the previous
 document --- that is, how many nodes have no children?
 
 # BEGIN SOLN
 
+**Answer: ** 14
+
 There's 1 `<title>`, 1 `<h1>`, 3 `<th>`s, and 9 `<td>`s, adding up to
 14.
+
+<average>64</average>
 
 # END SOLN
 
@@ -52,14 +56,18 @@ There's 1 `<title>`, 1 `<h1>`, 3 `<th>`s, and 9 `<td>`s, adding up to
 
 # BEGIN SUBPROB
 
-(1.5 pts) What does the following line of code evaluate to?
+What does the following line of code evaluate to?
 
     len(soup.find_all("td"))
 
 # BEGIN SOLN
 
+**Answer: ** 9
+
 As mentioned in the solution to the part above, there are 9 `<td>`
 nodes, and `soup.find_all` finds them all.
+
+<average>95</average>
 
 # END SOLN
 
@@ -73,11 +81,15 @@ What does the following line of code evaluate to?
 
 # BEGIN SOLN
 
+**Answer: ** `["heading"]` or `"heading"`
+
 `soup.find("tr")` finds the first occurrence of a `<tr>` node, and
 `get("class")` accesses the value of its `"class"` attribute.
 
 Note that technically the answer is `["heading"]`, but `"heading"`
 received full credit too.
+
+<average>96</average>
 
 # END SOLN
 
@@ -102,9 +114,11 @@ What goes in blank (b)?
 
 # BEGIN SOLN
 
-The logic is to find the `<tr>` node with the correct class attribute,
-then access the text of the node's last `<td>` child (since that's where
-the song titles are stored).
+**Answer: ** a) `{'class' : 2}` b) `[2]` or `[-1]`
+
+The logic is to find the `<tr>` node with the correct class attribute (which we do by setting attr to `{'class' : 2}`), then access the text of the node's last `<td>` child (since that's where the song titles are stored).
+
+<average>66</average>
 
 # END SOLN
 
@@ -123,7 +137,11 @@ string containing the HTML source code of the site at `url`.
 
 # BEGIN SOLN
 
-The response could be JSON, it is not necessarily HTML.
+**Answer: ** Option B: False
+
+A status code of 200 means that the request has succeeded. Hence, the response could be JSON, it is not necessarily HTML.
+
+<average>44</average>
 
 # END SOLN
 

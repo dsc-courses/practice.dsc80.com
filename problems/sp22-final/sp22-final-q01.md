@@ -1,7 +1,5 @@
 # BEGIN PROB
 
-\[(11 pts)\]
-
 For each day in May 2022, the DataFrame `streams` contains the number of
 streams for each of the "Top 200\" songs on Spotify that day --- that
 is, the number of streams for the 200 songs with the most streams on
@@ -32,7 +30,7 @@ Note that:
 
 # BEGIN SUBPROB
 
-(3 pts\*) Complete the implementation of the function `song_by_day`,
+Complete the implementation of the function `song_by_day`,
 which takes in an integer `day` between 1 and 31 corresponding to a day
 in May, and an integer `n`, and returns the song that had the `n`-th
 most streams on `day`. For instance,\
@@ -67,7 +65,7 @@ The first line in the function gives us an idea that maybe later on in the funct
 
 # BEGIN SUBPROB
 
-(3 pts\*) Below, we define a DataFrame `pivoted`.
+Below, we define a DataFrame `pivoted`.
 
     pivoted = streams.pivot_table(index="track_name", columns="date", 
                                   values="streams", aggfunc=np.max)
@@ -100,7 +98,7 @@ May**.
 
 # BEGIN SUBPROB
 
-(2 pts\*) In defining `pivoted`, we set the keyword argument `aggfunc`
+In defining `pivoted`, we set the keyword argument `aggfunc`
 to `np.max`. Which of the following functions could we have used instead
 of `np.max` without changing the values in `pivoted`? **Select all that
 apply.**
@@ -113,7 +111,7 @@ apply.**
 
 # BEGIN SOLN
 
-**Answer: ** Option 1, 2 and 4
+**Answer: ** Option A, B and D
 
 For each combination of `"track_name"` and `"date"`, there is just a
 single value --- the number of streams that song received on that date.
@@ -138,7 +136,7 @@ number and return that same number.
 
 # BEGIN SUBPROB
 
-(3 pts\*) Below, we define another DataFrame `another_mystery`.
+Below, we define another DataFrame `another_mystery`.
 
     another_mystery = (streams.groupby("date").last()
                               .groupby(["artist_names", "track_name"])

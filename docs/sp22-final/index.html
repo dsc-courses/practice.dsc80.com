@@ -73,7 +73,6 @@ take this exam.</p>
 <p>Welcome to the Final Exam for DSC 80 in Spring 2022!</p>
 <hr />
 <h2 id="problem-1">Problem 1</h2>
-<p>[(11 pts)]</p>
 <p>For each day in May 2022, the DataFrame <code>streams</code> contains
 the number of streams for each of the “Top 200" songs on Spotify that
 day — that is, the number of streams for the 200 songs with the most
@@ -102,11 +101,11 @@ because many songs were in the Top 200 on more than one day.</p></li>
 </ul>
 <p><br></p>
 <h3 id="problem-1.1">Problem 1.1</h3>
-<p>(3 pts*) Complete the implementation of the function
-<code>song_by_day</code>, which takes in an integer <code>day</code>
-between 1 and 31 corresponding to a day in May, and an integer
-<code>n</code>, and returns the song that had the <code>n</code>-th most
-streams on <code>day</code>. For instance,<br />
+<p>Complete the implementation of the function <code>song_by_day</code>,
+which takes in an integer <code>day</code> between 1 and 31
+corresponding to a day in May, and an integer <code>n</code>, and
+returns the song that had the <code>n</code>-th most streams on
+<code>day</code>. For instance,<br />
 <code>song_by_day(31, 199)</code> should evaluate to
 <code>"pepas"</code>, because <code>"pepas"</code> was the 199th most
 streamed song on May 31st.</p>
@@ -156,7 +155,7 @@ do <code>day_only['track_name']</code>.</p>
 </div>
 <p><br></p>
 <h3 id="problem-1.2">Problem 1.2</h3>
-<p>(3 pts*) Below, we define a DataFrame <code>pivoted</code>.</p>
+<p>Below, we define a DataFrame <code>pivoted</code>.</p>
 <pre><code>pivoted = streams.pivot_table(index=&quot;track_name&quot;, columns=&quot;date&quot;, 
                               values=&quot;streams&quot;, aggfunc=np.max)</code></pre>
 <p>After defining <code>pivoted</code>, we define a Series
@@ -198,11 +197,11 @@ Top 200 for 23 days in May</strong>.</p>
 </div>
 <p><br></p>
 <h3 id="problem-1.3">Problem 1.3</h3>
-<p>(2 pts*) In defining <code>pivoted</code>, we set the keyword
-argument <code>aggfunc</code> to <code>np.max</code>. Which of the
-following functions could we have used instead of <code>np.max</code>
-without changing the values in <code>pivoted</code>? <strong>Select all
-that apply.</strong></p>
+<p>In defining <code>pivoted</code>, we set the keyword argument
+<code>aggfunc</code> to <code>np.max</code>. Which of the following
+functions could we have used instead of <code>np.max</code> without
+changing the values in <code>pivoted</code>? <strong>Select all that
+apply.</strong></p>
 <ul class="task-list">
 <li><p><input type="checkbox" disabled="" /> <code>np.mean</code></p></li>
 <li><p><input type="checkbox" disabled="" /> <code>np.median</code></p></li>
@@ -223,7 +222,7 @@ aria-labelledby="heading1_3" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer: </strong> Option 1, 2 and 4</p>
+<p><strong>Answer: </strong> Option A, B and D</p>
 <p>For each combination of <code>"track_name"</code> and
 <code>"date"</code>, there is just a single value — the number of
 streams that song received on that date. As such, the
@@ -250,8 +249,7 @@ Series. This option is correct as well. (The parameter name
 </div>
 <p><br></p>
 <h3 id="problem-1.4">Problem 1.4</h3>
-<p>(3 pts*) Below, we define another DataFrame
-<code>another_mystery</code>.</p>
+<p>Below, we define another DataFrame <code>another_mystery</code>.</p>
 <pre><code>another_mystery = (streams.groupby(&quot;date&quot;).last()
                           .groupby([&quot;artist_names&quot;, &quot;track_name&quot;])
                           .count().reset_index())</code></pre>
@@ -315,7 +313,7 @@ entirety.</p>
 <center><img src='../assets/images/sp22-final/genres.png' width=35%></center>
 <p><br></p>
 <h3 id="problem-2.1">Problem 2.1</h3>
-<p>(2 pts*) Suppose we perform an <strong>inner</strong> merge between
+<p>Suppose we perform an <strong>inner</strong> merge between
 <code>today</code> and <code>genres</code> on
 <code>"artist_names"</code>. If the five <code>"artist_names"</code> in
 <code>today</code> are the same as the five <code>"artist_names"</code>
@@ -359,7 +357,7 @@ fraction of rows that contained <code>"Pop"</code> in
 </div>
 <p><br></p>
 <h3 id="problem-2.2">Problem 2.2</h3>
-<p>(2 pts*) Suppose we perform an <strong>inner</strong> merge between
+<p>Suppose we perform an <strong>inner</strong> merge between
 <code>today</code> and <code>genres</code> on
 <code>"artist_names"</code>. Furthermore, suppose that the only
 overlapping <code>"artist_names"</code> between <code>today</code> and
@@ -396,7 +394,7 @@ the <code>"genre"</code> column, hence the answer is <span class="math inline">\
 </div>
 <p><br></p>
 <h3 id="problem-2.3">Problem 2.3</h3>
-<p>(3 pts*) Suppose we perform an <strong>outer</strong> merge between
+<p>Suppose we perform an <strong>outer</strong> merge between
 <code>today</code> and <code>genres</code> on
 <code>"artist_names"</code>. Furthermore, suppose that the only
 overlapping <code>"artist_names"</code> between <code>today</code> and
@@ -454,10 +452,10 @@ the <code>"genre"</code> column.</p></li>
 <h2 id="problem-3">Problem 3</h2>
 <p><br></p>
 <h3 id="problem-3.1">Problem 3.1</h3>
-<p>(3 pts*) Billy and Daisy each decide what songs to stream by rolling
-dice. Billy rolls a six-sided die 36 times and sees the same number of
-1s, 2s, 3s, 4s, 5s, and 6s. Daisy rolls a six-sided die 72 times and
-sees 36 1s, 18 4s, and 18 6s.</p>
+<p>Billy and Daisy each decide what songs to stream by rolling dice.
+Billy rolls a six-sided die 36 times and sees the same number of 1s, 2s,
+3s, 4s, 5s, and 6s. Daisy rolls a six-sided die 72 times and sees 36 1s,
+18 4s, and 18 6s.</p>
 <p>What is the total variation distance (TVD) between their
 distributions of rolls? Give your answer as a number.</p>
 <div id="accordionExample" class="accordion">
@@ -500,8 +498,8 @@ proportions, all divided by 2:</p>
 </div>
 <p><br></p>
 <h3 id="problem-3.2">Problem 3.2</h3>
-<p>(2 pts*) Consider two categorical distributions, each made up of the
-same <span class="math inline">n</span> categories. Given no other
+<p>Consider two categorical distributions, each made up of the same
+<span class="math inline">n</span> categories. Given no other
 information, what is the smallest possible TVD between the two
 distributions, and what is the largest possible TVD between the two
 distributions? Give both answers as numbers.</p>
@@ -538,9 +536,8 @@ case, the TVD is 1.</p>
 </div>
 <p><br></p>
 <h3 id="problem-3.3">Problem 3.3</h3>
-<p>(1 pt*) Consider the following pair of distributions.</p>
-<p>::: center
-<center><img src='../assets/images/sp22-final/dists.png' width=35%></center></p>
+<p>Consider the following pair of distributions.</p>
+<center><img src='../assets/images/sp22-final/dists.png' width=35%></center>
 <p>Suppose we want to perform a permutation test to test whether the two
 distributions come from the same population distribution. Which test
 statistic is most likely to yield a significant result?</p>
@@ -563,7 +560,7 @@ aria-labelledby="heading3_3" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer: </strong> Option 3</p>
+<p><strong>Answer: </strong> Option C</p>
 <ul>
 <li><p>These are two quantitative distributions, and the total variation
 distance only applies for categorical distributions.</p></li>
@@ -646,7 +643,7 @@ p_val = (__(d)__).mean()
     </code></pre>
 <p><br></p>
 <h3 id="problem-4.1">Problem 4.1</h3>
-<p>(1 pt*) What goes in blank (a)?</p>
+<p>What goes in blank (a)?</p>
 <ul class="task-list">
 <li><p><input type="radio" disabled="" /> <code>"year"</code></p></li>
 <li><p><input type="radio" disabled="" /> <code>"artist_names"</code></p></li>
@@ -666,7 +663,14 @@ aria-labelledby="heading4_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer: </strong></p>
+<p><strong>Answer: </strong> Option C: <code>"track_name"</code></p>
+<p>The first thing to notice is that first line in the function filters
+for all the rap songs in df. Next, since the helper function is supposed
+to return the number of unique Hip-Hop/Rap songs in a given DataFrame,
+we group by <code>"track_name"</code> so that each group/category is a
+unique song. Grouping by <code>"year"</code>,
+<code>"artist_names"</code>, or <code>"genre"</code> won’t help us
+compute the number of unique songs.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️</h5>
 <p>
@@ -678,7 +682,7 @@ aria-labelledby="heading4_1" data-bs-parent="#accordionExample">
 </div>
 <p><br></p>
 <h3 id="problem-4.2">Problem 4.2</h3>
-<p>(1.5 pts*) What goes in blank (b)?</p>
+<p>What goes in blank (b)?</p>
 <ul class="task-list">
 <li><p><input type="radio" disabled="" /> <code>.shape</code></p></li>
 <li><p><input type="radio" disabled="" /> <code>.loc</code></p></li>
@@ -699,7 +703,12 @@ aria-labelledby="heading4_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer: </strong></p>
+<p><strong>Answer: </strong> Option A: <code>.shape</code></p>
+<p>Note that after grouping by <code>"track_name"</code>, each
+individual row in the resulting dataframe is a unique song within the
+rap genre. Thus the number of rows in the resulting dataframe is just
+the number of unique rap songs in a dataframe. To get the number of rows
+of a dataframe, we simply do <code>.shape[0]</code></p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️</h5>
 <p>
@@ -711,7 +720,7 @@ aria-labelledby="heading4_2" data-bs-parent="#accordionExample">
 </div>
 <p><br></p>
 <h3 id="problem-4.3">Problem 4.3</h3>
-<p>(1.5 pts*) What goes in blank (c)?</p>
+<p>What goes in blank (c)?</p>
 <ul class="task-list">
 <li><p><input type="radio" disabled="" /> <code>count_2021.shape[0]</code></p></li>
 <li><p><input type="radio" disabled="" /> <code>200</code></p></li>
@@ -731,7 +740,17 @@ aria-labelledby="heading4_3" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer: </strong></p>
+<p><strong>Answer: </strong> Option D: <code>200 * 365</code></p>
+<p>Consider the following statement from the problem: “To generate data
+under the null, you decide to treat the songs that were in the Top 200
+in 2021 as a random sample from the songs that were in the Top 200 in
+all ten years.” Thus it follows that we need to generate
+<code>200 * 365</code> songs since there are <code>200 * 365</code>
+songs in the Top 200 in 2021.</p>
+<p>Alternatively, it makes sense to sample <code>200 * 365</code> songs
+from <code>all_years</code> because we use the number of unique rap
+songs as a test statistic for each sample. Thus our sample should be the
+same size as the number of songs in the Top 200 in 2021.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️⭐️</h5>
 <p>
@@ -743,7 +762,7 @@ aria-labelledby="heading4_3" data-bs-parent="#accordionExample">
 </div>
 <p><br></p>
 <h3 id="problem-4.4">Problem 4.4</h3>
-<p>(1 pt*) What goes in blank (d)?</p>
+<p>What goes in blank (d)?</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading4_4">
@@ -757,7 +776,16 @@ aria-labelledby="heading4_4" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer: </strong></p>
+<p><strong>Answer: </strong> <code>(counts &lt; count_2021)</code></p>
+<p>Note that <code>counts</code> is a np.array that contains the number
+of Rap songs from each sample. Because our alternative hypothesis is
+that “The number of unique Hip-Hop/Rap songs that were popular in 2021
+is greater than the average number of unique Hip-Hop/Rap songs that were
+popular each year between 2012 and 2021”, simply doing
+<code>(counts &lt; count_2021)</code> will return an array of booleans
+denoting whether or not <code>count_2021</code> was greater than the
+number of rap songs in each sample. The <code>.mean()</code> will simply
+compute the appropriate proportion, or p-value.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️⭐️</h5>
 <p>
@@ -770,7 +798,6 @@ aria-labelledby="heading4_4" data-bs-parent="#accordionExample">
 <p><br></p>
 <hr />
 <h2 id="problem-5">Problem 5</h2>
-<p>[(10 pts)]</p>
 <p>The DataFrame <code>random_10</code> contains the
 <code>"track_name"</code> and <code>"genre"</code> of 10 randomly-chosen
 songs in Spotify’s Top 200 today, along with their
@@ -790,7 +817,7 @@ options to the imputation technique that was used in the option.</p>
 between parts (a) and (d).</p>
 <p><br></p>
 <h3 id="problem-5.1">Problem 5.1</h3>
-<p>(1.5 pts) In which option was unconditional mean imputation used?</p>
+<p>In which option was unconditional mean imputation used?</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading5_1">
@@ -804,19 +831,20 @@ aria-labelledby="heading5_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer: </strong></p>
+<p><strong>Answer: </strong> Option B</p>
+<p>Explanation given in part d) below</p>
 <hr/>
-<h5>Difficulty: ⭐️⭐️</h5>
+<h5>Difficulty: ⭐️</h5>
 <p>
 </p>
-<p>The average score on this problem was 89%.</p>
+<p>The average score on this problem was 99%.</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <h3 id="problem-5.2">Problem 5.2</h3>
-<p>(1.5 pts) In which option was mean imputation conditional on
+<p>In which option was mean imputation conditional on
 <code>"genre"</code> used?</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
@@ -831,20 +859,20 @@ aria-labelledby="heading5_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer: </strong></p>
+<p><strong>Answer: </strong> Option D</p>
+<p>Explanation given in part d) below</p>
 <hr/>
-<h5>Difficulty: ⭐️⭐️</h5>
+<h5>Difficulty: ⭐️</h5>
 <p>
 </p>
-<p>The average score on this problem was 89%.</p>
+<p>The average score on this problem was 96%.</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <h3 id="problem-5.3">Problem 5.3</h3>
-<p>(1.5 pts) In which option was unconditional probabilistic imputation
-used?</p>
+<p>In which option was unconditional probabilistic imputation used?</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading5_3">
@@ -858,19 +886,20 @@ aria-labelledby="heading5_3" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer: </strong></p>
+<p><strong>Answer: </strong> Option C</p>
+<p>Explanation given in part d) below</p>
 <hr/>
-<h5>Difficulty: ⭐️⭐️</h5>
+<h5>Difficulty: ⭐️</h5>
 <p>
 </p>
-<p>The average score on this problem was 89%.</p>
+<p>The average score on this problem was 92%.</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <h3 id="problem-5.4">Problem 5.4</h3>
-<p>(1.5 pts) In which option was probabilistic imputation conditional on
+<p>In which option was probabilistic imputation conditional on
 <code>"genre"</code> used?</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
@@ -885,6 +914,7 @@ aria-labelledby="heading5_4" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p><strong>Answer: </strong> Option A</p>
 <ul>
 <li><p>First, note that in Option B, all three missing values are filled
 in with the same number, 7. The mean of the observed values in
@@ -914,7 +944,7 @@ have been used in Option A.</p></li>
 <h5>Difficulty: ⭐️</h5>
 <p>
 </p>
-<p>The average score on this problem was 100%.</p>
+<p>The average score on this problem was 92%.</p>
 </div>
 </div>
 </div>
@@ -925,7 +955,7 @@ determine whether the missingness of <code>"genre rank"</code> depends
 on <code>"genre"</code>.</p>
 <p><br></p>
 <h3 id="problem-5.5">Problem 5.5</h3>
-<p>(1 pt*) Name a valid test statistic for this permutation test.</p>
+<p>Name a valid test statistic for this permutation test.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading5_5">
@@ -939,6 +969,7 @@ aria-labelledby="heading5_5" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p><strong>Answer: </strong> Total Variation Distance (TVD)</p>
 <p>We are comparing two distributions:</p>
 <ul>
 <li><p>The distribution of <code>"genre"</code> when
@@ -950,17 +981,21 @@ aria-labelledby="heading5_5" data-bs-parent="#accordionExample">
 above two distributions are also categorical. The only test statistic we
 have for comparing categorical distributions is the total variation
 distance (TVD).</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 63%.</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <h3 id="problem-5.6">Problem 5.6</h3>
-<p>(1.5 pts) Suppose we conclude that the missingness of
-<code>"genre rank"</code> likely <strong>depends on</strong>
-<code>"genre"</code>. Which imputation technique should we choose if we
-want to preserve the variance of the <code>"genre rank"</code>
-column?</p>
+<p>Suppose we conclude that the missingness of <code>"genre rank"</code>
+likely <strong>depends on</strong> <code>"genre"</code>. Which
+imputation technique should we choose if we want to preserve the
+variance of the <code>"genre rank"</code> column?</p>
 <ul class="task-list">
 <li><p><input type="radio" disabled="" /> Unconditional mean imputation</p></li>
 <li><p><input type="radio" disabled="" /> Mean imputation conditional on <code>"genre"</code></p></li>
@@ -980,6 +1015,8 @@ aria-labelledby="heading5_6" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p><strong>Answer: </strong> Option D: Probabilistic imputation
+conditional on <code>"genre"</code></p>
 <p>Mean imputation does not preserve the variance of the imputed values
 — since it fills in all missing numbers with the same number (either
 overall, or within each group), the variance of the imputed dataset is
@@ -990,25 +1027,24 @@ on <code>"genre"</code>, we perform probabilistic imputation
 <strong>conditional</strong> on <code>"genre"</code>, i.e. impute
 <code>"genre rank"</code>s randomly within each
 <code>"genre"</code>.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 75%.</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <h3 id="problem-5.7">Problem 5.7</h3>
-<p>(1.5 pts*) The DataFrame <code>trends</code> contains the the number
-of streams yesterday (<code>"yest"</code>) and the number of streams the
-day before yesterday (<code>"day_before_yest"</code>) for songs in
-Spotify’s Top 200. Remember, a song was in the Top 200 yesterday if it
-was one of the 200 most streamed songs yesterday.</p>
+<p>The DataFrame <code>trends</code> contains the the number of streams
+yesterday (<code>"yest"</code>) and the number of streams the day before
+yesterday (<code>"day_before_yest"</code>) for songs in Spotify’s Top
+200. Remember, a song was in the Top 200 yesterday if it was one of the
+200 most streamed songs yesterday.</p>
 <p>The first few rows of <code>trends</code> are shown below.</p>
-<div class="center">
-<figure>
-<img src="final-images/streams_yday.png" style="width:85.0%"
-alt="image" />
-<figcaption aria-hidden="true">image</figcaption>
-</figure>
-</div>
+<center><img src='../assets/images/sp22-final/streams_yday.png' width=85%></center>
 <p>The <code>"yest"</code> column contains missing values. What is the
 most likely missingness mechanism for <code>"yest"</code>?</p>
 <ul class="task-list">
@@ -1030,6 +1066,7 @@ aria-labelledby="heading5_7" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p><strong>Answer: </strong> Option B: NMAR or Option C: MAR</p>
 <p>We accepted two answers here — not missing at random and missing at
 random.</p>
 <ul>
@@ -1055,6 +1092,11 @@ will be missing just by looking at <code>"day_before_yest"</code>; this
 would need to be the case if <code>"yest"</code> were missing by
 design.</p></li>
 </ul>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 64%.</p>
 </div>
 </div>
 </div>
@@ -1098,8 +1140,8 @@ Canada.</p>
 document above.</p>
 <p><br></p>
 <h3 id="problem-6.1">Problem 6.1</h3>
-<p>(1.5 pts) How many leaf nodes are there in the DOM tree of the
-previous document — that is, how many nodes have no children?</p>
+<p>How many leaf nodes are there in the DOM tree of the previous
+document — that is, how many nodes have no children?</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading6_1">
@@ -1113,16 +1155,22 @@ aria-labelledby="heading6_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p><strong>Answer: </strong> 14</p>
 <p>There’s 1 <code>&lt;title&gt;</code>, 1 <code>&lt;h1&gt;</code>, 3
 <code>&lt;th&gt;</code>s, and 9 <code>&lt;td&gt;</code>s, adding up to
 14.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 64%.</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <h3 id="problem-6.2">Problem 6.2</h3>
-<p>(1.5 pts) What does the following line of code evaluate to?</p>
+<p>What does the following line of code evaluate to?</p>
 <pre><code>len(soup.find_all(&quot;td&quot;))</code></pre>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
@@ -1137,9 +1185,15 @@ aria-labelledby="heading6_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p><strong>Answer: </strong> 9</p>
 <p>As mentioned in the solution to the part above, there are 9
 <code>&lt;td&gt;</code> nodes, and <code>soup.find_all</code> finds them
 all.</p>
+<hr/>
+<h5>Difficulty: ⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 95%.</p>
 </div>
 </div>
 </div>
@@ -1161,11 +1215,18 @@ aria-labelledby="heading6_3" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p><strong>Answer: </strong> <code>["heading"]</code> or
+<code>"heading"</code></p>
 <p><code>soup.find("tr")</code> finds the first occurrence of a
 <code>&lt;tr&gt;</code> node, and <code>get("class")</code> accesses the
 value of its <code>"class"</code> attribute.</p>
 <p>Note that technically the answer is <code>["heading"]</code>, but
 <code>"heading"</code> received full credit too.</p>
+<hr/>
+<h5>Difficulty: ⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 96%.</p>
 </div>
 </div>
 </div>
@@ -1198,10 +1259,18 @@ aria-labelledby="heading6_4" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p><strong>Answer: </strong> a) <code>{'class' : 2}</code> b)
+<code>[2]</code> or <code>[-1]</code></p>
 <p>The logic is to find the <code>&lt;tr&gt;</code> node with the
-correct class attribute, then access the text of the node’s last
+correct class attribute (which we do by setting attr to
+<code>{'class' : 2}</code>), then access the text of the node’s last
 <code>&lt;td&gt;</code> child (since that’s where the song titles are
 stored).</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 66%.</p>
 </div>
 </div>
 </div>
@@ -1231,7 +1300,14 @@ aria-labelledby="heading6_5" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>The response could be JSON, it is not necessarily HTML.</p>
+<p><strong>Answer: </strong> Option B: False</p>
+<p>A status code of 200 means that the request has succeeded. Hence, the
+response could be JSON, it is not necessarily HTML.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 44%.</p>
 </div>
 </div>
 </div>
@@ -1239,7 +1315,6 @@ aria-labelledby="heading6_5" data-bs-parent="#accordionExample">
 <p><br></p>
 <hr />
 <h2 id="problem-7">Problem 7</h2>
-<p>[(12 pts)]</p>
 <p><br></p>
 <h3 id="problem-7.1">Problem 7.1</h3>
 <p>Each Spotify charts webpage is specific to a particular country (as
@@ -1287,17 +1362,17 @@ aria-labelledby="heading7_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>One solution is given below.</p>
-<div class="center">
-<figure>
-<img alt="image" src="final-images/regex101-1.png" style="width:60.0%"/>
-<figcaption aria-hidden="true">image</figcaption>
-</figure>
-</div>
+<p><strong>Answer: </strong> One solution is given below.</p>
+<center><img src="../assets/images/sp22-final/regex101-1.png" width="60%"/></center>
 <p>Click <a href="https://regex101.com/r/K88ddE/1">this link</a> to
 interact with the solution on regex101.</p>
 <p>While grading, we were not particular about students’ treatment of
 uppercase characters in country names.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 76%.</p>
 </div>
 </div>
 </div>
@@ -1329,12 +1404,28 @@ aria-labelledby="heading7_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer: </strong></p>
+<p><strong>Answer: </strong> Option B, Option C, and Option E</p>
+<p>Let’s first dissect the regular expression into manageable
+groups:</p>
+<ul>
+<li><code>"^"</code> matches the regex to its right at the start of a
+given string</li>
+<li><code>"\w{2,5}"</code> matches alphanumeric characters (a-Z, 0-9 and
+_) 2 to 5 times inclusively. (Note the that it does indeed match with
+the underscore)</li>
+<li><code>"."</code> is a basic wildcard</li>
+<li><code>"\d*"</code> matches digits (0-9), at least 0 times</li>
+<li><code>"\/"</code> matches the <code>"/"</code> character</li>
+<li><code>"[^A-Z5]{1,}"</code> matches any character that isn’t (A-Z or
+5) at least once.</li>
+</ul>
+<p>Thus using these rules, it’s not hard to verify that Options B, C and
+E are matches.</p>
 <hr/>
-<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<h5>Difficulty: ⭐️⭐️</h5>
 <p>
 </p>
-<p>The average score on this problem was 52%.</p>
+<p>The average score on this problem was 85%.</p>
 </div>
 </div>
 </div>
@@ -1368,11 +1459,17 @@ aria-labelledby="heading7_3" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<pre><code>1. `"\backslashb"` matches "word boundaries\", which are any locations that separate words. As such, there are 4 matches --- `["doja", "cat", "you", "right"]`.
+<p><strong>Answer: </strong> See below</p>
+<pre><code>1. `"\b"` matches "word boundaries\", which are any locations that separate words. As such, there are 4 matches --- `["doja", "cat", "you", "right"]`. Thus the answer is 4.
 
-2. The 3 matches are `[" cat", " you", " right"]`.
+2. The 3 matches are `[" cat", " you", " right"]`. Thus the answer is 3.
 
-3. This was quite tricky! The key is remembering that `re.findall` only finds **non-overlapping matches** (if you look at the solutions to the above two parts, none of the matches overlapped). Reading from left to right, there is only a single non-overlapping match: `"cat"`. Sure, `" you "` also matches the pattern, but since the space after `"cat"` was already "found\" by `re.findall`, it cannot be included in any future matches.</code></pre>
+3. This was quite tricky! The key is remembering that `re.findall` only finds **non-overlapping matches** (if you look at the solutions to the above two parts, none of the matches overlapped). Reading from left to right, there is only a single non-overlapping match: `"cat"`. Sure, `" you "` also matches the pattern, but since the space after `"cat"` was already "found\" by `re.findall`, it cannot be included in any future matches. Thus the answer is 1.</code></pre>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 60%.</p>
 </div>
 </div>
 </div>
@@ -1382,13 +1479,7 @@ aria-labelledby="heading7_3" data-bs-parent="#accordionExample">
 <h2 id="problem-8">Problem 8</h2>
 <p>The DataFrame below contains a corpus of four song titles, labeled
 from 0 to 3.</p>
-<div class="center">
-<figure>
-<img src="final-images/love_songs.png" style="width:50.0%"
-alt="image" />
-<figcaption aria-hidden="true">image</figcaption>
-</figure>
-</div>
+<center><img src='../assets/images/sp22-final/love_songs.png' width=50%></center>
 <p><br></p>
 <h3 id="problem-8.1">Problem 8.1</h3>
 <p>(1.5 pts) What is the TF-IDF of the word <code>"hate"</code> in Song
@@ -1407,6 +1498,7 @@ aria-labelledby="heading8_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p><strong>Answer: </strong> <span class="math inline">\frac{1}{6}</span></p>
 <p>There are 12 words in Song 0’s title, and 2 of them are
 <code>"hate"</code>, so the term frequency of <code>"hate"</code> in
 Song 0’s title is <span class="math inline">\frac{2}{12} =
@@ -1418,6 +1510,11 @@ document frequency of <code>"hate"</code> in the corpus is <span class="math inl
 <p>Then, the TF-IDF of <code>"hate"</code> in Song 0’s title is</p>
 <p><span class="math display">\text{TF-IDF} = \frac{1}{6} \cdot 1 =
 \frac{1}{6}</span></p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 86%.</p>
 </div>
 </div>
 </div>
@@ -1447,6 +1544,7 @@ aria-labelledby="heading8_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p><strong>Answer: </strong> Option A: <code>"i"</code></p>
 <p>It was not necessary to compute the TF-IDFs of all words in Song 0’s
 title to determine the answer. <span class="math inline">\text{tfidf}(t,
 d)</span> is high when <span class="math inline">t</span> occurs often
@@ -1455,6 +1553,11 @@ case with <code>"i"</code> — it is the most common word in Song 0’s
 title (with 4 appearances), but it does not appear in any other
 document. As such, it must be the word with the highest TF-IDF in Song
 0’s title.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 84%.</p>
 </div>
 </div>
 </div>
@@ -1487,8 +1590,9 @@ aria-labelledby="heading8_3" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p><strong>Answer: </strong> Option B</p>
 <p>Recall that <span class="math inline">\text{tfidf}(t, d) =
-\text{tf}(t, d) \cdot \text{idf}(t)</span>, and note that <span class="math inline">\text{tf}(t, d)</span> is just <span class="math inline">\frac{1}{\text{# words in $d$}} \cdot \text{bow}(t,
+\text{tf}(t, d) \cdot \text{idf}(t)</span>, and note that <span class="math inline">\text{tf}(t, d)</span> is just <span class="math inline">\frac{1}{\text{# words in d}} \cdot \text{bow}(t,
 d)</span>. Thus, <span class="math inline">\text{tfidf}(t, d)</span> is
 0 is if either <span class="math inline">\text{bow}(t, d) = 0</span> or
 <span class="math inline">\text{idf}(t) = 0</span>.</p>
@@ -1498,6 +1602,11 @@ is true. However, if <span class="math inline">\text{tfidf}(t, d) =
 0</span>, it could be the case that <span class="math inline">\text{bow}(t, d) &gt; 0</span> and <span class="math inline">\text{idf}(t) = 0</span> (which happens when term
 <span class="math inline">t</span> is in every document), so the first
 option is not necessarily true.</p>
+<hr/>
+<h5>Difficulty: ⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 91%.</p>
 </div>
 </div>
 </div>
@@ -1506,12 +1615,7 @@ option is not necessarily true.</p>
 <h3 id="problem-8.4">Problem 8.4</h3>
 <p>(1.5 pts) Below, we’ve encoded the corpus from the previous page
 using the bag-of-words model.</p>
-<div class="center">
-<figure>
-<img src="final-images/bag-words.png" style="width:70.0%" alt="image" />
-<figcaption aria-hidden="true">image</figcaption>
-</figure>
-</div>
+<center><img src='../assets/images/sp22-final/bag_words.png' width=70%></center>
 <p>Note that in the above DataFrame, each row has been normalized to
 have a length of 1 (i.e. <span class="math inline">|\vec{v}| = 1</span>
 for all four row vectors).</p>
@@ -1535,6 +1639,7 @@ aria-labelledby="heading8_4" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p><strong>Answer: </strong> Option B: Song 2</p>
 <p>Recall, the cosine similarity between two vectors <span class="math inline">\vec{a}, \vec{b}</span> is computed as</p>
 <p><span class="math display">\cos \theta = \frac{\vec{a} \cdot
 \vec{b}}{| \vec{a} | | \vec{b}|}</span></p>
@@ -1553,6 +1658,11 @@ can compute dot products directly.</p>
 during the exam), it is clear that the dot product between Song 0’s
 title and Song 2’s title is the highest, hence Song 2’s title is the
 most similar to Song 0’s.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 87%.</p>
 </div>
 </div>
 </div>
@@ -1589,7 +1699,7 @@ aria-labelledby="heading9" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer: </strong></p>
+<p><strong>Answer: </strong> <span class="math inline">\frac{1}{12}</span></p>
 <p>Since we are using a trigram model, to compute the conditional
 probability of a token, we must condition on the prior two tokens. For
 the first and second tokens, <code>"name"</code> and <code>"is"</code>,
@@ -1625,7 +1735,7 @@ name}) \cdot P(\text{what $|$ name is}) \cdot P(\text{my $|$ is what})
 <h5>Difficulty: ⭐️⭐️⭐️</h5>
 <p>
 </p>
-<p>The average score on this problem was 52%.</p>
+<p>The average score on this problem was 57%.</p>
 </div>
 </div>
 </div>
@@ -1655,13 +1765,7 @@ had on Spotify in the first month it was released</p></li>
 <p>The first few rows of <code>new_releases</code> are shown below
 (though <code>new_releases</code> has many more rows than are shown
 below).</p>
-<div class="center">
-<figure>
-<img src="final-images/new_releases.png" style="width:75.0%"
-alt="image" />
-<figcaption aria-hidden="true">image</figcaption>
-</figure>
-</div>
+<center><img src='../assets/images/sp22-final/new_releases.png' width=75%></center>
 <p>We decide to build a linear regression model that predicts
 <code>"first_month"</code> given all other information. To start, we
 conduct a train-test split, splitting <code>new_releases</code> into
@@ -1698,6 +1802,7 @@ aria-labelledby="heading10_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p><strong>Answer: </strong> False</p>
 <p>For regression models, the <code>score</code> method computes <span class="math inline">R^2</span>. A higher <span class="math inline">R^2</span> indicates a better linear fit. If the
 training <span class="math inline">R^2</span> is much greater than the
 testing <span class="math inline">R^2</span>, that is indication of
@@ -1707,6 +1812,11 @@ much less than the testing <span class="math inline">R^2</span>, which
 is not indication of overfitting (it is an indication that your model,
 luckily, performs much better on unseen data than it does on observed
 data!).</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 81%.</p>
 </div>
 </div>
 </div>
@@ -1734,6 +1844,7 @@ aria-labelledby="heading10_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p><strong>Answer: </strong> 100</p>
 <p>We are given that there are <span class="math inline">n=50</span>
 data points, and that the sum of squared errors <span class="math inline">\sum_{i = 1}^n (y_i - H(x_i))^2</span> is <span class="math inline">500{,}000</span>. Then:</p>
 <p><span class="math display">\begin{aligned}
@@ -1743,6 +1854,11 @@ H(x_i))^2} \\
     &amp;= \sqrt{10{,}000}
     \\
     &amp;= 100\end{aligned}</span></p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 87%.</p>
 </div>
 </div>
 </div>
@@ -1787,6 +1903,7 @@ aria-labelledby="heading10_3" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p><strong>Answer: </strong> 7 and 9</p>
 <p>There are 5 unique values of <code>"genre"</code> and 4 unique values
 of <code>"rec_label"</code>, so if we create a single one-hot encoded
 column for each one, there would be <span class="math inline">5 + 4 =
@@ -1795,6 +1912,11 @@ column for each one, there would be <span class="math inline">5 + 4 =
 <p>If we drop one one-hot-encoded column per category, which is what
 <code>drop="first"</code> does, then we only have <span class="math inline">(5 - 1) + (4 - 1) = 7</span> one-hot encoded columns
 (which there are in <code>lr_drop</code>).</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 75%.</p>
 </div>
 </div>
 </div>
@@ -1823,10 +1945,16 @@ aria-labelledby="heading10_4" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p><strong>Answer: </strong> Option B: roughly equal to</p>
 <p>Multicollinearity does not impact a linear model’s ability to make
 predictions (even on unseen data), it only impacts the interpretability
 of its coefficients. As such, the testing RMSE of both Model 3 and Model
 4 will be roughly the same.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 70%.</p>
 </div>
 </div>
 </div>
@@ -1868,6 +1996,7 @@ aria-labelledby="heading10_5" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p><strong>Answer: </strong> <span class="math inline">\frac{1}{1000}</span></p>
 <p>“My favorite problem on the exam!" -Suraj</p>
 <p>Model 4 is made up of 11 features, i.e. 11 columns.</p>
 <ul>
@@ -1901,6 +2030,11 @@ Billy’s prediction are the same, other than the coefficients on
     \frac{1}{1000} &amp;= d_2 - d_1\end{aligned}</span></p>
 <p>Thus, the absolute difference between their songs’
 <code>"danceability"</code>s is <span class="math inline">\frac{1}{1000}</span>.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 70%.</p>
 </div>
 </div>
 </div>
@@ -1947,6 +2081,7 @@ aria-labelledby="heading11_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p><strong>Answer: </strong> 2400</p>
 <p>There are <span class="math inline">12 \cdot 10 \cdot 5 = 600</span>
 combinations of hyperparameters. For each combination of
 hyperparameters, we will train a <code>BillyClassifier</code> with that
@@ -1954,6 +2089,11 @@ combination of hyperparameters <span class="math inline">k = 4</span>
 times. So, the total number of <code>BillyClassifier</code> instances
 that will be trained is <span class="math inline">600 \cdot 4 =
 2400</span>.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 73%.</p>
 </div>
 </div>
 </div>
@@ -1977,6 +2117,7 @@ aria-labelledby="heading11_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p><strong>Answer: </strong> 600, 200</p>
 <p>Since we performed <span class="math inline">k=4</span>
 cross-validation, we must divide the training set into four disjoint
 groups each of the same size. <span class="math inline">\frac{800}{4} =
@@ -1984,6 +2125,11 @@ groups each of the same size. <span class="math inline">\frac{800}{4} =
 validation, one group is used for validation, and the other three are
 used for training, so the validation set size is 200 and the training
 set size is <span class="math inline">200 \cdot 3 = 600</span>.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 77%.</p>
 </div>
 </div>
 </div>
@@ -1996,15 +2142,23 @@ set size is <span class="math inline">200 \cdot 3 = 600</span>.</p>
 <p>Select all true statements below.</p>
 <ul class="task-list">
 <li><p><input type="checkbox" disabled="" /> The specific combination of hyperparameters in
-<code>best_params_</code> had</p></li>
+<code>best_params_</code> had the highest average training accuracy
+among all combinations of hyperparameters in <code>hyp_grid</code>.</p></li>
 <li><p><input type="checkbox" disabled="" /> The specific combination of hyperparameters in
-<code>best_params_</code> had</p></li>
+<code>best_params_</code> had the highest average validation accuracy
+among all combinations of hyperparameters in <code>hyp_grid</code>.</p></li>
 <li><p><input type="checkbox" disabled="" /> The specific combination of hyperparameters in
-<code>best_params_</code> had</p></li>
+<code>best_params_</code> had the highest training accuracy among all
+combinations of hyperparameters in <code>hyp_grid</code>, in each of the
+4 folds of the training data.</p></li>
 <li><p><input type="checkbox" disabled="" /> The specific combination of hyperparameters in
-<code>best_params_</code> had</p></li>
+<code>best_params_</code> had the highest validation accuracy among all
+combinations of hyperparameters in <code>hyp_grid</code>, in each of the
+4 folds of the training data.</p></li>
 <li><p><input type="checkbox" disabled="" /> A <code>BillyClassifier</code> that is fit using the specific
-combination of</p></li>
+combination of hyperparameters in <code>best_params_</code> is
+guaranteed to have the best accuracy on unseen testing data among all
+combinations of hyperparameters in <code>hyp_grid</code>.</p></li>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
@@ -2019,11 +2173,17 @@ aria-labelledby="heading11_3" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p><strong>Answer: </strong> Option B</p>
 <p>When performing cross validation, we select the combination of
 hyperparameters that had the highest <strong>average validation
 accuracy</strong> across all four folds of the data. That is, by
 definition, how <code>best_params_</code> came to be. None of the other
 options are guaranteed to be true.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 82%.</p>
 </div>
 </div>
 </div>
@@ -2034,17 +2194,11 @@ options are guaranteed to be true.</p>
 <p>After fitting our <code>BillyClassifier</code> from the previous
 question, we use it to make predictions on an unseen test set. Our
 results are summarized in the following confusion matrix.</p>
-<div class="center">
-<figure>
-<img src="final-images/confusion-2.png" style="width:70.0%"
-alt="image" />
-<figcaption aria-hidden="true">image</figcaption>
-</figure>
-</div>
+<center><img src='../assets/images/sp22-final/confusion-2.png' width=70%></center>
 <p><br></p>
 <h3 id="problem-12.1">Problem 12.1</h3>
-<p>(1.5 pts) What is the recall of our classifier? Give your answer as a
-fraction (it does not need to be simplified).</p>
+<p>What is the recall of our classifier? Give your answer as a fraction
+(it does not need to be simplified).</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading12_1">
@@ -2058,16 +2212,22 @@ aria-labelledby="heading12_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p><strong>Answer: </strong> <span class="math inline">\frac{35}{57}</span></p>
 <p>There are 105 true positives and 66 false negatives. Hence, the
 recall is <span class="math inline">\frac{105}{105 + 66} =
 \frac{105}{171} = \frac{35}{57}</span>.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 89%.</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <h3 id="problem-12.2">Problem 12.2</h3>
-<p>(2.5 pts) The accuracy of our classifier is <span
+<p>The accuracy of our classifier is <span
 class="math inline">\frac{69}{117}</span>. How many <strong>true
 negatives</strong> did our classifier have? Give your answer as an
 integer.</p>
@@ -2084,6 +2244,7 @@ aria-labelledby="heading12_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p><strong>Answer: </strong> 33</p>
 <p>Let <span class="math inline">x</span> be the number of true
 negatives. The number of correctly classified data points is <span class="math inline">105 + x</span>, and the total number of data points
 is <span class="math inline">105 + 30 + 66 + x = 201 + x</span>. Hence,
@@ -2095,6 +2256,11 @@ x}</span>.</p>
 Multiply <span class="math inline">\frac{69}{117}</span> by <span class="math inline">\frac{2}{2}</span> to yield <span class="math inline">\frac{138}{234}</span>. Then, conveniently, setting
 <span class="math inline">x = 33</span> in <span class="math inline">\frac{105 + x}{201 + x}</span> also yields <span class="math inline">\frac{138}{234}</span>, so <span class="math inline">x = 33</span> and hence the number of true negatives
 our classifier has is 33.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 84%.</p>
 </div>
 </div>
 </div>
@@ -2121,6 +2287,7 @@ aria-labelledby="heading12_3" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p><strong>Answer: </strong> True</p>
 <p>Remember that <span class="math inline">\text{precision} =
 \frac{TP}{TP + FP}</span> and <span class="math inline">\text{recall} =
 \frac{TP}{TP + FN}</span>. In order for precision to be the same as
@@ -2133,6 +2300,11 @@ must have</p>
 \cdot FP</span></p>
 <p>2 times any integer must be an even integer, so the number of
 mistakes must be even.</p>
+<hr/>
+<h5>Difficulty: ⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 100%.</p>
 </div>
 </div>
 </div>
@@ -2165,6 +2337,8 @@ aria-labelledby="heading12_4" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p><strong>Answer: </strong> Option B: low precision and high
+recall.</p>
 <p>Our classifier is good at identifying when the input stream is “Kiss
 Me thru the Phone", i.e. it is good at identifying true positives
 amongst all positives. This means it has high recall.</p>
@@ -2173,6 +2347,11 @@ words, it often incorrectly predicts “Kiss Me thru the Phone" when
 that’s not what the input stream is — it has many false positives, so
 its precision is low.</p>
 <p>Thus, our classifier has low precision and high recall.</p>
+<hr/>
+<h5>Difficulty: ⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 91%.</p>
 </div>
 </div>
 </div>

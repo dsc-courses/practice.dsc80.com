@@ -29,11 +29,15 @@ instance trained in total? Give your answer as an integer.
 
 # BEGIN SOLN
 
+**Answer: ** 2400
+
 There are $12 \cdot 10 \cdot 5 = 600$ combinations of hyperparameters.
 For each combination of hyperparameters, we will train a
 `BillyClassifier` with that combination of hyperparameters $k = 4$
 times. So, the total number of `BillyClassifier` instances that will be
 trained is $600 \cdot 4 = 2400$.
+
+<average>73</average>
 
 # END SOLN
 
@@ -50,12 +54,16 @@ size of validation set =
 
 # BEGIN SOLN
 
+**Answer: ** 600, 200
+
 Since we performed $k=4$ cross-validation, we must divide the training
 set into four disjoint groups each of the same size.
 $\frac{800}{4} = 200$, so each group is of size 200. Each time we
 perform cross validation, one group is used for validation, and the
 other three are used for training, so the validation set size is 200 and
 the training set size is $200 \cdot 3 = 600$.
+
+<average>77</average>
 
 # END SOLN
 
@@ -70,31 +78,23 @@ attribute is
 
 Select all true statements below.
 
-[ ] The specific combination of hyperparameters in `best_params_` had
-the highest average training accuracy among all combinations of
-hyperparameters in `hyp_grid`.
-[ ] The specific combination of hyperparameters in `best_params_` had
-the highest average validation accuracy among all combinations of
-hyperparameters in `hyp_grid`.
-[ ] The specific combination of hyperparameters in `best_params_` had
-the highest training accuracy among all combinations of hyperparameters
-in `hyp_grid`, in each of the 4 folds of the training data.
-[ ] The specific combination of hyperparameters in `best_params_` had
-the highest validation accuracy among all combinations of
-hyperparameters in `hyp_grid`, in each of the 4 folds of the training
-data.
-[ ] A `BillyClassifier` that is fit using the specific combination of
-hyperparameters in `best_params_` is guaranteed to have the best
-accuracy on unseen testing data among all combinations of
-hyperparameters in `hyp_grid`.
+[ ] The specific combination of hyperparameters in `best_params_` had the highest average training accuracy among all combinations of hyperparameters in `hyp_grid`.
+[ ] The specific combination of hyperparameters in `best_params_` had the highest average validation accuracy among all combinations of hyperparameters in `hyp_grid`.
+[ ] The specific combination of hyperparameters in `best_params_` had the highest training accuracy among all combinations of hyperparameters in `hyp_grid`, in each of the 4 folds of the training data.
+[ ] The specific combination of hyperparameters in `best_params_` had the highest validation accuracy among all combinations of hyperparameters in `hyp_grid`, in each of the 4 folds of the training data.
+[ ] A `BillyClassifier` that is fit using the specific combination of hyperparameters in `best_params_` is guaranteed to have the best accuracy on unseen testing data among all combinations of hyperparameters in `hyp_grid`.
 
 # BEGIN SOLN
+
+**Answer: ** Option B
 
 When performing cross validation, we select the combination of
 hyperparameters that had the highest **average validation accuracy**
 across all four folds of the data. That is, by definition, how
 `best_params_` came to be. None of the other options are guaranteed to
 be true.
+
+<average>82</average>
 
 # END SOLN
 

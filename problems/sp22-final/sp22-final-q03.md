@@ -2,7 +2,7 @@
 
 # BEGIN SUBPROB
 
-(3 pts\*) Billy and Daisy each decide what songs to stream by rolling
+Billy and Daisy each decide what songs to stream by rolling
 dice. Billy rolls a six-sided die 36 times and sees the same number of
 1s, 2s, 3s, 4s, 5s, and 6s. Daisy rolls a six-sided die 72 times and
 sees 36 1s, 18 4s, and 18 6s.
@@ -34,7 +34,7 @@ $$\begin{aligned}
 
 # BEGIN SUBPROB
 
-(2 pts\*) Consider two categorical distributions, each made up of the
+Consider two categorical distributions, each made up of the
 same $n$ categories. Given no other information, what is the smallest
 possible TVD between the two distributions, and what is the largest
 possible TVD between the two distributions? Give both answers as
@@ -63,9 +63,8 @@ case, the TVD is 1.
 
 # BEGIN SUBPROB
 
-(1 pt\*) Consider the following pair of distributions.
+Consider the following pair of distributions.
 
-::: center
 <center><img src='../assets/images/sp22-final/dists.png' width=35%></center>
 
 Suppose we want to perform a permutation test to test whether the two
@@ -79,7 +78,7 @@ statistic is most likely to yield a significant result?
 
 # BEGIN SOLN
 
-**Answer: ** Option 3
+**Answer: ** Option C
 
 -   These are two quantitative distributions, and the total variation
     distance only applies for categorical distributions.
