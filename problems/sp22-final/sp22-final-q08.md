@@ -7,7 +7,7 @@ The DataFrame below contains a corpus of four song titles, labeled from
 
 # BEGIN SUBPROB
 
-(1.5 pts) What is the TF-IDF of the word `"hate"` in Song 0's title? Use
+What is the TF-IDF of the word `"hate"` in Song 0's title? Use
 base 2 in your logarithm, and give your answer as a simplified fraction.
 
 # BEGIN SOLN
@@ -34,7 +34,7 @@ $$\text{TF-IDF} = \frac{1}{6} \cdot 1 = \frac{1}{6}$$
 
 # BEGIN SUBPROB
 
-(1.5 pts) Which word in Song 0's title has the highest TF-IDF?
+Which word in Song 0's title has the highest TF-IDF?
 
 ( ) `"i"`
 ( ) `"hate"`
@@ -62,7 +62,7 @@ with the highest TF-IDF in Song 0's title.
 
 # BEGIN SUBPROB
 
-(1.5 pts) Let $\text{tfidf}(t, d)$ be the TF-IDF of term $t$ in document
+Let $\text{tfidf}(t, d)$ be the TF-IDF of term $t$ in document
 $d$, and let $\text{bow}(t, d)$ be the number of occurrences of term $t$
 in document $d$.
 
@@ -96,7 +96,7 @@ $t$ is in every document), so the first option is not necessarily true.
 
 # BEGIN SUBPROB
 
-(1.5 pts) Below, we've encoded the corpus from the previous page using
+Below, we've encoded the corpus from the previous page using
 the bag-of-words model.
 
 <center><img src='../assets/images/sp22-final/bag_words.png' width=70%></center>
