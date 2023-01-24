@@ -2,11 +2,13 @@
 
 Consider the following snippet of code.
 
-    pivoted = students.assign(Admit=students["Admit"] == "Y") \
-                      .pivot_table(index="High School", 
-                                   columns="University", 
-                                   values="Admit", 
-                                   aggfunc="sum")
+```py
+pivoted = students.assign(Admit=students["Admit"] == "Y") \
+                    .pivot_table(index="High School", 
+                                columns="University", 
+                                values="Admit", 
+                                aggfunc="sum")
+```
 
 Some of the rows and columns of `pivoted` are shown below.
 

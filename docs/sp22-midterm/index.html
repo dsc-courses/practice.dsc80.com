@@ -134,6 +134,28 @@ calculators were allowed. Students had <strong>50 minutes</strong> to
 take this exam.</p>
 <hr />
 <p>Welcome to the Midterm Exam for DSC 80 in Spring 2022!</p>
+<p>Throughout this exam, we will be using to the following dataframe
+<code>students</code>, which contains various information about high
+school students and the university/universities they applied to.</p>
+<p>The columns are:</p>
+<ul>
+<li><code>'Name' (str)</code>: the name of the student.</li>
+<li><code>'High School' (str)</code>: the High School that the student
+attended.</li>
+<li><code>'Email' (str)</code>: the email of the student.</li>
+<li><code>'GPA' (float)</code>: the GPA of the student.</li>
+<li><code>'AP' (int)</code>: the number of AP exams that the student
+took.</li>
+<li><code>'University' (str)</code>: the name of the university that the
+student applied to.</li>
+<li><code>'Admit' (str)</code>: the acceptance status of the student
+(where ‘Y’ denotes that they were accepted to the university and ‘N’
+denotes that they were not).</li>
+</ul>
+<p>The rows of <code>'student'</code> are arranged in no particular
+order. The first eight rows of <code>'student'</code> are shown below
+(though <code>'student'</code> has many more rows than pictured
+here).</p>
 <hr />
 <h2 id="problem-1">Problem 1</h2>
 <p><br></p>
@@ -279,24 +301,24 @@ aria-labelledby="heading3" data-bs-parent="#accordionExample">
 <code>max_AP</code> to the maximum number of APs taken by a student who
 was rejected by UC San Diego?</p>
 <p>Option 1:</p>
-<pre><code>cond1 = students[&quot;Admit&quot;] == &quot;N&quot;
-cond2 = students[&quot;University&quot;] == &quot;UC San Diego&quot;
-max_AP = students.loc[cond1 &amp; cond2, &quot;APs&quot;].sort_values().iloc[-1]</code></pre>
+<div class="sourceCode" id="cb2"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>cond1 <span class="op">=</span> students[<span class="st">&quot;Admit&quot;</span>] <span class="op">==</span> <span class="st">&quot;N&quot;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>cond2 <span class="op">=</span> students[<span class="st">&quot;University&quot;</span>] <span class="op">==</span> <span class="st">&quot;UC San Diego&quot;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>max_AP <span class="op">=</span> students.loc[cond1 <span class="op">&amp;</span> cond2, <span class="st">&quot;APs&quot;</span>].sort_values().iloc[<span class="op">-</span><span class="dv">1</span>]</span></code></pre></div>
 <p>Option 2:</p>
-<pre><code>cond1 = students[&quot;Admit&quot;] == &quot;N&quot;
-cond2 = students[&quot;University&quot;] == &quot;UC San Diego&quot;
-d3 = students.groupby([&quot;University&quot;, &quot;Admit&quot;]).max().reset_index()
-max_AP = d3.loc[cond1 &amp; cond2, &quot;APs&quot;].iloc[0]</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>cond1 <span class="op">=</span> students[<span class="st">&quot;Admit&quot;</span>] <span class="op">==</span> <span class="st">&quot;N&quot;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>cond2 <span class="op">=</span> students[<span class="st">&quot;University&quot;</span>] <span class="op">==</span> <span class="st">&quot;UC San Diego&quot;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>d3 <span class="op">=</span> students.groupby([<span class="st">&quot;University&quot;</span>, <span class="st">&quot;Admit&quot;</span>]).<span class="bu">max</span>().reset_index()</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>max_AP <span class="op">=</span> d3.loc[cond1 <span class="op">&amp;</span> cond2, <span class="st">&quot;APs&quot;</span>].iloc[<span class="dv">0</span>]</span></code></pre></div>
 <p>Option 3:</p>
-<pre><code>p = students.pivot_table(index=&quot;Admit&quot;, 
-                         columns=&quot;University&quot;, 
-                         values=&quot;APs&quot;, 
-                         aggfunc=&quot;max&quot;)
-max_AP = p.loc[&quot;N&quot;, &quot;UC San Diego&quot;]</code></pre>
+<div class="sourceCode" id="cb4"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> students.pivot_table(index<span class="op">=</span><span class="st">&quot;Admit&quot;</span>, </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>                            columns<span class="op">=</span><span class="st">&quot;University&quot;</span>, </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>                            values<span class="op">=</span><span class="st">&quot;APs&quot;</span>, </span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>                            aggfunc<span class="op">=</span><span class="st">&quot;max&quot;</span>)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>max_AP <span class="op">=</span> p.loc[<span class="st">&quot;N&quot;</span>, <span class="st">&quot;UC San Diego&quot;</span>]</span></code></pre></div>
 <p>Option 4:</p>
-<pre><code># .last() returns the element at the end of a Series it is called on
-groups = students.sort_values([&quot;APs&quot;, &quot;Admit&quot;]).groupby(&quot;University&quot;)
-max_AP = groups[&quot;APs&quot;].last()[&quot;UC San Diego&quot;]</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># .last() returns the element at the end of a Series it is called on</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>groups <span class="op">=</span> students.sort_values([<span class="st">&quot;APs&quot;</span>, <span class="st">&quot;Admit&quot;</span>]).groupby(<span class="st">&quot;University&quot;</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>max_AP <span class="op">=</span> groups[<span class="st">&quot;APs&quot;</span>].last()[<span class="st">&quot;UC San Diego&quot;</span>]</span></code></pre></div>
 <p><strong>Select all that apply.</strong> There is at least one correct
 option.</p>
 <ul class="task-list">
@@ -362,10 +384,10 @@ student, indexed by <code>"Email"</code>, that contains their
 <code>"Name"</code>, <code>"High School"</code>, <code>"GPA"</code>, and
 <code>"APs"</code>.</p>
 <p>One attempt to create such a DataFrame is below.</p>
-<pre><code>students.groupby(&quot;Email&quot;).aggregate({&quot;Name&quot;: &quot;max&quot;,
-                                     &quot;High School&quot;: &quot;mean&quot;,
-                                     &quot;GPA&quot;: &quot;mean&quot;,
-                                     &quot;APs&quot;: &quot;max&quot;})</code></pre>
+<div class="sourceCode" id="cb6"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>students.groupby(<span class="st">&quot;Email&quot;</span>).aggregate({<span class="st">&quot;Name&quot;</span>: <span class="st">&quot;max&quot;</span>,</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>                                        <span class="st">&quot;High School&quot;</span>: <span class="st">&quot;mean&quot;</span>,</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>                                        <span class="st">&quot;GPA&quot;</span>: <span class="st">&quot;mean&quot;</span>,</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>                                        <span class="st">&quot;APs&quot;</span>: <span class="st">&quot;max&quot;</span>})</span></code></pre></div>
 <p>There is exactly one issue with the line of code above. <strong>In
 one sentence</strong>, explain what needs to be changed about the line
 of code above so that the desired DataFrame is created.</p>
@@ -399,11 +421,11 @@ fix the issue.</p>
 <hr />
 <h2 id="problem-6">Problem 6</h2>
 <p>Consider the following snippet of code.</p>
-<pre><code>pivoted = students.assign(Admit=students[&quot;Admit&quot;] == &quot;Y&quot;) \
-                  .pivot_table(index=&quot;High School&quot;, 
-                               columns=&quot;University&quot;, 
-                               values=&quot;Admit&quot;, 
-                               aggfunc=&quot;sum&quot;)</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>pivoted <span class="op">=</span> students.assign(Admit<span class="op">=</span>students[<span class="st">&quot;Admit&quot;</span>] <span class="op">==</span> <span class="st">&quot;Y&quot;</span>) <span class="op">\</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>                    .pivot_table(index<span class="op">=</span><span class="st">&quot;High School&quot;</span>, </span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>                                columns<span class="op">=</span><span class="st">&quot;University&quot;</span>, </span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>                                values<span class="op">=</span><span class="st">&quot;Admit&quot;</span>, </span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>                                aggfunc<span class="op">=</span><span class="st">&quot;sum&quot;</span>)</span></code></pre></div>
 <p>Some of the rows and columns of <code>pivoted</code> are shown
 below.</p>
 <center><img src='../assets/images/sp22-midterm/pivot.png' width=55%></center>
@@ -467,10 +489,10 @@ be the DataFrame with 3 rows and 2 columns shown below
 <center><img src='../assets/images/sp22-midterm/small_students.png' width=30%></center>
 <center><img src='../assets/images/sp22-midterm/districts.png' width=30%></center>
 <p>Consider the DataFrame <code>merged</code>, defined below.</p>
-<pre><code>    merged = small_students.merge(districts, 
-                                  left_on=&quot;High School&quot;, 
-                                  right_on=&quot;school&quot;, 
-                                  how=&quot;outer&quot;)</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>merged <span class="op">=</span> small_students.merge(districts, </span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>                                left_on<span class="op">=</span><span class="st">&quot;High School&quot;</span>, </span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>                                right_on<span class="op">=</span><span class="st">&quot;school&quot;</span>, </span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>                                how<span class="op">=</span><span class="st">&quot;outer&quot;</span>)</span></code></pre></div>
 <p><br></p>
 <h3 id="problem-7.1">Problem 7.1</h3>
 <p>How many total <code>NaN</code> values does <code>merged</code>
@@ -539,7 +561,7 @@ aria-labelledby="heading7_2" data-bs-parent="#accordionExample">
 <h2 id="problem-8">Problem 8</h2>
 <p>Let’s consider admissions at UC San Diego and UC Santa Barbara for
 two high schools in particular.</p>
-<center><img src='../assets/images/sp22-midterm/simpson.png' width=70%></center>
+<center><img src='../assets/images/sp22-midterm/simpson.png' width=40%></center>
 <p>For instance, the above table tells us that 200 students from La
 Jolla Private applied to UC San Diego, and 50 were admitted.</p>
 <p>What is the largest possible integer value of <span
@@ -948,17 +970,19 @@ favor of heads.</p></li>
 </ul>
 <p>As her test statistic, Valentina uses the number of heads. She
 defines the 2-D array <code>A</code> as follows:</p>
-<pre><code># .flatten() reshapes from 50 x 2 to 1 x 100
-A = np.array([
-    np.array([np.random.permutation([0, 1]) for _ in range(50)]).flatten() 
-    for _ in range(3000)
-])</code></pre>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode py"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># .flatten() reshapes from 50 x 2 to 1 x 100</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    np.array([np.random.permutation([<span class="dv">0</span>, <span class="dv">1</span>]) <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">50</span>)]).flatten() </span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3000</span>)</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>])</span></code></pre></div>
 <p>She also defines the 2-D array <code>B</code> as follows:</p>
-<pre><code># .flatten() reshapes from 50 x 2 to 1 x 100
-B = np.array([
-    np.array([np.random.choice([0, 1], 2) for _ in range(50)]).flatten() 
-    for _ in range(3000)
-])</code></pre>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode py"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># .flatten() reshapes from 50 x 2 to 1 x 100</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>B <span class="op">=</span> np.array([</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    np.array([np.random.choice([<span class="dv">0</span>, <span class="dv">1</span>], <span class="dv">2</span>) <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">50</span>)]).flatten() </span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3000</span>)</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>])</span></code></pre></div>
 <p>Below, we see a histogram of the distribution of her test
 statistics.</p>
 <center><img src='../assets/images/sp22-midterm/hist.png' width=45%></center>

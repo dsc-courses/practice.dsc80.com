@@ -9,10 +9,12 @@ with 3 rows and 2 columns shown below `small_students`.
 
 Consider the DataFrame `merged`, defined below.
 
-        merged = small_students.merge(districts, 
-                                      left_on="High School", 
-                                      right_on="school", 
-                                      how="outer")
+```py
+merged = small_students.merge(districts, 
+                                left_on="High School", 
+                                right_on="school", 
+                                how="outer")
+```
 
 # BEGIN SUBPROB
 

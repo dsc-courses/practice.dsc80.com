@@ -43,22 +43,24 @@ purposes of this question, you can assume that no two different
 `"artist_names"` have songs with the same `"track_name"`; that is, each
 `"track_name"` belongs to a unique `"artist_names"`.
 
-    all_years = # DataFrame that contains all 10 years' charts
+```py
+all_years = # DataFrame that contains all 10 years' charts
 
-    # Helper function to compute the number of 
-    # unique Hip-Hop/Rap songs in a given DataFrame
-    def unique_rap(df):
-        rap_only = df[df["genre"] == "Hip-Hop/Rap"]
-        return rap_only.groupby(__(a)__).count()__(b)__[0]
+# Helper function to compute the number of 
+# unique Hip-Hop/Rap songs in a given DataFrame
+def unique_rap(df):
+    rap_only = df[df["genre"] == "Hip-Hop/Rap"]
+    return rap_only.groupby(__(a)__).count()__(b)__[0]
 
-    count_2021 = unique_rap(all_years[all_years["year"] == 2021])
-    counts = np.array([])
+count_2021 = unique_rap(all_years[all_years["year"] == 2021])
+counts = np.array([])
 
-    for _ in range(10000):
-        samp = all_years.sample(__(c)__, replace=True)
-        counts = np.append(counts, unique_rap(samp))
-        
-    p_val = (__(d)__).mean()
+for _ in range(10000):
+    samp = all_years.sample(__(c)__, replace=True)
+    counts = np.append(counts, unique_rap(samp))
+    
+p_val = (__(d)__).mean()
+```
         
 
 # BEGIN SUBPROB

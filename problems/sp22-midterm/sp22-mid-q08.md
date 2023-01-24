@@ -3,7 +3,7 @@
 Let's consider admissions at UC San Diego and UC Santa Barbara for two
 high schools in particular.
 
-<center><img src='../assets/images/sp22-midterm/simpson.png' width=70%></center>
+<center><img src='../assets/images/sp22-midterm/simpson.png' width=40%></center>
 
 For instance, the above table tells us that 200 students from La Jolla
 Private applied to UC San Diego, and 50 were admitted.

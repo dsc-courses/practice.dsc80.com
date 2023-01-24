@@ -10,11 +10,13 @@ For our classifier, we decide to use a brand-new model built into
 hyperparameters that we'd like to tune. Below, we show a dictionary
 containing the values for each hyperparameter that we'd like to try:
 
-    hyp_grid = {
-      "radius": [0.1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 100], # 12 total
-      "inflection": [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4], # 10 total
-      "color": ["red", "yellow", "green", "blue", "purple"] # 5 total
-    }
+```py
+hyp_grid = {
+  "radius": [0.1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 100], # 12 total
+  "inflection": [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4], # 10 total
+  "color": ["red", "yellow", "green", "blue", "purple"] # 5 total
+}
+```
 
 To find the best combination of hyperparameters for our
 `BillyClassifier`, we first conduct a train-test split, which we use to
@@ -74,7 +76,9 @@ the training set size is $200 \cdot 3 = 600$.
 Suppose that after fitting a `GridSearchCV` instance, its `best_params_`
 attribute is
 
-        {"radius": 8, "inflection": 4, "color": "blue"}
+```py
+{"radius": 8, "inflection": 4, "color": "blue"}
+```
 
 Select all true statements below.
 

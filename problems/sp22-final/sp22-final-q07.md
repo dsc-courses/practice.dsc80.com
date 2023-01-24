@@ -28,14 +28,16 @@ names from valid datestrings**. If the datestring does not follow the
 above format, it should not extract anything. Example behavior is given
 below.
 
-    >>> re.findall(exp, "3*Canada-2022-06-04")
-    ["Canada"]
+```py
+>>> re.findall(exp, "3*Canada-2022-06-04")
+["Canada"]
 
-    >>> re.findall(exp, "144 Brazil*1998-11-26")
-    ["Brazil"]
+>>> re.findall(exp, "144 Brazil*1998-11-26")
+["Brazil"]
 
-    >>> re.findall(exp, "18_USA-2009-05-16")
-    []
+>>> re.findall(exp, "18_USA-2009-05-16")
+[]
+```
 
 `exp = r"^`  `$"`
 
@@ -61,7 +63,9 @@ uppercase characters in country names.
 
 Consider the following regular expression.
 
-    r"^\w{2,5}.\d*\/[^A-Z5]{1,}"
+```py
+r"^\w{2,5}.\d*\/[^A-Z5]{1,}"
+```
 
 **Select all** strings below that **contain any match** with the regular
 expression above.
@@ -98,11 +102,13 @@ Thus using these rules, it's not hard to verify that Options B, C and E are matc
 
 Consider the following string and regular expressions:
 
-    song_str = "doja cat you right"
+```py
+song_str = "doja cat you right"
 
-    exp_1 = r"\b\w+\b" # \b stands for word boundary
-    exp_2 = r" \w+"
-    exp_3 = r" \w+ "
+exp_1 = r"\b\w+\b" # \b stands for word boundary
+exp_2 = r" \w+"
+exp_3 = r" \w+ "
+```
 
 1.  What does `len(re.findall(exp_1, song_str))` evaluate to?
 

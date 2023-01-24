@@ -17,6 +17,69 @@
       margin: 0 0.8em 0.2em -1.6em;
       vertical-align: middle;
     }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="..\assets\theme.css" />
   <script defer=""
@@ -70,7 +133,9 @@ except students were allowed to bring a single two-sided cheat sheet. No
 calculators were allowed. Students had <strong>50 minutes</strong> to
 take this exam.</p>
 <hr />
-<p>Welcome to the Final Exam for DSC 80 in Spring 2022!</p>
+<p>Welcome to the Final Exam for DSC 80 in Spring 2022! For this exam,
+students had 3 hours, and could bring 2 two-sided cheat sheets.</p>
+<center><img src='../assets/images/sp22-final/spotify-logo.png' width=100%></center>
 <hr />
 <h2 id="problem-1">Problem 1</h2>
 <p>For each day in May 2022, the DataFrame <code>streams</code> contains
@@ -112,13 +177,11 @@ streamed song on May 31st.</p>
 <p><strong>Note:</strong> You are not allowed to sort within
 <code>song_by_day</code> — remember, <code>streams</code> is already
 sorted.</p>
-<pre><code>def song_by_day(day, n):
-    day_str = f&quot;2022-05-{str(day).zfill(2)}&quot;
-    day_only = streams[__(a)__].iloc[__(b)__]
-    return __(c)__</code></pre>
-<p>What goes in blank (a)?</p>
-<p>What goes in blank (b)?</p>
-<p>What goes in blank (c)?</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> song_by_day(day, n):</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    day_str <span class="op">=</span> <span class="ss">f&quot;2022-05-</span><span class="sc">{</span><span class="bu">str</span>(day)<span class="sc">.</span>zfill(<span class="dv">2</span>)<span class="sc">}</span><span class="ss">&quot;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    day_only <span class="op">=</span> streams[__(a)__].iloc[__(b)__]</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> __(c)__</span></code></pre></div>
+<p>What goes in each of the blanks?</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading1_1">
@@ -156,11 +219,11 @@ do <code>day_only['track_name']</code>.</p>
 <p><br></p>
 <h3 id="problem-1.2">Problem 1.2</h3>
 <p>Below, we define a DataFrame <code>pivoted</code>.</p>
-<pre><code>pivoted = streams.pivot_table(index=&quot;track_name&quot;, columns=&quot;date&quot;, 
-                              values=&quot;streams&quot;, aggfunc=np.max)</code></pre>
+<div class="sourceCode" id="cb2"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>pivoted <span class="op">=</span> streams.pivot_table(index<span class="op">=</span><span class="st">&quot;track_name&quot;</span>, columns<span class="op">=</span><span class="st">&quot;date&quot;</span>, </span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>                                values<span class="op">=</span><span class="st">&quot;streams&quot;</span>, aggfunc<span class="op">=</span>np.<span class="bu">max</span>)</span></code></pre></div>
 <p>After defining <code>pivoted</code>, we define a Series
 <code>mystery</code> below.</p>
-<pre><code>mystery = 31 - pivoted.apply(lambda s: s.isna().sum(), axis=1)</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>mystery <span class="op">=</span> <span class="dv">31</span> <span class="op">-</span> pivoted.<span class="bu">apply</span>(<span class="kw">lambda</span> s: s.isna().<span class="bu">sum</span>(), axis<span class="op">=</span><span class="dv">1</span>)</span></code></pre></div>
 <p><code>mystery.loc["pepas"]</code> evaluates to 23. In one sentence,
 describe the relationship between the number 23 and the song
 <code>"pepas"</code> in the context of the <code>streams</code> dataset.
@@ -250,9 +313,9 @@ Series. This option is correct as well. (The parameter name
 <p><br></p>
 <h3 id="problem-1.4">Problem 1.4</h3>
 <p>Below, we define another DataFrame <code>another_mystery</code>.</p>
-<pre><code>another_mystery = (streams.groupby(&quot;date&quot;).last()
-                          .groupby([&quot;artist_names&quot;, &quot;track_name&quot;])
-                          .count().reset_index())</code></pre>
+<div class="sourceCode" id="cb4"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>another_mystery <span class="op">=</span> (streams.groupby(<span class="st">&quot;date&quot;</span>).last()</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>                            .groupby([<span class="st">&quot;artist_names&quot;</span>, <span class="st">&quot;track_name&quot;</span>])</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>                            .count().reset_index())</span></code></pre></div>
 <p><code>another_mystery</code> has 5 rows. In one sentence, describe
 the significance of the number 5 in the context of the
 <code>streams</code> dataset. For instance, a correctly formatted but
@@ -624,23 +687,22 @@ years. However, for the purposes of this question, you can assume that
 no two different <code>"artist_names"</code> have songs with the same
 <code>"track_name"</code>; that is, each <code>"track_name"</code>
 belongs to a unique <code>"artist_names"</code>.</p>
-<pre><code>all_years = # DataFrame that contains all 10 years&#39; charts
-
-# Helper function to compute the number of 
-# unique Hip-Hop/Rap songs in a given DataFrame
-def unique_rap(df):
-    rap_only = df[df[&quot;genre&quot;] == &quot;Hip-Hop/Rap&quot;]
-    return rap_only.groupby(__(a)__).count()__(b)__[0]
-
-count_2021 = unique_rap(all_years[all_years[&quot;year&quot;] == 2021])
-counts = np.array([])
-
-for _ in range(10000):
-    samp = all_years.sample(__(c)__, replace=True)
-    counts = np.append(counts, unique_rap(samp))
-    
-p_val = (__(d)__).mean()
-    </code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>all_years <span class="op">=</span> <span class="co"># DataFrame that contains all 10 years&#39; charts</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Helper function to compute the number of </span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># unique Hip-Hop/Rap songs in a given DataFrame</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> unique_rap(df):</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    rap_only <span class="op">=</span> df[df[<span class="st">&quot;genre&quot;</span>] <span class="op">==</span> <span class="st">&quot;Hip-Hop/Rap&quot;</span>]</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> rap_only.groupby(__(a)__).count()__(b)__[<span class="dv">0</span>]</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>count_2021 <span class="op">=</span> unique_rap(all_years[all_years[<span class="st">&quot;year&quot;</span>] <span class="op">==</span> <span class="dv">2021</span>])</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>counts <span class="op">=</span> np.array([])</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10000</span>):</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    samp <span class="op">=</span> all_years.sample(__(c)__, replace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    counts <span class="op">=</span> np.append(counts, unique_rap(samp))</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>p_val <span class="op">=</span> (__(d)__).mean()</span></code></pre></div>
 <p><br></p>
 <h3 id="problem-4.1">Problem 4.1</h3>
 <p>What goes in blank (a)?</p>
@@ -1107,34 +1169,35 @@ design.</p></li>
 <p>Consider the following HTML document, which represents a webpage
 containing the top few songs with the most streams on Spotify today in
 Canada.</p>
-<pre><code>&lt;head&gt;
-    &lt;title&gt;3*Canada-2022-06-04&lt;/title&gt;
-&lt;head&gt;
-&lt;body&gt;
-    &lt;h1&gt;Spotify Top 3 - Canada&lt;/h1&gt;
-    &lt;table&gt;
-        &lt;tr class=&#39;heading&#39;&gt;
-            &lt;th&gt;Rank&lt;/th&gt;
-            &lt;th&gt;Artist(s)&lt;/th&gt; 
-            &lt;th&gt;Song&lt;/th&gt;
-        &lt;/tr&gt;
-        &lt;tr class=1&gt;
-            &lt;td&gt;1&lt;/td&gt;
-            &lt;td&gt;Harry Styles&lt;/td&gt; 
-            &lt;td&gt;As It Was&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr class=2&gt;
-            &lt;td&gt;2&lt;/td&gt;
-            &lt;td&gt;Jack Harlow&lt;/td&gt; 
-            &lt;td&gt;First Class&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr class=3&gt;
-            &lt;td&gt;3&lt;/td&gt;
-            &lt;td&gt;Kendrick Lamar&lt;/td&gt; 
-            &lt;td&gt;N95&lt;/td&gt;
-        &lt;/tr&gt;
-    &lt;/table&gt;
-&lt;/body&gt;</code></pre>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode html"><code class="sourceCode html"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;title&gt;</span>3*Canada-2022-06-04<span class="kw">&lt;/title&gt;</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;h1&gt;</span>Spotify Top 3 - Canada<span class="kw">&lt;/h1&gt;</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;table&gt;</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;tr</span> <span class="er">class</span><span class="ot">=</span><span class="st">&#39;heading&#39;</span><span class="kw">&gt;</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;th&gt;</span>Rank<span class="kw">&lt;/th&gt;</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;th&gt;</span>Artist(s)<span class="kw">&lt;/th&gt;</span> </span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;th&gt;</span>Song<span class="kw">&lt;/th&gt;</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;/tr&gt;</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;tr</span> <span class="er">class</span><span class="ot">=</span><span class="st">1</span><span class="kw">&gt;</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;td&gt;</span>1<span class="kw">&lt;/td&gt;</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;td&gt;</span>Harry Styles<span class="kw">&lt;/td&gt;</span> </span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;td&gt;</span>As It Was<span class="kw">&lt;/td&gt;</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;/tr&gt;</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;tr</span> <span class="er">class</span><span class="ot">=</span><span class="st">2</span><span class="kw">&gt;</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;td&gt;</span>2<span class="kw">&lt;/td&gt;</span></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;td&gt;</span>Jack Harlow<span class="kw">&lt;/td&gt;</span> </span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;td&gt;</span>First Class<span class="kw">&lt;/td&gt;</span></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;/tr&gt;</span></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;tr</span> <span class="er">class</span><span class="ot">=</span><span class="st">3</span><span class="kw">&gt;</span></span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;td&gt;</span>3<span class="kw">&lt;/td&gt;</span></span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;td&gt;</span>Kendrick Lamar<span class="kw">&lt;/td&gt;</span> </span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;td&gt;</span>N95<span class="kw">&lt;/td&gt;</span></span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;/tr&gt;</span></span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/table&gt;</span></span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
 <p>Suppose we define <code>soup</code> to be a
 <code>BeautifulSoup</code> object that is instantiated using the
 document above.</p>
@@ -1171,7 +1234,7 @@ aria-labelledby="heading6_1" data-bs-parent="#accordionExample">
 <p><br></p>
 <h3 id="problem-6.2">Problem 6.2</h3>
 <p>What does the following line of code evaluate to?</p>
-<pre><code>len(soup.find_all(&quot;td&quot;))</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(soup.find_all(<span class="st">&quot;td&quot;</span>))</span></code></pre></div>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading6_2">
@@ -1201,7 +1264,7 @@ all.</p>
 <p><br></p>
 <h3 id="problem-6.3">Problem 6.3</h3>
 <p>What does the following line of code evaluate to?</p>
-<pre><code>soup.find(&quot;tr&quot;).get(&quot;class&quot;)</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>soup.find(<span class="st">&quot;tr&quot;</span>).get(<span class="st">&quot;class&quot;</span>)</span></code></pre></div>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading6_3">
@@ -1236,14 +1299,13 @@ value of its <code>"class"</code> attribute.</p>
 <p>Complete the implementation of the function <code>top_nth</code>,
 which takes in a positive integer <code>n</code> and returns the
 <strong>name of the <span class="math inline">n</span>-th ranked
-song</strong> in the HTML document. For instance, <span
-class="math inline">\texttt{top\_nth}(2)</span> should evaluate to
-<code>"First Class"</code> (<code>n=1</code> corresponds to the top
-song).</p>
+song</strong> in the HTML document. For instance,
+<code>top_nth(2)</code> should evaluate to <code>"First Class"</code>
+(<code>n=1</code> corresponds to the top song).</p>
 <p><strong>Note:</strong> Your implementation should work in the case
 that the page contains more than 3 songs.</p>
-<pre><code>def top_nth(n):
-    return soup.find(&quot;tr&quot;, attrs=__(a)__).find_all(&quot;td&quot;)__(b)__</code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> top_nth(n):</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> soup.find(<span class="st">&quot;tr&quot;</span>, attrs<span class="op">=</span>__(a)__).find_all(<span class="st">&quot;td&quot;</span>)__(b)__</span></code></pre></div>
 <p>What goes in blank (a)?</p>
 <p>What goes in blank (b)?</p>
 <div id="accordionExample" class="accordion">
@@ -1259,7 +1321,7 @@ aria-labelledby="heading6_4" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer: </strong> a) <code>{'class' : 2}</code> b)
+<p><strong>Answer: </strong> a) <code>{'class' : n}</code> b)
 <code>[2]</code> or <code>[-1]</code></p>
 <p>The logic is to find the <code>&lt;tr&gt;</code> node with the
 correct class attribute (which we do by setting attr to
@@ -1340,14 +1402,15 @@ dash (<code>"-"</code>), asterisk (<code>"*"</code>), or space
 <strong>extracts country names from valid datestrings</strong>. If the
 datestring does not follow the above format, it should not extract
 anything. Example behavior is given below.</p>
-<pre><code>&gt;&gt;&gt; re.findall(exp, &quot;3*Canada-2022-06-04&quot;)
-[&quot;Canada&quot;]
-
-&gt;&gt;&gt; re.findall(exp, &quot;144 Brazil*1998-11-26&quot;)
-[&quot;Brazil&quot;]
-
-&gt;&gt;&gt; re.findall(exp, &quot;18_USA-2009-05-16&quot;)
-[]</code></pre>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode py"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> re.findall(exp, <span class="st">&quot;3*Canada-2022-06-04&quot;</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>[<span class="st">&quot;Canada&quot;</span>]</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> re.findall(exp, <span class="st">&quot;144 Brazil*1998-11-26&quot;</span>)</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>[<span class="st">&quot;Brazil&quot;</span>]</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> re.findall(exp, <span class="st">&quot;18_USA-2009-05-16&quot;</span>)</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>[]</span></code></pre></div>
 <p><code>exp = r"^</code> <code>$"</code></p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
@@ -1380,7 +1443,8 @@ uppercase characters in country names.</p>
 <p><br></p>
 <h3 id="problem-7.2">Problem 7.2</h3>
 <p>Consider the following regular expression.</p>
-<pre><code>r&quot;^\w{2,5}.\d*\/[^A-Z5]{1,}&quot;</code></pre>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode py"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">r&quot;^\w{2,5}.\d*\/[^A-Z5]{1,}&quot;</span></span></code></pre></div>
 <p><strong>Select all</strong> strings below that <strong>contain any
 match</strong> with the regular expression above.</p>
 <ul class="task-list">
@@ -1433,11 +1497,12 @@ E are matches.</p>
 <p><br></p>
 <h3 id="problem-7.3">Problem 7.3</h3>
 <p>Consider the following string and regular expressions:</p>
-<pre><code>song_str = &quot;doja cat you right&quot;
-
-exp_1 = r&quot;\b\w+\b&quot; # \b stands for word boundary
-exp_2 = r&quot; \w+&quot;
-exp_3 = r&quot; \w+ &quot;</code></pre>
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode py"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>song_str <span class="op">=</span> <span class="st">&quot;doja cat you right&quot;</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>exp_1 <span class="op">=</span> <span class="vs">r&quot;\b\w+\b&quot;</span> <span class="co"># \b stands for word boundary</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>exp_2 <span class="op">=</span> <span class="vs">r&quot; \w+&quot;</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>exp_3 <span class="op">=</span> <span class="vs">r&quot; \w+ &quot;</span></span></code></pre></div>
 <ol type="1">
 <li><p>What does <code>len(re.findall(exp_1, song_str))</code> evaluate
 to?</p></li>
@@ -1673,11 +1738,12 @@ most similar to Song 0’s.</p>
 <p>Recall from Project 4, a trigram is an N-Gram with <span
 class="math inline">N=3</span>. Below, we instantiate a trigram language
 model with a list of 12 tokens.</p>
-<pre><code># \x02 means start of paragraph, \x03 means end of paragraph
-tokens = [&quot;\x02&quot;, &quot;hi&quot;, &quot;my&quot;, &quot;name&quot;, &quot;is&quot;, &quot;what&quot;, 
-          &quot;my&quot;, &quot;name&quot;, &quot;is&quot;, &quot;who&quot;, &quot;my&quot;, &quot;\x03&quot;]
-
-lm = NGramLM(3, tokens)</code></pre>
+<div class="sourceCode" id="cb13"><pre
+class="sourceCode py"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># \x02 means start of paragraph, \x03 means end of paragraph</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>tokens <span class="op">=</span> [<span class="st">&quot;</span><span class="ch">\x02</span><span class="st">&quot;</span>, <span class="st">&quot;hi&quot;</span>, <span class="st">&quot;my&quot;</span>, <span class="st">&quot;name&quot;</span>, <span class="st">&quot;is&quot;</span>, <span class="st">&quot;what&quot;</span>, </span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>            <span class="st">&quot;my&quot;</span>, <span class="st">&quot;name&quot;</span>, <span class="st">&quot;is&quot;</span>, <span class="st">&quot;who&quot;</span>, <span class="st">&quot;my&quot;</span>, <span class="st">&quot;</span><span class="ch">\x03</span><span class="st">&quot;</span>]</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>lm <span class="op">=</span> NGramLM(<span class="dv">3</span>, tokens)</span></code></pre></div>
 <p>What does <code>lm.probability(("name", "is", "what", "my"))</code>
 evaluate to? In other words, what is <span
 class="math inline">P(\text{name is what my})</span>? <strong>Show your
@@ -1823,11 +1889,12 @@ data!).</p>
 <p><br></p>
 <h3 id="problem-10.2">Problem 10.2</h3>
 <p>Consider the following outputs.</p>
-<pre><code>&gt;&gt;&gt; X_train.shape[0]
-50
-
-&gt;&gt;&gt; np.sum((y_train - lr_two.predict(X_train)) ** 2)
-500000 # five hundred thousand</code></pre>
+<div class="sourceCode" id="cb14"><pre
+class="sourceCode py"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> X_train.shape[<span class="dv">0</span>]</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="dv">50</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> np.<span class="bu">sum</span>((y_train <span class="op">-</span> lr_two.predict(X_train)) <span class="op">**</span> <span class="dv">2</span>)</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="dv">500000</span> <span class="co"># five hundred thousand</span></span></code></pre></div>
 <p>What is Model 2 (<code>lr_two</code>)’s training RMSE? Give your
 answer as an integer.</p>
 <div id="accordionExample" class="accordion">
@@ -1923,7 +1990,7 @@ column for each one, there would be <span class="math inline">5 + 4 =
 <p><br></p>
 <h3 id="problem-10.4">Problem 10.4</h3>
 <p>Fill in the blank:</p>
-<p><code>lr_drop.score(X_test, y_test)</code> is</p>
+<p><code>lr_drop.score(X_test, y_test)</code> is _____</p>
 <hr />
 <p><code>lr_no_drop.score(X_test, y_test)</code>.</p>
 <ul class="task-list">
@@ -2050,11 +2117,12 @@ whether its genre is <code>"Hip-Hop/Rap"</code> (1) or not (0).</p>
 has three hyperparameters that we’d like to tune. Below, we show a
 dictionary containing the values for each hyperparameter that we’d like
 to try:</p>
-<pre><code>hyp_grid = {
-  &quot;radius&quot;: [0.1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 100], # 12 total
-  &quot;inflection&quot;: [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4], # 10 total
-  &quot;color&quot;: [&quot;red&quot;, &quot;yellow&quot;, &quot;green&quot;, &quot;blue&quot;, &quot;purple&quot;] # 5 total
-}</code></pre>
+<div class="sourceCode" id="cb15"><pre
+class="sourceCode py"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>hyp_grid <span class="op">=</span> {</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;radius&quot;</span>: [<span class="fl">0.1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">100</span>], <span class="co"># 12 total</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;inflection&quot;</span>: [<span class="op">-</span><span class="dv">5</span>, <span class="op">-</span><span class="dv">4</span>, <span class="op">-</span><span class="dv">3</span>, <span class="op">-</span><span class="dv">2</span>, <span class="op">-</span><span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>], <span class="co"># 10 total</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;color&quot;</span>: [<span class="st">&quot;red&quot;</span>, <span class="st">&quot;yellow&quot;</span>, <span class="st">&quot;green&quot;</span>, <span class="st">&quot;blue&quot;</span>, <span class="st">&quot;purple&quot;</span>] <span class="co"># 5 total</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <p>To find the best combination of hyperparameters for our
 <code>BillyClassifier</code>, we first conduct a train-test split, which
 we use to create a training set with 800 rows. We then use
@@ -2137,7 +2205,8 @@ set size is <span class="math inline">200 \cdot 3 = 600</span>.</p>
 <h3 id="problem-11.3">Problem 11.3</h3>
 <p>Suppose that after fitting a <code>GridSearchCV</code> instance, its
 <code>best_params_</code> attribute is</p>
-<pre><code>    {&quot;radius&quot;: 8, &quot;inflection&quot;: 4, &quot;color&quot;: &quot;blue&quot;}</code></pre>
+<div class="sourceCode" id="cb16"><pre
+class="sourceCode py"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>{<span class="st">&quot;radius&quot;</span>: <span class="dv">8</span>, <span class="st">&quot;inflection&quot;</span>: <span class="dv">4</span>, <span class="st">&quot;color&quot;</span>: <span class="st">&quot;blue&quot;</span>}</span></code></pre></div>
 <p>Select all true statements below.</p>
 <ul class="task-list">
 <li><p><input type="checkbox" disabled="" /> The specific combination of hyperparameters in

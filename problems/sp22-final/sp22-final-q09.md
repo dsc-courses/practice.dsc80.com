@@ -3,11 +3,13 @@
 Recall from Project 4, a trigram is an N-Gram with $N=3$. Below, we
 instantiate a trigram language model with a list of 12 tokens.
 
-    # \x02 means start of paragraph, \x03 means end of paragraph
-    tokens = ["\x02", "hi", "my", "name", "is", "what", 
-              "my", "name", "is", "who", "my", "\x03"]
+```py
+# \x02 means start of paragraph, \x03 means end of paragraph
+tokens = ["\x02", "hi", "my", "name", "is", "what", 
+            "my", "name", "is", "who", "my", "\x03"]
 
-    lm = NGramLM(3, tokens)
+lm = NGramLM(3, tokens)
+```
 
 What does `lm.probability(("name", "is", "what", "my"))` evaluate to? In
 other words, what is $P(\text{name is what my})$? **Show your work in

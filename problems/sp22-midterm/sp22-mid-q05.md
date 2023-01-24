@@ -10,10 +10,12 @@ student, indexed by `"Email"`, that contains their `"Name"`,
 
 One attempt to create such a DataFrame is below.
 
-    students.groupby("Email").aggregate({"Name": "max",
-                                         "High School": "mean",
-                                         "GPA": "mean",
-                                         "APs": "max"})
+```py
+students.groupby("Email").aggregate({"Name": "max",
+                                        "High School": "mean",
+                                        "GPA": "mean",
+                                        "APs": "max"})
+```
 
 There is exactly one issue with the line of code above. **In one
 sentence**, explain what needs to be changed about the line of code

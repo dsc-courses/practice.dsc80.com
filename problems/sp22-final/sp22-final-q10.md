@@ -69,11 +69,13 @@ performs much better on unseen data than it does on observed data!).
 
 Consider the following outputs.
 
-    >>> X_train.shape[0]
-    50
+```py
+>>> X_train.shape[0]
+50
 
-    >>> np.sum((y_train - lr_two.predict(X_train)) ** 2)
-    500000 # five hundred thousand
+>>> np.sum((y_train - lr_two.predict(X_train)) ** 2)
+500000 # five hundred thousand
+```
 
 What is Model 2 (`lr_two`)'s training RMSE? Give your answer as an
 integer.
@@ -149,7 +151,7 @@ encoded columns (which there are in `lr_drop`).
 
 Fill in the blank:
 
-`lr_drop.score(X_test, y_test)` is
+`lr_drop.score(X_test, y_test)` is _____
 
 ------------------------------------------------------------------------
 

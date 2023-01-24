@@ -11,19 +11,23 @@ of hypotheses:
 As her test statistic, Valentina uses the number of heads. She defines
 the 2-D array `A` as follows:
 
-    # .flatten() reshapes from 50 x 2 to 1 x 100
-    A = np.array([
-        np.array([np.random.permutation([0, 1]) for _ in range(50)]).flatten() 
-        for _ in range(3000)
-    ])
+```py
+# .flatten() reshapes from 50 x 2 to 1 x 100
+A = np.array([
+    np.array([np.random.permutation([0, 1]) for _ in range(50)]).flatten() 
+    for _ in range(3000)
+])
+```
 
 She also defines the 2-D array `B` as follows:
 
-    # .flatten() reshapes from 50 x 2 to 1 x 100
-    B = np.array([
-        np.array([np.random.choice([0, 1], 2) for _ in range(50)]).flatten() 
-        for _ in range(3000)
-    ])
+```py
+# .flatten() reshapes from 50 x 2 to 1 x 100
+B = np.array([
+    np.array([np.random.choice([0, 1], 2) for _ in range(50)]).flatten() 
+    for _ in range(3000)
+])
+```
 
 Below, we see a histogram of the distribution of her test statistics.
 

@@ -6,30 +6,38 @@ Diego?
 
 Option 1:
 
-    cond1 = students["Admit"] == "N"
-    cond2 = students["University"] == "UC San Diego"
-    max_AP = students.loc[cond1 & cond2, "APs"].sort_values().iloc[-1]
+```py
+cond1 = students["Admit"] == "N"
+cond2 = students["University"] == "UC San Diego"
+max_AP = students.loc[cond1 & cond2, "APs"].sort_values().iloc[-1]
+```
 
 Option 2:
 
-    cond1 = students["Admit"] == "N"
-    cond2 = students["University"] == "UC San Diego"
-    d3 = students.groupby(["University", "Admit"]).max().reset_index()
-    max_AP = d3.loc[cond1 & cond2, "APs"].iloc[0]
+```py
+cond1 = students["Admit"] == "N"
+cond2 = students["University"] == "UC San Diego"
+d3 = students.groupby(["University", "Admit"]).max().reset_index()
+max_AP = d3.loc[cond1 & cond2, "APs"].iloc[0]
+```
 
 Option 3:
 
-    p = students.pivot_table(index="Admit", 
-                             columns="University", 
-                             values="APs", 
-                             aggfunc="max")
-    max_AP = p.loc["N", "UC San Diego"]
+```py
+p = students.pivot_table(index="Admit", 
+                            columns="University", 
+                            values="APs", 
+                            aggfunc="max")
+max_AP = p.loc["N", "UC San Diego"]
+```
 
 Option 4:
 
-    # .last() returns the element at the end of a Series it is called on
-    groups = students.sort_values(["APs", "Admit"]).groupby("University")
-    max_AP = groups["APs"].last()["UC San Diego"]
+```py
+# .last() returns the element at the end of a Series it is called on
+groups = students.sort_values(["APs", "Admit"]).groupby("University")
+max_AP = groups["APs"].last()["UC San Diego"]
+```
 
 **Select all that apply.** There is at least one correct option.
 

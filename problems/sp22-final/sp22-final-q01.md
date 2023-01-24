@@ -40,16 +40,14 @@ was the 199th most streamed song on May 31st.
 **Note:** You are not allowed to sort within `song_by_day` --- remember,
 `streams` is already sorted.
 
-    def song_by_day(day, n):
-        day_str = f"2022-05-{str(day).zfill(2)}"
-        day_only = streams[__(a)__].iloc[__(b)__]
-        return __(c)__
+```py
+def song_by_day(day, n):
+    day_str = f"2022-05-{str(day).zfill(2)}"
+    day_only = streams[__(a)__].iloc[__(b)__]
+    return __(c)__
+```
 
-What goes in blank (a)?
-
-What goes in blank (b)?
-
-What goes in blank (c)?
+What goes in each of the blanks?
 
 # BEGIN SOLN
 
@@ -67,12 +65,16 @@ The first line in the function gives us an idea that maybe later on in the funct
 
 Below, we define a DataFrame `pivoted`.
 
-    pivoted = streams.pivot_table(index="track_name", columns="date", 
-                                  values="streams", aggfunc=np.max)
+```py
+pivoted = streams.pivot_table(index="track_name", columns="date", 
+                                values="streams", aggfunc=np.max)
+```
 
 After defining `pivoted`, we define a Series `mystery` below.
 
-    mystery = 31 - pivoted.apply(lambda s: s.isna().sum(), axis=1)
+```py
+mystery = 31 - pivoted.apply(lambda s: s.isna().sum(), axis=1)
+```
 
 `mystery.loc["pepas"]` evaluates to 23. In one sentence, describe the
 relationship between the number 23 and the song `"pepas"` in the context
@@ -138,9 +140,11 @@ number and return that same number.
 
 Below, we define another DataFrame `another_mystery`.
 
-    another_mystery = (streams.groupby("date").last()
-                              .groupby(["artist_names", "track_name"])
-                              .count().reset_index())
+```py
+another_mystery = (streams.groupby("date").last()
+                            .groupby(["artist_names", "track_name"])
+                            .count().reset_index())
+```
 
 `another_mystery` has 5 rows. In one sentence, describe the significance
 of the number 5 in the context of the `streams` dataset. For instance, a
