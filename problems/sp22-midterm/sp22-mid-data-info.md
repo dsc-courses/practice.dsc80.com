@@ -14,4 +14,4 @@ The columns are:
  - `'University' (str)`: the name of the university that the student applied to.
  - `'Admit' (str)`: the acceptance status of the student (where 'Y' denotes that they were accepted to the university and 'N' denotes that they were not).
 
- The rows of `'student'` are arranged in no particular order. The first eight rows of `'student'` are shown below (though `'student'` has many more rows than pictured here).
+ The rows of `'student'` are arranged in no particular order. The first eight rows of `'student'` are shown above (though `'student'` has many more rows than pictured here).
