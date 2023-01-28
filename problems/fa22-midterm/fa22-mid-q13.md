@@ -1,25 +1,13 @@
 # BEGIN PROB
 
-What is the most likely type of missingness for the missing values in the \col{client} column of \python{tasks}?
+What is the most likely type of missingness for the missing values in the `'client'` column of `tasks`?
 
-Hint: look at the description of the \col{client} column at the beginning of the exam for information
-on when missing values appear.
+Hint: look at the description of the `'client'` column at the beginning of the exam for information on when missing values appear.
 
-\byversion{
-    \begin{choices}
-        \correctchoice Missing by Design
-        \choice Missing Completely at Random
-        \choice Not Missing at Random
-        \choice Missing at Random
-    \end{choices}
-}{
-    \begin{choices}
-        \choice Missing at Random
-        \choice Not Missing at Random
-        \choice Missing Completely at Random
-        \correctchoice Missing by Design
-    \end{choices}
-}
+( ) Missing by Design
+( ) Missing Completely at Random
+( ) Not Missing at Random
+( ) Missing at Random
 
 This question is designed to have a single most likely answer. However, you can \emph{optionally} provide
 a justification for your answer below.

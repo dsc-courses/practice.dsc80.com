@@ -348,6 +348,687 @@ the result as a Series so no further code is needed.</p>
 </div>
 </div>
 <hr />
+<h2 id="problem-5">Problem 5</h2>
+<p>Fill in the code below so that it computes a Series containing, for
+each category, the proportion of completed tasks which took more than 30
+minutes to complete. That is, out of all tasks which were completed in a
+given category, what percentage took more than 30 minutes?</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> proportion_more_than_30(df):</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> (</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    tasks.groupby(<span class="st">&#39;category&#39;</span>)[[<span class="st">&#39;completed&#39;</span>, <span class="st">&#39;minutes&#39;</span>]]</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    .____(proportion_more_than_30)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading5">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="true" aria-controls="collapse5">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse5" class="accordion-collapse collapse collapse"
+aria-labelledby="heading5" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong>
+<code>return (df[df['completed']]['minutes'] &gt; 30).mean()</code>,
+<code>apply</code></p>
+<p>Note that for the first part, there are many different ways to
+complete this question. The point is that we first want to query for all
+the completed tasks. Then we get the proportion of all completed tasks
+that took 30 minutes to complete.</p>
+<p>For part 2, if your <code>proportion_more_than_30</code> function was
+implemented correctly, simply calling <code>apply</code> should
+suffice.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 73%.</p>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="problem-6">Problem 6</h2>
+<p>Suppose the date of each task has been collected in a Series named ,
+shown below:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> dates</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="dv">7377</span>   <span class="dv">2019</span><span class="op">-</span><span class="dv">0</span><span class="er">8</span><span class="op">-</span><span class="dv">31</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="dv">7378</span>   <span class="dv">2019</span><span class="op">-</span><span class="dv">0</span><span class="er">8</span><span class="op">-</span><span class="dv">31</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="dv">7379</span>   <span class="dv">2019</span><span class="op">-</span><span class="dv">0</span><span class="er">9</span><span class="op">-</span><span class="dv">0</span><span class="er">1</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="dv">7380</span>   <span class="dv">2019</span><span class="op">-</span><span class="dv">0</span><span class="er">9</span><span class="op">-</span><span class="dv">0</span><span class="er">2</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="dv">7381</span>   <span class="dv">2019</span><span class="op">-</span><span class="dv">0</span><span class="er">9</span><span class="op">-</span><span class="dv">0</span><span class="er">2</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>            ...    </span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="dv">9831</span>   <span class="dv">2022</span><span class="op">-</span><span class="dv">10</span><span class="op">-</span><span class="dv">28</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="dv">9832</span>   <span class="dv">2022</span><span class="op">-</span><span class="dv">10</span><span class="op">-</span><span class="dv">29</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="dv">9833</span>   <span class="dv">2022</span><span class="op">-</span><span class="dv">10</span><span class="op">-</span><span class="dv">29</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="dv">9834</span>   <span class="dv">2022</span><span class="op">-</span><span class="dv">10</span><span class="op">-</span><span class="dv">30</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="dv">9835</span>   <span class="dv">2022</span><span class="op">-</span><span class="dv">10</span><span class="op">-</span><span class="dv">30</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>Length: <span class="dv">2459</span>, dtype: datetime64[ns]</span></code></pre></div>
+<p>You may assume that the index of <code>dates</code> contains the task
+identifier, and that these identifiers correspond to the same
+identifiers used in the index of <code>tasks</code>. Note that dates
+have only been collected for the last 2459 tasks.</p>
+<p>What will happen if we try to run the following line of code?</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>tasks[<span class="st">&#39;date&#39;</span>] <span class="op">=</span> dates</span></code></pre></div>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> A new row will be created with index “date”.</p></li>
+<li><p><input type="radio" disabled="" /> A new column will be created with missing values in the
+<code>'date'</code> column for tasks that are not in
+<code>dates</code>.</p></li>
+<li><p><input type="radio" disabled="" /> An exception will be raised because some tasks are missing (the size
+of <code>dates</code> is not the same as the size of
+<code>tasks</code>.)</p></li>
+<li><p><input type="radio" disabled="" /> An exception will be raised because <code>tasks</code> does not have
+a column named <code>'date'</code>.</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading6">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6" aria-expanded="true" aria-controls="collapse6">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse6" class="accordion-collapse collapse collapse"
+aria-labelledby="heading6" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> Option B</p>
+<p>Clearly Option A and D are both wrong so let’s focus our attention to
+Option B and C.</p>
+<p>While C seems like a likely candidate, setting a column to a series
+of different lenght won’t raise an exception, rather, python will simply
+assign the series and have missing values for tasks that are not in
+<code>dates</code>.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 57%.</p>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="problem-7">Problem 7</h2>
+<p>The code below creates a pivot table.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>pt <span class="op">=</span> tasks.pivot_table(</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    index<span class="op">=</span><span class="st">&#39;urgency&#39;</span>, columns<span class="op">=</span><span class="st">&#39;category&#39;</span>, values<span class="op">=</span><span class="st">&#39;completed&#39;</span>, aggfunc<span class="op">=</span><span class="st">&#39;sum&#39;</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<p>Which of the below snippets of code will produce the same result as
+<code>pt.loc[3.0, 'consulting']</code>? Select all that apply.</p>
+<p>Snippet 1*:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>tasks[</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    (tasks[<span class="st">&#39;category&#39;</span>] <span class="op">==</span> <span class="st">&#39;consulting&#39;</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">&amp;</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    (tasks[<span class="st">&#39;urgency&#39;</span>] <span class="op">==</span> <span class="fl">3.0</span>)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>][<span class="st">&#39;completed&#39;</span>].<span class="bu">sum</span>()</span></code></pre></div>
+<p>Snippet 2*:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>tasks[tasks[<span class="st">&#39;urgency&#39;</span>] <span class="op">==</span> <span class="dv">3</span>]</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>.groupby(<span class="st">&#39;category&#39;</span>)[<span class="st">&#39;completed&#39;</span>]</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>.<span class="bu">sum</span>().loc[<span class="st">&#39;consulting&#39;</span>]</span></code></pre></div>
+<p>Snippet 3:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>tasks.groupby(<span class="st">&#39;urgency&#39;</span>)[<span class="st">&#39;completed&#39;</span>]</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>.<span class="bu">sum</span>().loc[<span class="fl">3.0</span>, <span class="st">&#39;consulting&#39;</span>]</span></code></pre></div>
+<p>Snippet 4*:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>tasks.groupby([<span class="st">&#39;urgency&#39;</span>, <span class="st">&#39;category&#39;</span>])[<span class="st">&#39;completed&#39;</span>]</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>.<span class="bu">sum</span>().loc[(<span class="fl">3.0</span>, <span class="st">&#39;consulting&#39;</span>)]</span></code></pre></div>
+<p>Snippet 5</p>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode py"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>tasks.groupby(<span class="st">&#39;completed&#39;</span>).<span class="bu">sum</span>().loc[(<span class="fl">3.0</span>, <span class="st">&#39;consulting&#39;</span>)]</span></code></pre></div>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> Snippet 1</p></li>
+<li><p><input type="radio" disabled="" /> Snippet 2</p></li>
+<li><p><input type="radio" disabled="" /> Snippet 3</p></li>
+<li><p><input type="radio" disabled="" /> Snippet 4</p></li>
+<li><p><input type="radio" disabled="" /> Snippet 5</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading7">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7" aria-expanded="true" aria-controls="collapse7">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse7" class="accordion-collapse collapse collapse"
+aria-labelledby="heading7" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> Option A, B and D</p>
+<p>First let’s consider what <code>pt.loc[3.0, 'consulting']</code>
+produces. Well <code>pt</code> is a table with urgency as its
+<code>'index'</code> and <code>'category'</code> as its columns. Each
+entry in the table is the number of completed task for each
+<code>'index'</code>, <code>'category'</code> pairing. Hence
+<code>pt.loc[3.0, 'consulting']</code> produces the number of completed
+tasks that are urgency level 3 and category consulting.</p>
+<p>Snippet 1: This snippet works because it first querries for all tasks
+that are urgency 3 as well as category consulting. Then it calculates
+the number of completed tasks, which is what we wanted.</p>
+<p>Snippet 2: This snippet works becuase it first querries for all the
+tasks that are urgency 3, then groups by category and aggregates the
+number of completed tasks for each category, and finally returns the
+number of completed tasks for the consulting category.</p>
+<p>Snippet 3: This will not work because we are grouping by urgency and
+then selecting only the completed column to aggregate. (we are not
+grouping the categories in any way which is what we want to do in
+addition to grouping by urgency).</p>
+<p>Snippet 4: This will work because we’re grouping by both urgency and
+category, and aggregating the completed column by sum. This is just a
+different of writing the pivot_table.</p>
+<p>Snippet 5: This will clearly not work because grouping by completed
+won’t help us here.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 76%.</p>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="problem-8">Problem 8</h2>
+<p>Write a line of code which creates a pivot table showing the number
+of tasks of each urgency level for each client. The index should contain
+the urgency levels, and the columns should contain the client names.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading8">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8" aria-expanded="true" aria-controls="collapse8">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse8" class="accordion-collapse collapse collapse"
+aria-labelledby="heading8" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> code shown below</p>
+<div id="cb1" class="sourceCode">
+<pre class="sourceCode py"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" href="#cb1-1" tabindex="-1"></a>tasks.pivot_table(</span>
+<span id="cb1-2"><a aria-hidden="true" href="#cb1-2" tabindex="-1"></a>    columns<span class="op">=</span><span class="st">'client'</span>, index<span class="op">=</span><span class="st">'urgency'</span>, values<span class="op">=</span><span class="st">'category'</span>, aggfunc<span class="op">=</span><span class="st">'count'</span></span>
+<span id="cb1-3"><a aria-hidden="true" href="#cb1-3" tabindex="-1"></a>)</span></code></pre>
+</div>
+<p>We’re given that the index should be filled out with
+<code>'urgency'</code> and the columns should be <code>'clients'</code>.
+The values should be any other column that has no missing values such as
+<code>'category'</code> or <code>'completed'</code>. The aggfunc is just
+<code>count</code> since we want the number of tasks within each
+group.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 82%.</p>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="problem-9">Problem 9</h2>
+<p>Suppose that in addition to <code>tasks</code>, you have the
+dataframe named <code>clients</code>, shown below:</p>
+<center><img src='../assets/images/fa22-midterm/clients.png' width=65%></center>
+<p>The index of the dataframe contains the names of clients that have
+been consulted for, the <code>'rate'</code> column contains the pay rate
+(in dollars per hour), and the <code>'active'</code> column says whether
+the client is actively being consulted for. Note that the clients which
+appear in <code>'clients'</code> are not exactly the same as the clients
+that appear in <code>tasks["client"].value_counts()</code> That is,
+there is a client in <code>tasks["client"]</code> which is not in
+<code>clients</code>, and a client that is in <code>clients</code> that
+does not appear in <code>tasks</code>.</p>
+<p>Fill in the code below so that it produces a dataframe which has all
+of the columns that appear in <code>tasks</code>, but with two
+additional columns, <code>rate</code> and <code>activity</code>, listing
+the pay rate for each task and whether the client being consulted for is
+still active. The number of rows in your resulting dataframe should be
+equal to the number of rows in <code>tasks</code> for which the value in
+<code>client</code> is in <code>clients</code>.</p>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode py"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>tasks.merge(</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    clients,</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    how<span class="op">=</span>___,</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    ___,</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    ___</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading9">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9" aria-expanded="true" aria-controls="collapse9">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse9" class="accordion-collapse collapse collapse"
+aria-labelledby="heading9" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> <code>'inner'</code>,
+<code>left_on = 'client</code>, <code>right_index = True</code></p>
+<p>The <code>how</code> parameter in the merge should be set to inner
+because we want number of rows in <code>tasks</code> for which the value
+in <code>client</code> is in <code>clients</code>, which is a union of
+<code>tasks</code> and <code>client</code>. Since tasks is the left
+dataframe for this merge, we want to merge on the <code>client</code>
+column of <code>tasks</code> which we do with
+<code>left_on = 'client</code>. The corresponding column for
+<code>clients</code> in thie merge is just the index, which we do with
+<code>right_index = True</code>.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 78%.</p>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="problem-10">Problem 10</h2>
+<p>You observe that tasks in the <code>'consulting'</code> category seem
+to be completed at a higher rate than tasks in the <code>'work'</code>
+category. Could this be due to chance? To check, you’ll run a
+permutation test. Your hypotheses are: - <strong>Null</strong>: The true
+probability of completing a <code>'work'</code> task is the same as the
+probability of completing a <code>'consulting'</code> task. -
+<strong>Alternative</strong>: The true probability of completing a
+<code>'consulting'</code> is higher than the probability of completing a
+<code>'work'</code> task.</p>
+<p>In the box below, write code which performs a permutation test and
+computes a p-value. The choice of an appropriate test statistic is left
+to you. You should check 10,000 permutations.</p>
+<p>Note: you do not need to do anything special to account for missing
+values.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading10">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10" aria-expanded="true" aria-controls="collapse10">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse10" class="accordion-collapse collapse collapse"
+aria-labelledby="heading10" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> There are multiple ways of doing this
+problem.</p>
+<p>For test statistic, we’ll use the signed difference between the
+proportion of <code>'consulting'</code> tasks which are completed, and
+the proportion of <code>'work'</code> tasks which are completed.</p>
+<div id="cb1" class="sourceCode">
+<pre class="sourceCode py"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" href="#cb1-1" tabindex="-1"></a>df <span class="op">=</span> tasks[tasks[<span class="st">'category'</span>].isin([<span class="st">'work'</span>, <span class="st">'consulting'</span>])]</span>
+<span id="cb1-2"><a aria-hidden="true" href="#cb1-2" tabindex="-1"></a>df <span class="op">=</span> df[[<span class="st">'category'</span>, <span class="st">'completed'</span>]]</span>
+<span id="cb1-3"><a aria-hidden="true" href="#cb1-3" tabindex="-1"></a></span>
+<span id="cb1-4"><a aria-hidden="true" href="#cb1-4" tabindex="-1"></a><span class="kw">def</span> test_stat(df):</span>
+<span id="cb1-5"><a aria-hidden="true" href="#cb1-5" tabindex="-1"></a>    <span class="co">"""Difference in proportion completed: consulting - work."""</span></span>
+<span id="cb1-6"><a aria-hidden="true" href="#cb1-6" tabindex="-1"></a>    props <span class="op">=</span> df.groupby(<span class="st">'category'</span>)[<span class="st">'completed'</span>].mean()</span>
+<span id="cb1-7"><a aria-hidden="true" href="#cb1-7" tabindex="-1"></a>    <span class="cf">return</span> props[<span class="st">'consulting'</span>] <span class="op">-</span> props[<span class="st">'work'</span>]</span>
+<span id="cb1-8"><a aria-hidden="true" href="#cb1-8" tabindex="-1"></a></span>
+<span id="cb1-9"><a aria-hidden="true" href="#cb1-9" tabindex="-1"></a>observed_stat <span class="op">=</span> test_stat(df)</span>
+<span id="cb1-10"><a aria-hidden="true" href="#cb1-10" tabindex="-1"></a></span>
+<span id="cb1-11"><a aria-hidden="true" href="#cb1-11" tabindex="-1"></a>simulated <span class="op">=</span> []</span>
+<span id="cb1-12"><a aria-hidden="true" href="#cb1-12" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10000</span>):</span>
+<span id="cb1-13"><a aria-hidden="true" href="#cb1-13" tabindex="-1"></a>    df[<span class="st">'completed'</span>] <span class="op">=</span> np.random.permutation(df[<span class="st">'completed'</span>])</span>
+<span id="cb1-14"><a aria-hidden="true" href="#cb1-14" tabindex="-1"></a>    simulated.append(test_stat(df))</span>
+<span id="cb1-15"><a aria-hidden="true" href="#cb1-15" tabindex="-1"></a>    </span>
+<span id="cb1-16"><a aria-hidden="true" href="#cb1-16" tabindex="-1"></a>p_value <span class="op">=</span> (np.array(simulated) <span class="op">&gt;</span> observed_stat).mean()</span></code></pre>
+</div>
+<p>The main things we looked for was that your test statistic computes
+the difference in proportion of the two groups (and that it was a signed
+difference). We also looked to see if you properly seperated your data
+into a <code>'consulting'</code> group and <code>'work'</code> group.
+Finally, we looked to see that you performed the permutations properly
+(by either permuting the <code>'completed</code>’ column or
+<code>'categor'</code> column), as well as calculated a proper
+p-value.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 82%.</p>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="problem-11">Problem 11</h2>
+<p>Suppose you wish to perform a permutation test to check the following
+hypotheses:</p>
+<ul>
+<li><strong>Null</strong>: The urgencies of completed tasks are drawn
+from the same distribution as the urgencies of uncompleted tasks.</li>
+<li><strong>Alternative</strong>: The distribution of urgencies for
+completed tasks is different from the distribution of urgencies for
+uncompleted tasks.</li>
+</ul>
+<p>What is the <em>best</em> test statistic for this test?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> the Kolmogorov-Smirnov statistic</p></li>
+<li><p><input type="radio" disabled="" /> the Total Variation Distance</p></li>
+<li><p><input type="radio" disabled="" /> the <em>signed</em> difference between the mean urgency of completed
+tasks and the mean urgency of uncompleted tasks</p></li>
+<li><p><input type="radio" disabled="" /> the <em>absolute</em> difference between the mean urgency of
+completed tasks and the mean urgency of uncompleted tasks</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading11">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse11" aria-expanded="true" aria-controls="collapse11">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse11" class="accordion-collapse collapse collapse"
+aria-labelledby="heading11" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> Option B</p>
+<p>Since we’re looking at the distribution of urgencies between two
+different groups, and urgencies is a categorical variable, it would make
+the most sense to use TVD here.</p>
+<hr/>
+<h5>Difficulty: ⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 90%.</p>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="problem-12">Problem 12</h2>
+<p>Suppose you are performing a permutation test to check the following
+hypotheses:</p>
+<ul>
+<li><strong>Null</strong>: The time required to complete tasks in the
+<code>'hobbies'</code> category is drawn from the same distribution as
+the time required to complete tasks in the <code>'finance'</code>
+category.</li>
+<li><strong>Alternative</strong>: The time required to complete tasks in
+the <code>'hobbies'</code> category is drawn from a different
+distribution as the time required to complete tasks in the
+<code>'finance'</code> category.</li>
+</ul>
+<p>When you plot a histogram for the distribution of times taken to
+complete tasks in each categories, you see the below:</p>
+<center><img src='../assets/images/fa22-midterm/minutes-hobbies_and_finance.png' width=40%></center>
+<p>What is the <em>best</em> test statistic for this test?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> the Kolmogorov-Smirnov statistic</p></li>
+<li><p><input type="radio" disabled="" /> the Total Variation Distance</p></li>
+<li><p><input type="radio" disabled="" /> the <em>signed</em> difference between the mean time taken for
+<code>'finance'</code> tasks, minus the mean time taken for
+<code>'hobbies'</code> tasks.</p></li>
+<li><p><input type="radio" disabled="" /> the maximum time taken for <code>'finance'</code> tasks, minus the
+maximum time taken for <code>'hobbies'</code> tasks</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading12">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse12" aria-expanded="true" aria-controls="collapse12">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse12" class="accordion-collapse collapse collapse"
+aria-labelledby="heading12" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> Option A</p>
+<p>Note that TVD doesn’t work well for variables that aren’t categorical
+so we can rule that out. Looking at the distributions in the graph, it
+isn’t clear that the difference between the mean time will do much for
+us, since the means for both distributions seem pretty close in value to
+each other. Again, looking at the distributions, taking the difference
+between the max of each group is just a bad metric (plus, max doesn’t
+really say much about the distribution anyways). Thus using the KS
+statistic would work best for this problem.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 81%.</p>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="problem-13">Problem 13</h2>
+<p>What is the most likely type of missingness for the missing values in
+the <code>'client'</code> column of <code>tasks</code>?</p>
+<p>Hint: look at the description of the <code>'client'</code> column at
+the beginning of the exam for information on when missing values
+appear.</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> Missing by Design</p></li>
+<li><p><input type="radio" disabled="" /> Missing Completely at Random</p></li>
+<li><p><input type="radio" disabled="" /> Not Missing at Random</p></li>
+<li><p><input type="radio" disabled="" /> Missing at Random</p></li>
+</ul>
+<p>This question is designed to have a single most likely answer.
+However, you can provide a justification for your answer below. If your
+answer above is correct, you will get full credit even if you do not
+provide justification. However, if your answer above is wrong, you may
+receive some credit if you provide justification and it is
+reasonable.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading13">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse13" aria-expanded="true" aria-controls="collapse13">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse13" class="accordion-collapse collapse collapse"
+aria-labelledby="heading13" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p> is missing if and only if the category is not ``consulting’’. This
+means that we can exactly predict when a value is missing in . This is
+the definition of missing by design.</p>
+<p>61</p>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="problem-14">Problem 14</h2>
+<p>Suppose it is known that the person who collected this data set often
+neglected to enter an urgency for tasks that they knew would take less
+than 5 minutes, and that this factor was the most important in the
+missingness in the <code>urgency</code> column.</p>
+<p>What is the most likely type of missingness for the missing values in
+the <code>urgency</code> column?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> Missing by Design</p></li>
+<li><p><input type="radio" disabled="" /> Missing Completely at Random</p></li>
+<li><p><input type="radio" disabled="" /> Not Missing at Random</p></li>
+<li><p><input type="radio" disabled="" /> Missing at Random</p></li>
+</ul>
+<p>This question is designed to have a single most likely answer.
+However, you can <em>optionally</em> provide a justification for your
+answer below. If your answer above is correct, you will get full credit
+even if you do not provide justification. However, if your answer above
+is wrong, you may receive some credit if you provide justification and
+it is reasonable.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading14">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse14" aria-expanded="true" aria-controls="collapse14">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse14" class="accordion-collapse collapse collapse"
+aria-labelledby="heading14" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> Option D</p>
+<p>Because the most important factor in the missingness of values in the
+<code>urgency</code> column is the value in another column, this is
+MAR.</p>
+<p>You might argue that this is NMAR, since tasks which take less than 5
+minutes are likely to be less urgent, so there is an association between
+the uknown urgency and its missingness. However, the main factor is the
+time required, and so this should be MAR. That is, if we already know
+the time taken, learning the missing urgency does not provide much more
+information about the missingness of the urgency. To put it more
+formally, the probability of missingness conditioned upon the time taken
+and the uknown urgency is not significantly different from the
+probability of missingness conditioned only on the time taken.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 78%.</p>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="problem-15">Problem 15</h2>
+<p>Suppose you wish to run a permutation test to determine whether the
+missingness in the <code>'urgency'</code> column is Missing at Random
+because of an association with values in the <code>'category'</code>
+column. Which test statistic should be used?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> The TVD between the distribution of categories in tasks where the
+urgency is missing, and the distribution of categories in tasks where
+the urgency is not missing.</p></li>
+<li><p><input type="radio" disabled="" /> The Kolmogorov-Smirnov statistic between the distribution of
+categories in tasks where the urgency is missing, and the distribution
+of categories in tasks where the urgency is not missing.</p></li>
+<li><p><input type="radio" disabled="" /> The TVD between the distribution of urgencies in tasks where the
+category is missing, and the distribution of urgencies in tasks where
+the category is not missing.</p></li>
+<li><p><input type="radio" disabled="" /> The Kolmogorov-Smirnov statistic between the distribution of
+urgencies in tasks where the category is missing, and the distribution
+of urgencies in tasks where the category is not missing.</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading15">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse15" aria-expanded="true" aria-controls="collapse15">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse15" class="accordion-collapse collapse collapse"
+aria-labelledby="heading15" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> Option A</p>
+<p>Note that category and urgency is a categorical variable, so if we’re
+going to be looking at the distribution of either one, we’d ideally like
+to use TVD. Also, since we’re considering the missigness of
+<code>'urgency'</code>, the two groups we’re looking at are the
+distribution of categories where urgency is missing vs when urgency is
+not missing. Thus the right answer is Option A.</p>
+<hr/>
+<h5>Difficulty: ⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 91%.</p>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="problem-16">Problem 16</h2>
+<p>Suppose it is determined that the missingness in the
+<code>'urgency'</code> column is Missing at Random due to an association
+with the <code>'category'</code>column, and that tasks in the
+<code>'work'</code> category are least likely to be missing an urgency.
+You can assume that tasks in the <code>'work'</code> category have
+higher-than-average urgencies.</p>
+<p>Suppose the missing urgencies are imputed by randomly sampling from
+the observed urgencies. If the mean urgency of tasks in the
+<code>'hobbies'</code> category is computed, what is likely to be
+true?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> It will be unbiased.</p></li>
+<li><p><input type="radio" disabled="" /> It will be biased high (higher than the true average).</p></li>
+<li><p><input type="radio" disabled="" /> It will be biased low (lower than the true average).</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading16">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse16" aria-expanded="true" aria-controls="collapse16">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse16" class="accordion-collapse collapse collapse"
+aria-labelledby="heading16" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> Option B</p>
+<p>Since the average urgency of <code>'work'</code> category tasks is
+higher than average, and since <code>'work'</code> category tasks are
+less likely to have a missing urgency value, we conclude that the mean
+urgency of tasks will be biased high if we randomly sample from the
+observed urgencies.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 80%.</p>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="problem-17">Problem 17</h2>
+<p>Provide an 1 or 2 sentence argument for why the missingness in the
+<code>'minutes'</code> column may be Not Missing at Random.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading17">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse17" aria-expanded="true" aria-controls="collapse17">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse17" class="accordion-collapse collapse collapse"
+aria-labelledby="heading17" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong>The person who recorded the tasks may have
+not bothered to record the time taken by tasks that took a small amount
+of time.</p>
+<p>There were multiple answers that were accepted, so long as the
+explanation made sense.</p>
+<hr/>
+<h5>Difficulty: ⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 94%.</p>
+</div>
+</div>
+</div>
+</div>
+<hr />
 <h2 id="section"><span class="math display"> </span></h2>
 <h4
 id="feedback-find-an-error-still-confused-have-a-suggestion-let-us-know-here.">👋
