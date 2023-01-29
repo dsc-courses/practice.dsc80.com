@@ -26,6 +26,12 @@ This site contains practice problems taken from old DSC 80 exams. Each exam link
   </thead>
   <tbody>
     <tr>
+      <th scope="row">Fall 2022</th>
+      <td>Justin Eldridge</td>
+      <td><a href='fa22-midterm/index.html'>Midterm</a>
+      </td>
+    </tr>
+    <tr>
       <th scope="row">Spring 2022</th>
       <td>Suraj Rampure</td>
       <td><a href='sp22-midterm/index.html'>Midterm</a>
