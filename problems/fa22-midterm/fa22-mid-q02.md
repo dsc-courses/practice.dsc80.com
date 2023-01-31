@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-What *kind* of data is in the `'urgency'` column in the `tasks` dataframe?
+What *kind* of data is in the `'urgency'` column in the `tasks` DataFrame?
 
 ( ) Quantitative
 ( ) Ordinal

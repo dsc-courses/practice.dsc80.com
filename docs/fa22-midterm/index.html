@@ -135,8 +135,8 @@ take this exam.</p>
 <hr />
 <p>Welcome to the Midterm Exam for DSC 80 in Fall 2022!</p>
 <p>Throughout this exam, we will be using to the following dataframe
-<code>tasks</code></p>
-<center><img src='../assets/images/fa22-midterm/tasks.png' width=65%></center>
+<code>tasks</code>.</p>
+<center><img src='../assets/images/fa22-midterm/tasks.png' width=35%></center>
 <p>Each row of this dataframe is a recorded task. The columns are as
 follows:</p>
 <ul>
@@ -206,7 +206,7 @@ most columns. Here are the results:</p>
 <hr />
 <h2 id="problem-1">Problem 1</h2>
 <p>What <em>kind</em> of data is in the <code>'minutes'</code> column in
-the <code>tasks</code> dataframe?</p>
+the <code>tasks</code> DataFrame?</p>
 <ul class="task-list">
 <li><p><input type="radio" disabled="" /> Quantitative</p></li>
 <li><p><input type="radio" disabled="" /> Ordinal</p></li>
@@ -242,7 +242,7 @@ task.</p>
 <hr />
 <h2 id="problem-2">Problem 2</h2>
 <p>What <em>kind</em> of data is in the <code>'urgency'</code> column in
-the <code>tasks</code> dataframe?</p>
+the <code>tasks</code> DataFrame?</p>
 <ul class="task-list">
 <li><p><input type="radio" disabled="" /> Quantitative</p></li>
 <li><p><input type="radio" disabled="" /> Ordinal</p></li>
@@ -577,9 +577,9 @@ group.</p>
 <hr />
 <h2 id="problem-9">Problem 9</h2>
 <p>Suppose that in addition to <code>tasks</code>, you have the
-dataframe named <code>clients</code>, shown below:</p>
-<center><img src='../assets/images/fa22-midterm/clients.png' width=65%></center>
-<p>The index of the dataframe contains the names of clients that have
+DataFrame named <code>clients</code>, shown below:</p>
+<center><img src='../assets/images/fa22-midterm/clients.png' width=35%></center>
+<p>The index of the DataFrame contains the names of clients that have
 been consulted for, the <code>'rate'</code> column contains the pay rate
 (in dollars per hour), and the <code>'active'</code> column says whether
 the client is actively being consulted for. Note that the clients which
@@ -588,11 +588,11 @@ that appear in <code>tasks["client"].value_counts()</code> That is,
 there is a client in <code>tasks["client"]</code> which is not in
 <code>clients</code>, and a client that is in <code>clients</code> that
 does not appear in <code>tasks</code>.</p>
-<p>Fill in the code below so that it produces a dataframe which has all
+<p>Fill in the code below so that it produces a DataFrame which has all
 of the columns that appear in <code>tasks</code>, but with two
 additional columns, <code>rate</code> and <code>activity</code>, listing
 the pay rate for each task and whether the client being consulted for is
-still active. The number of rows in your resulting dataframe should be
+still active. The number of rows in your resulting DataFrame should be
 equal to the number of rows in <code>tasks</code> for which the value in
 <code>client</code> is in <code>clients</code>.</p>
 <div class="sourceCode" id="cb11"><pre
@@ -621,7 +621,7 @@ aria-labelledby="heading9" data-bs-parent="#accordionExample">
 because we want number of rows in <code>tasks</code> for which the value
 in <code>client</code> is in <code>clients</code>, which is a union of
 <code>tasks</code> and <code>client</code>. Since tasks is the left
-dataframe for this merge, we want to merge on the <code>client</code>
+DataFrame for this merge, we want to merge on the <code>client</code>
 column of <code>tasks</code> which we do with
 <code>left_on = 'client</code>. The corresponding column for
 <code>clients</code> in thie merge is just the index, which we do with
@@ -766,7 +766,7 @@ distribution as the time required to complete tasks in the
 </ul>
 <p>When you plot a histogram for the distribution of times taken to
 complete tasks in each categories, you see the below:</p>
-<center><img src='../assets/images/fa22-midterm/minutes-hobbies_and_finance.png' width=40%></center>
+<center><img src='../assets/images/fa22-midterm/minutes-hobbies_and_finance.png' width=35%></center>
 <p>What is the <em>best</em> test statistic for this test?</p>
 <ul class="task-list">
 <li><p><input type="radio" disabled="" /> the Kolmogorov-Smirnov statistic</p></li>
@@ -822,11 +822,11 @@ appear.</p>
 <li><p><input type="radio" disabled="" /> Missing at Random</p></li>
 </ul>
 <p>This question is designed to have a single most likely answer.
-However, you can provide a justification for your answer below. If your
-answer above is correct, you will get full credit even if you do not
-provide justification. However, if your answer above is wrong, you may
-receive some credit if you provide justification and it is
-reasonable.</p>
+However, you can <em>optionally</em> provide a justification for your
+answer below. If your answer above is correct, you will get full credit
+even if you do not provide justification. However, if your answer above
+is wrong, you may receive some credit if you provide justification and
+it is reasonable.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading13">
@@ -840,10 +840,16 @@ aria-labelledby="heading13" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p> is missing if and only if the category is not ``consulting’’. This
-means that we can exactly predict when a value is missing in . This is
-the definition of missing by design.</p>
-<p>61</p>
+<p><strong>Average: </strong> Option A</p>
+<p><code>client</code> is missing if and only if the category is not
+<code>consulting</code>. This means that we can exactly predict when a
+value is missing in <code>client</code>. This is the definition of
+missing by design.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 61%.</p>
 </div>
 </div>
 </div>

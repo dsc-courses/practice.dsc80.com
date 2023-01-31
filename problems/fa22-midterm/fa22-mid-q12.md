@@ -7,7 +7,7 @@ Suppose you are performing a permutation test to check the following hypotheses:
 
 When you plot a histogram for the distribution of times taken to complete tasks in each categories, you see the below:
 
-<center><img src='../assets/images/fa22-midterm/minutes-hobbies_and_finance.png' width=40%></center>
+<center><img src='../assets/images/fa22-midterm/minutes-hobbies_and_finance.png' width=35%></center>
 
 What is the *best* test statistic for this test?
 

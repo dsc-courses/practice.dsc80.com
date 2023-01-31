@@ -1,8 +1,8 @@
 Welcome to the Midterm Exam for DSC 80 in Fall 2022!
 
-Throughout this exam, we will be using to the following dataframe `tasks`
+Throughout this exam, we will be using to the following dataframe `tasks`.
 
-<center><img src='../assets/images/fa22-midterm/tasks.png' width=65%></center>
+<center><img src='../assets/images/fa22-midterm/tasks.png' width=35%></center>
 
 Each row of this dataframe is a recorded task. The columns are as follows:
 
