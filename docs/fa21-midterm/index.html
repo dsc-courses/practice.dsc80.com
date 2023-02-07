@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Fall 2021 Midterm Exam</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="..\assets\theme.css" />
+  <script defer=""
+  src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Fall 2021 Midterm Exam</h1>
+</header>
+<p><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<!-- add after bootstrap.min.css -->
+<link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css"/>
+<!-- add after bootstrap.min.js or bootstrap.bundle.min.js -->
+<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script></p>
+<!-- for difficulty gauges-->
+<script src="https://cdn.plot.ly/plotly-2.16.1.min.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B947E6J6H4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-B947E6J6H4');
+</script>
+<p><a href="../index.html">← return to practice.dsc80.com</a></p>
+<hr />
+<p><strong>Instructor(s):</strong> Justin Eldridge</p>
+<p>This exam was administered online. The exam was open-internet.
+Students had <strong>80 minutes</strong> to take this exam.</p>
+<hr />
+<p><strong>Coding Questions</strong></p>
+<p>This exam has several coding questions. These questions will be
+manually graded, and your answers are not expected to be
+syntactically-perfect! Be careful not to spend too much time perfecting
+your code.</p>
+<p>You may of course run any code you like during the exam, but doing so
+very often may cause you to run out of time. The exam is designed so
+that you do not need to run any code.</p>
+<p><strong>Point Distribution</strong></p>
+<p>Every question below is worth 1 point, <strong>except</strong>
+for:</p>
+<ul>
+<li>Question 11, the main coding question, worth 7 points,</li>
+<li>Questions 7 and 19, two smaller coding questions worth 2 points
+each.</li>
+</ul>
+<p>Partial credit is not possible for 1 point questions unless otherwise
+stated, but it is available for the coding questions. Budget your time
+accordingly!</p>
+<p><strong>The Data Set</strong></p>
+<p>The table below shows data collected for 330 penguins in Antarctica.
+Each row represents one penguin. Three species of penguins appear in the
+data set: “Adelie”, “Gentoo”, and “Chinstrap”. This data set will be
+referred to throughout the exam as the DataFrame <code>df</code>.</p>
+<center><img src='../assets/images/fa21-midterm/penguins.png' width=40%></center>
+<hr />
+<h2 id="problem-1">Problem 1</h2>
+<p>What kind of data is in the column named “Species”?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> quantitative</p></li>
+<li><p><input type="radio" disabled="" /> nominal</p></li>
+<li><p><input type="radio" disabled="" /> ordinal</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1" class="accordion-collapse collapse collapse"
+aria-labelledby="heading1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> nominal</p>
+<p>From the dataset, it is clear that the “species” attribute of each
+row is qualitative, and since there is no inherent order in the
+“species” of each penguin, we conclude that the “species” column is
+nominal.</p>
+<hr/>
+<h5>Difficulty: ⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 97%.</p>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="problem-2">Problem 2</h2>
+<p>What kind of data is in the column named “Body Mass (g)”?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> quantitative</p></li>
+<li><p><input type="radio" disabled="" /> nominal</p></li>
+<li><p><input type="radio" disabled="" /> ordinal</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="true" aria-controls="collapse2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse2" class="accordion-collapse collapse collapse"
+aria-labelledby="heading2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> quantitative</p>
+<p>From the dataset it is clear that “Body Mass” is quantitative because
+it is numerical and it makes sense to perform calculations with respect
+to “Body Mass”. For instance, we could calculate average body mass per
+species.</p>
+<hr/>
+<h5>Difficulty: ⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 98%.</p>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="problem-3">Problem 3</h2>
+<p>The code below produces a new table. How many <strong>rows</strong>
+will the table have? (See the data set description above for useful
+information).</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>df.groupby(<span class="st">&#39;Species&#39;</span>)[<span class="st">&#39;Culmen Length (mm)&#39;</span>].aggregate([np.mean, np.median])</span></code></pre></div>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="true" aria-controls="collapse3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse3" class="accordion-collapse collapse collapse"
+aria-labelledby="heading3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> 3</p>
+<p>We’re grouping the dataset by “species”, so our resulting table will
+have 3 rows since there are 3 unique species in the dataset. Note that
+aggregating by multiple functions won’t affect the number of rows in the
+output dataset, rather it will change the number of columns in the
+resulting table.</p>
+<hr/>
+<h5>Difficulty: ⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 94%.</p>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="problem-4">Problem 4</h2>
+<p>The following function accepts a series of numbers and returns a
+series of the same size in which every number has been standardized
+(also known as “z-scored”):</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> standardize(ser):</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (ser <span class="op">-</span> ser.mean()) <span class="op">/</span> ser.std()</span></code></pre></div>
+<p>Which of the following lines of code will return a series of
+standardized flipper lengths of length 330 (same as the number of rows
+in <code>df</code>), where the standardization is done <em>within each
+species</em>? That is, the flipper sizes of Adelie penguins are
+standardized as a group, the flipper sizes of Gentoo penguins are
+standardized as another group, and so on.</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> <code>df.groupby('Species')['Flipper Length (mm)'].transform(standardize)</code></p></li>
+<li><p><input type="radio" disabled="" /> <code>df.groupby('Species')['Flipper Length (mm)'].aggregate(standardize)</code></p></li>
+<li><p><input type="radio" disabled="" /> <code>df.groupby('Species')['Flipper Length (mm)'].standardize()</code></p></li>
+<li><p><input type="radio" disabled="" /> <code>df.groupby('Species')['Flipper Length (mm)'].agg(standardize)</code></p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="true" aria-controls="collapse4">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4" class="accordion-collapse collapse collapse"
+aria-labelledby="heading4" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> Option A</p>
+<p>Option A: We want to standardize the flipper length of EACH penguin
+within each group. This is done using the transform function and
+applying the standardize fucntion. Option B: Aggregate is used to
+generate a singular value for each group (so like count of each species
+for example), not to apply a function to each column within each group.
+Option C: We can’t directly call the function standardize as our
+aggregate function. Option D: This doesn’t work for the same reason as
+Option B.</p>
+<hr/>
+<h5>Difficulty: ⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 93%.</p>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="problem-5">Problem 5</h2>
+<p>Suppose incomplete data is collected on three new penguins, shown
+below:</p>
+<center><img src='../assets/images/fa21-midterm/incomplete.png' width=35%></center>
+<p>Call this DataFrame <code>df_incomplete</code>, and note that there
+are fewer columns than in <code>df</code> and that the columns which do
+appear are in a different order.</p>
+<p>Suppose <code>df_incomplete</code> is appended to the end of
+<code>df</code> with the code
+<code>pd.concat([df, df_incomplete])</code>. What will be the values in
+the <em>last</em> line of the resulting DataFrame?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> <code>[197, 19.5, 'Adelie', nan, nan, nan, nan]</code> with row label
+(index) 2</p></li>
+<li><p><input type="radio" disabled="" /> <code>[0, 19.5, 197.0, 0, 0, 0, 'Adelie']</code> with row label
+(index) 2</p></li>
+<li><p><input type="radio" disabled="" /> <code>[197, 19.5, 'Adelie', 0, 0, 0, 0]</code> with row label (index)
+2</p></li>
+<li><p><input type="radio" disabled="" /> <code>[197, 19.5, 'Adelie', nan, nan, nan, nan]</code> with row label
+(index) 332</p></li>
+<li><p><input type="radio" disabled="" /> <code>[nan, 19.5, 197.0, nan, nan, nan, 'Adelie']</code> with row
+label (index) 332</p></li>
+<li><p><input type="radio" disabled="" /> <code>[0, 19.5, 197.0, 0, 0, 0, 'Adelie']</code> with row label
+(index) 332</p></li>
+<li><p><input type="radio" disabled="" /> <code>[197, 19.5, 'Adelie', 0, 0, 0, 0]</code> with row label (index)
+332</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading5">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="true" aria-controls="collapse5">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse5" class="accordion-collapse collapse collapse"
+aria-labelledby="heading5" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> Option B</p>
+<p>Concatting the incomplete DataFrame to <code>df</code> will
+essentially “match” the columns of the incomplete DataFrame to the
+corresponding columnd in <code>df</code>. (So ‘Species’ in the
+incomplete DataFrame will be matched to the ‘Species’ column in
+<code>df</code>). For the values that don’t exist in the incomplete
+DataFrame, python will just fill the missing values with
+<code>nan</code>. Finally, the index row label still stays as 2.</p>
+<hr/>
+<h5>Difficulty: ⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 97%.</p>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="problem-6">Problem 6</h2>
+<p>Suppose a penguin is considered “little” if its body mass is less
+than 3250 grams. Write a piece of code that computes the number of each
+species which are considered little. Your code should return a series.
+To receive full credit, your code should not modify the dataframe
+<code>df</code>.</p>
+<p><strong>Note</strong>: your code will be graded manually, and it is
+not expected to be perfect. Be careful to not spend too much time trying
+to make your code perfect!</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading6">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6" aria-expanded="true" aria-controls="collapse6">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse6" class="accordion-collapse collapse collapse"
+aria-labelledby="heading6" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong></p>
+<div id="cb1" class="sourceCode">
+<pre class="sourceCode py"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" href="#cb1-1" tabindex="-1"></a>df.loc[df[<span class="st">'Body Mass'</span>] <span class="op">&lt;</span> <span class="dv">3250</span>].groupby(<span class="st">'Species'</span>).count()</span></code></pre>
+</div>
+<p>Note that there are many different approaches to this question. You
+can filter the DataFrame for “little” penguins first and then groupby
+(such as the code above). You could create an “indicator” column that
+indicates whether each penguin is “little” or not and sum that column
+for each group using group by again. You can create a custom aggregator,
+among other solutions.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 89%.</p>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="problem-7">Problem 7</h2>
+<p>Suppose you have created a new table <code>by_size</code> which lists
+each penguin’s size as either “small”, “medium”, or “large”. The species
+is also included. The table looks like this:</p>
+<center><img src='../assets/images/fa21-midterm/sizes.png' width=35%></center>
+<p>Using the code
+<code>by_size.pivot_table(index='species', columns='size?', aggfunc='size')</code>,
+you’ve created the pivot table shown below:</p>
+<center><img src='../assets/images/fa21-midterm/size-pivot.png' width=35%></center>
+<p>There is a <code>NaN</code> in this pivot table. Why?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> some Gentoo penguins had sizes that were <code>NaN</code></p></li>
+<li><p><input type="radio" disabled="" /> some Gentoo penguins had sizes that were not strings</p></li>
+<li><p><input type="radio" disabled="" /> there were too many small Gentoo penguins for the computer to
+represent with finite precision</p></li>
+<li><p><input type="radio" disabled="" /> there were no small Gentoo penguins</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading7">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7" aria-expanded="true" aria-controls="collapse7">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse7" class="accordion-collapse collapse collapse"
+aria-labelledby="heading7" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> Option D</p>
+<p>We can think of a pivot table as a fancy reorganized group by that
+just lists every combination pair of ‘species’ and ‘size’. Now the
+reason why’d there be a <code>NaN</code> in the pivot table is because
+there are no small Gentoo penguins. The reason this is <code>NaN</code>,
+rather than some other value (like 0) makes more sense if we consider it
+through the lens of a group by. In a group by, when we group by
+<code>species</code> and <code>size</code> and aggregate by some
+function, we get some value associated with each group PRESENT in the
+DataFrame. In group by, when a group doesn’t exist, it simply doesn’t
+show up (instead of having 0 as a value for instance). Thus the answer
+is D.</p>
+<hr/>
+<h5>Difficulty: ⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 95%.</p>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="problem-8">Problem 8</h2>
+<p>Suppose we wish to fill in the missing value in the pivot table
+above. What makes the most sense to fill it in with?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> 0</p></li>
+<li><p><input type="radio" disabled="" /> 1</p></li>
+<li><p><input type="radio" disabled="" /> <code>np.inf</code> (infinity)</p></li>
+<li><p><input type="radio" disabled="" /> the mean of the “small” column</p></li>
+<li><p><input type="radio" disabled="" /> the mean of the “Gentoo” row</p></li>
+<li><p><input type="radio" disabled="" /> a number chosen at random from the observed values in the “small”
+column</p></li>
+<li><p><input type="radio" disabled="" /> a number at random from the uniform distribution on [0, 1]</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading8">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8" aria-expanded="true" aria-controls="collapse8">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse8" class="accordion-collapse collapse collapse"
+aria-labelledby="heading8" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> 0</p>
+<p>As explained in the solution of Q7. Since there were no Gentoo Small
+penguins, it makes sense to fill in the missing value of the pivot table
+with 0.</p>
+<hr/>
+<h5>Difficulty: ⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 93%.</p>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="problem-9">Problem 9</h2>
+<p>You have a second dataframe, <code>personalities</code>, that
+contains the disposition and intelligence of several species of
+penguin:</p>
+<center><img src='../assets/images/fa21-midterm/personalities.png' width=35%></center>
+<p>Note that <code>personalities</code> is missing some of the species
+that are in <code>df</code>, and it contains species that are
+<em>not</em> in <code>df</code>.</p>
+<p>You’d like to use the table to add columns to <code>df</code> for the
+disposition and intelligence of each of the penguins in the data set. If
+a species in <code>df</code> is not listed in
+<code>personalities</code>, you’re OK with having their disposition and
+Intelligence be <code>NaN</code>. And if a species in
+<code>personalities</code> is not in <code>df</code>, it should not be
+added. Therefore, the result of your merge should have exactly 330 rows
+– the same as <code>df</code>.</p>
+<p>Which of the below will perform this?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> <code>pd.merge(df, personalities, how='outer')</code></p></li>
+<li><p><input type="radio" disabled="" /> <code>pd.merge(df, personalities, how='inner')</code></p></li>
+<li><p><input type="radio" disabled="" /> <code>pd.merge(df, personalities, how='left')</code></p></li>
+<li><p><input type="radio" disabled="" /> <code>pd.merge(df, personalities, how='right')</code></p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading9">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9" aria-expanded="true" aria-controls="collapse9">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse9" class="accordion-collapse collapse collapse"
+aria-labelledby="heading9" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> Option C</p>
+<p>Since we want our resulting DataFrame to have the same number of rows
+as <code>df</code>, which is our left dataframe, we simply just perform
+a left merge which is Option C. Right merge and outer merge are wrong
+since there are some species in <code>personalities</code> not in
+<code>df</code>, and inner merge wouldn’t work since there are some
+species in <code>df</code> not in <code>personalities</code>.</p>
+<hr/>
+<h5>Difficulty: ⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 93%.</p>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="problem-10">Problem 10</h2>
+<p>In the sample of penguins in the table <code>df</code> above, 40% are
+Gentoo penguins, 30% are Adelie, and 30% are Chinstrap. It is known
+that, overall, 45% of penguins in Antarctica are Gentoo, 35% are Adelie,
+and 20% are Chinstrap. It therefore seems that the distribution of
+penguin species in your sample may differ from the population
+distribution.</p>
+<p>You will test this with a hypothesis test. Your null hypothesis is
+that the sample in <code>df</code> was drawn at random from the
+population. The alternative hypothesis is that your sample was drawn
+with different probabilities than those shown above.</p>
+<p>Write a piece of code to calculate the p-value of the observed data.
+You must choose a test statistic, calculate the observed value of the
+test statistic, compute simulated values of the test statistic, and
+calculate a p-value. For that reason, this question is worth 7 points,
+and partial credit will be awarded for each of the above.</p>
+<p><strong>Note</strong>: your code will be graded manually, and it is
+not expected to be perfect. Be careful to not spend too much time trying
+to make your code perfect!</p>
+<p><strong>Another Note</strong>: if you wish, you may write your code
+elsewhere and paste it into the box below.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading10">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10" aria-expanded="true" aria-controls="collapse10">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse10" class="accordion-collapse collapse collapse"
+aria-labelledby="heading10" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong></p>
+<div id="cb1" class="sourceCode">
+<pre class="sourceCode py"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" href="#cb1-1" tabindex="-1"></a>observed <span class="op">=</span> (<span class="bu">abs</span>(<span class="fl">0.45</span> <span class="op">-</span> <span class="fl">0.4</span>) <span class="op">+</span> <span class="bu">abs</span>(<span class="fl">0.35</span> <span class="op">-</span> <span class="fl">0.3</span>) <span class="op">+</span> <span class="bu">abs</span>(<span class="fl">0.3</span> <span class="op">-</span> <span class="fl">0.2</span>)) <span class="op">/</span> <span class="dv">2</span></span>
+<span id="cb1-2"><a aria-hidden="true" href="#cb1-2" tabindex="-1"></a>arr <span class="op">=</span> []</span>
+<span id="cb1-3"><a aria-hidden="true" href="#cb1-3" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1000</span>):</span>
+<span id="cb1-4"><a aria-hidden="true" href="#cb1-4" tabindex="-1"></a>    sample <span class="op">=</span> np.random.multinomial(<span class="dv">330</span>, p <span class="op">=</span> [<span class="fl">0.45</span>, <span class="fl">0.35</span>, <span class="fl">0.2</span>]) <span class="op">/</span> <span class="dv">330</span></span>
+<span id="cb1-5"><a aria-hidden="true" href="#cb1-5" tabindex="-1"></a>    test_stat <span class="op">=</span> <span class="bu">sum</span>(<span class="bu">abs</span>(test <span class="op">-</span> [<span class="fl">0.4</span>, <span class="fl">0.3</span>, <span class="fl">0.3</span>])) <span class="op">/</span> <span class="dv">2</span></span>
+<span id="cb1-6"><a aria-hidden="true" href="#cb1-6" tabindex="-1"></a>    arr <span class="op">+=</span> [test_stat]</span>
+<span id="cb1-7"><a aria-hidden="true" href="#cb1-7" tabindex="-1"></a></span>
+<span id="cb1-8"><a aria-hidden="true" href="#cb1-8" tabindex="-1"></a>p_value <span class="op">=</span> <span class="bu">sum</span>(np.array(arr) <span class="op">&gt;=</span> observed) <span class="op">/</span> <span class="dv">1000</span></span></code></pre>
+</div>
+<p>Note that there were many different ways to do this problem. The main
+things we looked for were: whether or not you used TVD as your test
+statistic, whether or not you computed an observed test statistic
+correctly, generated samples using <code>np.random.multinomial</code> or
+<code>np.random.choice</code>, and calculated your p-value
+correctly.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 83%.</p>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="problem-11">Problem 11</h2>
+<p>Suppose you look at the distribution of culmen (beak) depth for each
+species and find the following:</p>
+<center><img src='../assets/images/fa21-midterm/culmen.png' width=35%></center>
+<p>It looks as though Chinstrap penguins have larger culmen depth than
+Gentoo penguins. Which of the following test statistics could be used to
+test this alternative hypothesis against the null hypothesis that the
+two distributions are the same? Check all that apply.</p>
+<ul class="task-list">
+<li><p><input type="checkbox" disabled="" /> TVD</p></li>
+<li><p><input type="checkbox" disabled="" /> Kolmogorov-Smirnov</p></li>
+<li><p><input type="checkbox" disabled="" /> signed difference in mean culmen depth</p></li>
+<li><p><input type="checkbox" disabled="" /> unsigned difference in mean culmen depth</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading11">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse11" aria-expanded="true" aria-controls="collapse11">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse11" class="accordion-collapse collapse collapse"
+aria-labelledby="heading11" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> Option C</p>
+<p>Note that from the image, we notice that the shape of the
+distribution of culmen depth for Chinstrap and Gentoo are pretty
+similar. The main difference is the location (ie the Gentoo distribution
+seems to be shifted to the left). Thus an appropriate test statistic
+would be the signed difference in mean culmen depth. We used the signed
+difference because we want to test whether Chinstrap penguins have
+LARGER culmen depth, not whether or not they have different culment
+depths.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 38%.</p>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="problem-12">Problem 12</h2>
+<p>Suppose you now look at the distribution of culmen depth for each
+species once more and again find the following:</p>
+<center><img src='../assets/images/fa21-midterm/culmen.png' width=35%></center>
+<p>What test statistic is the best choice for testing whether the
+empirical distributions of culmen depth in Chinstrap and Adelie penguins
+came from different underlying distributions?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> the Kolmogorov-Smirnov Statistic</p></li>
+<li><p><input type="radio" disabled="" /> the absolute difference in means</p></li>
+<li><p><input type="radio" disabled="" /> the TVD</p></li>
+<li><p><input type="radio" disabled="" /> the signed difference in means</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading12">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse12" aria-expanded="true" aria-controls="collapse12">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse12" class="accordion-collapse collapse collapse"
+aria-labelledby="heading12" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> Option A</p>
+<p>Since the distribution of culmen depth are more or less the same and
+they are stacked on top of each other (meaning that the location of the
+distributions are pretty close to each other), it would make the most
+sense to use KS statistic. We wouldn’t be able to used the difference in
+means because, again, the means of the distribution look to be able the
+same and we want to see if there is a different distribution of culmen
+depth. Furthermore, TVD wouldn’t work well since culmen depth is a
+continuous quantitative varaible.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 89%.</p>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="problem-13">Problem 13</h2>
+<p>Suppose some of the entries in the “Body Mass (g)” column are
+missing.</p>
+<p>Body mass measurements were taken any time a penguin walked across a
+scale that was placed outside. In your experience, the scale sometimes
+fails to make a measurement if the item placed on top is too small.</p>
+<p>What is the most likely type of missingness in this case?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> Missing Completely at Random</p></li>
+<li><p><input type="radio" disabled="" /> Missing at Random</p></li>
+<li><p><input type="radio" disabled="" /> Not Missing at Random</p></li>
+<li><p><input type="radio" disabled="" /> Missing by Design</p></li>
+</ul>
+<p>Below, you may optionally provide justification for your answer. If
+your answer above is correct, you will get full credit even if you do
+not provide justification. However, if your answer above is wrong, you
+may receive some credit if you provide justification and it is
+reasonable.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading13">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse13" aria-expanded="true" aria-controls="collapse13">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse13" class="accordion-collapse collapse collapse"
+aria-labelledby="heading13" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> Option C</p>
+<p>The answer is NMAR since the missigness of the values depend on the
+value itself, namely, the value would most likely be missing for smaller
+body mass penguins because the scale wouldn’t be able to make a
+measurment “if the item placed on top is too small”.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 88%.</p>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="problem-14">Problem 14</h2>
+<p>Suppose some of the entries in the “Delta 15 N (o/oo)” and “Delta 13
+C (o/oo)” columns are missing.</p>
+<p>The measurements above were taken by four different teams located at
+different places in Antarctica, and one of the teams had a faulty
+measurement device that prevented them from measuring “Delta 15 N” and
+“Delta 13 N”. The penguins in this team’s area were mostly Gentoo
+penguins.</p>
+<p>What is the most likely type of missingness in this case?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> Missing Completely at Random</p></li>
+<li><p><input type="radio" disabled="" /> Missing at Random</p></li>
+<li><p><input type="radio" disabled="" /> Not Missing at Random</p></li>
+<li><p><input type="radio" disabled="" /> Missing by Design</p></li>
+</ul>
+<p>Below, you may optionally provide justification for your answer. If
+your answer above is correct, you will get full credit even if you do
+not provide justification. However, if your answer above is wrong, you
+may receive some credit if you provide justification and it is
+reasonable.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading14">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse14" aria-expanded="true" aria-controls="collapse14">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse14" class="accordion-collapse collapse collapse"
+aria-labelledby="heading14" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> Option B</p>
+<p>The answer is MAR because knowing the species of the penguin species
+gives you information on whether the measurements are missing or not,
+namely, Gentoo penguins are more likely to have missing measurments.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 81%.</p>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="problem-15">Problem 15</h2>
+<p>Suppose some of the entries in the “Flipper Length (mm)” column are
+missing.</p>
+<p>It is very hard to measure the flipper length of a wild penguin
+because penguins have a tendency to run away whenever you approach them
+with a ruler. For this reason, the researchers agree that they will only
+measure the flipper length of half of the penguins they see. To
+implement this, they flip a coin when they see a penguin – if the coin
+comes up heads, they measure the penguin’s flipper length, and if it is
+tails they leave the flipper length blank.</p>
+<p>What is the most likely type of missingness in this case?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> Missing Completely at Random</p></li>
+<li><p><input type="radio" disabled="" /> Missing at Random</p></li>
+<li><p><input type="radio" disabled="" /> Not Missing at Random</p></li>
+<li><p><input type="radio" disabled="" /> Missing by Design</p></li>
+</ul>
+<p>Below, you may optionally provide justification for your answer. If
+your answer above is correct, you will get full credit even if you do
+not provide justification. However, if your answer above is wrong, you
+may receive some credit if you provide justification and it is
+reasonable.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading15">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse15" aria-expanded="true" aria-controls="collapse15">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse15" class="accordion-collapse collapse collapse"
+aria-labelledby="heading15" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> Option A</p>
+<p>The answer is MCAR since the flipping of the coin is a random decider
+that will determine whether a penguin will have a missing measurment or
+not.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 87%.</p>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="problem-16">Problem 16</h2>
+<p>Suppose some of the body masses are missing. You’d like to test if
+some of the body masses are missing at random (MAR) dependent on the
+species. You will determine this with a permutation test. Which one of
+the below is a valid test statistic for this test?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> the TVD (total variation distance)</p></li>
+<li><p><input type="radio" disabled="" /> the K-S statistic (Kolmogorov-Smirnov)</p></li>
+<li><p><input type="radio" disabled="" /> the absolute (unsigned) difference in means</p></li>
+<li><p><input type="radio" disabled="" /> the signed difference in means</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading16">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse16" aria-expanded="true" aria-controls="collapse16">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse16" class="accordion-collapse collapse collapse"
+aria-labelledby="heading16" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> Option A</p>
+<p>Another way to think of this question, is that we’re looking at the
+distribution of species for missing body masses vs distribution of
+species for non-missing body masses. And since species is a qualitative
+variable, TVD would work well as a test statistic.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 38%.</p>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="problem-17">Problem 17</h2>
+<p>Suppose the “Flipper Length (mm)” column has missing values. The
+distributions of species when the flipper length is missing (null) and
+when it is present (not null) are shown below:</p>
+<center><img src='../assets/images/fa21-midterm/missingness_distribution.png' width=40%></center>
+<p>Futhermore, the average flipper length of each species is as
+follows:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> df.groupby(<span class="st">&#39;Species&#39;</span>)[<span class="st">&#39;Flipper Length (mm)&#39;</span>].mean()</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>Species</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>Adelie       <span class="fl">190.290780</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>Chinstrap    <span class="fl">195.671642</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>Gentoo       <span class="fl">217.147541</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>Name: Flipper Length (mm), dtype: float64</span></code></pre></div>
+<p>Suppose the overall mean flipper length is computed (using only the
+observed values). Which of the following is true?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> the mean will be biased high</p></li>
+<li><p><input type="radio" disabled="" /> the mean will be biased low</p></li>
+<li><p><input type="radio" disabled="" /> the mean will be unbiased</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading17">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse17" aria-expanded="true" aria-controls="collapse17">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse17" class="accordion-collapse collapse collapse"
+aria-labelledby="heading17" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> Option B</p>
+<p>Notice from the graph that Gentoo has a disproportionately high
+number of missing values. And since Gentoo flipper length is higher than
+average, the overall mean computed will be lower than the actual mean,
+meaning that the mean will be biased low.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 68%.</p>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="problem-18">Problem 18</h2>
+<p>Write a piece of code that imputes missing flipper lengths with the
+<strong>median</strong> flipper length of the species that the penguin
+belongs to.</p>
+<p><strong>Note</strong>: your code will be graded manually, and it is
+not expected to be perfect. Be careful to not spend too much time trying
+to make your code perfect!</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading18">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse18" aria-expanded="true" aria-controls="collapse18">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse18" class="accordion-collapse collapse collapse"
+aria-labelledby="heading18" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong></p>
+<div id="cb1" class="sourceCode">
+<pre class="sourceCode py"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" href="#cb1-1" tabindex="-1"></a>df.groupby(<span class="st">'Species'</span>)[<span class="st">'Length'</span>].transform(<span class="kw">lambda</span> x: x.fillna(x.median()))</span></code></pre>
+</div>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 84%.</p>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="section"><span class="math display"> </span></h2>
+<h4
+id="feedback-find-an-error-still-confused-have-a-suggestion-let-us-know-here.">👋
+Feedback: Find an error? Still confused? Have a suggestion?
+<a href="https://forms.gle/WZ71FchnXU1K154d7">Let us know
+here</u></a>.</h4>
+<hr />
+</body>
+</html>
