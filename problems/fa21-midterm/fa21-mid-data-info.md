@@ -17,4 +17,4 @@ Partial credit is not possible for 1 point questions unless otherwise stated, bu
 
 The table below shows data collected for 330 penguins in Antarctica. Each row represents one penguin.  Three species of penguins appear in the data set: "Adelie", "Gentoo", and "Chinstrap". This data set will be referred to throughout the exam as the DataFrame `df`.
 
-<center><img src='../assets/images/fa21-midterm/penguins.png' width=40%></center>
+<center><img src='../assets/images/fa21-midterm/penguins.png' width=60%></center>
