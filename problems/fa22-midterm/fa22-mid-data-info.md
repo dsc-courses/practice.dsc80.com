@@ -1,10 +1,10 @@
 Welcome to the Midterm Exam for DSC 80 in Fall 2022!
 
-Throughout this exam, we will be using to the following dataframe `tasks`.
+Throughout this exam, we will be using to the following DataFrame `tasks`.
 
 <center><img src='../assets/images/fa22-midterm/tasks.png' width=35%></center>
 
-Each row of this dataframe is a recorded task. The columns are as follows:
+Each row of this DataFrame is a recorded task. The columns are as follows:
 
  - `'category'`: The category that the task falls into. E.g., `'work'`.
  - `'completed'`: Whether the task has been completed (`True`) or not (`False`).
@@ -12,9 +12,9 @@ Each row of this dataframe is a recorded task. The columns are as follows:
  - `'urgency'`: A rating of the task's importance on a scale from 1 to 3, with 3 being the most important. Some values are missing.
  - `'client'`: Some of the tasks were performed as part of a consulting gig. If so, the client that the task was performed for is listed in this column. Missing values in this column are represented by the string `'n/a'`. You can assume that the client is missing if and only if the category is *not* consulting.
 
-The table's index contains unique task identifiers, which are simply numbers. E.g., the first row's task identifier is simply ``0''.
+The table's index contains unique task identifiers, which are simply numbers. E.g., the first row's task identifier is simply `0`.
 
-To find out more about the data set, you have run `tasks.info(}` and performed `.value_counts()` on most columns. Here are the results:
+To find out more about the data set, you have run `tasks.info()` and performed `.value_counts()` on most columns. Here are the results:
 
 ```py
 >>> tasks.info()
