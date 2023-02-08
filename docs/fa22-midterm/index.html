@@ -134,10 +134,10 @@ calculators were allowed. Students had <strong>80 minutes</strong> to
 take this exam.</p>
 <hr />
 <p>Welcome to the Midterm Exam for DSC 80 in Fall 2022!</p>
-<p>Throughout this exam, we will be using to the following dataframe
+<p>Throughout this exam, we will be using to the following DataFrame
 <code>tasks</code>.</p>
 <center><img src='../assets/images/fa22-midterm/tasks.png' width=35%></center>
-<p>Each row of this dataframe is a recorded task. The columns are as
+<p>Each row of this DataFrame is a recorded task. The columns are as
 follows:</p>
 <ul>
 <li><code>'category'</code>: The category that the task falls into.
@@ -157,9 +157,10 @@ the string <code>'n/a'</code>. You can assume that the client is missing
 if and only if the category is <em>not</em> consulting.</li>
 </ul>
 <p>The table’s index contains unique task identifiers, which are simply
-numbers. E.g., the first row’s task identifier is simply ``0’’.</p>
+numbers. E.g., the first row’s task identifier is simply
+<code>0</code>.</p>
 <p>To find out more about the data set, you have run
-<code>tasks.info(}</code> and performed <code>.value_counts()</code> on
+<code>tasks.info()</code> and performed <code>.value_counts()</code> on
 most columns. Here are the results:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> tasks.info()</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span><span class="kw">class</span> <span class="st">&#39;pandas.core.frame.DataFrame&#39;</span><span class="op">&gt;</span></span>
