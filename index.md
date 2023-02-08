@@ -39,6 +39,12 @@ This site contains practice problems taken from old DSC 80 exams. Each exam link
           <a href='sp22-final/index.html'>Final</a>
       </td>
     </tr>
+    <tr>
+      <th scope="row">Fall 2021</th>
+      <td>Justin Eldridge</td>
+      <td><a href='fa21-midterm/index.html'>Midterm</a>
+      </td>
+    </tr>
   </tbody>
 </table>
 </center>
