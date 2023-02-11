@@ -35,7 +35,7 @@ for i in range(10000):
     df['completed'] = np.random.permutation(df['completed'])
     simulated.append(test_stat(df))
     
-p_value = (np.array(simulated) > observed_stat).mean()
+p_value = (np.array(simulated) >= observed_stat).mean()
 ```
 
 The main things we looked for was that your test statistic computes the difference in proportion of the two groups (and that it was a signed difference). We also looked to see if you properly seperated your data into a `'consulting'` group and `'work'` group. Finally, we looked to see that you performed the permutations properly (by either permuting the `'completed`' column or `'categor'` column), as well as calculated a proper p-value.

@@ -63,7 +63,7 @@ Given just the above information, what is the missingness mechanism of
 
 Here, the distribution of `"district"` is different when
 `"mother’s phone number"` is missing and when `"mother’s phone number"`
-is present (the two distributions plotted look quite different. As such,
+is present (the two distributions plotted look quite different). As such,
 we conclude that the missingness of `"mother’s phone number"` depends on
 `"district"`, and hence the data are MAR.
 

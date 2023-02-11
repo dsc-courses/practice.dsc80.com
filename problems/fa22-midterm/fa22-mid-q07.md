@@ -43,11 +43,11 @@ Snippet 5
 tasks.groupby('completed').sum().loc[(3.0, 'consulting')]
 ```
 
-( ) Snippet 1 
-( ) Snippet 2
-( ) Snippet 3
-( ) Snippet 4
-( ) Snippet 5
+[ ] Snippet 1 
+[ ] Snippet 2
+[ ] Snippet 3
+[ ] Snippet 4
+[ ] Snippet 5
 
 # BEGIN SOLN
 

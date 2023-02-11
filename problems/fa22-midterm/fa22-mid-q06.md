@@ -37,7 +37,7 @@ tasks['date'] = dates
 
 Clearly Option A and D are both wrong so let's focus our attention to Option B and C. 
 
-While C seems like a likely candidate, setting a column to a series of different lenght won't raise an exception, rather, python will simply assign the series and have missing values for tasks that are not in `dates`.
+While C seems like a likely candidate, setting a column to a Series of different length won't raise an exception, rather, Python will simply assign the Series and have missing values for tasks that are not in `dates`.
 
 <average>57</average>
 

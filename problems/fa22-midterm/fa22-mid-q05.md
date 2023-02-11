@@ -5,6 +5,7 @@ category, the proportion of completed tasks which took more than 30 minutes to c
 
 ```py
 def proportion_more_than_30(df):
+    ____
     
 
 result = (
