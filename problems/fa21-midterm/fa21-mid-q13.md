@@ -1,5 +1,5 @@
 # BEGIN PROB
-Suppose some of the entries in the "Body Mass (g)" column are missing.
+Suppose some of the entries in the `"Body Mass (g)"` column are missing.
 
 Body mass measurements were taken any time a penguin walked across a scale that was placed outside. In your experience, the scale sometimes fails to make a measurement if the item placed on top is too small.
 

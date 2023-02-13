@@ -5,9 +5,9 @@ Suppose we wish to fill in the missing value in the pivot table above. What make
 ( ) 0
 ( ) 1
 ( ) `np.inf` (infinity)
-( ) the mean of the "small" column
+( ) the mean of the `"small"` column
 ( ) the mean of the "Gentoo" row
-( ) a number chosen at random from the observed values in the "small" column
+( ) a number chosen at random from the observed values in the `"small"` column
 ( ) a number at random from the uniform distribution on [0, 1]
 
 # BEGIN SOLN

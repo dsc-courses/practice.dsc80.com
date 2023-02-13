@@ -2,12 +2,12 @@
 
 Suppose you have created a new table `by_size` which lists each penguin's size as either "small", "medium", or "large". The species is also included. The table looks like this:
 
-<center><img src='../assets/images/fa21-midterm/sizes.png' width=35%></center>
+<center><img src='../assets/images/fa21-midterm/sizes.png' width=25%></center>
 
 
 Using the code `by_size.pivot_table(index='species', columns='size?', aggfunc='size')`, you've created the pivot table shown below:
 
-<center><img src='../assets/images/fa21-midterm/size-pivot.png' width=35%></center>
+<center><img src='../assets/images/fa21-midterm/size-pivot.png' width=30%></center>
 
 There is a `NaN` in this pivot table. Why?
 

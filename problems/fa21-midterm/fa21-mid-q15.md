@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-Suppose some of the entries in the "Flipper Length (mm)" column are missing.
+Suppose some of the entries in the `"Flipper Length (mm)"` column are missing.
 
 It is very hard to measure the flipper length of a wild penguin because penguins have a tendency to run away whenever you approach them with a ruler. For this reason, the researchers agree that they will only measure the flipper length of half of the penguins they see. To implement this, they flip a coin when they see a penguin -- if the coin comes up heads, they measure the penguin's flipper length, and if it is tails they leave the flipper length blank.
 

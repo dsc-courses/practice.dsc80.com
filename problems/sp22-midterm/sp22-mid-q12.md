@@ -48,7 +48,7 @@ The difference comes down to the behavior of
 `np.random.permutation([0, 1])` and `np.random.choice([0, 1])`.
 
 Each call to `np.random.permutation([0, 1])` will either return
-`array([0, 1]` or `array([1, 0])` --- one head and one tail. As a
+`array([0, 1])` or `array([1, 0])` --- one head and one tail. As a
 result, each row of `A` will consist of 50 1s and 50 0s, and so the sum
 of each row of `A` will be exactly 50. If we drew a histogram of this
 distribution, it would be a single spike at the number 50.

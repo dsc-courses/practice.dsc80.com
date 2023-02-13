@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-Suppose the "Flipper Length (mm)" column has missing values. The distributions of species when the flipper length is missing (null) and when it is present (not null) are shown below:
+Suppose the `"Flipper Length (mm)"` column has missing values. The distributions of species when the flipper length is missing (null) and when it is present (not null) are shown below:
 
 <center><img src='../assets/images/fa21-midterm/missingness_distribution.png' width=40%></center>
 

@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-Suppose some of the entries in the "Delta 15 N (o/oo)" and "Delta 13 C (o/oo)" columns are missing.
+Suppose some of the entries in the `"Delta 15 N (o/oo)"` and `"Delta 13 C (o/oo)"` columns are missing.
 
 The measurements above were taken by four different teams located at different places in Antarctica, and one of the teams had a faulty measurement device that prevented them from measuring "Delta 15 N" and "Delta 13 N". The penguins in this team's area were mostly Gentoo penguins.
 

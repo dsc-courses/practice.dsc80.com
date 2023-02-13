@@ -8,8 +8,6 @@ Write a piece of code to calculate the p-value of the observed data. You must ch
 
 **Note**: your code will be graded manually, and it is not expected to be perfect. Be careful to not spend too much time trying to make your code perfect!
 
-**Another Note**: if you wish, you may write your code elsewhere and paste it into the box below.
-
 # BEGIN SOLN
 **Answer: **
 ```py
@@ -17,7 +15,7 @@ observed = (abs(0.45 - 0.4) + abs(0.35 - 0.3) + abs(0.3 - 0.2)) / 2
 arr = []
 for i in range(1000):
     sample = np.random.multinomial(330, p = [0.45, 0.35, 0.2]) / 330
-    test_stat = sum(abs(test - [0.4, 0.3, 0.3])) / 2
+    test_stat = sum(abs(sample - np.array([0.4, 0.3, 0.3]))) / 2
     arr += [test_stat]
 
 p_value = sum(np.array(arr) >= observed) / 1000

@@ -178,10 +178,10 @@ aria-labelledby="heading1" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer: </strong> nominal</p>
-<p>From the dataset, it is clear that the “species” attribute of each
-row is qualitative, and since there is no inherent order in the
-“species” of each penguin, we conclude that the “species” column is
-nominal.</p>
+<p>From the dataset, it is clear that the <code>"species"</code>
+attribute of each row is qualitative, and since there is no inherent
+order in the <code>"species"</code> of each penguin, we conclude that
+the <code>"species"</code> column is nominal.</p>
 <hr/>
 <h5>Difficulty: ⭐️</h5>
 <p>
@@ -193,7 +193,8 @@ nominal.</p>
 </div>
 <hr />
 <h2 id="problem-2">Problem 2</h2>
-<p>What kind of data is in the column named “Body Mass (g)”?</p>
+<p>What kind of data is in the column named
+<code>"Body Mass (g)"</code>?</p>
 <ul class="task-list">
 <li><p><input type="radio" disabled="" /> quantitative</p></li>
 <li><p><input type="radio" disabled="" /> nominal</p></li>
@@ -213,10 +214,10 @@ aria-labelledby="heading2" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer: </strong> quantitative</p>
-<p>From the dataset it is clear that “Body Mass” is quantitative because
-it is numerical and it makes sense to perform calculations with respect
-to “Body Mass”. For instance, we could calculate average body mass per
-species.</p>
+<p>From the dataset it is clear that <code>"Body Mass"</code> is
+quantitative because it is numerical and it makes sense to perform
+calculations with respect to <code>"Body Mass"</code>. For instance, we
+could calculate average body mass per species.</p>
 <hr/>
 <h5>Difficulty: ⭐️</h5>
 <p>
@@ -246,11 +247,11 @@ aria-labelledby="heading3" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer: </strong> 3</p>
-<p>We’re grouping the dataset by “species”, so our resulting table will
-have 3 rows since there are 3 unique species in the dataset. Note that
-aggregating by multiple functions won’t affect the number of rows in the
-output dataset, rather it will change the number of columns in the
-resulting table.</p>
+<p>We’re grouping the dataset by <code>"Species"</code>, so our
+resulting table will have 3 rows since there are 3 unique species in the
+dataset. Note that aggregating by multiple functions won’t affect the
+number of rows in the output dataset, rather it will change the number
+of columns in the resulting table.</p>
 <hr/>
 <h5>Difficulty: ⭐️</h5>
 <p>
@@ -415,11 +416,11 @@ among other solutions.</p>
 <p>Suppose you have created a new table <code>by_size</code> which lists
 each penguin’s size as either “small”, “medium”, or “large”. The species
 is also included. The table looks like this:</p>
-<center><img src='../assets/images/fa21-midterm/sizes.png' width=35%></center>
+<center><img src='../assets/images/fa21-midterm/sizes.png' width=25%></center>
 <p>Using the code
 <code>by_size.pivot_table(index='species', columns='size?', aggfunc='size')</code>,
 you’ve created the pivot table shown below:</p>
-<center><img src='../assets/images/fa21-midterm/size-pivot.png' width=35%></center>
+<center><img src='../assets/images/fa21-midterm/size-pivot.png' width=30%></center>
 <p>There is a <code>NaN</code> in this pivot table. Why?</p>
 <ul class="task-list">
 <li><p><input type="radio" disabled="" /> some Gentoo penguins had sizes that were <code>NaN</code></p></li>
@@ -470,10 +471,10 @@ above. What makes the most sense to fill it in with?</p>
 <li><p><input type="radio" disabled="" /> 0</p></li>
 <li><p><input type="radio" disabled="" /> 1</p></li>
 <li><p><input type="radio" disabled="" /> <code>np.inf</code> (infinity)</p></li>
-<li><p><input type="radio" disabled="" /> the mean of the “small” column</p></li>
+<li><p><input type="radio" disabled="" /> the mean of the <code>"small"</code> column</p></li>
 <li><p><input type="radio" disabled="" /> the mean of the “Gentoo” row</p></li>
-<li><p><input type="radio" disabled="" /> a number chosen at random from the observed values in the “small”
-column</p></li>
+<li><p><input type="radio" disabled="" /> a number chosen at random from the observed values in the
+<code>"small"</code> column</p></li>
 <li><p><input type="radio" disabled="" /> a number at random from the uniform distribution on [0, 1]</p></li>
 </ul>
 <div id="accordionExample" class="accordion">
@@ -575,8 +576,6 @@ and partial credit will be awarded for each of the above.</p>
 <p><strong>Note</strong>: your code will be graded manually, and it is
 not expected to be perfect. Be careful to not spend too much time trying
 to make your code perfect!</p>
-<p><strong>Another Note</strong>: if you wish, you may write your code
-elsewhere and paste it into the box below.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading10">
@@ -596,7 +595,7 @@ aria-labelledby="heading10" data-bs-parent="#accordionExample">
 <span id="cb1-2"><a aria-hidden="true" href="#cb1-2" tabindex="-1"></a>arr <span class="op">=</span> []</span>
 <span id="cb1-3"><a aria-hidden="true" href="#cb1-3" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1000</span>):</span>
 <span id="cb1-4"><a aria-hidden="true" href="#cb1-4" tabindex="-1"></a>    sample <span class="op">=</span> np.random.multinomial(<span class="dv">330</span>, p <span class="op">=</span> [<span class="fl">0.45</span>, <span class="fl">0.35</span>, <span class="fl">0.2</span>]) <span class="op">/</span> <span class="dv">330</span></span>
-<span id="cb1-5"><a aria-hidden="true" href="#cb1-5" tabindex="-1"></a>    test_stat <span class="op">=</span> <span class="bu">sum</span>(<span class="bu">abs</span>(test <span class="op">-</span> [<span class="fl">0.4</span>, <span class="fl">0.3</span>, <span class="fl">0.3</span>])) <span class="op">/</span> <span class="dv">2</span></span>
+<span id="cb1-5"><a aria-hidden="true" href="#cb1-5" tabindex="-1"></a>    test_stat <span class="op">=</span> <span class="bu">sum</span>(<span class="bu">abs</span>(sample <span class="op">-</span> np.array([<span class="fl">0.4</span>, <span class="fl">0.3</span>, <span class="fl">0.3</span>]))) <span class="op">/</span> <span class="dv">2</span></span>
 <span id="cb1-6"><a aria-hidden="true" href="#cb1-6" tabindex="-1"></a>    arr <span class="op">+=</span> [test_stat]</span>
 <span id="cb1-7"><a aria-hidden="true" href="#cb1-7" tabindex="-1"></a></span>
 <span id="cb1-8"><a aria-hidden="true" href="#cb1-8" tabindex="-1"></a>p_value <span class="op">=</span> <span class="bu">sum</span>(np.array(arr) <span class="op">&gt;=</span> observed) <span class="op">/</span> <span class="dv">1000</span></span></code></pre>
@@ -709,8 +708,8 @@ continuous quantitative varaible.</p>
 </div>
 <hr />
 <h2 id="problem-13">Problem 13</h2>
-<p>Suppose some of the entries in the “Body Mass (g)” column are
-missing.</p>
+<p>Suppose some of the entries in the <code>"Body Mass (g)"</code>
+column are missing.</p>
 <p>Body mass measurements were taken any time a penguin walked across a
 scale that was placed outside. In your experience, the scale sometimes
 fails to make a measurement if the item placed on top is too small.</p>
@@ -755,8 +754,8 @@ measurment “if the item placed on top is too small”.</p>
 </div>
 <hr />
 <h2 id="problem-14">Problem 14</h2>
-<p>Suppose some of the entries in the “Delta 15 N (o/oo)” and “Delta 13
-C (o/oo)” columns are missing.</p>
+<p>Suppose some of the entries in the <code>"Delta 15 N (o/oo)"</code>
+and <code>"Delta 13 C (o/oo)"</code> columns are missing.</p>
 <p>The measurements above were taken by four different teams located at
 different places in Antarctica, and one of the teams had a faulty
 measurement device that prevented them from measuring “Delta 15 N” and
@@ -802,8 +801,8 @@ namely, Gentoo penguins are more likely to have missing measurments.</p>
 </div>
 <hr />
 <h2 id="problem-15">Problem 15</h2>
-<p>Suppose some of the entries in the “Flipper Length (mm)” column are
-missing.</p>
+<p>Suppose some of the entries in the <code>"Flipper Length (mm)"</code>
+column are missing.</p>
 <p>It is very hard to measure the flipper length of a wild penguin
 because penguins have a tendency to run away whenever you approach them
 with a ruler. For this reason, the researchers agree that they will only
@@ -890,9 +889,9 @@ variable, TVD would work well as a test statistic.</p>
 </div>
 <hr />
 <h2 id="problem-17">Problem 17</h2>
-<p>Suppose the “Flipper Length (mm)” column has missing values. The
-distributions of species when the flipper length is missing (null) and
-when it is present (not null) are shown below:</p>
+<p>Suppose the <code>"Flipper Length (mm)"</code> column has missing
+values. The distributions of species when the flipper length is missing
+(null) and when it is present (not null) are shown below:</p>
 <center><img src='../assets/images/fa21-midterm/missingness_distribution.png' width=40%></center>
 <p>Futhermore, the average flipper length of each species is as
 follows:</p>
