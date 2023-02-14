@@ -22,9 +22,9 @@ What is the reason for this difference?
 
 ( ) Some students from Warren High applied to Stanford, and some others
 applied to Columbia, but none applied to both.
-( ) Some students from Warren High applied to Stanford but none applied
+( ) Some students from Warren High applied to Stanford but none admitted
 to Columbia.
-( ) Some students from Warren High applied to Columbia but none applied
+( ) Some students from Warren High applied to Columbia but none admitted
 to Stanford.
 ( ) The students from Warren High that applied to both Columbia and
 Stanford were all rejected from Stanford, but at least one was admitted

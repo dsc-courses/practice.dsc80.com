@@ -9,7 +9,7 @@ Suppose `df_incomplete` is appended to the end of `df` with the code `pd.concat(
 
 ( ) `[197, 19.5, 'Adelie', nan, nan, nan, nan]` with row label (index) 2
 (X) `[nan, 19.5, 197.0, nan, nan, nan, 'Adelie']` with row label (index) 2
-( ) `[0, 19.5, 197.0, 0, 0, 0, 'Adelie']`  with row label (index) 2
+( ) `[0, 19.5, 197.0, nan, nan, nan, 'Adelie']`  with row label (index) 2
 ( ) `[197, 19.5, 'Adelie', 0, 0, 0, 0]`  with row label (index) 2
 ( ) `[197, 19.5, 'Adelie', nan, nan, nan, nan]` with row label (index) 332
 ( ) `[nan, 19.5, 197.0, nan, nan, nan, 'Adelie']` with row label (index) 332

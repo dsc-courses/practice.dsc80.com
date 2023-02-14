@@ -586,7 +586,7 @@ been consulted for, the <code>'rate'</code> column contains the pay rate
 (in dollars per hour), and the <code>'active'</code> column says whether
 the client is actively being consulted for. Note that the clients which
 appear in <code>'clients'</code> are not exactly the same as the clients
-that appear in <code>tasks["client"].value_counts()</code> That is,
+that appear in <code>tasks["client"].value_counts()</code>. That is,
 there is a client in <code>tasks["client"]</code> which is not in
 <code>clients</code>, and a client that is in <code>clients</code> that
 does not appear in <code>tasks</code>.</p>
@@ -596,7 +596,7 @@ additional columns, <code>rate</code> and <code>activity</code>, listing
 the pay rate for each task and whether the client being consulted for is
 still active. The number of rows in your resulting DataFrame should be
 equal to the number of rows in <code>tasks</code> for which the value in
-<code>client</code> is in <code>clients</code>.</p>
+<code>'client'</code> is in <code>clients</code>.</p>
 <div class="sourceCode" id="cb11"><pre
 class="sourceCode py"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>tasks.merge(</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    clients,</span>
@@ -621,11 +621,12 @@ aria-labelledby="heading9" data-bs-parent="#accordionExample">
 <code>left_on = 'client</code>, <code>right_index = True</code></p>
 <p>The <code>how</code> parameter in the merge should be set to inner
 because we want number of rows in <code>tasks</code> for which the value
-in <code>client</code> is in <code>clients</code>, which is a union of
-<code>tasks</code> and <code>client</code>. Since tasks is the left
-DataFrame for this merge, we want to merge on the <code>client</code>
-column of <code>tasks</code> which we do with
-<code>left_on = 'client</code>. The corresponding column for
+in <code>'client'</code> is in <code>clients</code>, which is a union of
+<code>tasks</code> and <code>client</code>. In other words, we want all
+the rows that are shared between the two tables, which is just an inner
+merge. Since tasks is the left DataFrame for this merge, we want to
+merge on the <code>client</code> column of <code>tasks</code> which we
+do with <code>left_on = 'client</code>. The corresponding column for
 <code>clients</code> in thie merge is just the index, which we do with
 <code>right_index = True</code>.</p>
 <hr/>
