@@ -46,7 +46,7 @@ largest possible TVD =
 
 # BEGIN SOLN
 
-**Answer: ** Smallest: 0, Largest: 2
+**Answer: ** Smallest: 0, Largest: 1
 
 There is an absolute value in the definition of TVD, so it must be at
 least 0. The TVD does not scale with the number of categories; its
