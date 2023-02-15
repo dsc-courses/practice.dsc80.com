@@ -436,15 +436,19 @@ However,<br />
 <code>pivoted.loc["Warren High", "Stanford"]</code> evaluate to
 different values. What is the reason for this difference?</p>
 <ul class="task-list">
-<li><p><input type="radio" disabled="" /> Some students from Warren High applied to Stanford, and some
-others</p></li>
-<li><p><input type="radio" disabled="" /> Some students from Warren High applied to Stanford but none
-admitted</p></li>
-<li><p><input type="radio" disabled="" /> Some students from Warren High applied to Columbia but none
-admitted</p></li>
-<li><p><input type="radio" disabled="" /> The students from Warren High that applied to both Columbia and</p></li>
+<li><p><input type="radio" disabled="" /> Some students from Warren High applied to Stanford, and some others
+applied to Columbia, but none applied to both.</p></li>
+<li><p><input type="radio" disabled="" /> Some students from Warren High applied to Stanford but none applied
+to Columbia.</p></li>
+<li><p><input type="radio" disabled="" /> Some students from Warren High applied to Columbia but none applied
+to Stanford.</p></li>
+<li><p><input type="radio" disabled="" /> The students from Warren High that applied to both Columbia and
+Stanford were all rejected from Stanford, but at least one was admitted
+to Columbia.</p></li>
 <li><p><input type="radio" disabled="" /> When using <code>pivot_table</code>, <code>pandas</code> was not able
-to sum strings of</p></li>
+to sum strings of the form <code>"Y"</code>, <code>"N"</code>, and
+<code>"W"</code>, so the values in <code>pivoted</code> are
+unreliable.</p></li>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
