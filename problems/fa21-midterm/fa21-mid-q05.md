@@ -8,7 +8,7 @@ Call this DataFrame `df_incomplete`, and note that there are fewer columns than 
 Suppose `df_incomplete` is appended to the end of `df` with the code `pd.concat([df, df_incomplete])`. What will be the values in the *last* line of the resulting DataFrame?
 
 ( ) `[197, 19.5, 'Adelie', nan, nan, nan, nan]` with row label (index) 2
-(X) `[nan, 19.5, 197.0, nan, nan, nan, 'Adelie']` with row label (index) 2
+( ) `[nan, 19.5, 197.0, nan, nan, nan, 'Adelie']` with row label (index) 2
 ( ) `[0, 19.5, 197.0, nan, nan, nan, 'Adelie']`  with row label (index) 2
 ( ) `[197, 19.5, 'Adelie', 0, 0, 0, 0]`  with row label (index) 2
 ( ) `[197, 19.5, 'Adelie', nan, nan, nan, nan]` with row label (index) 332
