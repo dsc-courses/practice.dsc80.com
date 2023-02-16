@@ -149,8 +149,8 @@ contains mature content and viewers should be at least 18 years
 old.)</li>
 <li><code>"IMDb" (float)</code>: The TV show’s rating on IMDb (between 0
 and 10).</li>
-<li>`“Rotten Tomatoes” (int)}: The TV show’s rating on Rotten Tomatoes
-(between 0 and 100).</li>
+<li><code>"Rotten Tomatoes" (int)</code>: The TV show’s rating on Rotten
+Tomatoes (between 0 and 100).</li>
 <li><code>"Netflix" (int)</code>: 1 if the show is available for
 streaming on Netflix and 0 otherwise. The <code>"Hulu"</code>,
 <code>"Prime Video"</code>, and <code>"Disney+"</code> columns work the
@@ -204,7 +204,7 @@ finite number of values (just 0 or 1) it is also discrete.</p>
 <p><br></p>
 <p>In the following subparts, consider the variable
 <code>double_count</code>, defined below.</p>
-<p><code>double_count = tv["Title"].value_counts().value_counts()</code></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>double_count <span class="op">=</span> tv[<span class="st">&quot;Title&quot;</span>].value_counts().value_counts()</span></code></pre></div>
 <p><br></p>
 <h3 id="problem-1.2">Problem 1.2</h3>
 <p>What is <code>type(double_count)</code>?</p>
@@ -369,8 +369,8 @@ cracked down on password sharing.)</p>
 evaluates to the proportion of TV shows in <code>tv</code> with
 <code>"Star Wars"</code> in the title that are available to stream on
 Disney+.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>star_only <span class="op">=</span> __(a)__</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>star_disney_prop <span class="op">=</span> __(b)__ <span class="op">/</span> star_only.shape[<span class="dv">0</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>star_only <span class="op">=</span> __(a)__</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>star_disney_prop <span class="op">=</span> __(b)__ <span class="op">/</span> star_only.shape[<span class="dv">0</span>]</span></code></pre></div>
 <p>What goes in the blanks?</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
@@ -434,13 +434,13 @@ show that is available for streaming on the <strong>greatest number of
 streaming services</strong>. Assume there are no ties and that the
 <code>"Title"</code> column contains unique values.</p>
 <p>Expression 1:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>tv.set_index(<span class="st">&quot;Title&quot;</span>).loc[__(a)__].T.<span class="bu">sum</span>(axis<span class="op">=</span><span class="dv">0</span>).idxmax()</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>tv.set_index(<span class="st">&quot;Title&quot;</span>).loc[__(a)__].T.<span class="bu">sum</span>(axis<span class="op">=</span><span class="dv">0</span>).idxmax()</span></code></pre></div>
 <p>Expression 2:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    (</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>        tv.assign(num_services<span class="op">=</span>tv.iloc[__(b)__].<span class="bu">sum</span>(__(c)__))</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>            .sort_values(<span class="st">&quot;num_services&quot;</span>)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>            .iloc[__(d)__]</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    )</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    (</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>        tv.assign(num_services<span class="op">=</span>tv.iloc[__(b)__].<span class="bu">sum</span>(__(c)__))</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>            .sort_values(<span class="st">&quot;num_services&quot;</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>            .iloc[__(d)__]</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    )</span></code></pre></div>
 <p><strong><em>Hint</em></strong>: <code>.T</code> transposes the rows
 and columns of a DataFrame — the indexes of <code>df</code> are the
 columns of <code>df.T</code> and vice versa.</p>
@@ -587,13 +587,13 @@ missing from <code>movies</code>.</p>
 <p>The function <code>total_null</code>, defined below, takes in a
 DataFrame and returns the total number of null values in the
 DataFrame.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>total_null <span class="op">=</span> <span class="kw">lambda</span> df: df.isna().<span class="bu">sum</span>().<span class="bu">sum</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>total_null <span class="op">=</span> <span class="kw">lambda</span> df: df.isna().<span class="bu">sum</span>().<span class="bu">sum</span>()</span></code></pre></div>
 <p>Consider the function <code>delta</code>, defined below.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> delta(a, b):</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    tv_a <span class="op">=</span> tv.head(a)</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    movies_b <span class="op">=</span> movies.head(b)</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    together <span class="op">=</span> pd.concat([tv_a, movies_b])</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> total_null(together) <span class="op">-</span> total_null(tv_a) <span class="op">-</span> total_null(movies_b)</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> delta(a, b):</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    tv_a <span class="op">=</span> tv.head(a)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    movies_b <span class="op">=</span> movies.head(b)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    together <span class="op">=</span> pd.concat([tv_a, movies_b])</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> total_null(together) <span class="op">-</span> total_null(tv_a) <span class="op">-</span> total_null(movies_b)</span></code></pre></div>
 <p>Which of the following functions is equivalent to
 <code>delta</code>?</p>
 <ul class="task-list">
@@ -662,16 +662,16 @@ about how merges work. As such, <strong>solutions containing
 points.</strong></p></li>
 </ul>
 <p><strong>What goes in the blank below?</strong></p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> size_of_merge(col):</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (____).<span class="bu">sum</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> size_of_merge(col):</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (____).<span class="bu">sum</span>()</span></code></pre></div>
 <p><strong><em>Hint</em></strong>: Consider the behavior below.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> s1 <span class="op">=</span> pd.Series({<span class="st">&#39;a&#39;</span>: <span class="dv">2</span>, <span class="st">&#39;b&#39;</span>: <span class="dv">3</span>})</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> s2 <span class="op">=</span> pd.Series({<span class="st">&#39;c&#39;</span>: <span class="dv">4</span>, <span class="st">&#39;a&#39;</span>: <span class="op">-</span><span class="dv">1</span>, <span class="st">&#39;b&#39;</span>: <span class="dv">4</span>})</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> s1 <span class="op">*</span> s2</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>a    <span class="op">-</span><span class="fl">2.0</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>b    <span class="fl">12.0</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>c     NaN</span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>dtype: float64</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> s1 <span class="op">=</span> pd.Series({<span class="st">&#39;a&#39;</span>: <span class="dv">2</span>, <span class="st">&#39;b&#39;</span>: <span class="dv">3</span>})</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> s2 <span class="op">=</span> pd.Series({<span class="st">&#39;c&#39;</span>: <span class="dv">4</span>, <span class="st">&#39;a&#39;</span>: <span class="op">-</span><span class="dv">1</span>, <span class="st">&#39;b&#39;</span>: <span class="dv">4</span>})</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> s1 <span class="op">*</span> s2</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>a    <span class="op">-</span><span class="fl">2.0</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>b    <span class="fl">12.0</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>c     NaN</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>dtype: float64</span></code></pre></div>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading5_2">
@@ -739,7 +739,8 @@ number of TV shows for every combination of <code>"Age"</code> and
 <center><img src='../assets/images/wi23-midterm/pivot.png' width=40%></center>
 <p>Given the above information, what does the following expression
 evaluate to?</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>tv_excl.groupby([<span class="st">&quot;Age&quot;</span>, <span class="st">&quot;Service&quot;</span>]).<span class="bu">sum</span>().shape[<span class="dv">0</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode py"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>tv_excl.groupby([<span class="st">&quot;Age&quot;</span>, <span class="st">&quot;Service&quot;</span>]).<span class="bu">sum</span>().shape[<span class="dv">0</span>]</span></code></pre></div>
 <ul class="task-list">
 <li><p><input type="radio" disabled="" /> 4</p></li>
 <li><p><input type="radio" disabled="" /> 5</p></li>
@@ -835,9 +836,9 @@ for Netflix.</p>
 <p><br></p>
 <h3 id="problem-6.3">Problem 6.3</h3>
 <p>Consider the DataFrame <code>distr</code>, defined below.</p>
-<div class="sourceCode" id="cb10"><pre
-class="sourceCode py"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>hn <span class="op">=</span> counts[[<span class="st">&quot;Hulu&quot;</span>, <span class="st">&quot;Netflix&quot;</span>]]</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>distr <span class="op">=</span> (hn <span class="op">/</span> hn.<span class="bu">sum</span>()).T  <span class="co"># Note that distr has 2 rows and 5 columns.</span></span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode py"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>hn <span class="op">=</span> counts[[<span class="st">&quot;Hulu&quot;</span>, <span class="st">&quot;Netflix&quot;</span>]]</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>distr <span class="op">=</span> (hn <span class="op">/</span> hn.<span class="bu">sum</span>()).T  <span class="co"># Note that distr has 2 rows and 5 columns.</span></span></code></pre></div>
 <p>To test the hypotheses in part (b), Tiffany decides to use the total
 variation distance as her test statistic. Which of the following
 expressions <strong>DO NOT</strong> correctly compute the observed

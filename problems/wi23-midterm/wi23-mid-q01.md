@@ -22,7 +22,9 @@ Remember, a variable is quantitative (i.e. numerical) if arithmetic operations h
 In the following subparts, consider the variable `double_count`, defined
 below.
 
-`double_count = tv["Title"].value_counts().value_counts()`
+```py
+double_count = tv["Title"].value_counts().value_counts()
+```
 
 # BEGIN SUBPROB
 
