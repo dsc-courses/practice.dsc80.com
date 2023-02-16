@@ -1,0 +1,13 @@
+title: 'Winter 2023 Midterm Exam'
+instructors: Suraj Rampure
+context: This exam was administered in-person. The exam was closed-notes, except students were allowed to bring a single two-sided notes sheet. No calculators were allowed. Students had **50 minutes** to take this exam.
+show_solution: true
+data_info: wi23-midterm/wi23-mid-data-info
+problems:
+  - wi23-midterm/wi23-mid-q01
+  - wi23-midterm/wi23-mid-q02
+  # - wi23-midterm/wi23-mid-q03
+  # - wi23-midterm/wi23-mid-q04
+  # - wi23-midterm/wi23-mid-q05
+  # - wi23-midterm/wi23-mid-q06
+  # - wi23-midterm/wi23-mid-q07

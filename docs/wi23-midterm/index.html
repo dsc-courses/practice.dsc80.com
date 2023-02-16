@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Winter 2023 Midterm Exam</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="../assets/theme.css" />
+  <script defer=""
+  src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Winter 2023 Midterm Exam</h1>
+</header>
+<p><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<!-- add after bootstrap.min.css -->
+<link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css"/>
+<!-- add after bootstrap.min.js or bootstrap.bundle.min.js -->
+<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script></p>
+<!-- for difficulty gauges-->
+<script src="https://cdn.plot.ly/plotly-2.16.1.min.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B947E6J6H4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-B947E6J6H4');
+</script>
+<p><a href="../index.html">← return to practice.dsc80.com</a></p>
+<hr />
+<p><strong>Instructor(s):</strong> Suraj Rampure</p>
+<p>This exam was administered in-person. The exam was closed-notes,
+except students were allowed to bring a single two-sided notes sheet. No
+calculators were allowed. Students had <strong>50 minutes</strong> to
+take this exam.</p>
+<hr />
+<p><strong>Welcome to the Midterm Exam for DSC 80 in Winter
+2023!</strong></p>
+<p>Throughout this exam, we will work with the DataFrame
+<code>tv</code>, which contains information about various TV shows
+available to watch on streaming services. For each TV show, we have:</p>
+<ul>
+<li><code>"Title" (object)</code>: The title of the TV show.</li>
+<li><code>"Year" (int)</code>: The year in which the TV show was first
+released. (For instance, the show <em>How I Met Your Mother</em> ran
+from 2005 to 2014; there is only one row for <em>How I Met Your
+Mother</em> in <code>tv</code>, and its <code>"Year"</code> value is
+2005.)</li>
+<li><code>"Age" (object)</code>: The age category for the TV show. If
+not missing, <code>"Age"</code> is one of <code>"all"</code>,
+<code>"7+"</code>, <code>"13+"</code>, <code>"16+"</code>, or
+<code>"18+"</code>. (For instance, <code>"all"</code> means that the
+show is appropriate for all audiences, while `“18+”} means that the show
+contains mature content and viewers should be at least 18 years
+old.)</li>
+<li><code>"IMDb" (float)</code>: The TV show’s rating on IMDb (between 0
+and 10).</li>
+<li>`“Rotten Tomatoes” (int)}: The TV show’s rating on Rotten Tomatoes
+(between 0 and 100).</li>
+<li><code>"Netflix" (int)</code>: 1 if the show is available for
+streaming on Netflix and 0 otherwise. The <code>"Hulu"</code>,
+<code>"Prime Video"</code>, and <code>"Disney+"</code> columns work the
+same way.</li>
+</ul>
+<p>The first few rows of <code>tv</code> are shown below (though
+<code>tv</code> has many more rows than are pictured here).</p>
+<center><img src='../assets/images/wi23-midterm/data-info-wi23-mt.png' width=65%></center>
+<p>Assume that we have already run all of the necessary imports.</p>
+<p><strong>Throughout this exam, we will refer to <code>tv</code>
+repeatedly.</strong></p>
+<hr />
+<h2 id="problem-1">Problem 1</h2>
+<p><br></p>
+<h3 id="problem-1.1">Problem 1.1</h3>
+<p>What kind of variable is <code>"Netflix"</code>?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> Quantitative discrete</p></li>
+<li><p><input type="radio" disabled="" /> Quantitative continuous</p></li>
+<li><p><input type="radio" disabled="" /> Qualitative ordinal</p></li>
+<li><p><input type="radio" disabled="" /> Qualitative nominal</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_1" aria-expanded="true" aria-controls="collapse1_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_1" class="accordion-collapse collapse collapse"
+aria-labelledby="heading1_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer</strong>: Quantitative discrete</p>
+<p>Remember, a variable is quantitative (i.e. numerical) if arithmetic
+operations have meaning. If we add up the values in the
+<code>"Netflix"</code> column for a subset of the rows, we get the
+number of TV shows in that subset that are available for streaming on
+Netflix. If we take the average of the values in the
+<code>"Netflix"</code> column for a subset of the rows, we get the
+proportion of TV shows in that subset that are available for streaming
+on Netflix. Since arithmetic operations have meaning,
+<code>"Netflix"</code> is quantitative, and since it can only take on a
+finite number of values (just 0 or 1) it is also discrete.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<p>In the following subparts, consider the variable
+<code>double_count</code>, defined below.</p>
+<p><code>double_count = tv["Title"].value_counts().value_counts()</code></p>
+<p><br></p>
+<h3 id="problem-1.2">Problem 1.2</h3>
+<p>What is <code>type(double_count)</code>?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> Series</p></li>
+<li><p><input type="radio" disabled="" /> SeriesGroupBy</p></li>
+<li><p><input type="radio" disabled="" /> DataFrame</p></li>
+<li><p><input type="radio" disabled="" /> DataFrameGroupBy</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_2" aria-expanded="true" aria-controls="collapse1_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_2" class="accordion-collapse collapse collapse"
+aria-labelledby="heading1_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer</strong>: Series</p>
+<p>The <code>.value_counts()</code> method, when called on a Series
+<code>s</code>, produces a new Series in which</p>
+<ul>
+<li>the index contains all unique values in <code>s</code>.</li>
+<li>the values contain the frequencies of all unique values in
+<code>s</code>.</li>
+</ul>
+<p>Since <code>tv["Title"]</code> is a Series,
+<code>tv["Title"].value_counts()</code> is a Series, and so is
+<code>tv["Title"].value_counts.value_counts()</code>. We provide an
+interpretation of each of these Series in the solution to the next
+subpart.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-1.3">Problem 1.3</h3>
+<p>Which of the following statements are true? Select all that
+apply.</p>
+<ul class="task-list">
+<li><p><input type="checkbox" disabled="" /> The only case in which it would make sense to set the index of
+<code>tv</code> to <code>"Title"</code> is if
+<code>double_count.iloc[0] == 1</code> is <code>True</code>.</p></li>
+<li><p><input type="checkbox" disabled="" /> The only case in which it would make sense to set the index of
+<code>tv</code> to <code>"Title"</code> is if
+<code>double_count.loc[1] == tv.shape[0]</code> is
+<code>True</code>.</p></li>
+<li><p><input type="checkbox" disabled="" /> If <code>double_count.loc[2] == 5</code> is <code>True</code>, there
+are 5 TV shows that all share the same <code>"Title"</code>.</p></li>
+<li><p><input type="checkbox" disabled="" /> If <code>double_count.loc[2] == 5</code> is <code>True</code>, there
+are 5 pairs of 2 TV shows such that each pair shares the same
+<code>"Title"</code>.</p></li>
+<li><p><input type="checkbox" disabled="" /> None of the above.</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_3" aria-expanded="true" aria-controls="collapse1_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_3" class="accordion-collapse collapse collapse"
+aria-labelledby="heading1_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answers</strong>:</p>
+<ul>
+<li>The only case in which it would make sense to set the index of
+<code>tv</code> to <code>"Title"</code> is if
+<code>double_count.loc[1] == tv.shape[0]</code> is
+<code>True</code>.</li>
+<li>If <code>double_count.loc[2] == 5</code> is <code>True</code>, there
+are 5 pairs of 2 TV shows such that each pair shares the same
+<code>"Title"</code>.</li>
+</ul>
+<p>To answer, we need to understand what each of
+<code>tv["Title"]</code>, <code>tv["Title"].value_counts()</code>, and
+<code>tv["Title"].value_counts().value_counts()</code> contain.
+<code>tv["Title"]</code>, as we know, contains the name of each TV
+show.</p>
+<p><code>tv["Title"].value_counts()</code> is a Series whose index is a
+sequence of the unique TV show titles in <code>tv["Title"]</code>, and
+whose values are the frequencies of each title. The first few entries in
+<code>tv["Title"].value_counts()</code> may look something like the
+following:</p>
+<div id="cb1" class="sourceCode">
+<pre class="sourceCode py"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" href="#cb1-1" tabindex="-1"></a>Breaking Bad                             <span class="dv">1</span></span>
+<span id="cb1-2"><a aria-hidden="true" href="#cb1-2" tabindex="-1"></a>Fresh Meat                               <span class="dv">1</span></span>
+<span id="cb1-3"><a aria-hidden="true" href="#cb1-3" tabindex="-1"></a>Doctor Thorne                            <span class="dv">1</span></span>
+<span id="cb1-4"><a aria-hidden="true" href="#cb1-4" tabindex="-1"></a>                                       ...</span>
+<span id="cb1-5"><a aria-hidden="true" href="#cb1-5" tabindex="-1"></a>Styling Hollywood                        <span class="dv">1</span></span>
+<span id="cb1-6"><a aria-hidden="true" href="#cb1-6" tabindex="-1"></a>Vai Anitta                               <span class="dv">1</span></span>
+<span id="cb1-7"><a aria-hidden="true" href="#cb1-7" tabindex="-1"></a>Fearless Adventures <span class="cf">with</span> Jack Randall    <span class="dv">1</span></span>
+<span id="cb1-8"><a aria-hidden="true" href="#cb1-8" tabindex="-1"></a>Name: Title, Length: <span class="dv">5368</span>, dtype: int64</span></code></pre>
+</div>
+<p>Then, <code>tv["Title"].value_counts().value_counts()</code> will be
+a Series whose index is a sequence of the unique values in the above
+Series, and whose values are the frequencies of each value above. In the
+case where all titles in <code>tv["Title"]</code> are unique, then
+<code>tv["Title"].value_counts()</code> will only have one unique value,
+1, repeated many times. Then,
+<code>tv["Title"].value_counts().value_counts()</code> will only have
+one row total, and will look something like:</p>
+<div id="cb2" class="sourceCode">
+<pre class="sourceCode py"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" href="#cb2-1" tabindex="-1"></a><span class="dv">1</span>    <span class="dv">5368</span></span>
+<span id="cb2-2"><a aria-hidden="true" href="#cb2-2" tabindex="-1"></a>Name: Title, dtype: int64</span></code></pre>
+</div>
+<p>This allows us to distinguish between the first two answer choices.
+The key is remembering</p>
+<ul>
+<li>The first answer choice, “The only case in which it would make sense
+to set the index of <code>tv</code> to <code>"Title"</code> is if
+<code>double_count.iloc[0] == 1</code> is <code>True</code>.”, is false.
+As we can see in the example above, the</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-2">Problem 2</h2>
+<p>Ethan is an avid Star Wars fan, and the only streaming service he has
+an account on is Disney+. (He had a Netflix account, but then Netflix
+cracked down on password sharing.)</p>
+<p>Fill in the blanks below so that <code>star_disney_prop</code>
+evaluates to the proportion of TV shows in <code>tv</code> with
+<code>"Star Wars"</code> in the title that are available to stream on
+Disney+.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>star_only <span class="op">=</span> __(a)__</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>star_disney_prop <span class="op">=</span> __(b)__ <span class="op">/</span> star_only.shape[<span class="dv">0</span>]</span></code></pre></div>
+<p>What goes in the blanks?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="true" aria-controls="collapse2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse2" class="accordion-collapse collapse collapse"
+aria-labelledby="heading2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answers</strong>:</p>
+<ul>
+<li>Blank (a):
+<code>tv[tv["Title"].str.contains("Star Wars")]</code></li>
+<li>Blank (b): <code>star_only["Disney+"].sum()</code></li>
+</ul>
+<p>We’re asked to find the proportion of TV shows with
+<code>"Star Wars"</code> in the title that are available to stream on
+Disney+. This is a fraction, where:</p>
+<ul>
+<li>The numerator is the number of TV shows that have
+<code>"Star Wars"</code> in the title <strong>and</strong> are available
+to stream on Disney+.</li>
+<li>The denominator is the number of TV shows that have
+<code>"Star Wars"</code> in the title.</li>
+</ul>
+<p>The key is recognizing that <code>star_only</code> must be a
+DataFrame that contains all the rows in which the <code>"Title"</code>
+contains <code>"Star Wars"</code>; to create this DataFrame in blank
+(a), we use <code>tv[tv["Title"].str.contains("Star Wars")]</code>.
+Then, the denominator is already provided for us, and all we need to
+fill in is the numerator. There are a few possibilities, though they all
+include <code>star_only</code>:</p>
+<ul>
+<li><code>star_only["Disney+"].sum()</code></li>
+<li><code>(star_only["Disney+"] == 1).sum()</code></li>
+<li><code>star_only[star_only["Disney+"] == 1].shape[0]</code></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="section"><span class="math display"> </span></h2>
+<h4
+id="feedback-find-an-error-still-confused-have-a-suggestion-let-us-know-here.">👋
+Feedback: Find an error? Still confused? Have a suggestion?
+<a href="https://forms.gle/WZ71FchnXU1K154d7">Let us know
+here</u></a>.</h4>
+<hr />
+</body>
+</html>
