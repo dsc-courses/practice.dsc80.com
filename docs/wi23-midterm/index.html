@@ -232,7 +232,7 @@ aria-labelledby="heading1_2" data-bs-parent="#accordionExample">
 <code>s</code>, produces a new Series in which</p>
 <ul>
 <li>the index contains all unique values in <code>s</code>.</li>
-<li>the values contain the frequencies of all unique values in
+<li>the values are the frequencies of the unique values in
 <code>s</code>.</li>
 </ul>
 <p>Since <code>tv["Title"]</code> is a Series,
@@ -293,7 +293,7 @@ are 5 pairs of 2 TV shows such that each pair shares the same
 show.</p>
 <p><code>tv["Title"].value_counts()</code> is a Series whose index is a
 sequence of the unique TV show titles in <code>tv["Title"]</code>, and
-whose values are the frequencies of each title. The first few entries in
+whose values are the frequencies of each title.
 <code>tv["Title"].value_counts()</code> may look something like the
 following:</p>
 <div id="cb1" class="sourceCode">
@@ -306,8 +306,8 @@ following:</p>
 <span id="cb1-7"><a aria-hidden="true" href="#cb1-7" tabindex="-1"></a>Fearless Adventures <span class="cf">with</span> Jack Randall    <span class="dv">1</span></span>
 <span id="cb1-8"><a aria-hidden="true" href="#cb1-8" tabindex="-1"></a>Name: Title, Length: <span class="dv">5368</span>, dtype: int64</span></code></pre>
 </div>
-<p>Then, <code>tv["Title"].value_counts().value_counts()</code> will be
-a Series whose index is a sequence of the unique values in the above
+<p>Then, <code>tv["Title"].value_counts().value_counts()</code> is a
+Series whose index is a sequence of the unique values in the above
 Series, and whose values are the frequencies of each value above. In the
 case where all titles in <code>tv["Title"]</code> are unique, then
 <code>tv["Title"].value_counts()</code> will only have one unique value,
@@ -319,12 +319,41 @@ one row total, and will look something like:</p>
 <span id="cb2-2"><a aria-hidden="true" href="#cb2-2" tabindex="-1"></a>Name: Title, dtype: int64</span></code></pre>
 </div>
 <p>This allows us to distinguish between the first two answer choices.
-The key is remembering</p>
+The key is remembering that <strong>in order to set a column to the
+index, the column should only contain unique values</strong>, since the
+goal of the index is to provide a “name” (more formally, a label) for
+each row.</p>
 <ul>
 <li>The first answer choice, “The only case in which it would make sense
 to set the index of <code>tv</code> to <code>"Title"</code> is if
-<code>double_count.iloc[0] == 1</code> is <code>True</code>.”, is false.
-As we can see in the example above, the</li>
+<code>double_count.iloc[0] == 1</code> is <code>True</code>”, is false.
+As we can see in the example above, all titles are unique, but
+<code>double_count.iloc[0]</code> is something other than 1.</li>
+<li>The second answer choice, “The only case in which it would make
+sense to set the index of <code>tv</code> to <code>"Title"</code> is if
+<code>double_count.loc[1] == tv.shape[0]</code> is <code>True</code>”,
+is true. If <code>double_count.loc[1] == tv.shape[0]</code>, it means
+that all values in <code>tv["Title"].value_counts()</code> were 1,
+meaning that <code>tv["Title"]</code> consisted solely of unique values,
+which is the only case in which it makes sense to set
+<code>"Title"</code> to the index.</li>
+</ul>
+<p>Now, let’s look at the second two answer choices. If
+<code>double_counts.loc[2] == 5</code>, it would mean that 5 of the
+values in <code>tv["Title"].value_counts()</code> were 2. This would
+mean that there were 5 pairs of titles in <code>tv["Title"]</code> that
+were the same.</p>
+<ul>
+<li>This makes the fourth answer choice, “If
+<code>double_count.loc[2] == 5</code> is <code>True</code>, there are 5
+pairs of 2 TV shows such that each pair shares the same
+<code>"Title"</code>”, correct.</li>
+<li>The third answer choice, “If <code>double_count.loc[2] == 5</code>
+is <code>True</code>, there are 5 TV shows that all share the same
+<code>"Title"</code>”, is incorrect; if there were 5 TV shows with the
+same title, then <code>double_count.loc[5]</code> would be at least 1,
+but we can’t make any guarantees about
+<code>double_counts.loc[2]</code>.</li>
 </ul>
 </div>
 </div>
@@ -384,10 +413,881 @@ include <code>star_only</code>:</p>
 <li><code>(star_only["Disney+"] == 1).sum()</code></li>
 <li><code>star_only[star_only["Disney+"] == 1].shape[0]</code></li>
 </ul>
+<p><strong>Common misconception</strong>: Many students calculated the
+wrong proportion: they calculated the proportion of shows available to
+stream on Disney+ that have <code>"Star Wars"</code> in the title. We
+asked for the proportion of shows with <code>"Star Wars"</code> in the
+title that are available to stream on Disney+; “proportion of <span class="math inline">X</span> that <span class="math inline">Y</span>” is
+always <span class="math inline">\frac{\# X \text{ and } Y}{\#
+X}</span>.</p>
 </div>
 </div>
 </div>
 </div>
+<hr />
+<h2 id="problem-3">Problem 3</h2>
+<p>As you saw in the first few rows of <code>tv</code>, some TV shows
+are available for streaming on multiple streaming services. Fill in the
+blanks so that the two expressions below, Expression 1 and Expression 2,
+<strong>both</strong> evaluate to the <code>"Title"</code> of the TV
+show that is available for streaming on the <strong>greatest number of
+streaming services</strong>. Assume there are no ties and that the
+<code>"Title"</code> column contains unique values.</p>
+<p>Expression 1:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>tv.set_index(<span class="st">&quot;Title&quot;</span>).loc[__(a)__].T.<span class="bu">sum</span>(axis<span class="op">=</span><span class="dv">0</span>).idxmax()</span></code></pre></div>
+<p>Expression 2:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    (</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>        tv.assign(num_services<span class="op">=</span>tv.iloc[__(b)__].<span class="bu">sum</span>(__(c)__))</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>            .sort_values(<span class="st">&quot;num_services&quot;</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>            .iloc[__(d)__]</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    )</span></code></pre></div>
+<p><strong><em>Hint</em></strong>: <code>.T</code> transposes the rows
+and columns of a DataFrame — the indexes of <code>df</code> are the
+columns of <code>df.T</code> and vice versa.</p>
+<p>What goes in the blanks?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="true" aria-controls="collapse3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse3" class="accordion-collapse collapse collapse"
+aria-labelledby="heading3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answers</strong>:</p>
+<ul>
+<li><ol type="a">
+<li><code>:, "Netflix":</code> or some variation of that</li>
+</ol></li>
+<li><ol start="2" type="a">
+<li><code>:, 5:</code> or some variation of that</li>
+</ol></li>
+<li><ol start="3" type="a">
+<li><code>axis=1</code></li>
+</ol></li>
+<li><ol start="4" type="a">
+<li><code>-1, 0</code></li>
+</ol></li>
+</ul>
+<p>In Expression 1, keep in mind that <code>idxmax()</code> is a Series
+method returns the index of the row with the maximum value. As such, we
+can infer that Expression 1 sums the service-specific indicator columns
+(that is, the columns <code>"Netflix"</code>, <code>"Hulu"</code>,
+<code>"Prime Video"</code>, and <code>"Disney+"</code>) for each row and
+returns the index of the row with the greatest sum. To do this, we need
+the <code>loc</code> accessor to select all the service-specific
+indicator columns, which we can do using <code>loc[:, "Netflix":]</code>
+or
+<code>loc[:, ["Netflix", "Hulu", "Prime Video", "Disney+"]]</code>.</p>
+<p>When looking at Expression 2, we can split the problem into two
+parts: the code inside the <code>assign</code> statement and the code
+outside of it.</p>
+<ul>
+<li>Glancing at the code inside of the <code>assign</code> statement,
+(and also noticing the variable <code>num_services</code>), we realize
+that we, once again, want to sum up the values in the service-specific
+indicator columns. We do this by first selecting the last four columns,
+using <code>.iloc[:, 5:]</code> (notice the <code>iloc</code>), and then
+summing over <code>axis=1</code>. We use <code>axis=1</code> (different
+from <code>axis=0</code> in Expression 1), because unlike Expression 1,
+we’re summing over each row, instead of each column. If there had not
+been a <code>.T</code> in the code for Expression 1, we would’ve also
+used <code>axis=1</code> in Expression 1.</li>
+<li>Finally, we need to select the <code>"Title"</code> of the last row
+in DataFrame in Expression 2, because <code>sort_values</code> sorts in
+ascending order by default. The last row has an integer position of -1,
+and the <code>"Title"</code> column has an integer position of 0, so we
+use <code>iloc[-1, 0]</code>.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="problem-4">Problem 4</h2>
+<p>In 2020, during the early COVID era, popular shows like <em>Never
+Have I Ever</em>, <em>The Last Dance</em>, and <em>The Queen’s
+Gambit</em> were all released. What they all share in common, other than
+high viewership numbers and popularity on social media, are high ratings
+on both IMDb and Rotten Tomatoes.</p>
+<p>Fill in the blank below so that <code>top_years</code> evaluates to
+an <strong>array</strong> of the <strong>years</strong> in which
+<strong>at least 5 TV shows with an IMDb rating of 9 or higher were
+released</strong>.</p>
+<pre><code>top_years = tv.groupby(&quot;Year&quot;).filter(____)[&quot;Year&quot;].unique()</code></pre>
+<p>What goes in the blank?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="true" aria-controls="collapse4">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4" class="accordion-collapse collapse collapse"
+aria-labelledby="heading4" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer</strong>:
+<code>lambda df: (df["IMDb"] &gt;= 9).sum() &gt;= 5</code></p>
+<p>The <code>filter</code> method of a <code>DataFrameGroupBy</code>
+object takes in a function. That function should itself take in a
+DataFrame, corresponding to all of the rows for a particular
+<code>"Year"</code>, and return either <code>True</code> or
+<code>False</code>. The result,
+<code>tv.groupby("Year").filter(&lt;our function&gt;)</code>, will be a
+DataFrame containing only the rows in which the returned Boolean by our
+function is <code>True</code>. For instance,
+<code>tv.groupby("Year").filter(lambda df: df.shape[0] &gt;= 2)</code>
+will contain all of the rows for <code>"Years"</code> with at least 2 TV
+shows.</p>
+<p>In our case, we want
+<code>tv.groupby("Year").filter(&lt;our function&gt;)</code> to evaluate
+to a DataFrame with all of the <code>"Years"</code> that have at least 5
+TV shows that have an <code>"IMDb"</code> rating of at least 9 (since
+the provided code afterwards, <code>["Year"].unique()</code>, finds all
+of the unique <code>"Year"</code>s in the DataFrame we produce). If
+<code>df</code> is a DataFrame of TV shows, then
+<code>(df["IMDb"] &gt;= 9).sum()</code> is the number of TV shows in
+that DataFrame with an <code>"IMDb"</code> rating of at least 9, and
+<code>(df["IMDb"] &gt;= 9).sum() &gt;= 5</code> is <code>True</code>
+only for DataFrames in which there are at least 5 TV shows with an
+<code>"IMDb"</code> rating of at least 9. Thus, the answer we were
+looking for is
+<code>lambda df: (df["IMDb"] &gt;= 9).sum() &gt;= 5</code>.</p>
+<p>Another good answer we saw was
+<code>lambda df: df.loc[df["IMDb"] &gt;= 9, "Title"].nunique() &gt;= 5</code>.</p>
+<p>Fun fact: In the DataFrame we used to produce the exam, the only year
+that satisfied the above criteria was 2020!</p>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="problem-5">Problem 5</h2>
+<p>For your convenience, the first few rows of <code>tv</code> are shown
+again below.</p>
+<center><img src='../assets/images/wi23-midterm/data-info-wi23-mt.png' width=65%></center>
+<p>For the purposes of this question only, suppose we have also access
+to another similar DataFrame, <code>movies</code>, which contains
+information about a variety of movies. The information we have for each
+movie in <code>movies</code> is the same as the information we have for
+each TV show in <code>tv</code>, except for IMDb ratings, which are
+missing from <code>movies</code>.</p>
+<p>The first few rows of <code>movies</code> are shown below (though
+<code>movies</code> has many more rows than are pictured here).</p>
+<center><img src='../assets/images/wi23-midterm/movies-dinfo-wi23-mt.png' width=65%></center>
+<p><br></p>
+<h3 id="problem-5.1">Problem 5.1</h3>
+<p>The function <code>total_null</code>, defined below, takes in a
+DataFrame and returns the total number of null values in the
+DataFrame.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>total_null <span class="op">=</span> <span class="kw">lambda</span> df: df.isna().<span class="bu">sum</span>().<span class="bu">sum</span>()</span></code></pre></div>
+<p>Consider the function <code>delta</code>, defined below.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> delta(a, b):</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    tv_a <span class="op">=</span> tv.head(a)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    movies_b <span class="op">=</span> movies.head(b)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    together <span class="op">=</span> pd.concat([tv_a, movies_b])</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> total_null(together) <span class="op">-</span> total_null(tv_a) <span class="op">-</span> total_null(movies_b)</span></code></pre></div>
+<p>Which of the following functions is equivalent to
+<code>delta</code>?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> <code>lambda a, b: a</code></p></li>
+<li><p><input type="radio" disabled="" /> <code>lambda a, b: b</code></p></li>
+<li><p><input type="radio" disabled="" /> <code>lambda a, b: 9 * a</code></p></li>
+<li><p><input type="radio" disabled="" /> <code>lambda a, b: 8 * b</code></p></li>
+<li><p><input type="radio" disabled="" /> <code>lambda a, b: min(9 * a, 8 * b)</code></p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading5_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_1" aria-expanded="true" aria-controls="collapse5_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse5_1" class="accordion-collapse collapse collapse"
+aria-labelledby="heading5_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer</strong>: <code>lambda a, b: b</code></p>
+<p>Let’s understand what each function does.</p>
+<ul>
+<li><code>total_null</code> just counts all the null values in a
+DataFrame.</li>
+<li><code>delta</code> concatenates the first <code>a</code> rows of
+<code>tv</code> with the first <code>b</code> rows of
+<code>movies</code> <strong>vertically</strong>, that is, on top of one
+another (over axis 0). It then returns the difference between the total
+number of null values in the concatenated DataFrame and the total number
+of null values in the first <code>a</code> rows of <code>tv</code> and
+first <code>b</code> rows of <code>movies</code> – in other words, it
+returns <strong>the number of null values that were added as a result of
+the concatenation</strong>.</li>
+</ul>
+<p>The key here is recognizing that <code>tv</code> and
+<code>movies</code> have all of the same column names,
+<strong>except</strong> <code>movies</code> doesn’t have an
+<code>"IMDb"</code> column. As a result, when we concatenate, the
+<code>"IMDb"</code> column will contain null values for every row that
+was originally from <code>movies</code>. Since <code>b</code> rows from
+<code>movies</code> are in the concatenated DataFrame, <code>b</code>
+new null values are introduced as a result of the concatenation, and
+thus <code>lambda, a, b: b</code> does the same thing as
+<code>delta</code>.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-5.2">Problem 5.2</h3>
+<p>Fill in the blank to complete the implementation of the function
+<code>size_of_merge</code>, which takes a string <code>col</code>,
+corresponding to the name of a <strong>single</strong> column that is
+shared between <code>tv</code> and <code>movies</code>, and returns the
+<strong>number of rows in</strong> the DataFrame
+<code>tv.merge(movies, on=col)</code>.</p>
+<ul>
+<li><p>For instance, <code>size_of_merge("Year")</code> should return
+the number of rows in <code>tv.merge(movies, on="Year")</code>.</p></li>
+<li><p>The purpose of this question is to have you think conceptually
+about how merges work. As such, <strong>solutions containing
+<code>merge</code> or <code>concat</code> will receive 0
+points.</strong></p></li>
+</ul>
+<p><strong>What goes in the blank below?</strong></p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> size_of_merge(col):</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (____).<span class="bu">sum</span>()</span></code></pre></div>
+<p><strong><em>Hint</em></strong>: Consider the behavior below.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> s1 <span class="op">=</span> pd.Series({<span class="st">&#39;a&#39;</span>: <span class="dv">2</span>, <span class="st">&#39;b&#39;</span>: <span class="dv">3</span>})</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> s2 <span class="op">=</span> pd.Series({<span class="st">&#39;c&#39;</span>: <span class="dv">4</span>, <span class="st">&#39;a&#39;</span>: <span class="op">-</span><span class="dv">1</span>, <span class="st">&#39;b&#39;</span>: <span class="dv">4</span>})</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> s1 <span class="op">*</span> s2</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>a    <span class="op">-</span><span class="fl">2.0</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>b    <span class="fl">12.0</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>c     NaN</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>dtype: float64</span></code></pre></div>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading5_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_2" aria-expanded="true" aria-controls="collapse5_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse5_2" class="accordion-collapse collapse collapse"
+aria-labelledby="heading5_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer</strong>:
+<code>tv[col].value_counts() * movies[col].value_counts()</code></p>
+<p><code>tv.merge(movies, on=col)</code> contains one row for every
+“match” between <code>tv[col]</code> and <code>movies[col]</code>.
+Suppose, for example, that <code>col="Year"</code>. If
+<code>tv["Year"]</code> contains 30 values equal to 2019, and
+<code>movies["Year"]</code> contains 5 values equal to 2019,
+<code>tv.merge(movies, on="Year")</code> will contain <span class="math inline">30 \cdot 5 = 150</span> rows in which the
+<code>"Year"</code> value is equal to 2019 – one for every combination
+of a 2019 row in <code>tv</code> and a 2019 row in
+<code>movies</code>.</p>
+<p><code>tv["Year"].value_counts()</code> and
+<code>movies["Year"].value_counts()</code> contain, respectively, the
+frequencies of the unique values in <code>tv["Year"]</code> and
+<code>movies["Year"]</code>. Using the 2019 example from above,
+<code>tv["Year"].value_counts() * movies["Year"].value_counts()</code>
+will contain a row whose index is 2019 and whose value is 150, with
+similar other entries for the other years in the two Series. (The hint
+is meant to demonstrate the fact that no matter how the two Series are
+sorted, the product is done element-wise by matching up indexes.) Then,
+<code>(tv["Year"].value_counts() * movies["Year"].value_counts()).sum()</code>
+will sum these products across all years, ignoring null values.</p>
+<p>As such, the answer we were looking for is
+<code>tv[col].value_counts() * movies[col].value_counts()</code>
+(remember, <code>"Year"</code> was just an example for this
+explanation).</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-6">Problem 6</h2>
+<p>For the remainder of the exam, we will only consider TV shows that
+are available to stream <em>exclusively</em> on a single streaming
+service. The DataFrame <code>tv_excl</code> contains all of the
+information we have for these TV shows. Note that instead of containing
+separate columns for each streaming service, as <code>tv</code> did,
+<code>tv_excl</code> instead has a single <code>"Service"</code> column
+that contains the name of the one streaming service that the TV show is
+available for streaming on.</p>
+<p>The first few rows of <code>tv_excl</code> are shown below (though,
+of course, <code>tv_excl</code> has many more rows than are pictured
+here). Note that <em>Being Erica</em> is not in <code>tv_excl</code>,
+since it is available to stream on multiple services.</p>
+<center><img src='../assets/images/wi23-midterm/tv-excl.png' width=65%></center>
+<p><br></p>
+<h3 id="problem-6.1">Problem 6.1</h3>
+<p>The DataFrame <code>counts</code>, shown in full below, contains the
+number of TV shows for every combination of <code>"Age"</code> and
+<code>"Service"</code>.</p>
+<center><img src='../assets/images/wi23-midterm/pivot.png' width=40%></center>
+<p>Given the above information, what does the following expression
+evaluate to?</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>tv_excl.groupby([<span class="st">&quot;Age&quot;</span>, <span class="st">&quot;Service&quot;</span>]).<span class="bu">sum</span>().shape[<span class="dv">0</span>]</span></code></pre></div>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> 4</p></li>
+<li><p><input type="radio" disabled="" /> 5</p></li>
+<li><p><input type="radio" disabled="" /> 12</p></li>
+<li><p><input type="radio" disabled="" /> 16</p></li>
+<li><p><input type="radio" disabled="" /> 18</p></li>
+<li><p><input type="radio" disabled="" /> 20</p></li>
+<li><p><input type="radio" disabled="" /> 25</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading6_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_1" aria-expanded="true" aria-controls="collapse6_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse6_1" class="accordion-collapse collapse collapse"
+aria-labelledby="heading6_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer</strong>: 18</p>
+<p>Note that the DataFrame <code>counts</code> is a pivot table, created
+using
+<code>tv_excl.pivot_table(index="Age", columns="Service", aggfunc="size")</code>.
+As we saw in lecture, pivot tables contain the same information as the
+result of grouping on two columns.</p>
+<p>The DataFrame <code>tv_excl.groupby(["Age", "Service"]).sum()</code>
+will have one row for every unique combination of <code>"Age"</code> and
+<code>"Service"</code> in <code>tv_excl</code>. (The same is true even
+if we used a different aggregation method, like <code>.mean()</code> or
+<code>.max()</code>.) As <code>counts</code> shows us,
+<code>tv_excl</code> contains every possible combination of a single
+element in {<code>"13+"</code>, <code>"16+"</code>, <code>"18+"</code>,
+<code>"7+"</code>, <code>"all"</code>} with a single element in
+{<code>"Disney+"</code>, <code>"Hulu"</code>, <code>"Netflix"</code>,
+<code>"Prime Video"</code>}, except for (<code>"13+"</code>,
+<code>"Disney+"</code>) and (<code>"18+"</code>,
+<code>"Disney+"</code>), which were not present in <code>tv_excl</code>;
+if they were, they would have non-null values in
+<code>counts</code>.</p>
+<p>As such, <code>tv_excl.groupby(["Age", "Service"]).sum()</code> will
+have <span class="math inline">20 - 2 = 18</span> rows, and
+<code>tv_excl.groupby(["Age", "Service"]).sum().shape[0]</code>
+evaluates to 18.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-6.2">Problem 6.2</h3>
+<p>Tiffany would like to compare the distribution of <code>"Age"</code>
+for Hulu and Netflix. Specifically, she’d like to test the following
+hypotheses:</p>
+<ul>
+<li><p><strong>Null Hypothesis</strong>: The distributions of
+<code>"Age"</code> for Hulu and Netflix are drawn from the same
+population distribution, and any observed differences are due to random
+chance.</p></li>
+<li><p><strong>Alternative Hypothesis</strong>: The distributions of
+<code>"Age"</code> for Hulu and Netflix are drawn from different
+population distributions.</p></li>
+</ul>
+<p>What type of test is this?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> Hypothesis test</p></li>
+<li><p><input type="radio" disabled="" /> Permutation test</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading6_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_2" aria-expanded="true" aria-controls="collapse6_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse6_2" class="accordion-collapse collapse collapse"
+aria-labelledby="heading6_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer</strong>: Permutation test</p>
+<p>A permutation test is a statistical test in which we aim to determine
+if two samples look like they were drawn from the same unknown
+population. Here, our two samples are the distribution of
+<code>"Age"</code>s for Hulu and the distribution of <code>"Age"</code>s
+for Netflix.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-6.3">Problem 6.3</h3>
+<p>Consider the DataFrame <code>distr</code>, defined below.</p>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode py"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>hn <span class="op">=</span> counts[[<span class="st">&quot;Hulu&quot;</span>, <span class="st">&quot;Netflix&quot;</span>]]</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>distr <span class="op">=</span> (hn <span class="op">/</span> hn.<span class="bu">sum</span>()).T  <span class="co"># Note that distr has 2 rows and 5 columns.</span></span></code></pre></div>
+<p>To test the hypotheses in part (b), Tiffany decides to use the total
+variation distance as her test statistic. Which of the following
+expressions <strong>DO NOT</strong> correctly compute the observed
+statistic for her test? Select all that apply.</p>
+<ul class="task-list">
+<li><p><input type="checkbox" disabled="" /> <code>distr.diff().iloc[-1].abs().sum() / 2</code></p></li>
+<li><p><input type="checkbox" disabled="" /> <code>distr.diff().sum().abs().sum() / 2</code></p></li>
+<li><p><input type="checkbox" disabled="" /> <code>distr.diff().sum().sum().abs() / 2</code></p></li>
+<li><p><input type="checkbox" disabled="" /> <code>(distr.sum() - 2 * distr.iloc[0]).abs().sum() / 2</code></p></li>
+<li><p><input type="checkbox" disabled="" /> <code>distr.diff().abs().sum(axis=1).iloc[-1] / 2</code></p></li>
+<li><p><input type="checkbox" disabled="" /> None of the above: all above options correctly compute the observed
+statistic.</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading6_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_3" aria-expanded="true" aria-controls="collapse6_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse6_3" class="accordion-collapse collapse collapse"
+aria-labelledby="heading6_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer</strong>:
+<code>distr.diff().sum().sum().abs() / 2</code> only</p>
+<p>First, note that the difference between the TVD calculation here and
+those in lecture is that our pivot table contains one
+<strong>row</strong> for each distribution, rather than one
+<strong>column</strong> for each distribution. This is because of the
+<code>.T</code> in the code snippet above. <code>distr</code> may look
+something like:</p>
+<center><img src="../assets/images/wi23-midterm/distr.png" width="50%"/></center>
+<p><br/></p>
+<p>As such, here we need to apply the <code>.diff()</code> method to
+each column first, not each row (meaning we should supply
+<code>axis=0</code> to <code>diff</code>, not <code>axis=1</code>;
+<code>axis=0</code> is the default, so we don’t need to explicitly
+specify it). <code>distr.diff()</code> may look something like:</p>
+<center><img src="../assets/images/wi23-midterm/distr-diff.png" width="50%"/></center>
+<p><br/></p>
+<p>With that in mind, let’s look at each option, remembering that the
+TVD is the <strong>sum of the absolute differences in proportions,
+divided by 2</strong>.</p>
+<ul>
+<li><code>distr.diff().iloc[-1].abs().sum() / 2</code>:
+<ul>
+<li><code>distr.diff().iloc[-1]</code> contains the differences in
+proportions.</li>
+<li><code>distr.diff().iloc[-1].abs()</code> contains the absolute
+differences in proportions.</li>
+<li><code>distr.diff().iloc[-1].abs().sum() / 2</code> contains the sum
+of the absolute differences in proportions, divided by 2. <strong>This
+is the TVD.</strong></li>
+</ul></li>
+<li><code>distr.diff().sum().abs().sum() / 2</code>:
+<ul>
+<li><code>distr.diff().sum()</code> is a Series containing just the last
+row in <code>distr.diff()</code>; remember, null values are ignored when
+using methods such as <code>.mean()</code> and <code>.sum()</code>.</li>
+<li><code>distr.diff().sum().abs()</code> contains the absolute
+differences in proportions, and hence
+<code>distr.diff().sum().abs().sum() / 2</code> contains the sum of the
+absolute differences in proportions, divided by 2. <strong>This is the
+TVD.</strong></li>
+</ul></li>
+<li><code>distr.diff().sum().sum().abs() / 2</code>:
+<ul>
+<li><code>distr.diff().sum()</code> contains the differences in
+proportions (explained above).</li>
+<li><code>distr.diff().sum().sum()</code> contains the sum of the
+differences in proportions. <strong>This is 0</strong>; remember, the
+reason we use the absolute value is to prevent the positive and negative
+differences in proportions from cancelling each other out. As a result,
+this option <strong>does not compute the TVD</strong>; in fact, it
+errors, because <code>distr.diff().sum().sum()</code> is a single
+<code>float</code>, and <code>float</code>s don’t have an
+<code>.abs()</code> method.</li>
+</ul></li>
+<li><code>(distr.sum() - 2 * distr.iloc[0]).abs().sum() / 2</code>:
+<ul>
+<li>This option seems strange, but does actually compute the TVD. The
+key idea is the fact that <span class="math inline">a - b</span> is the
+same as <span class="math inline">(a + b) - 2 \cdot b)</span>.
+<code>distr.sum()</code> is the same as
+<code>distr.iloc[0] + distr.iloc[1]</code>, so
+<code>distr.sum() - 2 * distr.iloc[0]</code> is
+<code>distr.iloc[0] + distr.iloc[1] - 2 * distr.iloc[0]</code> which is
+<code>distr.iloc[1] - distr.iloc[0]</code>, which is just
+<code>distr.diff().iloc[-1]</code>.</li>
+<li>Then, this option reduces to
+<code>distr.diff().iloc[-1].abs().sum() / 2</code>, which is the same as
+Option 1. <strong>This is the TVD.</strong></li>
+</ul></li>
+<li><code>distr.diff().abs().sum(axis=1).iloc[-1] / 2</code>:
+<ul>
+<li><code>distr.diff().abs()</code> is a DataFrame in which the last row
+contains the absolute differences in proportions.</li>
+<li><code>distr.diff().abs().sum(axis=1)</code> is a Series in which the
+first element is null and the second element is the sum of the absolute
+differences in proportions.</li>
+<li>As such, <code>distr.diff().abs().sum(axis=1).iloc[-1] / 2</code> is
+the sum of the absolute differences in proportions divided by 2.
+<strong>This is the TVD.</strong></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<p>Doris proposes a novel approach for testing the hypotheses in part
+(b). She proposes we compute the distribution of <code>"Age"</code> for
+all TV shows in <code>tv_excl</code>, ignoring the streaming service
+they’re available on. Then, she suggests we run two separate tests of
+the following hypotheses, using the same significance level as used for
+the tests in part (b):</p>
+<ul>
+<li><p><strong>Null Hypothesis</strong>: The distribution of
+<code>"Age"</code> for service <span class="math inline">X</span> is
+drawn from the distribution of <code>"Age"</code> for all services we
+have data for.</p></li>
+<li><p><strong>Alternative Hypothesis</strong>: The distribution of
+<code>"Age"</code> for service <span class="math inline">X</span> is not
+drawn from the distribution of <code>"Age"</code> for all services we
+have data for.</p></li>
+</ul>
+<p>She suggests we test the above pair of hypotheses separately for Hulu
+and Netflix, and gives the following interpretations:</p>
+<ol type="1">
+<li><p>If we fail to reject both null hypotheses here, we can also fail
+to reject the null hypothesis in part (b).</p></li>
+<li><p>If we reject both null hypotheses here, we can also reject the
+null hypothesis in part (b).</p></li>
+</ol>
+<p><br></p>
+<h3 id="problem-6.4">Problem 6.4</h3>
+<p>What type of test is Doris proposing we run?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> Hypothesis test</p></li>
+<li><p><input type="radio" disabled="" /> Permutation test</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading6_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_4" aria-expanded="true" aria-controls="collapse6_4">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse6_4" class="accordion-collapse collapse collapse"
+aria-labelledby="heading6_4" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer</strong>: Hypothesis test</p>
+<p>A hypothesis test is a statistical test in which we aim to determine
+whether a sample looks like it was drawn at random from a known
+population. Here, Doris is proposing we run two separate hypothesis
+tests: one in which we determine whether the distribution of
+<code>"Age"</code> for Hulu (sample) is drawn from the distribution of
+<code>"Age"</code> in our entire dataset (population), and one in which
+we determine whether the distribution of <code>"Age"</code> for Netflix
+(sample) is drawn from the distribution of <code>"Age"</code> in our
+entire dataset (population).</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-6.5">Problem 6.5</h3>
+<p>Which of Doris’ interpretations are valid? Select all that apply.</p>
+<ul class="task-list">
+<li><p><input type="checkbox" disabled="" /> Interpretation 1: If we fail to reject both null hypotheses here,</p></li>
+<li><p><input type="checkbox" disabled="" /> Interpretation 2: If we reject both null hypotheses here, we can
+also</p></li>
+<li><p><input type="checkbox" disabled="" /> Neither interpretation is valid.</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading6_5">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_5" aria-expanded="true" aria-controls="collapse6_5">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse6_5" class="accordion-collapse collapse collapse"
+aria-labelledby="heading6_5" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer</strong>: Interpretation 1 only</p>
+<p>Let’s consider each option.</p>
+<ul>
+<li><strong>Interpretation 1</strong>: Suppose we fail to reject both
+null hypotheses here. If that’s the case, then the distribution of
+<code>"Age"</code> for Hulu <em>looks</em> like a random sample from the
+distribution of <code>"Age"</code> in our full dataset, and so does the
+distribution of <code>"Age"</code> for Netflix. (Note that we can’t
+conclude they <em>are</em> random samples from the distribution of
+<code>"Age"</code> in our full dataset, since we can’t prove the null,
+we can only fail to reject it). If that’s the case, the distributions of
+<code>"Age"</code> for Hulu and Netflix both look like they’re drawn
+from the same population, which means we fail to reject the null from
+Problem 6.2.</li>
+<li><strong>Interpretation 2</strong>: Suppose we reject both null
+hypotheses here. If that’s the case, then neither the distribution of
+<code>"Age"</code> for Hulu nor the distribution of <code>"Age"</code>
+for Netflix look like a random sample of <code>"Age"</code> in our full
+dataset. However, that doesn’t imply that these two distributions don’t
+look like samples of the same population; all it implies is that they
+don’t look like samples of this particular population. It is still
+possible that there exists some population distribution that the
+distributions of <code>"Age"</code> for Hulu and Netflix both look like
+they’re drawn from, which means we can’t automatically reject the null
+from Problem 6.2.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-7">Problem 7</h2>
+<p>The <code>"IMDb"</code> column in <code>tv_excl</code> contains
+several missing values.</p>
+<p><strong><em>Note</em></strong>: Answer each subpart of this question
+independently of other subparts.</p>
+<p><br></p>
+<h3 id="problem-7.1">Problem 7.1</h3>
+<p>Given no other information other than a TV show’s
+<code>"Title"</code> and <code>"IMDb"</code> rating, what is the most
+likely missingness mechanism of the <code>"IMDb"</code> column?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> Missing by design</p></li>
+<li><p><input type="radio" disabled="" /> Not missing at random</p></li>
+<li><p><input type="radio" disabled="" /> Missing at random</p></li>
+<li><p><input type="radio" disabled="" /> Missing completely at random</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading7_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_1" aria-expanded="true" aria-controls="collapse7_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse7_1" class="accordion-collapse collapse collapse"
+aria-labelledby="heading7_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer</strong>:</p>
+<ul>
+<li>Full credit: Not missing at random</li>
+<li>Partial credit: Missing completely at random</li>
+</ul>
+<p>The answer we were looking for is not missing at random (NMAR). As we
+saw repeatedly in lectures and Lab 5, in cases where all we have access
+to is a single column with missing values, potentially with other
+unrelated columns (like <code>"Title"</code> here), the best explanation
+is that there is some inherent reason as to why the values in the column
+with missing values are missing. Here, a reasonable interpretation is
+that the <code>"IMDb"</code> scores that are missing are likely to come
+from worse TV shows, and so lower scores are more likely to be missing.
+Think about it like this – if a TV show is really great, presumably more
+people would know about it, and it would be rated. If a TV show wasn’t
+as good and wasn’t as popular, it is more likely to be ignored.</p>
+<p>However, partial credit was awarded to those who answered missing
+completely at random.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-7.2">Problem 7.2</h3>
+<p>Now, suppose we discover that the median
+<code>"Rotten Tomatoes"</code> rating among TV shows with a missing
+<code>"IMDb"</code> rating is a 13, while the median
+<code>"Rotten Tomatoes"</code> rating among TV shows with a present
+<code>"IMDb"</code> rating is a 52.</p>
+<p>Given this information, what is the most likely missingness mechanism
+of the <code>"IMDb"</code> column?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> Missing by design</p></li>
+<li><p><input type="radio" disabled="" /> Not missing at random</p></li>
+<li><p><input type="radio" disabled="" /> Missing at random</p></li>
+<li><p><input type="radio" disabled="" /> Missing completely at random</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading7_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_2" aria-expanded="true" aria-controls="collapse7_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse7_2" class="accordion-collapse collapse collapse"
+aria-labelledby="heading7_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer</strong>: Missing at random</p>
+<p>The problem tells us that the distribution of
+<code>"Rotten Tomatoes"</code> when <code>"IMDb"</code> is missing (mean
+13) is very different from the distribution of
+<code>"Rotten Tomatoes"</code> when <code>"IMDb"</code> is not missing
+(mean 52). As such, the missingness of <code>"IMDb"</code> appears to
+depend on <code>"Rotten Tomatoes"</code>, and so the most likely
+missingness mechanism is missing at random.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-7.3">Problem 7.3</h3>
+<p>Suppose we want to perform a statistical test to determine whether
+the missingness of <code>"IMDb"</code> depends on <code>"Age"</code>.
+Which of the following test statistics could we use? Select all that
+apply.</p>
+<ul class="task-list">
+<li><p><input type="checkbox" disabled="" /> Difference in means</p></li>
+<li><p><input type="checkbox" disabled="" /> Absolute difference in means</p></li>
+<li><p><input type="checkbox" disabled="" /> Total variation distance</p></li>
+<li><p><input type="checkbox" disabled="" /> The Kolmogorov-Smirnov statistic</p></li>
+<li><p><input type="checkbox" disabled="" /> None of the above</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading7_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_3" aria-expanded="true" aria-controls="collapse7_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse7_3" class="accordion-collapse collapse collapse"
+aria-labelledby="heading7_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer</strong>: Total variation distance only</p>
+<p>Our permutation test here needs to compare two distributions:</p>
+<ul>
+<li>The distribution of <code>"Age"</code> when <code>"IMDb"</code> is
+missing.</li>
+<li>The distribution of <code>"Age"</code> when <code>"IMDb"</code> is
+not missing.</li>
+</ul>
+<p>Since <code>"Age"</code> is a categorical variable – remember, its
+only possible values are <code>"7+"</code>, <code>"13+"</code>,
+<code>"16+"</code>, <code>"18+"</code>, and <code>"all"</code> – the
+above two distributions are categorical. The only test statistic of the
+options provided that compares categorical distributions is the total
+variation distance.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-7.4">Problem 7.4</h3>
+<p>To determine whether the missingness of <code>"IMDb"</code> depends
+on <code>"Year"</code>, we produce the following plot.</p>
+<center><img src='../assets/images/wi23-midterm/year-imdb.png' width=50%></center>
+<p>Suppose we want to perform a statistical test to determine whether
+the two distributions above come from the same population distribution.
+Which test statistic is most likely to yield a significant result?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> Difference in means</p></li>
+<li><p><input type="radio" disabled="" /> Absolute difference in means</p></li>
+<li><p><input type="radio" disabled="" /> Total variation distance</p></li>
+<li><p><input type="radio" disabled="" /> The Kolmogorov-Smirnov statistic</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading7_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_4" aria-expanded="true" aria-controls="collapse7_4">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse7_4" class="accordion-collapse collapse collapse"
+aria-labelledby="heading7_4" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer</strong>: The Kolmogorov-Smirnov statistic</p>
+<p>First, note that the two distributions are quantitative, which means
+the TVD can’t be used here (the TVD only measures the difference between
+two categorical distributions).</p>
+<p>To decide between the remaining options, note that the two
+distributions visualized appear to have the same mean, but different
+shapes. The Kolmogorov-Smirnov statistic is designed to detect
+differences in the shapes of distributions with the same center, and as
+such, it is the most likely to yield a significant result here. The
+others may not; since the means of the two distributions are very
+similar, the observed difference in means will be close to 0, which is a
+typical value under the null.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-7.5">Problem 7.5</h3>
+<p>To determine whether the missingness of <code>"IMDb"</code> depends
+on <code>"Service"</code>, we produce the following plot.</p>
+<center><img src='../assets/images/wi23-midterm/service-imdb.png' width=50%></center>
+<p>We’d like to fill in missing <code>"IMDb"</code> values in the
+fastest, most efficient way possible, such that the mean of the imputed
+<code>"IMDb"</code> column is as close to the true mean of the
+<code>"IMDb"</code> column in nature as possible. Which imputation
+technique should we use?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> Unconditional mean imputation</p></li>
+<li><p><input type="radio" disabled="" /> Mean imputation, conditional on <code>"Service"</code></p></li>
+<li><p><input type="radio" disabled="" /> Unconditional probabilistic imputation</p></li>
+<li><p><input type="radio" disabled="" /> Probabilistic imputation, conditional on <code>"Service"</code></p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading7_5">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_5" aria-expanded="true" aria-controls="collapse7_5">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse7_5" class="accordion-collapse collapse collapse"
+aria-labelledby="heading7_5" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>Since the missingness of <code>"IMDb"</code> appears to depend on
+<code>"Service"</code>, in order to accurately estimate the true mean of
+the <code>"IMDb"</code> column, we must impute conditionally on
+<code>"Service"</code>, otherwise the imputed mean will be biased.</p>
+<p>To decide between conditional mean imputation and conditional
+probabilistic imputation, note that we were asked to find the
+<strong>fasted, most efficient</strong> technique possible, such that
+the imputed mean is close to the true mean. Conditional mean imputation
+is more efficient than conditional probabilistic imputation, as
+probabilistic imputation requires sampling. While mean imputation
+shrinks the variance of the imputed distribution relative to the true
+distribution, we weren’t asked to preserve the variance of the true
+distribution, so conditional mean imputation is the right choice.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
 <hr />
 <h2 id="section"><span class="math display"> </span></h2>
 <h4

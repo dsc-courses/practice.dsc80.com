@@ -33,6 +33,8 @@ The key is recognizing that `star_only` must be a DataFrame that contains all th
 - `(star_only["Disney+"] == 1).sum()`
 - `star_only[star_only["Disney+"] == 1].shape[0]`
 
+**Common misconception**: Many students calculated the wrong proportion: they calculated the proportion of shows available to stream on Disney+ that have `"Star Wars"` in the title. We asked for the proportion of shows with `"Star Wars"` in the title that are available to stream on Disney+; "proportion of $X$ that $Y$" is always $\frac{\# X \text{ and } Y}{\# X}$.
+
 
 # END SOLN
 
