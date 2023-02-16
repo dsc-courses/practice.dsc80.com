@@ -184,10 +184,8 @@ A hypothesis test is a statistical test in which we aim to determine whether a s
 
 Which of Doris' interpretations are valid? Select all that apply.
 
-[ ] Interpretation 1: If we fail to reject both null hypotheses here,
-we can also fail to reject the null hypothesis in Problem 6.2.
-[ ] Interpretation 2: If we reject both null hypotheses here, we can also
-reject the null hypothesis in Problem 6.2.
+[ ] Interpretation 1: If we fail to reject both null hypotheses here, we can also fail to reject the null hypothesis in Problem 6.2.
+[ ] Interpretation 2: If we reject both null hypotheses here, we can also reject the null hypothesis in Problem 6.2.
 [ ] Neither interpretation is valid.
 
 # BEGIN SOLN
