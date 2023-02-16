@@ -6,8 +6,8 @@ data_info: wi23-midterm/wi23-mid-data-info
 problems:
   - wi23-midterm/wi23-mid-q01
   - wi23-midterm/wi23-mid-q02
-  # - wi23-midterm/wi23-mid-q03
+  - wi23-midterm/wi23-mid-q03
   # - wi23-midterm/wi23-mid-q04
-  # - wi23-midterm/wi23-mid-q05
+  - wi23-midterm/wi23-mid-q05
   # - wi23-midterm/wi23-mid-q06
   # - wi23-midterm/wi23-mid-q07
