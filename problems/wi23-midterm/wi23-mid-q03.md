@@ -43,6 +43,8 @@ When looking at Expression 2, we can split the problem into two parts: the code 
 - Glancing at the code inside of the `assign` statement, (and also noticing the variable `num_services`), we realize that we, once again, want to sum up the values in the service-specific indicator columns. We do this by first selecting the last four columns, using `.iloc[:, 5:]` (notice the `iloc`), and then summing over `axis=1`. We use `axis=1` (different from `axis=0` in Expression 1), because unlike Expression 1, we're summing over each row, instead of each column. If there had not been a `.T` in the code for Expression 1, we would've also used `axis=1` in Expression 1.
 - Finally, we need to select the `"Title"` of the last row in DataFrame in Expression 2, because `sort_values` sorts in ascending order by default. The last row has an integer position of -1, and the `"Title"` column has an integer position of 0, so we use `iloc[-1, 0]`.
 
+<average>69</average>
+
 # END SOLN
 
 # END PROB

@@ -8,10 +8,15 @@
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
     pre > code.sourceCode { white-space: pre; position: relative; }
     pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -50,7 +55,7 @@
     code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
     code span.at { color: #7d9029; } /* Attribute */
     code span.bn { color: #40a070; } /* BaseN */
-    code span.bu { } /* BuiltIn */
+    code span.bu { color: #008000; } /* BuiltIn */
     code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
     code span.ch { color: #4070a0; } /* Char */
     code span.cn { color: #880000; } /* Constant */
@@ -63,7 +68,7 @@
     code span.ex { } /* Extension */
     code span.fl { color: #40a070; } /* Float */
     code span.fu { color: #06287e; } /* Function */
-    code span.im { } /* Import */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
     code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
     code span.kw { color: #007020; font-weight: bold; } /* Keyword */
     code span.op { color: #666666; } /* Operator */
@@ -76,7 +81,7 @@
     code span.vs { color: #4070a0; } /* VerbatimString */
     code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../assets/theme.css" />
+  <link rel="stylesheet" href="..\assets\theme.css" />
   <script defer=""
   src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
   <script>document.addEventListener("DOMContentLoaded", function () {
@@ -197,6 +202,11 @@ proportion of TV shows in that subset that are available for streaming
 on Netflix. Since arithmetic operations have meaning,
 <code>"Netflix"</code> is quantitative, and since it can only take on a
 finite number of values (just 0 or 1) it is also discrete.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 22%.</p>
 </div>
 </div>
 </div>
@@ -240,6 +250,11 @@ aria-labelledby="heading1_2" data-bs-parent="#accordionExample">
 <code>tv["Title"].value_counts.value_counts()</code>. We provide an
 interpretation of each of these Series in the solution to the next
 subpart.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 84%.</p>
 </div>
 </div>
 </div>
@@ -383,6 +398,11 @@ same title, then <code>double_count.loc[5]</code> would be at least 1,
 but we can’t make any guarantees about
 <code>double_counts.loc[2]</code>.</li>
 </ul>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 68%.</p>
 </div>
 </div>
 </div>
@@ -448,6 +468,11 @@ asked for the proportion of shows with <code>"Star Wars"</code> in the
 title that are available to stream on Disney+; “proportion of <span class="math inline">X</span> that <span class="math inline">Y</span>” is
 always <span class="math inline">\frac{\# X \text{ and } Y}{\#
 X}</span>.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 84%.</p>
 </div>
 </div>
 </div>
@@ -531,6 +556,11 @@ ascending order by default. The last row has an integer position of -1,
 and the <code>"Title"</code> column has an integer position of 0, so we
 use <code>iloc[-1, 0]</code>.</li>
 </ul>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 69%.</p>
 </div>
 </div>
 </div>
@@ -592,6 +622,11 @@ looking for is
 <code>lambda df: df.loc[df["IMDb"] &gt;= 9, "Title"].nunique() &gt;= 5</code>.</p>
 <p>Fun fact: In the DataFrame we used to produce the exam, the only year
 that satisfied the above criteria was 2020!</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 56%.</p>
 </div>
 </div>
 </div>
@@ -669,6 +704,11 @@ was originally from <code>movies</code>. Since <code>b</code> rows from
 new null values are introduced as a result of the concatenation, and
 thus <code>lambda, a, b: b</code> does the same thing as
 <code>delta</code>.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 58%.</p>
 </div>
 </div>
 </div>
@@ -739,6 +779,11 @@ will sum these products across all years, ignoring null values.</p>
 <code>tv[col].value_counts() * movies[col].value_counts()</code>
 (remember, <code>"Year"</code> was just an example for this
 explanation).</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 14%.</p>
 </div>
 </div>
 </div>
@@ -815,6 +860,11 @@ if they were, they would have non-null values in
 have <span class="math inline">20 - 2 = 18</span> rows, and
 <code>tv_excl.groupby(["Age", "Service"]).sum().shape[0]</code>
 evaluates to 18.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 34%.</p>
 </div>
 </div>
 </div>
@@ -857,6 +907,11 @@ if two samples look like they were drawn from the same unknown
 population. Here, our two samples are the distribution of
 <code>"Age"</code>s for Hulu and the distribution of <code>"Age"</code>s
 for Netflix.</p>
+<hr/>
+<h5>Difficulty: ⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 97%.</p>
 </div>
 </div>
 </div>
@@ -975,6 +1030,11 @@ the sum of the absolute differences in proportions divided by 2.
 <strong>This is the TVD.</strong></li>
 </ul></li>
 </ul>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 67%.</p>
 </div>
 </div>
 </div>
@@ -1034,6 +1094,11 @@ tests: one in which we determine whether the distribution of
 we determine whether the distribution of <code>"Age"</code> for Netflix
 (sample) is drawn from the distribution of <code>"Age"</code> in our
 entire dataset (population).</p>
+<hr/>
+<h5>Difficulty: ⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 93%.</p>
 </div>
 </div>
 </div>
@@ -1087,6 +1152,11 @@ distributions of <code>"Age"</code> for Hulu and Netflix both look like
 they’re drawn from, which means we can’t automatically reject the null
 from Problem 6.2.</li>
 </ul>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 60%.</p>
 </div>
 </div>
 </div>
@@ -1140,6 +1210,11 @@ people would know about it, and it would be rated. If a TV show wasn’t
 as good and wasn’t as popular, it is more likely to be ignored.</p>
 <p>However, partial credit was awarded to those who answered missing
 completely at random.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 63%.</p>
 </div>
 </div>
 </div>
@@ -1180,6 +1255,11 @@ aria-labelledby="heading7_2" data-bs-parent="#accordionExample">
 (mean 52). As such, the missingness of <code>"IMDb"</code> appears to
 depend on <code>"Rotten Tomatoes"</code>, and so the most likely
 missingness mechanism is missing at random.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 83%.</p>
 </div>
 </div>
 </div>
@@ -1224,6 +1304,11 @@ only possible values are <code>"7+"</code>, <code>"13+"</code>,
 above two distributions are categorical. The only test statistic of the
 options provided that compares categorical distributions is the total
 variation distance.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 63%.</p>
 </div>
 </div>
 </div>
@@ -1267,6 +1352,11 @@ such, it is the most likely to yield a significant result here. The
 others may not; since the means of the two distributions are very
 similar, the observed difference in means will be close to 0, which is a
 typical value under the null.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 89%.</p>
 </div>
 </div>
 </div>
@@ -1313,6 +1403,11 @@ probabilistic imputation requires sampling. While mean imputation
 shrinks the variance of the imputed distribution relative to the true
 distribution, we weren’t asked to preserve the variance of the true
 distribution, so conditional mean imputation is the right choice.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 46%.</p>
 </div>
 </div>
 </div>

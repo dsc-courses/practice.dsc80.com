@@ -53,6 +53,8 @@ Let's understand what each function does.
 
 The key here is recognizing that `tv` and `movies` have all of the same column names, **except** `movies` doesn't have an `"IMDb"` column. As a result, when we concatenate, the `"IMDb"` column will contain null values for every row that was originally from `movies`. Since `b` rows from `movies` are in the concatenated DataFrame, `b` new null values are introduced as a result of the concatenation, and thus `lambda, a, b: b` does the same thing as `delta`.
 
+<average>58</average>
+
 # END SOLN
 
 # END SUBPROB
@@ -100,6 +102,8 @@ dtype: float64
 `tv["Year"].value_counts()` and `movies["Year"].value_counts()` contain, respectively, the frequencies of the unique values in `tv["Year"]` and `movies["Year"]`. Using the 2019 example from above, `tv["Year"].value_counts() * movies["Year"].value_counts()` will contain a row whose index is 2019 and whose value is 150, with similar other entries for the other years in the two Series. (The hint is meant to demonstrate the fact that no matter how the two Series are sorted, the product is done element-wise by matching up indexes.) Then, `(tv["Year"].value_counts() * movies["Year"].value_counts()).sum()` will sum these products across all years, ignoring null values. 
 
 As such, the answer we were looking for is `tv[col].value_counts() * movies[col].value_counts()` (remember, `"Year"` was just an example for this explanation).
+
+<average>14</average>
 
 # END SOLN
 

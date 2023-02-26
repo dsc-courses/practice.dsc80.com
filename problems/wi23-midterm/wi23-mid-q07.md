@@ -27,6 +27,8 @@ The answer we were looking for is not missing at random (NMAR). As we saw repeat
 
 However, partial credit was awarded to those who answered missing completely at random.
 
+<average>63</average>
+
 # END SOLN
 
 # END SUBPROB
@@ -51,6 +53,8 @@ the `"IMDb"` column?
 **Answer**: Missing at random
 
 The problem tells us that the distribution of `"Rotten Tomatoes"` when `"IMDb"` is missing (mean 13) is very different from the distribution of `"Rotten Tomatoes"` when `"IMDb"` is not missing (mean 52). As such, the missingness of `"IMDb"` appears to depend on `"Rotten Tomatoes"`, and so the most likely missingness mechanism is missing at random.
+
+<average>83</average>
 
 # END SOLN
 
@@ -78,6 +82,8 @@ Our permutation test here needs to compare two distributions:
 - The distribution of `"Age"` when `"IMDb"` is not missing.
 
 Since `"Age"` is a categorical variable – remember, its only possible values are `"7+"`, `"13+"`, `"16+"`, `"18+"`, and `"all"` – the above two distributions are categorical. The only test statistic of the options provided that compares categorical distributions is the total variation distance.
+
+<average>63</average>
 
 # END SOLN
 
@@ -107,6 +113,8 @@ First, note that the two distributions are quantitative, which means the TVD can
 
 To decide between the remaining options, note that the two distributions visualized appear to have the same mean, but different shapes. The Kolmogorov-Smirnov statistic is designed to detect differences in the shapes of distributions with the same center, and as such, it is the most likely to yield a significant result here. The others may not; since the means of the two distributions are very similar, the observed difference in means will be close to 0, which is a typical value under the null.
 
+<average>89</average>
+
 # END SOLN
 
 # END SUBPROB
@@ -133,6 +141,8 @@ possible. Which imputation technique should we use?
 Since the missingness of `"IMDb"` appears to depend on `"Service"`, in order to accurately estimate the true mean of the `"IMDb"` column, we must impute conditionally on `"Service"`, otherwise the imputed mean will be biased.
 
 To decide between conditional mean imputation and conditional probabilistic imputation, note that we were asked to find the **fasted, most efficient** technique possible, such that the imputed mean is close to the true mean. Conditional mean imputation is more efficient than conditional probabilistic imputation, as probabilistic imputation requires sampling. While mean imputation shrinks the variance of the imputed distribution relative to the true distribution, we weren't asked to preserve the variance of the true distribution, so conditional mean imputation is the right choice.
+
+<average>46</average>
 
 # END SOLN
 

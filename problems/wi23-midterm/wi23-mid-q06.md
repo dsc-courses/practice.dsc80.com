@@ -48,6 +48,8 @@ The DataFrame `tv_excl.groupby(["Age", "Service"]).sum()` will have one row for 
 
 As such, `tv_excl.groupby(["Age", "Service"]).sum()` will have $20 - 2 = 18$ rows, and `tv_excl.groupby(["Age", "Service"]).sum().shape[0]` evaluates to 18.
 
+<average>34</average>
+
 # END SOLN
 
 # END SUBPROB
@@ -74,6 +76,8 @@ What type of test is this?
 **Answer**: Permutation test
 
 A permutation test is a statistical test in which we aim to determine if two samples look like they were drawn from the same unknown population. Here, our two samples are the distribution of `"Age"`s for Hulu and the distribution of `"Age"`s for Netflix.
+
+<average>97</average>
 
 # END SOLN
 
@@ -136,6 +140,8 @@ With that in mind, let's look at each option, remembering that the TVD is the **
     - `distr.diff().abs().sum(axis=1)` is a Series in which the first element is null and the second element is the sum of the absolute differences in proportions.
     - As such, `distr.diff().abs().sum(axis=1).iloc[-1] / 2` is the sum of the absolute differences in proportions divided by 2. **This is the TVD.**
 
+<average>67</average>
+
 # END SOLN
 
 # END SUBPROB
@@ -176,6 +182,8 @@ What type of test is Doris proposing we run?
 
 A hypothesis test is a statistical test in which we aim to determine whether a sample looks like it was drawn at random from a known population. Here, Doris is proposing we run two separate hypothesis tests: one in which we determine whether the distribution of `"Age"` for Hulu (sample) is drawn from the distribution of `"Age"` in our entire dataset (population), and one in which we determine whether the distribution of `"Age"` for Netflix (sample) is drawn from the distribution of `"Age"` in our entire dataset (population).
 
+<average>93</average>
+
 # END SOLN
 
 # END SUBPROB
@@ -196,6 +204,8 @@ Let's consider each option.
 
 - **Interpretation 1**: Suppose we fail to reject both null hypotheses here. If that's the case, then the distribution of `"Age"` for Hulu _looks_ like a random sample from the distribution of `"Age"` in our full dataset, and so does the distribution of `"Age"` for Netflix. (Note that we can't conclude they _are_ random samples from the distribution of `"Age"` in our full dataset, since we can't prove the null, we can only fail to reject it). If that's the case, the distributions of `"Age"` for Hulu and Netflix both look like they're drawn from the same population, which means we fail to reject the null from Problem 6.2.
 - **Interpretation 2**: Suppose we reject both null hypotheses here. If that's the case, then neither the distribution of `"Age"` for Hulu nor the distribution of `"Age"` for Netflix look like a random sample of `"Age"` in our full dataset. However, that doesn't imply that these two distributions don't look like samples of the same population; all it implies is that they don't look like samples of this particular population. It is still possible that there exists some population distribution that the distributions of `"Age"` for Hulu and Netflix both look like they're drawn from, which means we can't automatically reject the null from Problem 6.2.
+
+<average>60</average>
 
 # END SOLN
 

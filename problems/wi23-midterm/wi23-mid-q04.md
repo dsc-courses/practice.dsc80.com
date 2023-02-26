@@ -26,6 +26,8 @@ Another good answer we saw was `lambda df: df.loc[df["IMDb"] >= 9, "Title"].nuni
 
 Fun fact: In the DataFrame we used to produce the exam, the only year that satisfied the above criteria was 2020!
 
+<average>56</average>
+
 # END SOLN
 
 # END PROB
