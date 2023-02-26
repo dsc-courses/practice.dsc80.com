@@ -1,0 +1,12 @@
+title: 'Spring 2022 Final Exam'
+instructors: Justin Eldridge
+context: This exam was administered online. The exam was open-notes, open-book. Students had **180 minutes** to take this exam.
+show_solution: true
+data_info: fa21-final/fa21-final-data-info
+problems:
+  - sp22-final/sp22-final-q01
+  - sp22-final/sp22-final-q02
+  - sp22-final/sp22-final-q03
+  - sp22-final/sp22-final-q04
+  - sp22-final/sp22-final-q05
+  - sp22-final/sp22-final-q06

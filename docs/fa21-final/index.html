@@ -1,0 +1,1390 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Spring 2022 Final Exam</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="..\assets\theme.css" />
+  <script defer=""
+  src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Spring 2022 Final Exam</h1>
+</header>
+<p><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<!-- add after bootstrap.min.css -->
+<link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css"/>
+<!-- add after bootstrap.min.js or bootstrap.bundle.min.js -->
+<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script></p>
+<!-- for difficulty gauges-->
+<script src="https://cdn.plot.ly/plotly-2.16.1.min.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B947E6J6H4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-B947E6J6H4');
+</script>
+<p><a href="../index.html">← return to practice.dsc80.com</a></p>
+<hr />
+<p><strong>Instructor(s):</strong> Justin Eldridge</p>
+<p>This exam was administered online. The exam was open-notes,
+open-book. Students had <strong>180 minutes</strong> to take this
+exam.</p>
+<hr />
+<p>Welcome to the Final Exam for DSC 80. This is an open-book, open-note
+exam, but you are not permitted to discuss the exam with anyone until
+after grades are released.</p>
+<p>This exam has several coding questions. These questions will be
+manually graded, and your answers are <em>not</em> expected to be
+syntactically-perfect! Be careful not to spend too much time perfecting
+your code.</p>
+<hr />
+<h2 id="problem-1">Problem 1</h2>
+<p>For each day in May 2022, the DataFrame <code>streams</code> contains
+the number of streams for each of the “Top 200" songs on Spotify that
+day — that is, the number of streams for the 200 songs with the most
+streams on Spotify that day. The columns in <code>streams</code> are as
+follows:</p>
+<ul>
+<li><p><code>"date"</code>: the date the song was streamed</p></li>
+<li><p><code>"artist_names"</code>: name(s) of the artists who created
+the song</p></li>
+<li><p><code>"track_name"</code>: name of the song</p></li>
+<li><p><code>"streams"</code>: the number of times the song was streamed
+on Spotify that day</p></li>
+</ul>
+<p>The first few rows of <code>streams</code> are shown below. Since
+there were 31 days in May and 200 songs per day, <code>streams</code>
+has 6200 rows in total.</p>
+<center><img src='../assets/images/sp22-final/streams.png' width=50%></center>
+<p>Note that:</p>
+<ul>
+<li><p><code>streams</code> is already sorted in a very particular way —
+it is sorted by <code>"date"</code> in reverse chronological
+(decreasing) order, and, within each <code>"date"</code>, by
+<code>"streams"</code> in increasing order.</p></li>
+<li><p>Many songs will appear multiple times in <code>streams</code>,
+because many songs were in the Top 200 on more than one day.</p></li>
+</ul>
+<p><br></p>
+<h3 id="problem-1.1">Problem 1.1</h3>
+<p>Complete the implementation of the function <code>song_by_day</code>,
+which takes in an integer <code>day</code> between 1 and 31
+corresponding to a day in May, and an integer <code>n</code>, and
+returns the song that had the <code>n</code>-th most streams on
+<code>day</code>. For instance,<br />
+<code>song_by_day(31, 199)</code> should evaluate to
+<code>"pepas"</code>, because <code>"pepas"</code> was the 199th most
+streamed song on May 31st.</p>
+<p><strong>Note:</strong> You are not allowed to sort within
+<code>song_by_day</code> — remember, <code>streams</code> is already
+sorted.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> song_by_day(day, n):</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    day_str <span class="op">=</span> <span class="ss">f&quot;2022-05-</span><span class="sc">{</span><span class="bu">str</span>(day)<span class="sc">.</span>zfill(<span class="dv">2</span>)<span class="sc">}</span><span class="ss">&quot;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    day_only <span class="op">=</span> streams[__(a)__].iloc[__(b)__]</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> __(c)__</span></code></pre></div>
+<p>What goes in each of the blanks?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_1" aria-expanded="true" aria-controls="collapse1_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_1" class="accordion-collapse collapse collapse"
+aria-labelledby="heading1_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> a) <code>streams['day'] == day_str</code>,
+b) <code>(200 - n)</code>, c) <code>day_only['track_name']</code></p>
+<p>The first line in the function gives us an idea that maybe later on
+in the function we’re going to filter for all the days that match the
+given data. Indeed, in blank a, we filter for all the rows in which the
+<code>'day'</code> column matches <code>day_str</code>. In blank b, we
+could access directly access the row with the <code>n</code>-th most
+stream using iloc. (Remember, the image above shows us that the streams
+are sorted by most streamed in ascending order, so to find the
+<code>n</code>-th most popular song of a day, we simply do
+<code>200-n</code>). Finally, to return the track name, we could simply
+do <code>day_only['track_name']</code>.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 63%.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-1.2">Problem 1.2</h3>
+<p>Below, we define a DataFrame <code>pivoted</code>.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>pivoted <span class="op">=</span> streams.pivot_table(index<span class="op">=</span><span class="st">&quot;track_name&quot;</span>, columns<span class="op">=</span><span class="st">&quot;date&quot;</span>, </span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>                                values<span class="op">=</span><span class="st">&quot;streams&quot;</span>, aggfunc<span class="op">=</span>np.<span class="bu">max</span>)</span></code></pre></div>
+<p>After defining <code>pivoted</code>, we define a Series
+<code>mystery</code> below.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>mystery <span class="op">=</span> <span class="dv">31</span> <span class="op">-</span> pivoted.<span class="bu">apply</span>(<span class="kw">lambda</span> s: s.isna().<span class="bu">sum</span>(), axis<span class="op">=</span><span class="dv">1</span>)</span></code></pre></div>
+<p><code>mystery.loc["pepas"]</code> evaluates to 23. In one sentence,
+describe the relationship between the number 23 and the song
+<code>"pepas"</code> in the context of the <code>streams</code> dataset.
+For instance, a correctly formatted but incorrect answer is “I listened
+to the song <code>"pepas"</code> 23 times today."</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_2" aria-expanded="true" aria-controls="collapse1_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_2" class="accordion-collapse collapse collapse"
+aria-labelledby="heading1_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> See below.</p>
+<p><code>pivoted.apply(lambda s: s.isna().sum(), axis=1)</code> computes
+the number of days that a song was not on the Top 200, so
+<code>31 - pivoted.apply(lambda s: s.isna().sum(), axis=1)</code>
+computes the number of days the song was in the Top 200. As such, the
+correct interpretation is that <strong><code>"pepas"</code> was in the
+Top 200 for 23 days in May</strong>.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 68%.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-1.3">Problem 1.3</h3>
+<p>In defining <code>pivoted</code>, we set the keyword argument
+<code>aggfunc</code> to <code>np.max</code>. Which of the following
+functions could we have used instead of <code>np.max</code> without
+changing the values in <code>pivoted</code>? <strong>Select all that
+apply.</strong></p>
+<ul class="task-list">
+<li><p><input type="checkbox" disabled="" /> <code>np.mean</code></p></li>
+<li><p><input type="checkbox" disabled="" /> <code>np.median</code></p></li>
+<li><p><input type="checkbox" disabled="" /> <code>len</code></p></li>
+<li><p><input type="checkbox" disabled="" /> <code>lambda df: df.iloc[0]</code></p></li>
+<li><p><input type="checkbox" disabled="" /> None of the above</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_3" aria-expanded="true" aria-controls="collapse1_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_3" class="accordion-collapse collapse collapse"
+aria-labelledby="heading1_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> Option A, B and D</p>
+<p>For each combination of <code>"track_name"</code> and
+<code>"date"</code>, there is just a single value — the number of
+streams that song received on that date. As such, the
+<code>aggfunc</code> needs to take in a Series containing a single
+number and return that same number.</p>
+<ul>
+<li><p>The mean and median of a Series containing a single number is
+equal to that number, so the first two options are correct.</p></li>
+<li><p>The length of a Series containing a single number is 1, no matter
+what that number is, so the third option is not correct.</p></li>
+<li><p><code>lambda df: df.iloc[0]</code> takes in a Series and returns
+the first element in the Series, which is the only element in the
+Series. This option is correct as well. (The parameter name
+<code>df</code> is irrelevant.)</p></li>
+</ul>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 80%.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-1.4">Problem 1.4</h3>
+<p>Below, we define another DataFrame <code>another_mystery</code>.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>another_mystery <span class="op">=</span> (streams.groupby(<span class="st">&quot;date&quot;</span>).last()</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>                            .groupby([<span class="st">&quot;artist_names&quot;</span>, <span class="st">&quot;track_name&quot;</span>])</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>                            .count().reset_index())</span></code></pre></div>
+<p><code>another_mystery</code> has 5 rows. In one sentence, describe
+the significance of the number 5 in the context of the
+<code>streams</code> dataset. For instance, a correctly formatted but
+incorrect answer is “There are 5 unique artists in
+<code>streams</code>." Your answer should not include the word”row".</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_4" aria-expanded="true" aria-controls="collapse1_4">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_4" class="accordion-collapse collapse collapse"
+aria-labelledby="heading1_4" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> See below.</p>
+<p>1in Since <code>streams</code> is sorted by <code>"date"</code> in
+descending order and, within each <code>"date"</code>, by
+<code>"streams"</code> in ascending order,
+<code>streams.groupby("date").last()</code> is a DataFrame containing
+the song with the most <code>"streams"</code> on each day in May. In
+other words, we found the “top song" for each day. (The DataFrame we
+created has 31 rows.)</p>
+<p>When we then execute
+<code>.groupby(["artist_names", "track_name"]).count()</code>, we create
+one row for every unique combination of song and artist, amongst the
+“top songs". (If no two artists have a song with the same name, this is
+the same as creating one row for every unique song.) Since there are 5
+rows in this new DataFrame (resetting the index doesn’t do anything
+here), it means that <strong>there were only 5 unique songs that were
+ever the “top song" in a day in May</strong>; this is the correct
+interpretation.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 50%.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-2">Problem 2</h2>
+<p>Suppose the DataFrame <code>today</code> consists of 15 rows — 3 rows
+for each of 5 different <code>"artist_names"</code>. For each artist, it
+contains the <code>"track_name"</code> for their three most-streamed
+songs today. For instance, there may be one row for
+<code>"olivia rodrigo"</code> and <code>"favorite crime"</code>, one row
+for <code>"olivia rodrigo"</code> and <code>"drivers license"</code>,
+and one row for <code>"olivia rodrigo"</code> and
+<code>"deja vu"</code>.</p>
+<p>Another DataFrame, <code>genres</code>, is shown below in its
+entirety.</p>
+<center><img src='../assets/images/sp22-final/genres.png' width=25%></center>
+<p><br></p>
+<h3 id="problem-2.1">Problem 2.1</h3>
+<p>Suppose we perform an <strong>inner</strong> merge between
+<code>today</code> and <code>genres</code> on
+<code>"artist_names"</code>. If the five <code>"artist_names"</code> in
+<code>today</code> are the same as the five <code>"artist_names"</code>
+in <code>genres</code>, what fraction of the rows in the merged
+DataFrame will contain <code>"Pop"</code> in the <code>"genre"</code>
+column? Give your answer as a simplified fraction.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading2_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_1" aria-expanded="true" aria-controls="collapse2_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse2_1" class="accordion-collapse collapse collapse"
+aria-labelledby="heading2_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> <span class="math inline">\frac{2}{5}</span></p>
+<p>If the five <code>"artist_names"</code> in <code>today</code> and
+<strong>genres</strong> are the same, the DataFrame that results from an
+inner merge will have 15 rows, one for each row in <code>today</code>.
+This is because there are 3 matches for <code>"harry styles"</code>, 3
+matches for <code>"olivia rodrigo"</code>, 3 matches for
+<code>"glass animals"</code>, and so on.</p>
+<p>In the merged DataFrame’s 15 rows, 6 of them will correspond to
+<code>"Pop"</code> artists — 3 to <code>"harry styles"</code> and 3 to
+<code>"olivia rodrigo"</code>. Thus, the fraction of rows that contain
+<code>"Pop"</code> in the <code>"genre"</code> column is <span class="math inline">\frac{6}{15} = \frac{2}{5}</span> (which is the
+fraction of rows that contained <code>"Pop"</code> in
+<code>genres["genre"]</code>, too).</p>
+<hr/>
+<h5>Difficulty: ⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 97%.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-2.2">Problem 2.2</h3>
+<p>Suppose we perform an <strong>inner</strong> merge between
+<code>today</code> and <code>genres</code> on
+<code>"artist_names"</code>. Furthermore, suppose that the only
+overlapping <code>"artist_names"</code> between <code>today</code> and
+<code>genres</code> are <code>"drake"</code> and
+<code>"olivia rodrigo"</code>. What fraction of the rows in the merged
+DataFrame will contain <code>"Pop"</code> in the <code>"genre"</code>
+column? Give your answer as a simplified fraction.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading2_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_2" aria-expanded="true" aria-controls="collapse2_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse2_2" class="accordion-collapse collapse collapse"
+aria-labelledby="heading2_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> <span class="math inline">\frac{1}{2}</span></p>
+<p>If we perform an inner merge, there will only be 6 rows in the merged
+DataFrame — 3 for <code>"olivia rodrigo"</code> and 3 for
+<code>"drake"</code>. 3 of those 6 rows will have <code>"Pop"</code> in
+the <code>"genre"</code> column, hence the answer is <span class="math inline">\frac{3}{6} = \frac{1}{2}</span>.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 86%.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-2.3">Problem 2.3</h3>
+<p>Suppose we perform an <strong>outer</strong> merge between
+<code>today</code> and <code>genres</code> on
+<code>"artist_names"</code>. Furthermore, suppose that the only
+overlapping <code>"artist_names"</code> between <code>today</code> and
+<code>genres</code> are <code>"drake"</code> and
+<code>"olivia rodrigo"</code>. What fraction of the rows in the merged
+DataFrame will contain <code>"Pop"</code> in the <code>"genre"</code>
+column? Give your answer as a simplified fraction.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading2_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_3" aria-expanded="true" aria-controls="collapse2_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse2_3" class="accordion-collapse collapse collapse"
+aria-labelledby="heading2_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> <span class="math inline">\frac{2}{9}</span></p>
+<p>Since we are performing an outer merge, we can decompose the rows in
+the merged DataFrame into three groups:</p>
+<ul>
+<li><p>Rows that are in <code>today</code> that are not in
+<code>genres</code>. There are 9 of these (3 each for the 3 artists that
+are in <code>today</code> and not <code>genres</code>).
+<code>today</code> doesn’t have a <code>"genre"</code> column, and so
+all of these <code>"genre"</code>s will be <code>NaN</code> upon
+merging.</p></li>
+<li><p>Rows that are in <code>genres</code> that are not in
+<code>today</code>. There are 3 of these — one for
+<code>"harry styles"</code>, one for <code>"glass animals"</code>, and
+one for <code>"doja cat"</code>. 1 of these 3 have <code>"Pop"</code> in
+the <code>"genre"</code> column.</p></li>
+<li><p>Rows that are in both <code>today</code> and <code>genres</code>.
+There are 6 of these — 3 for <code>"olivia rodrigo"</code> and 3 for
+<code>"drake"</code> — and 3 of those rows contain <code>"Pop"</code> in
+the <code>"genre"</code> column.</p></li>
+</ul>
+<p>Tallying things up, we see that there are <span class="math inline">9
++ 3 + 6 = 18</span> rows in the merged DataFrame overall, of which <span class="math inline">0 + 1 + 3 = 4</span> have <code>"Pop"</code> in the
+<code>"genre"</code> column. Hence, the relevant fraction is <span class="math inline">\frac{4}{18} = \frac{2}{9}</span>.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 29%.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-3">Problem 3</h2>
+<p><br></p>
+<h3 id="problem-3.1">Problem 3.1</h3>
+<p>Billy and Daisy each decide what songs to stream by rolling dice.
+Billy rolls a six-sided die 36 times and sees the same number of 1s, 2s,
+3s, 4s, 5s, and 6s. Daisy rolls a six-sided die 72 times and sees 36 1s,
+18 4s, and 18 6s.</p>
+<p>What is the total variation distance (TVD) between their
+distributions of rolls? Give your answer as a number.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading3_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_1" aria-expanded="true" aria-controls="collapse3_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse3_1" class="accordion-collapse collapse collapse"
+aria-labelledby="heading3_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> <span class="math inline">\frac{1}{2}</span></p>
+<p>First, we must normalize their distributions so they sum to 1. <span class="math display">\text{billy} = \begin{bmatrix} \frac{1}{6},
+\frac{1}{6}, \frac{1}{6}, \frac{1}{6}, \frac{1}{6}, \frac{1}{6}
+\end{bmatrix}, \: \: \: \text{daisy} = \begin{bmatrix} \frac{1}{2}, 0,
+0, \frac{1}{4}, 0, \frac{1}{4} \end{bmatrix}</span></p>
+<p>Then, recall that the TVD is the sum of the absolute differences in
+proportions, all divided by 2:</p>
+<p><span class="math display">\begin{aligned}
+\text{TVD} &amp;= \frac{1}{2} \Bigg( \Big| \frac{1}{2} - \frac{1}{6}
+\Big| + \Big| 0 - \frac{1}{6} \Big| +  \Big| 0 - \frac{1}{6}
+\Big|  +  \Big| \frac{1}{4} - \frac{1}{6} \Big| +  \Big| 0 - \frac{1}{6}
+\Big| +  \Big| \frac{1}{4} - \frac{1}{6} \Big|    \Bigg) \\
+&amp;= \frac{1}{2} \Bigg( \frac{2}{6} + \frac{1}{6} + \frac{1}{6} +
+\frac{1}{12} + \frac{1}{6} + \frac{1}{12} \Bigg) \\
+&amp;= \frac{1}{2} \cdot 1 \\
+&amp;= \frac{1}{2}\end{aligned}</span></p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 42%.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-3.2">Problem 3.2</h3>
+<p>Consider two categorical distributions, each made up of the same
+<span class="math inline">n</span> categories. Given no other
+information, what is the smallest possible TVD between the two
+distributions, and what is the largest possible TVD between the two
+distributions? Give both answers as numbers.</p>
+<p>smallest possible TVD =</p>
+<p>largest possible TVD =</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading3_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_2" aria-expanded="true" aria-controls="collapse3_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse3_2" class="accordion-collapse collapse collapse"
+aria-labelledby="heading3_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> Smallest: 0, Largest: 1</p>
+<p>There is an absolute value in the definition of TVD, so it must be at
+least 0. The TVD does not scale with the number of categories; its
+maximum possible value is 1. We will not provide a rigorous proof here,
+but intuitively, the most “different" two distributions can be is if
+they both have 100% of their values in different categories. In such a
+case, the TVD is 1.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 74%.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-3.3">Problem 3.3</h3>
+<p>Consider the following pair of distributions.</p>
+<center><img src='../assets/images/sp22-final/dists.png' width=35%></center>
+<p>Suppose we want to perform a permutation test to test whether the two
+distributions come from the same population distribution. Which test
+statistic is most likely to yield a significant result?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> Difference in means</p></li>
+<li><p><input type="radio" disabled="" /> Absolute difference in means</p></li>
+<li><p><input type="radio" disabled="" /> Kolmogorov-Smirnov (K-S) statistic</p></li>
+<li><p><input type="radio" disabled="" /> Total variation distance</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading3_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_3" aria-expanded="true" aria-controls="collapse3_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse3_3" class="accordion-collapse collapse collapse"
+aria-labelledby="heading3_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> Option C</p>
+<ul>
+<li><p>These are two quantitative distributions, and the total variation
+distance only applies for categorical distributions.</p></li>
+<li><p>These two distributions have similar means, so the difference in
+means and absolute difference in means won’t be able to tell them
+apart.</p></li>
+<li><p>As such, the correct answer is the Kolmogorov-Smirnov statistic,
+which roughly measures the largest “gap" between two cumulative
+distribution functions.</p></li>
+</ul>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 87%.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-4">Problem 4</h2>
+<p>As a music enthusiast who checks Spotify’s Top 200 daily, you have
+noticed that many more songs from the “Hip-Hop/Rap" genre were popular
+in 2021 than were popular in years prior. You decide to investigate
+whether this could have happened by chance, or if Hip-Hop/Rap is
+actually becoming more popular.</p>
+<p>You acquire ten DataFrames, one for each year between 2012 and 2021
+(inclusive), containing the Top 200 songs on each day of each year. Each
+DataFrame has four columns, <code>"year"</code>,
+<code>"artist_names"</code>, <code>"track_name"</code>, and
+<code>"genre"</code>, and <span class="math inline">365 \cdot 200 =
+73000</span> rows (or, in the case of leap years 2012 and 2016, <span
+class="math inline">366 \cdot 200 = 73200</span> rows). You concatenate
+these DataFrames into a big DataFrame called <code>all_years</code>.</p>
+<p>To conduct a hypothesis test, you assume that all of the songs that
+were ever in the Top 200 in a particular year are a sample of all
+popular songs from that year. As such, <code>all_years</code> contains a
+sample of all popular songs from 2012-2021. Your hypotheses are as
+follows:</p>
+<ul>
+<li><p><strong>Null Hypothesis</strong>: The number of unique
+Hip-Hop/Rap songs that were popular in 2021 is equal to the average
+number of unique Hip-Hop/Rap songs that were popular each year between
+2012 and 2021 (inclusive).</p></li>
+<li><p><strong>Alternative Hypothesis:</strong> The number of unique
+Hip-Hop/Rap songs that were popular in 2021 is greater than the average
+number of unique Hip-Hop/Rap songs that were popular each year between
+2012 and 2021 (inclusive).</p></li>
+</ul>
+<p>To generate data under the null, you decide to treat the songs that
+were in the Top 200 in 2021 as a random sample from the songs that were
+in the Top 200 in all ten years. As your test statistic, you use the
+<strong>number of unique Hip-Hop/Rap songs</strong> in your sample.</p>
+<p><strong>Complete the implementation of the hypothesis test given on
+the next page.</strong></p>
+<p><strong>Note:</strong> Remember that songs can appear multiple times
+in <code>all_years</code> — many songs appear in the Top 200 multiple
+times in the same year, and some even appear in the Top 200 in different
+years. However, for the purposes of this question, you can assume that
+no two different <code>"artist_names"</code> have songs with the same
+<code>"track_name"</code>; that is, each <code>"track_name"</code>
+belongs to a unique <code>"artist_names"</code>.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>all_years <span class="op">=</span> <span class="co"># DataFrame that contains all 10 years&#39; charts</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Helper function to compute the number of </span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># unique Hip-Hop/Rap songs in a given DataFrame</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> unique_rap(df):</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    rap_only <span class="op">=</span> df[df[<span class="st">&quot;genre&quot;</span>] <span class="op">==</span> <span class="st">&quot;Hip-Hop/Rap&quot;</span>]</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> rap_only.groupby(__(a)__).count()__(b)__[<span class="dv">0</span>]</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>count_2021 <span class="op">=</span> unique_rap(all_years[all_years[<span class="st">&quot;year&quot;</span>] <span class="op">==</span> <span class="dv">2021</span>])</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>counts <span class="op">=</span> np.array([])</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10000</span>):</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    samp <span class="op">=</span> all_years.sample(__(c)__, replace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    counts <span class="op">=</span> np.append(counts, unique_rap(samp))</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>p_val <span class="op">=</span> (__(d)__).mean()</span></code></pre></div>
+<p><br></p>
+<h3 id="problem-4.1">Problem 4.1</h3>
+<p>What goes in blank (a)?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> <code>"year"</code></p></li>
+<li><p><input type="radio" disabled="" /> <code>"artist_names"</code></p></li>
+<li><p><input type="radio" disabled="" /> <code>"track_name"</code></p></li>
+<li><p><input type="radio" disabled="" /> <code>"genre"</code></p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_1" aria-expanded="true" aria-controls="collapse4_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_1" class="accordion-collapse collapse collapse"
+aria-labelledby="heading4_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> Option C: <code>"track_name"</code></p>
+<p>The first thing to notice is that first line in the function filters
+for all the rap songs in df. Next, since the helper function is supposed
+to return the number of unique Hip-Hop/Rap songs in a given DataFrame,
+we group by <code>"track_name"</code> so that each group/category is a
+unique song. Grouping by <code>"year"</code>,
+<code>"artist_names"</code>, or <code>"genre"</code> won’t help us
+compute the number of unique songs.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 89%.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-4.2">Problem 4.2</h3>
+<p>What goes in blank (b)?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> <code>.shape</code></p></li>
+<li><p><input type="radio" disabled="" /> <code>.loc</code></p></li>
+<li><p><input type="radio" disabled="" /> <code>.iloc</code></p></li>
+<li><p><input type="radio" disabled="" /> Nothing (i.e. add <code>[0]</code> immediately after
+<code>.count()</code>)</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_2" aria-expanded="true" aria-controls="collapse4_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_2" class="accordion-collapse collapse collapse"
+aria-labelledby="heading4_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> Option A: <code>.shape</code></p>
+<p>Note that after grouping by <code>"track_name"</code>, each
+individual row in the resulting dataframe is a unique song within the
+rap genre. Thus the number of rows in the resulting dataframe is just
+the number of unique rap songs in a dataframe. To get the number of rows
+of a dataframe, we simply do <code>.shape[0]</code></p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 89%.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-4.3">Problem 4.3</h3>
+<p>What goes in blank (c)?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> <code>count_2021.shape[0]</code></p></li>
+<li><p><input type="radio" disabled="" /> <code>200</code></p></li>
+<li><p><input type="radio" disabled="" /> <code>365</code></p></li>
+<li><p><input type="radio" disabled="" /> <code>200 * 365</code></p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_3" aria-expanded="true" aria-controls="collapse4_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_3" class="accordion-collapse collapse collapse"
+aria-labelledby="heading4_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> Option D: <code>200 * 365</code></p>
+<p>Consider the following statement from the problem: “To generate data
+under the null, you decide to treat the songs that were in the Top 200
+in 2021 as a random sample from the songs that were in the Top 200 in
+all ten years.” Thus it follows that we need to generate
+<code>200 * 365</code> songs since there are <code>200 * 365</code>
+songs in the Top 200 in 2021.</p>
+<p>Alternatively, it makes sense to sample <code>200 * 365</code> songs
+from <code>all_years</code> because we use the number of unique rap
+songs as a test statistic for each sample. Thus our sample should be the
+same size as the number of songs in the Top 200 in 2021.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 52%.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-4.4">Problem 4.4</h3>
+<p>What goes in blank (d)?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_4" aria-expanded="true" aria-controls="collapse4_4">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_4" class="accordion-collapse collapse collapse"
+aria-labelledby="heading4_4" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> <code>(counts &lt; count_2021)</code></p>
+<p>Note that <code>counts</code> is a np.array that contains the number
+of Rap songs from each sample. Because our alternative hypothesis is
+that “The number of unique Hip-Hop/Rap songs that were popular in 2021
+is greater than the average number of unique Hip-Hop/Rap songs that were
+popular each year between 2012 and 2021”, simply doing
+<code>(counts &lt; count_2021)</code> will return an array of booleans
+denoting whether or not <code>count_2021</code> was greater than the
+number of rap songs in each sample. The <code>.mean()</code> will simply
+compute the appropriate proportion, or p-value.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 53%.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-5">Problem 5</h2>
+<p>The DataFrame <code>random_10</code> contains the
+<code>"track_name"</code> and <code>"genre"</code> of 10 randomly-chosen
+songs in Spotify’s Top 200 today, along with their
+<code>"genre_rank"</code>, which is their rank in the Top 200
+<strong>among songs in their <code>"genre"</code></strong>. For
+instance, “the real slim shady" is the 20th-ranked Hip-Hop/Rap song in
+the Top 200 today. <code>random_10</code> is shown below in its
+entirety.</p>
+<center><img src='../assets/images/sp22-final/imp-with-nan.png' width=35%></center>
+<p>The <code>"genre_rank"</code> column of <code>random_10</code>
+contains missing values. Below, we provide four different imputed
+<code>"genre_rank"</code> columns, each of which was created using a
+different imputation technique. On the next page, match each of the four
+options to the imputation technique that was used in the option.</p>
+<center><img src='../assets/images/sp22-final/imp-options-grid.png' width=80%></center>
+<p>Note that each option (A, B, C, D) should be used exactly once
+between parts (a) and (d).</p>
+<p><br></p>
+<h3 id="problem-5.1">Problem 5.1</h3>
+<p>In which option was unconditional mean imputation used?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading5_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_1" aria-expanded="true" aria-controls="collapse5_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse5_1" class="accordion-collapse collapse collapse"
+aria-labelledby="heading5_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> Option B</p>
+<p>Explanation given in part d) below</p>
+<hr/>
+<h5>Difficulty: ⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 99%.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-5.2">Problem 5.2</h3>
+<p>In which option was mean imputation conditional on
+<code>"genre"</code> used?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading5_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_2" aria-expanded="true" aria-controls="collapse5_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse5_2" class="accordion-collapse collapse collapse"
+aria-labelledby="heading5_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> Option D</p>
+<p>Explanation given in part d) below</p>
+<hr/>
+<h5>Difficulty: ⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 96%.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-5.3">Problem 5.3</h3>
+<p>In which option was unconditional probabilistic imputation used?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading5_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_3" aria-expanded="true" aria-controls="collapse5_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse5_3" class="accordion-collapse collapse collapse"
+aria-labelledby="heading5_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> Option C</p>
+<p>Explanation given in part d) below</p>
+<hr/>
+<h5>Difficulty: ⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 92%.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-5.4">Problem 5.4</h3>
+<p>In which option was probabilistic imputation conditional on
+<code>"genre"</code> used?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading5_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_4" aria-expanded="true" aria-controls="collapse5_4">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse5_4" class="accordion-collapse collapse collapse"
+aria-labelledby="heading5_4" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> Option A</p>
+<ul>
+<li><p>First, note that in Option B, all three missing values are filled
+in with the same number, 7. The mean of the observed values in
+<code>random_10["genre rank"]</code> is 7, so we must have performed
+unconditional mean imputation in Option B. (Technically, it’s possible
+for Option B to be the result of unconditional probabilistic imputation,
+but we stated that each option could only be used once, and there is
+another option that can only be unconditional probabilistic
+imputation.)</p></li>
+<li><p>Then note that in Option C, the very last missing value (in the
+<code>"Pop"</code> <code>"genre"</code>) is filled in with a 7, which is
+not the mean of the observed <code>"Pop"</code> values, but rather a
+value from the <code>"Alternative"</code> <code>"genre"</code>. This
+must mean that unconditional probabilistic imputation was used in Option
+C, since that’s the only way a value from a different group can be used
+for imputation (if we are not performing some sort of mean
+imputation).</p></li>
+<li><p>This leaves Option A and Option D. The last two missing values
+(the two in the <code>"Pop"</code> <code>"genre"</code>) are both filled
+in with the same value, 2 in Option A and 5 in Option D. The mean of the
+observed values for the <code>"Pop"</code> <code>"genre"</code> is <span class="math inline">\frac{9+2+4}{3} = 5</span>, so mean imputation
+conditional on <code>"genre"</code> must have been used in Option D and
+thus probabilistic imputation conditional on <code>"genre"</code> must
+have been used in Option A.</p></li>
+</ul>
+<hr/>
+<h5>Difficulty: ⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 92%.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<p>In parts (e) and (f), suppose we want to run a permutation test to
+determine whether the missingness of <code>"genre rank"</code> depends
+on <code>"genre"</code>.</p>
+<p><br></p>
+<h3 id="problem-5.5">Problem 5.5</h3>
+<p>Name a valid test statistic for this permutation test.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading5_5">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_5" aria-expanded="true" aria-controls="collapse5_5">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse5_5" class="accordion-collapse collapse collapse"
+aria-labelledby="heading5_5" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> Total Variation Distance (TVD)</p>
+<p>We are comparing two distributions:</p>
+<ul>
+<li><p>The distribution of <code>"genre"</code> when
+<code>"genre rank"</code> is missing.</p></li>
+<li><p>The distribution of <code>"genre"</code> when
+<code>"genre rank"</code> is not missing.</p></li>
+</ul>
+<p>Since the distribution of <code>"genre"</code> is categorical, the
+above two distributions are also categorical. The only test statistic we
+have for comparing categorical distributions is the total variation
+distance (TVD).</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 63%.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-5.6">Problem 5.6</h3>
+<p>Suppose we conclude that the missingness of <code>"genre rank"</code>
+likely <strong>depends on</strong> <code>"genre"</code>. Which
+imputation technique should we choose if we want to preserve the
+variance of the <code>"genre rank"</code> column?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> Unconditional mean imputation</p></li>
+<li><p><input type="radio" disabled="" /> Mean imputation conditional on <code>"genre"</code></p></li>
+<li><p><input type="radio" disabled="" /> Unconditional probabilistic imputation</p></li>
+<li><p><input type="radio" disabled="" /> Probabilistic imputation conditional on <code>"genre"</code></p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading5_6">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_6" aria-expanded="true" aria-controls="collapse5_6">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse5_6" class="accordion-collapse collapse collapse"
+aria-labelledby="heading5_6" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> Option D: Probabilistic imputation
+conditional on <code>"genre"</code></p>
+<p>Mean imputation does not preserve the variance of the imputed values
+— since it fills in all missing numbers with the same number (either
+overall, or within each group), the variance of the imputed dataset is
+less than the pre-imputed dataset. To preserve the variance of the
+imputed values, we must use probabilistic imputation of some sort. Since
+the missingness of <code>"genre rank"</code> was found to be dependent
+on <code>"genre"</code>, we perform probabilistic imputation
+<strong>conditional</strong> on <code>"genre"</code>, i.e. impute
+<code>"genre rank"</code>s randomly within each
+<code>"genre"</code>.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 75%.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-5.7">Problem 5.7</h3>
+<p>The DataFrame <code>trends</code> contains the the number of streams
+yesterday (<code>"yest"</code>) and the number of streams the day before
+yesterday (<code>"day_before_yest"</code>) for songs in Spotify’s Top
+200. Remember, a song was in the Top 200 yesterday if it was one of the
+200 most streamed songs yesterday.</p>
+<p>The first few rows of <code>trends</code> are shown below.</p>
+<center><img src='../assets/images/sp22-final/streams_yday.png' width=70%></center>
+<p>The <code>"yest"</code> column contains missing values. What is the
+most likely missingness mechanism for <code>"yest"</code>?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> Missing by design</p></li>
+<li><p><input type="radio" disabled="" /> Not missing at random</p></li>
+<li><p><input type="radio" disabled="" /> Missing at random</p></li>
+<li><p><input type="radio" disabled="" /> Missing completely at random</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading5_7">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_7" aria-expanded="true" aria-controls="collapse5_7">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse5_7" class="accordion-collapse collapse collapse"
+aria-labelledby="heading5_7" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> Option B: NMAR or Option C: MAR</p>
+<p>We accepted two answers here — not missing at random and missing at
+random.</p>
+<ul>
+<li><p>MCAR is ruled out right away, since there is some “pattern" to
+the missingness, i.e. some sort of relationship between
+<code>"day_before_yest"</code> and the missingness of
+<code>"yest"</code>.</p></li>
+<li><p>One could argue not missing at random, because stream counts are
+more likely to be missing from <code>"yest"</code> if they are smaller.
+A song is missing from <code>"yest"</code> but present in
+<code>"day_before_yest"</code> if its number of streams was in the Top
+200 yesterday but not today; if this is true, this must mean that its
+number of streams is less than any of the songs whose stream counts are
+actually in <code>"yest"</code>.</p></li>
+<li><p>One could also argue missing at random, because the missingness
+of <code>"yest"</code> does indeed depend on
+<code>"day_before_yest"</code>.</p></li>
+<li><p>Missing by design is <strong>not</strong> a valid answer here.
+While it is true that <code>"day_before_yest"</code> tells you something
+about the missingness of <code>"yest"</code>, it is <strong>not</strong>
+the case that you can 100% of the time predict if <code>"yest"</code>
+will be missing just by looking at <code>"day_before_yest"</code>; this
+would need to be the case if <code>"yest"</code> were missing by
+design.</p></li>
+</ul>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 64%.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-6">Problem 6</h2>
+<p>Consider the following HTML document, which represents a webpage
+containing the top few songs with the most streams on Spotify today in
+Canada.</p>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode html"><code class="sourceCode html"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;title&gt;</span>3*Canada-2022-06-04<span class="kw">&lt;/title&gt;</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;h1&gt;</span>Spotify Top 3 - Canada<span class="kw">&lt;/h1&gt;</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;table&gt;</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;tr</span> <span class="er">class</span><span class="ot">=</span><span class="st">&#39;heading&#39;</span><span class="kw">&gt;</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;th&gt;</span>Rank<span class="kw">&lt;/th&gt;</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;th&gt;</span>Artist(s)<span class="kw">&lt;/th&gt;</span> </span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;th&gt;</span>Song<span class="kw">&lt;/th&gt;</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;/tr&gt;</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;tr</span> <span class="er">class</span><span class="ot">=</span><span class="st">1</span><span class="kw">&gt;</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;td&gt;</span>1<span class="kw">&lt;/td&gt;</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;td&gt;</span>Harry Styles<span class="kw">&lt;/td&gt;</span> </span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;td&gt;</span>As It Was<span class="kw">&lt;/td&gt;</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;/tr&gt;</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;tr</span> <span class="er">class</span><span class="ot">=</span><span class="st">2</span><span class="kw">&gt;</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;td&gt;</span>2<span class="kw">&lt;/td&gt;</span></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;td&gt;</span>Jack Harlow<span class="kw">&lt;/td&gt;</span> </span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;td&gt;</span>First Class<span class="kw">&lt;/td&gt;</span></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;/tr&gt;</span></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;tr</span> <span class="er">class</span><span class="ot">=</span><span class="st">3</span><span class="kw">&gt;</span></span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;td&gt;</span>3<span class="kw">&lt;/td&gt;</span></span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;td&gt;</span>Kendrick Lamar<span class="kw">&lt;/td&gt;</span> </span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;td&gt;</span>N95<span class="kw">&lt;/td&gt;</span></span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;/tr&gt;</span></span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/table&gt;</span></span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
+<p>Suppose we define <code>soup</code> to be a
+<code>BeautifulSoup</code> object that is instantiated using the
+document above.</p>
+<p><br></p>
+<h3 id="problem-6.1">Problem 6.1</h3>
+<p>How many leaf nodes are there in the DOM tree of the previous
+document — that is, how many nodes have no children?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading6_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_1" aria-expanded="true" aria-controls="collapse6_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse6_1" class="accordion-collapse collapse collapse"
+aria-labelledby="heading6_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> 14</p>
+<p>There’s 1 <code>&lt;title&gt;</code>, 1 <code>&lt;h1&gt;</code>, 3
+<code>&lt;th&gt;</code>s, and 9 <code>&lt;td&gt;</code>s, adding up to
+14.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 64%.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-6.2">Problem 6.2</h3>
+<p>What does the following line of code evaluate to?</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(soup.find_all(<span class="st">&quot;td&quot;</span>))</span></code></pre></div>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading6_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_2" aria-expanded="true" aria-controls="collapse6_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse6_2" class="accordion-collapse collapse collapse"
+aria-labelledby="heading6_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> 9</p>
+<p>As mentioned in the solution to the part above, there are 9
+<code>&lt;td&gt;</code> nodes, and <code>soup.find_all</code> finds them
+all.</p>
+<hr/>
+<h5>Difficulty: ⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 95%.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-6.3">Problem 6.3</h3>
+<p>What does the following line of code evaluate to?</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>soup.find(<span class="st">&quot;tr&quot;</span>).get(<span class="st">&quot;class&quot;</span>)</span></code></pre></div>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading6_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_3" aria-expanded="true" aria-controls="collapse6_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse6_3" class="accordion-collapse collapse collapse"
+aria-labelledby="heading6_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> <code>["heading"]</code> or
+<code>"heading"</code></p>
+<p><code>soup.find("tr")</code> finds the first occurrence of a
+<code>&lt;tr&gt;</code> node, and <code>get("class")</code> accesses the
+value of its <code>"class"</code> attribute.</p>
+<p>Note that technically the answer is <code>["heading"]</code>, but
+<code>"heading"</code> received full credit too.</p>
+<hr/>
+<h5>Difficulty: ⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 96%.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-6.4">Problem 6.4</h3>
+<p>Complete the implementation of the function <code>top_nth</code>,
+which takes in a positive integer <code>n</code> and returns the
+<strong>name of the <span class="math inline">n</span>-th ranked
+song</strong> in the HTML document. For instance,
+<code>top_nth(2)</code> should evaluate to <code>"First Class"</code>
+(<code>n=1</code> corresponds to the top song).</p>
+<p><strong>Note:</strong> Your implementation should work in the case
+that the page contains more than 3 songs.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> top_nth(n):</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> soup.find(<span class="st">&quot;tr&quot;</span>, attrs<span class="op">=</span>__(a)__).find_all(<span class="st">&quot;td&quot;</span>)__(b)__</span></code></pre></div>
+<p>What goes in blank (a)?</p>
+<p>What goes in blank (b)?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading6_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_4" aria-expanded="true" aria-controls="collapse6_4">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse6_4" class="accordion-collapse collapse collapse"
+aria-labelledby="heading6_4" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> a) <code>{'class' : n}</code> b)
+<code>[2]</code> or <code>[-1]</code></p>
+<p>The logic is to find the <code>&lt;tr&gt;</code> node with the
+correct class attribute (which we do by setting attr to
+<code>{'class' : 2}</code>), then access the text of the node’s last
+<code>&lt;td&gt;</code> child (since that’s where the song titles are
+stored).</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 66%.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-6.5">Problem 6.5</h3>
+<p>Suppose we run the line of code <code>r = requests.get(url)</code>,
+where <code>url</code> is a string containing a URL to some online data
+source.</p>
+<p><strong>True or False:</strong> If <code>r.status_code</code> is
+<code>200</code>, then <code>r.text</code> must be a string containing
+the HTML source code of the site at <code>url</code>.</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> True</p></li>
+<li><p><input type="radio" disabled="" /> False</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading6_5">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_5" aria-expanded="true" aria-controls="collapse6_5">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse6_5" class="accordion-collapse collapse collapse"
+aria-labelledby="heading6_5" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> Option B: False</p>
+<p>A status code of 200 means that the request has succeeded. Hence, the
+response could be JSON, it is not necessarily HTML.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 44%.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="section"><span class="math display"> </span></h2>
+<h4
+id="feedback-find-an-error-still-confused-have-a-suggestion-let-us-know-here.">👋
+Feedback: Find an error? Still confused? Have a suggestion?
+<a href="https://forms.gle/WZ71FchnXU1K154d7">Let us know
+here</u></a>.</h4>
+<hr />
+</body>
+</html>
