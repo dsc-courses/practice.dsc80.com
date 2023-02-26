@@ -67,9 +67,39 @@ Which of the following statements are true? Select all that apply.
 - The only case in which it would make sense to set the index of `tv` to `"Title"` is if `double_count.loc[1] == tv.shape[0]` is `True`. 
 - If `double_count.loc[2] == 5` is `True`, there are 5 pairs of 2 TV shows such that each pair shares the same `"Title"`.
 
-To answer, we need to understand what each of `tv["Title"]`, `tv["Title"].value_counts()`, and `tv["Title"].value_counts().value_counts()` contain. `tv["Title"]`, as we know, contains the name of each TV show.
+To answer, we need to understand what each of `tv["Title"]`, `tv["Title"].value_counts()`, and `tv["Title"].value_counts().value_counts()` contain. To illustrate, let's start with a basic, unrelated example. Suppose `tv["Title"]` looks like:
 
-`tv["Title"].value_counts()` is a Series whose index is a sequence of the unique TV show titles in `tv["Title"]`, and whose values are the frequencies of each title. `tv["Title"].value_counts()` may look something like the following:
+```py
+0    A
+1    B
+2    C
+3    B
+4    D
+5    E
+6    A
+dtype: object
+```
+
+Then, `tv["Title"].value_counts()` looks like:
+
+```py
+A    2
+B    2
+C    1
+D    1
+E    1
+dtype: int64
+```
+
+and `tv["Title"].value_counts().value_counts()` looks like:
+
+```py
+1    3
+2    2
+dtype: int64
+```
+
+Back to our actual dataset. `tv["Title"]`, as we know, contains the name of each TV show. `tv["Title"].value_counts()` is a Series whose index is a sequence of the unique TV show titles in `tv["Title"]`, and whose values are the frequencies of each title. `tv["Title"].value_counts()` may look something like the following:
 
 ```py
 Breaking Bad                             1
@@ -98,7 +128,6 @@ Now, let's look at the second two answer choices. If `double_counts.loc[2] == 5`
 
 - This makes the fourth answer choice, "If `double_count.loc[2] == 5` is `True`, there are 5 pairs of 2 TV shows such that each pair shares the same `"Title"`", correct. 
 - The third answer choice, "If `double_count.loc[2] == 5` is `True`, there are 5 TV shows that all share the same `"Title"`", is incorrect; if there were 5 TV shows with the same title, then `double_count.loc[5]` would be at least 1, but we can't make any guarantees about `double_counts.loc[2]`.
-
 
 # END SOLN
 

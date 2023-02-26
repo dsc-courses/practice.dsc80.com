@@ -288,23 +288,51 @@ are 5 pairs of 2 TV shows such that each pair shares the same
 </ul>
 <p>To answer, we need to understand what each of
 <code>tv["Title"]</code>, <code>tv["Title"].value_counts()</code>, and
-<code>tv["Title"].value_counts().value_counts()</code> contain.
-<code>tv["Title"]</code>, as we know, contains the name of each TV
-show.</p>
-<p><code>tv["Title"].value_counts()</code> is a Series whose index is a
+<code>tv["Title"].value_counts().value_counts()</code> contain. To
+illustrate, let’s start with a basic, unrelated example. Suppose
+<code>tv["Title"]</code> looks like:</p>
+<div id="cb1" class="sourceCode">
+<pre class="sourceCode py"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" href="#cb1-1" tabindex="-1"></a><span class="dv">0</span>    A</span>
+<span id="cb1-2"><a aria-hidden="true" href="#cb1-2" tabindex="-1"></a><span class="dv">1</span>    B</span>
+<span id="cb1-3"><a aria-hidden="true" href="#cb1-3" tabindex="-1"></a><span class="dv">2</span>    C</span>
+<span id="cb1-4"><a aria-hidden="true" href="#cb1-4" tabindex="-1"></a><span class="dv">3</span>    B</span>
+<span id="cb1-5"><a aria-hidden="true" href="#cb1-5" tabindex="-1"></a><span class="dv">4</span>    D</span>
+<span id="cb1-6"><a aria-hidden="true" href="#cb1-6" tabindex="-1"></a><span class="dv">5</span>    E</span>
+<span id="cb1-7"><a aria-hidden="true" href="#cb1-7" tabindex="-1"></a><span class="dv">6</span>    A</span>
+<span id="cb1-8"><a aria-hidden="true" href="#cb1-8" tabindex="-1"></a>dtype: <span class="bu">object</span></span></code></pre>
+</div>
+<p>Then, <code>tv["Title"].value_counts()</code> looks like:</p>
+<div id="cb2" class="sourceCode">
+<pre class="sourceCode py"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" href="#cb2-1" tabindex="-1"></a>A    <span class="dv">2</span></span>
+<span id="cb2-2"><a aria-hidden="true" href="#cb2-2" tabindex="-1"></a>B    <span class="dv">2</span></span>
+<span id="cb2-3"><a aria-hidden="true" href="#cb2-3" tabindex="-1"></a>C    <span class="dv">1</span></span>
+<span id="cb2-4"><a aria-hidden="true" href="#cb2-4" tabindex="-1"></a>D    <span class="dv">1</span></span>
+<span id="cb2-5"><a aria-hidden="true" href="#cb2-5" tabindex="-1"></a>E    <span class="dv">1</span></span>
+<span id="cb2-6"><a aria-hidden="true" href="#cb2-6" tabindex="-1"></a>dtype: int64</span></code></pre>
+</div>
+<p>and <code>tv["Title"].value_counts().value_counts()</code> looks
+like:</p>
+<div id="cb3" class="sourceCode">
+<pre class="sourceCode py"><code class="sourceCode python"><span id="cb3-1"><a aria-hidden="true" href="#cb3-1" tabindex="-1"></a><span class="dv">1</span>    <span class="dv">3</span></span>
+<span id="cb3-2"><a aria-hidden="true" href="#cb3-2" tabindex="-1"></a><span class="dv">2</span>    <span class="dv">2</span></span>
+<span id="cb3-3"><a aria-hidden="true" href="#cb3-3" tabindex="-1"></a>dtype: int64</span></code></pre>
+</div>
+<p>Back to our actual dataset. <code>tv["Title"]</code>, as we know,
+contains the name of each TV show.
+<code>tv["Title"].value_counts()</code> is a Series whose index is a
 sequence of the unique TV show titles in <code>tv["Title"]</code>, and
 whose values are the frequencies of each title.
 <code>tv["Title"].value_counts()</code> may look something like the
 following:</p>
-<div id="cb1" class="sourceCode">
-<pre class="sourceCode py"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" href="#cb1-1" tabindex="-1"></a>Breaking Bad                             <span class="dv">1</span></span>
-<span id="cb1-2"><a aria-hidden="true" href="#cb1-2" tabindex="-1"></a>Fresh Meat                               <span class="dv">1</span></span>
-<span id="cb1-3"><a aria-hidden="true" href="#cb1-3" tabindex="-1"></a>Doctor Thorne                            <span class="dv">1</span></span>
-<span id="cb1-4"><a aria-hidden="true" href="#cb1-4" tabindex="-1"></a>                                       ...</span>
-<span id="cb1-5"><a aria-hidden="true" href="#cb1-5" tabindex="-1"></a>Styling Hollywood                        <span class="dv">1</span></span>
-<span id="cb1-6"><a aria-hidden="true" href="#cb1-6" tabindex="-1"></a>Vai Anitta                               <span class="dv">1</span></span>
-<span id="cb1-7"><a aria-hidden="true" href="#cb1-7" tabindex="-1"></a>Fearless Adventures <span class="cf">with</span> Jack Randall    <span class="dv">1</span></span>
-<span id="cb1-8"><a aria-hidden="true" href="#cb1-8" tabindex="-1"></a>Name: Title, Length: <span class="dv">5368</span>, dtype: int64</span></code></pre>
+<div id="cb4" class="sourceCode">
+<pre class="sourceCode py"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" href="#cb4-1" tabindex="-1"></a>Breaking Bad                             <span class="dv">1</span></span>
+<span id="cb4-2"><a aria-hidden="true" href="#cb4-2" tabindex="-1"></a>Fresh Meat                               <span class="dv">1</span></span>
+<span id="cb4-3"><a aria-hidden="true" href="#cb4-3" tabindex="-1"></a>Doctor Thorne                            <span class="dv">1</span></span>
+<span id="cb4-4"><a aria-hidden="true" href="#cb4-4" tabindex="-1"></a>                                       ...</span>
+<span id="cb4-5"><a aria-hidden="true" href="#cb4-5" tabindex="-1"></a>Styling Hollywood                        <span class="dv">1</span></span>
+<span id="cb4-6"><a aria-hidden="true" href="#cb4-6" tabindex="-1"></a>Vai Anitta                               <span class="dv">1</span></span>
+<span id="cb4-7"><a aria-hidden="true" href="#cb4-7" tabindex="-1"></a>Fearless Adventures <span class="cf">with</span> Jack Randall    <span class="dv">1</span></span>
+<span id="cb4-8"><a aria-hidden="true" href="#cb4-8" tabindex="-1"></a>Name: Title, Length: <span class="dv">5368</span>, dtype: int64</span></code></pre>
 </div>
 <p>Then, <code>tv["Title"].value_counts().value_counts()</code> is a
 Series whose index is a sequence of the unique values in the above
@@ -314,9 +342,9 @@ case where all titles in <code>tv["Title"]</code> are unique, then
 1, repeated many times. Then,
 <code>tv["Title"].value_counts().value_counts()</code> will only have
 one row total, and will look something like:</p>
-<div id="cb2" class="sourceCode">
-<pre class="sourceCode py"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" href="#cb2-1" tabindex="-1"></a><span class="dv">1</span>    <span class="dv">5368</span></span>
-<span id="cb2-2"><a aria-hidden="true" href="#cb2-2" tabindex="-1"></a>Name: Title, dtype: int64</span></code></pre>
+<div id="cb5" class="sourceCode">
+<pre class="sourceCode py"><code class="sourceCode python"><span id="cb5-1"><a aria-hidden="true" href="#cb5-1" tabindex="-1"></a><span class="dv">1</span>    <span class="dv">5368</span></span>
+<span id="cb5-2"><a aria-hidden="true" href="#cb5-2" tabindex="-1"></a>Name: Title, dtype: int64</span></code></pre>
 </div>
 <p>This allows us to distinguish between the first two answer choices.
 The key is remembering that <strong>in order to set a column to the
