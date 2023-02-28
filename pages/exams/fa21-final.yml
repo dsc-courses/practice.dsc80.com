@@ -4,9 +4,9 @@ context: This exam was administered online. The exam was open-notes, open-book. 
 show_solution: true
 data_info: fa21-final/fa21-final-data-info
 problems:
-  - sp22-final/sp22-final-q01
-  - sp22-final/sp22-final-q02
-  - sp22-final/sp22-final-q03
-  - sp22-final/sp22-final-q04
-  - sp22-final/sp22-final-q05
-  - sp22-final/sp22-final-q06
+  - fa21-final/fa21-final-q01
+  - fa21-final/fa21-final-q02
+  - fa21-final/fa21-final-q03
+  - fa21-final/fa21-final-q04
+  - fa21-final/fa21-final-q05
+  - fa21-final/fa21-final-q06

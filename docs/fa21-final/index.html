@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>Spring 2022 Final Exam</title>
+  <title>Fall 2021 Final Exam</title>
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -106,7 +106,7 @@
 </head>
 <body>
 <header id="title-block-header">
-<h1 class="title">Spring 2022 Final Exam</h1>
+<h1 class="title">Fall 2021 Final Exam</h1>
 </header>
 <p><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
@@ -141,50 +141,25 @@ syntactically-perfect! Be careful not to spend too much time perfecting
 your code.</p>
 <hr />
 <h2 id="problem-1">Problem 1</h2>
-<p>For each day in May 2022, the DataFrame <code>streams</code> contains
-the number of streams for each of the “Top 200" songs on Spotify that
-day — that is, the number of streams for the 200 songs with the most
-streams on Spotify that day. The columns in <code>streams</code> are as
-follows:</p>
-<ul>
-<li><p><code>"date"</code>: the date the song was streamed</p></li>
-<li><p><code>"artist_names"</code>: name(s) of the artists who created
-the song</p></li>
-<li><p><code>"track_name"</code>: name of the song</p></li>
-<li><p><code>"streams"</code>: the number of times the song was streamed
-on Spotify that day</p></li>
-</ul>
-<p>The first few rows of <code>streams</code> are shown below. Since
-there were 31 days in May and 200 songs per day, <code>streams</code>
-has 6200 rows in total.</p>
-<center><img src='../assets/images/sp22-final/streams.png' width=50%></center>
-<p>Note that:</p>
-<ul>
-<li><p><code>streams</code> is already sorted in a very particular way —
-it is sorted by <code>"date"</code> in reverse chronological
-(decreasing) order, and, within each <code>"date"</code>, by
-<code>"streams"</code> in increasing order.</p></li>
-<li><p>Many songs will appear multiple times in <code>streams</code>,
-because many songs were in the Top 200 on more than one day.</p></li>
-</ul>
+<p>This table below contains energy usage information for every building
+owned and managed by the New York City Department of Citywide
+Administrative Services (DCAS). DCAS is the arm of the New York City
+municipal government which handles ownership and management of the
+city’s office facilities and real estate inventory. The organization
+voluntarily publicly discloses self-measured information about the
+energy use of its buildings.</p>
+<center><img src='../assets/images/fa21-final/table.png' width=30%></center>
+<p>Assume that the table has been read into the variable named
+<code>df</code>. The result of <code>df.info()</code> is shown
+below:</p>
+<center><img src='../assets/images/fa21-final/info.png' width=30%></center>
 <p><br></p>
 <h3 id="problem-1.1">Problem 1.1</h3>
-<p>Complete the implementation of the function <code>song_by_day</code>,
-which takes in an integer <code>day</code> between 1 and 31
-corresponding to a day in May, and an integer <code>n</code>, and
-returns the song that had the <code>n</code>-th most streams on
-<code>day</code>. For instance,<br />
-<code>song_by_day(31, 199)</code> should evaluate to
-<code>"pepas"</code>, because <code>"pepas"</code> was the 199th most
-streamed song on May 31st.</p>
-<p><strong>Note:</strong> You are not allowed to sort within
-<code>song_by_day</code> — remember, <code>streams</code> is already
-sorted.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> song_by_day(day, n):</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    day_str <span class="op">=</span> <span class="ss">f&quot;2022-05-</span><span class="sc">{</span><span class="bu">str</span>(day)<span class="sc">.</span>zfill(<span class="dv">2</span>)<span class="sc">}</span><span class="ss">&quot;</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    day_only <span class="op">=</span> streams[__(a)__].iloc[__(b)__]</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> __(c)__</span></code></pre></div>
-<p>What goes in each of the blanks?</p>
+<p>Write a piece of code that computes the name of the borough whose
+median building energy usage is the highest.</p>
+<p>Note: your code will be graded manually, and it is not expected to be
+perfect. Be careful to not spend too much time trying to make your code
+perfect!</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading1_1">
@@ -198,40 +173,26 @@ aria-labelledby="heading1_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer: </strong> a) <code>streams['day'] == day_str</code>,
-b) <code>(200 - n)</code>, c) <code>day_only['track_name']</code></p>
-<p>The first line in the function gives us an idea that maybe later on
-in the function we’re going to filter for all the days that match the
-given data. Indeed, in blank a, we filter for all the rows in which the
-<code>'day'</code> column matches <code>day_str</code>. In blank b, we
-could access directly access the row with the <code>n</code>-th most
-stream using iloc. (Remember, the image above shows us that the streams
-are sorted by most streamed in ascending order, so to find the
-<code>n</code>-th most popular song of a day, we simply do
-<code>200-n</code>). Finally, to return the track name, we could simply
-do <code>day_only['track_name']</code>.</p>
+<p><strong>Answer: </strong>
+<code>df.groupby('Borough')['Energy'].median().idxmax()</code></p>
+<p>The idea is to perform a groupby and get the median within each group
+and then somehow get the group with the largest median.</p>
 <hr/>
-<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<h5>Difficulty: ⭐️</h5>
 <p>
 </p>
-<p>The average score on this problem was 63%.</p>
+<p>The average score on this problem was 91%.</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <h3 id="problem-1.2">Problem 1.2</h3>
-<p>Below, we define a DataFrame <code>pivoted</code>.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>pivoted <span class="op">=</span> streams.pivot_table(index<span class="op">=</span><span class="st">&quot;track_name&quot;</span>, columns<span class="op">=</span><span class="st">&quot;date&quot;</span>, </span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>                                values<span class="op">=</span><span class="st">&quot;streams&quot;</span>, aggfunc<span class="op">=</span>np.<span class="bu">max</span>)</span></code></pre></div>
-<p>After defining <code>pivoted</code>, we define a Series
-<code>mystery</code> below.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>mystery <span class="op">=</span> <span class="dv">31</span> <span class="op">-</span> pivoted.<span class="bu">apply</span>(<span class="kw">lambda</span> s: s.isna().<span class="bu">sum</span>(), axis<span class="op">=</span><span class="dv">1</span>)</span></code></pre></div>
-<p><code>mystery.loc["pepas"]</code> evaluates to 23. In one sentence,
-describe the relationship between the number 23 and the song
-<code>"pepas"</code> in the context of the <code>streams</code> dataset.
-For instance, a correctly formatted but incorrect answer is “I listened
-to the song <code>"pepas"</code> 23 times today."</p>
+<p>Write a line of code to normalize the building addresses. To
+normalize an address, replace all spaces with underscores, change
+“Street” to “St”, change “Avenue” to “Av”, and convert to lower case.
+Your code should evaluate to a series containing the normalized
+addresses.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading1_2">
@@ -245,36 +206,23 @@ aria-labelledby="heading1_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer: </strong> See below.</p>
-<p><code>pivoted.apply(lambda s: s.isna().sum(), axis=1)</code> computes
-the number of days that a song was not on the Top 200, so
-<code>31 - pivoted.apply(lambda s: s.isna().sum(), axis=1)</code>
-computes the number of days the song was in the Top 200. As such, the
-correct interpretation is that <strong><code>"pepas"</code> was in the
-Top 200 for 23 days in May</strong>.</p>
+<p><strong>Answer: </strong>
+<code>df['Building Addresss'].apply(lambda x: x.replace(' ', '_').replace('Avenue', 'Av').replace('Street', 'St').lower())</code></p>
 <hr/>
-<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<h5>Difficulty: ⭐️</h5>
 <p>
 </p>
-<p>The average score on this problem was 68%.</p>
+<p>The average score on this problem was 90%.</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <h3 id="problem-1.3">Problem 1.3</h3>
-<p>In defining <code>pivoted</code>, we set the keyword argument
-<code>aggfunc</code> to <code>np.max</code>. Which of the following
-functions could we have used instead of <code>np.max</code> without
-changing the values in <code>pivoted</code>? <strong>Select all that
-apply.</strong></p>
-<ul class="task-list">
-<li><p><input type="checkbox" disabled="" /> <code>np.mean</code></p></li>
-<li><p><input type="checkbox" disabled="" /> <code>np.median</code></p></li>
-<li><p><input type="checkbox" disabled="" /> <code>len</code></p></li>
-<li><p><input type="checkbox" disabled="" /> <code>lambda df: df.iloc[0]</code></p></li>
-<li><p><input type="checkbox" disabled="" /> None of the above</p></li>
-</ul>
+<p>From the table above, it looks like it is common for city buildings
+to have addresses that start with the number ‘1’; e.g., “100 Centre
+Street”. Write a piece of code that plots a histogram showing the number
+of times each number appears as the first number in an address.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading1_3">
@@ -288,42 +236,34 @@ aria-labelledby="heading1_3" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer: </strong> Option A, B and D</p>
-<p>For each combination of <code>"track_name"</code> and
-<code>"date"</code>, there is just a single value — the number of
-streams that song received on that date. As such, the
-<code>aggfunc</code> needs to take in a Series containing a single
-number and return that same number.</p>
-<ul>
-<li><p>The mean and median of a Series containing a single number is
-equal to that number, so the first two options are correct.</p></li>
-<li><p>The length of a Series containing a single number is 1, no matter
-what that number is, so the third option is not correct.</p></li>
-<li><p><code>lambda df: df.iloc[0]</code> takes in a Series and returns
-the first element in the Series, which is the only element in the
-Series. This option is correct as well. (The parameter name
-<code>df</code> is irrelevant.)</p></li>
-</ul>
+<p><strong>Answer: </strong>
+<code>df['Building Addresss'].apply(lambda x: int(x[0])).plot(kind = 'hist')</code></p>
+<p>The apply part of the code gets the first number of each address, and
+then plots the resulting Series as a histogram.</p>
 <hr/>
-<h5>Difficulty: ⭐️⭐️</h5>
+<h5>Difficulty: ⭐️</h5>
 <p>
 </p>
-<p>The average score on this problem was 80%.</p>
+<p>The average score on this problem was 90%.</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <h3 id="problem-1.4">Problem 1.4</h3>
-<p>Below, we define another DataFrame <code>another_mystery</code>.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>another_mystery <span class="op">=</span> (streams.groupby(<span class="st">&quot;date&quot;</span>).last()</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>                            .groupby([<span class="st">&quot;artist_names&quot;</span>, <span class="st">&quot;track_name&quot;</span>])</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>                            .count().reset_index())</span></code></pre></div>
-<p><code>another_mystery</code> has 5 rows. In one sentence, describe
-the significance of the number 5 in the context of the
-<code>streams</code> dataset. For instance, a correctly formatted but
-incorrect answer is “There are 5 unique artists in
-<code>streams</code>." Your answer should not include the word”row".</p>
+<p>Suppose the following code is run:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> OneHotEncoder</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>oh <span class="op">=</span> OneHotEncoder()</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>oh.fit_transform(df[[<span class="st">&#39;Borough&#39;</span>]]).mean(axis<span class="op">=</span><span class="dv">0</span>)</span></code></pre></div>
+<p>What will be the result?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> An array of size 5 containing the proportion of buildings in each of
+the five boroughs.</p></li>
+<li><p><input type="radio" disabled="" /> An array with as many entries as there are buildings containing 0.2
+in each spot.</p></li>
+<li><p><input type="radio" disabled="" /> An array of size 5 containing all zeros.</p></li>
+<li><p><input type="radio" disabled="" /> An array of size 5 containing one 1 and the rest zeros.</p></li>
+</ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading1_4">
@@ -337,28 +277,53 @@ aria-labelledby="heading1_4" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer: </strong> See below.</p>
-<p>1in Since <code>streams</code> is sorted by <code>"date"</code> in
-descending order and, within each <code>"date"</code>, by
-<code>"streams"</code> in ascending order,
-<code>streams.groupby("date").last()</code> is a DataFrame containing
-the song with the most <code>"streams"</code> on each day in May. In
-other words, we found the “top song" for each day. (The DataFrame we
-created has 31 rows.)</p>
-<p>When we then execute
-<code>.groupby(["artist_names", "track_name"]).count()</code>, we create
-one row for every unique combination of song and artist, amongst the
-“top songs". (If no two artists have a song with the same name, this is
-the same as creating one row for every unique song.) Since there are 5
-rows in this new DataFrame (resetting the index doesn’t do anything
-here), it means that <strong>there were only 5 unique songs that were
-ever the “top song" in a day in May</strong>; this is the correct
-interpretation.</p>
+<p><strong>Answer: </strong> Option A</p>
+<p>One-Hot-Encoding will create 5 columns representing each ‘Borough’.
+For each building, a 1 will be filled in the column of the ‘Borough’ in
+which the building belongs to, and 0 for the other 4 columns. Thus
+taking the mean of each of the 5 ‘Borough’ columns will just produce the
+proportion of buildings in each of the 5 boroughs, yielding Option
+A.</p>
 <hr/>
-<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<h5>Difficulty: ⭐️</h5>
 <p>
 </p>
-<p>The average score on this problem was 50%.</p>
+<p>The average score on this problem was 90%.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-1.5">Problem 1.5</h3>
+<p>Write a piece of code (perhaps more than one line) that computes the
+proportion of addresses in each borough that end with either
+<code>St</code> or <code>Street</code>.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_5">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_5" aria-expanded="true" aria-controls="collapse1_5">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_5" class="accordion-collapse collapse collapse"
+aria-labelledby="heading1_5" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong></p>
+<div id="cb1" class="sourceCode">
+<pre class="sourceCode py"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" href="#cb1-1" tabindex="-1"></a><span class="kw">def</span> match(x):</span>
+<span id="cb1-2"><a aria-hidden="true" href="#cb1-2" tabindex="-1"></a>    <span class="cf">return</span> (x.endswith(<span class="st">'St'</span>)) <span class="op">|</span> (x.endswith(<span class="st">'Street'</span>))</span>
+<span id="cb1-3"><a aria-hidden="true" href="#cb1-3" tabindex="-1"></a></span>
+<span id="cb1-4"><a aria-hidden="true" href="#cb1-4" tabindex="-1"></a>df[<span class="st">'Building Address'</span>] <span class="op">=</span> df[<span class="st">'Building Address'</span>].<span class="bu">apply</span>(<span class="kw">lambda</span> x: match(x))</span>
+<span id="cb1-5"><a aria-hidden="true" href="#cb1-5" tabindex="-1"></a>df.groupby(<span class="st">'Borough'</span>)[<span class="st">'Building Address'</span>].mean()</span></code></pre>
+</div>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 79%.</p>
 </div>
 </div>
 </div>
@@ -366,26 +331,51 @@ interpretation.</p>
 <p><br></p>
 <hr />
 <h2 id="problem-2">Problem 2</h2>
-<p>Suppose the DataFrame <code>today</code> consists of 15 rows — 3 rows
-for each of 5 different <code>"artist_names"</code>. For each artist, it
-contains the <code>"track_name"</code> for their three most-streamed
-songs today. For instance, there may be one row for
-<code>"olivia rodrigo"</code> and <code>"favorite crime"</code>, one row
-for <code>"olivia rodrigo"</code> and <code>"drivers license"</code>,
-and one row for <code>"olivia rodrigo"</code> and
-<code>"deja vu"</code>.</p>
-<p>Another DataFrame, <code>genres</code>, is shown below in its
-entirety.</p>
-<center><img src='../assets/images/sp22-final/genres.png' width=25%></center>
+<p>For this problem, consider the HTML document shown below:</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode html"><code class="sourceCode html"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;html&gt;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;head&gt;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;title&gt;</span>Data Science Courses<span class="kw">&lt;/title&gt;</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/head&gt;</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;body&gt;</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;h1&gt;</span>Welcome to the World of Data Science!<span class="kw">&lt;/h1&gt;</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;h2&gt;</span>Current Courses<span class="kw">&lt;/h2&gt;</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;course_list&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;img</span> <span class="er">alt</span><span class="ot">=</span><span class="st">&quot;Course Banner&quot;</span><span class="er">,</span> <span class="er">src</span><span class="ot">=</span><span class="st">&quot;courses.png&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;p&gt;</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>                Here are the courses available to take:</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;/p&gt;</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;ul&gt;</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;li&gt;</span>Machine Learning<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;li&gt;</span>Design of Experiments<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;li&gt;</span>Driving Business Value with DS<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;/ul&gt;</span> </span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;p&gt;</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>                For last quarter&#39;s classes, see <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;./2021-sp.html&quot;</span><span class="kw">&gt;</span>here<span class="kw">&lt;/a&gt;</span>.</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;/p&gt;</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;h2&gt;</span>News<span class="kw">&lt;/h2&gt;</span></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;news&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;p</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;news&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>                New course on <span class="kw">&lt;b&gt;</span>Visualization<span class="kw">&lt;/b&gt;</span> is launched.</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>                See <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;https://http.cat/301.png&quot;</span> <span class="er">target</span><span class="ot">=</span><span class="st">&quot;_blank&quot;</span><span class="kw">&gt;</span>here<span class="kw">&lt;/a&gt;</span></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;/p&gt;</span></span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/body&gt;</span></span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
 <p><br></p>
 <h3 id="problem-2.1">Problem 2.1</h3>
-<p>Suppose we perform an <strong>inner</strong> merge between
-<code>today</code> and <code>genres</code> on
-<code>"artist_names"</code>. If the five <code>"artist_names"</code> in
-<code>today</code> are the same as the five <code>"artist_names"</code>
-in <code>genres</code>, what fraction of the rows in the merged
-DataFrame will contain <code>"Pop"</code> in the <code>"genre"</code>
-column? Give your answer as a simplified fraction.</p>
+<p>How many children does the <code>div</code> node with class
+<code>course_list</code> contain in the Document Object Model (DOM)?</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading2_1">
@@ -399,38 +389,25 @@ aria-labelledby="heading2_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer: </strong> <span class="math inline">\frac{2}{5}</span></p>
-<p>If the five <code>"artist_names"</code> in <code>today</code> and
-<strong>genres</strong> are the same, the DataFrame that results from an
-inner merge will have 15 rows, one for each row in <code>today</code>.
-This is because there are 3 matches for <code>"harry styles"</code>, 3
-matches for <code>"olivia rodrigo"</code>, 3 matches for
-<code>"glass animals"</code>, and so on.</p>
-<p>In the merged DataFrame’s 15 rows, 6 of them will correspond to
-<code>"Pop"</code> artists — 3 to <code>"harry styles"</code> and 3 to
-<code>"olivia rodrigo"</code>. Thus, the fraction of rows that contain
-<code>"Pop"</code> in the <code>"genre"</code> column is <span class="math inline">\frac{6}{15} = \frac{2}{5}</span> (which is the
-fraction of rows that contained <code>"Pop"</code> in
-<code>genres["genre"]</code>, too).</p>
+<p><strong>Answer: </strong> 4 children</p>
+<p>Looking at the code, we could see that the <code>div</code> with
+class <code>course_list</code> has 4 children, namely: a
+<code>img</code> node, <code>p</code> node, <code>ul</code> node and
+<code>p</code> node.</p>
 <hr/>
-<h5>Difficulty: ⭐️</h5>
+<h5>Difficulty: ⭐️⭐️</h5>
 <p>
 </p>
-<p>The average score on this problem was 97%.</p>
+<p>The average score on this problem was 78%.</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <h3 id="problem-2.2">Problem 2.2</h3>
-<p>Suppose we perform an <strong>inner</strong> merge between
-<code>today</code> and <code>genres</code> on
-<code>"artist_names"</code>. Furthermore, suppose that the only
-overlapping <code>"artist_names"</code> between <code>today</code> and
-<code>genres</code> are <code>"drake"</code> and
-<code>"olivia rodrigo"</code>. What fraction of the rows in the merged
-DataFrame will contain <code>"Pop"</code> in the <code>"genre"</code>
-column? Give your answer as a simplified fraction.</p>
+<p>Suppose the HTML document has been parsed using
+<code>doc = bs4.BeautifulSoup(html)</code>. Write a line of code to get
+the <code>h1</code> header text in the form of a string.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading2_2">
@@ -444,30 +421,26 @@ aria-labelledby="heading2_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer: </strong> <span class="math inline">\frac{1}{2}</span></p>
-<p>If we perform an inner merge, there will only be 6 rows in the merged
-DataFrame — 3 for <code>"olivia rodrigo"</code> and 3 for
-<code>"drake"</code>. 3 of those 6 rows will have <code>"Pop"</code> in
-the <code>"genre"</code> column, hence the answer is <span class="math inline">\frac{3}{6} = \frac{1}{2}</span>.</p>
+<p><strong>Answer: </strong> <code>doc.find('h1').text</code></p>
+<p>Since there’s only one <code>h1</code> element in the html code, we
+could simply do <code>doc.find('h1')</code> to get the <code>h1</code>
+element. Then simply adding <code>.text</code> will get the text of the
+<code>h1</code> element in the form of a string.</p>
 <hr/>
-<h5>Difficulty: ⭐️⭐️</h5>
+<h5>Difficulty: ⭐️</h5>
 <p>
 </p>
-<p>The average score on this problem was 86%.</p>
+<p>The average score on this problem was 93%.</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <h3 id="problem-2.3">Problem 2.3</h3>
-<p>Suppose we perform an <strong>outer</strong> merge between
-<code>today</code> and <code>genres</code> on
-<code>"artist_names"</code>. Furthermore, suppose that the only
-overlapping <code>"artist_names"</code> between <code>today</code> and
-<code>genres</code> are <code>"drake"</code> and
-<code>"olivia rodrigo"</code>. What fraction of the rows in the merged
-DataFrame will contain <code>"Pop"</code> in the <code>"genre"</code>
-column? Give your answer as a simplified fraction.</p>
+<p>Suppose the HTML document has been parsed using
+<code>doc = bs4.BeautifulSoup(html)</code>. Write a piece of code that
+scrapes the course names from the HTML. The value returned by your code
+should be a list of strings.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading2_3">
@@ -481,34 +454,163 @@ aria-labelledby="heading2_3" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer: </strong> <span class="math inline">\frac{2}{9}</span></p>
-<p>Since we are performing an outer merge, we can decompose the rows in
-the merged DataFrame into three groups:</p>
-<ul>
-<li><p>Rows that are in <code>today</code> that are not in
-<code>genres</code>. There are 9 of these (3 each for the 3 artists that
-are in <code>today</code> and not <code>genres</code>).
-<code>today</code> doesn’t have a <code>"genre"</code> column, and so
-all of these <code>"genre"</code>s will be <code>NaN</code> upon
-merging.</p></li>
-<li><p>Rows that are in <code>genres</code> that are not in
-<code>today</code>. There are 3 of these — one for
-<code>"harry styles"</code>, one for <code>"glass animals"</code>, and
-one for <code>"doja cat"</code>. 1 of these 3 have <code>"Pop"</code> in
-the <code>"genre"</code> column.</p></li>
-<li><p>Rows that are in both <code>today</code> and <code>genres</code>.
-There are 6 of these — 3 for <code>"olivia rodrigo"</code> and 3 for
-<code>"drake"</code> — and 3 of those rows contain <code>"Pop"</code> in
-the <code>"genre"</code> column.</p></li>
-</ul>
-<p>Tallying things up, we see that there are <span class="math inline">9
-+ 3 + 6 = 18</span> rows in the merged DataFrame overall, of which <span class="math inline">0 + 1 + 3 = 4</span> have <code>"Pop"</code> in the
-<code>"genre"</code> column. Hence, the relevant fraction is <span class="math inline">\frac{4}{18} = \frac{2}{9}</span>.</p>
+<p><strong>Answer: </strong>
+<code>[x.text for x in doc.find_all('li')]</code></p>
+<p>Doing <code>doc.find_all('li')</code> will find all <code>li</code>
+elements and return it is the form of a list. Simply performing some
+basic list comprehension combined <code>.text</code> to get the text of
+each <code>li</code> element will yield the desired result.</p>
 <hr/>
-<h5>Difficulty: ⭐️⭐️⭐️⭐️⭐️</h5>
+<h5>Difficulty: ⭐️</h5>
 <p>
 </p>
-<p>The average score on this problem was 29%.</p>
+<p>The average score on this problem was 93%.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-2.4">Problem 2.4</h3>
+<p>There are two links in the document. Which of the following will
+return the URL of the link contained in the <code>div</code> with class
+<code>news</code>? Mark all that apply.</p>
+<ul class="task-list">
+<li><p><input type="checkbox" disabled="" /> <code>doc.find_all('a')[1].attrs['href']</code></p></li>
+<li><p><input type="checkbox" disabled="" /> <code>doc.find('a')[1].attrs['href']</code></p></li>
+<li><p><input type="checkbox" disabled="" /> <code>doc.find(a, class='news').attrs['href']</code></p></li>
+<li><p><input type="checkbox" disabled="" /> <code>doc.find('div', attrs={'class': 'news'}).find('a').attrs['href']</code></p></li>
+<li><p><input type="checkbox" disabled="" /> <code>doc.find('href', attrs={'class': 'news'})</code></p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading2_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_4" aria-expanded="true" aria-controls="collapse2_4">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse2_4" class="accordion-collapse collapse collapse"
+aria-labelledby="heading2_4" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> Option A and Option D</p>
+<ul>
+<li>Option A: This option works because <code>doc.find_all('a')</code>
+will return a list of all the <code>a</code> elements in the order that
+it appears in the HTML document, and since the <code>a</code> with class
+<code>news</code> is the second <code>a</code> element appearing in the
+HTML doc, we do <code>[1]</code> to select it (as we would in any other
+list). Finally, we return the URL of the <code>a</code> element by
+getting the <code>'href'</code> attribute using
+<code>.attrs['href']</code></li>
+<li>Option B: This does not work because <code>.find</code> will only
+find the first instance of <code>a</code>, which is not the one we’re
+looking for.</li>
+<li>Option C: This does not work because there are no quotations around
+the <code>a</code>.</li>
+<li>Option D: This option works becuase
+<code>doc.find('div', attrs={'class': 'news'})</code> will first find
+the <code>div</code> element with <code>class='news'</code>, and then
+find the <code>a</code> element within that element and get the
+<code>href</code> attribute of that, which is what we want.</li>
+<li>Option E: This does not work because there is no <code>href</code>
+element in the HTML document.</li>
+</ul>
+<hr/>
+<h5>Difficulty: ⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 90%.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-2.5">Problem 2.5</h3>
+<p>What is the purpose of the <code>alt</code> attribute in the
+<code>img</code> tag?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> It provides an alternative image that will be shown to some users at
+random</p></li>
+<li><p><input type="radio" disabled="" /> It creates a link with text present in <code>alt</code></p></li>
+<li><p><input type="radio" disabled="" /> It provides the text to be shown below the image as a caption</p></li>
+<li><p><input type="radio" disabled="" /> It provides text that should be shown in the case that the image
+cannot be displayed</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading2_5">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_5" aria-expanded="true" aria-controls="collapse2_5">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse2_5" class="accordion-collapse collapse collapse"
+aria-labelledby="heading2_5" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> Option D</p>
+<p>^pretty self-explanatory.</p>
+<hr/>
+<h5>Difficulty: ⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 98%.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-2.6">Problem 2.6</h3>
+<p>You are scraping a web page using the <code>requests</code> module.
+Your code works fine and returns the desired result, but suddenly you
+find that when you run your code it starts but never finishes – it does
+not raise an error or return anything. What is the most likely cause of
+the issue?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> The page has a very large GIF that hasn’t stopped playing</p></li>
+<li><p><input type="radio" disabled="" /> You have made too many requests to the server in too short of a time,
+and you are being “timed out”</p></li>
+<li><p><input type="radio" disabled="" /> The page contains a Unicode character that <code>requests</code>
+cannot parse</p></li>
+<li><p><input type="radio" disabled="" /> The page has suddenly changed and has caused <code>requests</code> to
+enter an infinite loop</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading2_6">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_6" aria-expanded="true" aria-controls="collapse2_6">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse2_6" class="accordion-collapse collapse collapse"
+aria-labelledby="heading2_6" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> Option B</p>
+<ul>
+<li>Option A: We can pretty confidentely (I hope) rule this option out
+since whether or not a GIF has stopped playing or not shouldn’t affect
+our web scraping.</li>
+<li>Option B: This answer is right because a server will time you out
+(and potentially block you) if you make too many requests to the
+server.</li>
+<li>Option C: This shouldn’t cause your code to never finish, rather,
+it’s more likely that the request module just doesn’t process said
+Unicode character correctly or it throws an error.</li>
+<li>Option D: Again, this shouldn’t cause your code to never finish,
+rather, the request module will just parse the older version of the
+website at the time you called it.</li>
+</ul>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 78%.</p>
 </div>
 </div>
 </div>
@@ -518,12 +620,24 @@ the <code>"genre"</code> column.</p></li>
 <h2 id="problem-3">Problem 3</h2>
 <p><br></p>
 <h3 id="problem-3.1">Problem 3.1</h3>
-<p>Billy and Daisy each decide what songs to stream by rolling dice.
-Billy rolls a six-sided die 36 times and sees the same number of 1s, 2s,
-3s, 4s, 5s, and 6s. Daisy rolls a six-sided die 72 times and sees 36 1s,
-18 4s, and 18 6s.</p>
-<p>What is the total variation distance (TVD) between their
-distributions of rolls? Give your answer as a number.</p>
+<p>You are creating a new programming language called IDK. In this
+language, all variable names must satisfy the following constraints:</p>
+<ul>
+<li>They must start with <code>Um</code>, <code>Umm</code>,
+<code>Ummm</code>, etc. That is, a capital <code>U</code> followed by
+one or more <code>m</code>’s.</li>
+<li>Following this may be any string of one or more letters. The first
+letter must be capitalized.</li>
+<li>The variable name must end with a single question mark.</li>
+<li>Numbers or other special characters are not allowed.</li>
+</ul>
+<p>Examples of valid variable names: <code>UmmmX?</code>,
+<code>UmTest?</code>, <code>UmmmmPendingQueue?</code> Examples of
+invalid variable names: <code>ummX?</code>, <code>Um?</code>,
+<code>Ummhello?</code>, <code>UmTest</code></p>
+<p>Write a regular expression pattern string <code>pat</code> to
+validate variable names in this new language. Your pattern should work
+when <code>re.match(pat, s)</code> is called.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading3_1">
@@ -537,40 +651,38 @@ aria-labelledby="heading3_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer: </strong> <span class="math inline">\frac{1}{2}</span></p>
-<p>First, we must normalize their distributions so they sum to 1. <span class="math display">\text{billy} = \begin{bmatrix} \frac{1}{6},
-\frac{1}{6}, \frac{1}{6}, \frac{1}{6}, \frac{1}{6}, \frac{1}{6}
-\end{bmatrix}, \: \: \: \text{daisy} = \begin{bmatrix} \frac{1}{2}, 0,
-0, \frac{1}{4}, 0, \frac{1}{4} \end{bmatrix}</span></p>
-<p>Then, recall that the TVD is the sum of the absolute differences in
-proportions, all divided by 2:</p>
-<p><span class="math display">\begin{aligned}
-\text{TVD} &amp;= \frac{1}{2} \Bigg( \Big| \frac{1}{2} - \frac{1}{6}
-\Big| + \Big| 0 - \frac{1}{6} \Big| +  \Big| 0 - \frac{1}{6}
-\Big|  +  \Big| \frac{1}{4} - \frac{1}{6} \Big| +  \Big| 0 - \frac{1}{6}
-\Big| +  \Big| \frac{1}{4} - \frac{1}{6} \Big|    \Bigg) \\
-&amp;= \frac{1}{2} \Bigg( \frac{2}{6} + \frac{1}{6} + \frac{1}{6} +
-\frac{1}{12} + \frac{1}{6} + \frac{1}{12} \Bigg) \\
-&amp;= \frac{1}{2} \cdot 1 \\
-&amp;= \frac{1}{2}\end{aligned}</span></p>
+<p><strong>Answer: </strong> <code>'U(m+)[A-Z]([A-z]*)(\?)'</code></p>
+<p>Starting our regular expression, it’s not too difficult to see that
+we need a <code>'U'</code> followed by <code>(m+)</code> which will
+match with a singular capital <code>'U'</code> followed by at least one
+lowercase <code>'m'</code>. Next it is required that we follow that up
+with any string of letters, where the first letter is capitalized. we do
+this with <code>'[A-Z]([A-z]*)'</code>, where <code>'[A-Z]'</code> will
+match with any capital letter and <code>'([A-z]*)'</code> will match
+with lowercase and uppercase letters 0 or more times. Finally we end the
+regex with <code>'\?'</code> which matches with a question mark.</p>
 <hr/>
-<h5>Difficulty: ⭐️⭐️⭐️⭐️</h5>
+<h5>Difficulty: ⭐️⭐️</h5>
 <p>
 </p>
-<p>The average score on this problem was 42%.</p>
+<p>The average score on this problem was 87%.</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <h3 id="problem-3.2">Problem 3.2</h3>
-<p>Consider two categorical distributions, each made up of the same
-<span class="math inline">n</span> categories. Given no other
-information, what is the smallest possible TVD between the two
-distributions, and what is the largest possible TVD between the two
-distributions? Give both answers as numbers.</p>
-<p>smallest possible TVD =</p>
-<p>largest possible TVD =</p>
+<p>Which of the following strings will be matched by the regex pattern
+<code>\$\s*\d{1,3}(\.\d{2})?</code>? Note that it should match the
+complete string given. Mark all that apply.</p>
+<ul class="task-list">
+<li><p><input type="checkbox" disabled="" /> $ 100</p></li>
+<li><p><input type="checkbox" disabled="" /> $10.12</p></li>
+<li><p><input type="checkbox" disabled="" /> $1340.89</p></li>
+<li><p><input type="checkbox" disabled="" /> $1456.8</p></li>
+<li><p><input type="checkbox" disabled="" /> $478.23</p></li>
+<li><p><input type="checkbox" disabled="" /> $.99</p></li>
+</ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading3_2">
@@ -584,35 +696,34 @@ aria-labelledby="heading3_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer: </strong> Smallest: 0, Largest: 1</p>
-<p>There is an absolute value in the definition of TVD, so it must be at
-least 0. The TVD does not scale with the number of categories; its
-maximum possible value is 1. We will not provide a rigorous proof here,
-but intuitively, the most “different" two distributions can be is if
-they both have 100% of their values in different categories. In such a
-case, the TVD is 1.</p>
+<p><strong>Answer: </strong> Option A, Option B and Option E</p>
+<p>Let’s dissect what the regex in the question actually means. First,
+the <code>'\$'</code> simply matches with any question mark. Next,
+<code>'\s*'</code> matches with whitespace characters 0 or more times,
+and <code>'\d{1,3}'</code> will match with any digits 1-3 times
+inclusive. Finally, <code>'(\.\d{2})?'</code> will match with any
+expression consisting of a period and any two digits following that
+period 0 or 1 times (due to the <code>'?'</code> mark). With those rules
+in mind, it’s not too difficult to check that Options A, B and E
+work.</p>
+<p>Options C, D and F don’t work because none of those expressions have
+1-3 digits before the period.</p>
 <hr/>
-<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<h5>Difficulty: ⭐️⭐️</h5>
 <p>
 </p>
-<p>The average score on this problem was 74%.</p>
+<p>The average score on this problem was 83%.</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <h3 id="problem-3.3">Problem 3.3</h3>
-<p>Consider the following pair of distributions.</p>
-<center><img src='../assets/images/sp22-final/dists.png' width=35%></center>
-<p>Suppose we want to perform a permutation test to test whether the two
-distributions come from the same population distribution. Which test
-statistic is most likely to yield a significant result?</p>
-<ul class="task-list">
-<li><p><input type="radio" disabled="" /> Difference in means</p></li>
-<li><p><input type="radio" disabled="" /> Absolute difference in means</p></li>
-<li><p><input type="radio" disabled="" /> Kolmogorov-Smirnov (K-S) statistic</p></li>
-<li><p><input type="radio" disabled="" /> Total variation distance</p></li>
-</ul>
+<p>“borough”, “brough”, and “burgh” are all common suffixes among
+English towns. Write a single regular expression pattern string
+<code>pat</code> that will match any town name ending with one of these
+suffixes. Your pattern should work when <code>re.match(pat, s)</code> is
+called.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading3_3">
@@ -626,22 +737,21 @@ aria-labelledby="heading3_3" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer: </strong> Option C</p>
-<ul>
-<li><p>These are two quantitative distributions, and the total variation
-distance only applies for categorical distributions.</p></li>
-<li><p>These two distributions have similar means, so the difference in
-means and absolute difference in means won’t be able to tell them
-apart.</p></li>
-<li><p>As such, the correct answer is the Kolmogorov-Smirnov statistic,
-which roughly measures the largest “gap" between two cumulative
-distribution functions.</p></li>
-</ul>
+<p><strong>Answer: </strong>
+<code>'(.*)((borough$)|(brough$)|(burgh$))'</code></p>
+<p>We will assume that the question wants us to create a regex that
+matches with any string that ends with the strings described in the
+problem. First, <code>'(.*)'</code> will match with anything 0 or more
+times at the start of the expression. Then
+<code>'((borough$)|(brough$)|(burgh$))'</code> will match with any of
+the described strings in the problem , since <code>'$'</code> indicates
+the end of string and <code>'|'</code> is just <code>or</code> in
+regex.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️</h5>
 <p>
 </p>
-<p>The average score on this problem was 87%.</p>
+<p>The average score on this problem was 82%.</p>
 </div>
 </div>
 </div>
@@ -649,72 +759,13 @@ distribution functions.</p></li>
 <p><br></p>
 <hr />
 <h2 id="problem-4">Problem 4</h2>
-<p>As a music enthusiast who checks Spotify’s Top 200 daily, you have
-noticed that many more songs from the “Hip-Hop/Rap" genre were popular
-in 2021 than were popular in years prior. You decide to investigate
-whether this could have happened by chance, or if Hip-Hop/Rap is
-actually becoming more popular.</p>
-<p>You acquire ten DataFrames, one for each year between 2012 and 2021
-(inclusive), containing the Top 200 songs on each day of each year. Each
-DataFrame has four columns, <code>"year"</code>,
-<code>"artist_names"</code>, <code>"track_name"</code>, and
-<code>"genre"</code>, and <span class="math inline">365 \cdot 200 =
-73000</span> rows (or, in the case of leap years 2012 and 2016, <span
-class="math inline">366 \cdot 200 = 73200</span> rows). You concatenate
-these DataFrames into a big DataFrame called <code>all_years</code>.</p>
-<p>To conduct a hypothesis test, you assume that all of the songs that
-were ever in the Top 200 in a particular year are a sample of all
-popular songs from that year. As such, <code>all_years</code> contains a
-sample of all popular songs from 2012-2021. Your hypotheses are as
-follows:</p>
-<ul>
-<li><p><strong>Null Hypothesis</strong>: The number of unique
-Hip-Hop/Rap songs that were popular in 2021 is equal to the average
-number of unique Hip-Hop/Rap songs that were popular each year between
-2012 and 2021 (inclusive).</p></li>
-<li><p><strong>Alternative Hypothesis:</strong> The number of unique
-Hip-Hop/Rap songs that were popular in 2021 is greater than the average
-number of unique Hip-Hop/Rap songs that were popular each year between
-2012 and 2021 (inclusive).</p></li>
-</ul>
-<p>To generate data under the null, you decide to treat the songs that
-were in the Top 200 in 2021 as a random sample from the songs that were
-in the Top 200 in all ten years. As your test statistic, you use the
-<strong>number of unique Hip-Hop/Rap songs</strong> in your sample.</p>
-<p><strong>Complete the implementation of the hypothesis test given on
-the next page.</strong></p>
-<p><strong>Note:</strong> Remember that songs can appear multiple times
-in <code>all_years</code> — many songs appear in the Top 200 multiple
-times in the same year, and some even appear in the Top 200 in different
-years. However, for the purposes of this question, you can assume that
-no two different <code>"artist_names"</code> have songs with the same
-<code>"track_name"</code>; that is, each <code>"track_name"</code>
-belongs to a unique <code>"artist_names"</code>.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>all_years <span class="op">=</span> <span class="co"># DataFrame that contains all 10 years&#39; charts</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Helper function to compute the number of </span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># unique Hip-Hop/Rap songs in a given DataFrame</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> unique_rap(df):</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    rap_only <span class="op">=</span> df[df[<span class="st">&quot;genre&quot;</span>] <span class="op">==</span> <span class="st">&quot;Hip-Hop/Rap&quot;</span>]</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> rap_only.groupby(__(a)__).count()__(b)__[<span class="dv">0</span>]</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>count_2021 <span class="op">=</span> unique_rap(all_years[all_years[<span class="st">&quot;year&quot;</span>] <span class="op">==</span> <span class="dv">2021</span>])</span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>counts <span class="op">=</span> np.array([])</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10000</span>):</span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    samp <span class="op">=</span> all_years.sample(__(c)__, replace<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    counts <span class="op">=</span> np.append(counts, unique_rap(samp))</span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>p_val <span class="op">=</span> (__(d)__).mean()</span></code></pre></div>
+<p>For this problem, consider the following data set of product
+reviews.</p>
+<center><img src='../assets/images/fa21-final/reviews.png' width=30%></center>
 <p><br></p>
 <h3 id="problem-4.1">Problem 4.1</h3>
-<p>What goes in blank (a)?</p>
-<ul class="task-list">
-<li><p><input type="radio" disabled="" /> <code>"year"</code></p></li>
-<li><p><input type="radio" disabled="" /> <code>"artist_names"</code></p></li>
-<li><p><input type="radio" disabled="" /> <code>"track_name"</code></p></li>
-<li><p><input type="radio" disabled="" /> <code>"genre"</code></p></li>
-</ul>
+<p>What is the Inverse Document Frequency (IDF) of the word “are” in the
+<code>review</code> column? Use base-10 log in your computations.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading4_1">
@@ -728,33 +779,25 @@ aria-labelledby="heading4_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer: </strong> Option C: <code>"track_name"</code></p>
-<p>The first thing to notice is that first line in the function filters
-for all the rap songs in df. Next, since the helper function is supposed
-to return the number of unique Hip-Hop/Rap songs in a given DataFrame,
-we group by <code>"track_name"</code> so that each group/category is a
-unique song. Grouping by <code>"year"</code>,
-<code>"artist_names"</code>, or <code>"genre"</code> won’t help us
-compute the number of unique songs.</p>
+<p><strong>Answer: </strong> 0</p>
+<p>The IDF is computed by the logarithm of the quotient of total number
+of documents divided by number of documents with the said term in it.
+Since there are 6 documents and all 6 have the word “are” in it, we the
+IDF is just <span class="math inline">\log{(\frac{6}{6})}</span> which
+is just 0.</p>
 <hr/>
-<h5>Difficulty: ⭐️⭐️</h5>
+<h5>Difficulty: ⭐️</h5>
 <p>
 </p>
-<p>The average score on this problem was 89%.</p>
+<p>The average score on this problem was 97%.</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <h3 id="problem-4.2">Problem 4.2</h3>
-<p>What goes in blank (b)?</p>
-<ul class="task-list">
-<li><p><input type="radio" disabled="" /> <code>.shape</code></p></li>
-<li><p><input type="radio" disabled="" /> <code>.loc</code></p></li>
-<li><p><input type="radio" disabled="" /> <code>.iloc</code></p></li>
-<li><p><input type="radio" disabled="" /> Nothing (i.e. add <code>[0]</code> immediately after
-<code>.count()</code>)</p></li>
-</ul>
+<p>Calculate the TF-IDF score of “keyboard” in the last review. Use the
+base-10 logarithm in your calculation.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading4_2">
@@ -768,29 +811,34 @@ aria-labelledby="heading4_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer: </strong> Option A: <code>.shape</code></p>
-<p>Note that after grouping by <code>"track_name"</code>, each
-individual row in the resulting dataframe is a unique song within the
-rap genre. Thus the number of rows in the resulting dataframe is just
-the number of unique rap songs in a dataframe. To get the number of rows
-of a dataframe, we simply do <code>.shape[0]</code></p>
+<p><strong>Answer: </strong> 0.119</p>
+<p>TF is just the number of times a term appears in a document divided
+by the number of terms in a document. Thus the TF score of “keyboard” in
+the last review is just <span class="math inline">\frac{1}{4}</span></p>
+<p>The IDF score is just <span class="math inline">log{(\frac{6}{2})}</span>, since there are 2
+documents with “keyboard” in it and documents total.</p>
+<p>Thus multiplying <span class="math inline">\frac{1}{4} \times
+\log{(\frac{6}{2})}</span> yields 0.119.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️</h5>
 <p>
 </p>
-<p>The average score on this problem was 89%.</p>
+<p>The average score on this problem was 81%.</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <h3 id="problem-4.3">Problem 4.3</h3>
-<p>What goes in blank (c)?</p>
+<p>The music store wants to predict rating using other features in the
+dataset. Before that, we have to deal with the categorical variables -
+<code>music_level</code>, and <code>product_name</code>. How should you
+encode the <code>music_level</code> variable for the modeling?</p>
 <ul class="task-list">
-<li><p><input type="radio" disabled="" /> <code>count_2021.shape[0]</code></p></li>
-<li><p><input type="radio" disabled="" /> <code>200</code></p></li>
-<li><p><input type="radio" disabled="" /> <code>365</code></p></li>
-<li><p><input type="radio" disabled="" /> <code>200 * 365</code></p></li>
+<li><p><input type="radio" disabled="" /> One-hot encoding</p></li>
+<li><p><input type="radio" disabled="" /> Bag of words</p></li>
+<li><p><input type="radio" disabled="" /> Ordinal encoding</p></li>
+<li><p><input type="radio" disabled="" /> Tf-Idf</p></li>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
@@ -805,29 +853,39 @@ aria-labelledby="heading4_3" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer: </strong> Option D: <code>200 * 365</code></p>
-<p>Consider the following statement from the problem: “To generate data
-under the null, you decide to treat the songs that were in the Top 200
-in 2021 as a random sample from the songs that were in the Top 200 in
-all ten years.” Thus it follows that we need to generate
-<code>200 * 365</code> songs since there are <code>200 * 365</code>
-songs in the Top 200 in 2021.</p>
-<p>Alternatively, it makes sense to sample <code>200 * 365</code> songs
-from <code>all_years</code> because we use the number of unique rap
-songs as a test statistic for each sample. Thus our sample should be the
-same size as the number of songs in the Top 200 in 2021.</p>
+<p><strong>Answer: </strong> Option C</p>
+<p>In ordinal encoding, each unique category is assigned an integer
+value. Thus it would make sense to encode <code>music_level</code> with
+Ordinal encoding since there an inherent order to
+<code>music_level</code>. i.e. ‘Grade IV’ would be “higher” than ‘Grade
+I’ in <code>music_level</code>.</p>
+<p>Bag of words doesn’t work since we’re not necessarily trying to
+encode multi-worded strings, and TF-IDF simply doesn’t make sense for
+encoding. One-hot encoding doesn’t work as well in this case since
+<code>music_level</code> is an ordinal categorical variable.</p>
 <hr/>
-<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<h5>Difficulty: ⭐️</h5>
 <p>
 </p>
-<p>The average score on this problem was 52%.</p>
+<p>The average score on this problem was 100%.</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <h3 id="problem-4.4">Problem 4.4</h3>
-<p>What goes in blank (d)?</p>
+<p>How should you encode the <code>product_name</code> variable for the
+modeling?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> One-hot encoding</p></li>
+<li><p><input type="radio" disabled="" /> Bag of words</p></li>
+<li><p><input type="radio" disabled="" /> Ordinal encoding</p></li>
+<li><p><input type="radio" disabled="" /> Tf-Idf</p></li>
+</ul>
+<hr>
+<h5>Difficulty: ⭐️</h5>
+<p>
+<p>The average score on this problem was 98%.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading4_4">
@@ -841,21 +899,92 @@ aria-labelledby="heading4_4" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer: </strong> <code>(counts &lt; count_2021)</code></p>
-<p>Note that <code>counts</code> is a np.array that contains the number
-of Rap songs from each sample. Because our alternative hypothesis is
-that “The number of unique Hip-Hop/Rap songs that were popular in 2021
-is greater than the average number of unique Hip-Hop/Rap songs that were
-popular each year between 2012 and 2021”, simply doing
-<code>(counts &lt; count_2021)</code> will return an array of booleans
-denoting whether or not <code>count_2021</code> was greater than the
-number of rap songs in each sample. The <code>.mean()</code> will simply
-compute the appropriate proportion, or p-value.</p>
+<p><strong>Answer: </strong> Option A</p>
+<p>Since <code>product_name</code> is a nominal categorical variable, it
+would make sense to encode it using <code>One-hot encoding</code>.
+Ordinal encoding wouldn’t work this time since <code>product_name</code>
+is not an ordinal categorical variable. We could eliminate the rest of
+the options from similar reasoning as the question above.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-4.5">Problem 4.5</h3>
+<p>True or False: the TF-IDF score of a term depends on the document
+containing it.</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> True</p></li>
+<li><p><input type="radio" disabled="" /> False</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_5">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_5" aria-expanded="true" aria-controls="collapse4_5">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_5" class="accordion-collapse collapse collapse"
+aria-labelledby="heading4_5" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> True</p>
+<p>TF is calculated by the number of times a term appears in a document
+divided by the number of terms in the document, which depends on the
+document itself. So if TF depends on the document itself, so does the
+TF-IDF score.</p>
 <hr/>
-<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<h5>Difficulty: ⭐️</h5>
 <p>
 </p>
-<p>The average score on this problem was 53%.</p>
+<p>The average score on this problem was 97%.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-4.6">Problem 4.6</h3>
+<p>Suppose you perform a one-hot encoding of a Series containing the
+following music genres:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>[</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>   <span class="st">&quot;hip hop&quot;</span>,</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>   <span class="st">&quot;country&quot;</span>,</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>   <span class="st">&quot;polka&quot;</span>,</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>   <span class="st">&quot;country&quot;</span>,</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>   <span class="st">&quot;pop&quot;</span>,</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>   <span class="st">&quot;pop&quot;</span>,</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>   <span class="st">&quot;hip hop&quot;</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>]</span></code></pre></div>
+<p>Assume that the encoding is created using
+<code>OneHotEncoder(drop='first')</code> transformer from
+<code>sklearn.preprocessing</code> (note the <code>drop='first'</code>)
+keyword.</p>
+<p>How many columns will the one-hot encoding table have?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_6">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_6" aria-expanded="true" aria-controls="collapse4_6">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_6" class="accordion-collapse collapse collapse"
+aria-labelledby="heading4_6" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> 3</p>
+<p>Normal One-hot encoding will yield 4 columns, one for each of the
+following categories: “hip-hop”, “country”, “polka”, and “pop”. However,
+<code>drop='first'</code> will drop the first column after One-hot
+encoding which will yield 4 - 1 = 3 columns.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 80%.</p>
 </div>
 </div>
 </div>
@@ -863,26 +992,20 @@ compute the appropriate proportion, or p-value.</p>
 <p><br></p>
 <hr />
 <h2 id="problem-5">Problem 5</h2>
-<p>The DataFrame <code>random_10</code> contains the
-<code>"track_name"</code> and <code>"genre"</code> of 10 randomly-chosen
-songs in Spotify’s Top 200 today, along with their
-<code>"genre_rank"</code>, which is their rank in the Top 200
-<strong>among songs in their <code>"genre"</code></strong>. For
-instance, “the real slim shady" is the 20th-ranked Hip-Hop/Rap song in
-the Top 200 today. <code>random_10</code> is shown below in its
-entirety.</p>
-<center><img src='../assets/images/sp22-final/imp-with-nan.png' width=35%></center>
-<p>The <code>"genre_rank"</code> column of <code>random_10</code>
-contains missing values. Below, we provide four different imputed
-<code>"genre_rank"</code> columns, each of which was created using a
-different imputation technique. On the next page, match each of the four
-options to the imputation technique that was used in the option.</p>
-<center><img src='../assets/images/sp22-final/imp-options-grid.png' width=80%></center>
-<p>Note that each option (A, B, C, D) should be used exactly once
-between parts (a) and (d).</p>
+<p>A credit card company wants to develop a fraud detector model which
+can flag transactions as fraudulent or not using a set of user and
+platform features. Note that fraud is a rare event (about 1 in 1000
+transactions are fraudulent).</p>
+<p>Suppose the model provided the following confusion matrix on the test
+set. Here, 1 (a positive result) indicates fraud and 0 (a negative
+result) indicates otherwise. Let’s evaluate it to understand the model
+performance better.</p>
+<center><img src='../assets/images/fa21-final/confusion_matrix.png' width=30%></center>
+<p>Use this confusion matrix to answer the following questions.</p>
 <p><br></p>
 <h3 id="problem-5.1">Problem 5.1</h3>
-<p>In which option was unconditional mean imputation used?</p>
+<p>What is the accuracy of the model shown above? Your answer should be
+a number between 0 and 1.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading5_1">
@@ -896,21 +1019,23 @@ aria-labelledby="heading5_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer: </strong> Option B</p>
-<p>Explanation given in part d) below</p>
+<p><strong>Answer: </strong> 0.809</p>
+<p>Accuracy is just calculated as the number of correct predictions
+divided by total predictions. From the table, we could see that there
+are 34 + 989 = 1023 correct predictions, and 34 + 153 + 87 + 989 = 1263,
+giving us a 1023/1263 or 0.809 accuracy.</p>
 <hr/>
 <h5>Difficulty: ⭐️</h5>
 <p>
 </p>
-<p>The average score on this problem was 99%.</p>
+<p>The average score on this problem was 94%.</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <h3 id="problem-5.2">Problem 5.2</h3>
-<p>In which option was mean imputation conditional on
-<code>"genre"</code> used?</p>
+<p>How many false negatives were produced by the model shown above?</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading5_2">
@@ -924,20 +1049,24 @@ aria-labelledby="heading5_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer: </strong> Option D</p>
-<p>Explanation given in part d) below</p>
+<p><strong>Answer: </strong> 153</p>
+<p>A false negative is when the model predicts a negative result when
+the actual value is positive. So in the case of this model, a false
+negative would be when the model predicts 0 when the actual value should
+be 1. Simply looking at the table shows that there are 153 false
+negatives.</p>
 <hr/>
 <h5>Difficulty: ⭐️</h5>
 <p>
 </p>
-<p>The average score on this problem was 96%.</p>
+<p>The average score on this problem was 91%.</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <h3 id="problem-5.3">Problem 5.3</h3>
-<p>In which option was unconditional probabilistic imputation used?</p>
+<p>What is the precision of the model shown above?</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading5_3">
@@ -951,21 +1080,24 @@ aria-labelledby="heading5_3" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer: </strong> Option C</p>
-<p>Explanation given in part d) below</p>
+<p><strong>Answer: </strong> 0.281</p>
+<p>The precision of the model is given by the number of True Positives
+(TP), divided by the sum of the number of True Positives (TP) and False
+Positives (FP) or <span class="math inline">\frac{TP}{TP + FP}</span>.
+Plugging the appropriate values in the formula gives us 34/(34 + 87) =
+34/121 or 0.281.</p>
 <hr/>
-<h5>Difficulty: ⭐️</h5>
+<h5>Difficulty: ⭐️⭐️</h5>
 <p>
 </p>
-<p>The average score on this problem was 92%.</p>
+<p>The average score on this problem was 85%.</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <h3 id="problem-5.4">Problem 5.4</h3>
-<p>In which option was probabilistic imputation conditional on
-<code>"genre"</code> used?</p>
+<p>What is the recall of the model shown above?</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading5_4">
@@ -979,48 +1111,26 @@ aria-labelledby="heading5_4" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer: </strong> Option A</p>
-<ul>
-<li><p>First, note that in Option B, all three missing values are filled
-in with the same number, 7. The mean of the observed values in
-<code>random_10["genre rank"]</code> is 7, so we must have performed
-unconditional mean imputation in Option B. (Technically, it’s possible
-for Option B to be the result of unconditional probabilistic imputation,
-but we stated that each option could only be used once, and there is
-another option that can only be unconditional probabilistic
-imputation.)</p></li>
-<li><p>Then note that in Option C, the very last missing value (in the
-<code>"Pop"</code> <code>"genre"</code>) is filled in with a 7, which is
-not the mean of the observed <code>"Pop"</code> values, but rather a
-value from the <code>"Alternative"</code> <code>"genre"</code>. This
-must mean that unconditional probabilistic imputation was used in Option
-C, since that’s the only way a value from a different group can be used
-for imputation (if we are not performing some sort of mean
-imputation).</p></li>
-<li><p>This leaves Option A and Option D. The last two missing values
-(the two in the <code>"Pop"</code> <code>"genre"</code>) are both filled
-in with the same value, 2 in Option A and 5 in Option D. The mean of the
-observed values for the <code>"Pop"</code> <code>"genre"</code> is <span class="math inline">\frac{9+2+4}{3} = 5</span>, so mean imputation
-conditional on <code>"genre"</code> must have been used in Option D and
-thus probabilistic imputation conditional on <code>"genre"</code> must
-have been used in Option A.</p></li>
-</ul>
+<p><strong>Answer: </strong> 0.18</p>
+<p>The precision of the model is given by the number of True Positives
+(TP), divided by the sum of the number of True Positives (TP) and False
+Negatives (FN) or <span class="math inline">\frac{TP}{TP + FN}</span>.
+Plugging the appropriate values in the formula gives us 34/(34 + 153) =
+34/187 or 0.18.</p>
 <hr/>
-<h5>Difficulty: ⭐️</h5>
+<h5>Difficulty: ⭐️⭐️</h5>
 <p>
 </p>
-<p>The average score on this problem was 92%.</p>
+<p>The average score on this problem was 82%.</p>
 </div>
 </div>
 </div>
 </div>
-<p><br></p>
-<p>In parts (e) and (f), suppose we want to run a permutation test to
-determine whether the missingness of <code>"genre rank"</code> depends
-on <code>"genre"</code>.</p>
 <p><br></p>
 <h3 id="problem-5.5">Problem 5.5</h3>
-<p>Name a valid test statistic for this permutation test.</p>
+<p>What is the accuracy of a “naive” model that always predicts that the
+transaction is not fraudulent? Your answer should be a number between 0
+and 1.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading5_5">
@@ -1034,39 +1144,22 @@ aria-labelledby="heading5_5" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer: </strong> Total Variation Distance (TVD)</p>
-<p>We are comparing two distributions:</p>
-<ul>
-<li><p>The distribution of <code>"genre"</code> when
-<code>"genre rank"</code> is missing.</p></li>
-<li><p>The distribution of <code>"genre"</code> when
-<code>"genre rank"</code> is not missing.</p></li>
-</ul>
-<p>Since the distribution of <code>"genre"</code> is categorical, the
-above two distributions are also categorical. The only test statistic we
-have for comparing categorical distributions is the total variation
-distance (TVD).</p>
+<p><strong>Answer: </strong> 0.852</p>
+<p>If our model always predicts not fraudulent or 0, then we will get an
+accuracy of <span class="math inline">\frac{87+989}{34+153+87+989}</span> or 0.852</p>
 <hr/>
-<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<h5>Difficulty: ⭐️⭐️</h5>
 <p>
 </p>
-<p>The average score on this problem was 63%.</p>
+<p>The average score on this problem was 78%.</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <h3 id="problem-5.6">Problem 5.6</h3>
-<p>Suppose we conclude that the missingness of <code>"genre rank"</code>
-likely <strong>depends on</strong> <code>"genre"</code>. Which
-imputation technique should we choose if we want to preserve the
-variance of the <code>"genre rank"</code> column?</p>
-<ul class="task-list">
-<li><p><input type="radio" disabled="" /> Unconditional mean imputation</p></li>
-<li><p><input type="radio" disabled="" /> Mean imputation conditional on <code>"genre"</code></p></li>
-<li><p><input type="radio" disabled="" /> Unconditional probabilistic imputation</p></li>
-<li><p><input type="radio" disabled="" /> Probabilistic imputation conditional on <code>"genre"</code></p></li>
-</ul>
+<p>Describe a simple model that will achieve 100% recall despite it
+being a poor classifier.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading5_6">
@@ -1080,43 +1173,34 @@ aria-labelledby="heading5_6" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer: </strong> Option D: Probabilistic imputation
-conditional on <code>"genre"</code></p>
-<p>Mean imputation does not preserve the variance of the imputed values
-— since it fills in all missing numbers with the same number (either
-overall, or within each group), the variance of the imputed dataset is
-less than the pre-imputed dataset. To preserve the variance of the
-imputed values, we must use probabilistic imputation of some sort. Since
-the missingness of <code>"genre rank"</code> was found to be dependent
-on <code>"genre"</code>, we perform probabilistic imputation
-<strong>conditional</strong> on <code>"genre"</code>, i.e. impute
-<code>"genre rank"</code>s randomly within each
-<code>"genre"</code>.</p>
+<p><strong>Answer: </strong> A model that always guesses fraudulent.</p>
+<p>Recall that the formula for recall (no pun intended) is given by
+<span class="math inline">\frac{TP}{TP + FN}</span>. Thus we reason that
+if we want to achieve 100% recall, we should simply achieve no False
+Negatives (or FN = 0), since that will gives us <span class="math inline">\frac{TP}{TP + 0}</span>, which is obviously just 1.
+Therefore, if we never guess 0 or non-fraudulent, we’ll never get any
+False Negatives (b/c getting any FN requires our model to predict
+negatives for some values). Hence a mmodel that always guesses
+fraudulent will achieve 100% recall, despite obviously being a bad
+model.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️</h5>
 <p>
 </p>
-<p>The average score on this problem was 75%.</p>
+<p>The average score on this problem was 86%.</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <h3 id="problem-5.7">Problem 5.7</h3>
-<p>The DataFrame <code>trends</code> contains the the number of streams
-yesterday (<code>"yest"</code>) and the number of streams the day before
-yesterday (<code>"day_before_yest"</code>) for songs in Spotify’s Top
-200. Remember, a song was in the Top 200 yesterday if it was one of the
-200 most streamed songs yesterday.</p>
-<p>The first few rows of <code>trends</code> are shown below.</p>
-<center><img src='../assets/images/sp22-final/streams_yday.png' width=70%></center>
-<p>The <code>"yest"</code> column contains missing values. What is the
-most likely missingness mechanism for <code>"yest"</code>?</p>
+<p>Suppose you consider false negatives to be more costly than false
+positives, where a “positive” prediction is one for fraud. Assuming that
+precision and recall are both high, which is better for your
+purposes:</p>
 <ul class="task-list">
-<li><p><input type="radio" disabled="" /> Missing by design</p></li>
-<li><p><input type="radio" disabled="" /> Not missing at random</p></li>
-<li><p><input type="radio" disabled="" /> Missing at random</p></li>
-<li><p><input type="radio" disabled="" /> Missing completely at random</p></li>
+<li><p><input type="radio" disabled="" /> A model with higher recall than precision.</p></li>
+<li><p><input type="radio" disabled="" /> A model with higher precision than recall.</p></li>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
@@ -1131,37 +1215,17 @@ aria-labelledby="heading5_7" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer: </strong> Option B: NMAR or Option C: MAR</p>
-<p>We accepted two answers here — not missing at random and missing at
-random.</p>
-<ul>
-<li><p>MCAR is ruled out right away, since there is some “pattern" to
-the missingness, i.e. some sort of relationship between
-<code>"day_before_yest"</code> and the missingness of
-<code>"yest"</code>.</p></li>
-<li><p>One could argue not missing at random, because stream counts are
-more likely to be missing from <code>"yest"</code> if they are smaller.
-A song is missing from <code>"yest"</code> but present in
-<code>"day_before_yest"</code> if its number of streams was in the Top
-200 yesterday but not today; if this is true, this must mean that its
-number of streams is less than any of the songs whose stream counts are
-actually in <code>"yest"</code>.</p></li>
-<li><p>One could also argue missing at random, because the missingness
-of <code>"yest"</code> does indeed depend on
-<code>"day_before_yest"</code>.</p></li>
-<li><p>Missing by design is <strong>not</strong> a valid answer here.
-While it is true that <code>"day_before_yest"</code> tells you something
-about the missingness of <code>"yest"</code>, it is <strong>not</strong>
-the case that you can 100% of the time predict if <code>"yest"</code>
-will be missing just by looking at <code>"day_before_yest"</code>; this
-would need to be the case if <code>"yest"</code> were missing by
-design.</p></li>
-</ul>
+<p><strong>Answer: </strong> Option A</p>
+<p>Since we consider false negatives to be more costly, it would
+therefore make sense to favor on a model that puts more emphasis on
+recall because, again, the formula for recall is given by <span class="math inline">\frac{TP}{TP + FN}</span>. O the other hand,
+precision doesn’t care about false negatives, so the answer here is
+Option A.</p>
 <hr/>
-<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<h5>Difficulty: ⭐️⭐️</h5>
 <p>
 </p>
-<p>The average score on this problem was 64%.</p>
+<p>The average score on this problem was 85%.</p>
 </div>
 </div>
 </div>
@@ -1169,45 +1233,16 @@ design.</p></li>
 <p><br></p>
 <hr />
 <h2 id="problem-6">Problem 6</h2>
-<p>Consider the following HTML document, which represents a webpage
-containing the top few songs with the most streams on Spotify today in
-Canada.</p>
-<div class="sourceCode" id="cb6"><pre
-class="sourceCode html"><code class="sourceCode html"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;title&gt;</span>3*Canada-2022-06-04<span class="kw">&lt;/title&gt;</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;h1&gt;</span>Spotify Top 3 - Canada<span class="kw">&lt;/h1&gt;</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;table&gt;</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;tr</span> <span class="er">class</span><span class="ot">=</span><span class="st">&#39;heading&#39;</span><span class="kw">&gt;</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;th&gt;</span>Rank<span class="kw">&lt;/th&gt;</span></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;th&gt;</span>Artist(s)<span class="kw">&lt;/th&gt;</span> </span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;th&gt;</span>Song<span class="kw">&lt;/th&gt;</span></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;/tr&gt;</span></span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;tr</span> <span class="er">class</span><span class="ot">=</span><span class="st">1</span><span class="kw">&gt;</span></span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;td&gt;</span>1<span class="kw">&lt;/td&gt;</span></span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;td&gt;</span>Harry Styles<span class="kw">&lt;/td&gt;</span> </span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;td&gt;</span>As It Was<span class="kw">&lt;/td&gt;</span></span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;/tr&gt;</span></span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;tr</span> <span class="er">class</span><span class="ot">=</span><span class="st">2</span><span class="kw">&gt;</span></span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;td&gt;</span>2<span class="kw">&lt;/td&gt;</span></span>
-<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;td&gt;</span>Jack Harlow<span class="kw">&lt;/td&gt;</span> </span>
-<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;td&gt;</span>First Class<span class="kw">&lt;/td&gt;</span></span>
-<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;/tr&gt;</span></span>
-<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;tr</span> <span class="er">class</span><span class="ot">=</span><span class="st">3</span><span class="kw">&gt;</span></span>
-<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;td&gt;</span>3<span class="kw">&lt;/td&gt;</span></span>
-<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;td&gt;</span>Kendrick Lamar<span class="kw">&lt;/td&gt;</span> </span>
-<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;td&gt;</span>N95<span class="kw">&lt;/td&gt;</span></span>
-<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;/tr&gt;</span></span>
-<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/table&gt;</span></span>
-<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
-<p>Suppose we define <code>soup</code> to be a
-<code>BeautifulSoup</code> object that is instantiated using the
-document above.</p>
 <p><br></p>
 <h3 id="problem-6.1">Problem 6.1</h3>
-<p>How many leaf nodes are there in the DOM tree of the previous
-document — that is, how many nodes have no children?</p>
+<p>Suppose you split a data set into a training set and a test set. You
+train your model on the training set and test it on the test set.</p>
+<p>True or False: the training accuracy must be higher than the test
+accuracy.</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> True</p></li>
+<li><p><input type="radio" disabled="" /> False</p></li>
+</ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading6_1">
@@ -1221,23 +1256,39 @@ aria-labelledby="heading6_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer: </strong> 14</p>
-<p>There’s 1 <code>&lt;title&gt;</code>, 1 <code>&lt;h1&gt;</code>, 3
-<code>&lt;th&gt;</code>s, and 9 <code>&lt;td&gt;</code>s, adding up to
-14.</p>
+<p><strong>Answer: </strong> False</p>
+<p>There is no direct correlation between the training accuracy of a
+model and the test accuracy of the model, since the way you decide to
+split your data set is largely random. Thus there might be a possibility
+that your test accuracy ends up higher than your training accuracy. To
+illustrate this, suppose your training data consists of 100 data points
+and your test data consists of 1 data point. Now suppose your model
+achieves a training accuracy of 90%, and when you proceed to test it on
+the test set, your model predicts that singular data point correctly.
+Clearly youre test accuracy is now higher than your training
+accuracy.</p>
 <hr/>
-<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<h5>Difficulty: ⭐️⭐️</h5>
 <p>
 </p>
-<p>The average score on this problem was 64%.</p>
+<p>The average score on this problem was 75%.</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <h3 id="problem-6.2">Problem 6.2</h3>
-<p>What does the following line of code evaluate to?</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(soup.find_all(<span class="st">&quot;td&quot;</span>))</span></code></pre></div>
+<p>Suppose you create a 70%/30% train/test split and train a decision
+tree classifier. You find that the training accuracy is much higher than
+the test accuracy (90% vs 60%). Which of the following is likely to help
+significantly improve the test accuracy? Select all that apply. You may
+assume that the classes are balanced.</p>
+<ul class="task-list">
+<li><p><input type="checkbox" disabled="" /> Reduce the number of features</p></li>
+<li><p><input type="checkbox" disabled="" /> Increase the number of features</p></li>
+<li><p><input type="checkbox" disabled="" /> Decrease the max depth parameter of the decision tree</p></li>
+<li><p><input type="checkbox" disabled="" /> Increase the max depth parameter of the decision tree</p></li>
+</ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading6_2">
@@ -1251,23 +1302,36 @@ aria-labelledby="heading6_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer: </strong> 9</p>
-<p>As mentioned in the solution to the part above, there are 9
-<code>&lt;td&gt;</code> nodes, and <code>soup.find_all</code> finds them
-all.</p>
+<p><strong>Answer: </strong> Option A and Option C</p>
+<p>When your training accuracy is significaly higher than your test
+accuracy, it tells you that your model is perhaps overfitting the data.
+And thus we wish to reduce the complexity of our model. From the choices
+given, we can reduce the complexity of our model by reducing the number
+of features or decreasing the max depth parameter of the decision tree.
+(Recall that the greater depth the a decision tree model, the more
+complex the model).</p>
 <hr/>
-<h5>Difficulty: ⭐️</h5>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
 <p>
 </p>
-<p>The average score on this problem was 95%.</p>
+<p>The average score on this problem was 65%.</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <h3 id="problem-6.3">Problem 6.3</h3>
-<p>What does the following line of code evaluate to?</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>soup.find(<span class="st">&quot;tr&quot;</span>).get(<span class="st">&quot;class&quot;</span>)</span></code></pre></div>
+<p>Suppose you are training a decision tree classifier as part of a
+pipeline with PCA. You will need to choose three parameters: the number
+of components to use in PCA, the maximum depth of the decision tree, and
+the minimum number of points needed for a leaf node. You’ll do this
+using sklearn’s GridSearchCV which performs a grid search with k-fold
+cross validation.</p>
+<p>Suppose you’ll try 3 possibilities for the number of PCA parameters,
+5 possibilities for the max depth of the tree, 10 possibilities for the
+number of points needed for a leaf node, and use k=5 folds for
+cross-validation.</p>
+<p>How many times will the model be trained by GridSearchCV?</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading6_3">
@@ -1281,36 +1345,36 @@ aria-labelledby="heading6_3" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer: </strong> <code>["heading"]</code> or
-<code>"heading"</code></p>
-<p><code>soup.find("tr")</code> finds the first occurrence of a
-<code>&lt;tr&gt;</code> node, and <code>get("class")</code> accesses the
-value of its <code>"class"</code> attribute.</p>
-<p>Note that technically the answer is <code>["heading"]</code>, but
-<code>"heading"</code> received full credit too.</p>
+<p><strong>Answer: </strong> 750</p>
+<p>Note that our grid search will test every combination of
+hyperparameters for our model, which gives us a total of 3 * 5 * 10 =
+150 combinations of hyperparameters. However, we all perform k-fold
+cross validation with 5 folds, meaning that our model is trained 5 times
+for each combination of hyperparameters, giving us a grand total of 5 *
+150 = 750.</p>
 <hr/>
-<h5>Difficulty: ⭐️</h5>
+<h5>Difficulty: ⭐️⭐️</h5>
 <p>
 </p>
-<p>The average score on this problem was 96%.</p>
+<p>The average score on this problem was 84%.</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <h3 id="problem-6.4">Problem 6.4</h3>
-<p>Complete the implementation of the function <code>top_nth</code>,
-which takes in a positive integer <code>n</code> and returns the
-<strong>name of the <span class="math inline">n</span>-th ranked
-song</strong> in the HTML document. For instance,
-<code>top_nth(2)</code> should evaluate to <code>"First Class"</code>
-(<code>n=1</code> corresponds to the top song).</p>
-<p><strong>Note:</strong> Your implementation should work in the case
-that the page contains more than 3 songs.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> top_nth(n):</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> soup.find(<span class="st">&quot;tr&quot;</span>, attrs<span class="op">=</span>__(a)__).find_all(<span class="st">&quot;td&quot;</span>)__(b)__</span></code></pre></div>
-<p>What goes in blank (a)?</p>
-<p>What goes in blank (b)?</p>
+<p>The plot below shows the distribution of reported gas mileage for two
+models of car.</p>
+<center><img src='../assets/images/fa21-final/distributions.png' width=30%></center>
+<p>What test statistic is the best choice for testing whether the two
+empirical distributions came from different underlying
+distributions?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> the TVD</p></li>
+<li><p><input type="radio" disabled="" /> the absolute difference in means</p></li>
+<li><p><input type="radio" disabled="" /> the signed difference in means</p></li>
+<li><p><input type="radio" disabled="" /> the Kolmogorov-Smirnov Statistic</p></li>
+</ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading6_4">
@@ -1324,33 +1388,32 @@ aria-labelledby="heading6_4" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer: </strong> a) <code>{'class' : n}</code> b)
-<code>[2]</code> or <code>[-1]</code></p>
-<p>The logic is to find the <code>&lt;tr&gt;</code> node with the
-correct class attribute (which we do by setting attr to
-<code>{'class' : 2}</code>), then access the text of the node’s last
-<code>&lt;td&gt;</code> child (since that’s where the song titles are
-stored).</p>
+<p><strong>Answer: </strong> Option D</p>
+<p>TVD simply doesn’t work here since we’re not working with categorical
+data. Any sort of difference in means here wouldn’t really tell us much
+either since both distributions seem to have basically the same mean.
+Thus to tell whether the two distributions are different, it would be
+best if we used K-S statistic.</p>
 <hr/>
-<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<h5>Difficulty: ⭐️⭐️</h5>
 <p>
 </p>
-<p>The average score on this problem was 66%.</p>
+<p>The average score on this problem was 88%.</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <h3 id="problem-6.5">Problem 6.5</h3>
-<p>Suppose we run the line of code <code>r = requests.get(url)</code>,
-where <code>url</code> is a string containing a URL to some online data
-source.</p>
-<p><strong>True or False:</strong> If <code>r.status_code</code> is
-<code>200</code>, then <code>r.text</code> must be a string containing
-the HTML source code of the site at <code>url</code>.</p>
+<p>Suppose 1000 people are surveyed. One of the questions asks for the
+person’s age. Upon reviewing the results of the survey, it is discovered
+that some of the ages are missing – these people did not respond with
+their age. What is the most likely type of this missingness?</p>
 <ul class="task-list">
-<li><p><input type="radio" disabled="" /> True</p></li>
-<li><p><input type="radio" disabled="" /> False</p></li>
+<li><p><input type="radio" disabled="" /> Missing At Random</p></li>
+<li><p><input type="radio" disabled="" /> Missing Completely At Random</p></li>
+<li><p><input type="radio" disabled="" /> Not Missing At Random</p></li>
+<li><p><input type="radio" disabled="" /> Missing By Design</p></li>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
@@ -1365,14 +1428,142 @@ aria-labelledby="heading6_5" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer: </strong> Option B: False</p>
-<p>A status code of 200 means that the request has succeeded. Hence, the
-response could be JSON, it is not necessarily HTML.</p>
+<p><strong>Answer: </strong> Option C</p>
+<p>The most likely mechanism for this is NMAR becuase there is a good
+reason why the missingess depends on the values themselves, namely, if
+one is a baby (like 1 or 2 years old), theres a a high probablility that
+they literally just aren’t aware of their age and hence are less likely
+to answer. On the other end of the spectrum, older people might also
+refrain from answering their age.</p>
+<p>MAR doesn’t work here because there aren’t really any other columns
+that’ll tell us anything about the likelihood of the missigness of the
+age column. MD clearly doesn’t work here since we have no way of
+determining the missing values through the other columns. Alghough MCAR
+could be a possibility, it is more approrpiate that this problem
+illustrates NMAR rather than MCAR.</p>
 <hr/>
-<h5>Difficulty: ⭐️⭐️⭐️⭐️</h5>
+<h5>Difficulty: ⭐️⭐️</h5>
 <p>
 </p>
-<p>The average score on this problem was 44%.</p>
+<p>The average score on this problem was 76%.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-6.6">Problem 6.6</h3>
+<p>Consider a data set consisting of the height of 1000 people. The data
+set contains two columns: height, and whether or not the person is an
+adult.</p>
+<p>Suppose that some of the heights are missing. Among those whose
+heights are observed there are 400 adults and 400 children; among those
+whose height is missing, 50 are adults and 150 are children.</p>
+<p>If the mean height is computed using only the observed data, which of
+the following will be true?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> the mean will be biased low</p></li>
+<li><p><input type="radio" disabled="" /> the mean will be biased high</p></li>
+<li><p><input type="radio" disabled="" /> the mean will be unbiased</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading6_6">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_6" aria-expanded="true" aria-controls="collapse6_6">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse6_6" class="accordion-collapse collapse collapse"
+aria-labelledby="heading6_6" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> Option B</p>
+<p>Since there are more missing children heights than missing adult
+heights, (we will assume that adults are taller than children), the
+observed mean will be higher than the actual total mean, or the observed
+mean will be biased high.</p>
+<hr/>
+<h5>Difficulty: ⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 94%.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-6.7">Problem 6.7</h3>
+<p>We have built two models which have the following accuracies: Model
+1: Train score: 93%, Test score: 67%. Model 2: Train score: 84%, Test
+score: 80% Which of the following model will you choose to use to make
+future predictions on unseen data? You may assume that the class labels
+are balanced.</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> Model 1</p></li>
+<li><p><input type="radio" disabled="" /> Model 2</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading6_7">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_7" aria-expanded="true" aria-controls="collapse6_7">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse6_7" class="accordion-collapse collapse collapse"
+aria-labelledby="heading6_7" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> Model 2</p>
+<p>When testing our models, we only really care about the test scores of
+our models, and so we’ll typically choose the model with the higher test
+score which is Model 2.</p>
+<hr/>
+<h5>Difficulty: ⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 99%.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-6.8">Problem 6.8</h3>
+<p>Suppose we retrain a decision tree model, each time increasing the
+<code>max_depth</code> parameter. As we do so, we plot the <em>test</em>
+error. What will we likely see?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> The test error will first decrease, then increase.</p></li>
+<li><p><input type="radio" disabled="" /> The test error will decrease.</p></li>
+<li><p><input type="radio" disabled="" /> The test error will first increase, then decrease.</p></li>
+<li><p><input type="radio" disabled="" /> The test error will remain unchanged.</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading6_8">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_8" aria-expanded="true" aria-controls="collapse6_8">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse6_8" class="accordion-collapse collapse collapse"
+aria-labelledby="heading6_8" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> Option A</p>
+<p>As we increase our <code>max_depth</code> parameter of our model, our
+model’s test error will decrease. It’ll keep decreasing until we’ve
+reached the optimal <code>max_depth</code> parameter of our model, for
+which after that the test error will start to increase (due to
+overfitting). Thus the correct answer is Option A.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 87%.</p>
 </div>
 </div>
 </div>

@@ -23,6 +23,8 @@ The idea is to perform a groupby and get the median within each group and then s
 
 # END SOLN
 
+# END SUBPROB
+
 # BEGIN SUBPROB
 
 Write a line of code to normalize the building addresses. To normalize an address, replace all spaces with underscores, change "Street" to "St", change "Avenue" to "Av", and convert to lower case. Your code should evaluate to a series containing the normalized addresses.
