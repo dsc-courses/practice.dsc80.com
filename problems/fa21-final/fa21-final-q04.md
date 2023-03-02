@@ -2,7 +2,7 @@
 
 For this problem, consider the following data set of product reviews.
 
-<center><img src='../assets/images/fa21-final/reviews.png' width=30%></center>
+<center><img src='../assets/images/fa21-final/reviews.png' width=50%></center>
         
 
 # BEGIN SUBPROB

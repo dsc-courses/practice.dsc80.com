@@ -2,7 +2,7 @@
 
 This table below contains energy usage information for every building owned and managed by the New York City Department of Citywide Administrative Services (DCAS). DCAS is the arm of the New York City municipal government which handles ownership and management of the city's office facilities and real estate inventory. The organization voluntarily publicly discloses self-measured information about the energy use of its buildings.
 
-<center><img src='../assets/images/fa21-final/table.png' width=30%></center>
+<center><img src='../assets/images/fa21-final/table.png' width=50%></center>
 
 Assume that the table has been read into the variable named `df`. The result of `df.info()` is shown below:
 
