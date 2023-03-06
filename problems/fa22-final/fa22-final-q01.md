@@ -22,6 +22,8 @@ What is the type of the result of the following line of code?
 
 Calling `pts.groupby('group')['x'].max()` will return a Series with the the index consisting of each of the unique groups and a column containing the max `'x'` value within each group.
 
+<average>68</average>
+
 # END SOLN
 
 # END SUBPROB
@@ -65,6 +67,8 @@ Below are some of the options:
 
 The code above will simply create a new column `'z'`, and match the corresponding value of `'z'` with the corresponding index of `'z'` that exists in `pts`. For the indeces in `pts` that aren't present in `'z'`, there will be a `NaN` value in the appropriate spot in the `'z'` column.
 
+<average>97</average>
+
 # END SOLN
 
 # END SUBPROB
@@ -91,6 +95,8 @@ Python.
 
 The pivot table simply counts the number of rows in `pts` that have `'group'` value 'A' AND `'color'` value red, which we could see that there are only two rows that satisfy those conditions.
 
+<average>70</average>
+
 # END SOLN
 
 # END SUBPROB
@@ -104,7 +110,7 @@ Suppose the `costs` dataframe contains the following data:
 Suppose we run:
 
 ```py
-    >>> res = pts.merge(costs, how='left')
+>>> res = pts.merge(costs, how='left')
 ```
 
 How many rows will `res` have?
@@ -113,6 +119,8 @@ How many rows will `res` have?
 **Answer: ** 6
 
 Since we're performing a left merge, and `'pts'` is the left dataframe, we'll be left with 6 rows after the merge since we retain all the rows in `'pts'`.
+
+<average>95</average>
 
 # END SOLN
 
@@ -141,6 +149,8 @@ Your answer should be in the form of a number.
 The `foo` function essentially takes in a Series, and returns the difference between the maximum value in the Series and the minimum value in that same Series.
 
 Thus when we call `foo` as our aggregate function, we'll perform this `foo` function on the values of each column within each group. Also, `.loc['A', 'x']` means that we just want get the resulting `foo` value computed on column 'x' within group 'A'. Focusing our attention on the values of column 'x' that are of group 'A', we see that the largest value in 'x' of group 'A' is just 5, and the smallest value is just 1. Therefore our answer is just 5 - 1 or 4.
+
+<average>90</average>
 
 # END SOLN
 

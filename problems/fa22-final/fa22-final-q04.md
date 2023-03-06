@@ -18,6 +18,8 @@ What is the most likely cause of the issue?
 - Option C: This shouldn't cause your code to never finish, rather, it's more likely that the request module just doesn't process said Unicode character correctly or it throws an error.
 - Option D: Again, this shouldn't cause your code to never finish, rather, the request module will just parse the older version of the website at the time you called it.
 
+<average>100</average>
+
 # END SOLN
 
 # END PROB

@@ -40,6 +40,8 @@ Consider the node representing the `body` tag in the Document Object Model (DOM)
 
 We could count the number of children of the body tag by looking at the indentations to see that the body tag has three children: 1 <h1> element and 2 <div> elements. 
 
+<average>89</average>
+
 # END SOLN
 
 # END SUBPROB
@@ -60,6 +62,8 @@ Which of the following pieces of code will produce a list of `BeautifulSoup` obj
 **Answer: ** Option A and Option C
 
 Option A works because `find('div')` will navigate to the first `div` element, and `find_all('li')` will get all the `li` elements in the form of a list, which is what we wanted. Looking at Option C, we could see that it does basically the exact same thing so that option is correct as well. Option B wouldn't work because the `li` elements don't have an attribute 'greetings', and Option D doesn't work because there are no `ul/li` elements.
+
+<average>85</average>
 
 # END SOLN
 
@@ -87,6 +91,8 @@ What type of data has been returned?
 From the format of the contents, we could pretty clearly see that it is not an HTML file, nor is it a PNG file (which is type of image file). Now an XML file also doesn't look like that, rather it looks more like an HTML file with different kinds of tags. By process of elimination, the answer is JSON.
 
 Alternatively, we could recall that JSON files are in the format of dictionaries of attrivute/value pairs, which is what we see in the contents.
+
+<average>94</average>
 
 # END SOLN
 

@@ -15,6 +15,8 @@ Suppose these sentences are encoded into a "bag of words" feature representation
 
 Recall that bag of word creates a new column for each unique word. Thus the problem boils down to "how many unique words are there in the following four sentences", which we count 8: "this", "is", "one", "two", "the", "third", "and", "fourth".
 
+<average>98</average>
+
 # END SOLN
 
 # END SUBPROB
@@ -34,6 +36,8 @@ Recall that TF is calculated as the number of terms that appear in that sentence
 IDF is calculated as the log of the number of sentences divided by the number of sentences in which that term appears in. In this case, the IDF value of "this" in the first sentence is $\log_{2}(\frac{4}{4}) = 0$.
 
 Thus the TF-IDF is just $\frac{1}{3} * 0 = 0$
+
+<average>97</average>
 
 # END SOLN
 
@@ -55,6 +59,8 @@ Recall that TF is calculated as the number of terms that appear in that sentence
 IDF is calculated as the log of the number of sentences divided by the number of sentences in which that term appears in. In this case, the IDF value of "and" in the last sentence is $\log_{2}(\frac{4}{1}) = 2$.
 
 Thus the TF-IDF is just $\frac{1}{5} * 2 = 0.4$
+
+<average>89</average>
 
 # END SOLN
 

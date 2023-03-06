@@ -30,6 +30,8 @@ What is the most likely type of the missingness in the `state`column?
 
 The answer is Missing by Design becuase we can easily predict whether or not the `state` column will be missing based on the `country` column. Namely, if the `country` column is not 'United States', then we know that the `state` column is missing.
 
+<average>72</average>
+
 # END SOLN
 
 # END SUBPROB
@@ -57,6 +59,8 @@ Which one of the following is the best test statistic in this case?
 
 K-S Statistic doesn't work well on discrete quantitative variables so we could rule that out. TVD is mainly used with categorical data so we could rule that out (and it's the absolute value so it wouldn't tell us whetehr or not one group is larger than the other group). We used the signed difference between mean crater diameter because we want to see whether or not one group is larger than the other, and unsigned difference between mean crater diameter wouldn't tell us anything about that.  
 
+<average>56</average>
+
 # END SOLN
 
 # END SUBPROB
@@ -77,6 +81,8 @@ Which of the following test statistics should be used?
 
 Since 'countries' is a categorical variable, TVD would work the best here.
 
+<average>70</average>
+
 # END SOLN
 
 # END SUBPROB
@@ -93,6 +99,8 @@ Suppose the permutation test described in the previous problem fails to reject t
 **Answer: ** Option C
 
 In order to test whether or not a column is MCAR or MAR, we have to test the missingness of that column against ever other column in order to be conclusive about the missingness mechanism. Thus the answer is Option C.
+
+<average>73</average>
 
 # END SOLN
 
@@ -112,6 +120,8 @@ Assume that it is known that the missingness in the `diameter_km` column is MAR.
 **Answer: ** Option B
 
 Since the missigness mechanism for `diameter_km` is MAR, we know that the missigness depends on some other bias from another column, implying the the observed values are inherently biased. Since we're drawing from a biased sample space, we conclude that we're likely to generate a biased estimate of the true mean.
+
+<average>81</average>
 
 # END SOLN
 
