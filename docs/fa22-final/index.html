@@ -1,0 +1,1351 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Fall 2022 Final Exam</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="..\assets\theme.css" />
+  <script defer=""
+  src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Fall 2022 Final Exam</h1>
+</header>
+<p><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<!-- add after bootstrap.min.css -->
+<link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css"/>
+<!-- add after bootstrap.min.js or bootstrap.bundle.min.js -->
+<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script></p>
+<!-- for difficulty gauges-->
+<script src="https://cdn.plot.ly/plotly-2.16.1.min.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B947E6J6H4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-B947E6J6H4');
+</script>
+<p><a href="../index.html">← return to practice.dsc80.com</a></p>
+<hr />
+<p><strong>Instructor(s):</strong> Justin Eldridge</p>
+<p>This exam was administered in-person. Students were allowed to bring
+5 full pages worth of notes. Students had <strong>180 minutes</strong>
+to take this exam.</p>
+<hr />
+<p>Welcome to the Final Exam for DSC 80. This is an open-book, open-note
+exam, but you are not permitted to discuss the exam with anyone until
+after grades are released.</p>
+<p>This exam has several coding questions. These questions will be
+manually graded, and your answers are <em>not</em> expected to be
+syntactically-perfect! Be careful not to spend too much time perfecting
+your code.</p>
+<hr />
+<h2 id="problem-1">Problem 1</h2>
+<p>In the next five questions, assume you have access to a dataframe
+named <code>pts</code>, shown below:</p>
+<center><img src='../assets/images/fa22-final/pts.png' width=50%></center>
+<p><br></p>
+<h3 id="problem-1.1">Problem 1.1</h3>
+<p>What is the type of the result of the following line of code?</p>
+<p><code>pts.groupby('group')['x'].max()</code></p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> int</p></li>
+<li><p><input type="radio" disabled="" /> float</p></li>
+<li><p><input type="radio" disabled="" /> str</p></li>
+<li><p><input type="radio" disabled="" /> pandas.Series</p></li>
+<li><p><input type="radio" disabled="" /> pandas.DataFrame</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_1" aria-expanded="true" aria-controls="collapse1_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_1" class="accordion-collapse collapse collapse"
+aria-labelledby="heading1_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> Option D</p>
+<p>Calling <code>pts.groupby('group')['x'].max()</code> will return a
+Series with the the index consisting of each of the unique groups and a
+column containing the max <code>'x'</code> value within each group.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-1.2">Problem 1.2</h3>
+<p>Suppose <code>z</code> is a pandas Series containing the data shown
+below:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> z</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span>    <span class="dv">20</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="dv">0</span>     <span class="dv">1</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span>     <span class="dv">3</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>Name: z, dtype: int64</span></code></pre></div>
+<p>Notice that the index of this Series does not match the index of
+<code>pts</code>.</p>
+<p>Which of the following will be the result of running:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> pts[<span class="st">&#39;z&#39;</span>] <span class="op">=</span> z</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> pts</span></code></pre></div>
+<p>Below are some of the options:</p>
+<center><img src='../assets/images/fa22-final/opt3.png' width=40%></center>
+<center><img src='../assets/images/fa22-final/opt2.png' width=40%></center>
+<center><img src='../assets/images/fa22-final/opt1.png' width=40%></center>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> Option 1</p></li>
+<li><p><input type="radio" disabled="" /> Option 2</p></li>
+<li><p><input type="radio" disabled="" /> Option 3</p></li>
+<li><p><input type="radio" disabled="" /> An exception will be raised because <code>z</code> is missing some of
+the rows that are in <code>pts</code>.</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_2" aria-expanded="true" aria-controls="collapse1_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_2" class="accordion-collapse collapse collapse"
+aria-labelledby="heading1_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> Option 3</p>
+<p>The code above will simply create a new column <code>'z'</code>, and
+match the corresponding value of <code>'z'</code> with the corresponding
+index of <code>'z'</code> that exists in <code>pts</code>. For the
+indeces in <code>pts</code> that aren’t present in <code>'z'</code>,
+there will be a <code>NaN</code> value in the appropriate spot in the
+<code>'z'</code> column.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-1.3">Problem 1.3</h3>
+<p>What is the result of the following code?</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> pivot <span class="op">=</span> pts.pivot_table(</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    values<span class="op">=</span><span class="st">&#39;x&#39;</span>,</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    index<span class="op">=</span><span class="st">&#39;group&#39;</span>,</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    columns<span class="op">=</span><span class="st">&#39;color&#39;</span>,</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    aggfunc<span class="op">=</span><span class="st">&#39;count&#39;</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> pivot.loc[<span class="st">&#39;A&#39;</span>, <span class="st">&#39;red&#39;</span>]</span></code></pre></div>
+<p>Your answer should be in the form of a number (or possibly
+<code>NaN</code>). Your answer does NOT need to be exactly what is
+displayed by Python.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_3" aria-expanded="true" aria-controls="collapse1_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_3" class="accordion-collapse collapse collapse"
+aria-labelledby="heading1_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> 2</p>
+<p>The pivot table simply counts the number of rows in <code>pts</code>
+that have <code>'group'</code> value ‘A’ AND <code>'color'</code> value
+red, which we could see that there are only two rows that satisfy those
+conditions.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-1.4">Problem 1.4</h3>
+<p>Suppose the <code>costs</code> dataframe contains the following
+data:</p>
+<center><img src='../assets/images/fa22-final/costs.png' width=40%></center>
+<p>Suppose we run:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="op">&gt;&gt;&gt;</span> res <span class="op">=</span> pts.merge(costs, how<span class="op">=</span><span class="st">&#39;left&#39;</span>)</span></code></pre></div>
+<p>How many rows will <code>res</code> have?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_4" aria-expanded="true" aria-controls="collapse1_4">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_4" class="accordion-collapse collapse collapse"
+aria-labelledby="heading1_4" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> 6</p>
+<p>Since we’re performing a left merge, and <code>'pts'</code> is the
+left dataframe, we’ll be left with 6 rows after the merge since we
+retain all the rows in <code>'pts'</code>.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-1.5">Problem 1.5</h3>
+<p>Suppose we have defined:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> foo(ser):</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (ser <span class="op">-</span> ser.<span class="bu">min</span>()).<span class="bu">max</span>()</span></code></pre></div>
+<p>What will be the result of:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> pts.groupby(<span class="st">&#39;group&#39;</span>)[[<span class="st">&#39;x&#39;</span>, <span class="st">&#39;y&#39;</span>]].aggregate(foo).loc[<span class="st">&#39;A&#39;</span>, <span class="st">&#39;x&#39;</span>]</span></code></pre></div>
+<p>Your answer should be in the form of a number.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_5">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_5" aria-expanded="true" aria-controls="collapse1_5">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_5" class="accordion-collapse collapse collapse"
+aria-labelledby="heading1_5" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> 4</p>
+<p>The <code>foo</code> function essentially takes in a Series, and
+returns the difference between the maximum value in the Series and the
+minimum value in that same Series.</p>
+<p>Thus when we call <code>foo</code> as our aggregate function, we’ll
+perform this <code>foo</code> function on the values of each column
+within each group. Also, <code>.loc['A', 'x']</code> means that we just
+want get the resulting <code>foo</code> value computed on column ‘x’
+within group ‘A’. Focusing our attention on the values of column ‘x’
+that are of group ‘A’, we see that the largest value in ‘x’ of group ‘A’
+is just 5, and the smallest value is just 1. Therefore our answer is
+just 5 - 1 or 4.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-2">Problem 2</h2>
+<p>The Earth Impact Database, curated by the University of New
+Brunswick’s Planetary and Space Science Centre, contains information on
+almost 200 impact craters caused by meteorites that have crashed into
+the Earth. In the next five questions, assume you have access to a
+dataframe named <code>impacts</code>, shown below:</p>
+<center><img src='../assets/images/fa22-final/impacts.png' width=40%></center>
+<p>A short description of each column follows: -
+<code>crater_name</code>: the name of the impact crater. -
+<code>state</code>: if the crater is in the United States, the state
+containing the crater is listed here; otherwise, it is missing. -
+<code>country</code>: the country containing the crater. -
+<code>target_rock</code>: the type of rock that the crater is in. -
+<code>diameter_km</code>: the diameter of the crater in kilometers. -
+<code>drilled</code>: whether or not the crater has been drilled to
+analyze its contents.</p>
+<p><br></p>
+<h3 id="problem-2.1">Problem 2.1</h3>
+<p>There are many missing values in the <code>state</code> column. Upon
+inspection, you find that a crater is missing a state if and only if the
+crater is not located in the United States. Note: while we’re aware that
+upon inspection of the actual DataFrame, that this statement is clearly
+not true (such as Canada and Australia), we’ll assume that the statement
+is true for the sake of the problem.</p>
+<p>What is the most likely type of the missingness in the
+<code>state</code>column?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> Not Missing at Random (NMAR)</p></li>
+<li><p><input type="radio" disabled="" /> Missing at Random (MAR)</p></li>
+<li><p><input type="radio" disabled="" /> Missing Completely at Random (MCAR)</p></li>
+<li><p><input type="radio" disabled="" /> Missing by Design (MD)</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading2_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_1" aria-expanded="true" aria-controls="collapse2_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse2_1" class="accordion-collapse collapse collapse"
+aria-labelledby="heading2_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> Option 4</p>
+<p>The answer is Missing by Design becuase we can easily predict whether
+or not the <code>state</code> column will be missing based on the
+<code>country</code> column. Namely, if the <code>country</code> column
+is not ‘United States’, then we know that the <code>state</code> column
+is missing.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-2.2">Problem 2.2</h3>
+<p>Suppose we want to test the following hypotheses:</p>
+<ul>
+<li>Null Hypothesis: the crater diameter of impacts in sedimentary rock
+comes from the same distribution as the crater diameter of impacts in
+mixed rock.</li>
+<li>Alternative Hypothesis: the crater diameter of impacts in
+sedimentary rock is significantly larger on average.</li>
+</ul>
+<p>When the distributions of crater diameter are plotted, we see the
+following:</p>
+<center><img src='../assets/images/fa22-final/distributions.png' width=40%></center>
+<p>Which one of the following is the best test statistic in this
+case?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> Total Variation Distance (TVD) between the distributions</p></li>
+<li><p><input type="radio" disabled="" /> Kolmogorov-Smirnov (K-S) distance between the distributions</p></li>
+<li><p><input type="radio" disabled="" /> the signed difference between the mean crater diameter of impacts in
+sedimentary rock, minus the mean crater diameter of impacts in mixed
+rock</p></li>
+<li><p><input type="radio" disabled="" /> the unsigned (absolute) difference between the mean crater diameter
+of impacts in sedimentary rock, minus the mean crater diameter of
+impacts in mixed rock</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading2_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_2" aria-expanded="true" aria-controls="collapse2_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse2_2" class="accordion-collapse collapse collapse"
+aria-labelledby="heading2_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> Option C</p>
+<p>K-S Statistic doesn’t work well on discrete quantitative variables so
+we could rule that out. TVD is mainly used with categorical data so we
+could rule that out (and it’s the absolute value so it wouldn’t tell us
+whetehr or not one group is larger than the other group). We used the
+signed difference between mean crater diameter because we want to see
+whether or not one group is larger than the other, and unsigned
+difference between mean crater diameter wouldn’t tell us anything about
+that.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-2.3">Problem 2.3</h3>
+<p>Suppose it is observed that some values in the column are missing. To
+determine if there is an association between this missingness and the
+values in the <code>country</code> column, a permutation test will be
+performed with the null hypothesis that the distribution of countries
+when the diameter is missing is the same as the distribution of
+countries when the diameter is not missing.</p>
+<p>Which of the following test statistics should be used?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> the Total Variation Distance (TVD) between the distribution of
+countries when the diameter is missing and the distribution of countries
+when the diameter is not missing</p></li>
+<li><p><input type="radio" disabled="" /> the Kolmogorov-Smirnov statistic between the distribution of
+countries when the diameter is missing and the distribution of countries
+when the diameter is not missing</p></li>
+<li><p><input type="radio" disabled="" /> the signed difference between the mean crater diameter of impacts
+where the country is missing, minus the mean crater diameter of impacts
+where the country is not missing</p></li>
+<li><p><input type="radio" disabled="" /> the unsigned (absolute) difference between the mean crater diameter
+of impacts where the country is missing, minus the mean crater diameter
+of impacts where the country is not missing</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading2_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_3" aria-expanded="true" aria-controls="collapse2_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse2_3" class="accordion-collapse collapse collapse"
+aria-labelledby="heading2_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> Option A</p>
+<p>Since ‘countries’ is a categorical variable, TVD would work the best
+here.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-2.4">Problem 2.4</h3>
+<p>Suppose the permutation test described in the previous problem fails
+to reject the null hypothesis. Assuming that NMAR and MD have been ruled
+out already, what can be said about the missingness in
+<code>diameter_km</code>?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> it is MCAR</p></li>
+<li><p><input type="radio" disabled="" /> it is MAR</p></li>
+<li><p><input type="radio" disabled="" /> We cannot say for sure without first testing for an association
+between the missingness and the other columns besides
+<code>country</code>.</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading2_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_4" aria-expanded="true" aria-controls="collapse2_4">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse2_4" class="accordion-collapse collapse collapse"
+aria-labelledby="heading2_4" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> Option C</p>
+<p>In order to test whether or not a column is MCAR or MAR, we have to
+test the missingness of that column against ever other column in order
+to be conclusive about the missingness mechanism. Thus the answer is
+Option C.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-2.5">Problem 2.5</h3>
+<p>Suppose we fill in the missing values in the <code>diameter_km</code>
+column by random sampling. That is, for each missing diameter, we
+randomly sample from the the set of observed diameters. You may assume
+that these samples are drawn from the uniform distribution on observed
+diameters, and that they are independent.</p>
+<p>Assume that it is known that the missingness in the
+<code>diameter_km</code> column is MAR. Which of the following is true
+about the overall mean of the <code>diameter_km</code> column after
+imputation?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> It is likely to be an unbiased estimate of the true mean.</p></li>
+<li><p><input type="radio" disabled="" /> It is likely to be a biased estimate of the true mean.</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading2_5">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_5" aria-expanded="true" aria-controls="collapse2_5">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse2_5" class="accordion-collapse collapse collapse"
+aria-labelledby="heading2_5" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> Option B</p>
+<p>Since the missigness mechanism for <code>diameter_km</code> is MAR,
+we know that the missigness depends on some other bias from another
+column, implying the the observed values are inherently biased. Since
+we’re drawing from a biased sample space, we conclude that we’re likely
+to generate a biased estimate of the true mean.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-3">Problem 3</h2>
+<p>Questions 11-13 below reference the following HTML.</p>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode html"><code class="sourceCode html"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;html&gt;</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;head&gt;</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;title&gt;</span>ZOMBO<span class="kw">&lt;/title&gt;</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/head&gt;</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;body&gt;</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;h1&gt;</span>Welcome to Zombo.com<span class="kw">&lt;/h1&gt;</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;div</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;greeting&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;ul&gt;</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;li&gt;</span>This is Zombo.com, welcome!<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;li&gt;</span>This is Zombo.com<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;li&gt;</span>Welcome to Zombo.com<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;li&gt;</span>You can do anything at Zombo.com -- anything at all!<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;li&gt;</span>The only limit is yourself.<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;/ul&gt;</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;div</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;footnotes&quot;</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;faded&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;h3&gt;</span>Footnotes<span class="kw">&lt;/h3&gt;</span></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;ol</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;footnotes&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;li&gt;</span>Please consider <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;paypal.html&quot;</span><span class="kw">&gt;</span>donating!<span class="kw">&lt;/a&gt;&lt;/li&gt;</span></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;li&gt;</span>Made in California with <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;https://reactj.org&quot;</span><span class="kw">&gt;</span>React.<span class="kw">&lt;/a&gt;&lt;li&gt;</span></span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;/ol&gt;</span></span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/body&gt;</span></span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
+<p><br></p>
+<h3 id="problem-3.1">Problem 3.1</h3>
+<p>Consider the node representing the <code>body</code> tag in the
+Document Object Model (DOM) tree of the above HTML. How many children
+does this node have?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading3_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_1" aria-expanded="true" aria-controls="collapse3_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse3_1" class="accordion-collapse collapse collapse"
+aria-labelledby="heading3_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> 3</p>
+<p>We could count the number of children of the body tag by looking at
+the indentations to see that the body tag has three children: 1 </p>
+<h1>
+element and 2 <div> elements.
+</div></h1>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-3.2">Problem 3.2</h3>
+<p>The page shown above contains five <code>greetings</code>, each one a
+list item in an unordered list. The first <code>greeting</code> is
+<code>This is Zombo.com, welcome!</code>, and the last is
+<code>The only limit is yourself.</code>.</p>
+<p>Suppose we have parsed the HTML into a <code>BeautifulSoup</code>
+object stored in the variable named <code>soup</code>.</p>
+<p>Which of the following pieces of code will produce a list of
+<code>BeautifulSoup</code> objects, each one representing a single
+greeting list item? Mark all which apply.</p>
+<ul class="task-list">
+<li><p><input type="checkbox" disabled="" /> <code>soup.find('div').find_all('li')</code></p></li>
+<li><p><input type="checkbox" disabled="" /> <code>soup.find_all('li', id='greeting')</code></p></li>
+<li><p><input type="checkbox" disabled="" /> <code>soup.find('div', id='greeting').find_all('li')</code></p></li>
+<li><p><input type="checkbox" disabled="" /> <code>soup.find_all('ul/li')</code></p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading3_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_2" aria-expanded="true" aria-controls="collapse3_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse3_2" class="accordion-collapse collapse collapse"
+aria-labelledby="heading3_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> Option A and Option C</p>
+<p>Option A works because <code>find('div')</code> will navigate to the
+first <code>div</code> element, and <code>find_all('li')</code> will get
+all the <code>li</code> elements in the form of a list, which is what we
+wanted. Looking at Option C, we could see that it does basically the
+exact same thing so that option is correct as well. Option B wouldn’t
+work because the <code>li</code> elements don’t have an attribute
+‘greetings’, and Option D doesn’t work because there are no
+<code>ul/li</code> elements.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-3.3">Problem 3.3</h3>
+<p>Suppose you perform an HTTP request to a web API using the
+<code>requests</code> module. The response succeeds, and you get the
+following (truncated) content back:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> resp <span class="op">=</span> requests.get(<span class="st">&quot;https://pokeapi.co/api/v2/pokemon/squirtle&quot;</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> resp.content</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="st">b&#39;{&quot;abilities&quot;:[{&quot;ability&quot;:{&quot;name&quot;:&quot;torrent&quot;,&quot;url&quot;:&quot;https://pokeapi.co&quot;...</span></span></code></pre></div>
+<p>What type of data has been returned?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> HTML</p></li>
+<li><p><input type="radio" disabled="" /> JSON</p></li>
+<li><p><input type="radio" disabled="" /> XML</p></li>
+<li><p><input type="radio" disabled="" /> PNG</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading3_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_3" aria-expanded="true" aria-controls="collapse3_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse3_3" class="accordion-collapse collapse collapse"
+aria-labelledby="heading3_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> JSON</p>
+<p>From the format of the contents, we could pretty clearly see that it
+is not an HTML file, nor is it a PNG file (which is type of image file).
+Now an XML file also doesn’t look like that, rather it looks more like
+an HTML file with different kinds of tags. By process of elimination,
+the answer is JSON.</p>
+<p>Alternatively, we could recall that JSON files are in the format of
+dictionaries of attrivute/value pairs, which is what we see in the
+contents.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-4">Problem 4</h2>
+<p>You are scraping a web page using <code>requests</code>. Your code
+has been working fine and returns the desired result, but suddenly you
+find that your code takes much longer to finish (if it finishes at all).
+It does not raise an exception.</p>
+<p>What is the most likely cause of the issue?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> The page has a very large GIF that hasn’t stopped playing.</p></li>
+<li><p><input type="radio" disabled="" /> You have made too many requests to the server in a short amount of
+time</p></li>
+<li><p><input type="radio" disabled="" /> The page contains a Unicode character that <code>requests</code>
+cannot parse</p></li>
+<li><p><input type="radio" disabled="" /> The page has suddenly changed and has caused <code>requests</code> to
+enter an infinite loop.</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="true" aria-controls="collapse4">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4" class="accordion-collapse collapse collapse"
+aria-labelledby="heading4" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> Option B</p>
+<ul>
+<li>Option A: We can pretty confidentely (I hope) rule this option out
+since whether or not a GIF has stopped playing or not shouldn’t affect
+our web scraping.</li>
+<li>Option B: This answer is right because a server will time you out
+(and potentially block you) if you make too many requests to the
+server.</li>
+<li>Option C: This shouldn’t cause your code to never finish, rather,
+it’s more likely that the request module just doesn’t process said
+Unicode character correctly or it throws an error.</li>
+<li>Option D: Again, this shouldn’t cause your code to never finish,
+rather, the request module will just parse the older version of the
+website at the time you called it.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="problem-5">Problem 5</h2>
+<p>In the next 6 questions, you will be asked to determine which strings
+are matched by various regular expression patterns when
+<code>re.search</code> is used. For these questions, remember that
+<code>re.search(pattern, s)</code> matches <code>s</code> if the pattern
+can be found anywhere in <code>s</code> (not necessarily at the
+beginning). For example,
+<code>re.search("name", "my name is justin")</code> matches, while
+<code>re.search("foo", "my name is justin")</code> does not.</p>
+<p><br></p>
+<h3 id="problem-5.1">Problem 5.1</h3>
+<p>Which of the below strings are matched by <code>re.search</code>
+using the pattern <code>'a+'</code>? Select all that apply.</p>
+<ul class="task-list">
+<li><p><input type="checkbox" disabled="" /> <code>"aa bb cc"</code></p></li>
+<li><p><input type="checkbox" disabled="" /> <code>"aaa bbb ccc"</code></p></li>
+<li><p><input type="checkbox" disabled="" /> <code>"abaaba"</code></p></li>
+<li><p><input type="checkbox" disabled="" /> <code>"abacaba"</code></p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading5_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_1" aria-expanded="true" aria-controls="collapse5_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse5_1" class="accordion-collapse collapse collapse"
+aria-labelledby="heading5_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>**Answer: Option A, B, C and D</p>
+<p>The regex pattern <code>'a+'</code> searches for any string that
+contains at least one substring consisting of the character
+<code>a</code> one or more times. Clearly all of these strings contain a
+substring og the character <code>a</code> one or more times.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-5.2">Problem 5.2</h3>
+<p>Which of the below strings are matched by <code>re.search</code>
+using the pattern <code>'a+ b+'</code>? Select all that apply.</p>
+<ul class="task-list">
+<li><p><input type="checkbox" disabled="" /> <code>"aa bb cc"</code></p></li>
+<li><p><input type="checkbox" disabled="" /> <code>"aaa bbb ccc"</code></p></li>
+<li><p><input type="checkbox" disabled="" /> <code>"abaaba"</code></p></li>
+<li><p><input type="checkbox" disabled="" /> <code>"abacaba"</code></p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading5_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_2" aria-expanded="true" aria-controls="collapse5_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse5_2" class="accordion-collapse collapse collapse"
+aria-labelledby="heading5_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>**Answer: Option A and B</p>
+<p>The regex pattern <code>'a+ b+'</code> searches for any string that
+contains at least one substring consisting of the character
+<code>a</code> one or more times followed by a space followed by the
+character <code>b</code> one or more times. The only strings that have
+this pattern are Options A and B.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-5.3">Problem 5.3</h3>
+<p>Which of the below strings are matched by <code>re.search</code>
+using the pattern <code>'\baa\b'</code></p>
+<p>Recall that the <code>r</code> at the front of the pattern string
+above makes it a “raw” string; this is used so that <code>\b</code> is
+not interpreted by Python as a special backspace character.</p>
+<p>Select all that apply.</p>
+<ul class="task-list">
+<li><p><input type="checkbox" disabled="" /> <code>"aa bb cc"</code></p></li>
+<li><p><input type="checkbox" disabled="" /> <code>"aaa bbb ccc"</code></p></li>
+<li><p><input type="checkbox" disabled="" /> <code>"abaaba"</code></p></li>
+<li><p><input type="checkbox" disabled="" /> <code>"abacaba"</code></p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading5_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_3" aria-expanded="true" aria-controls="collapse5_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse5_3" class="accordion-collapse collapse collapse"
+aria-labelledby="heading5_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>**Answer: Option A</p>
+<p>The regex pattern <code>'\b'</code> matches for the boundary of a
+word (so like the start and end of a word which could seperated by
+spaces). Thus the regex pattern searches for the substring
+<code>'aa'</code> that is its own standalone word. The only string that
+has this pattern is Option A.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-5.4">Problem 5.4</h3>
+<p>Which of the below strings are matched by <code>re.search</code>
+using the pattern <code>'(aba){2,}'</code>? Select all that apply.</p>
+<ul class="task-list">
+<li><p><input type="checkbox" disabled="" /> <code>"aa bb cc"</code></p></li>
+<li><p><input type="checkbox" disabled="" /> <code>"aaa bbb ccc"</code></p></li>
+<li><p><input type="checkbox" disabled="" /> <code>"abaaba"</code></p></li>
+<li><p><input type="checkbox" disabled="" /> <code>"abacaba"</code></p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading5_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_4" aria-expanded="true" aria-controls="collapse5_4">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse5_4" class="accordion-collapse collapse collapse"
+aria-labelledby="heading5_4" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>**Answer: Option C</p>
+<p>The regex pattern <code>'(aba){2,}'</code> searches the substring
+consisting of <code>aba</code> 2 or more times. The only string that has
+this pattern is Option C.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-5.5">Problem 5.5</h3>
+<p>Which of the below strings are matched by <code>re.search</code>
+using the pattern <code>'a..a'</code>? Select all that apply.</p>
+<ul class="task-list">
+<li><p><input type="checkbox" disabled="" /> <code>"aa bb cc"</code></p></li>
+<li><p><input type="checkbox" disabled="" /> <code>"aaa bbb ccc"</code></p></li>
+<li><p><input type="checkbox" disabled="" /> <code>"abaaba"</code></p></li>
+<li><p><input type="checkbox" disabled="" /> <code>"abacaba"</code></p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading5_5">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_5" aria-expanded="true" aria-controls="collapse5_5">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse5_5" class="accordion-collapse collapse collapse"
+aria-labelledby="heading5_5" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>**Answer: Option C</p>
+<p>The regex pattern <code>'a..a'</code> searches the substring
+consisting of <code>a</code> followed by any two characters followed by
+<code>a</code>. The only string that has this pattern is Option C.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-5.6">Problem 5.6</h3>
+<p>Which of the below strings are matched by <code>re.search</code>
+using the pattern <code>'.*'</code>? Select all that apply.</p>
+<ul class="task-list">
+<li><p><input type="checkbox" disabled="" /> <code>"aa bb cc"</code></p></li>
+<li><p><input type="checkbox" disabled="" /> <code>"aaa bbb ccc"</code></p></li>
+<li><p><input type="checkbox" disabled="" /> <code>"abaaba"</code></p></li>
+<li><p><input type="checkbox" disabled="" /> <code>"abacaba"</code></p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading5_6">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_6" aria-expanded="true" aria-controls="collapse5_6">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse5_6" class="accordion-collapse collapse collapse"
+aria-labelledby="heading5_6" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>**Answer: Option A, B, C and D</p>
+<p>The regex pattern <code>'.*'</code> searches the substring consisting
+of any character 0 or more times. Clearly all of the strings contain
+that pattern.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-6">Problem 6</h2>
+<p><br></p>
+<h3 id="problem-6.1">Problem 6.1</h3>
+<p>Consider the following four sentences:</p>
+<ul>
+<li>“this is one”</li>
+<li>“this is two”</li>
+<li>“this is the third”</li>
+<li>“and this is the fourth”</li>
+</ul>
+<p>Suppose these sentences are encoded into a “bag of words” feature
+representation. The result is a dataframe with four rows (one for each
+sentence). How many columns are in this dataframe? Your answer should be
+in the form of a number.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading6_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_1" aria-expanded="true" aria-controls="collapse6_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse6_1" class="accordion-collapse collapse collapse"
+aria-labelledby="heading6_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> 8</p>
+<p>Recall that bag of word creates a new column for each unique word.
+Thus the problem boils down to “how many unique words are there in the
+following four sentences”, which we count 8: “this”, “is”, “one”, “two”,
+“the”, “third”, “and”, “fourth”.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-6.2">Problem 6.2</h3>
+<p>Again consider the same four sentences shown above.</p>
+<p>What is the TF-IDF score for the word “this” in the first sentence?
+Use base-2 logarithm.</p>
+<p>Your answer should be in the form of a number.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading6_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_2" aria-expanded="true" aria-controls="collapse6_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse6_2" class="accordion-collapse collapse collapse"
+aria-labelledby="heading6_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> 0</p>
+<p>Recall that TF is calculated as the number of terms that appear in
+that sentence divided by the total number of terms in the sentence. In
+this case the TF value of “this” in the first sentence is <span class="math inline">\frac{1}{3}</span>.</p>
+<p>IDF is calculated as the log of the number of sentences divided by
+the number of sentences in which that term appears in. In this case, the
+IDF value of “this” in the first sentence is <span class="math inline">\log_{2}(\frac{4}{4}) = 0</span>.</p>
+<p>Thus the TF-IDF is just <span class="math inline">\frac{1}{3} * 0 =
+0</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-6.3">Problem 6.3</h3>
+<p>Again consider the same four sentences shown above.</p>
+<p>What is the TF-IDF score for the word “and” in the last sentence? Use
+base-2 logarithm.</p>
+<p>Your answer should be in the form of a number.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading6_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_3" aria-expanded="true" aria-controls="collapse6_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse6_3" class="accordion-collapse collapse collapse"
+aria-labelledby="heading6_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> 0.4</p>
+<p>Recall that TF is calculated as the number of terms that appear in
+that sentence divided by the total number of terms in the sentence. In
+this case the TF value of “and” in the last sentence is <span class="math inline">\frac{1}{5}</span>.</p>
+<p>IDF is calculated as the log of the number of sentences divided by
+the number of sentences in which that term appears in. In this case, the
+IDF value of “and” in the last sentence is <span class="math inline">\log_{2}(\frac{4}{1}) = 2</span>.</p>
+<p>Thus the TF-IDF is just <span class="math inline">\frac{1}{5} * 2 =
+0.4</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-7">Problem 7</h2>
+<p><br></p>
+<h3 id="problem-7.1">Problem 7.1</h3>
+<p>Consider the dataframe shown below:</p>
+<center><img src='../assets/images/fa22-final/pts.png' width=40%></center>
+<p>Suppose you wish to use this data in a linear regression model. To do
+so, the <code>color</code> column must be encoded numerically.</p>
+<p>True or False: a meaningful way to numerically encode the
+<code>color</code> column is to replace each string by its index in the
+alphabetic ordering of the colors. That is, to replace “blue” by 1,
+“green” by 2, and “red” by 3.</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> True</p></li>
+<li><p><input type="radio" disabled="" /> False</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading7_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_1" aria-expanded="true" aria-controls="collapse7_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse7_1" class="accordion-collapse collapse collapse"
+aria-labelledby="heading7_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> False</p>
+<p>Note that <code>color</code> is a nominal categorical varaible,
+meaning that there is no inherent ordering to the categories. Thus
+encoding the <code>color</code> variables by 1, 2, and 3 doesn’t make
+any meaningful sense. I.e. it doesn’t make sense to think of the color
+“red” as being “greater” than the color “blue” in any meaningful
+way.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-7.2">Problem 7.2</h3>
+<p>Suppose you perform a one-hot encoding of a Series containing the
+following strings:</p>
+<p><code>["red", "blue", "red", "green", "green", "purple", "orange", "blue"]}</code></p>
+<p>Assume that the encoding is created using the
+<code>OneHotEncoder(drop='first')</code> from <code>sklearn</code>. Note
+the <code>drop='first'</code> keyword argument: <code>skearn</code>’s
+documentation says that this will “drop the first category in each
+feature.”</p>
+<p>How many columns will the resulting one-hot encoding table have?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading7_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_2" aria-expanded="true" aria-controls="collapse7_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse7_2" class="accordion-collapse collapse collapse"
+aria-labelledby="heading7_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> 4</p>
+<p>Recall that One-Hot Encoding will create a new column for each unique
+term in the group of strings. Thus “normal” One-Hot Encoding will create
+5 columns, since there are 5 distinct words in the list of strings:
+“red”, “blue”, “green”, “purple” and “orange”. However, setting
+<code>drop='first'</code> will drop one of the columns, leaving us with
+4 columns.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-8">Problem 8</h2>
+<p>The next four questions concern the following example.</p>
+<p>A Silicon Valley startup candy company buys a factory from a
+lightbulb company and repurposes some of the existing equipment to make
+chocolate bars with the goal of disrupting the candy industry. Their IPO
+is delayed, however, when they discover that some of their chocolate
+bars contain broken glass.</p>
+<p>The company’s engineers quickly build an AI which looks at the
+chocolate bars coming off of the conveyor belt and predicts which bars
+contain broken glass (“yes”) and which don’t (“no”). The results are
+shown in the following confusion matrix:</p>
+<center><img src='../assets/images/fa22-final/confusion.png' width=40%></center>
+<p><br></p>
+<h3 id="problem-8.1">Problem 8.1</h3>
+<p>What is the accuracy of their model as a percentage (between 0% and
+100%)?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading8_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8_1" aria-expanded="true" aria-controls="collapse8_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse8_1" class="accordion-collapse collapse collapse"
+aria-labelledby="heading8_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> 91%</p>
+<p>The accuracy of a model is given by the number of correct predictions
+divided by the total number of predictions. To tell if a prediction is
+correct, we simply see if the predicted value matches the actual value.
+In this case, our model’s accuracy is just <span class="math inline">\frac{87+4}{87+6+3+4} = \frac{91}{100}</span> which
+is just 91%.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-8.2">Problem 8.2</h3>
+<p>What is the recall of their model as a percentage (between 0% and
+100%)?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading8_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8_2" aria-expanded="true" aria-controls="collapse8_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse8_2" class="accordion-collapse collapse collapse"
+aria-labelledby="heading8_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> 40%</p>
+<p>The recall of a model is given by the number of True Positives
+divided by the sum of True Positives and False Negatives. A True
+Positive is when the model correctly predicts a Positive value (in this
+case, a Positive value is “Yes”), and a False Negative is when a model
+incorrectly predicts a Negative value. Thus the answer is just <span class="math inline">\frac{4}{6+4} = \frac{4}{10}</span> which is just
+40%.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-8.3">Problem 8.3</h3>
+<p>From a safety perspective, which metric should be maximized in this
+situation?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> Precision</p></li>
+<li><p><input type="radio" disabled="" /> Recall</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading8_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8_3" aria-expanded="true" aria-controls="collapse8_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse8_3" class="accordion-collapse collapse collapse"
+aria-labelledby="heading8_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> Recall</p>
+<p>From a safetly perspective, it makes sense that we should maximize
+catching broken glass in the chocolate bars. This means that we should
+minimize False Negative values, which means maximizing Recall.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-8.4">Problem 8.4</h3>
+<p>Suppose the company’s investors wish to improve the model’s
+precision. Which should they do (besides hire better data
+scientists)?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> Lower their model’s threshold for predicting that a bar contains
+glass, thus throwing out more candy.</p></li>
+<li><p><input type="radio" disabled="" /> Raise their model’s threshold for predicting that a bar contains
+glass, thus throwing out less candy.</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading8_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8_4" aria-expanded="true" aria-controls="collapse8_4">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse8_4" class="accordion-collapse collapse collapse"
+aria-labelledby="heading8_4" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> Option B</p>
+<p>The precision of a model is given by the nubmer of True Positives
+divided by the sum of True Positives and False Positives. Thus to
+maximumize the precision of a model, we should minimize the number of
+False Positives. To do this, simply raising the model’s threshold for
+predicting Positive values would result in less False Positives. Thus
+the answer is Option B.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-9">Problem 9</h2>
+<p><br></p>
+<h3 id="problem-9.1">Problem 9.1</h3>
+<p>Suppose you split a data set into a training set and a test set. You
+train a classifier on the training set and test it on the test set.</p>
+<p>True or False: the training accuracy must be higher than the test
+accuracy.</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> True</p></li>
+<li><p><input type="radio" disabled="" /> False</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading9_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_1" aria-expanded="true" aria-controls="collapse9_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse9_1" class="accordion-collapse collapse collapse"
+aria-labelledby="heading9_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> False</p>
+<p>There is no direct correlation between the training accuracy of a
+model and the test accuracy of the model, since the way you decide to
+split your data set is largely random. Thus there might be a possibility
+that your test accuracy ends up higher than your training accuracy. To
+illustrate this, suppose your training data consists of 100 data points
+and your test data consists of 1 data point. Now suppose your model
+achieves a training accuracy of 90%, and when you proceed to test it on
+the test set, your model predicts that singular data point correctly.
+Clearly youre test accuracy is now higher than your training
+accuracy.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-9.2">Problem 9.2</h3>
+<p>Suppose you are using <code>sklearn</code> to train a decision tree
+model to predict whether a data science student is enrolled in DSC 80 or
+not based on several pieces of information, including their hours spent
+coding per week and whether or not they have heard of the
+Kolmogorov-Smirnov test statistic.</p>
+<p>Suppose you train your model, but achieve much lower training and
+test accuracies than you expect. When you look at the data and make
+predictions yourself, you are easily able to achieve higher train and
+test accuracies.</p>
+<p>What should be done to improve the performance of the model?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> Decrease the <code>max_depth</code> hyperparameter; the model is
+“overfitting”.</p></li>
+<li><p><input type="radio" disabled="" /> Increase the <code>max_depth</code> hyperparameter; the model is
+“underfitting”.</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading9_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_2" aria-expanded="true" aria-controls="collapse9_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse9_2" class="accordion-collapse collapse collapse"
+aria-labelledby="heading9_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> Option A</p>
+<p>The fact that your model has a low training accuracy means that your
+model is not complex enough to capture the trends that are present in
+the data and thus likely “underfitting”. This means that you should
+increase the <code>max_depth</code> parameter.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="section"><span class="math display"> </span></h2>
+<h4
+id="feedback-find-an-error-still-confused-have-a-suggestion-let-us-know-here.">👋
+Feedback: Find an error? Still confused? Have a suggestion?
+<a href="https://forms.gle/WZ71FchnXU1K154d7">Let us know
+here</u></a>.</h4>
+<hr />
+</body>
+</html>
