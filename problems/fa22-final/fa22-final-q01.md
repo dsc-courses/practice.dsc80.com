@@ -3,7 +3,7 @@
 In the next five questions, assume you have access to a dataframe
 named `pts`, shown below:
 
-<center><img src='../assets/images/fa22-final/pts.png' width=50%></center>
+<center><img src='../assets/images/fa22-final/pts.png' width=30%></center>
 
 # BEGIN SUBPROB
 
@@ -51,11 +51,9 @@ Which of the following will be the result of running:
 
 Below are some of the options:
 
-<center><img src='../assets/images/fa22-final/opt3.png' width=40%></center>
-
-<center><img src='../assets/images/fa22-final/opt2.png' width=40%></center>
-
-<center><img src='../assets/images/fa22-final/opt1.png' width=40%></center>
+- Option 1: <center><img src='../assets/images/fa22-final/opt3.png' width=30%></center>
+- Option 2: <center><img src='../assets/images/fa22-final/opt2.png' width=30%></center>
+- Option 3: <center><img src='../assets/images/fa22-final/opt1.png' width=30%></center>
 
 ( ) Option 1
 ( ) Option 2
@@ -105,7 +103,7 @@ The pivot table simply counts the number of rows in `pts` that have `'group'` va
 
 Suppose the `costs` dataframe contains the following data:
 
-<center><img src='../assets/images/fa22-final/costs.png' width=40%></center>
+<center><img src='../assets/images/fa22-final/costs.png' width=30%></center>
 
 Suppose we run:
 

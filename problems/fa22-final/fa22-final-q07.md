@@ -4,7 +4,7 @@
 
 Consider the dataframe shown below:
 
-<center><img src='../assets/images/fa22-final/pts.png' width=40%></center>
+<center><img src='../assets/images/fa22-final/pts.png' width=30%></center>
 
 
 Suppose you wish to use this data in a linear regression model. To do so, the `color` column must be encoded numerically.

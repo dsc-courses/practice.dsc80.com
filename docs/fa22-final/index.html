@@ -128,9 +128,10 @@
 <p><a href="../index.html">← return to practice.dsc80.com</a></p>
 <hr />
 <p><strong>Instructor(s):</strong> Justin Eldridge</p>
-<p>This exam was administered in-person. Students were allowed to bring
-5 full pages worth of notes. Students had <strong>180 minutes</strong>
-to take this exam.</p>
+<p>This exam was administered in-person. The exam was closed-notes,
+except students were allowed to bring a single two-sided cheat sheet. No
+calculators were allowed. Students had <strong>80 minutes</strong> to
+take this exam.</p>
 <hr />
 <p>Welcome to the Final Exam for DSC 80. This is an open-book, open-note
 exam, but you are not permitted to discuss the exam with anyone until
@@ -143,7 +144,7 @@ your code.</p>
 <h2 id="problem-1">Problem 1</h2>
 <p>In the next five questions, assume you have access to a dataframe
 named <code>pts</code>, shown below:</p>
-<center><img src='../assets/images/fa22-final/pts.png' width=50%></center>
+<center><img src='../assets/images/fa22-final/pts.png' width=30%></center>
 <p><br></p>
 <h3 id="problem-1.1">Problem 1.1</h3>
 <p>What is the type of the result of the following line of code?</p>
@@ -172,6 +173,11 @@ aria-labelledby="heading1_1" data-bs-parent="#accordionExample">
 <p>Calling <code>pts.groupby('group')['x'].max()</code> will return a
 Series with the the index consisting of each of the unique groups and a
 column containing the max <code>'x'</code> value within each group.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 68%.</p>
 </div>
 </div>
 </div>
@@ -191,9 +197,14 @@ below:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> pts[<span class="st">&#39;z&#39;</span>] <span class="op">=</span> z</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> pts</span></code></pre></div>
 <p>Below are some of the options:</p>
-<center><img src='../assets/images/fa22-final/opt3.png' width=40%></center>
-<center><img src='../assets/images/fa22-final/opt2.png' width=40%></center>
-<center><img src='../assets/images/fa22-final/opt1.png' width=40%></center>
+<ul>
+<li>Option 1:
+<center><img src='../assets/images/fa22-final/opt3.png' width=30%></center></li>
+<li>Option 2:
+<center><img src='../assets/images/fa22-final/opt2.png' width=30%></center></li>
+<li>Option 3:
+<center><img src='../assets/images/fa22-final/opt1.png' width=30%></center></li>
+</ul>
 <ul class="task-list">
 <li><p><input type="radio" disabled="" /> Option 1</p></li>
 <li><p><input type="radio" disabled="" /> Option 2</p></li>
@@ -221,6 +232,11 @@ index of <code>'z'</code> that exists in <code>pts</code>. For the
 indeces in <code>pts</code> that aren’t present in <code>'z'</code>,
 there will be a <code>NaN</code> value in the appropriate spot in the
 <code>'z'</code> column.</p>
+<hr/>
+<h5>Difficulty: ⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 97%.</p>
 </div>
 </div>
 </div>
@@ -255,6 +271,11 @@ aria-labelledby="heading1_3" data-bs-parent="#accordionExample">
 that have <code>'group'</code> value ‘A’ AND <code>'color'</code> value
 red, which we could see that there are only two rows that satisfy those
 conditions.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 70%.</p>
 </div>
 </div>
 </div>
@@ -263,9 +284,9 @@ conditions.</p>
 <h3 id="problem-1.4">Problem 1.4</h3>
 <p>Suppose the <code>costs</code> dataframe contains the following
 data:</p>
-<center><img src='../assets/images/fa22-final/costs.png' width=40%></center>
+<center><img src='../assets/images/fa22-final/costs.png' width=30%></center>
 <p>Suppose we run:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="op">&gt;&gt;&gt;</span> res <span class="op">=</span> pts.merge(costs, how<span class="op">=</span><span class="st">&#39;left&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> res <span class="op">=</span> pts.merge(costs, how<span class="op">=</span><span class="st">&#39;left&#39;</span>)</span></code></pre></div>
 <p>How many rows will <code>res</code> have?</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
@@ -284,6 +305,11 @@ aria-labelledby="heading1_4" data-bs-parent="#accordionExample">
 <p>Since we’re performing a left merge, and <code>'pts'</code> is the
 left dataframe, we’ll be left with 6 rows after the merge since we
 retain all the rows in <code>'pts'</code>.</p>
+<hr/>
+<h5>Difficulty: ⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 95%.</p>
 </div>
 </div>
 </div>
@@ -321,6 +347,11 @@ within group ‘A’. Focusing our attention on the values of column ‘x’
 that are of group ‘A’, we see that the largest value in ‘x’ of group ‘A’
 is just 5, and the smallest value is just 1. Therefore our answer is
 just 5 - 1 or 4.</p>
+<hr/>
+<h5>Difficulty: ⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 90%.</p>
 </div>
 </div>
 </div>
@@ -378,6 +409,11 @@ or not the <code>state</code> column will be missing based on the
 <code>country</code> column. Namely, if the <code>country</code> column
 is not ‘United States’, then we know that the <code>state</code> column
 is missing.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 72%.</p>
 </div>
 </div>
 </div>
@@ -429,6 +465,11 @@ signed difference between mean crater diameter because we want to see
 whether or not one group is larger than the other, and unsigned
 difference between mean crater diameter wouldn’t tell us anything about
 that.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 56%.</p>
 </div>
 </div>
 </div>
@@ -472,6 +513,11 @@ aria-labelledby="heading2_3" data-bs-parent="#accordionExample">
 <p><strong>Answer: </strong> Option A</p>
 <p>Since ‘countries’ is a categorical variable, TVD would work the best
 here.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 70%.</p>
 </div>
 </div>
 </div>
@@ -507,6 +553,11 @@ aria-labelledby="heading2_4" data-bs-parent="#accordionExample">
 test the missingness of that column against ever other column in order
 to be conclusive about the missingness mechanism. Thus the answer is
 Option C.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 73%.</p>
 </div>
 </div>
 </div>
@@ -545,6 +596,11 @@ we know that the missigness depends on some other bias from another
 column, implying the the observed values are inherently biased. Since
 we’re drawing from a biased sample space, we conclude that we’re likely
 to generate a biased estimate of the true mean.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 81%.</p>
 </div>
 </div>
 </div>
@@ -603,6 +659,10 @@ aria-labelledby="heading3_1" data-bs-parent="#accordionExample">
 the indentations to see that the body tag has three children: 1 </p>
 <h1>
 element and 2 <div> elements.
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+</p><p>The average score on this problem was 89%.</p>
 </div></h1>
 </div>
 </div>
@@ -647,6 +707,11 @@ exact same thing so that option is correct as well. Option B wouldn’t
 work because the <code>li</code> elements don’t have an attribute
 ‘greetings’, and Option D doesn’t work because there are no
 <code>ul/li</code> elements.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 85%.</p>
 </div>
 </div>
 </div>
@@ -688,6 +753,11 @@ the answer is JSON.</p>
 <p>Alternatively, we could recall that JSON files are in the format of
 dictionaries of attrivute/value pairs, which is what we see in the
 contents.</p>
+<hr/>
+<h5>Difficulty: ⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 94%.</p>
 </div>
 </div>
 </div>
@@ -737,6 +807,11 @@ Unicode character correctly or it throws an error.</li>
 rather, the request module will just parse the older version of the
 website at the time you called it.</li>
 </ul>
+<hr/>
+<h5>Difficulty: ⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 100%.</p>
 </div>
 </div>
 </div>
@@ -779,6 +854,11 @@ aria-labelledby="heading5_1" data-bs-parent="#accordionExample">
 contains at least one substring consisting of the character
 <code>a</code> one or more times. Clearly all of these strings contain a
 substring og the character <code>a</code> one or more times.</p>
+<hr/>
+<h5>Difficulty: ⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 98%.</p>
 </div>
 </div>
 </div>
@@ -812,6 +892,11 @@ contains at least one substring consisting of the character
 <code>a</code> one or more times followed by a space followed by the
 character <code>b</code> one or more times. The only strings that have
 this pattern are Options A and B.</p>
+<hr/>
+<h5>Difficulty: ⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 95%.</p>
 </div>
 </div>
 </div>
@@ -849,6 +934,11 @@ word (so like the start and end of a word which could seperated by
 spaces). Thus the regex pattern searches for the substring
 <code>'aa'</code> that is its own standalone word. The only string that
 has this pattern is Option A.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 75%.</p>
 </div>
 </div>
 </div>
@@ -880,6 +970,11 @@ aria-labelledby="heading5_4" data-bs-parent="#accordionExample">
 <p>The regex pattern <code>'(aba){2,}'</code> searches the substring
 consisting of <code>aba</code> 2 or more times. The only string that has
 this pattern is Option C.</p>
+<hr/>
+<h5>Difficulty: ⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 97%.</p>
 </div>
 </div>
 </div>
@@ -911,6 +1006,11 @@ aria-labelledby="heading5_5" data-bs-parent="#accordionExample">
 <p>The regex pattern <code>'a..a'</code> searches the substring
 consisting of <code>a</code> followed by any two characters followed by
 <code>a</code>. The only string that has this pattern is Option C.</p>
+<hr/>
+<h5>Difficulty: ⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 99%.</p>
 </div>
 </div>
 </div>
@@ -942,6 +1042,11 @@ aria-labelledby="heading5_6" data-bs-parent="#accordionExample">
 <p>The regex pattern <code>'.*'</code> searches the substring consisting
 of any character 0 or more times. Clearly all of the strings contain
 that pattern.</p>
+<hr/>
+<h5>Difficulty: ⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 100%.</p>
 </div>
 </div>
 </div>
@@ -980,6 +1085,11 @@ aria-labelledby="heading6_1" data-bs-parent="#accordionExample">
 Thus the problem boils down to “how many unique words are there in the
 following four sentences”, which we count 8: “this”, “is”, “one”, “two”,
 “the”, “third”, “and”, “fourth”.</p>
+<hr/>
+<h5>Difficulty: ⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 98%.</p>
 </div>
 </div>
 </div>
@@ -1012,6 +1122,11 @@ the number of sentences in which that term appears in. In this case, the
 IDF value of “this” in the first sentence is <span class="math inline">\log_{2}(\frac{4}{4}) = 0</span>.</p>
 <p>Thus the TF-IDF is just <span class="math inline">\frac{1}{3} * 0 =
 0</span></p>
+<hr/>
+<h5>Difficulty: ⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 97%.</p>
 </div>
 </div>
 </div>
@@ -1044,6 +1159,11 @@ the number of sentences in which that term appears in. In this case, the
 IDF value of “and” in the last sentence is <span class="math inline">\log_{2}(\frac{4}{1}) = 2</span>.</p>
 <p>Thus the TF-IDF is just <span class="math inline">\frac{1}{5} * 2 =
 0.4</span></p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 89%.</p>
 </div>
 </div>
 </div>
@@ -1054,7 +1174,7 @@ IDF value of “and” in the last sentence is <span class="math inline">\log_{2
 <p><br></p>
 <h3 id="problem-7.1">Problem 7.1</h3>
 <p>Consider the dataframe shown below:</p>
-<center><img src='../assets/images/fa22-final/pts.png' width=40%></center>
+<center><img src='../assets/images/fa22-final/pts.png' width=30%></center>
 <p>Suppose you wish to use this data in a linear regression model. To do
 so, the <code>color</code> column must be encoded numerically.</p>
 <p>True or False: a meaningful way to numerically encode the
@@ -1085,6 +1205,11 @@ encoding the <code>color</code> variables by 1, 2, and 3 doesn’t make
 any meaningful sense. I.e. it doesn’t make sense to think of the color
 “red” as being “greater” than the color “blue” in any meaningful
 way.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 88%.</p>
 </div>
 </div>
 </div>
@@ -1120,6 +1245,11 @@ term in the group of strings. Thus “normal” One-Hot Encoding will create
 “red”, “blue”, “green”, “purple” and “orange”. However, setting
 <code>drop='first'</code> will drop one of the columns, leaving us with
 4 columns.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 88%.</p>
 </div>
 </div>
 </div>
@@ -1137,7 +1267,7 @@ bars contain broken glass.</p>
 chocolate bars coming off of the conveyor belt and predicts which bars
 contain broken glass (“yes”) and which don’t (“no”). The results are
 shown in the following confusion matrix:</p>
-<center><img src='../assets/images/fa22-final/confusion.png' width=40%></center>
+<center><img src='../assets/images/fa22-final/confusion.png' width=30%></center>
 <p><br></p>
 <h3 id="problem-8.1">Problem 8.1</h3>
 <p>What is the accuracy of their model as a percentage (between 0% and
@@ -1161,6 +1291,11 @@ divided by the total number of predictions. To tell if a prediction is
 correct, we simply see if the predicted value matches the actual value.
 In this case, our model’s accuracy is just <span class="math inline">\frac{87+4}{87+6+3+4} = \frac{91}{100}</span> which
 is just 91%.</p>
+<hr/>
+<h5>Difficulty: ⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 95%.</p>
 </div>
 </div>
 </div>
@@ -1189,6 +1324,11 @@ Positive is when the model correctly predicts a Positive value (in this
 case, a Positive value is “Yes”), and a False Negative is when a model
 incorrectly predicts a Negative value. Thus the answer is just <span class="math inline">\frac{4}{6+4} = \frac{4}{10}</span> which is just
 40%.</p>
+<hr/>
+<h5>Difficulty: ⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 92%.</p>
 </div>
 </div>
 </div>
@@ -1218,6 +1358,11 @@ aria-labelledby="heading8_3" data-bs-parent="#accordionExample">
 <p>From a safetly perspective, it makes sense that we should maximize
 catching broken glass in the chocolate bars. This means that we should
 minimize False Negative values, which means maximizing Recall.</p>
+<hr/>
+<h5>Difficulty: ⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 100%.</p>
 </div>
 </div>
 </div>
@@ -1253,6 +1398,11 @@ maximumize the precision of a model, we should minimize the number of
 False Positives. To do this, simply raising the model’s threshold for
 predicting Positive values would result in less False Positives. Thus
 the answer is Option B.</p>
+<hr/>
+<h5>Difficulty: ⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 97%.</p>
 </div>
 </div>
 </div>
@@ -1294,6 +1444,11 @@ achieves a training accuracy of 90%, and when you proceed to test it on
 the test set, your model predicts that singular data point correctly.
 Clearly youre test accuracy is now higher than your training
 accuracy.</p>
+<hr/>
+<h5>Difficulty: ⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 97%.</p>
 </div>
 </div>
 </div>
@@ -1334,6 +1489,11 @@ aria-labelledby="heading9_2" data-bs-parent="#accordionExample">
 model is not complex enough to capture the trends that are present in
 the data and thus likely “underfitting”. This means that you should
 increase the <code>max_depth</code> parameter.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+</p>
+<p>The average score on this problem was 73%.</p>
 </div>
 </div>
 </div>

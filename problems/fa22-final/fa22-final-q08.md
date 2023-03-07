@@ -8,7 +8,7 @@ The company's engineers quickly build an AI which looks at the chocolate
 bars coming off of the conveyor belt and predicts which bars contain broken glass ("yes") and which don't ("no"). The results are shown in the
 following confusion matrix:
 
-<center><img src='../assets/images/fa22-final/confusion.png' width=40%></center>
+<center><img src='../assets/images/fa22-final/confusion.png' width=30%></center>
 
 # BEGIN SUBPROB
 
