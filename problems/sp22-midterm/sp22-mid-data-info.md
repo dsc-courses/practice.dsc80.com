@@ -1,6 +1,6 @@
 Welcome to the Midterm Exam for DSC 80 in Spring 2022!
 
-Throughout this exam, we will be using to the following dataframe `students`, which contains various information about high school students and the university/universities they applied to.
+Throughout this exam, we will be using the following DataFrame `students`, which contains various information about high school students and the university/universities they applied to.
 
 <center><img src='../assets/images/sp22-midterm/students.png' width=65%></center>
 

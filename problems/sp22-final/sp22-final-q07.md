@@ -120,11 +120,11 @@ exp_3 = r" \w+ "
 
 **Answer: ** See below
 
-    1. `"\b"` matches "word boundaries\", which are any locations that separate words. As such, there are 4 matches --- `["doja", "cat", "you", "right"]`. Thus the answer is 4.
+1. `"\b"` matches "word boundaries\", which are any locations that separate words. As such, there are 4 matches --- `["doja", "cat", "you", "right"]`. Thus the answer is 4.
 
-    2. The 3 matches are `[" cat", " you", " right"]`. Thus the answer is 3.
+2. The 3 matches are `[" cat", " you", " right"]`. Thus the answer is 3.
 
-    3. This was quite tricky! The key is remembering that `re.findall` only finds **non-overlapping matches** (if you look at the solutions to the above two parts, none of the matches overlapped). Reading from left to right, there is only a single non-overlapping match: `"cat"`. Sure, `" you "` also matches the pattern, but since the space after `"cat"` was already "found\" by `re.findall`, it cannot be included in any future matches. Thus the answer is 1.
+3. This was quite tricky! The key is remembering that `re.findall` only finds **non-overlapping matches** (if you look at the solutions to the above two parts, none of the matches overlapped). Reading from left to right, there is only a single non-overlapping match: `"cat"`. Sure, `" you "` also matches the pattern, but since the space after `"cat"` was already "found\" by `re.findall`, it cannot be included in any future matches. Thus the answer is 1.
 
 <average>60</average>
 

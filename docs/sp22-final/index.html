@@ -129,7 +129,7 @@
 <hr />
 <p><strong>Instructor(s):</strong> Suraj Rampure</p>
 <p>This exam was administered in-person. The exam was closed-notes,
-except students were allowed to bring a single two-sided cheat sheet. No
+except students were allowed to bring 2 two-sided cheat sheets. No
 calculators were allowed. Students had <strong>180 minutes</strong> to
 take this exam.</p>
 <hr />
@@ -1525,11 +1525,22 @@ aria-labelledby="heading7_3" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer: </strong> See below</p>
-<pre><code>1. `"\b"` matches "word boundaries\", which are any locations that separate words. As such, there are 4 matches --- `["doja", "cat", "you", "right"]`. Thus the answer is 4.
-
-2. The 3 matches are `[" cat", " you", " right"]`. Thus the answer is 3.
-
-3. This was quite tricky! The key is remembering that `re.findall` only finds **non-overlapping matches** (if you look at the solutions to the above two parts, none of the matches overlapped). Reading from left to right, there is only a single non-overlapping match: `"cat"`. Sure, `" you "` also matches the pattern, but since the space after `"cat"` was already "found\" by `re.findall`, it cannot be included in any future matches. Thus the answer is 1.</code></pre>
+<ol type="1">
+<li><p><code>"\b"</code> matches “word boundaries", which are any
+locations that separate words. As such, there are 4 matches —
+<code>["doja", "cat", "you", "right"]</code>. Thus the answer is
+4.</p></li>
+<li><p>The 3 matches are <code>[" cat", " you", " right"]</code>. Thus
+the answer is 3.</p></li>
+<li><p>This was quite tricky! The key is remembering that
+<code>re.findall</code> only finds <strong>non-overlapping
+matches</strong> (if you look at the solutions to the above two parts,
+none of the matches overlapped). Reading from left to right, there is
+only a single non-overlapping match: <code>"cat"</code>. Sure,
+<code>" you "</code> also matches the pattern, but since the space after
+<code>"cat"</code> was already “found" by <code>re.findall</code>, it
+cannot be included in any future matches. Thus the answer is 1.</p></li>
+</ol>
 <hr/>
 <h5>Difficulty: ⭐️⭐️⭐️</h5>
 <p>
