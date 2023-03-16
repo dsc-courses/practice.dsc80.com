@@ -134,7 +134,7 @@ What goes in blank (d)?
 
 # BEGIN SOLN
 
-**Answer: ** `(counts < count_2021)`
+**Answer: ** `(counts >= count_2021)`
 
 Note that `counts` is a np.array that contains the number of Rap songs from each sample. Because our alternative hypothesis is that "The number of unique Hip-Hop/Rap songs that were popular in 2021 is greater than the average number of unique Hip-Hop/Rap songs that were popular each year between 2012 and 2021", simply doing `(counts < count_2021)` will return an array of booleans denoting whether or not `count_2021` was greater than the number of rap songs in each sample. The `.mean()` will simply compute the appropriate proportion, or p-value. 
 
