@@ -67,7 +67,7 @@ Which should they do (besides hire better data scientists)?
 # BEGIN SOLN
 **Answer: ** Option B
 
-The precision of a model is given by the nubmer of True Positives divided by the sum of True Positives and False Positives. Thus to maximumize the precision of a model, we should minimize the number of False Positives. To do this, simply raising the model's threshold for predicting Positive values would result in less False Positives. Thus the answer is Option B.
+The precision of a model is given by the number of True Positives divided by the sum of True Positives and False Positives. Thus to maximumize the precision of a model, we should minimize the number of False Positives. To do this, simply raising the model's threshold for predicting Positive values would result in less False Positives. Thus the answer is Option B.
 
 <average>97</average>
 

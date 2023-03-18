@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-In the next five questions, assume you have access to a dataframe
+In the next five questions, assume you have access to a DataFrame
 named `pts`, shown below:
 
 <center><img src='../assets/images/fa22-final/pts.png' width=30%></center>
@@ -101,9 +101,9 @@ The pivot table simply counts the number of rows in `pts` that have `'group'` va
 
 # BEGIN SUBPROB
 
-Suppose the `costs` dataframe contains the following data:
+Suppose the `costs` DataFrame contains the following data:
 
-<center><img src='../assets/images/fa22-final/costs.png' width=30%></center>
+<center><img src='../assets/images/fa22-final/costs.png' width=25%></center>
 
 Suppose we run:
 
@@ -116,7 +116,7 @@ How many rows will `res` have?
 # BEGIN SOLN
 **Answer: ** 6
 
-Since we're performing a left merge, and `'pts'` is the left dataframe, we'll be left with 6 rows after the merge since we retain all the rows in `'pts'`.
+Note that in a left merge, we retain all the rows in the left DataFrame, regardless of whether or not those rows are shared between the left and right DataFrames. Thus we also realize that it must be the case that the resulting merged DataFrame has the same number of rows as the left DataFrame when performing a left merge. Since  `'pts'` is the left DataFrame, we'll be left with 6 rows after the merge since `'pts'` has 6 rows.
 
 <average>95</average>
 

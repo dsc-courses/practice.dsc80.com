@@ -78,7 +78,7 @@ in document $d$.
 
 Recall that $\text{tfidf}(t, d) = \text{tf}(t, d) \cdot \text{idf}(t)$,
 and note that $\text{tf}(t, d)$ is just
-$\frac{1}{\text{# words in d}} \cdot \text{bow}(t, d)$. Thus,
+$\frac{1}{# words in d} \cdot \text{bow}(t, d) $. Thus,
 $\text{tfidf}(t, d)$ is 0 is if either $\text{bow}(t, d) = 0$ or
 $\text{idf}(t) = 0$.
 

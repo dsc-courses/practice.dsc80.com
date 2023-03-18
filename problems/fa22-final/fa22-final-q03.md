@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-Questions 11-13 below reference the following HTML.
+The questions below reference the following HTML.
 
 ```html
 <html>
@@ -38,7 +38,7 @@ Consider the node representing the `body` tag in the Document Object Model (DOM)
 # BEGIN SOLN
 **Answer: ** 3
 
-We could count the number of children of the body tag by looking at the indentations to see that the body tag has three children: 1 <h1> element and 2 <div> elements. 
+We could count the number of children of the body tag by looking at the indentations to see that the body tag has three children: 1 `<h1>` element and 2 `<div>` elements. 
 
 <average>89</average>
 

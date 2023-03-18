@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-In the next 6 questions, you will be asked to determine which strings are matched by various regular expression patterns when `re.search` is used. For these questions, remember that `re.search(pattern, s)` matches `s` if the pattern can be found anywhere in `s` (not necessarily at the beginning). For example, `re.search("name", "my name is justin")` matches, while `re.search("foo", "my name is justin")` does not.
+In this question, you will be asked to determine which strings are matched by various regular expression patterns when `re.search` is used. For these questions, remember that `re.search(pattern, s)` matches `s` if the pattern can be found anywhere in `s` (not necessarily at the beginning). For example, `re.search("name", "my name is justin")` matches, while `re.search("foo", "my name is justin")` does not.
 
 # BEGIN SUBPROB
 Which of the below strings are matched by `re.search` using the pattern `'a+'`?
