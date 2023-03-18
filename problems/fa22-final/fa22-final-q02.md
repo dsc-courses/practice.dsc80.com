@@ -98,7 +98,7 @@ Suppose the permutation test described in the previous problem fails to reject t
 # BEGIN SOLN
 **Answer: ** Option C
 
-In order to test whether or not a column is MCAR or MAR, we have to test the missingness of that column against ever other column in order to be conclusive about the missingness mechanism. Thus the answer is Option C.
+In order to test whether or not a column is MCAR or MAR, we have to test the missingness of that column against every other column in order to be conclusive about the missingness mechanism. Thus the answer is Option C.
 
 <average>73</average>
 
