@@ -6,13 +6,14 @@ In this question, assume you have access to a dataframe named `impacts`, shown b
 <center><img src='../assets/images/fa22-final/impacts.png' width=40%></center>
 
 A short description of each column follows:
- - `crater_name`: the name of the impact crater.
- - `state`: if the crater is in the United States, the state containing the crater is listed here; otherwise,
+
+ - `'crater_name'`: the name of the impact crater.
+ - `'state'`: if the crater is in the United States, the state containing the crater is listed here; otherwise,
     it is missing.
- - `country`: the country containing the crater.
- - `target_rock`: the type of rock that the crater is in.
- - `diameter_km`: the diameter of the crater in kilometers.
- - `drilled`: whether or not the crater has been drilled to analyze its contents.
+ - `'country'`: the country containing the crater.
+ - `'target_rock'`: the type of rock that the crater is in.
+ - `'diameter_km'`: the diameter of the crater in kilometers.
+ - `'drilled'`: whether or not the crater has been drilled to analyze its contents.
 
 # BEGIN SUBPROB
 

@@ -33,7 +33,7 @@ What should be done to improve the performance of the model?
 ( ) Increase the `max_depth` hyperparameter; the model is "underfitting".
 
 # BEGIN SOLN
-**Answer: ** Option A
+**Answer: ** Option B
 
 The fact that your model has a low training accuracy means that your model is not complex enough to capture the trends that are present in the data and thus likely "underfitting". This means that you should increase the `max_depth` parameter.
 

@@ -8,15 +8,10 @@
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
-    ul.task-list li input[type="checkbox"] {
-      width: 0.8em;
-      margin: 0 0.8em 0.2em -1.6em;
-      vertical-align: middle;
-    }
     pre > code.sourceCode { white-space: pre; position: relative; }
     pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -55,7 +50,7 @@
     code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
     code span.at { color: #7d9029; } /* Attribute */
     code span.bn { color: #40a070; } /* BaseN */
-    code span.bu { color: #008000; } /* BuiltIn */
+    code span.bu { } /* BuiltIn */
     code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
     code span.ch { color: #4070a0; } /* Char */
     code span.cn { color: #880000; } /* Constant */
@@ -68,7 +63,7 @@
     code span.ex { } /* Extension */
     code span.fl { color: #40a070; } /* Float */
     code span.fu { color: #06287e; } /* Function */
-    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.im { } /* Import */
     code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
     code span.kw { color: #007020; font-weight: bold; } /* Keyword */
     code span.op { color: #666666; } /* Operator */
@@ -81,7 +76,7 @@
     code span.vs { color: #4070a0; } /* VerbatimString */
     code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="..\assets\theme.css" />
+  <link rel="stylesheet" href="../assets/theme.css" />
   <script defer=""
   src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
   <script>document.addEventListener("DOMContentLoaded", function () {
@@ -133,15 +128,14 @@ except students were allowed to bring 5 two-sided cheat sheets. No
 calculators were allowed. Students had <strong>180 minutes</strong> to
 take this exam.</p>
 <hr />
-<p>Welcome to the Final Exam for DSC 80. This is an closed-note exam,
-but students were allowed a 5 sheets of notes (double-sided)</p>
+<p>Welcome to the Final Exam for DSC 80.</p>
 <p>This exam has several coding questions. These questions will be
 manually graded, and your answers are <em>not</em> expected to be
 syntactically-perfect! Be careful not to spend too much time perfecting
 your code.</p>
 <hr />
 <h2 id="problem-1">Problem 1</h2>
-<p>In the next five questions, assume you have access to a dataframe
+<p>In the next five questions, assume you have access to a DataFrame
 named <code>pts</code>, shown below:</p>
 <center><img src='../assets/images/fa22-final/pts.png' width=30%></center>
 <p><br></p>
@@ -281,9 +275,9 @@ conditions.</p>
 </div>
 <p><br></p>
 <h3 id="problem-1.4">Problem 1.4</h3>
-<p>Suppose the <code>costs</code> dataframe contains the following
+<p>Suppose the <code>costs</code> DataFrame contains the following
 data:</p>
-<center><img src='../assets/images/fa22-final/costs.png' width=30%></center>
+<center><img src='../assets/images/fa22-final/costs.png' width=25%></center>
 <p>Suppose we run:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> res <span class="op">=</span> pts.merge(costs, how<span class="op">=</span><span class="st">&#39;left&#39;</span>)</span></code></pre></div>
 <p>How many rows will <code>res</code> have?</p>
@@ -301,9 +295,13 @@ aria-labelledby="heading1_4" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer: </strong> 6</p>
-<p>Since we’re performing a left merge, and <code>'pts'</code> is the
-left dataframe, we’ll be left with 6 rows after the merge since we
-retain all the rows in <code>'pts'</code>.</p>
+<p>Note that in a left merge, we retain all the rows in the left
+DataFrame, regardless of whether or not those rows are shared between
+the left and right DataFrames. Thus we also realize that it must be the
+case that the resulting merged DataFrame has the same number of rows as
+the left DataFrame when performing a left merge. Since
+<code>'pts'</code> is the left DataFrame, we’ll be left with 6 rows
+after the merge since <code>'pts'</code> has 6 rows.</p>
 <hr/>
 <h5>Difficulty: ⭐️</h5>
 <p>
@@ -361,18 +359,23 @@ just 5 - 1 or 4.</p>
 <p>The Earth Impact Database, curated by the University of New
 Brunswick’s Planetary and Space Science Centre, contains information on
 almost 200 impact craters caused by meteorites that have crashed into
-the Earth. In the next five questions, assume you have access to a
-dataframe named <code>impacts</code>, shown below:</p>
+the Earth. In this question, assume you have access to a dataframe named
+<code>impacts</code>, shown below:</p>
 <center><img src='../assets/images/fa22-final/impacts.png' width=40%></center>
-<p>A short description of each column follows: -
-<code>crater_name</code>: the name of the impact crater. -
-<code>state</code>: if the crater is in the United States, the state
-containing the crater is listed here; otherwise, it is missing. -
-<code>country</code>: the country containing the crater. -
-<code>target_rock</code>: the type of rock that the crater is in. -
-<code>diameter_km</code>: the diameter of the crater in kilometers. -
-<code>drilled</code>: whether or not the crater has been drilled to
-analyze its contents.</p>
+<p>A short description of each column follows:</p>
+<ul>
+<li><code>'crater_name'</code>: the name of the impact crater.</li>
+<li><code>'state'</code>: if the crater is in the United States, the
+state containing the crater is listed here; otherwise, it is
+missing.</li>
+<li><code>'country'</code>: the country containing the crater.</li>
+<li><code>'target_rock'</code>: the type of rock that the crater is
+in.</li>
+<li><code>'diameter_km'</code>: the diameter of the crater in
+kilometers.</li>
+<li><code>'drilled'</code>: whether or not the crater has been drilled
+to analyze its contents.</li>
+</ul>
 <p><br></p>
 <h3 id="problem-2.1">Problem 2.1</h3>
 <p>There are many missing values in the <code>state</code> column. Upon
@@ -549,7 +552,7 @@ aria-labelledby="heading2_4" data-bs-parent="#accordionExample">
 </header>
 <p><strong>Answer: </strong> Option C</p>
 <p>In order to test whether or not a column is MCAR or MAR, we have to
-test the missingness of that column against ever other column in order
+test the missingness of that column against every other column in order
 to be conclusive about the missingness mechanism. Thus the answer is
 Option C.</p>
 <hr/>
@@ -607,7 +610,7 @@ to generate a biased estimate of the true mean.</p>
 <p><br></p>
 <hr />
 <h2 id="problem-3">Problem 3</h2>
-<p>Questions 11-13 below reference the following HTML.</p>
+<p>The questions below reference the following HTML.</p>
 <div class="sourceCode" id="cb7"><pre
 class="sourceCode html"><code class="sourceCode html"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;html&gt;</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;head&gt;</span></span>
@@ -655,14 +658,14 @@ aria-labelledby="heading3_1" data-bs-parent="#accordionExample">
 </header>
 <p><strong>Answer: </strong> 3</p>
 <p>We could count the number of children of the body tag by looking at
-the indentations to see that the body tag has three children: 1 </p>
-<h1>
-element and 2 <div> elements.
+the indentations to see that the body tag has three children: 1
+<code>&lt;h1&gt;</code> element and 2 <code>&lt;div&gt;</code>
+elements.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️</h5>
 <p>
-</p><p>The average score on this problem was 89%.</p>
-</div></h1>
+</p>
+<p>The average score on this problem was 89%.</p>
 </div>
 </div>
 </div>
@@ -817,8 +820,8 @@ website at the time you called it.</li>
 </div>
 <hr />
 <h2 id="problem-5">Problem 5</h2>
-<p>In the next 6 questions, you will be asked to determine which strings
-are matched by various regular expression patterns when
+<p>In this question, you will be asked to determine which strings are
+matched by various regular expression patterns when
 <code>re.search</code> is used. For these questions, remember that
 <code>re.search(pattern, s)</code> matches <code>s</code> if the pattern
 can be found anywhere in <code>s</code> (not necessarily at the
@@ -1391,7 +1394,7 @@ aria-labelledby="heading8_4" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer: </strong> Option B</p>
-<p>The precision of a model is given by the nubmer of True Positives
+<p>The precision of a model is given by the number of True Positives
 divided by the sum of True Positives and False Positives. Thus to
 maximumize the precision of a model, we should minimize the number of
 False Positives. To do this, simply raising the model’s threshold for
@@ -1441,7 +1444,7 @@ illustrate this, suppose your training data consists of 100 data points
 and your test data consists of 1 data point. Now suppose your model
 achieves a training accuracy of 90%, and when you proceed to test it on
 the test set, your model predicts that singular data point correctly.
-Clearly youre test accuracy is now higher than your training
+Clearly your test accuracy is now higher than your training
 accuracy.</p>
 <hr/>
 <h5>Difficulty: ⭐️</h5>
@@ -1483,7 +1486,7 @@ aria-labelledby="heading9_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer: </strong> Option A</p>
+<p><strong>Answer: </strong> Option B</p>
 <p>The fact that your model has a low training accuracy means that your
 model is not complex enough to capture the trends that are present in
 the data and thus likely “underfitting”. This means that you should
