@@ -136,7 +136,7 @@ What goes in blank (d)?
 
 **Answer: ** `(counts >= count_2021)`
 
-Note that `counts` is a np.array that contains the number of Rap songs from each sample. Because our alternative hypothesis is that "The number of unique Hip-Hop/Rap songs that were popular in 2021 is greater than the average number of unique Hip-Hop/Rap songs that were popular each year between 2012 and 2021", simply doing `(counts < count_2021)` will return an array of booleans denoting whether or not `count_2021` was greater than the number of rap songs in each sample. The `.mean()` will simply compute the appropriate proportion, or p-value. 
+Note that `counts` is an array that contains the number of Hip-Hop/Rap songs from each sample. Because our alternative hypothesis is that "The number of unique Hip-Hop/Rap songs that were popular in 2021 is _greater_ than the average number of unique Hip-Hop/Rap songs that were popular each year between 2012 and 2021", we're interested in the proportion of simulated test statistics that were equal to our observed or _greater_. `counts >= count_2021` is an array of Booleans, denoting whether or not `count_2021` was greater than the number of rap songs in each sample, and `(counts >= count_2021).mean()` is the proportion (p-value) we're looking for.
 
 <average>53</average>
 

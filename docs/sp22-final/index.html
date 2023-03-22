@@ -834,15 +834,18 @@ aria-labelledby="heading4_4" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer: </strong> <code>(counts &gt;= count_2021)</code></p>
-<p>Note that <code>counts</code> is a np.array that contains the number
-of Rap songs from each sample. Because our alternative hypothesis is
-that “The number of unique Hip-Hop/Rap songs that were popular in 2021
-is greater than the average number of unique Hip-Hop/Rap songs that were
-popular each year between 2012 and 2021”, simply doing
-<code>(counts &lt; count_2021)</code> will return an array of booleans
-denoting whether or not <code>count_2021</code> was greater than the
-number of rap songs in each sample. The <code>.mean()</code> will simply
-compute the appropriate proportion, or p-value.</p>
+<p>Note that <code>counts</code> is an array that contains the number of
+Hip-Hop/Rap songs from each sample. Because our alternative hypothesis
+is that “The number of unique Hip-Hop/Rap songs that were popular in
+2021 is <em>greater</em> than the average number of unique Hip-Hop/Rap
+songs that were popular each year between 2012 and 2021”, we’re
+interested in the proportion of simulated test statistics that were
+equal to our observed or <em>greater</em>.
+<code>counts &gt;= count_2021</code> is an array of Booleans, denoting
+whether or not <code>count_2021</code> was greater than the number of
+rap songs in each sample, and
+<code>(counts &gt;= count_2021).mean()</code> is the proportion
+(p-value) we’re looking for.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️⭐️</h5>
 <p>
