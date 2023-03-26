@@ -8,15 +8,10 @@
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
-    ul.task-list li input[type="checkbox"] {
-      width: 0.8em;
-      margin: 0 0.8em 0.2em -1.6em;
-      vertical-align: middle;
-    }
     pre > code.sourceCode { white-space: pre; position: relative; }
     pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -55,7 +50,7 @@
     code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
     code span.at { color: #7d9029; } /* Attribute */
     code span.bn { color: #40a070; } /* BaseN */
-    code span.bu { color: #008000; } /* BuiltIn */
+    code span.bu { } /* BuiltIn */
     code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
     code span.ch { color: #4070a0; } /* Char */
     code span.cn { color: #880000; } /* Constant */
@@ -68,7 +63,7 @@
     code span.ex { } /* Extension */
     code span.fl { color: #40a070; } /* Float */
     code span.fu { color: #06287e; } /* Function */
-    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.im { } /* Import */
     code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
     code span.kw { color: #007020; font-weight: bold; } /* Keyword */
     code span.op { color: #666666; } /* Operator */
@@ -81,7 +76,7 @@
     code span.vs { color: #4070a0; } /* VerbatimString */
     code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="..\assets\theme.css" />
+  <link rel="stylesheet" href="../assets/theme.css" />
   <script defer=""
   src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
   <script>document.addEventListener("DOMContentLoaded", function () {
@@ -367,15 +362,20 @@ almost 200 impact craters caused by meteorites that have crashed into
 the Earth. In this question, assume you have access to a dataframe named
 <code>impacts</code>, shown below:</p>
 <center><img src='../assets/images/fa22-final/impacts.png' width=40%></center>
-<p>A short description of each column follows: -
-<code>crater_name</code>: the name of the impact crater. -
-<code>state</code>: if the crater is in the United States, the state
-containing the crater is listed here; otherwise, it is missing. -
-<code>country</code>: the country containing the crater. -
-<code>target_rock</code>: the type of rock that the crater is in. -
-<code>diameter_km</code>: the diameter of the crater in kilometers. -
-<code>drilled</code>: whether or not the crater has been drilled to
-analyze its contents.</p>
+<p>A short description of each column follows:</p>
+<ul>
+<li><code>'crater_name'</code>: the name of the impact crater.</li>
+<li><code>'state'</code>: if the crater is in the United States, the
+state containing the crater is listed here; otherwise, it is
+missing.</li>
+<li><code>'country'</code>: the country containing the crater.</li>
+<li><code>'target_rock'</code>: the type of rock that the crater is
+in.</li>
+<li><code>'diameter_km'</code>: the diameter of the crater in
+kilometers.</li>
+<li><code>'drilled'</code>: whether or not the crater has been drilled
+to analyze its contents.</li>
+</ul>
 <p><br></p>
 <h3 id="problem-2.1">Problem 2.1</h3>
 <p>There are many missing values in the <code>state</code> column. Upon
@@ -1486,7 +1486,7 @@ aria-labelledby="heading9_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer: </strong> Option A</p>
+<p><strong>Answer: </strong> Option B</p>
 <p>The fact that your model has a low training accuracy means that your
 model is not complex enough to capture the trends that are present in
 the data and thus likely “underfitting”. This means that you should

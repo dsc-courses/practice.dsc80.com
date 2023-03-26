@@ -51,9 +51,9 @@ What goes in each of the blanks?
 
 # BEGIN SOLN
 
-**Answer: ** a) `streams['day'] == day_str`, b) `(200 - n)`, c) `day_only['track_name']`
+**Answer: ** a) `streams['date'] == day_str`, b) `(200 - n)`, c) `day_only['track_name']`
 
-The first line in the function gives us an idea that maybe later on in the function we're going to filter for all the days that match the given data. Indeed, in blank a, we filter for all the rows in which the `'day'` column matches `day_str`. In blank b, we could access directly access the row with the `n`-th most stream using iloc. (Remember, the image above shows us that the streams are sorted by most streamed in ascending order, so to find the `n`-th most popular song of a day, we simply do `200-n`). Finally, to return the track name, we could simply do `day_only['track_name']`.
+The first line in the function gives us an idea that maybe later on in the function we're going to filter for all the days that match the given data. Indeed, in blank a, we filter for all the rows in which the `'date'` column matches `day_str`. In blank b, we could access directly access the row with the `n`-th most stream using iloc. (Remember, the image above shows us that the streams are sorted by most streamed in ascending order, so to find the `n`-th most popular song of a day, we simply do `200-n`). Finally, to return the track name, we could simply do `day_only['track_name']`.
 
 <average>63</average>
 

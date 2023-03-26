@@ -8,15 +8,10 @@
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
-    ul.task-list li input[type="checkbox"] {
-      width: 0.8em;
-      margin: 0 0.8em 0.2em -1.6em;
-      vertical-align: middle;
-    }
     pre > code.sourceCode { white-space: pre; position: relative; }
     pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -55,7 +50,7 @@
     code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
     code span.at { color: #7d9029; } /* Attribute */
     code span.bn { color: #40a070; } /* BaseN */
-    code span.bu { color: #008000; } /* BuiltIn */
+    code span.bu { } /* BuiltIn */
     code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
     code span.ch { color: #4070a0; } /* Char */
     code span.cn { color: #880000; } /* Constant */
@@ -68,7 +63,7 @@
     code span.ex { } /* Extension */
     code span.fl { color: #40a070; } /* Float */
     code span.fu { color: #06287e; } /* Function */
-    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.im { } /* Import */
     code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
     code span.kw { color: #007020; font-weight: bold; } /* Keyword */
     code span.op { color: #666666; } /* Operator */
@@ -81,7 +76,7 @@
     code span.vs { color: #4070a0; } /* VerbatimString */
     code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="..\assets\theme.css" />
+  <link rel="stylesheet" href="../assets/theme.css" />
   <script defer=""
   src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
   <script>document.addEventListener("DOMContentLoaded", function () {
@@ -195,12 +190,12 @@ aria-labelledby="heading1_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer: </strong> a) <code>streams['day'] == day_str</code>,
+<p><strong>Answer: </strong> a) <code>streams['date'] == day_str</code>,
 b) <code>(200 - n)</code>, c) <code>day_only['track_name']</code></p>
 <p>The first line in the function gives us an idea that maybe later on
 in the function we’re going to filter for all the days that match the
 given data. Indeed, in blank a, we filter for all the rows in which the
-<code>'day'</code> column matches <code>day_str</code>. In blank b, we
+<code>'date'</code> column matches <code>day_str</code>. In blank b, we
 could access directly access the row with the <code>n</code>-th most
 stream using iloc. (Remember, the image above shows us that the streams
 are sorted by most streamed in ascending order, so to find the
@@ -839,15 +834,18 @@ aria-labelledby="heading4_4" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer: </strong> <code>(counts &gt;= count_2021)</code></p>
-<p>Note that <code>counts</code> is a np.array that contains the number
-of Rap songs from each sample. Because our alternative hypothesis is
-that “The number of unique Hip-Hop/Rap songs that were popular in 2021
-is greater than the average number of unique Hip-Hop/Rap songs that were
-popular each year between 2012 and 2021”, simply doing
-<code>(counts &lt; count_2021)</code> will return an array of booleans
-denoting whether or not <code>count_2021</code> was greater than the
-number of rap songs in each sample. The <code>.mean()</code> will simply
-compute the appropriate proportion, or p-value.</p>
+<p>Note that <code>counts</code> is an array that contains the number of
+Hip-Hop/Rap songs from each sample. Because our alternative hypothesis
+is that “The number of unique Hip-Hop/Rap songs that were popular in
+2021 is <em>greater</em> than the average number of unique Hip-Hop/Rap
+songs that were popular each year between 2012 and 2021”, we’re
+interested in the proportion of simulated test statistics that were
+equal to our observed or <em>greater</em>.
+<code>counts &gt;= count_2021</code> is an array of Booleans, denoting
+whether or not <code>count_2021</code> was greater than the number of
+rap songs in each sample, and
+<code>(counts &gt;= count_2021).mean()</code> is the proportion
+(p-value) we’re looking for.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️⭐️</h5>
 <p>
@@ -1322,7 +1320,7 @@ aria-labelledby="heading6_4" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer: </strong> a) <code>{'class' : n}</code> b)
-<code>[2]</code> or <code>[-1]</code></p>
+<code>[2].text</code> or <code>[-1].text</code></p>
 <p>The logic is to find the <code>&lt;tr&gt;</code> node with the
 correct class attribute (which we do by setting attr to
 <code>{'class' : 2}</code>), then access the text of the node’s last

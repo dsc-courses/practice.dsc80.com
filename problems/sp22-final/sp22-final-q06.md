@@ -122,7 +122,7 @@ What goes in blank (b)?
 
 # BEGIN SOLN
 
-**Answer: ** a) `{'class' : n}` b) `[2]` or `[-1]`
+**Answer: ** a) `{'class' : n}` b) `[2].text` or `[-1].text`
 
 The logic is to find the `<tr>` node with the correct class attribute (which we do by setting attr to `{'class' : 2}`), then access the text of the node's last `<td>` child (since that's where the song titles are stored).
 
