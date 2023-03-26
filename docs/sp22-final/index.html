@@ -838,7 +838,7 @@ aria-labelledby="heading4_4" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer: </strong> <code>(counts &lt; count_2021)</code></p>
+<p><strong>Answer: </strong> <code>(counts &gt;= count_2021)</code></p>
 <p>Note that <code>counts</code> is a np.array that contains the number
 of Rap songs from each sample. Because our alternative hypothesis is
 that “The number of unique Hip-Hop/Rap songs that were popular in 2021
@@ -1668,10 +1668,9 @@ aria-labelledby="heading8_3" data-bs-parent="#accordionExample">
 </header>
 <p><strong>Answer: </strong> Option B</p>
 <p>Recall that <span class="math inline">\text{tfidf}(t, d) =
-\text{tf}(t, d) \cdot \text{idf}(t)</span>, and note that <span class="math inline">\text{tf}(t, d)</span> is just <span class="math inline">\frac{1}{\text{# words in d}} \cdot \text{bow}(t,
-d)</span>. Thus, <span class="math inline">\text{tfidf}(t, d)</span> is
-0 is if either <span class="math inline">\text{bow}(t, d) = 0</span> or
-<span class="math inline">\text{idf}(t) = 0</span>.</p>
+\text{tf}(t, d) \cdot \text{idf}(t)</span>, and note that <span class="math inline">\text{tf}(t, d)</span> is just $ (t, d) $. Thus,
+<span class="math inline">\text{tfidf}(t, d)</span> is 0 is if either
+<span class="math inline">\text{bow}(t, d) = 0</span> or <span class="math inline">\text{idf}(t) = 0</span>.</p>
 <p>So, if <span class="math inline">\text{bow}(t, d) = 0</span>, then
 <span class="math inline">\text{tf}(t, d) = 0</span> and <span class="math inline">\text{tfidf}(t, d) = 0</span>, so the second option
 is true. However, if <span class="math inline">\text{tfidf}(t, d) =

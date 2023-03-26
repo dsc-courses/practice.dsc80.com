@@ -1,0 +1,1659 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Winter 2023 Final Exam</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="..\assets\theme.css" />
+  <script defer=""
+  src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Winter 2023 Final Exam</h1>
+</header>
+<p><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<!-- add after bootstrap.min.css -->
+<link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css"/>
+<!-- add after bootstrap.min.js or bootstrap.bundle.min.js -->
+<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script></p>
+<!-- for difficulty gauges-->
+<script src="https://cdn.plot.ly/plotly-2.16.1.min.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B947E6J6H4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-B947E6J6H4');
+</script>
+<p><a href="../index.html">← return to practice.dsc80.com</a></p>
+<hr />
+<p><strong>Instructor(s):</strong> Suraj Rampure</p>
+<p>This exam was administered in-person. The exam was closed-notes,
+except students were allowed to bring 2 two-sided cheat sheets. No
+calculators were allowed. Students had <strong>180 minutes</strong> to
+take this exam.</p>
+<hr />
+<p>The DataFrame <code>sat</code> contains one row for
+<strong>most</strong> combinations of <code>"Year"</code> and
+<code>"State"</code>, where <code>"Year"</code>ranges between
+<code>2005</code> and <code>2015</code> and <code>"State"</code> is one
+of the 50 states (not including the District of Columbia).</p>
+<p>The other columns are as follows:</p>
+<ul>
+<li><p><code>"# Students"</code> contains the number of students who
+took the SAT in that state in that year.</p></li>
+<li><p><code>"Math"</code> contains the mean math section score among
+all students who took the SAT in that state in that year. This ranges
+from 200 to 800.</p></li>
+<li><p><code>"Verbal"</code> contains the mean verbal section score
+among all students who took the SAT in that state in that year. This
+ranges from 200 to 800. (This is now known as the “Critical Reading”
+section.)</p></li>
+</ul>
+<p>The first few rows of <code>sat</code> are shown below (though
+<code>sat</code> has many more rows than are pictured here).</p>
+<center><img src='../assets/images/wi23-final/df.png' width=30%></center>
+<p>For instance, the first row of <code>sat</code> tells us that 41227
+students took the SAT in Washington in 2014, and among those students,
+the mean math score was 519 and the mean verbal score was 510.</p>
+<p>Assume:</p>
+<ul>
+<li><p><code>sat</code> does not contain any duplicate rows — that is,
+there is only one row for every unique combination of
+<code>"Year"</code> and <code>"State"</code> that is in
+<code>sat</code>.</p></li>
+<li><p><code>sat</code> does not contain any null values.</p></li>
+<li><p>We have already run all of the necessary imports.</p></li>
+</ul>
+<hr />
+<h2 id="problem-1">Problem 1</h2>
+<p><br></p>
+<h3 id="problem-1.1">Problem 1.1</h3>
+<p>Which of the following expressions evaluate to the name of the state,
+as a string, with the highest mean math section score in 2007? Select
+all that apply.</p>
+<p><em>Note: Assume that the highest mean math section score in 2007 was
+unique to only one state.</em></p>
+<p>Option 1:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>(sat.loc[(sat[<span class="st">&quot;Math&quot;</span>] <span class="op">==</span> sat[<span class="st">&quot;Math&quot;</span>].<span class="bu">max</span>()) <span class="op">&amp;</span> </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>       (sat[<span class="st">&quot;Year&quot;</span>] <span class="op">==</span> <span class="dv">2007</span>), <span class="st">&quot;State&quot;</span>]</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>.iloc[<span class="dv">0</span>])</span></code></pre></div>
+<p>Option 2:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>sat.loc[sat[<span class="st">&quot;Year&quot;</span>] <span class="op">==</span> <span class="dv">2007</span>].set_index(<span class="st">&quot;State&quot;</span>)[<span class="st">&quot;Math&quot;</span>].idxmax()</span></code></pre></div>
+<p>Option 3:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>sat.groupby(<span class="st">&quot;Year&quot;</span>)[<span class="st">&quot;State&quot;</span>].<span class="bu">max</span>().loc[<span class="dv">2007</span>]</span></code></pre></div>
+<p>Option 4:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>(sat.loc[sat[<span class="st">&quot;Math&quot;</span>] <span class="op">==</span> sat.loc[sat[<span class="st">&quot;Year&quot;</span>] <span class="op">==</span> <span class="dv">2007</span>, <span class="st">&quot;Math&quot;</span>].<span class="bu">max</span>()]</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>   .iloc[<span class="dv">0</span>]  </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>   .loc[<span class="st">&quot;State&quot;</span>])</span></code></pre></div>
+<p>Option 5:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>(sat.groupby(<span class="st">&quot;Year&quot;</span>).<span class="bu">apply</span>(</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">lambda</span> sat: sat[sat[<span class="st">&quot;Math&quot;</span>] <span class="op">==</span> sat[<span class="st">&quot;Math&quot;</span>].<span class="bu">max</span>()]</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>).reset_index(drop<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>.groupby(<span class="st">&quot;Year&quot;</span>)[<span class="st">&quot;State&quot;</span>].<span class="bu">max</span>()</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>.loc[<span class="dv">2007</span>])</span></code></pre></div>
+<p>Option 6:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>sat.loc[sat[<span class="st">&#39;Year&#39;</span>] <span class="op">==</span> <span class="dv">2007</span>].loc[sat[<span class="st">&#39;Math&#39;</span>] <span class="op">==</span> sat[<span class="st">&#39;Math&#39;</span>].<span class="bu">max</span>()]</span></code></pre></div>
+<ul class="task-list">
+<li><p><input type="checkbox" disabled="" /> Option 1</p></li>
+<li><p><input type="checkbox" disabled="" /> Option 2</p></li>
+<li><p><input type="checkbox" disabled="" /> Option 3</p></li>
+<li><p><input type="checkbox" disabled="" /> Option 4</p></li>
+<li><p><input type="checkbox" disabled="" /> Option 5</p></li>
+<li><p><input type="checkbox" disabled="" /> Option 6</p></li>
+<li><p><input type="checkbox" disabled="" /> None of the above</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_1" aria-expanded="true" aria-controls="collapse1_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_1" class="accordion-collapse collapse collapse"
+aria-labelledby="heading1_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> Option 2 and Option 5</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-1.2">Problem 1.2</h3>
+<p>In the box, write a <strong>one-line expression</strong> that
+evaluates to a DataFrame that is equivalent to the following
+relation:</p>
+<p><span class="math display">\Pi_{\text{Year, State, Verbal}}
+\left(\sigma_{\text{Year } \geq \: 2014 \text{ and Math } \leq \: 600}
+\left( \text{sat} \right) \right)</span></p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_2" aria-expanded="true" aria-controls="collapse1_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_2" class="accordion-collapse collapse collapse"
+aria-labelledby="heading1_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong>
+<code>sat.loc[(sat['Year'] &gt;= 2014) &amp; (sat['Math'] &lt;= 600), ['Year', 'State', 'Verbal']]</code></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-1.3">Problem 1.3</h3>
+<p>The following two lines define two DataFrames, <code>val1</code> and
+<code>val2</code>.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>val1 <span class="op">=</span> sat.groupby([<span class="st">&quot;Year&quot;</span>, <span class="st">&quot;State&quot;</span>]).<span class="bu">max</span>().reset_index()</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>val2 <span class="op">=</span> sat.groupby([<span class="st">&quot;Year&quot;</span>, <span class="st">&quot;State&quot;</span>, <span class="st">&quot;# Students&quot;</span>]).<span class="bu">min</span>().reset_index()</span></code></pre></div>
+<p>Are <code>val1</code> and <code>val2</code> identical? That is, do
+they contain the same rows and columns, all in the same order?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> Yes</p></li>
+<li><p><input type="radio" disabled="" /> No</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_3" aria-expanded="true" aria-controls="collapse1_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_3" class="accordion-collapse collapse collapse"
+aria-labelledby="heading1_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> Yes</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-1.4">Problem 1.4</h3>
+<p>The data description stated that there is one row in <code>sat</code>
+for most combinations of <code>"Year"</code> (between <code>2005</code>
+and <code>2015</code>, inclusive) and <code>"State"</code>. This means
+that for most states, there are 11 rows in <code>sat</code> — one for
+each year between 2005 and 2015, inclusive.</p>
+<p>It turns out that there are 11 rows in <code>sat</code> for all 50
+states, except for one state. Fill in the blanks below so that
+<code>missing_years</code> evaluates to an <strong>array</strong>,
+sorted in any order, containing the years for which that one state does
+not appear in `sat.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>state_only <span class="op">=</span> sat.groupby(<span class="st">&quot;State&quot;</span>).<span class="bu">filter</span>(___(a)___)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>merged <span class="op">=</span> sat[<span class="st">&quot;Year&quot;</span>].value_counts().to_frame().merge(</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    state_only, ___(b)___</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>missing_years <span class="op">=</span> ___(c)___.to_numpy()</span></code></pre></div>
+<p>What goes in blank (a)?</p>
+<p>What goes in blank (b)?</p>
+<p>What goes in blank (c)?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_4" aria-expanded="true" aria-controls="collapse1_4">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_4" class="accordion-collapse collapse collapse"
+aria-labelledby="heading1_4" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> a:
+<code>lambda df: df.shape[0] &lt; 11</code>, b:
+<code>left_index=True, right_on='Year', how='left'</code>
+(<code>how='outer'</code> also works), c:
+<code>merged[merged['# Students'].isna()]['Year']</code></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<p>In the previous subpart, we established that most states have 11 rows
+in <code>sat</code> — one for each year between 2005 and 2015, inclusive
+— while there is one state that has fewer than 11 rows, because there
+are some years for which that state’s SAT information is not known.</p>
+<p>Suppose we’re given a version of <code>sat</code> called
+<code>sat_complete</code> that has all of the same information as
+<code>sat</code>, but that also has rows for combinations of states and
+years in which SAT information is not known. While there are no null
+values in the <code>"Year"</code> or <code>"State"</code> columns of
+<code>sat_complete</code>, there are null values in the
+<code>"# Students"</code>, <code>"Math"</code>, and
+<code>"Verbal"</code> columns of <code>sat_complete</code>. An example
+of what <code>sat_complete</code> may look like is given below.</p>
+<center><img src='../assets/images/wi23-final/sat_tail.png' width=30%></center>
+<center><img src='../assets/images/wi23-final/sat_other_tail.png' width=30%></center>
+<p><em>Note that in the above example, <code>sat</code> simply wouldn’t
+have rows for West Virginia in 2005 and 2006, meaning it would have 2
+fewer rows than the corresponding <code>sat_complete</code>.</em></p>
+<p><br></p>
+<h3 id="problem-1.5">Problem 1.5</h3>
+<p>Given just the information in <code>sat_complete</code> — that is,
+without including any information learned in part (d) — what is the most
+likely missingness mechanism of the <code>"# Students"</code> column in
+<code>sat_complete</code>?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> Not missing at random</p></li>
+<li><p><input type="radio" disabled="" /> Missing at random</p></li>
+<li><p><input type="radio" disabled="" /> Missing completely at random</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_5">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_5" aria-expanded="true" aria-controls="collapse1_5">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_5" class="accordion-collapse collapse collapse"
+aria-labelledby="heading1_5" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> Not missing at random</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-1.6">Problem 1.6</h3>
+<p>Given just the information in <code>sat_complete</code> — that is,
+without including any information learned in part (d) — what is the most
+likely missingness mechanism of the <code>"Math"</code> column in
+<code>sat_complete</code>?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> Not missing at random</p></li>
+<li><p><input type="radio" disabled="" /> Missing at random</p></li>
+<li><p><input type="radio" disabled="" /> Missing completely at random</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_6">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_6" aria-expanded="true" aria-controls="collapse1_6">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_6" class="accordion-collapse collapse collapse"
+aria-labelledby="heading1_6" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> Missing at random</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-1.7">Problem 1.7</h3>
+<p>Suppose we perform a permutation test to assess whether the
+missingness of column <span class="math inline">Y</span> depends on
+column <span class="math inline">X</span>.</p>
+<p>Suppose we observe a statistically significant result (that is, the
+<span class="math inline">p</span>-value of our test is less than 0.05).
+True or False: It is still possible for column <span
+class="math inline">Y</span> to be not missing at random.</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> True</p></li>
+<li><p><input type="radio" disabled="" /> False</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_7">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_7" aria-expanded="true" aria-controls="collapse1_7">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_7" class="accordion-collapse collapse collapse"
+aria-labelledby="heading1_7" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> Trie</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-1.8">Problem 1.8</h3>
+<p>Suppose we do not observe a statistically significant result (that
+is, the <span class="math inline">p</span>-value of our test is greater
+than 0.05). True or False: It is still possible for column <span
+class="math inline">Y</span> to be missing at random dependent on column
+<span class="math inline">X</span>.</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> True</p></li>
+<li><p><input type="radio" disabled="" /> False</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_8">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_8" aria-expanded="true" aria-controls="collapse1_8">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_8" class="accordion-collapse collapse collapse"
+aria-labelledby="heading1_8" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> True</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-2">Problem 2</h2>
+<p>The following DataFrame contains the mean, median, and standard
+deviation of the number of students per year who took the SAT in New
+York and Texas between 2005 and 2015.</p>
+<center><img src='../assets/images/wi23-final/nyt.png' width=30%></center>
+<p><br></p>
+<h3 id="problem-2.1">Problem 2.1</h3>
+<p>Which of the following expressions creates the above DataFrame
+correctly and in the most efficient possible way (in terms of time and
+space complexity)?</p>
+<p><em>Note: The only difference between the options is the positioning
+of <code>"# Students"</code>.</em></p>
+<p>Option 1:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>(sat.loc[sat[<span class="st">&quot;State&quot;</span>].isin([<span class="st">&quot;New York&quot;</span>, <span class="st">&quot;Texas&quot;</span>])]</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>[<span class="st">&quot;# Students&quot;</span>].groupby(<span class="st">&quot;State&quot;</span>).agg([<span class="st">&quot;mean&quot;</span>, <span class="st">&quot;median&quot;</span>, <span class="st">&quot;std&quot;</span>]))</span></code></pre></div>
+<p>Option 2:</p>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode py"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>(sat.loc[sat[<span class="st">&quot;State&quot;</span>].isin([<span class="st">&quot;New York&quot;</span>, <span class="st">&quot;Texas&quot;</span>])]</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>.groupby(<span class="st">&quot;State&quot;</span>)[<span class="st">&quot;# Students&quot;</span>].agg([<span class="st">&quot;mean&quot;</span>, <span class="st">&quot;median&quot;</span>, <span class="st">&quot;std&quot;</span>]))</span></code></pre></div>
+<p>Option 3:</p>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode py"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>(sat.loc[sat[<span class="st">&quot;State&quot;</span>].isin([<span class="st">&quot;New York&quot;</span>, <span class="st">&quot;Texas&quot;</span>])]</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>.groupby(<span class="st">&quot;State&quot;</span>).agg([<span class="st">&quot;mean&quot;</span>, <span class="st">&quot;median&quot;</span>, <span class="st">&quot;std&quot;</span>])[<span class="st">&quot;# Students&quot;</span>])</span></code></pre></div>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> Option 1</p></li>
+<li><p><input type="radio" disabled="" /> Option 2</p></li>
+<li><p><input type="radio" disabled="" /> Option 3</p></li>
+<li><p><input type="radio" disabled="" /> Multiple options are equally correct and efficient</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading2_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_1" aria-expanded="true" aria-controls="collapse2_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse2_1" class="accordion-collapse collapse collapse"
+aria-labelledby="heading2_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> Option 2</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<p>Suppose we want to run a statistical test to assess whether the
+distributions of the number of students between 2005 and 2015 in New
+York and Texas are significantly different.</p>
+<p><br></p>
+<h3 id="problem-2.2">Problem 2.2</h3>
+<p>What type of test is being proposed above?</p>
+<p>( ) Hypothesis test ( ) Permutation test</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading2_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_2" aria-expanded="true" aria-controls="collapse2_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse2_2" class="accordion-collapse collapse collapse"
+aria-labelledby="heading2_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> Permutation test</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-2.3">Problem 2.3</h3>
+<p>Given the information in the above DataFrame, which test statistic is
+<strong>most likely</strong> to yield a significant difference?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> <span class="math inline">\text{mean number of students in Texas } -
+\text{ mean number of students in New York}</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">\big|\text{mean number of students in Texas
+} - \text{ mean number of students in New York}\big|</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">\big|\text{median number of students in
+Texas } - \text{ median number of students in New York}\big|</span></p></li>
+<li><p><input type="radio" disabled="" /> The Kolmogorov-Smirnov statistic</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading2_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_3" aria-expanded="true" aria-controls="collapse2_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse2_3" class="accordion-collapse collapse collapse"
+aria-labelledby="heading2_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> The Kolmogorov-Smirnov statistic</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<p>Now, suppose we’re interested in comparing the verbal score
+distribution of students who took the SAT in New York in 2015 to the
+verbal score distribution of all students who took the SAT in 2015.</p>
+<p>The DataFrame <code>scores_2015</code>, shown in its entirety below,
+contains the verbal section score distributions of students in New York
+in 2015 and for all students in 2015.</p>
+<center><img src='../assets/images/wi23-final/ny_vs_all.png' width=30%></center>
+<p><br></p>
+<h3 id="problem-2.4">Problem 2.4</h3>
+<p>What type of test is being proposed above?</p>
+<p>( ) Hypothesis test ( ) Permutation test</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading2_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_4" aria-expanded="true" aria-controls="collapse2_4">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse2_4" class="accordion-collapse collapse collapse"
+aria-labelledby="heading2_4" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> Hypothesis test</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-2.5">Problem 2.5</h3>
+<p>Suppose <span class="math inline">\vec{a} = \begin{bmatrix} a_1 &amp;
+a_2 &amp; ... &amp; a_n \end{bmatrix}^T</span> and <span
+class="math inline">\vec{b} = \begin{bmatrix} b_1 &amp; b_2 &amp; ...
+&amp; b_n \end{bmatrix}^T</span> are both vectors containing proportions
+that add to 1 (e.g. <span class="math inline">\vec{a}</span> could be
+the <code>"New York"</code> column above and <span
+class="math inline">\vec{b}</span> could be the
+<code>"All States"</code> column above). As we’ve seen before, the TVD
+is defined as follows:</p>
+<p><span class="math inline">\text{TVD}(\vec{a}, \vec{b}) = \frac{1}{2}
+\sum_{i = 1}^n \left| a_i - b_i \right|</span></p>
+<p>The TVD is not the only metric that can quantify the distance between
+two categorical distributions. Here are three other possible distance
+metrics:</p>
+<ul>
+<li><p><span class="math inline">\text{dis1}(\vec{a}, \vec{b}) &amp;=
+\vec{a} \cdot \vec{b} = a_1b_1 + a_2b_2 + ... + a_nb_n</span></p></li>
+<li><p><span class="math inline">\text{dis2}(\vec{a}, \vec{b}) &amp;=
+\frac{\vec{a} \cdot \vec{b}}{|\vec{a} | | \vec{b} |} = \frac{a_1b_1 +
+a_2b_2 + ... + a_nb_n}{\sqrt{a_1^2 + a_2^2 + ... + a_n^2} \sqrt{b_1^2 +
+b_2^2 + ... + b_n^2}}</span></p></li>
+<li><p><span class="math inline">text{dis3}(\vec{a}, \vec{b}) &amp;= 1 -
+\frac{\vec{a} \cdot \vec{b}}{|\vec{a} | | \vec{b} |}</span></p></li>
+</ul>
+<p>Of the above three possible distance metrics, only one of them has
+the same range as the TVD (i.e. the same minimum possible value and the
+same maximum possible value) <strong>and</strong> has the property that
+smaller values correspond to more similar vectors. Which distance metric
+is it?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> <span class="math inline">\text{dis1}</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">\text{dis2}</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">\text{dis3}</span></p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading2_5">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_5" aria-expanded="true" aria-controls="collapse2_5">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse2_5" class="accordion-collapse collapse collapse"
+aria-labelledby="heading2_5" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> <span class="math inline">\text{dis3}</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-3">Problem 3</h2>
+<p>The function <code>state_perm</code> is attempting to implement a
+test of the null hypothesis that the distributions of mean math section
+scores between 2005 and 2015 for two states are drawn from the same
+population distribution.</p>
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode py"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> state_perm(states):</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">len</span>(states) <span class="op">!=</span> <span class="dv">2</span>:</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="ss">f&quot;Expected 2 elements, got </span><span class="sc">{</span><span class="bu">len</span>(states)<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> calc_test_stat(df):</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> df.groupby(<span class="st">&quot;State&quot;</span>)[<span class="st">&quot;Math&quot;</span>].mean().<span class="bu">abs</span>().diff().iloc[<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>    states <span class="op">=</span> sat.loc[sat[<span class="st">&quot;State&quot;</span>].isin(states), [<span class="st">&quot;State&quot;</span>, <span class="st">&quot;Math&quot;</span>]]</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>    test_stats <span class="op">=</span> []</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10000</span>):</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>        states[<span class="st">&quot;State&quot;</span>] <span class="op">=</span> np.random.permutation(states[<span class="st">&quot;State&quot;</span>])</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>        test_stat <span class="op">=</span> calc_test_stat(states)</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>        test_stats.append(test_stat)</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>    obs <span class="op">=</span> calc_test_stat(states)</span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (np.array(test_stats) <span class="op">&gt;=</span> obs).mean()</span></code></pre></div>
+<p>Suppose we call <code>state_perm(["California", "Washington"])</code>
+and see <code>0.514</code>.</p>
+<p><br></p>
+<h3 id="problem-3.1">Problem 3.1</h3>
+<p>What test statistic is being used in the above call to
+<code>state_perm</code>?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> <span class="math inline">\text{mean Washington score } - \text{mean
+California score}</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">\text{mean California score } - \text{mean
+Washington score}</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">\big|\text{mean Washington score } -
+\text{mean California score} \big|</span></p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading3_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_1" aria-expanded="true" aria-controls="collapse3_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse3_1" class="accordion-collapse collapse collapse"
+aria-labelledby="heading3_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> Option 1</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-3.2">Problem 3.2</h3>
+<p>There is exactly one issue with the implementation of
+<code>state_perm</code>. In <strong>exactly one sentence</strong>,
+identify the issue and state how you would fix it.</p>
+<p><em>Hint: The issue is <strong>not</strong> with the implementation
+of the function <code>calc_test_stat</code>.</em></p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading3_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_2" aria-expanded="true" aria-controls="collapse3_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse3_2" class="accordion-collapse collapse collapse"
+aria-labelledby="heading3_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> Since we are permutin in place on the
+states DataFrame, we must calculate the observed test statistic before
+we permute.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-4">Problem 4</h2>
+<p>To prepare for the verbal component of the SAT, Nicole decides to
+read research papers on data science. While reading these papers, she
+notices that there are many citations interspersed that refer to other
+research papers, and she’d like to read the cited papers as well.</p>
+<p>In the papers that Nicole is reading, citations are formatted in the
+<em>verbost numeric</em> style. An excerpt from one such paper is stored
+in the string <code>s</code> below.</p>
+<div class="sourceCode" id="cb13"><pre
+class="sourceCode py"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> <span class="st">&#39;&#39;&#39;</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="st">In DSC 10 [3], you learned about babypandas, a strict subset </span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="st">of pandas [15][4]. It was designed [5] to provide programming </span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="st">beginners [3][91] just enough syntax to be able to perform </span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="st">meaningful tabular data analysis [8] without getting lost in </span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="st">100s of details.</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="st">&#39;&#39;&#39;</span>    </span></code></pre></div>
+<p>We decide to help Nicole extract citation numbers from papers.
+Consider the following four extracted lists.</p>
+<div class="sourceCode" id="cb14"><pre
+class="sourceCode py"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>list1 <span class="op">=</span> [<span class="st">&#39;10&#39;</span>, <span class="st">&#39;100&#39;</span>]</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>list2 <span class="op">=</span> [<span class="st">&#39;3&#39;</span>, <span class="st">&#39;15&#39;</span>, <span class="st">&#39;4&#39;</span>, <span class="st">&#39;5&#39;</span>, <span class="st">&#39;3&#39;</span>, <span class="st">&#39;91&#39;</span>, <span class="st">&#39;8&#39;</span>]</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>list3 <span class="op">=</span> [<span class="st">&#39;10&#39;</span>, <span class="st">&#39;3&#39;</span>, <span class="st">&#39;15&#39;</span>, <span class="st">&#39;4&#39;</span>, <span class="st">&#39;5&#39;</span>, <span class="st">&#39;3&#39;</span>, <span class="st">&#39;91&#39;</span>, <span class="st">&#39;8&#39;</span>, <span class="st">&#39;100&#39;</span>]</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>list4 <span class="op">=</span> [<span class="st">&#39;[3]&#39;</span>, <span class="st">&#39;[15]&#39;</span>, <span class="st">&#39;[4]&#39;</span>, <span class="st">&#39;[5]&#39;</span>, <span class="st">&#39;[3]&#39;</span>, <span class="st">&#39;[91]&#39;</span>, <span class="st">&#39;[8]&#39;</span>]</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>list5 <span class="op">=</span> [<span class="st">&#39;1&#39;</span>, <span class="st">&#39;0&#39;</span>, <span class="st">&#39;3&#39;</span>, <span class="st">&#39;1&#39;</span>, <span class="st">&#39;5&#39;</span>, <span class="st">&#39;4&#39;</span>, <span class="st">&#39;5&#39;</span>, <span class="st">&#39;3&#39;</span>, </span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>         <span class="st">&#39;9&#39;</span>, <span class="st">&#39;1&#39;</span>, <span class="st">&#39;8&#39;</span>, <span class="st">&#39;1&#39;</span>, <span class="st">&#39;0&#39;</span>, <span class="st">&#39;0&#39;</span>]</span></code></pre></div>
+<p>For each expression below, select the list it evaluates to, or select
+“None of the above.”</p>
+<p><br></p>
+<h3 id="problem-4.1">Problem 4.1</h3>
+<p><code>re.findall(r'\d+', s)</code></p>
+<p>( ) list1 ( ) list2 ( ) list3 ( ) list4 ( ) list5 ( ) None of the
+above</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_1" aria-expanded="true" aria-controls="collapse4_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_1" class="accordion-collapse collapse collapse"
+aria-labelledby="heading4_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> list3</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-4.2">Problem 4.2</h3>
+<p><code>re.findall(r'[\d+]', s)</code></p>
+<p>( ) list1 ( ) list2 ( ) list3 ( ) list4 ( ) list5 ( ) None of the
+above</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_2" aria-expanded="true" aria-controls="collapse4_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_2" class="accordion-collapse collapse collapse"
+aria-labelledby="heading4_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> list5</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-4.3">Problem 4.3</h3>
+<p><code>re.findall(r'\[(\d+)\]', s)</code></p>
+<p>( ) list1 ( ) list2 ( ) list3 ( ) list4 ( ) list5 ( ) None of the
+above</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_3" aria-expanded="true" aria-controls="collapse4_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_3" class="accordion-collapse collapse collapse"
+aria-labelledby="heading4_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> list2</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-4.4">Problem 4.4</h3>
+<p><code>re.findall(r'(\[\d+\])', s)</code></p>
+<p>( ) list1 ( ) list2 ( ) list3 ( ) list4 ( ) list5 ( ) None of the
+above</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_4" aria-expanded="true" aria-controls="collapse4_4">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_4" class="accordion-collapse collapse collapse"
+aria-labelledby="heading4_4" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> list4</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-5">Problem 5</h2>
+<p>After taking the SAT, Nicole wants to check the College Board’s
+website to see her score. However, the College Board recently updated
+their website to use non-standard HTML tags and Nicole’s browser can’t
+render it correctly. As such, she resorts to making a GET request to the
+site with her scores on it to get back the source HTML and tries to
+parse it with BeautifulSoup.</p>
+<p>Suppose <code>soup</code> is a BeautifulSoup object instantiated
+using the following HTML document.</p>
+<div class="sourceCode" id="cb15"><pre
+class="sourceCode html"><code class="sourceCode html"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;college&gt;</span>Your score is ready!<span class="kw">&lt;/college&gt;</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;sat</span> <span class="er">verbal</span><span class="ot">=</span><span class="st">&quot;ready&quot;</span> <span class="er">math</span><span class="ot">=</span><span class="st">&quot;ready&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    Your percentiles are as follows:</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;scorelist</span> <span class="er">listtype</span><span class="ot">=</span><span class="st">&quot;percentiles&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;scorerow</span> <span class="er">kind</span><span class="ot">=</span><span class="st">&quot;verbal&quot;</span> <span class="er">subkind</span><span class="ot">=</span><span class="st">&quot;per&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>            Verbal: <span class="kw">&lt;scorenum&gt;</span>84<span class="kw">&lt;/scorenum&gt;</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;/scorerow&gt;</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;scorerow</span> <span class="er">kind</span><span class="ot">=</span><span class="st">&quot;math&quot;</span> <span class="er">subkind</span><span class="ot">=</span><span class="st">&quot;per&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>            Math: <span class="kw">&lt;scorenum&gt;</span>99<span class="kw">&lt;/scorenum&gt;</span></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;/scorerow&gt;</span></span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/scorelist&gt;</span></span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>    And your actual scores are as follows:</span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;scorelist</span> <span class="er">listtype</span><span class="ot">=</span><span class="st">&quot;scores&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;scorerow</span> <span class="er">kind</span><span class="ot">=</span><span class="st">&quot;verbal&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>            Verbal: <span class="kw">&lt;scorenum&gt;</span>680<span class="kw">&lt;/scorenum&gt;</span></span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;/scorerow&gt;</span></span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;scorerow</span> <span class="er">kind</span><span class="ot">=</span><span class="st">&quot;math&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>            Math: <span class="kw">&lt;scorenum&gt;</span>800<span class="kw">&lt;/scorenum&gt;</span></span>
+<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;/scorerow&gt;</span></span>
+<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/scorelist&gt;</span></span>
+<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/sat&gt;</span></span></code></pre></div>
+<p><br></p>
+<h3 id="problem-5.1">Problem 5.1</h3>
+<p>Which of the following expressions evaluate to `“verbal”}? Select all
+that apply.</p>
+<ul class="task-list">
+<li><p><input type="checkbox" disabled="" /> <code>soup.find("scorerow").get("kind")</code></p></li>
+<li><p><input type="checkbox" disabled="" /> <code>soup.find("sat").get("ready")</code></p></li>
+<li><p><input type="checkbox" disabled="" /> <code>soup.find("scorerow").text.split(":")[0].lower()</code></p></li>
+<li><p><input type="checkbox" disabled="" /> <code>[s.get("kind") for s in soup.find_all("scorerow")][-2]</code></p></li>
+<li><p><input type="checkbox" disabled="" /> <code>soup.find("scorelist", attrs={"listtype":"scores"}).get("kind")</code></p></li>
+<li><p><input type="checkbox" disabled="" /> None of the above</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading5_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_1" aria-expanded="true" aria-controls="collapse5_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse5_1" class="accordion-collapse collapse collapse"
+aria-labelledby="heading5_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> Option 1, Option 3, Option 4</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-5.2">Problem 5.2</h3>
+<p>(6 pts) Consider the following function.</p>
+<div class="sourceCode" id="cb16"><pre
+class="sourceCode py"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> summer(tree):</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">isinstance</span>(tree, <span class="bu">list</span>):</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>        total <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> subtree <span class="kw">in</span> tree:</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> s <span class="kw">in</span> subtree.find_all(<span class="st">&quot;scorenum&quot;</span>):</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>                total <span class="op">+=</span> <span class="bu">int</span>(s.text)</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> total</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="bu">sum</span>([<span class="bu">int</span>(s.text) <span class="cf">for</span> s <span class="kw">in</span> tree.find_all(<span class="st">&quot;scorenum&quot;</span>)])</span></code></pre></div>
+<p>For each of the following values, fill in the blanks to assign
+<code>tree</code> such that <code>summer(tree)</code> evaluates to the
+desired value. The first example has been done for you.</p>
+<ul>
+<li>Desired value: <code>84</code></li>
+</ul>
+<div class="sourceCode" id="cb17"><pre
+class="sourceCode py"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>    tree <span class="op">=</span> soup.find(_____)</span></code></pre></div>
+<p><code>"scorerow"</code></p>
+<ul>
+<li>Desired value: <code>183</code></li>
+</ul>
+<div class="sourceCode" id="cb18"><pre
+class="sourceCode py"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>    tree <span class="op">=</span> soup.find(__a__)</span></code></pre></div>
+<ul>
+<li>Desired value: <code>1480</code></li>
+</ul>
+<div class="sourceCode" id="cb19"><pre
+class="sourceCode py"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>    tree <span class="op">=</span> soup.find(__b__)</span></code></pre></div>
+<ul>
+<li>Desired value: <code>899</code></li>
+</ul>
+<div class="sourceCode" id="cb20"><pre
+class="sourceCode py"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>    tree <span class="op">=</span> soup.find_all(__c__)</span></code></pre></div>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading5_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_2" aria-expanded="true" aria-controls="collapse5_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse5_2" class="accordion-collapse collapse collapse"
+aria-labelledby="heading5_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> a: <code>"scorelist"</code>, b:
+<code>"scorelist", attrs={"listtype":"scores"}</code>, c:
+<code>"scorerow", attrs={"kind":"math"}</code></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-6">Problem 6</h2>
+<p>Consider the following list of tokens.</p>
+<p>“<code>py tokens = ["is", "the", "college", "board", "the", "board", "of", "college"] "</code></p>
+<p><br></p>
+<h3 id="problem-6.1">Problem 6.1</h3>
+<p>Recall, a uniform language model is one in which each
+<strong>unique</strong> token has the same chance of being sampled.
+Suppose we instantiate a uniform language model on <code>tokens</code>.
+The probability of the sentence “““the college board is” — that is,
+<span class="math inline">P(\text{the college board is})</span> — is of
+the form <span class="math inline">\frac{1}{a^b}</span>, where <span
+class="math inline">a</span> and <span class="math inline">b</span> are
+both positive integers.</p>
+<p>What are <span class="math inline">a</span> and <span
+class="math inline">b</span>?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading6_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_1" aria-expanded="true" aria-controls="collapse6_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse6_1" class="accordion-collapse collapse collapse"
+aria-labelledby="heading6_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> a = 5, b = 4</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-6.2">Problem 6.2</h3>
+<p>Recall, a unigram language model is one in which the chance that a
+token is sampled is equal to its observed frequency in the list of
+tokens. Suppose we instantiate a unigram language model on
+<code>tokens</code>. The probability <span
+class="math inline">P(\text{the college board is})</span> is of the form
+<span class="math inline">\frac{1}{c^d}</span>, where <span
+class="math inline">c</span> and <span class="math inline">d</span> are
+both positive integers.</p>
+<p>What are <span class="math inline">c</span> and <span
+class="math inline">d</span>?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading6_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_2" aria-expanded="true" aria-controls="collapse6_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse6_2" class="accordion-collapse collapse collapse"
+aria-labelledby="heading6_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> (c, d) = (2, 9) or (8, 3)</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<p>For the remainder of this question, consider the following five
+sentences.</p>
+<ul>
+<li><pre><code>&quot;of the college board the&quot;</code></pre></li>
+<li><pre><code>&quot;the board the board the&quot;</code></pre></li>
+<li><pre><code>&quot;board the college board of&quot;</code></pre></li>
+<li><pre><code>&quot;the college board of college&quot;</code></pre></li>
+<li><pre><code>&quot;board the college board is&quot;</code></pre></li>
+</ul>
+<p><br></p>
+<h3 id="problem-6.3">Problem 6.3</h3>
+<p>Recall, a bigram language model is an <span
+class="math inline">N</span>-gram model with <span
+class="math inline">N=2</span>. Suppose we instantiate a bigram language
+model on <code>tokens</code>. Which of the following sentences of length
+5 is the <strong>most</strong> likely to be sampled?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> Sentence 1</p></li>
+<li><p><input type="radio" disabled="" /> Sentence 2</p></li>
+<li><p><input type="radio" disabled="" /> Sentence 3</p></li>
+<li><p><input type="radio" disabled="" /> Sentence 4</p></li>
+<li><p><input type="radio" disabled="" /> Sentence 5</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading6_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_3" aria-expanded="true" aria-controls="collapse6_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse6_3" class="accordion-collapse collapse collapse"
+aria-labelledby="heading6_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> Sentence 4</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<p>For your convenience, we repeat the same five sentences again
+below.</p>
+<ul>
+<li><pre><code>&quot;of the college board the&quot;</code></pre></li>
+<li><pre><code>&quot;the board the board the&quot;</code></pre></li>
+<li><pre><code>&quot;board the college board of&quot;</code></pre></li>
+<li><pre><code>&quot;the college board of college&quot;</code></pre></li>
+<li><pre><code>&quot;board the college board is&quot;</code></pre></li>
+</ul>
+<p>Suppose we create a TF-IDF matrix, in which there is one row for each
+sentence and one column for each unique word. The value in row <span
+class="math inline">i</span> and column <span
+class="math inline">j</span> is the TF-IDF of word <span
+class="math inline">j</span> in sentence <span
+class="math inline">i</span>. Note that since there are 5 sentences and
+5 unique words across all sentences, the TF-IDF matrix has 25 total
+values.</p>
+<p><br></p>
+<h3 id="problem-6.4">Problem 6.4</h3>
+<p>Is there a column in the TF-IDF matrix in which all values are 0?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> Yes</p></li>
+<li><p><input type="radio" disabled="" /> No</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading6_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_4" aria-expanded="true" aria-controls="collapse6_4">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse6_4" class="accordion-collapse collapse collapse"
+aria-labelledby="heading6_4" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> Yes</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-6.5">Problem 6.5</h3>
+<p>In which of the following sentences is “college” the word with the
+highest TF-IDF?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> Sentence 1</p></li>
+<li><p><input type="radio" disabled="" /> Sentence 2</p></li>
+<li><p><input type="radio" disabled="" /> Sentence 3</p></li>
+<li><p><input type="radio" disabled="" /> Sentence 4</p></li>
+<li><p><input type="radio" disabled="" /> Sentence 5</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading6_5">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_5" aria-expanded="true" aria-controls="collapse6_5">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse6_5" class="accordion-collapse collapse collapse"
+aria-labelledby="heading6_5" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> Sentence 4</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-6.6">Problem 6.6</h3>
+<p>As an alternative to TF-IDF, Yuxin proposes the DF-ITF, or “document
+frequency-inverse term frequency”. The DF-ITF of term <span
+class="math inline">t</span> in document <span
+class="math inline">d</span> is defined below:</p>
+<p><span class="math display">\text{df-itf}(t, d) = \frac{\text{\# of
+documents in which $t$ appears}}{\text{total \# of documents}} \cdot
+\log \left( \frac{\text{total \# of words in $d$}}{\text{\# of
+occurrences of $t$ in $d$}} \right)</span></p>
+<p>Fill in the blank: The term <span class="math inline">t</span> in
+document <span class="math inline">d</span> that best summarizes
+document <span class="math inline">d</span> is the term with ____.</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> the largest DF-ITF in document <span class="math inline">d</span></p></li>
+<li><p><input type="radio" disabled="" /> the smallest DF-ITF in document <span class="math inline">d</span></p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading6_6">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_6" aria-expanded="true" aria-controls="collapse6_6">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse6_6" class="accordion-collapse collapse collapse"
+aria-labelledby="heading6_6" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-7">Problem 7</h2>
+<p>We decide to build a classifier that takes in a state’s demographic
+information and predicts whether, in a given year:</p>
+<ul>
+<li><p>The state’s mean math score was greater than its mean verbal
+score (1), or</p></li>
+<li><p>the state’s mean math score was less than or equal to its mean
+verbal score (0).</p></li>
+</ul>
+<p><br></p>
+<h3 id="problem-7.1">Problem 7.1</h3>
+<p>(2 pts) The simplest possible classifier we could build is one that
+predicts the same label (1 or 0) every time, independent of all other
+features.</p>
+<p>Consider the following statement:</p>
+<p><em>If <code>a &gt; b</code>, then the constant classifier that
+maximizes training accuracy predicts 1 every time; otherwise, it
+predicts 0 every time.</em></p>
+<p>For which combination of <code>a</code> and <code>b</code> is the
+above statement <strong>not guaranteed</strong> to be true?</p>
+<p><em>Note: Treat as our training set.</em></p>
+<p>Option 1:</p>
+<div class="sourceCode" id="cb31"><pre
+class="sourceCode py"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> (sat[<span class="st">&#39;Math&#39;</span>] <span class="op">&gt;</span> sat[<span class="st">&#39;Verbal&#39;</span>]).mean()</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="fl">0.5</span></span></code></pre></div>
+<p>Option 2:</p>
+<div class="sourceCode" id="cb32"><pre
+class="sourceCode py"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> (sat[<span class="st">&#39;Math&#39;</span>] <span class="op">-</span> sat[<span class="st">&#39;Verbal&#39;</span>]).mean()</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="dv">0</span></span></code></pre></div>
+<p>Option 3:</p>
+<div class="sourceCode" id="cb33"><pre
+class="sourceCode py"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> (sat[<span class="st">&#39;Math&#39;</span>] <span class="op">-</span> sat[<span class="st">&#39;Verbal&#39;</span>] <span class="op">&gt;</span> <span class="dv">0</span>).mean()</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="fl">0.5</span></span></code></pre></div>
+<p>Option 4:</p>
+<div class="sourceCode" id="cb34"><pre
+class="sourceCode py"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> ((sat[<span class="st">&#39;Math&#39;</span>] <span class="op">/</span> sat[<span class="st">&#39;Verbal&#39;</span>]) <span class="op">&gt;</span> <span class="dv">1</span>).mean() <span class="op">-</span> <span class="fl">0.5</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="dv">0</span></span></code></pre></div>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> Option 1</p></li>
+<li><p><input type="radio" disabled="" /> Option 2</p></li>
+<li><p><input type="radio" disabled="" /> Option 3</p></li>
+<li><p><input type="radio" disabled="" /> Option 4</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading7_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_1" aria-expanded="true" aria-controls="collapse7_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse7_1" class="accordion-collapse collapse collapse"
+aria-labelledby="heading7_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> Option 2</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-7.2">Problem 7.2</h3>
+<p>Suppose we train a classifier, named Classifier 1, and it achieves an
+accuracy of <span class="math inline">\frac{5}{9}</span> on our training
+set.</p>
+<p>Typically, root mean squared error (RMSE) is used as a performance
+metric for regression models, but mathematically, nothing is stopping us
+from using it as a performance metric for classification models as
+well.</p>
+<p>What is the RMSE of Classifier 1 on our training set? Give your
+answer as a <strong>simplified fraction</strong>.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading7_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_2" aria-expanded="true" aria-controls="collapse7_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse7_2" class="accordion-collapse collapse collapse"
+aria-labelledby="heading7_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> <span class="math inline">\frac{2}{3}</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-7.3">Problem 7.3</h3>
+<p>While Classifier 1’s accuracy on our training set is <span
+class="math inline">\frac{5}{9}</span>, its accuracy on our test set is
+<span class="math inline">\frac{1}{4}</span>. Which of the following
+scenarios is most likely?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> Classifier 1 overfit to our training set; we need to increase its
+complexity.</p></li>
+<li><p><input type="radio" disabled="" /> Classifier 1 overfit to our training set; we need to decrease its
+complexity.</p></li>
+<li><p><input type="radio" disabled="" /> Classifier 1 underfit to our training set; we need to increase its
+complexity.</p></li>
+<li><p><input type="radio" disabled="" /> Classifier 1 underfit to our training set; we need to decrease its
+complexity.</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading7_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_3" aria-expanded="true" aria-controls="collapse7_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse7_3" class="accordion-collapse collapse collapse"
+aria-labelledby="heading7_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> Option 2</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<p>For the remainder of this question, suppose we train another
+classifier, named Classifier 2, again on our training set. Its
+performance on the training set is described in the confusion matrix
+below. Note that the columns of the confusion matrix have been
+separately normalized so that each has a sum of 1.</p>
+<center><img src='../assets/images/wi23-final/conf_matrix.png' width=30%></center>
+<p><br></p>
+<h3 id="problem-7.4">Problem 7.4</h3>
+<p>Suppose <code>conf</code> is the DataFrame above. Which of the
+following evaluates to a Series of length 2 whose only unique value is
+the number <code>1</code>?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> <code>conf.sum(axis=0)</code></p></li>
+<li><p><input type="radio" disabled="" /> <code>conf.sum(axis=1)</code></p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading7_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_4" aria-expanded="true" aria-controls="collapse7_4">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse7_4" class="accordion-collapse collapse collapse"
+aria-labelledby="heading7_4" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> Option 1</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-7.5">Problem 7.5</h3>
+<p>Fill in the blank: the ___ of Classifier 2 is guaranteed to be
+0.6.</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> precision</p></li>
+<li><p><input type="radio" disabled="" /> recall</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading7_5">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_5" aria-expanded="true" aria-controls="collapse7_5">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse7_5" class="accordion-collapse collapse collapse"
+aria-labelledby="heading7_5" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> recall</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<p>For your convenience, we show the column-normalized confusion matrix
+from the previous page below. You will need to use the specific numbers
+in this matrix when answering the following subpart.</p>
+<center><img src='../assets/images/wi23-final/conf_matrix.png' width=30%></center>
+<p><br></p>
+<h3 id="problem-7.6">Problem 7.6</h3>
+<p>Suppose a fraction <span class="math inline">\alpha</span> of the
+labels in the training set are actually 1 and the remaining <span
+class="math inline">1 - \alpha</span> are actually 0. The accuracy of
+Classifier 2 is 0.65. What is the value of <span
+class="math inline">\alpha</span>? </p>
+<p>Hint: If you’re unsure on how to proceed, here are some guiding
+questions:</p>
+<ul>
+<li><p>Suppose the number of <span class="math inline">y</span>-values
+that are actually 1 is <span class="math inline">A</span> and that the
+number of <span class="math inline">y</span>-values that are actually 0
+is <span class="math inline">B</span>. In terms of <span
+class="math inline">A</span> and <span class="math inline">B</span>,
+what is the accuracy of Classifier 2? Remember, you’ll need to refer to
+the numbers in the confusion matrix above.</p></li>
+<li><p>What is the relationship between <span
+class="math inline">A</span>, <span class="math inline">B</span>, and
+<span class="math inline">\alpha</span>? How does it simplify your
+calculation for the accuracy in the previous step?</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading7_6">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_6" aria-expanded="true" aria-controls="collapse7_6">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse7_6" class="accordion-collapse collapse collapse"
+aria-labelledby="heading7_6" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> <span class="math inline">\frac{5}{6}</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-8">Problem 8</h2>
+<p>Let’s continue with the premise from the previous question. That is,
+we will aim to build a classifier that takes in demographic information
+about a state from a particular year and predicts whether or not the
+state’s mean math score is higher than its mean verbal score that
+year.</p>
+<p>In honor of the rotisserie chicken event on UCSD’s campus a few weeks
+ago, <code>sklearn</code> released a new classifier class called
+<code>ChickenClassifier</code>.</p>
+<p><br></p>
+<h3 id="problem-8.1">Problem 8.1</h3>
+<p><code>ChickenClassifier</code>s have many hyperparameters, one of
+which is <code>height</code>. As we increase the value of
+<code>height</code>, the model variance of the resulting
+<code>ChickenClassifier</code> also increases.</p>
+<p>First, we consider the training and testing accuracy of a
+<code>ChickenClassifier</code> trained using various values of
+<code>height</code>. Consider the plot below.</p>
+<center><img src='../assets/images/wi23-final/accuracy.png' width=30%></center>
+<p>Which of the following depicts <strong>training accuracy
+vs. <code>height</code></strong>?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> Option 1</p></li>
+<li><p><input type="radio" disabled="" /> Option 2</p></li>
+<li><p><input type="radio" disabled="" /> Option 3</p></li>
+</ul>
+<p>Which of the following depicts <strong>testing accuracy
+vs. <code>height</code></strong>?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> Option 1</p></li>
+<li><p><input type="radio" disabled="" /> Option 2</p></li>
+<li><p><input type="radio" disabled="" /> Option 3</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading8_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8_1" aria-expanded="true" aria-controls="collapse8_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse8_1" class="accordion-collapse collapse collapse"
+aria-labelledby="heading8_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> Option 2, Option 3</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-8.2">Problem 8.2</h3>
+<p><code>ChickenClassifier</code>s have another hyperparameter,
+<code>color</code>, for which there are four possible values:
+<code>"yellow"</code>, <code>"brown"</code>, <code>"red"</code>, and
+<code>"orange"</code>. To find the optimal value of <code>color</code>,
+we perform <span class="math inline">k</span>-fold cross-validation with
+<span class="math inline">k=4</span>. The results are given in the table
+below.</p>
+<center><img src='../assets/images/wi23-final/cv.png' width=30%></center>
+<p>Which value of <code>color</code> has the best average validation
+accuracy?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> <code>"yellow"</code></p></li>
+<li><p><input type="radio" disabled="" /> <code>"brown"</code></p></li>
+<li><p><input type="radio" disabled="" /> <code>"red"</code></p></li>
+<li><p><input type="radio" disabled="" /> <code>"orange"</code></p></li>
+</ul>
+<p>True or False: It is possible for a hyperparameter value to have the
+best average validation accuracy across all folds, but not have the best
+validation accuracy in any one particular fold.</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> True</p></li>
+<li><p><input type="radio" disabled="" /> False</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading8_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8_2" aria-expanded="true" aria-controls="collapse8_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse8_2" class="accordion-collapse collapse collapse"
+aria-labelledby="heading8_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> <code>"red"</code>, True</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-8.3">Problem 8.3</h3>
+<p>Now, instead of finding the best <code>height</code> and best
+<code>color</code> individually, we decide to perform a grid search that
+uses <span class="math inline">k</span>-fold cross-validation to find
+the combination of <code>height</code> and <code>color</code> with the
+best average validation accuracy.</p>
+<p>For the purposes of this question, assume that: - We are performing
+<span class="math inline">k</span>-fold cross validation.</p>
+<ul>
+<li><p>Our training set contains <span class="math inline">n</span>
+rows, where <span class="math inline">n</span> is greater than 5 and is
+a multiple of <span class="math inline">k</span>.</p></li>
+<li><p>There are <span class="math inline">h_1</span> possible values of
+<code>height</code> and <span class="math inline">h_2</span> possible
+values of <code>color</code>.</p></li>
+</ul>
+<p>What is the size of each fold?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> <span class="math inline">k</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">\frac{k}{n}</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">\frac{n}{k}</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">\frac{n}{k} \cdot (k - 1)</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">h_1h_2k</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">h_1h_2(k-1)</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">\frac{nh_1h_2}{k}</span></p></li>
+<li><p><input type="radio" disabled="" /> None of the above</p></li>
+</ul>
+<p>How many times is row 5 in the training set used for training?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> <span class="math inline">k</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">\frac{k}{n}</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">\frac{n}{k}</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">\frac{n}{k} \cdot (k - 1)</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">h_1h_2k</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">h_1h_2(k-1)</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">\frac{nh_1h_2}{k}</span></p></li>
+<li><p><input type="radio" disabled="" /> None of the above</p></li>
+</ul>
+<p>How many times is row 5 in the training set used for validation?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> <span class="math inline">k</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">\frac{k}{n}</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">\frac{n}{k}</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">\frac{n}{k} \cdot (k - 1)</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">h_1h_2k</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">h_1h_2(k-1)</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">\frac{nh_1h_2}{k}</span></p></li>
+<li><p><input type="radio" disabled="" /> None of the above</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading8_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8_3" aria-expanded="true" aria-controls="collapse8_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse8_3" class="accordion-collapse collapse collapse"
+aria-labelledby="heading8_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> Option 3, Option 6, Option 8</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-9">Problem 9</h2>
+<p>One piece of information that may be useful as a feature is the
+proportion of SAT test takers in a state in a given year that qualify
+for free lunches in school. The Series <code>lunch_props</code> contains
+8 values, each of which are either <code>"low"</code>,
+<code>"medium"</code>, or <code>"high"</code>. Since we can’t use
+strings as features in a model, we decide to encode these strings using
+the following <code>Pipeline</code>:</p>
+<div class="sourceCode" id="cb35"><pre
+class="sourceCode py"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Note: The FunctionTransformer is only needed to change the result</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="co"># of the OneHotEncoder from a &quot;sparse&quot; matrix to a regular matrix</span></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="co"># so that it can be used with StandardScaler;</span></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a><span class="co"># it doesn&#39;t change anything mathematically.</span></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>pl <span class="op">=</span> Pipeline([</span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>    (<span class="st">&quot;ohe&quot;</span>, OneHotEncoder(drop<span class="op">=</span><span class="st">&quot;first&quot;</span>)),</span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>    (<span class="st">&quot;ft&quot;</span>, FunctionTransformer(<span class="kw">lambda</span> X: X.toarray())),</span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>    (<span class="st">&quot;ss&quot;</span>, StandardScaler())</span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>])</span></code></pre></div>
+<p>After calling <code>pl.fit(lunch_props)</code>,
+<code>pl.transform(lunch_props)</code> evaluates to the following
+array:</p>
+<div class="sourceCode" id="cb36"><pre
+class="sourceCode py"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>array([[ <span class="fl">1.29099445</span>, <span class="op">-</span><span class="fl">0.37796447</span>],</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>       [<span class="op">-</span><span class="fl">0.77459667</span>, <span class="op">-</span><span class="fl">0.37796447</span>],</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>       [<span class="op">-</span><span class="fl">0.77459667</span>, <span class="op">-</span><span class="fl">0.37796447</span>],</span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>       [<span class="op">-</span><span class="fl">0.77459667</span>,  <span class="fl">2.64575131</span>],</span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>       [ <span class="fl">1.29099445</span>, <span class="op">-</span><span class="fl">0.37796447</span>],</span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>       [ <span class="fl">1.29099445</span>, <span class="op">-</span><span class="fl">0.37796447</span>],</span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>       [<span class="op">-</span><span class="fl">0.77459667</span>, <span class="op">-</span><span class="fl">0.37796447</span>],</span>
+<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a>       [<span class="op">-</span><span class="fl">0.77459667</span>, <span class="op">-</span><span class="fl">0.37796447</span>]])</span></code></pre></div>
+<p>and <code>pl.named_steps["ohe"].get_feature_names()</code> evaluates
+to the following array:</p>
+<div class="sourceCode" id="cb37"><pre
+class="sourceCode py"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>array([<span class="st">&quot;x0_low&quot;</span>, <span class="st">&quot;x0_med&quot;</span>], dtype<span class="op">=</span><span class="bu">object</span>)</span></code></pre></div>
+<p>Fill in the blanks: Given the above information, we can conclude that
+<code>lunch_props</code> has <strong>(a)</strong> value(s) equal to
+<code>"low"</code>, <strong>(b)</strong> value(s) equal to
+<code>"medium"</code>, and <strong>(c)</strong> value(s) equal to
+<code>"high"</code>. <em>(Note: You should write one positive integer in
+each box such that the numbers add up to 8.)</em></p>
+<p>What goes in blank (a)?</p>
+<p>What goes in blank (b)?</p>
+<p>What goes in blank (c)?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading9">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9" aria-expanded="true" aria-controls="collapse9">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse9" class="accordion-collapse collapse collapse"
+aria-labelledby="heading9" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> 3, 1, 4</p>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="section"><span class="math display"> </span></h2>
+<h4
+id="feedback-find-an-error-still-confused-have-a-suggestion-let-us-know-here.">👋
+Feedback: Find an error? Still confused? Have a suggestion?
+<a href="https://forms.gle/WZ71FchnXU1K154d7">Let us know
+here</u></a>.</h4>
+<hr />
+</body>
+</html>
