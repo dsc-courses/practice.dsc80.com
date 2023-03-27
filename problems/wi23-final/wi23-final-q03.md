@@ -43,7 +43,8 @@ There is exactly one issue with the implementation of `state_perm`. In **exactly
 *Hint: The issue is **not** with the implementation of the function `calc_test_stat`.*
 
 # BEGIN SOLN
-**Answer: ** Since we are permutin in place on the states DataFrame, we must calculate the observed test statistic before we permute.
+
+**Answer: ** Since we are permuting in-place on the `states` DataFrame, we must calculate the observed test statistic before we permute.
 
 # END SOLN
     

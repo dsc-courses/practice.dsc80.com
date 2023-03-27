@@ -45,6 +45,7 @@ Option 3:
 Suppose we want to run a statistical test to assess whether the distributions of the number of students between 2005 and 2015 in New York and Texas are significantly different. 
 
 # BEGIN SUBPROB
+
 What type of test is being proposed above?
     
 ( ) Hypothesis test
@@ -99,11 +100,11 @@ $\text{TVD}(\vec{a}, \vec{b}) = \frac{1}{2} \sum_{i = 1}^n \left| a_i - b_i \rig
 
 The TVD is not the only metric that can quantify the distance between two categorical distributions. Here are three other possible distance metrics:
 
--  $\text{dis1}(\vec{a}, \vec{b}) &= \vec{a} \cdot \vec{b} = a_1b_1 + a_2b_2 + ... + a_nb_n$
+-  $\text{dis1}(\vec{a}, \vec{b}) = \vec{a} \cdot \vec{b} = a_1b_1 + a_2b_2 + ... + a_nb_n$
 
--  $\text{dis2}(\vec{a}, \vec{b}) &= \frac{\vec{a} \cdot \vec{b}}{|\vec{a} | | \vec{b} |} = \frac{a_1b_1 + a_2b_2 + ... + a_nb_n}{\sqrt{a_1^2 + a_2^2 + ... + a_n^2} \sqrt{b_1^2 + b_2^2 + ... + b_n^2}}$
+-  $\text{dis2}(\vec{a}, \vec{b}) = \frac{\vec{a} \cdot \vec{b}}{|\vec{a} | | \vec{b} |} = \frac{a_1b_1 + a_2b_2 + ... + a_nb_n}{\sqrt{a_1^2 + a_2^2 + ... + a_n^2} \sqrt{b_1^2 + b_2^2 + ... + b_n^2}}$
 
--  $text{dis3}(\vec{a}, \vec{b}) &= 1 - \frac{\vec{a} \cdot \vec{b}}{|\vec{a} | | \vec{b} |}$
+-  $text{dis3}(\vec{a}, \vec{b}) = 1 - \frac{\vec{a} \cdot \vec{b}}{|\vec{a} | | \vec{b} |}$
 
 Of the above three possible distance metrics, only one of them has the same range as the TVD (i.e. the same minimum possible value and the same maximum possible value) **and** has the property that smaller values correspond to more similar vectors. Which distance metric is it?
 

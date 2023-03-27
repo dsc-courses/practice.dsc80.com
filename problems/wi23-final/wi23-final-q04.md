@@ -27,6 +27,7 @@ list5 = ['1', '0', '3', '1', '5', '4', '5', '3',
 For each expression below, select the list it evaluates to, or select "None of the above."
 
 # BEGIN SUBPROB
+
 `re.findall(r'\d+', s)`
     
 ( ) list1
@@ -37,6 +38,7 @@ For each expression below, select the list it evaluates to, or select "None of t
 ( ) None of the above
 
 # BEGIN SOLN
+
 **Answer: ** list3
 
 # END SOLN
@@ -44,6 +46,7 @@ For each expression below, select the list it evaluates to, or select "None of t
 # END SUBPROB
 
 # BEGIN SUBPROB
+
 `re.findall(r'[\d+]', s)`
     
 ( ) list1
@@ -54,6 +57,7 @@ For each expression below, select the list it evaluates to, or select "None of t
 ( ) None of the above
 
 # BEGIN SOLN
+
 **Answer: ** list5
 
 # END SOLN
@@ -61,6 +65,7 @@ For each expression below, select the list it evaluates to, or select "None of t
 # END SUBPROB
 
 # BEGIN SUBPROB
+
 `re.findall(r'\[(\d+)\]', s)`
     
 ( ) list1
@@ -69,7 +74,9 @@ For each expression below, select the list it evaluates to, or select "None of t
 ( ) list4
 ( ) list5
 ( ) None of the above
+
 # BEGIN SOLN
+
 **Answer: ** list2
 
 # END SOLN
@@ -77,6 +84,7 @@ For each expression below, select the list it evaluates to, or select "None of t
 # END SUBPROB
 
 # BEGIN SUBPROB
+
 `re.findall(r'(\[\d+\])', s)`
     
 ( ) list1
@@ -85,7 +93,9 @@ For each expression below, select the list it evaluates to, or select "None of t
 ( ) list4
 ( ) list5
 ( ) None of the above
+
 # BEGIN SOLN
+
 **Answer: ** list4
 
 # END SOLN

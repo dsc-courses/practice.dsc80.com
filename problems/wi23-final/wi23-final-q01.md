@@ -172,7 +172,7 @@ Suppose we observe a statistically significant result (that is, the $p$-value of
 ( ) False
 
 # BEGIN SOLN
-**Answer: ** Trie
+**Answer: ** True
 
 # END SOLN
 
