@@ -1,7 +1,7 @@
 # BEGIN PROB
 The following DataFrame contains the mean, median, and standard deviation of the number of students per year who took the SAT in New York and Texas between 2005 and 2015.
 
-<center><img src='../assets/images/wi23-final/nyt.png' width=30%></center>
+<center><img src='../assets/images/wi23-final/nyt.png' width=35%></center>
 
 # BEGIN SUBPROB
 
@@ -47,7 +47,7 @@ Suppose we want to run a statistical test to assess whether the distributions of
 # BEGIN SUBPROB
 
 What type of test is being proposed above?
-    
+
 ( ) Hypothesis test
 ( ) Permutation test
 
@@ -77,9 +77,8 @@ Now, suppose we're interested in comparing the verbal score distribution of stud
 
 The DataFrame `scores_2015`, shown in its entirety below, contains the verbal section score distributions of students in New York in 2015 and for all students in 2015.
 
-<center><img src='../assets/images/wi23-final/ny_vs_all.png' width=30%></center>
+<center><img src='../assets/images/wi23-final/ny_vs_all.png' width=25%></center>
 
-    
 # BEGIN SUBPROB
 What type of test is being proposed above?
     
@@ -104,7 +103,7 @@ The TVD is not the only metric that can quantify the distance between two catego
 
 -  $\text{dis2}(\vec{a}, \vec{b}) = \frac{\vec{a} \cdot \vec{b}}{|\vec{a} | | \vec{b} |} = \frac{a_1b_1 + a_2b_2 + ... + a_nb_n}{\sqrt{a_1^2 + a_2^2 + ... + a_n^2} \sqrt{b_1^2 + b_2^2 + ... + b_n^2}}$
 
--  $text{dis3}(\vec{a}, \vec{b}) = 1 - \frac{\vec{a} \cdot \vec{b}}{|\vec{a} | | \vec{b} |}$
+-  $\text{dis3}(\vec{a}, \vec{b}) = 1 - \frac{\vec{a} \cdot \vec{b}}{|\vec{a} | | \vec{b} |}$
 
 Of the above three possible distance metrics, only one of them has the same range as the TVD (i.e. the same minimum possible value and the same maximum possible value) **and** has the property that smaller values correspond to more similar vectors. Which distance metric is it?
 

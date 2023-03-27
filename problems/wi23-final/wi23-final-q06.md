@@ -114,7 +114,7 @@ Fill in the blank: The term $t$ in document $d$ that best summarizes document $d
 ( ) the smallest DF-ITF in document $d$
 
 # BEGIN SOLN
-**Answer: **
+**Answer: ** the smallest
 
 # END SOLN
 

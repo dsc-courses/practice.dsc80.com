@@ -86,7 +86,7 @@ While Classifier 1's accuracy on our training set is $\frac{5}{9}$, its accuracy
 
 For the remainder of this question, suppose we train another classifier, named Classifier 2, again on our training set. Its performance on the training set is described in the confusion matrix below. Note that the columns of the confusion matrix have been separately normalized so that each has a sum of 1.
 
-<center><img src='../assets/images/wi23-final/conf_matrix.png' width=30%></center>
+<center><img src='../assets/images/wi23-final/conf-matrix.png' width=30%></center>
 
 # BEGIN SUBPROB
 Suppose `conf` is the DataFrame above. Which of the following evaluates to a Series of length 2 whose only unique value is the number `1`?
@@ -116,7 +116,7 @@ Fill in the blank: the ___ of Classifier 2 is guaranteed to be 0.6.
 
 For your convenience, we show the column-normalized confusion matrix from the previous page below. You will need to use the specific numbers in this matrix when answering the following subpart.
 
-<center><img src='../assets/images/wi23-final/conf_matrix.png' width=30%></center>
+<center><img src='../assets/images/wi23-final/conf-matrix.png' width=30%></center>
 
 # BEGIN SUBPROB
 Suppose a fraction $\alpha$ of the labels in the training set are actually 1 and the remaining $1 - \alpha$ are actually 0. The accuracy of Classifier 2 is 0.65. What is the value of $\alpha$? \textbf{Show your work in the box below, and give your answer as a simplified fraction in the box at the bottom of the page.}

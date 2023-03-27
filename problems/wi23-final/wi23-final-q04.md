@@ -67,7 +67,7 @@ For each expression below, select the list it evaluates to, or select "None of t
 # BEGIN SUBPROB
 
 `re.findall(r'\[(\d+)\]', s)`
-    
+
 ( ) list1
 ( ) list2
 ( ) list3

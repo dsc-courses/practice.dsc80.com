@@ -11,7 +11,7 @@ The other columns are as follows:
 
 The first few rows of `sat` are shown below  (though `sat` has many more rows than are pictured here).
 
-<center><img src='../assets/images/wi23-final/df.png' width=30%></center>
+<center><img src='../assets/images/wi23-final/df.png' width=40%></center>
 
 For instance, the first row of `sat` tells us that 41227 students took the SAT in Washington in 2014, and among those students, the mean math score was 519 and the mean verbal score was 510.
 

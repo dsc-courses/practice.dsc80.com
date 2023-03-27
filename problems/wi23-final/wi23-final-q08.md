@@ -34,7 +34,7 @@ Which of the following depicts **testing accuracy vs. `height`**?
 # BEGIN SUBPROB
 `ChickenClassifier`s have another hyperparameter, `color`, for which there are four possible values: `"yellow"`, `"brown"`, `"red"`, and `"orange"`. To find the optimal value of `color`, we perform $k$-fold cross-validation with $k=4$. The results are given in the table below.
 
-<center><img src='../assets/images/wi23-final/cv.png' width=30%></center>
+<center><img src='../assets/images/wi23-final/CV.png' width=30%></center>
 
 
 Which value of `color` has the best average validation accuracy?
