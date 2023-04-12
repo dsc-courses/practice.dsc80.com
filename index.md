@@ -4,7 +4,7 @@ title: Home – DSC 80 Practice
 
 <h1><a href=''>Practice Problems</a></h1>
 
-<h3><a href='https://dsc80.com'>DSC 80, Winter 2023</a></h3>
+<h3><a href='https://dsc80.com'>DSC 80 at UC San Diego</a></h3>
 
 ---
 
@@ -32,7 +32,7 @@ This site contains practice problems taken from old DSC 80 exams. Each exam link
       <td>Suraj Rampure</td>
       <td><a href='wi23-midterm/index.html'>Midterm</a>
           <br>
-          <a href='wi23-final/index.html'>Final</a>
+          <a href='wi23-final/index.html'>Final</a> (in progress)
       </td>
     </tr>
     <tr>
