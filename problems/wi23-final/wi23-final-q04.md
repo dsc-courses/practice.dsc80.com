@@ -29,13 +29,15 @@ For each expression below, select the list it evaluates to, or select "None of t
 # BEGIN SUBPROB
 
 `re.findall(r'\d+', s)`
-    
+
+
 ( ) list1
 ( ) list2
 ( ) list3
 ( ) list4
 ( ) list5
 ( ) None of the above
+
 
 # BEGIN SOLN
 
@@ -48,13 +50,15 @@ For each expression below, select the list it evaluates to, or select "None of t
 # BEGIN SUBPROB
 
 `re.findall(r'[\d+]', s)`
-    
+
+
 ( ) list1
 ( ) list2
 ( ) list3
 ( ) list4
 ( ) list5
 ( ) None of the above
+
 
 # BEGIN SOLN
 
@@ -68,12 +72,14 @@ For each expression below, select the list it evaluates to, or select "None of t
 
 `re.findall(r'\[(\d+)\]', s)`
 
+
 ( ) list1
 ( ) list2
 ( ) list3
 ( ) list4
 ( ) list5
 ( ) None of the above
+
 
 # BEGIN SOLN
 
@@ -86,13 +92,15 @@ For each expression below, select the list it evaluates to, or select "None of t
 # BEGIN SUBPROB
 
 `re.findall(r'(\[\d+\])', s)`
-    
+
+
 ( ) list1
 ( ) list2
 ( ) list3
 ( ) list4
 ( ) list5
 ( ) None of the above
+
 
 # BEGIN SOLN
 
