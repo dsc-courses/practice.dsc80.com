@@ -38,6 +38,12 @@ Option 3:
 # BEGIN SOLN
 **Answer: ** Option 2
 
+Option 1: is incorrect because it attempts to select the `# Students` column before grouping by `State`, which is not possible.
+
+Option 2: filters the DataFrame, groups by `State`, and then performs aggregation only on the `# Students` column, making it efficient.
+
+Option 3: does the aggregations for all columns first and then selects the `# Students` column, which is less efficient because it computes aggregations for potentially many columns that are not needed.
+
 # END SOLN
 
 # END SUBPROB
@@ -54,6 +60,9 @@ What type of test is being proposed above?
 # BEGIN SOLN
 **Answer: ** Permutation test
 
+We aim to determine if there's a significant difference between the student distributions in New York and Texas. This requires us to randomly shuffle the group labels and recalculate the means for the permuted groups, making this a permutation test.
+
+
 # END SOLN
     
 # END SUBPROB
@@ -68,6 +77,8 @@ Given the information in the above DataFrame, which test statistic is **most lik
 
 # BEGIN SOLN
 **Answer: ** The Kolmogorov-Smirnov statistic 
+
+Calculating the diference in mean and median only focuses on the central tendency and is unable to consider the full distribution of the data. The Kolmogorov-Smirnov statistic is most likely to yield a significant difference if there are any differences in the distributions beyond just the central tendency. It is more comprehensive as it evaluates differences across the entire range of the distributions, making it a robust choice for comparing the two states' SAT student distributions.
 
 # END SOLN
     
@@ -87,6 +98,8 @@ What type of test is being proposed above?
 
 # BEGIN SOLN
 **Answer: ** Hypothesis test
+
+The key aspect of a hypothesis test is determining whether any observed differences between the sample and population data are due to random chance. Here, we are dealing with one large population data (scores of all students in 2015) and testing if our sample observed data (scores from New York students in 2015) is statistically different, marking this a hypothesis test.
 
 # END SOLN
     
