@@ -5,7 +5,7 @@ For this question, assume that the researchers chose the $30$ donkeys to reweigh
 # BEGIN SUBPROB
 $a)$ ($3$ points) Which of the following shows the scatter plot of `WeightAlt - Weight` on the y-axis and `Weight` on the x-axis? Assume that missing values are not plotted.
 
-<center><img src='../assets/images/fa23-midterm/dsc80_midterm_q4a' width=65%></center>
+<center><img src='../../assets/images/fa23-midterm/dsc80_midterm_q4a.png' width=65%></center>
 
 # BEGIN SOLN
 **Answer:** D)

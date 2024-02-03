@@ -3,7 +3,7 @@ Fill in Python code below so that the last line of each part evaluates to each d
 
 The `df` table (left) records what people ate in kilograms (kg) on each date in 2023. For example, the first row records that Sam ate 0.2 kg of Ribeye on Jan 1, 2023. The `foods` table (right) records the carbon dioxide (CO2) emissions it takes to produce each kind of food. For example, the first row in the `foods` table shows that growing 1 kg of mung beans produces 0.1 kg of CO2.
 
-<center><img src='../assets/images/fa23-midterm/dsc80_midterm_q1' width=65%></center>
+<center><img src='../../assets/images/fa23-midterm/dsc80_midterm_q1.png' width=65%></center>
 
 # BEGIN SUBPROB
 

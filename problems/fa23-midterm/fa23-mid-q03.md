@@ -1,7 +1,7 @@
 # BEGIN PROB
 The `donkeys` table contains data from a research study about donkey health. The researchers measured the attributes of $544$ donkeys. The next day, they selected $30$ donkeys to reweigh. The first few rows of the `dnokeys` table are shown below (left), and the table contains the following columns (right):
 
-<center><img src='../assets/images/fa23-midterm/dsc80_midterm_q3' width=65%></center>
+<center><img src='../../assets/images/fa23-midterm/dsc80_midterm_q3.png' width=65%></center>
 
 # BEGIN SUBPROB
 $(a)$ ($10$ points) What is the feature type of each column in `donkeys`? For each column below, answer 

@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Fall 2023 Midterm Exam</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="../assets/theme.css" />
+  <script defer=""
+  src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Fall 2023 Midterm Exam</h1>
+</header>
+<p><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<!-- add after bootstrap.min.css -->
+<link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css"/>
+<!-- add after bootstrap.min.js or bootstrap.bundle.min.js -->
+<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script></p>
+<!-- for difficulty gauges-->
+<script src="https://cdn.plot.ly/plotly-2.16.1.min.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B947E6J6H4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-B947E6J6H4');
+</script>
+<p><a href="../index.html">← return to practice.dsc80.com</a></p>
+<hr />
+<p><strong>Instructor(s):</strong> Sam Lau</p>
+<p>This exam was administered in-person. The exam was closed-notes,
+except students were allowed to bring a single two-sided notes sheet. No
+calculators were allowed. Students had <strong>80 minutes</strong> to
+take this exam.</p>
+<hr />
+<h2 id="problem-1">Problem 1</h2>
+<p>Fill in Python code below so that the last line of each part
+evaluates to each desired result, assuming that the following tables are
+both stored as Pandas DataFrames. <strong>You may not use for or while
+loops in any answer for this question. Only the first few rows are shown
+for each table.</strong></p>
+<p>The <code>df</code> table (left) records what people ate in kilograms
+(kg) on each date in 2023. For example, the first row records that Sam
+ate 0.2 kg of Ribeye on Jan 1, 2023. The <code>foods</code> table
+(right) records the carbon dioxide (CO2) emissions it takes to produce
+each kind of food. For example, the first row in the <code>foods</code>
+table shows that growing 1 kg of mung beans produces 0.1 kg of CO2.</p>
+<center><img src='../../assets/images/fa23-midterm/dsc80_midterm_q1.png' width=65%></center>
+<p><br></p>
+<h3 id="problem-1.1">Problem 1.1</h3>
+<p><span class="math inline">(a)</span> (<span
+class="math inline">3</span> points) Find the total kg of food eaten for
+each day and each person in <code>df</code> as a Series
+<code>df.groupby(____)[____].sum()</code></p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_1" aria-expanded="true" aria-controls="collapse1_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_1" class="accordion-collapse collapse collapse"
+aria-labelledby="heading1_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer</strong>:
+<code>df.groupby(['date', 'name'])['weight'].sum()</code></p>
+<p>To satisfy “each day and each person”, we need to group by both the
+<code>'date'</code> and <code>'name'</code> columns by passing them in
+as a list. Then to get “kg of food eaten”, we must select the
+<code>'weight'</code> column with the second blank. The
+<code>sum()</code> function then will get the “total” amount as a Series
+(where you have <code>'date'</code> and <code>'name'</code> as indices
+and the sum as the value).</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-1.2">Problem 1.2</h3>
+<p><span class="math inline">(b)</span> (<span
+class="math inline">3</span> points) Find all the rows in
+<code>df</code> where Tina was the person eating.
+<code>df.____</code></p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_2" aria-expanded="true" aria-controls="collapse1_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_2" class="accordion-collapse collapse collapse"
+aria-labelledby="heading1_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer</strong>:
+<code>df.loc[df['name'] == 'Tina']</code></p>
+<p>We can use the <code>loc</code> function to select the rows from
+<code>df</code> under a specific condition, where rows satisfying the
+condition as <code>True</code> will be selected. In this case, to get
+the rows where “Tina was the person eating”, our conditional is when a
+value from the column <code>df['name']</code> is equal to the string
+<code>'Tina'</code>.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br> <br></p>
+<h3 id="problem-1.3">Problem 1.3</h3>
+<p><span class="math inline">(c)</span> (<span
+class="math inline">3</span> points) Find all the unique people who
+<strong>did not</strong> eat any food containing the word “beans”.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> foo(x):</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> ____</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>df.groupby(____).____(foo)[<span class="st">&#39;name&#39;</span>].unique()</span></code></pre></div>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_3" aria-expanded="true" aria-controls="collapse1_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_3" class="accordion-collapse collapse collapse"
+aria-labelledby="heading1_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer</strong>:</p>
+<div id="cb1" class="sourceCode">
+<pre class="sourceCode py"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" href="#cb1-1" tabindex="-1"></a><span class="kw">def</span> foo(x):</span>
+<span id="cb1-2"><a aria-hidden="true" href="#cb1-2" tabindex="-1"></a>    <span class="cf">return</span> <span class="kw">not</span> x[<span class="st">'food'</span>].<span class="bu">str</span>.contains(<span class="st">'beans'</span>).<span class="bu">any</span>()</span>
+<span id="cb1-3"><a aria-hidden="true" href="#cb1-3" tabindex="-1"></a>    </span>
+<span id="cb1-4"><a aria-hidden="true" href="#cb1-4" tabindex="-1"></a>df.groupby(<span class="st">'name'</span>).<span class="bu">filter</span>(foo)[<span class="st">'name'</span>].unique()</span></code></pre>
+</div>
+<p>To solve this, we start with the bottom line since without it we
+don’t know what the parameter <code>x</code> is in <code>foo(x)</code>.
+Since we want to find “the unique people”, we will group by
+<code>name</code> to get to the per-individual level. Then, since we
+want to only select certain rows from an aggregate, we can use the
+<code>filter</code> function. Since we pass <code>foo</code> into
+<code>filter</code>, we can now work on the <code>foo</code> function
+knowing <code>x</code> will be a group of <code>df</code> when
+aggregated by <code>name</code> (all the rows belonging to a single
+name).</p>
+<p>To find people who ate food containing the word <code>"beans"</code>,
+we need to find the column of the food they ate: <code>x['food']</code>.
+Then we can recall that Pandas has built-in string manipulation
+functions that can be used by calling <code>.str.[function]</code>. In
+this case, to find the string <code>"beans"</code> we will use
+<code>.str.contains('beans')</code>. At this point, we have a boolean
+series representing for one person, which meals they ate contained the
+word <code>"beans"</code>.</p>
+<p>We then want to add <code>any()</code> because if we find
+<code>"beans"</code> in ANY of the meals (represented as
+<code>True</code> in any of the boolean series’ values) someone ate, it
+is <code>True</code> that they ate something containing
+<code>"beans"</code>. Finally, we want to get the people who <strong>did
+not</strong> eat food with <code>"beans"</code>, so we will add a
+<code>not</code> modifier before our code. Then we can directly return
+this value, and <code>filter</code> will keep <code>True</code> rows and
+drop <code>false</code> rows.</p>
+<p>The code then selects the <code>name</code> column and filters to
+only the unique values for our final solution.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-1.4">Problem 1.4</h3>
+<p><span class="math inline">(d)</span> (<span
+class="math inline">5</span> points) Create a copy of <code>df</code>
+tht has one extra column called <code>words</code> that contains the
+number of words for each value in the <code>food</code> column. Assume
+that words are separated by one space character. For example, “Pinto
+beans” has two words.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(x):</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> ____</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>df.assign(____)</span></code></pre></div>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_4" aria-expanded="true" aria-controls="collapse1_4">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_4" class="accordion-collapse collapse collapse"
+aria-labelledby="heading1_4" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer</strong>:</p>
+<div id="cb1" class="sourceCode">
+<pre class="sourceCode py"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" href="#cb1-1" tabindex="-1"></a><span class="kw">def</span> f(x):</span>
+<span id="cb1-2"><a aria-hidden="true" href="#cb1-2" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">len</span>(x.split())</span>
+<span id="cb1-3"><a aria-hidden="true" href="#cb1-3" tabindex="-1"></a>    </span>
+<span id="cb1-4"><a aria-hidden="true" href="#cb1-4" tabindex="-1"></a>df.assign(words <span class="op">=</span> df[<span class="st">'food'</span>].<span class="bu">apply</span>(f))</span></code></pre>
+</div>
+<p>Like the problem before, we need to start with the bottom line before
+working on <code>f(x)</code> so that we can determine what the parameter
+<code>x</code> represents. We are given the <code>assign</code>
+function, which we know will create a new column with format
+<code>assign([column name] = [values])</code>. We are given that our
+column name is <code>words</code>, so now we just need to get the
+values: the number of words for each value in the <code>food</code>
+column.</p>
+<p>Knowing we have a helper function <code>f(x)</code>, we can use the
+<code>apply()</code> function on the <code>food</code> column
+<code>df['food']</code> to pass each value in food through
+<code>f(x)</code>. Then, we can use <code>f(x)</code> to calculate the
+number of words per value in <code>food</code>, where <code>x</code> is
+a single value. Since we are given that words are separated by
+whitespace, we can just call <code>x.split()</code> to get a list with
+each word in its own index. The <code>len()</code> of that list is
+therefore the count of words.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-1.5">Problem 1.5</h3>
+<p><span class="math inline">(e)</span> (<span
+class="math inline">8</span> points) Find the total kg of CO<sub>2</sub>
+produced by each person in <code>df</code>. If a food in <code>df</code>
+doesn’t have a matching value in <code>foods</code>, assume that the
+food generates <span class="math inline">100</span> kg of CO<sub>2</sub>
+per kg of food.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df2 <span class="op">=</span> df.merge(foods, ____)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>(df2.assign(____).groupby(<span class="st">&#39;name&#39;</span>)[<span class="st">&#39;c&#39;</span>].<span class="bu">sum</span>()) </span></code></pre></div>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_5">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_5" aria-expanded="true" aria-controls="collapse1_5">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_5" class="accordion-collapse collapse collapse"
+aria-labelledby="heading1_5" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer</strong>:</p>
+<div id="cb1" class="sourceCode">
+<pre class="sourceCode py"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" href="#cb1-1" tabindex="-1"></a>df2 <span class="op">=</span> df.merge(foods, left_on <span class="op">=</span> <span class="st">'food'</span>, right_index <span class="op">=</span> <span class="va">True</span>, how <span class="op">=</span> <span class="st">'left'</span>)</span>
+<span id="cb1-2"><a aria-hidden="true" href="#cb1-2" tabindex="-1"></a>(df2.assign(c<span class="op">=</span>df2[<span class="st">'weight'</span>] <span class="op">*</span> df2[<span class="st">'co2/kg'</span>].fillna(<span class="dv">100</span>).groupby(<span class="st">'name'</span>)[<span class="st">'c'</span>].<span class="bu">sum</span>()) </span></code></pre>
+</div>
+<p>To begin, we are merging <code>df</code> and <code>foods</code> as
+<code>df2</code>, but we need to figure out how. There are multiple ways
+to do this, so your answer might not match exactly what we have. We can
+see that the way to merge s owe get the <code>co2/kg</code> for each
+food is to merge the <code>food</code> column of <code>df</code> with
+the index of <code>foods</code>. Since <code>df</code> is on the left,
+we pass in <code>left_on = 'food'</code>. Since <code>foods</code> is on
+the right and we are merging on the index not a column, we pass in
+<code>right_index = True</code> as well. Then, we are told “if a food
+doesn’t have a matching value in <code>foods</code>, assume that the
+food generates <span class="math inline">100</span> kg of CO<sub>2</sub>
+per kg of food. This means we can’t use the default inner join as this
+will drop non-matching values. Instead, we want to keep everything in
+the <code>df</code> table, so we say <code>how='left'</code> to do a
+left join.</p>
+<p>Now that we have <code>df2</code> that has all the columns of
+<code>df</code> as well as a column of the co2/kg for each row, we can
+calculate the CO<sub>2</sub> production per person. We see that we are
+given code that groups the dataframe by person name, selects some column
+<code>"c"</code> that isn’t in <code>df2</code> yet, and then sums the
+values. This seems to handle the <strong>total</strong> kg of
+CO<sub>2</sub> <strong>per person</strong> by calling <code>sum()</code>
+and <code>groupby('name')</code>. That tells us we need to make a new
+column <code>c</code> representing the kg of CO<sub>2</sub> per
+meal/row. We are already given the <code>assign</code> function in the
+code, so we know that in that blank we need
+<code>c = [calculate CO2 weight]</code>. We have the <code>weight</code>
+and <code>co2/kg</code> columns in <code>df2</code>, so multiplying
+these would give us the end CO<sub>2</sub> for <code>c</code>. This
+looks like <code>df2['weight'] * df2['co2/kg']</code>.</p>
+<p>Finally, we must recall that we are expected to handle the case where
+there is no matching value in the merge. Since we are doing a left join,
+we keep every value in <code>df</code> and might fill in some values of
+<code>foods</code> with <code>NaN</code> values. That means
+<code>df2['co2/kg']</code> needs to have <code>NaN</code> values
+replaced with <code>100</code>, and that can be done with
+<code>fillna(100)</code>. That makes our final solution
+<code>c = df2['weight'] * df2['co2/kg'].fillna(100)</code>.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-2">Problem 2</h2>
+<p>For this question, we’ll continue using hte <code>df</code> and
+<code>foods</code> tables form Question <span
+class="math inline">1</span>. Dyaln and Giorgia wnat to compare their
+CO<span class="math inline">_2</span> emissions. They added a new column
+called <code>bean</code> to <code>df</code> that contains
+<code>True</code> if the food was a bean (e.g. “Pinto beans”) and
+<code>False</code> otherwise. Then, they compute the following pivot
+table:</p>
+<center><img src='../../assets/images/fa23-midterm/dsc80_midterm_q2.png' width=65%></center>
+<p>Each entry in the pivot table is the average CO<span
+class="math inline">_2</span>emissions for Dylan and Giorgia per kg of
+food they ate (CO<span class="math inline">_2</span>/kg) for both bean
+and non-bean foods. <br></p>
+<h3 id="problem-2.1">Problem 2.1</h3>
+<p><span class="math inline">(a)</span> (<span
+class="math inline">8</span> points) Suppose that overall, Dylan
+produced an average of <span class="math inline">41</span> CO<span
+class="math inline">_2</span>/kg of food he ate, while Giorgia produced
+an average of <span class="math inline">38</span> CO<span
+class="math inline">_2</span>/kg. Determine whether each statement is
+definitely true(T), definitely false (F), or whether more information is
+needed (M) beyond this information and the pivot table above.</p>
+<p><em>A)</em>    [T] [F] [M] This is an example of Simpson’s
+Paradox.<br />
+<em>B)</em>    [T] [F] [M] Dylan ate at least as many kg of bean foods
+compared to Giorgia.<br />
+<em>C)</em>    [T] [F] [M] Giorgia ate a higher proportion of bean foods
+than Dylan.<br />
+<em>D)</em>    [T] [F] [M] Dylan emitted more kg of CO<span
+class="math inline">_2</span> than Giorgia overall.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading2_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_1" aria-expanded="true" aria-controls="collapse2_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse2_1" class="accordion-collapse collapse collapse"
+aria-labelledby="heading2_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer:</strong><br/>
+<em>A)</em> T <em>B)</em> M <em>C)</em> T <em>D)</em> M</p>
+<p>A): Definitely True. Simpson’s Paradox is the case where grouped data
+and ungrouped data show different trends. In this case, the grouped data
+shown by the table give the appearance that Giogia’s CO<span class="math inline">_2</span>/kg is greater than Dylan’s. However, the
+ungrouped data that is the average given in the problem tells us that
+Dylan’s CO<span class="math inline">_2</span>/kg is greater.</p>
+<p>B): More info needed. Since this problem only deals with the
+proportion of CO<span class="math inline">_2</span>/kg, we cannot know
+anything about the actual kg amounts. <span class="math inline">41</span> CO<span class="math inline">_2</span>/kg
+can be <span class="math inline">41</span> CO<span class="math inline">_2</span> in <span class="math inline">1</span> kg
+of eaten food, or <span class="math inline">410</span> CO<span class="math inline">_2</span> in <span class="math inline">10</span> kg
+of eaten food.</p>
+<p>C): Definitely True. This is definitely be true because we see that
+Giorgia’s overall average CO<span class="math inline">_2</span>/kg is
+lower than Dylan’s, even though her grouped amounts are greater. This is
+because these proportions of these groups must be different for Dylan
+and Giorgia. In this case, since <code>bean=True</code> produces less
+CO<span class="math inline">_2</span>/kg, Giorgia must have a higher
+proportion of her food being <code>bean=True</code> in order to average
+out with a lower CO<span class="math inline">_2</span>/kg than
+Dylan.</p>
+<p>D): More info needed. Similar to problem B), we only know about the
+CO<span class="math inline">_2</span>/kg proportion, and not the actual
+amounts. Even though Dylan has a higher average CO<span class="math inline">_2</span>/kg output, if he ate less kg of food than
+Giorgia he may emit less kg of CO<span class="math inline">_2</span>
+overall.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-2.2">Problem 2.2</h3>
+<p><span class="math inline">(b)</span> (<span
+class="math inline">8</span> points) Dylan and Giorgia want to figure
+out exactly when Simpson’s paradox occurs for their data. Suppose that
+<span class="math inline">0.2</span> proportion of Dylan’s food was bean
+foods. What range of proportions for Giorgia’s bean food would cause
+Simpson’s paradox to occur? Show your work in the space below,
+<strong>then write your final answer in the blanks at the bottom of the
+page.</strong> Your final answers should be between <span
+class="math inline">0</span> and <span class="math inline">1</span>.
+Leave your answers as simplified fractions.</p>
+<p>Between ____ and ____</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading2_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_2" aria-expanded="true" aria-controls="collapse2_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse2_2" class="accordion-collapse collapse collapse"
+aria-labelledby="heading2_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer:</strong> Between <span class="math inline">\frac{39}{70}</span> and <span class="math inline">1</span></p>
+<p>First, we solve for the proportions that make the average overall
+CO<span class="math inline">_2</span>/kg the same for Dylan and Giorgia
+as our threshold value. Since we are finding Giorgia’s range of
+proportions, we will form our equation from her table column and set it
+equal to Dylan’s average production: <span class="math display">
+41 = 10B_{True} + 80B_{False}
+</span> Where <span class="math inline">B_{True}</span> represents
+<code>bean = True</code> and <span class="math inline">B_{False}</span>
+represents <code>bean = False</code>.</p>
+<p>We also know that proportions must add to <span class="math inline">1</span>, so: <span class="math display">
+1 = B_{True} + B_{False}
+\\\implies B_{False} =  1 - B_{True}
+</span> We can now plug this in to our first equation to get: <span class="math display">
+41 = 10B_{True} + 80(1 - B_{True})
+\\...
+\\B_{True} =\frac{39}{70}
+</span> Next we find whether Simpson’s paradox occurs above or below
+this value where the two are equal. Since the grouped data shows
+Giorgia’s CO<span class="math inline">_2</span>/kg emissions are
+greater, we want to find the range of <span class="math inline">B_{True}</span> that results in a solution lower
+than <span class="math inline">41</span>. We can see that plugging in
+<span class="math inline">B_{True}=1</span> gives: <span class="math display"> 10(1) + 80(0) = 10</span> so our solution will be
+between <span class="math inline">\frac{39}{70}</span> and <span class="math inline">1</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-3">Problem 3</h2>
+<p>The <code>donkeys</code> table contains data from a research study
+about donkey health. The researchers measured the attributes of <span
+class="math inline">544</span> donkeys. The next day, they selected
+<span class="math inline">30</span> donkeys to reweigh. The first few
+rows of the <code>dnokeys</code> table are shown below (left), and the
+table contains the following columns (right):</p>
+<center><img src='../../assets/images/fa23-midterm/dsc80_midterm_q3.png' width=65%></center>
+<p><br></p>
+<h3 id="problem-3.1">Problem 3.1</h3>
+<p><span class="math inline">(a)</span> (<span
+class="math inline">10</span> points) What is the feature type of each
+column in <code>donkeys</code>? For each column below, answer - Discrete
+continuous - Continuous - Ordinal - Nominal</p>
+<p>id: ____ BCS: ____ Age: ____ Weight: ____ WeightAlt: ____</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading3_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_1" aria-expanded="true" aria-controls="collapse3_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse3_1" class="accordion-collapse collapse collapse"
+aria-labelledby="heading3_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer:</strong> id: Nominal BCS: Ordinal Age: Ordinal
+Weight: Continuous WeightAlt: Continuous</p>
+<p>id - Nominal. This is qualitative data. While each id has a number
+such as <span class="math inline">01</span> or <span class="math inline">02</span>, these numbers are not ordered to signify
+any id is “greater” than another.</p>
+<p>BCS - Ordinal. This is qualitative data as BCS is an interpretive
+score representing “emaciated” to “obese”. The data is ordered as it
+follows the scale mentioned prior.</p>
+<p>Age - Ordinal. This is qualitative data since the age is bucketed as
+“&lt;2”, “2-5”, and so on. The data is ordered as “&lt;2” is younger
+than “2-5”, so this is also a scale of age.</p>
+<p>Weight - Continuous. This is quantitative since weight is a numeric
+measurement. It is continuous because there is no given restriction on
+the values the weight can take on.</p>
+<p>WeightAlt - Continuous. This is quantitative since weight is a
+numeric measurement. It is continuous because there is no given
+restriction on the values the weight can take on. Note that NaN values
+do not change the feature type of this variable.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-3.2">Problem 3.2</h3>
+<p><span class="math inline">(b)</span> (<span
+class="math inline">10</span> points) Consider the following scenarios
+for how the researchers chose the <span class="math inline">30</span>
+donkeys to reweigh. In each scenario, select if the missing mechanism
+for the <code>WeightAlt</code> column is NMAR, MAR, or MCAR. <em>Note:
+Although the missing data are missing by design from the perspective of
+the original researchers, since we can’t directly recover the missing
+values from our other data, we can treat the missing data as NMAR, MAR,
+or MCAR.</em></p>
+<p><em>A)</em>     The researchers chose the <span
+class="math inline">30</span> donkeys with the largest
+<code>Weight</code> values to reweigh. ____</p>
+<p><em>B)</em>    The researchers drew <span
+class="math inline">30</span> donkeys uniformly at random without
+replacement from the donkeys with <code>BCS</code> score of <span
+class="math inline">4</span> or greater. ____</p>
+<p><em>C)</em>     The researchers set <code>i</code> as a number drawn
+uniformly at random between <span class="math inline">0</span> and <span
+class="math inline">514</span>, then reweighed the donkeys in
+<code>donkeys.iloc[i:i+30]</code>. ____</p>
+<p><em>D)</em>     The researchers reweighed all the donkeys, but
+deleted all the values in <code>WeightAlt</code> except for the <span
+class="math inline">30</span> lowest values. ____</p>
+<p><em>E)</em>     The researchers split up the donkeys into the 6
+different age groups, then sampled <span class="math inline">5</span>
+donkeys uniformly at random without replacement within each age group.
+____</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading3_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_2" aria-expanded="true" aria-controls="collapse3_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse3_2" class="accordion-collapse collapse collapse"
+aria-labelledby="heading3_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer:</strong> <em>A)</em> MAR <em>B)</em> MAR <em>C)</em>
+MCAR or MAR <em>D)</em> NMAR <em>E)</em> MCAR or MAR</p>
+<p>A): Missing at random. This means missing values depend on another
+column in the dataframe. In this case, the missing values of
+<code>WeightAlt</code> depend on the <code>Weight</code> column since we
+select the <span class="math inline">30</span> largest.</p>
+<p>B): Missing at random. This means missing values depend on another
+column in the dataframe. In this case, the missing values of
+<code>WeightAlt</code> depend on the <code>BCS</code> column since we
+choose from those with a score of <span class="math inline">4</span> or
+greater.</p>
+<p>C): Missing completely at random or Missing at random. This means
+missing values depend on another column in the dataframe. The missing
+values depend on the index since index <span class="math inline">0</span> can only be selected if <code>i = 0</code>,
+but index <span class="math inline">29</span> could be chosen if
+<code>i</code> is any value between <span class="math inline">0</span>
+and <span class="math inline">29</span>, so it has a higher probability
+of being chosen. The original solution was MCAR as we did not account
+for edge case of <code>i</code> being small, but it is technically MAR.
+Credit was given for either answer.</p>
+<p>D): Not missing at random. This means missing values depend on the
+column they’re missing from. The missing values here are all values that
+are not the <span class="math inline">30</span> lowest in <span class="math inline">WeightAlt</span>, and so they depend on the column
+itself.</p>
+<p>E): Missing completely at random or Missing at random. If the data
+was assumed to be evenly distributed, then the data is missing
+completely at random since the six age groups would all be chosen from
+uniformly. However, if the data was assumed to possibly have skewed age
+data, then samples from small sample size age groups had a higher
+probability of being chosen than those of large sample size age group.
+Credit was given for either answer.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-4">Problem 4</h2>
+<p>In this question, we will continue to work with the
+<code>donkeys</code> dataset from Question <span
+class="math inline">3</span>. The first few rows of thableand column
+descriptions are shown below for convenience [TABLE] For this question,
+assume that the researchers chose the <span
+class="math inline">30</span> donkeys to reweigh by drawing <strong>a
+simple random sample of <span class="math inline">30</span> underweight
+donkeys: donkeys with BCS values of <span class="math inline">1</span>,
+<span class="math inline">1.5</span>, or <span
+class="math inline">2</span>.</strong> The researchers weighed these
+<span class="math inline">30</span> donkeys one day later and stored the
+results in the <code>WeightAlt</code>. <br></p>
+<h3 id="problem-4.1">Problem 4.1</h3>
+<p><span class="math inline">a)</span> (<span
+class="math inline">3</span> points) Which of the following shows the
+scatter plot of <code>WeightAlt - Weight</code> on the y-axis and
+<code>Weight</code> on the x-axis? Assume that missing values are not
+plotted.</p>
+<center><img src='../../assets/images/fa23-midterm/dsc80_midterm_q4a.png' width=65%></center>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_1" aria-expanded="true" aria-controls="collapse4_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_1" class="accordion-collapse collapse collapse"
+aria-labelledby="heading4_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer:</strong> D)</p>
+<p>We are measuring the difference in weight from just one day on the
+y-axis, which means we can’t expect any noticeable pattern of weight
+gain or loss no matter the original weight of the donkey. Therefore, a
+random scatterplot makes sense. Options A through C all suggest that the
+single-day weight change correlates with the starting weight, which is
+not a good assumption.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-4.2">Problem 4.2</h3>
+<p><span class="math inline">b)</span> (<span
+class="math inline">4</span> points) Suppose we use mean imputation to
+fill in the missing values in <code>WeightAlt</code>. Select the scatter
+plot <code>WeightAlt</code> on <code>Weight</code> after imputation.</p>
+<center><img src='../assets/images/fa23-midterm/dsc80_midterm_q4b' width=65%></center>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_2" aria-expanded="true" aria-controls="collapse4_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_2" class="accordion-collapse collapse collapse"
+aria-labelledby="heading4_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer:</strong> A)</p>
+<p>Note we are now plotting <code>Weight</code> on the y-axis, not the
+difference of <code>WeightAlt - Weight</code>. Therefore, it makes sense
+that we would have <span class="math inline">30</span> data points with
+a positive slope as the initial weight and re-weight are likely very
+similar.</p>
+<p>Then, mean imputation is the process of filling in missing values
+with the average of the non-missing values. Therefore, all missing
+values will be the same, and should be at the center of the sloped line
+since the line is roughly evenly distributed.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-4.3">Problem 4.3</h3>
+<p><span class="math inline">(c)</span> (<span
+class="math inline">12</span> points) Alan wants to see whether donkeys
+with <code>BCS</code> &gt;= <span class="math inline">3</span> have
+larger <code>Weight</code> values on average compared to donkeys that
+have <code>BCS</code> &lt; <span class="math inline">3</span>. Select
+<strong>all the possible test statistics</strong> that Alan could use to
+conduct this hypothesis test. Let <span class="math inline">\mu_1</span>
+be the mean weight of donkeys with <code>BCS</code> &gt;= <span
+class="math inline">3</span> and <span class="math inline">\mu_2</span>
+be the mean weight of donkeys with <code>BCS</code> &lt; 3.</p>
+<p><em>A)</em>     <span class="math inline">\mu_1</span>
+<em>B)</em>     <span class="math inline">\mu_1 - \mu_2</span>
+<em>C)</em>     <span class="math inline">2\mu_2-\mu_1</span>
+<em>D)</em>     <span class="math inline">|\mu_1-\mu_2|</span>
+<em>E)</em>     Total variation distance <em>F)</em>    
+Kolmogorov-Smirnov test statistic</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_3" aria-expanded="true" aria-controls="collapse4_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_3" class="accordion-collapse collapse collapse"
+aria-labelledby="heading4_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer:</strong> <em>B)</em> and <em>C)</em></p>
+<p><em>A)</em>     Incorrect. <span class="math inline">\mu_1</span>
+does not tell compare the two groups, and so cannot be used to see which
+is larger on average.</p>
+<p><em>B)</em>     Correct. <span class="math inline">\mu_1 -
+\mu_2</span> tells us the difference between the average weight of both
+groups as well as which group would be larger (a test statistic greater
+than zero means <span class="math inline">\mu_1</span> is larger).</p>
+<p><em>C)</em>     Correct. <span class="math inline">2\mu_2-\mu_1</span> tells us the difference between
+the average weight of both groups as well as which group would be larger
+(a test statistic greater than <span class="math inline">\mu_2</span>
+means <span class="math inline">\mu_2</span> is larger).</p>
+<p><em>D)</em>     Incorrect. <span class="math inline">|\mu_1-\mu_2|</span> tells us the difference between
+the average weight of both groups, but we cannot tell which group is
+larger due to the absolute value sign.</p>
+<p><em>E)</em>     Incorrect. Total variation distance is defined as
+<span class="math inline">\frac{1}{2}\sum^k_{i=1}|a_i-b_i|</span>. This
+has the same issue as <em>D)</em> where we cannot tell which group is
+larger due to the absolute value sign.</p>
+<p><em>F)</em>     Incorrect. Kolmogorov-Smirnov is a measurement of the
+maximum absolute difference between two cumulative distribution
+functions. It does not look at the average, nor does it tell us which
+weight would be larger.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-4.4">Problem 4.4</h3>
+<p><span class="math inline">(d)</span> (<span
+class="math inline">4</span> points) To generate a single sample under
+his null hypothesis, Alan should: <em>A)</em>     Resample <span
+class="math inline">744</span> donkeys with replacement from
+<code>donkeys</code>. <em>B)</em>     Resample <span
+class="math inline">372</span> donkeys with replacement from
+<code>donkeys</code> with <code>BCS</code> &lt; <span
+class="math inline">3</span>, and another <span
+class="math inline">372</span> donkeys with <code>BCS</code> &gt;= <span
+class="math inline">3</span>. <em>C)</em>     Randomly permute the
+<code>Weight</code> column.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_4" aria-expanded="true" aria-controls="collapse4_4">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_4" class="accordion-collapse collapse collapse"
+aria-labelledby="heading4_4" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer:</strong> <em>C)</em></p>
+<p>The null hypothesis is “Donkeys with <code>BCS</code> &gt;= <span class="math inline">3</span> have the <strong>same</strong>
+<code>Weight</code> values on average compared to donkeys that have
+<code>BCS</code> &lt; <span class="math inline">3</span>”. Under the
+null hypothesis, we should have similar results with a shuffled dataset.
+Options <em>A)</em> and <em>B)</em> shuffle with replacement
+(bootstrapping), while option <em>B)</em> shuffles without replacement
+(permutation is done without replacement). Bootstrapping is generally
+used to estimate confidence intervals, while permutation tests are a
+kind of hypothesis test. In this case, we are performing a hypothesis
+test, so we want to permute the <code>Weight</code> column.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-4.5">Problem 4.5</h3>
+<p><span class="math inline">(e)</span> (<span
+class="math inline">17</span> points) Doris wants to use multiple
+imputation to fill in the missing values in <code>WeightAlt</code>. She
+knows that <code>WeightAlt</code> is MAR conditional on <code>BCS</code>
+and <code>Age</code>, so she will perform multiple imputation
+conditional on <code>BCS</code> and <code>Age</code> - each missing
+value will be filled in with vlaues from a random <code>WeightAlt</code>
+value <strong>from a donkey with the same <code>BCS</code> and
+<code>Age</code>.</strong> Assume that all <code>BSC</code> and
+<code>Age</code> cmbinations have observed <code>WegihtAlt</code>
+values. Fill in the blanks in the code below to estimate the median of
+<code>WeightAlt</code> using multiple imputation conditional on
+<code>BCS</code> and <code>Age</code> with <span
+class="math inline">100</span> repetitions. A function
+<code>impute</code> is also partially filled in for you, and you should
+use it in your answer.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> impute(col):</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    col <span class="op">=</span> col.copy()</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    n <span class="op">=</span> ____</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    fill <span class="op">=</span> np.random.choice(____)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    col[____] <span class="op">=</span> fill</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> col</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>results <span class="op">=</span> []</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(____):</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    imputed <span class="op">=</span> (donkeys.____(____)[<span class="st">&#39;WeightAlt&#39;</span>].____(____))</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    results.append(imputed.median())</span></code></pre></div>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_5">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_5" aria-expanded="true" aria-controls="collapse4_5">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_5" class="accordion-collapse collapse collapse"
+aria-labelledby="heading4_5" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer:</strong></p>
+<div id="cb1" class="sourceCode">
+<pre class="sourceCode py"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" href="#cb1-1" tabindex="-1"></a><span class="kw">def</span> impute(col):</span>
+<span id="cb1-2"><a aria-hidden="true" href="#cb1-2" tabindex="-1"></a>    col <span class="op">=</span> col.copy()</span>
+<span id="cb1-3"><a aria-hidden="true" href="#cb1-3" tabindex="-1"></a>    n <span class="op">=</span> col.isna().<span class="bu">sum</span>()</span>
+<span id="cb1-4"><a aria-hidden="true" href="#cb1-4" tabindex="-1"></a>    fill <span class="op">=</span> np.random.choice(col.dropna(), n)</span>
+<span id="cb1-5"><a aria-hidden="true" href="#cb1-5" tabindex="-1"></a>    col[col.isna()] <span class="op">=</span> fill</span>
+<span id="cb1-6"><a aria-hidden="true" href="#cb1-6" tabindex="-1"></a>    <span class="cf">return</span> col</span>
+<span id="cb1-7"><a aria-hidden="true" href="#cb1-7" tabindex="-1"></a>results <span class="op">=</span> []</span>
+<span id="cb1-8"><a aria-hidden="true" href="#cb1-8" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">100</span>):</span>
+<span id="cb1-9"><a aria-hidden="true" href="#cb1-9" tabindex="-1"></a>    imputed <span class="op">=</span> (donkeys.groupby([<span class="st">'BCS'</span>, <span class="st">'Age'</span>])[<span class="st">'WeightAlt'</span>].transform(impute))</span>
+<span id="cb1-10"><a aria-hidden="true" href="#cb1-10" tabindex="-1"></a>    results.append(imputed.median())</span></code></pre>
+</div>
+<p>We start with the bottom five blanks as we are not sure what the
+parameter of <code>impute(col)</code> is until we write the function
+call first. We see that we are using a loop, and seeing that we are
+doing multiple imputation with <span class="math inline">100</span>
+reputations, we can fill in <code>range(100)</code>. We then define the
+variable <code>imputed</code>, which we can see from the last line of
+code that calls <code>imputed.median()</code> should be a list of
+<code>WeightAlt</code> that has imputed values. Since we want to make
+our imputation conditional on <code>BCS</code> and <code>Age</code>, we
+can fill in the next blank with a <code>groupby</code> function and pass
+in the list of columns we want - <code>['BCS', 'Age']</code>. We can see
+we have then selected the <code>WeightAlt</code> column in the problem,
+and so we need to use our <code>impute</code> function on that series.
+We can do so with a <code>transform</code> function and then pass in
+<code>impute</code>. Note this can also be done with <code>apply</code>
+and receive credit, but this is our solution.</p>
+<p>Now, we can define the <code>impute</code> function to impute missing
+values from <code>col</code>. Since we have already aggregated on
+<code>['BCS', 'Age']</code>, we know that our given <code>col</code> has
+samples all of the same <code>BCS</code> and <code>Age</code> values.
+Therefore, to impute as defined in the question, we just need to fill in
+<code>NaN</code> values with any other value from <code>col</code>,
+chosen at random. We can see we will use
+<code>np.random.choice()</code>, which takes in its first parameter
+possible choices in a list, and in its second parameter the number of
+choices to make. The number of choices to make we can define as
+<code>n</code>, which is the number of <code>NaN</code> values. This is
+found with <code>col.isna().sum()</code>. Then our possible choices are
+any non-<code>NaN</code> values in <code>col</code>, which we can use
+<code>col.dropna()</code> to find. Finally, we fill in the
+<code>NaN</code> values in <code>col</code> by masking for the
+<code>NaN</code> indices with <code>col[col.isna()]</code>, and set it
+equal to our <code>fill</code> values. That will successfully impute
+values into our <code>col</code> and we can then return it.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="section"><span class="math display"> </span></h2>
+<h4
+id="feedback-find-an-error-still-confused-have-a-suggestion-let-us-know-here.">👋
+Feedback: Find an error? Still confused? Have a suggestion?
+<a href="https://forms.gle/WZ71FchnXU1K154d7">Let us know
+here</u></a>.</h4>
+<hr />
+</body>
+</html>
