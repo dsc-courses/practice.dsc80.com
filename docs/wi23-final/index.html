@@ -8,10 +8,19 @@
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
     pre > code.sourceCode { white-space: pre; position: relative; }
     pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -50,7 +59,7 @@
     code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
     code span.at { color: #7d9029; } /* Attribute */
     code span.bn { color: #40a070; } /* BaseN */
-    code span.bu { } /* BuiltIn */
+    code span.bu { color: #008000; } /* BuiltIn */
     code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
     code span.ch { color: #4070a0; } /* Char */
     code span.cn { color: #880000; } /* Constant */
@@ -63,7 +72,7 @@
     code span.ex { } /* Extension */
     code span.fl { color: #40a070; } /* Float */
     code span.fu { color: #06287e; } /* Function */
-    code span.im { } /* Import */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
     code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
     code span.kw { color: #007020; font-weight: bold; } /* Keyword */
     code span.op { color: #666666; } /* Operator */
@@ -147,7 +156,7 @@ section.)</p></li>
 </ul>
 <p>The first few rows of <code>sat</code> are shown below (though
 <code>sat</code> has many more rows than are pictured here).</p>
-<center><img src='../assets/images/wi23-final/df.png' width=30%></center>
+<center><img src='../assets/images/wi23-final/df.png' width=40%></center>
 <p>For instance, the first row of <code>sat</code> tells us that 41227
 students took the SAT in Washington in 2014, and among those students,
 the mean math score was 519 and the mean verbal score was 510.</p>
@@ -205,13 +214,39 @@ unique to only one state.</em></p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1_1" class="accordion-collapse collapse collapse"
+<div id="collapse1_1" class="accordion-collapse collapse"
 aria-labelledby="heading1_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer: </strong> Option 2 and Option 5</p>
+<p>Option 1:
+<code>(sat.loc[(sat["Math"] == sat["Math"].max()) &amp; (sat["Year"] == 2007), "State"].iloc[0])</code>
+This expression looks for entries where the math score equals the
+overall max <code>Math</code> score in the dataset and the year is 2007.
+However, this approach has a limitation: it assumes that the highest
+math score in the entire dataset occurred in 2007.</p>
+<p>Option 2:
+<code>sat.loc[sat["Year"] == 2007].set_index("State")["Math"].idxmax()</code>
+After boolean indexing for entries made in 2007, it correctly returns
+the state name with the max <code>Math</code> score.</p>
+<p>Option 3: <code>sat.groupby("Year")["State"].max().loc[2007]</code>
+This finds the maximum state name alphabet-wise, not the state with the
+highest math score.</p>
+<p>Option 4:
+<code>(sat.loc[sat["Math"] == sat.loc[sat["Year"] == 2007, "Math"].max()].iloc[0].loc["State"])</code>
+This expression looks to match any recorded score that is equal to the
+max score in 2007, possibly returning a value outside of 2007.</p>
+<p>Option 5:
+<code>(sat.groupby("Year").apply(lambda sat: sat[sat["Math"] == sat["Math"].max()]).reset_index(drop=True).groupby("Year")["State"].max().loc[2007])</code>
+Option 5 works by isolating rows with the highest score per year, and
+then among these, it finds the state for the year 2007.</p>
+<p>Option 6:
+<code>sat.loc[sat['Year'] == 2007].loc[sat['Math'] == sat['Math'].max()]</code>
+Similar to Option 4, this expression finds the maximum math score across
+all years and then tries to match it to the year 2007, which may not be
+correct.</p>
 </div>
 </div>
 </div>
@@ -231,7 +266,7 @@ relation:</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1_2" class="accordion-collapse collapse collapse"
+<div id="collapse1_2" class="accordion-collapse collapse"
 aria-labelledby="heading1_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -262,13 +297,28 @@ they contain the same rows and columns, all in the same order?</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1_3" class="accordion-collapse collapse collapse"
+<div id="collapse1_3" class="accordion-collapse collapse"
 aria-labelledby="heading1_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer: </strong> Yes</p>
+<p>No pair of <code>Year</code> and <code>State</code> will be appear
+twice in the DataFrame because each combination of <code>Year</code> and
+<code>State</code> are unqiue. Therefore, when grouping by these
+columns, each group only contains one unique row - the row itself. Thus,
+using the maximum operation on these groups simply retrieves the
+original rows.</p>
+<p>Likewise, since every combination of <code>Year</code>,
+<code>State</code>, and <code># Students</code> is also unique, the
+minimum operation, when applied after grouping, yields the same result:
+the original row for each group.</p>
+<p>Recall that <code>.groupby</code> function in Pandas automatically
+sorts data based on the chosen grouping keys. As a result, the
+<code>val1</code> and <code>val2</code> DataFrames, created using these
+groupings, contain the same rows and columns, displayed in the same
+order.</p>
 </div>
 </div>
 </div>
@@ -302,17 +352,37 @@ not appear in `sat.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1_4" class="accordion-collapse collapse collapse"
+<div id="collapse1_4" class="accordion-collapse collapse"
 aria-labelledby="heading1_4" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer: </strong> a:
-<code>lambda df: df.shape[0] &lt; 11</code>, b:
-<code>left_index=True, right_on='Year', how='left'</code>
-(<code>how='outer'</code> also works), c:
-<code>merged[merged['# Students'].isna()]['Year']</code></p>
+<p><strong>Answer: </strong></p>
+<ul>
+<li>a: <code>lambda df: df.shape[0] &lt; 11</code></li>
+<li>b: <code>left_index=True, right_on='Year', how='left'</code>
+(<code>how='outer'</code> also works)</li>
+<li>c: <code>merged[merged['# Students'].isna()]['Year']</code></li>
+</ul>
+<p>The initial step (in the <code>state_only</code> variable) involves
+identifying the state that has fewer than 11 records in the dataset.
+This is achieved by the lambda function
+<code>lambda df: df.shape[0] &lt; 11</code>, leaving us with records
+from only the state that has missing data for certain years.</p>
+<p>Next, applying <code>.value_counts()</code> to
+<code>sat["Year"]</code> produces a Series that enumerates the total
+occurrences of each year from 2005 to 2015. Converting this Series to a
+DataFrame with <code>.to_frame()</code>, we then merge it with the
+<code>state_only</code> DataFrame. This merging results in a DataFrame
+(merged) where the years lacking corresponding entries in
+<code>state_only</code> are marked as NaN.</p>
+<p>Finally, the expression
+<code>merged[merged['# Students'].isna()]['Year']</code> in
+<code>missing_years</code> identifies the specific years that are absent
+for the one state in the sat dataset. This is determined by selecting
+years in the merged DataFrame where the <code># Students</code> column
+has NaN values, indicating missing data for those years.</p>
 </div>
 </div>
 </div>
@@ -354,13 +424,26 @@ likely missingness mechanism of the <code>"# Students"</code> column in
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1_5" class="accordion-collapse collapse collapse"
+<div id="collapse1_5" class="accordion-collapse collapse"
 aria-labelledby="heading1_5" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer: </strong> Not missing at random</p>
+<p><strong>Answer:</strong> Not missing at random</p>
+<p>The fact that there are null values specifically in the cases where
+SAT data is not available suggests that the missingness of the
+<code># Students</code> column is systematic. It’s not occurring
+randomly across the dataset, but rather in specific instances where SAT
+data wasn’t recorded or available.</p>
+<p>This could mean that the absence of student numbers is linked to
+specific reasons why the data was not recorded or collected, such as
+certain states not participating in SAT testing in specific years, or
+administrative decisions that led to non-recording of data.</p>
+<p>The nature of this missingness suggests that it’s not random or
+solely dependent on observed data in other columns, but rather it’s
+related to the inherent nature of the <code># Students</code> data
+itself.</p>
 </div>
 </div>
 </div>
@@ -383,13 +466,25 @@ likely missingness mechanism of the <code>"Math"</code> column in
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1_6" class="accordion-collapse collapse collapse"
+<div id="collapse1_6" class="accordion-collapse collapse"
 aria-labelledby="heading1_6" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer: </strong> Missing at random</p>
+<p>If a state has reported the number of students taking the SAT, it
+implies that data collection and reporting were carried out. The
+administrative decision to report SAT scores (including
+<code>Math</code> scores) may be reflected in the
+<code># Students</code> column. Conversely, if the
+<code># Students</code> column is empty or null for a certain state and
+year, it might indicate an administrative decision not to participate or
+report data for that period. This decision impacts the availability of
+<code>Math</code> scores.</p>
+<p>In this context, the missing values in <code>Math</code> scores are
+linked to observable conditions or patterns in the dataset (like
+specific years, states, or availability of other related data).</p>
 </div>
 </div>
 </div>
@@ -414,13 +509,19 @@ class="math inline">Y</span> to be not missing at random.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1_7" class="accordion-collapse collapse collapse"
+<div id="collapse1_7" class="accordion-collapse collapse"
 aria-labelledby="heading1_7" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer: </strong> True</p>
+<p>The observation of a statistically significant result (a p-value less
+than 0.05) in a permutation test suggests there is some association or
+dependency between the missingness in Y and the values in X. However,
+this result does not exclude the possibility that the missingness in Y
+is also influenced by factors not captured in column X, or by the values
+in Y itself.</p>
 </div>
 </div>
 </div>
@@ -443,13 +544,19 @@ class="math inline">Y</span> to be missing at random dependent on column
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1_8" class="accordion-collapse collapse collapse"
+<div id="collapse1_8" class="accordion-collapse collapse"
 aria-labelledby="heading1_8" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer: </strong> True</p>
+<p>Not observing a statistically significant result (a p-value greater
+than 0.05) in a permutation test means that the test did not find strong
+evidence of a dependency between X and the missingness in Y. However,
+this does not definitively prove that such a dependency does not exist.
+In statistical testing, a lack of significant findings is not the same
+as evidence of no effect or no association.</p>
 </div>
 </div>
 </div>
@@ -460,7 +567,7 @@ aria-labelledby="heading1_8" data-bs-parent="#accordionExample">
 <p>The following DataFrame contains the mean, median, and standard
 deviation of the number of students per year who took the SAT in New
 York and Texas between 2005 and 2015.</p>
-<center><img src='../assets/images/wi23-final/nyt.png' width=30%></center>
+<center><img src='../assets/images/wi23-final/nyt.png' width=35%></center>
 <p><br></p>
 <h3 id="problem-2.1">Problem 2.1</h3>
 <p>Which of the following expressions creates the above DataFrame
@@ -492,13 +599,23 @@ class="sourceCode py"><code class="sourceCode python"><span id="cb11-1"><a href=
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse2_1" class="accordion-collapse collapse collapse"
+<div id="collapse2_1" class="accordion-collapse collapse"
 aria-labelledby="heading2_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer: </strong> Option 2</p>
+<p>Option 1: is incorrect because it attempts to select the
+<code># Students</code> column before grouping by <code>State</code>,
+which is not possible.</p>
+<p>Option 2: filters the DataFrame, groups by <code>State</code>, and
+then performs aggregation only on the <code># Students</code> column,
+making it efficient.</p>
+<p>Option 3: does the aggregations for all columns first and then
+selects the <code># Students</code> column, which is less efficient
+because it computes aggregations for potentially many columns that are
+not needed.</p>
 </div>
 </div>
 </div>
@@ -510,7 +627,10 @@ York and Texas are significantly different.</p>
 <p><br></p>
 <h3 id="problem-2.2">Problem 2.2</h3>
 <p>What type of test is being proposed above?</p>
-<p>( ) Hypothesis test ( ) Permutation test</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> Hypothesis test</p></li>
+<li><p><input type="radio" disabled="" /> Permutation test</p></li>
+</ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading2_2">
@@ -518,13 +638,17 @@ York and Texas are significantly different.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse2_2" class="accordion-collapse collapse collapse"
+<div id="collapse2_2" class="accordion-collapse collapse"
 aria-labelledby="heading2_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer: </strong> Permutation test</p>
+<p>We aim to determine if there’s a significant difference between the
+student distributions in New York and Texas. This requires us to
+randomly shuffle the group labels and recalculate the means for the
+permuted groups, making this a permutation test.</p>
 </div>
 </div>
 </div>
@@ -549,13 +673,21 @@ Texas } - \text{ median number of students in New York}\big|</span></p></li>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse2_3" class="accordion-collapse collapse collapse"
+<div id="collapse2_3" class="accordion-collapse collapse"
 aria-labelledby="heading2_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer: </strong> The Kolmogorov-Smirnov statistic</p>
+<p>Calculating the diference in mean and median only focuses on the
+central tendency and is unable to consider the full distribution of the
+data. The Kolmogorov-Smirnov statistic is most likely to yield a
+significant difference if there are any differences in the distributions
+beyond just the central tendency. It is more comprehensive as it
+evaluates differences across the entire range of the distributions,
+making it a robust choice for comparing the two states’ SAT student
+distributions.</p>
 </div>
 </div>
 </div>
@@ -567,7 +699,7 @@ verbal score distribution of all students who took the SAT in 2015.</p>
 <p>The DataFrame <code>scores_2015</code>, shown in its entirety below,
 contains the verbal section score distributions of students in New York
 in 2015 and for all students in 2015.</p>
-<center><img src='../assets/images/wi23-final/ny_vs_all.png' width=30%></center>
+<center><img src='../assets/images/wi23-final/ny_vs_all.png' width=25%></center>
 <p><br></p>
 <h3 id="problem-2.4">Problem 2.4</h3>
 <p>What type of test is being proposed above?</p>
@@ -579,13 +711,19 @@ in 2015 and for all students in 2015.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse2_4" class="accordion-collapse collapse collapse"
+<div id="collapse2_4" class="accordion-collapse collapse"
 aria-labelledby="heading2_4" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer: </strong> Hypothesis test</p>
+<p>The key aspect of a hypothesis test is determining whether any
+observed differences between the sample and population data are due to
+random chance. Here, we are dealing with one large population data
+(scores of all students in 2015) and testing if our sample observed data
+(scores from New York students in 2015) is statistically different,
+marking this a hypothesis test.</p>
 </div>
 </div>
 </div>
@@ -613,7 +751,7 @@ metrics:</p>
 \frac{\vec{a} \cdot \vec{b}}{|\vec{a} | | \vec{b} |} = \frac{a_1b_1 +
 a_2b_2 + ... + a_nb_n}{\sqrt{a_1^2 + a_2^2 + ... + a_n^2} \sqrt{b_1^2 +
 b_2^2 + ... + b_n^2}}</span></p></li>
-<li><p><span class="math inline">text{dis3}(\vec{a}, \vec{b}) = 1 -
+<li><p><span class="math inline">\text{dis3}(\vec{a}, \vec{b}) = 1 -
 \frac{\vec{a} \cdot \vec{b}}{|\vec{a} | | \vec{b} |}</span></p></li>
 </ul>
 <p>Of the above three possible distance metrics, only one of them has
@@ -633,7 +771,7 @@ is it?</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse2_5" class="accordion-collapse collapse collapse"
+<div id="collapse2_5" class="accordion-collapse collapse"
 aria-labelledby="heading2_5" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -690,13 +828,23 @@ Washington score}</span></p></li>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse3_1" class="accordion-collapse collapse collapse"
+<div id="collapse3_1" class="accordion-collapse collapse"
 aria-labelledby="heading3_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer: </strong> Option 1</p>
+<p>Lets take a deeper look at <code>calc_test_stat(df)</code>.</p>
+<p>The function first calculates the mean math scores in each state.
+Although the <code>.abs()</code> method is applied, it is redundant at
+this stage since no differences have been computed yet. The key
+operation is <code>.diff()</code>, which computes the difference between
+the mean scores of the two states. Since groupby sorts states
+alphabetically, it subtracts the mean score of California (appearing
+first) from Washington (appearing second). The final expression
+<code>df.groupby("State")["Math"].mean().abs().diff().iloc[-1]</code>
+thus represents mean Washington score − mean California score.</p>
 </div>
 </div>
 </div>
@@ -715,7 +863,7 @@ of the function <code>calc_test_stat</code>.</em></p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse3_2" class="accordion-collapse collapse collapse"
+<div id="collapse3_2" class="accordion-collapse collapse"
 aria-labelledby="heading3_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -760,8 +908,14 @@ class="sourceCode py"><code class="sourceCode python"><span id="cb14-1"><a href=
 <p><br></p>
 <h3 id="problem-4.1">Problem 4.1</h3>
 <p><code>re.findall(r'\d+', s)</code></p>
-<p>( ) list1 ( ) list2 ( ) list3 ( ) list4 ( ) list5 ( ) None of the
-above</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> list1</p></li>
+<li><p><input type="radio" disabled="" /> list2</p></li>
+<li><p><input type="radio" disabled="" /> list3</p></li>
+<li><p><input type="radio" disabled="" /> list4</p></li>
+<li><p><input type="radio" disabled="" /> list5</p></li>
+<li><p><input type="radio" disabled="" /> None of the above</p></li>
+</ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading4_1">
@@ -769,7 +923,7 @@ above</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse4_1" class="accordion-collapse collapse collapse"
+<div id="collapse4_1" class="accordion-collapse collapse"
 aria-labelledby="heading4_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -783,8 +937,14 @@ aria-labelledby="heading4_1" data-bs-parent="#accordionExample">
 <p><br></p>
 <h3 id="problem-4.2">Problem 4.2</h3>
 <p><code>re.findall(r'[\d+]', s)</code></p>
-<p>( ) list1 ( ) list2 ( ) list3 ( ) list4 ( ) list5 ( ) None of the
-above</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> list1</p></li>
+<li><p><input type="radio" disabled="" /> list2</p></li>
+<li><p><input type="radio" disabled="" /> list3</p></li>
+<li><p><input type="radio" disabled="" /> list4</p></li>
+<li><p><input type="radio" disabled="" /> list5</p></li>
+<li><p><input type="radio" disabled="" /> None of the above</p></li>
+</ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading4_2">
@@ -792,7 +952,7 @@ above</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse4_2" class="accordion-collapse collapse collapse"
+<div id="collapse4_2" class="accordion-collapse collapse"
 aria-labelledby="heading4_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -806,8 +966,14 @@ aria-labelledby="heading4_2" data-bs-parent="#accordionExample">
 <p><br></p>
 <h3 id="problem-4.3">Problem 4.3</h3>
 <p><code>re.findall(r'\[(\d+)\]', s)</code></p>
-<p>( ) list1 ( ) list2 ( ) list3 ( ) list4 ( ) list5 ( ) None of the
-above</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> list1</p></li>
+<li><p><input type="radio" disabled="" /> list2</p></li>
+<li><p><input type="radio" disabled="" /> list3</p></li>
+<li><p><input type="radio" disabled="" /> list4</p></li>
+<li><p><input type="radio" disabled="" /> list5</p></li>
+<li><p><input type="radio" disabled="" /> None of the above</p></li>
+</ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading4_3">
@@ -815,7 +981,7 @@ above</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse4_3" class="accordion-collapse collapse collapse"
+<div id="collapse4_3" class="accordion-collapse collapse"
 aria-labelledby="heading4_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -829,8 +995,14 @@ aria-labelledby="heading4_3" data-bs-parent="#accordionExample">
 <p><br></p>
 <h3 id="problem-4.4">Problem 4.4</h3>
 <p><code>re.findall(r'(\[\d+\])', s)</code></p>
-<p>( ) list1 ( ) list2 ( ) list3 ( ) list4 ( ) list5 ( ) None of the
-above</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> list1</p></li>
+<li><p><input type="radio" disabled="" /> list2</p></li>
+<li><p><input type="radio" disabled="" /> list3</p></li>
+<li><p><input type="radio" disabled="" /> list4</p></li>
+<li><p><input type="radio" disabled="" /> list5</p></li>
+<li><p><input type="radio" disabled="" /> None of the above</p></li>
+</ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading4_4">
@@ -838,7 +1010,7 @@ above</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse4_4" class="accordion-collapse collapse collapse"
+<div id="collapse4_4" class="accordion-collapse collapse"
 aria-labelledby="heading4_4" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -902,7 +1074,7 @@ that apply.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse5_1" class="accordion-collapse collapse collapse"
+<div id="collapse5_1" class="accordion-collapse collapse"
 aria-labelledby="heading5_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -957,7 +1129,7 @@ class="sourceCode py"><code class="sourceCode python"><span id="cb20-1"><a href=
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse5_2" class="accordion-collapse collapse collapse"
+<div id="collapse5_2" class="accordion-collapse collapse"
 aria-labelledby="heading5_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -994,7 +1166,7 @@ class="math inline">b</span>?</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse6_1" class="accordion-collapse collapse collapse"
+<div id="collapse6_1" class="accordion-collapse collapse"
 aria-labelledby="heading6_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1024,7 +1196,7 @@ class="math inline">d</span>?</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse6_2" class="accordion-collapse collapse collapse"
+<div id="collapse6_2" class="accordion-collapse collapse"
 aria-labelledby="heading6_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1066,7 +1238,7 @@ model on <code>tokens</code>. Which of the following sentences of length
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse6_3" class="accordion-collapse collapse collapse"
+<div id="collapse6_3" class="accordion-collapse collapse"
 aria-labelledby="heading6_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1109,7 +1281,7 @@ values.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse6_4" class="accordion-collapse collapse collapse"
+<div id="collapse6_4" class="accordion-collapse collapse"
 aria-labelledby="heading6_4" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1138,7 +1310,7 @@ highest TF-IDF?</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse6_5" class="accordion-collapse collapse collapse"
+<div id="collapse6_5" class="accordion-collapse collapse"
 aria-labelledby="heading6_5" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1173,13 +1345,13 @@ document <span class="math inline">d</span> is the term with ____.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse6_6" class="accordion-collapse collapse collapse"
+<div id="collapse6_6" class="accordion-collapse collapse"
 aria-labelledby="heading6_6" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer: </strong></p>
+<p><strong>Answer: </strong> the smallest</p>
 </div>
 </div>
 </div>
@@ -1236,7 +1408,7 @@ class="sourceCode py"><code class="sourceCode python"><span id="cb34-1"><a href=
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse7_1" class="accordion-collapse collapse collapse"
+<div id="collapse7_1" class="accordion-collapse collapse"
 aria-labelledby="heading7_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1265,7 +1437,7 @@ answer as a <strong>simplified fraction</strong>.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse7_2" class="accordion-collapse collapse collapse"
+<div id="collapse7_2" class="accordion-collapse collapse"
 aria-labelledby="heading7_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1299,7 +1471,7 @@ complexity.</p></li>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse7_3" class="accordion-collapse collapse collapse"
+<div id="collapse7_3" class="accordion-collapse collapse"
 aria-labelledby="heading7_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1316,7 +1488,7 @@ classifier, named Classifier 2, again on our training set. Its
 performance on the training set is described in the confusion matrix
 below. Note that the columns of the confusion matrix have been
 separately normalized so that each has a sum of 1.</p>
-<center><img src='../assets/images/wi23-final/conf_matrix.png' width=30%></center>
+<center><img src='../assets/images/wi23-final/conf-matrix.png' width=30%></center>
 <p><br></p>
 <h3 id="problem-7.4">Problem 7.4</h3>
 <p>Suppose <code>conf</code> is the DataFrame above. Which of the
@@ -1333,7 +1505,7 @@ the number <code>1</code>?</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse7_4" class="accordion-collapse collapse collapse"
+<div id="collapse7_4" class="accordion-collapse collapse"
 aria-labelledby="heading7_4" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1359,7 +1531,7 @@ aria-labelledby="heading7_4" data-bs-parent="#accordionExample">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse7_5" class="accordion-collapse collapse collapse"
+<div id="collapse7_5" class="accordion-collapse collapse"
 aria-labelledby="heading7_5" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1374,7 +1546,7 @@ aria-labelledby="heading7_5" data-bs-parent="#accordionExample">
 <p>For your convenience, we show the column-normalized confusion matrix
 from the previous page below. You will need to use the specific numbers
 in this matrix when answering the following subpart.</p>
-<center><img src='../assets/images/wi23-final/conf_matrix.png' width=30%></center>
+<center><img src='../assets/images/wi23-final/conf-matrix.png' width=30%></center>
 <p><br></p>
 <h3 id="problem-7.6">Problem 7.6</h3>
 <p>Suppose a fraction <span class="math inline">\alpha</span> of the
@@ -1404,7 +1576,7 @@ calculation for the accuracy in the previous step?</p></li>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse7_6" class="accordion-collapse collapse collapse"
+<div id="collapse7_6" class="accordion-collapse collapse"
 aria-labelledby="heading7_6" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1457,7 +1629,7 @@ vs. <code>height</code></strong>?</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse8_1" class="accordion-collapse collapse collapse"
+<div id="collapse8_1" class="accordion-collapse collapse"
 aria-labelledby="heading8_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1477,7 +1649,7 @@ aria-labelledby="heading8_1" data-bs-parent="#accordionExample">
 we perform <span class="math inline">k</span>-fold cross-validation with
 <span class="math inline">k=4</span>. The results are given in the table
 below.</p>
-<center><img src='../assets/images/wi23-final/cv.png' width=30%></center>
+<center><img src='../assets/images/wi23-final/CV.png' width=30%></center>
 <p>Which value of <code>color</code> has the best average validation
 accuracy?</p>
 <ul class="task-list">
@@ -1500,7 +1672,7 @@ validation accuracy in any one particular fold.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse8_2" class="accordion-collapse collapse collapse"
+<div id="collapse8_2" class="accordion-collapse collapse"
 aria-labelledby="heading8_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1568,7 +1740,7 @@ values of <code>color</code>.</p></li>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse8_3" class="accordion-collapse collapse collapse"
+<div id="collapse8_3" class="accordion-collapse collapse"
 aria-labelledby="heading8_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1631,7 +1803,7 @@ each box such that the numbers add up to 8.)</em></p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse9" class="accordion-collapse collapse collapse"
+<div id="collapse9" class="accordion-collapse collapse"
 aria-labelledby="heading9" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
