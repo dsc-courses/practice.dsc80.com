@@ -28,6 +28,14 @@ This site contains practice problems taken from old DSC 80 exams. Each exam link
   </thead>
   <tbody>
     <tr>
+      <th scope="row">Fall 2023</th>
+      <td>Sam Lau</td>
+      <td><a href='fa23-midterm/index.html'>Midterm</a>
+          <br>
+          Final(in progress)
+      </td>
+    </tr>
+    <tr>
       <th scope="row">Winter 2023</th>
       <td>Suraj Rampure</td>
       <td><a href='wi23-midterm/index.html'>Midterm</a>
