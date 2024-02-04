@@ -8,10 +8,19 @@
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
     pre > code.sourceCode { white-space: pre; position: relative; }
     pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -50,7 +59,7 @@
     code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
     code span.at { color: #7d9029; } /* Attribute */
     code span.bn { color: #40a070; } /* BaseN */
-    code span.bu { } /* BuiltIn */
+    code span.bu { color: #008000; } /* BuiltIn */
     code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
     code span.ch { color: #4070a0; } /* Char */
     code span.cn { color: #880000; } /* Constant */
@@ -63,7 +72,7 @@
     code span.ex { } /* Extension */
     code span.fl { color: #40a070; } /* Float */
     code span.fu { color: #06287e; } /* Function */
-    code span.im { } /* Import */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
     code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
     code span.kw { color: #007020; font-weight: bold; } /* Keyword */
     code span.op { color: #666666; } /* Operator */
@@ -184,7 +193,7 @@ sorted.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1_1" class="accordion-collapse collapse collapse"
+<div id="collapse1_1" class="accordion-collapse collapse"
 aria-labelledby="heading1_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -205,8 +214,8 @@ do <code>day_only['track_name']</code>.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 63%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -231,7 +240,7 @@ to the song <code>"pepas"</code> 23 times today."</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1_2" class="accordion-collapse collapse collapse"
+<div id="collapse1_2" class="accordion-collapse collapse"
 aria-labelledby="heading1_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -247,8 +256,8 @@ Top 200 for 23 days in May</strong>.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 68%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -274,7 +283,7 @@ apply.</strong></p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1_3" class="accordion-collapse collapse collapse"
+<div id="collapse1_3" class="accordion-collapse collapse"
 aria-labelledby="heading1_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -299,8 +308,8 @@ Series. This option is correct as well. (The parameter name
 <hr/>
 <h5>Difficulty: ⭐️⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 80%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -323,7 +332,7 @@ incorrect answer is “There are 5 unique artists in
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1_4" class="accordion-collapse collapse collapse"
+<div id="collapse1_4" class="accordion-collapse collapse"
 aria-labelledby="heading1_4" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -349,8 +358,8 @@ interpretation.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 50%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -385,7 +394,7 @@ column? Give your answer as a simplified fraction.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse2_1" class="accordion-collapse collapse collapse"
+<div id="collapse2_1" class="accordion-collapse collapse"
 aria-labelledby="heading2_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -407,8 +416,8 @@ fraction of rows that contained <code>"Pop"</code> in
 <hr/>
 <h5>Difficulty: ⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 97%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -430,7 +439,7 @@ column? Give your answer as a simplified fraction.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse2_2" class="accordion-collapse collapse collapse"
+<div id="collapse2_2" class="accordion-collapse collapse"
 aria-labelledby="heading2_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -444,8 +453,8 @@ the <code>"genre"</code> column, hence the answer is <span class="math inline">\
 <hr/>
 <h5>Difficulty: ⭐️⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 86%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -467,7 +476,7 @@ column? Give your answer as a simplified fraction.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse2_3" class="accordion-collapse collapse collapse"
+<div id="collapse2_3" class="accordion-collapse collapse"
 aria-labelledby="heading2_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -499,8 +508,8 @@ the <code>"genre"</code> column.</p></li>
 <hr/>
 <h5>Difficulty: ⭐️⭐️⭐️⭐️⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 29%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -523,7 +532,7 @@ distributions of rolls? Give your answer as a number.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse3_1" class="accordion-collapse collapse collapse"
+<div id="collapse3_1" class="accordion-collapse collapse"
 aria-labelledby="heading3_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -548,8 +557,8 @@ proportions, all divided by 2:</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️⭐️⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 42%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -570,7 +579,7 @@ distributions? Give both answers as numbers.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse3_2" class="accordion-collapse collapse collapse"
+<div id="collapse3_2" class="accordion-collapse collapse"
 aria-labelledby="heading3_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -586,8 +595,8 @@ case, the TVD is 1.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 74%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -612,7 +621,7 @@ statistic is most likely to yield a significant result?</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse3_3" class="accordion-collapse collapse collapse"
+<div id="collapse3_3" class="accordion-collapse collapse"
 aria-labelledby="heading3_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -632,8 +641,8 @@ distribution functions.</p></li>
 <hr/>
 <h5>Difficulty: ⭐️⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 87%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -714,7 +723,7 @@ belongs to a unique <code>"artist_names"</code>.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse4_1" class="accordion-collapse collapse collapse"
+<div id="collapse4_1" class="accordion-collapse collapse"
 aria-labelledby="heading4_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -731,8 +740,8 @@ compute the number of unique songs.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 89%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -754,7 +763,7 @@ compute the number of unique songs.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse4_2" class="accordion-collapse collapse collapse"
+<div id="collapse4_2" class="accordion-collapse collapse"
 aria-labelledby="heading4_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -769,8 +778,8 @@ of a dataframe, we simply do <code>.shape[0]</code></p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 89%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -791,7 +800,7 @@ of a dataframe, we simply do <code>.shape[0]</code></p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse4_3" class="accordion-collapse collapse collapse"
+<div id="collapse4_3" class="accordion-collapse collapse"
 aria-labelledby="heading4_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -811,8 +820,8 @@ same size as the number of songs in the Top 200 in 2021.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 52%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -827,7 +836,7 @@ same size as the number of songs in the Top 200 in 2021.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse4_4" class="accordion-collapse collapse collapse"
+<div id="collapse4_4" class="accordion-collapse collapse"
 aria-labelledby="heading4_4" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -849,8 +858,8 @@ rap songs in each sample, and
 <hr/>
 <h5>Difficulty: ⭐️⭐️⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 53%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -885,7 +894,7 @@ between parts (a) and (d).</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse5_1" class="accordion-collapse collapse collapse"
+<div id="collapse5_1" class="accordion-collapse collapse"
 aria-labelledby="heading5_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -896,8 +905,8 @@ aria-labelledby="heading5_1" data-bs-parent="#accordionExample">
 <hr/>
 <h5>Difficulty: ⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 99%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -913,7 +922,7 @@ aria-labelledby="heading5_1" data-bs-parent="#accordionExample">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse5_2" class="accordion-collapse collapse collapse"
+<div id="collapse5_2" class="accordion-collapse collapse"
 aria-labelledby="heading5_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -924,8 +933,8 @@ aria-labelledby="heading5_2" data-bs-parent="#accordionExample">
 <hr/>
 <h5>Difficulty: ⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 96%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -940,7 +949,7 @@ aria-labelledby="heading5_2" data-bs-parent="#accordionExample">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse5_3" class="accordion-collapse collapse collapse"
+<div id="collapse5_3" class="accordion-collapse collapse"
 aria-labelledby="heading5_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -951,8 +960,8 @@ aria-labelledby="heading5_3" data-bs-parent="#accordionExample">
 <hr/>
 <h5>Difficulty: ⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 92%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -968,7 +977,7 @@ aria-labelledby="heading5_3" data-bs-parent="#accordionExample">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse5_4" class="accordion-collapse collapse collapse"
+<div id="collapse5_4" class="accordion-collapse collapse"
 aria-labelledby="heading5_4" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1003,8 +1012,8 @@ have been used in Option A.</p></li>
 <hr/>
 <h5>Difficulty: ⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 92%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -1023,7 +1032,7 @@ on <code>"genre"</code>.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse5_5" class="accordion-collapse collapse collapse"
+<div id="collapse5_5" class="accordion-collapse collapse"
 aria-labelledby="heading5_5" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1044,8 +1053,8 @@ distance (TVD).</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 63%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -1069,7 +1078,7 @@ variance of the <code>"genre rank"</code> column?</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse5_6" class="accordion-collapse collapse collapse"
+<div id="collapse5_6" class="accordion-collapse collapse"
 aria-labelledby="heading5_6" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1090,8 +1099,8 @@ on <code>"genre"</code>, we perform probabilistic imputation
 <hr/>
 <h5>Difficulty: ⭐️⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 75%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -1120,7 +1129,7 @@ most likely missingness mechanism for <code>"yest"</code>?</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse5_7" class="accordion-collapse collapse collapse"
+<div id="collapse5_7" class="accordion-collapse collapse"
 aria-labelledby="heading5_7" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1155,8 +1164,8 @@ design.</p></li>
 <hr/>
 <h5>Difficulty: ⭐️⭐️⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 64%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -1210,7 +1219,7 @@ document — that is, how many nodes have no children?</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse6_1" class="accordion-collapse collapse collapse"
+<div id="collapse6_1" class="accordion-collapse collapse"
 aria-labelledby="heading6_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1223,8 +1232,8 @@ aria-labelledby="heading6_1" data-bs-parent="#accordionExample">
 <hr/>
 <h5>Difficulty: ⭐️⭐️⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 64%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -1240,7 +1249,7 @@ aria-labelledby="heading6_1" data-bs-parent="#accordionExample">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse6_2" class="accordion-collapse collapse collapse"
+<div id="collapse6_2" class="accordion-collapse collapse"
 aria-labelledby="heading6_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1253,8 +1262,8 @@ all.</p>
 <hr/>
 <h5>Difficulty: ⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 95%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -1270,7 +1279,7 @@ all.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse6_3" class="accordion-collapse collapse collapse"
+<div id="collapse6_3" class="accordion-collapse collapse"
 aria-labelledby="heading6_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1286,8 +1295,8 @@ value of its <code>"class"</code> attribute.</p>
 <hr/>
 <h5>Difficulty: ⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 96%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -1313,7 +1322,7 @@ that the page contains more than 3 songs.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse6_4" class="accordion-collapse collapse collapse"
+<div id="collapse6_4" class="accordion-collapse collapse"
 aria-labelledby="heading6_4" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1329,8 +1338,8 @@ stored).</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 66%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -1354,7 +1363,7 @@ the HTML source code of the site at <code>url</code>.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse6_5" class="accordion-collapse collapse collapse"
+<div id="collapse6_5" class="accordion-collapse collapse"
 aria-labelledby="heading6_5" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1366,8 +1375,8 @@ response could be JSON, it is not necessarily HTML.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️⭐️⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 44%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -1417,7 +1426,7 @@ class="sourceCode py"><code class="sourceCode python"><span id="cb10-1"><a href=
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse7_1" class="accordion-collapse collapse collapse"
+<div id="collapse7_1" class="accordion-collapse collapse"
 aria-labelledby="heading7_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1432,8 +1441,8 @@ uppercase characters in country names.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 76%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -1460,7 +1469,7 @@ match</strong> with the regular expression above.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse7_2" class="accordion-collapse collapse collapse"
+<div id="collapse7_2" class="accordion-collapse collapse"
 aria-labelledby="heading7_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1486,8 +1495,8 @@ E are matches.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 85%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -1516,7 +1525,7 @@ to?</p></li>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse7_3" class="accordion-collapse collapse collapse"
+<div id="collapse7_3" class="accordion-collapse collapse"
 aria-labelledby="heading7_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1542,8 +1551,8 @@ cannot be included in any future matches. Thus the answer is 1.</p></li>
 <hr/>
 <h5>Difficulty: ⭐️⭐️⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 60%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -1566,7 +1575,7 @@ fraction.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse8_1" class="accordion-collapse collapse collapse"
+<div id="collapse8_1" class="accordion-collapse collapse"
 aria-labelledby="heading8_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1587,8 +1596,8 @@ document frequency of <code>"hate"</code> in the corpus is <span class="math inl
 <hr/>
 <h5>Difficulty: ⭐️⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 86%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -1612,7 +1621,7 @@ title</p></li>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse8_2" class="accordion-collapse collapse collapse"
+<div id="collapse8_2" class="accordion-collapse collapse"
 aria-labelledby="heading8_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1630,8 +1639,8 @@ document. As such, it must be the word with the highest TF-IDF in Song
 <hr/>
 <h5>Difficulty: ⭐️⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 84%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -1658,7 +1667,7 @@ class="math inline">d</span>.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse8_3" class="accordion-collapse collapse collapse"
+<div id="collapse8_3" class="accordion-collapse collapse"
 aria-labelledby="heading8_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1678,8 +1687,8 @@ option is not necessarily true.</p>
 <hr/>
 <h5>Difficulty: ⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 91%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -1706,7 +1715,7 @@ title?</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse8_4" class="accordion-collapse collapse collapse"
+<div id="collapse8_4" class="accordion-collapse collapse"
 aria-labelledby="heading8_4" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1734,8 +1743,8 @@ most similar to Song 0’s.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 87%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -1767,7 +1776,7 @@ class="math inline">P(\text{name is what my})</span>.</em></p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse9" class="accordion-collapse collapse collapse"
+<div id="collapse9" class="accordion-collapse collapse"
 aria-labelledby="heading9" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1808,8 +1817,8 @@ name}) \cdot P(\text{what $|$ name is}) \cdot P(\text{my $|$ is what})
 <hr/>
 <h5>Difficulty: ⭐️⭐️⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 57%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -1869,7 +1878,7 @@ and <code>"speechiness"</code> only.</p></li>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse10_1" class="accordion-collapse collapse collapse"
+<div id="collapse10_1" class="accordion-collapse collapse"
 aria-labelledby="heading10_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1888,8 +1897,8 @@ data!).</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 81%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -1912,7 +1921,7 @@ answer as an integer.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse10_2" class="accordion-collapse collapse collapse"
+<div id="collapse10_2" class="accordion-collapse collapse"
 aria-labelledby="heading10_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1931,8 +1940,8 @@ H(x_i))^2} \\
 <hr/>
 <h5>Difficulty: ⭐️⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 87%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -1971,7 +1980,7 @@ include the already-quantitative features.</em></p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse10_3" class="accordion-collapse collapse collapse"
+<div id="collapse10_3" class="accordion-collapse collapse"
 aria-labelledby="heading10_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1989,8 +1998,8 @@ column for each one, there would be <span class="math inline">5 + 4 =
 <hr/>
 <h5>Difficulty: ⭐️⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 75%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -2013,7 +2022,7 @@ column for each one, there would be <span class="math inline">5 + 4 =
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse10_4" class="accordion-collapse collapse collapse"
+<div id="collapse10_4" class="accordion-collapse collapse"
 aria-labelledby="heading10_4" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -2027,8 +2036,8 @@ of its coefficients. As such, the testing RMSE of both Model 3 and Model
 <hr/>
 <h5>Difficulty: ⭐️⭐️⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 70%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -2064,7 +2073,7 @@ simplified fraction.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse10_5" class="accordion-collapse collapse collapse"
+<div id="collapse10_5" class="accordion-collapse collapse"
 aria-labelledby="heading10_5" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -2107,8 +2116,8 @@ Billy’s prediction are the same, other than the coefficients on
 <hr/>
 <h5>Difficulty: ⭐️⭐️⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 70%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -2150,7 +2159,7 @@ as an integer.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse11_1" class="accordion-collapse collapse collapse"
+<div id="collapse11_1" class="accordion-collapse collapse"
 aria-labelledby="heading11_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -2167,8 +2176,8 @@ that will be trained is <span class="math inline">600 \cdot 4 =
 <hr/>
 <h5>Difficulty: ⭐️⭐️⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 73%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -2186,7 +2195,7 @@ and how large is the validation set? Give your answers as integers.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse11_2" class="accordion-collapse collapse collapse"
+<div id="collapse11_2" class="accordion-collapse collapse"
 aria-labelledby="heading11_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -2203,8 +2212,8 @@ set size is <span class="math inline">200 \cdot 3 = 600</span>.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 77%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -2243,7 +2252,7 @@ combinations of hyperparameters in <code>hyp_grid</code>.</p></li>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse11_3" class="accordion-collapse collapse collapse"
+<div id="collapse11_3" class="accordion-collapse collapse"
 aria-labelledby="heading11_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -2258,8 +2267,8 @@ options are guaranteed to be true.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 82%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -2282,7 +2291,7 @@ results are summarized in the following confusion matrix.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse12_1" class="accordion-collapse collapse collapse"
+<div id="collapse12_1" class="accordion-collapse collapse"
 aria-labelledby="heading12_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -2295,8 +2304,8 @@ recall is <span class="math inline">\frac{105}{105 + 66} =
 <hr/>
 <h5>Difficulty: ⭐️⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 89%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -2314,7 +2323,7 @@ integer.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse12_2" class="accordion-collapse collapse collapse"
+<div id="collapse12_2" class="accordion-collapse collapse"
 aria-labelledby="heading12_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -2335,8 +2344,8 @@ our classifier has is 33.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 84%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -2357,7 +2366,7 @@ number.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse12_3" class="accordion-collapse collapse collapse"
+<div id="collapse12_3" class="accordion-collapse collapse"
 aria-labelledby="heading12_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -2379,8 +2388,8 @@ mistakes must be even.</p>
 <hr/>
 <h5>Difficulty: ⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 100%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -2407,7 +2416,7 @@ are also “Kiss Me thru the Phone."</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse12_4" class="accordion-collapse collapse collapse"
+<div id="collapse12_4" class="accordion-collapse collapse"
 aria-labelledby="heading12_4" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -2426,8 +2435,8 @@ its precision is low.</p>
 <hr/>
 <h5>Difficulty: ⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 91%.</p>
+</p>
 </div>
 </div>
 </div>

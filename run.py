@@ -3,7 +3,7 @@ import os
 import glob
 import regex as re
 from bs4 import BeautifulSoup
-import lxml
+import html.parser
 import shutil
 import stat
 import sys
@@ -151,7 +151,7 @@ def pandoc(s, kind='md', flags=''):
     out_file.close()
     delete_folder('temp')
 
-    soup = BeautifulSoup(out_s, features='lxml')
+    soup = BeautifulSoup(out_s, features='html.parser')
     return str(soup.find('body')).replace('<body>', '').replace('</body>', '')
 
 def add_solution_box(solution_str, problem_num):
@@ -206,7 +206,7 @@ def process_MC_matches(matchobj):
     out = '\n\n<ul class="task-list">\n'
     for choice in choices:
         processed_choice = pandoc(choice) # In case the choice includes Markdown
-        processed_choice = str(BeautifulSoup(processed_choice, features='lxml').find('p')).replace('<p>', '').replace('</p>', '')
+        processed_choice = str(BeautifulSoup(processed_choice, features='html.parser').find('p')).replace('<p>', '').replace('</p>', '')
         out += f'<li><p><input type="{input_type}" disabled="" /> {processed_choice}</p></li>\n'
     
     out += '</ul>\n\n'

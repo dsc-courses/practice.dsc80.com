@@ -8,10 +8,19 @@
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
     pre > code.sourceCode { white-space: pre; position: relative; }
     pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -50,7 +59,7 @@
     code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
     code span.at { color: #7d9029; } /* Attribute */
     code span.bn { color: #40a070; } /* BaseN */
-    code span.bu { } /* BuiltIn */
+    code span.bu { color: #008000; } /* BuiltIn */
     code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
     code span.ch { color: #4070a0; } /* Char */
     code span.cn { color: #880000; } /* Constant */
@@ -63,7 +72,7 @@
     code span.ex { } /* Extension */
     code span.fl { color: #40a070; } /* Float */
     code span.fu { color: #06287e; } /* Function */
-    code span.im { } /* Import */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
     code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
     code span.kw { color: #007020; font-weight: bold; } /* Keyword */
     code span.op { color: #666666; } /* Operator */
@@ -170,7 +179,7 @@ here).</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1_1" class="accordion-collapse collapse collapse"
+<div id="collapse1_1" class="accordion-collapse collapse"
 aria-labelledby="heading1_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -184,8 +193,8 @@ number, hence it is a quantitative discrete variable.</p>
 <hr/>
 <h5>Difficulty: ⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 97%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -205,7 +214,7 @@ number, hence it is a quantitative discrete variable.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1_2" class="accordion-collapse collapse collapse"
+<div id="collapse1_2" class="accordion-collapse collapse"
 aria-labelledby="heading1_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -220,8 +229,8 @@ King Triton likes them, but that doesn’t make colors ordinal!</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 79%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -239,7 +248,7 @@ string. Assume there are no ties.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse2" class="accordion-collapse collapse collapse"
+<div id="collapse2" class="accordion-collapse collapse"
 aria-labelledby="heading2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -252,8 +261,8 @@ aria-labelledby="heading2" data-bs-parent="#accordionExample">
 <hr/>
 <h5>Difficulty: ⭐️⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 89%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -274,7 +283,7 @@ list.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse3" class="accordion-collapse collapse collapse"
+<div id="collapse3" class="accordion-collapse collapse"
 aria-labelledby="heading3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -285,8 +294,8 @@ aria-labelledby="heading3" data-bs-parent="#accordionExample">
 <hr/>
 <h5>Difficulty: ⭐️⭐️⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 53%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -330,7 +339,7 @@ option.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse4" class="accordion-collapse collapse collapse"
+<div id="collapse4" class="accordion-collapse collapse"
 aria-labelledby="heading4" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -364,8 +373,8 @@ waitlisted.</p></li>
 <hr/>
 <h5>Difficulty: ⭐️⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 85%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -394,7 +403,7 @@ of code above so that the desired DataFrame is created.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse5" class="accordion-collapse collapse collapse"
+<div id="collapse5" class="accordion-collapse collapse"
 aria-labelledby="heading5" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -408,8 +417,8 @@ fix the issue.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 79%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -452,7 +461,7 @@ unreliable.</p></li>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse6" class="accordion-collapse collapse collapse"
+<div id="collapse6" class="accordion-collapse collapse"
 aria-labelledby="heading6" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -474,8 +483,8 @@ Warren High applied to Columbia.</p>
 <hr/>
 <h5>Difficulty: ⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 93%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -504,7 +513,7 @@ contain? Give your answer as an integer.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse7_1" class="accordion-collapse collapse collapse"
+<div id="collapse7_1" class="accordion-collapse collapse"
 aria-labelledby="heading7_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -516,8 +525,8 @@ aria-labelledby="heading7_1" data-bs-parent="#accordionExample">
 <hr/>
 <h5>Difficulty: ⭐️⭐️⭐️⭐️⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 13%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -538,7 +547,7 @@ remember that the default <code>axis</code> argument to
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse7_2" class="accordion-collapse collapse collapse"
+<div id="collapse7_2" class="accordion-collapse collapse"
 aria-labelledby="heading7_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -550,8 +559,8 @@ aria-labelledby="heading7_2" data-bs-parent="#accordionExample">
 <hr/>
 <h5>Difficulty: ⭐️⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 76%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -579,7 +588,7 @@ individually, but</p></li>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse8" class="accordion-collapse collapse collapse"
+<div id="collapse8" class="accordion-collapse collapse"
 aria-labelledby="heading8" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -602,8 +611,8 @@ that we must require that <span class="math inline">\frac{1}{2} =
 <hr/>
 <h5>Difficulty: ⭐️⭐️⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 72%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -638,7 +647,7 @@ mechanism of <code>"father’s university"</code>?</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse9_1" class="accordion-collapse collapse collapse"
+<div id="collapse9_1" class="accordion-collapse collapse"
 aria-labelledby="heading9_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -653,8 +662,8 @@ themselves, so the data are NMAR.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 81%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -683,7 +692,7 @@ of <code>"mother’s phone number"</code>?</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse9_2" class="accordion-collapse collapse collapse"
+<div id="collapse9_2" class="accordion-collapse collapse"
 aria-labelledby="heading9_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -699,8 +708,8 @@ of <code>"mother’s phone number"</code> depends on
 <hr/>
 <h5>Difficulty: ⭐️⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 88%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -730,7 +739,7 @@ of <code>"scholarship"</code>?</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse9_3" class="accordion-collapse collapse collapse"
+<div id="collapse9_3" class="accordion-collapse collapse"
 aria-labelledby="heading9_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -747,8 +756,8 @@ missing.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 88%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -779,7 +788,7 @@ UC San Diego admits from all schools.</p></li>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse10_1" class="accordion-collapse collapse collapse"
+<div id="collapse10_1" class="accordion-collapse collapse"
 aria-labelledby="heading10_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -796,8 +805,8 @@ example from Lecture 6 (in Spring 2022, at least).</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 75%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -821,7 +830,7 @@ mean GPA</p></li>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse10_2" class="accordion-collapse collapse collapse"
+<div id="collapse10_2" class="accordion-collapse collapse"
 aria-labelledby="heading10_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -859,8 +868,8 @@ mean).</p></li>
 <hr/>
 <h5>Difficulty: ⭐️⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 81%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -893,7 +902,7 @@ rejected students at UC San Diego from La Jolla Private.</p></li>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse11_1" class="accordion-collapse collapse collapse"
+<div id="collapse11_1" class="accordion-collapse collapse"
 aria-labelledby="heading11_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -913,8 +922,8 @@ to groups.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 89%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -938,7 +947,7 @@ rates</p></li>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse11_2" class="accordion-collapse collapse collapse"
+<div id="collapse11_2" class="accordion-collapse collapse"
 aria-labelledby="heading11_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -951,8 +960,8 @@ categorical distributions.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 79%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -998,7 +1007,7 @@ statistics.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse12" class="accordion-collapse collapse collapse"
+<div id="collapse12" class="accordion-collapse collapse"
 aria-labelledby="heading12" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1029,8 +1038,8 @@ is consistent with this interpretation.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 83%.</p>
+</p>
 </div>
 </div>
 </div>

@@ -8,10 +8,19 @@
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
     pre > code.sourceCode { white-space: pre; position: relative; }
     pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -50,7 +59,7 @@
     code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
     code span.at { color: #7d9029; } /* Attribute */
     code span.bn { color: #40a070; } /* BaseN */
-    code span.bu { } /* BuiltIn */
+    code span.bu { color: #008000; } /* BuiltIn */
     code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
     code span.ch { color: #4070a0; } /* Char */
     code span.cn { color: #880000; } /* Constant */
@@ -63,7 +72,7 @@
     code span.ex { } /* Extension */
     code span.fl { color: #40a070; } /* Float */
     code span.fu { color: #06287e; } /* Function */
-    code span.im { } /* Import */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
     code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
     code span.kw { color: #007020; font-weight: bold; } /* Keyword */
     code span.op { color: #666666; } /* Operator */
@@ -215,7 +224,7 @@ the <code>tasks</code> DataFrame?</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1" class="accordion-collapse collapse collapse"
+<div id="collapse1" class="accordion-collapse collapse"
 aria-labelledby="heading1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -229,8 +238,8 @@ task.</p>
 <hr/>
 <h5>Difficulty: ⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 100%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -251,7 +260,7 @@ the <code>tasks</code> DataFrame?</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse2" class="accordion-collapse collapse collapse"
+<div id="collapse2" class="accordion-collapse collapse"
 aria-labelledby="heading2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -266,8 +275,8 @@ categorize each task based on its urgency.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 76%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -287,7 +296,7 @@ task, and <code>False</code> otherwise.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse3" class="accordion-collapse collapse collapse"
+<div id="collapse3" class="accordion-collapse collapse"
 aria-labelledby="heading3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -304,8 +313,8 @@ boolean to the <code>'personal'</code> column of the given task.</p>
 <hr/>
 <h5>Difficulty: ⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 97%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -321,7 +330,7 @@ median number of minutes taken for tasks in each category.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse4" class="accordion-collapse collapse collapse"
+<div id="collapse4" class="accordion-collapse collapse"
 aria-labelledby="heading4" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -337,8 +346,8 @@ the result as a Series so no further code is needed.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 89%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -364,7 +373,7 @@ given category, what percentage took more than 30 minutes?</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse5" class="accordion-collapse collapse collapse"
+<div id="collapse5" class="accordion-collapse collapse"
 aria-labelledby="heading5" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -383,8 +392,8 @@ suffice.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 73%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -430,7 +439,7 @@ a column named <code>'date'</code>.</p></li>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse6" class="accordion-collapse collapse collapse"
+<div id="collapse6" class="accordion-collapse collapse"
 aria-labelledby="heading6" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -446,8 +455,8 @@ assign the Series and have missing values for tasks that are not in
 <hr/>
 <h5>Difficulty: ⭐️⭐️⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 57%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -493,7 +502,7 @@ class="sourceCode py"><code class="sourceCode python"><span id="cb10-1"><a href=
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse7" class="accordion-collapse collapse collapse"
+<div id="collapse7" class="accordion-collapse collapse"
 aria-labelledby="heading7" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -526,8 +535,8 @@ won’t help us here.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 76%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -544,7 +553,7 @@ the urgency levels, and the columns should contain the client names.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse8" class="accordion-collapse collapse collapse"
+<div id="collapse8" class="accordion-collapse collapse"
 aria-labelledby="heading8" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -565,8 +574,8 @@ group.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 82%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -606,7 +615,7 @@ class="sourceCode py"><code class="sourceCode python"><span id="cb11-1"><a href=
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse9" class="accordion-collapse collapse collapse"
+<div id="collapse9" class="accordion-collapse collapse"
 aria-labelledby="heading9" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -627,8 +636,8 @@ do with <code>left_on = 'client</code>. The corresponding column for
 <hr/>
 <h5>Difficulty: ⭐️⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 78%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -656,7 +665,7 @@ values.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse10" class="accordion-collapse collapse collapse"
+<div id="collapse10" class="accordion-collapse collapse"
 aria-labelledby="heading10" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -696,8 +705,8 @@ p-value.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 82%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -729,7 +738,7 @@ completed tasks and the mean urgency of uncompleted tasks</p></li>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse11" class="accordion-collapse collapse collapse"
+<div id="collapse11" class="accordion-collapse collapse"
 aria-labelledby="heading11" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -742,8 +751,8 @@ the most sense to use TVD here.</p>
 <hr/>
 <h5>Difficulty: ⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 90%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -782,7 +791,7 @@ maximum time taken for <code>'hobbies'</code> tasks</p></li>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse12" class="accordion-collapse collapse collapse"
+<div id="collapse12" class="accordion-collapse collapse"
 aria-labelledby="heading12" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -800,8 +809,8 @@ statistic would work best for this problem.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 81%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -831,7 +840,7 @@ it is reasonable.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse13" class="accordion-collapse collapse collapse"
+<div id="collapse13" class="accordion-collapse collapse"
 aria-labelledby="heading13" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -845,8 +854,8 @@ design.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 61%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -878,7 +887,7 @@ it is reasonable.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse14" class="accordion-collapse collapse collapse"
+<div id="collapse14" class="accordion-collapse collapse"
 aria-labelledby="heading14" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -899,8 +908,8 @@ probability of missingness conditioned only on the time taken.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 78%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -932,7 +941,7 @@ of urgencies in tasks where the category is not missing.</p></li>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse15" class="accordion-collapse collapse collapse"
+<div id="collapse15" class="accordion-collapse collapse"
 aria-labelledby="heading15" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -948,8 +957,8 @@ not missing. Thus the right answer is Option A.</p>
 <hr/>
 <h5>Difficulty: ⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 91%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -978,7 +987,7 @@ true?</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse16" class="accordion-collapse collapse collapse"
+<div id="collapse16" class="accordion-collapse collapse"
 aria-labelledby="heading16" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -993,8 +1002,8 @@ observed urgencies.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 80%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -1010,7 +1019,7 @@ observed urgencies.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse17" class="accordion-collapse collapse collapse"
+<div id="collapse17" class="accordion-collapse collapse"
 aria-labelledby="heading17" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1024,8 +1033,8 @@ explanation made sense.</p>
 <hr/>
 <h5>Difficulty: ⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 94%.</p>
+</p>
 </div>
 </div>
 </div>

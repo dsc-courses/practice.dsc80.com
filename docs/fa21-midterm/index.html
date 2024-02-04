@@ -11,12 +11,16 @@
     div.columns{display: flex; gap: min(4vw, 1.5em);}
     div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
     ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
       width: 0.8em;
       margin: 0 0.8em 0.2em -1.6em;
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
     pre > code.sourceCode { white-space: pre; position: relative; }
     pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -81,7 +85,7 @@
     code span.vs { color: #4070a0; } /* VerbatimString */
     code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="..\assets\theme.css" />
+  <link rel="stylesheet" href="../assets/theme.css" />
   <script defer=""
   src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
   <script>document.addEventListener("DOMContentLoaded", function () {
@@ -171,7 +175,7 @@ referred to throughout the exam as the DataFrame <code>df</code>.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1" class="accordion-collapse collapse collapse"
+<div id="collapse1" class="accordion-collapse collapse"
 aria-labelledby="heading1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -185,8 +189,8 @@ the <code>"species"</code> column is nominal.</p>
 <hr/>
 <h5>Difficulty: ⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 97%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -207,7 +211,7 @@ the <code>"species"</code> column is nominal.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse2" class="accordion-collapse collapse collapse"
+<div id="collapse2" class="accordion-collapse collapse"
 aria-labelledby="heading2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -221,8 +225,8 @@ could calculate average body mass per species.</p>
 <hr/>
 <h5>Difficulty: ⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 98%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -240,7 +244,7 @@ information).</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse3" class="accordion-collapse collapse collapse"
+<div id="collapse3" class="accordion-collapse collapse"
 aria-labelledby="heading3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -255,8 +259,8 @@ of columns in the resulting table.</p>
 <hr/>
 <h5>Difficulty: ⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 94%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -287,7 +291,7 @@ standardized as another group, and so on.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse4" class="accordion-collapse collapse collapse"
+<div id="collapse4" class="accordion-collapse collapse"
 aria-labelledby="heading4" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -305,8 +309,8 @@ Option B.</p>
 <hr/>
 <h5>Difficulty: ⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 93%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -348,7 +352,7 @@ label (index) 332</p></li>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse5" class="accordion-collapse collapse collapse"
+<div id="collapse5" class="accordion-collapse collapse"
 aria-labelledby="heading5" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -365,8 +369,8 @@ DataFrame, python will just fill the missing values with
 <hr/>
 <h5>Difficulty: ⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 97%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -388,7 +392,7 @@ to make your code perfect!</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse6" class="accordion-collapse collapse collapse"
+<div id="collapse6" class="accordion-collapse collapse"
 aria-labelledby="heading6" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -407,8 +411,8 @@ among other solutions.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 89%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -438,7 +442,7 @@ represent with finite precision</p></li>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse7" class="accordion-collapse collapse collapse"
+<div id="collapse7" class="accordion-collapse collapse"
 aria-labelledby="heading7" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -459,8 +463,8 @@ is D.</p>
 <hr/>
 <h5>Difficulty: ⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 95%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -486,7 +490,7 @@ above. What makes the most sense to fill it in with?</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse8" class="accordion-collapse collapse collapse"
+<div id="collapse8" class="accordion-collapse collapse"
 aria-labelledby="heading8" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -499,8 +503,8 @@ with 0.</p>
 <hr/>
 <h5>Difficulty: ⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 93%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -536,7 +540,7 @@ added. Therefore, the result of your merge should have exactly 330 rows
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse9" class="accordion-collapse collapse collapse"
+<div id="collapse9" class="accordion-collapse collapse"
 aria-labelledby="heading9" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -552,8 +556,8 @@ species in <code>df</code> not in <code>personalities</code>.</p>
 <hr/>
 <h5>Difficulty: ⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 93%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -585,7 +589,7 @@ to make your code perfect!</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse10" class="accordion-collapse collapse collapse"
+<div id="collapse10" class="accordion-collapse collapse"
 aria-labelledby="heading10" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -611,8 +615,8 @@ correctly.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 83%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -639,7 +643,7 @@ two distributions are the same? Check all that apply.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse11" class="accordion-collapse collapse collapse"
+<div id="collapse11" class="accordion-collapse collapse"
 aria-labelledby="heading11" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -657,8 +661,8 @@ depths.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️⭐️⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 38%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -684,7 +688,7 @@ came from different underlying distributions?</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse12" class="accordion-collapse collapse collapse"
+<div id="collapse12" class="accordion-collapse collapse"
 aria-labelledby="heading12" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -702,8 +706,8 @@ continuous quantitative varaible.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 89%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -734,7 +738,7 @@ reasonable.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse13" class="accordion-collapse collapse collapse"
+<div id="collapse13" class="accordion-collapse collapse"
 aria-labelledby="heading13" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -748,8 +752,8 @@ measurment “if the item placed on top is too small”.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 88%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -782,7 +786,7 @@ reasonable.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse14" class="accordion-collapse collapse collapse"
+<div id="collapse14" class="accordion-collapse collapse"
 aria-labelledby="heading14" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -795,8 +799,8 @@ namely, Gentoo penguins are more likely to have missing measurments.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 81%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -831,7 +835,7 @@ reasonable.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse15" class="accordion-collapse collapse collapse"
+<div id="collapse15" class="accordion-collapse collapse"
 aria-labelledby="heading15" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -844,8 +848,8 @@ not.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 87%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -869,7 +873,7 @@ the below is a valid test statistic for this test?</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse16" class="accordion-collapse collapse collapse"
+<div id="collapse16" class="accordion-collapse collapse"
 aria-labelledby="heading16" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -883,8 +887,8 @@ variable, TVD would work well as a test statistic.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️⭐️⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 38%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -917,7 +921,7 @@ observed values). Which of the following is true?</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse17" class="accordion-collapse collapse collapse"
+<div id="collapse17" class="accordion-collapse collapse"
 aria-labelledby="heading17" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -931,8 +935,8 @@ meaning that the mean will be biased low.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 68%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -952,7 +956,7 @@ to make your code perfect!</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse18" class="accordion-collapse collapse collapse"
+<div id="collapse18" class="accordion-collapse collapse"
 aria-labelledby="heading18" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -965,8 +969,8 @@ aria-labelledby="heading18" data-bs-parent="#accordionExample">
 <hr/>
 <h5>Difficulty: ⭐️⭐️</h5>
 <p>
-</p>
 <p>The average score on this problem was 84%.</p>
+</p>
 </div>
 </div>
 </div>
