@@ -273,13 +273,20 @@ class="math inline">12</span>pm) or the afternoon (after <span
 class="math inline">12</span>pm)? <em>Note: while the problem says there
 is only one solution, post-exam two options for test statistic were
 given credit. Pick one of the two.</em></p>
-<p><strong>Simulation procedure</strong>: ( ) A.
-<code>np.random.choice([0, 1], bus.shape[0])</code> ( ) B.
-<code>np.random.choice(bus['late'], bus.shape[0], replace = True)</code>
-( ) C. Randomly permute the <code>'late'</code> column</p>
-<p><strong>Test statistic</strong> ( ) A. Difference in means ( ) B.
-Absolute difference in means ( ) C. Difference in proportions ( ) D.
-Absolute difference in proportions</p>
+<p><strong>Simulation procedure</strong>:</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> A. <code>np.random.choice([0, 1], bus.shape[0])</code></p></li>
+<li><p><input type="radio" disabled="" /> B.
+<code>np.random.choice(bus['late'], bus.shape[0], replace = True)</code></p></li>
+<li><p><input type="radio" disabled="" /> C. Randomly permute the <code>'late'</code> column</p></li>
+</ul>
+<p><strong>Test statistic</strong></p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> A. Difference in means</p></li>
+<li><p><input type="radio" disabled="" /> B. Absolute difference in means</p></li>
+<li><p><input type="radio" disabled="" /> C. Difference in proportions</p></li>
+<li><p><input type="radio" disabled="" /> D. Absolute difference in proportions</p></li>
+</ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading2_1">
@@ -463,8 +470,13 @@ statistic is the best test statistic to use.</p>
 <hr />
 <h2 id="problem-3">Problem 3</h2>
 <p>Answer the following questions about missingness mechanisms. For each
-question, choose one of the following options: - NMAR - MAR - MCAR -
-Missing by design <br></p>
+question, choose one of the following options:</p>
+<ul>
+<li>NMAR</li>
+<li>MAR</li>
+<li>MCAR</li>
+<li>Missing by design <br></li>
+</ul>
 <h3 id="problem-3.1">Problem 3.1</h3>
 <p>What is the missingness mechanism for the <code>'next'</code> column
 in the <code>stop</code> DataFrame?</p>
@@ -481,7 +493,7 @@ aria-labelledby="heading3_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer</strong>: Missing by design</p>
+<p><strong>Answer</strong>: D. Missing by design</p>
 <p>When there are missing values for the <code>'next'</code> column, it
 means there is no next stop and the line has reached the end of its
 route. This could have been designed differently to have an empty
@@ -511,7 +523,7 @@ aria-labelledby="heading3_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer</strong>: NMAR</p>
+<p><strong>Answer</strong>: A. NMAR</p>
 <p>Since Sam is suspicious of <code>'late'</code> values based on the
 values themselves in <code>'late'</code> being negative, this is
 NMAR.</p>
@@ -540,7 +552,7 @@ aria-labelledby="heading3_3" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer</strong>: MAR</p>
+<p><strong>Answer</strong>: B. MAR</p>
 <p>Since Tiffany updated the system at <span class="math inline">8</span>am, the missing values in
 <code>'late'</code> are dependent on the <code>'time'</code> column.
 Therefore it is MAR.</p>

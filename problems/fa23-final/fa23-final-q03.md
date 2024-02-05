@@ -6,11 +6,13 @@ Are buses more likely to be late in the morning (before $12$pm) or the afternoon
 *Note: while the problem says there is only one solution, post-exam two options for test statistic were given credit. Pick one of the two.*
 
 **Simulation procedure**:
+
 ( ) A. `np.random.choice([0, 1], bus.shape[0])`
 ( ) B. `np.random.choice(bus['late'], bus.shape[0], replace = True)`
 ( ) C. Randomly permute the `'late'` column
 
 **Test statistic**
+
 ( ) A. Difference in means 
 ( ) B. Absolute difference in means
 ( ) C. Difference in proportions
