@@ -6,15 +6,15 @@ Are buses more likely to be late in the morning (before $12$pm) or the afternoon
 *Note: while the problem says there is only one solution, post-exam two options for test statistic were given credit. Pick one of the two.*
 
 **Simulation procedure**:
-- A. `np.random.choice([0, 1], bus.shape[0])`
-- B. `np.random.choice(bus['late'], bus.shape[0], replace = True)`
-- C. Randomly permute the `'late'` column
+( ) A. `np.random.choice([0, 1], bus.shape[0])`
+( ) B. `np.random.choice(bus['late'], bus.shape[0], replace = True)`
+( ) C. Randomly permute the `'late'` column
 
 **Test statistic**
-- A. Difference in means 
-- B. Absolute difference in means
-- C. Difference in proportions
-- D. Absolute difference in proportions
+( ) A. Difference in means 
+( ) B. Absolute difference in means
+( ) C. Difference in proportions
+( ) D. Absolute difference in proportions
 # BEGIN SOLN
 **Answer**: Simulation procedure - C). Test statistic - A) or C).
 
@@ -30,16 +30,18 @@ Are buses equally likely to be early or late?
 *Note: while the problem says there is only one solution, post-exam two options for test statistic were given credit. Pick one of the two.*
 
 **Simulation procedure**:
-- A. `np.random.choice([0, 1], bus.shape[0])`
-- B. `np.random.choice(bus['late'], bus.shape[0], replace = True)`
-- C. Randomly permute the `'late'` column
+
+( ) A. `np.random.choice([0, 1], bus.shape[0])`
+( ) B. `np.random.choice(bus['late'], bus.shape[0], replace = True)`
+( ) C. Randomly permute the `'late'` column
 
 **Test statistic**
-- A. Number of values below $1$
-- B. `np.mean`
-- C. `np.std`
-- D. TVD
-- E. K-S statistic
+
+( ) A. Number of values below $1$
+( ) B. `np.mean`
+( ) C. `np.std`
+( ) D. TVD
+( ) E. K-S statistic
 # BEGIN SOLN
 **Answer**: Simulation procedure - A). Test statistic - A) or B).
 
@@ -54,15 +56,17 @@ Since we know the number of buses, we can use the number of values below $1$ to 
 Is the `'late'` column MAR dependent on the `'line'` column?
 
 **Simulation procedure**:
-- A. `np.random.choice([0, 1], bus.shape[0])`
-- B. `np.random.choice(bus['late'], bus.shape[0], replace = True)`
-- C. Randomly permute the `'late'` column
+
+( ) A. `np.random.choice([0, 1], bus.shape[0])`
+( ) B. `np.random.choice(bus['late'], bus.shape[0], replace = True)`
+( ) C. Randomly permute the `'late'` column
 
 **Test statistic**
-- A. Absolute difference in means 
-- B. Absolute difference in proportions
-- C. TVD
-- D. K-S statistic
+
+( ) A. Absolute difference in means 
+( ) B. Absolute difference in proportions
+( ) C. TVD
+( ) D. K-S statistic
 # BEGIN SOLN
 **Answer**: Simulation procedure - C). Test statistic - C).
 
@@ -77,14 +81,16 @@ Since we are comparing the distributions of *categorical* data for our permutati
 Is the `'late'` column MAR dependent on the `'time'` column?
 
 **Simulation procedure**:
-- A. `np.random.choice([0, 1], bus.shape[0])`
-- B. `np.random.choice(bus['late'], bus.shape[0], replace = True)`
-- C. Randomly permute the `'late'` column
+
+( ) A. `np.random.choice([0, 1], bus.shape[0])`
+( ) B. `np.random.choice(bus['late'], bus.shape[0], replace = True)`
+( ) C. Randomly permute the `'late'` column
 
 **Test statistic**
-- A. Absolute difference in proportions
-- B. TVD
-- C. K-S statistic
+
+( ) A. Absolute difference in proportions
+( ) B. TVD
+( ) C. K-S statistic
 # BEGIN SOLN
 **Answer**: Simulation procedure - C). Test statistic - C).
 
