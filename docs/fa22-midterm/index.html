@@ -469,20 +469,20 @@ assign the Series and have missing values for tasks that are not in
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
 <p>Which of the below snippets of code will produce the same result as
 <code>pt.loc[3.0, 'consulting']</code>? Select all that apply.</p>
-<p>Snippet 1*:</p>
+<p>Snippet 1:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>tasks[</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    (tasks[<span class="st">&#39;category&#39;</span>] <span class="op">==</span> <span class="st">&#39;consulting&#39;</span>)</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">&amp;</span></span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    (tasks[<span class="st">&#39;urgency&#39;</span>] <span class="op">==</span> <span class="fl">3.0</span>)</span>
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>][<span class="st">&#39;completed&#39;</span>].<span class="bu">sum</span>()</span></code></pre></div>
-<p>Snippet 2*:</p>
+<p>Snippet 2:</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>tasks[tasks[<span class="st">&#39;urgency&#39;</span>] <span class="op">==</span> <span class="dv">3</span>]</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>.groupby(<span class="st">&#39;category&#39;</span>)[<span class="st">&#39;completed&#39;</span>]</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>.<span class="bu">sum</span>().loc[<span class="st">&#39;consulting&#39;</span>]</span></code></pre></div>
 <p>Snippet 3:</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>tasks.groupby(<span class="st">&#39;urgency&#39;</span>)[<span class="st">&#39;completed&#39;</span>]</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>.<span class="bu">sum</span>().loc[<span class="fl">3.0</span>, <span class="st">&#39;consulting&#39;</span>]</span></code></pre></div>
-<p>Snippet 4*:</p>
+<p>Snippet 4:</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>tasks.groupby([<span class="st">&#39;urgency&#39;</span>, <span class="st">&#39;category&#39;</span>])[<span class="st">&#39;completed&#39;</span>]</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>.<span class="bu">sum</span>().loc[(<span class="fl">3.0</span>, <span class="st">&#39;consulting&#39;</span>)]</span></code></pre></div>
 <p>Snippet 5</p>

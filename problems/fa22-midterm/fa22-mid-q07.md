@@ -10,7 +10,7 @@ pt = tasks.pivot_table(
 
 Which of the below snippets of code will produce the same result as `pt.loc[3.0, 'consulting']`? Select all that apply.
 
-Snippet 1*:
+Snippet 1:
 ```py
 tasks[
     (tasks['category'] == 'consulting')
@@ -19,7 +19,7 @@ tasks[
 ]['completed'].sum()
 ```
 
-Snippet 2*:
+Snippet 2:
 ```py
 tasks[tasks['urgency'] == 3]
 .groupby('category')['completed']
@@ -32,7 +32,7 @@ tasks.groupby('urgency')['completed']
 .sum().loc[3.0, 'consulting']
 ```
 
-Snippet 4*:
+Snippet 4:
 ```py
 tasks.groupby(['urgency', 'category'])['completed']
 .sum().loc[(3.0, 'consulting')]
