@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Fall 2023 Final Exam</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="../assets/theme.css" />
+  <script defer=""
+  src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Fall 2023 Final Exam</h1>
+</header>
+<p><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<!-- add after bootstrap.min.css -->
+<link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css"/>
+<!-- add after bootstrap.min.js or bootstrap.bundle.min.js -->
+<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script></p>
+<!-- for difficulty gauges-->
+<script src="https://cdn.plot.ly/plotly-2.16.1.min.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B947E6J6H4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-B947E6J6H4');
+</script>
+<p><a href="../index.html">← return to practice.dsc80.com</a></p>
+<hr />
+<p><strong>Instructor(s):</strong> Sam Lau</p>
+<p>This exam was administered in-person. The exam was closed-notes,
+except students were allowed to bring a single two-sided notes sheet. No
+calculators were allowed. Students had <strong>180 minutes</strong> to
+take this exam.</p>
+<hr />
+<h2 id="problem-1">Problem 1</h2>
+<p>Fill in Python code below so that the last line of each code snippet
+evaluates to each desired result, using the <code>bus</code> and
+<code>stop</code> DataFrames describe on Page 1 of the Reference Sheet.
+<strong>You may not use <code>for</code> or <code>while</code> loops in
+any answer for this question.</strong></p>
+<p>The <code>bus</code> table (left) records bus arrivals over <span
+class="math inline">1</span> day for all the bust stops within a <span
+class="math inline">2</span> mile radius of UCSD. The data dictionary
+(right) describes each column.</p>
+<center><img src='../../assets/images/fa23-final/dsc80_final_bus.png' width=55%></center>
+<p>The <code>stop</code> table (left) contains information for al the
+bus lines in San Diego (not just the ones near UCSD). The data
+dictionary (right) describes each column.</p>
+<center><img src='../../assets/images/fa23-final/dsc80_final_stop.png' width=55%></center>
+<p><br></p>
+<h3 id="problem-1.1">Problem 1.1</h3>
+<p>Compute the median minutes late for the <span
+class="math inline">101</span> bus.
+<code>bus.loc[____].median()</code></p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_1" aria-expanded="true" aria-controls="collapse1_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_1" class="accordion-collapse collapse collapse"
+aria-labelledby="heading1_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer</strong>:
+<code>bus.loc[bus['line'] == 101, 'late'].median()</code></p>
+<p><code>.loc[]</code> will grab the rows of the first parameter and
+columns of the second parameter. In this case, we want all the rows that
+belong to bus <span class="math inline">101</span>, so we filter by
+<code>bus['line'] == 101</code>. We then want to see how late the buses
+are, so we grab the <code>'late'</code> column in the second
+parameter.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-1.2">Problem 1.2</h3>
+<p>Compute a copy of <code>bus</code> with only the bus lines that made
+at least one stop containing the string ‘Myers Ln’.</p>
+<pre><code>def f(x):
+    return ____
+bus.groupby(____).____(f)</code></pre>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_2" aria-expanded="true" aria-controls="collapse1_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_2" class="accordion-collapse collapse collapse"
+aria-labelledby="heading1_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer</strong>:</p>
+<pre><code>def f(x):
+    return any(x['stop'].str.contains('Meyers Ln'))
+bus.groupby('line').filter(f)</code></pre>
+<p>We can start with the bottom <code>groupby</code> function because we
+know we are asked to look per bus line, so we want to aggregate the data
+by ‘line’. Then, since we are going to make a copy of the original
+DataFrame with only the bus lines meeting our criteria,
+<code>filter</code> will keep rows that meet what we want. Then, we just
+need to define our criteria in <code>f(x)</code>, which is that the rows
+of data, <code>x</code>, have a stop containing the string ‘Myers Ln’.
+This can be done by looking at the <code>'stop'</code> column and using
+the Series string functions to check across all values if the string
+‘Meyers Ln’ is included with <code>.str.contains('Meyers Ln')</code>.
+This will return a boolean Series, and we can check if “at least one”
+stop contains the string by passing the boolean Series into the
+<code>any</code> function. This will then return <code>True</code> or
+<code>False</code>, which determines if that bus line is kept in our
+computed DataFrame.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-1.3">Problem 1.3</h3>
+<p>Compute the number of buses in <code>bus</code> whose next stop is
+‘UTC’.</p>
+<pre><code>x = stop.merge(____, on = ____, how = ____)
+x[____].shape[0]</code></pre>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_3" aria-expanded="true" aria-controls="collapse1_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_3" class="accordion-collapse collapse collapse"
+aria-labelledby="heading1_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer</strong>:</p>
+<pre><code>x = stop.merge(bus, on = ['line', 'stop'], how = 'inner')
+x[x['next'] == 'UTC'].shape[0]</code></pre>
+<p>OR</p>
+<pre><code>x = stop.merge(bus, on = ['line', 'stop'], how = 'right')
+x[x['next'] == 'UTC'].shape[0]</code></pre>
+<p>OR</p>
+<pre><code>x = stop.merge(bus, on = ['line', 'stop'], how = 'left')
+x[(x['next'] == 'UTC') &amp; (~x['time'].isna())].shape[0]</code></pre>
+<p>OR</p>
+<pre><code>x = stop.merge(bus, on = 'line', how = 'left')
+x[(x['next'] == 'UTC') &amp; (x['stop_x'] == x['stop_y'])].shape[0]</code></pre>
+<p>The top solution is our internal solution, the additional three are
+student solutions that we also accepted. First, we merge the
+<code>stop</code> DataFrame with the <code>bus</code> DataFrame because
+the question specifically wants to know about the number of buses from
+the <code>bus</code> DataFrame. We want to merge on both
+<code>'line'</code> and <code>'stop'</code> because we need to find the
+number of bus lines that are at a specific stop. We then choose to do an
+inner merge, but a right merge has the same effect because the buses in
+<code>bus</code> are all in the scope of <code>stop</code>, but
+<code>stop</code> has extra bus lines we don’t care about for this
+question. Finally, we filter our DataFrame <code>x</code> by checking
+which <code>['line', 'stop']</code> combinations are headed to ‘UTC’
+next by looking at the <code>'next'</code> column.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-1.4">Problem 1.4</h3>
+<p>Computer the number of unique pairs of bust stops that are exactly
+two stops away from each other. For example, if you only use the first
+four rows of the <code>stop</code> table, then your code should evaluate
+to the numebr <span class="math inline">2</span>, since you can go from
+‘Gilman Dr &amp; Mandeville Ln’ to ‘La Jolla Village Dr &amp; Lebon Dr’
+and from ‘Gilman Dr &amp; Mandeville Ln’ to ‘Villa La Jolla Dr &amp;
+Holidat Ct’ in two stops. <em>Hint</em>: The
+<code>suffixes = (1, 2)</code> argument to <code>merge</code> appends a
+<span class="math inline">1</span> to column labels in the left table
+and a <span class="math inline">2</span> to column labels in the right
+table whenever the merged tables share column labels.</p>
+<pre><code>m = ____.merge(____, left_on = ____, right_on = ____, how = ____, suffixes = (1, 2))
+(m[____].drop_duplicates().shape[0])</code></pre>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_4" aria-expanded="true" aria-controls="collapse1_4">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_4" class="accordion-collapse collapse collapse"
+aria-labelledby="heading1_4" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer</strong>:</p>
+<pre><code>m = stop.merge(stop, left_on = 'next', right_on = 'stop', how = 'inner', suffixes = (1, 2))
+(m[['stop1', 'next2']].drop_duplicates().shape[0])</code></pre>
+<p>We want to look at all stops in San Diego, so we will not be using
+the <code>bus</code> DataFrame for this question. Instead, we will merge
+<code>stop</code> with itself, but on the left we will merge on the
+<code>'next'</code> column, and on the right we will merge on the
+<code>'stop'</code> column. This means we get the first stop on the left
+DataFrame, the next stop from the left DataFrame matching with the right
+DataFrame, and then the next stop from the right DataFrame. That results
+in the <code>'stop'</code> column of the left DataFrame being <span class="math inline">2</span> stops away from the <code>'next'</code>
+column of the right DataFrame. That means all we need to do is use an
+<code>inner</code> merge to drop any stops that do not have a match
+<span class="math inline">2</span> stops away. Since we are now left
+with a DataFrame of stops that we want, we just grab the correctly
+formatted output by selecting the <code>['stop1', 'next2']</code>
+columns from <code>m</code>, recalling that we use <span class="math inline">1</span> and <span class="math inline">2</span> to
+distinguish the columns from the left and right DataFrames.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-2">Problem 2</h2>
+<p>Dylan wants to answer the following questions using hypothesis tests
+on the <code>bus</code> DataFrame. For each test, select the
+<strong>one</strong> correct procedure to simulate a single sample under
+the null hypothesis, and select the <strong>one</strong> correct test
+statistic for the hypothesis test among the choices given. Assume that
+the <code>'time'</code> column of the <code>bus</code> DataFrame has
+already been parsed into timestamps.</p>
+<p><br></p>
+<h3 id="problem-2.1">Problem 2.1</h3>
+<p>Are buses more likely to be late in the morning (before <span
+class="math inline">12</span>pm) or the afternoon (after <span
+class="math inline">12</span>pm)? <em>Note: while the problem says there
+is only one solution, post-exam two options for test statistic were
+given credit. Pick one of the two.</em></p>
+<p><strong>Simulation procedure</strong>: - A.
+<code>np.random.choice([0, 1], bus.shape[0])</code> - B.
+<code>np.random.choice(bus['late'], bus.shape[0], replace = True)</code>
+- C. Randomly permute the <code>'late'</code> column</p>
+<p><strong>Test statistic</strong> - A. Difference in means - B.
+Absolute difference in means - C. Difference in proportions - D.
+Absolute difference in proportions</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading2_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_1" aria-expanded="true" aria-controls="collapse2_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse2_1" class="accordion-collapse collapse collapse"
+aria-labelledby="heading2_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer</strong>: Simulation procedure - C). Test statistic -
+A) or C).</p>
+<p><strong>Simulation procedure</strong>: We have two different
+populations here - morning buses and afternoon buses. We are measuring
+one sample - whether a bus is late or not. This means we want to conduct
+a permutation test to see if the morning and afternoon buses are from
+the same distribution, so the correct answer is to permute the
+<code>'late'</code> column. Note that option B) is similar, but with
+<code>replace = True</code> so it is bootstrapping, not permutation.
+<strong>Test statistic</strong>: Depending on your interpretation of the
+question, either option A) or C) is correct. First, we can’t choose
+absolute difference as a solution because then we can’t answer when
+buses will be more likely to be late, as we need the test statistic to
+be directional to determine <em>which</em> bus. If you interpret the
+question to mean which population has the higher average lateness, then
+you would want to choose option A). If you interpret the question to
+mean which population has a higher count of late buses, then you choose
+option C).</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-2.2">Problem 2.2</h3>
+<p>Are buses equally likely to be early or late? <em>Note: while the
+problem says there is only one solution, post-exam two options for test
+statistic were given credit. Pick one of the two.</em></p>
+<p><strong>Simulation procedure</strong>: - A.
+<code>np.random.choice([0, 1], bus.shape[0])</code> - B.
+<code>np.random.choice(bus['late'], bus.shape[0], replace = True)</code>
+- C. Randomly permute the <code>'late'</code> column</p>
+<p><strong>Test statistic</strong> - A. Number of values below <span
+class="math inline">1</span> - B. <code>np.mean</code> - C.
+<code>np.std</code> - D. TVD - E. K-S statistic</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading2_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_2" aria-expanded="true" aria-controls="collapse2_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse2_2" class="accordion-collapse collapse collapse"
+aria-labelledby="heading2_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer</strong>: Simulation procedure - A). Test statistic -
+A) or B).</p>
+<p><strong>Simulation procedure</strong>: We now have only one
+population, which is just all buses. We then want to see if a sample is
+from that population, so we conduct a hypothesis test under the null.
+The null would be that buses are equally likely to be early or late, so
+we can simulate this by randomly generating <code>[0, 1]</code> for all
+buses. This is what option A) does. <strong>Test statistic</strong>:
+Since we know the number of buses, we can use the number of values below
+<span class="math inline">1</span> to determine whether we have more
+early buses, more late buses, or the same amount. Similarly, the mean
+will give us a value between <span class="math inline">0</span> and
+<span class="math inline">1</span>, where <span class="math inline">0.5</span> means we have the equal early and late
+buses, while <span class="math inline">0</span> represents only early
+buses, and <span class="math inline">1</span> represents only late
+buses.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-2.3">Problem 2.3</h3>
+<p>Is the <code>'late'</code> column MAR dependent on the
+<code>'line'</code> column?</p>
+<p><strong>Simulation procedure</strong>: - A.
+<code>np.random.choice([0, 1], bus.shape[0])</code> - B.
+<code>np.random.choice(bus['late'], bus.shape[0], replace = True)</code>
+- C. Randomly permute the <code>'late'</code> column</p>
+<p><strong>Test statistic</strong> - A. Absolute difference in means -
+B. Absolute difference in proportions - C. TVD - D. K-S statistic</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading2_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_3" aria-expanded="true" aria-controls="collapse2_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse2_3" class="accordion-collapse collapse collapse"
+aria-labelledby="heading2_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer</strong>: Simulation procedure - C). Test statistic -
+C).</p>
+<p><strong>Simulation procedure</strong>: To determine MAR, we run a
+permutation test and compare the distributions of the
+<code>'line'</code> column when the <code>'late'</code> column is
+missing or not to see if it changes. If the distributions are similar
+then the data is likely MCAR, but if the distributions change then it is
+likely the <code>'late'</code> column is MAR on <code>'line'</code>.
+<strong>Test statistic</strong>: Since we are comparing the
+distributions of <em>categorical</em> data for our permutation test,
+Total Variation Distance is the best test statistic to use.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-2.4">Problem 2.4</h3>
+<p>Is the <code>'late'</code> column MAR dependent on the
+<code>'time'</code> column?</p>
+<p><strong>Simulation procedure</strong>: - A.
+<code>np.random.choice([0, 1], bus.shape[0])</code> - B.
+<code>np.random.choice(bus['late'], bus.shape[0], replace = True)</code>
+- C. Randomly permute the <code>'late'</code> column</p>
+<p><strong>Test statistic</strong> - A. Absolute difference in
+proportions - B. TVD - C. K-S statistic</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading2_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_4" aria-expanded="true" aria-controls="collapse2_4">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse2_4" class="accordion-collapse collapse collapse"
+aria-labelledby="heading2_4" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer</strong>: Simulation procedure - C). Test statistic -
+C).</p>
+<p><strong>Simulation procedure</strong>: Again, to determine MAR, we
+run a permutation test and compare the distributions of the
+<code>'time'</code> column when the <code>'late'</code> column is
+missing or not to see if it changes. If the distributions are similar
+then the data is likely MCAR, but if the distributions change then it is
+likely the <code>'late'</code> column is MAR on <code>'time'</code>.
+<strong>Test statistic</strong>: Since we are comparing the
+distributions of <em>numerical</em> data for our permutation test, K-S
+statistic is the best test statistic to use.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-3">Problem 3</h2>
+<p>Answer the following questions about missingness mechanisms. For each
+question, choose one of the following options: - NMAR - MAR - MCAR -
+Missing by design <br></p>
+<h3 id="problem-3.1">Problem 3.1</h3>
+<p>What is the missingness mechanism for the <code>'next'</code> column
+in the <code>stop</code> DataFrame?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading3_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_1" aria-expanded="true" aria-controls="collapse3_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse3_1" class="accordion-collapse collapse collapse"
+aria-labelledby="heading3_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer</strong>: Missing by design</p>
+<p>When there are missing values for the <code>'next'</code> column, it
+means there is no next stop and the line has reached the end of its
+route. This could have been designed differently to have an empty
+string, a string saying “end”, etc. Therefore, the missing values are
+intentionally marked as missing by design.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-3.2">Problem 3.2</h3>
+<p>Suppose that the missing values in the <code>'late'</code> column
+from the <code>bus</code> DataFrame are missing because Same got
+suspicious of negative values and deleted a few of them. What is the
+missingness mechanism for the values in the <code>'late'</code>
+column?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading3_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_2" aria-expanded="true" aria-controls="collapse3_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse3_2" class="accordion-collapse collapse collapse"
+aria-labelledby="heading3_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer</strong>: NMAR</p>
+<p>Since Sam is suspicious of <code>'late'</code> values based on the
+values themselves in <code>'late'</code> being negative, this is
+NMAR.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-3.3">Problem 3.3</h3>
+<p>Suppose that the missing values in the <code>'late'</code> column
+from the <code>bus</code> DataFrame are missing because Tiffany made an
+update to the GPS system at <span class="math inline">8</span>am and the
+system was down for <span class="math inline">15</span> minutes
+afterwards. What is the missingness mechanism for the values in the
+<code>late</code> column?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading3_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_3" aria-expanded="true" aria-controls="collapse3_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse3_3" class="accordion-collapse collapse collapse"
+aria-labelledby="heading3_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer</strong>: MAR</p>
+<p>Since Tiffany updated the system at <span class="math inline">8</span>am, the missing values in
+<code>'late'</code> are dependent on the <code>'time'</code> column.
+Therefore it is MAR.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-4">Problem 4</h2>
+<p>Giorgia defines the following variables:</p>
+<pre><code>a = bus[&#39;late&#39;].mean()
+b = bus[&#39;late&#39;].std()</code></pre>
+<p>She applies the imputation methods below to the <code>'late'</code>
+column, then recalculates <code>a</code> and <code>b</code>. For each
+imputation method, choose whether the new values of <code>a</code> and
+<code>b</code> will be lower (<span class="math inline">-</span>),
+higher (<span class="math inline">+</span>), exactly the same (<span
+class="math inline">=</span>), or approximately the same (<span
+class="math inline">\approx</span>) as the original values of
+<code>a</code> and <code>b</code>.</p>
+<p><br></p>
+<h3 id="problem-4.1">Problem 4.1</h3>
+<p>Mean imputation</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_1" aria-expanded="true" aria-controls="collapse4_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_1" class="accordion-collapse collapse collapse"
+aria-labelledby="heading4_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer</strong> <code>a</code> - (<span class="math inline">=</span>). <code>b</code> - (<span class="math inline">-</span>).</p>
+<p><code>a</code>: Since <code>a</code> is already calculated from the
+mean of <code>'late'</code>, adding the mean does not move the mean.
+<code>b</code>: Since we are adding more data right at the mean, we are
+lowering the standard deviation as a higher number of samples are
+gathered right at the mean.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-4.2">Problem 4.2</h3>
+<p>Probabilistic imputation</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_2" aria-expanded="true" aria-controls="collapse4_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_2" class="accordion-collapse collapse collapse"
+aria-labelledby="heading4_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer</strong> <code>a</code> - (<span class="math inline">\approx</span>). <code>b</code> - (<span class="math inline">\approx</span>).</p>
+<p><code>a</code>: Since we are drawing at random from the original
+distribution, the mean could go up or down, but will generally stay
+about the same since the distribution we sample from has the same mean.
+<code>b</code>: Since we are drawing at random from the original
+distribution, the standard deviation could go up or down, but will
+generally stay about the same since the distribution we sample from has
+the same standard deviation.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="section"><span class="math display"> </span></h2>
+<h4
+id="feedback-find-an-error-still-confused-have-a-suggestion-let-us-know-here.">👋
+Feedback: Find an error? Still confused? Have a suggestion?
+<a href="https://forms.gle/WZ71FchnXU1K154d7">Let us know
+here</u></a>.</h4>
+<hr />
+</body>
+</html>
