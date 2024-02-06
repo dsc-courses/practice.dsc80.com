@@ -275,7 +275,7 @@ is only one solution, post-exam two options for test statistic were
 given credit. Pick one of the two.</em></p>
 <p><strong>Simulation procedure</strong>:</p>
 <ul class="task-list">
-<li><p><input type="radio" disabled="" /> A. <code>np.random.choice([0, 1], bus.shape[0])</code></p></li>
+<li><p><input type="radio" disabled="" /> A. <code>np.random.choice([-1, 1], bus.shape[0])</code></p></li>
 <li><p><input type="radio" disabled="" /> B.
 <code>np.random.choice(bus['late'], bus.shape[0], replace = True)</code></p></li>
 <li><p><input type="radio" disabled="" /> C. Randomly permute the <code>'late'</code> column</p></li>
@@ -329,14 +329,14 @@ problem says there is only one solution, post-exam two options for test
 statistic were given credit. Pick one of the two.</em></p>
 <p><strong>Simulation procedure</strong>:</p>
 <ul class="task-list">
-<li><p><input type="radio" disabled="" /> A. <code>np.random.choice([0, 1], bus.shape[0])</code></p></li>
+<li><p><input type="radio" disabled="" /> A. <code>np.random.choice([-1, 1], bus.shape[0])</code></p></li>
 <li><p><input type="radio" disabled="" /> B.
 <code>np.random.choice(bus['late'], bus.shape[0], replace = True)</code></p></li>
 <li><p><input type="radio" disabled="" /> C. Randomly permute the <code>'late'</code> column</p></li>
 </ul>
 <p><strong>Test statistic</strong></p>
 <ul class="task-list">
-<li><p><input type="radio" disabled="" /> A. Number of values below <span class="math inline">1</span></p></li>
+<li><p><input type="radio" disabled="" /> A. Number of values below <span class="math inline">0</span></p></li>
 <li><p><input type="radio" disabled="" /> B. <code>np.mean</code></p></li>
 <li><p><input type="radio" disabled="" /> C. <code>np.std</code></p></li>
 <li><p><input type="radio" disabled="" /> D. TVD</p></li>
@@ -361,14 +361,14 @@ A) or B).</p>
 population, which is just all buses. We then want to see if a sample is
 from that population, so we conduct a hypothesis test under the null.
 The null would be that buses are equally likely to be early or late, so
-we can simulate this by randomly generating <code>[0, 1]</code> for all
+we can simulate this by randomly generating <code>[-1, 1]</code> for all
 buses. This is what option A) does. <strong>Test statistic</strong>:
 Since we know the number of buses, we can use the number of values below
-<span class="math inline">1</span> to determine whether we have more
+<span class="math inline">0</span> to determine whether we have more
 early buses, more late buses, or the same amount. Similarly, the mean
-will give us a value between <span class="math inline">0</span> and
-<span class="math inline">1</span>, where <span class="math inline">0.5</span> means we have the equal early and late
-buses, while <span class="math inline">0</span> represents only early
+will give us a value between <span class="math inline">-1</span> and
+<span class="math inline">1</span>, where <span class="math inline">0</span> means we have the equal early and late
+buses, while <span class="math inline">-1</span> represents only early
 buses, and <span class="math inline">1</span> represents only late
 buses.</p>
 </div>
@@ -381,7 +381,7 @@ buses.</p>
 <code>'line'</code> column?</p>
 <p><strong>Simulation procedure</strong>:</p>
 <ul class="task-list">
-<li><p><input type="radio" disabled="" /> A. <code>np.random.choice([0, 1], bus.shape[0])</code></p></li>
+<li><p><input type="radio" disabled="" /> A. <code>np.random.choice([-1, 1], bus.shape[0])</code></p></li>
 <li><p><input type="radio" disabled="" /> B.
 <code>np.random.choice(bus['late'], bus.shape[0], replace = True)</code></p></li>
 <li><p><input type="radio" disabled="" /> C. Randomly permute the <code>'late'</code> column</p></li>
@@ -427,7 +427,7 @@ Total Variation Distance is the best test statistic to use.</p>
 <code>'time'</code> column?</p>
 <p><strong>Simulation procedure</strong>:</p>
 <ul class="task-list">
-<li><p><input type="radio" disabled="" /> A. <code>np.random.choice([0, 1], bus.shape[0])</code></p></li>
+<li><p><input type="radio" disabled="" /> A. <code>np.random.choice([-1, 1], bus.shape[0])</code></p></li>
 <li><p><input type="radio" disabled="" /> B.
 <code>np.random.choice(bus['late'], bus.shape[0], replace = True)</code></p></li>
 <li><p><input type="radio" disabled="" /> C. Randomly permute the <code>'late'</code> column</p></li>

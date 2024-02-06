@@ -7,7 +7,7 @@ Are buses more likely to be late in the morning (before $12$pm) or the afternoon
 
 **Simulation procedure**:
 
-( ) A. `np.random.choice([0, 1], bus.shape[0])`
+( ) A. `np.random.choice([-1, 1], bus.shape[0])`
 ( ) B. `np.random.choice(bus['late'], bus.shape[0], replace = True)`
 ( ) C. Randomly permute the `'late'` column
 
@@ -33,13 +33,13 @@ Are buses equally likely to be early or late?
 
 **Simulation procedure**:
 
-( ) A. `np.random.choice([0, 1], bus.shape[0])`
+( ) A. `np.random.choice([-1, 1], bus.shape[0])`
 ( ) B. `np.random.choice(bus['late'], bus.shape[0], replace = True)`
 ( ) C. Randomly permute the `'late'` column
 
 **Test statistic**
 
-( ) A. Number of values below $1$
+( ) A. Number of values below $0$
 ( ) B. `np.mean`
 ( ) C. `np.std`
 ( ) D. TVD
@@ -48,9 +48,9 @@ Are buses equally likely to be early or late?
 **Answer**: Simulation procedure - A). Test statistic - A) or B).
 
 **Simulation procedure**:
-We now have only one population, which is just all buses. We then want to see if a sample is from that population, so we conduct a hypothesis test under the null. The null would be that buses are equally likely to be early or late, so we can simulate this by randomly generating `[0, 1]` for all buses. This is what option A) does. 
+We now have only one population, which is just all buses. We then want to see if a sample is from that population, so we conduct a hypothesis test under the null. The null would be that buses are equally likely to be early or late, so we can simulate this by randomly generating `[-1, 1]` for all buses. This is what option A) does. 
 **Test statistic**:
-Since we know the number of buses, we can use the number of values below $1$ to determine whether we have more early buses, more late buses, or the same amount. Similarly, the mean will give us a value between $0$ and $1$, where $0.5$ means we have the equal early and late buses, while $0$ represents only early buses, and $1$ represents only late buses.
+Since we know the number of buses, we can use the number of values below $0$ to determine whether we have more early buses, more late buses, or the same amount. Similarly, the mean will give us a value between $-1$ and $1$, where $0$ means we have the equal early and late buses, while $-1$ represents only early buses, and $1$ represents only late buses.
 # END SOLN
 # END SUBPROB
 
@@ -59,7 +59,7 @@ Is the `'late'` column MAR dependent on the `'line'` column?
 
 **Simulation procedure**:
 
-( ) A. `np.random.choice([0, 1], bus.shape[0])`
+( ) A. `np.random.choice([-1, 1], bus.shape[0])`
 ( ) B. `np.random.choice(bus['late'], bus.shape[0], replace = True)`
 ( ) C. Randomly permute the `'late'` column
 
@@ -84,7 +84,7 @@ Is the `'late'` column MAR dependent on the `'time'` column?
 
 **Simulation procedure**:
 
-( ) A. `np.random.choice([0, 1], bus.shape[0])`
+( ) A. `np.random.choice([-1, 1], bus.shape[0])`
 ( ) B. `np.random.choice(bus['late'], bus.shape[0], replace = True)`
 ( ) C. Randomly permute the `'late'` column
 
