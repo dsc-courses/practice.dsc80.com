@@ -1,4 +1,4 @@
-The DataFrame `sat` contains one row for **most** combinations of `"Year"` and `"State"`, where `"Year"`ranges between `2005` and `2015` and `"State"` is one of the 50 states (not including the District of Columbia).
+The DataFrame `sat` contains one row for **most** combinations of `"Year"` and `"State"`, where `"Year"` ranges between `2005` and `2015` and `"State"` is one of the 50 states (not including the District of Columbia).
 
 The other columns are as follows:
 

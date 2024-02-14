@@ -139,7 +139,7 @@ take this exam.</p>
 <hr />
 <p>The DataFrame <code>sat</code> contains one row for
 <strong>most</strong> combinations of <code>"Year"</code> and
-<code>"State"</code>, where <code>"Year"</code>ranges between
+<code>"State"</code>, where <code>"Year"</code> ranges between
 <code>2005</code> and <code>2015</code> and <code>"State"</code> is one
 of the 50 states (not including the District of Columbia).</p>
 <p>The other columns are as follows:</p>
@@ -703,7 +703,10 @@ in 2015 and for all students in 2015.</p>
 <p><br></p>
 <h3 id="problem-2.4">Problem 2.4</h3>
 <p>What type of test is being proposed above?</p>
-<p>( ) Hypothesis test ( ) Permutation test</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> Hypothesis test</p></li>
+<li><p><input type="radio" disabled="" /> Permutation test</p></li>
+</ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading2_4">
@@ -888,12 +891,12 @@ research papers, and she’d like to read the cited papers as well.</p>
 in the string <code>s</code> below.</p>
 <div class="sourceCode" id="cb13"><pre
 class="sourceCode py"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> <span class="st">&#39;&#39;&#39;</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="st">In DSC 10 [3], you learned about babypandas, a strict subset </span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="st">of pandas [15][4]. It was designed [5] to provide programming </span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="st">beginners [3][91] just enough syntax to be able to perform </span></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="st">meaningful tabular data analysis [8] without getting lost in </span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="st">In DSC 10 [3], you learned about babypandas, a strict subset</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="st">of pandas [15][4]. It was designed [5] to provide programming</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="st">beginners [3][91] just enough syntax to be able to perform</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="st">meaningful tabular data analysis [8] without getting lost in</span></span>
 <span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="st">100s of details.</span></span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="st">&#39;&#39;&#39;</span>    </span></code></pre></div>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="st">&#39;&#39;&#39;</span></span></code></pre></div>
 <p>We decide to help Nicole extract citation numbers from papers.
 Consider the following four extracted lists.</p>
 <div class="sourceCode" id="cb14"><pre
@@ -901,7 +904,7 @@ class="sourceCode py"><code class="sourceCode python"><span id="cb14-1"><a href=
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>list2 <span class="op">=</span> [<span class="st">&#39;3&#39;</span>, <span class="st">&#39;15&#39;</span>, <span class="st">&#39;4&#39;</span>, <span class="st">&#39;5&#39;</span>, <span class="st">&#39;3&#39;</span>, <span class="st">&#39;91&#39;</span>, <span class="st">&#39;8&#39;</span>]</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>list3 <span class="op">=</span> [<span class="st">&#39;10&#39;</span>, <span class="st">&#39;3&#39;</span>, <span class="st">&#39;15&#39;</span>, <span class="st">&#39;4&#39;</span>, <span class="st">&#39;5&#39;</span>, <span class="st">&#39;3&#39;</span>, <span class="st">&#39;91&#39;</span>, <span class="st">&#39;8&#39;</span>, <span class="st">&#39;100&#39;</span>]</span>
 <span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>list4 <span class="op">=</span> [<span class="st">&#39;[3]&#39;</span>, <span class="st">&#39;[15]&#39;</span>, <span class="st">&#39;[4]&#39;</span>, <span class="st">&#39;[5]&#39;</span>, <span class="st">&#39;[3]&#39;</span>, <span class="st">&#39;[91]&#39;</span>, <span class="st">&#39;[8]&#39;</span>]</span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>list5 <span class="op">=</span> [<span class="st">&#39;1&#39;</span>, <span class="st">&#39;0&#39;</span>, <span class="st">&#39;3&#39;</span>, <span class="st">&#39;1&#39;</span>, <span class="st">&#39;5&#39;</span>, <span class="st">&#39;4&#39;</span>, <span class="st">&#39;5&#39;</span>, <span class="st">&#39;3&#39;</span>, </span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>list5 <span class="op">=</span> [<span class="st">&#39;1&#39;</span>, <span class="st">&#39;0&#39;</span>, <span class="st">&#39;3&#39;</span>, <span class="st">&#39;1&#39;</span>, <span class="st">&#39;5&#39;</span>, <span class="st">&#39;4&#39;</span>, <span class="st">&#39;5&#39;</span>, <span class="st">&#39;3&#39;</span>,</span>
 <span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>         <span class="st">&#39;9&#39;</span>, <span class="st">&#39;1&#39;</span>, <span class="st">&#39;8&#39;</span>, <span class="st">&#39;1&#39;</span>, <span class="st">&#39;0&#39;</span>, <span class="st">&#39;0&#39;</span>]</span></code></pre></div>
 <p>For each expression below, select the list it evaluates to, or select
 “None of the above.”</p>
@@ -930,6 +933,13 @@ aria-labelledby="heading4_1" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer: </strong> list3</p>
+<p>This regex pattern <code>\d+</code> matches one or more digits
+anywhere in the string. It doesn’t concern itself with the context of
+the digits, whether they are inside brackets or not. As a result, it
+extracts all sequences of digits in s, including ‘10’, ‘3’, ‘15’, ‘4’,
+‘5’, ‘3’, ‘91’, ‘8’, and ‘100’, which together form list3. This is
+because greedily matches all contiguous digits, capturing both the
+citation numbers and any other numbers present in the text.</p>
 </div>
 </div>
 </div>
@@ -959,6 +969,14 @@ aria-labelledby="heading4_2" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer: </strong> list5</p>
+<p>his pattern <code>[\d+]</code> is slightly misleading because the
+square brackets are used to define a character class, and the plus sign
+inside is treated as a literal character, not as a quantifier. However,
+since there are no plus signs in s, this detail does not affect the
+outcome. The character class atches any digit, so this pattern
+effectively matches individual digits throughout the string, resulting
+in list5. This list contains every single digit found in s, separated as
+individual string elements.</p>
 </div>
 </div>
 </div>
@@ -988,6 +1006,14 @@ aria-labelledby="heading4_3" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer: </strong> list2</p>
+<p>This pattern is specifically designed to match digits that are
+enclosed in square brackets. The <code>\[(\d+)\]</code> pattern looks
+for a sequence of one or more digits <code>\d+</code> inside square
+brackets <code>[]</code>. The parentheses capture the digits as a group,
+excluding the brackets from the result. Therefore, it extracts just the
+citation numbers as they appear in s, matching list2 exactly. This
+method is precise for extracting citation numbers from a text formatted
+in the verbose numeric style.</p>
 </div>
 </div>
 </div>
@@ -1017,6 +1043,14 @@ aria-labelledby="heading4_4" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer: </strong> list4</p>
+<p>Similar to the previous explanation but with a key difference: the
+entire pattern of digits within square brackets is captured, including
+the brackets themselves. The pattern <code>\[\d+\]</code> specifically
+searches for sequences of digits surrounded by square brackets, and the
+parentheses around the entire pattern ensure that the match includes the
+brackets. This results in list4, which contains all the citation markers
+found in s, preserving the brackets to clearly denote them as
+citations.</p>
 </div>
 </div>
 </div>
@@ -1032,33 +1066,28 @@ site with her scores on it to get back the source HTML and tries to
 parse it with BeautifulSoup.</p>
 <p>Suppose <code>soup</code> is a BeautifulSoup object instantiated
 using the following HTML document.</p>
-<div class="sourceCode" id="cb15"><pre
-class="sourceCode html"><code class="sourceCode html"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;college&gt;</span>Your score is ready!<span class="kw">&lt;/college&gt;</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;sat</span> <span class="er">verbal</span><span class="ot">=</span><span class="st">&quot;ready&quot;</span> <span class="er">math</span><span class="ot">=</span><span class="st">&quot;ready&quot;</span><span class="kw">&gt;</span></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    Your percentiles are as follows:</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;scorelist</span> <span class="er">listtype</span><span class="ot">=</span><span class="st">&quot;percentiles&quot;</span><span class="kw">&gt;</span></span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;scorerow</span> <span class="er">kind</span><span class="ot">=</span><span class="st">&quot;verbal&quot;</span> <span class="er">subkind</span><span class="ot">=</span><span class="st">&quot;per&quot;</span><span class="kw">&gt;</span></span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>            Verbal: <span class="kw">&lt;scorenum&gt;</span>84<span class="kw">&lt;/scorenum&gt;</span></span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;/scorerow&gt;</span></span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;scorerow</span> <span class="er">kind</span><span class="ot">=</span><span class="st">&quot;math&quot;</span> <span class="er">subkind</span><span class="ot">=</span><span class="st">&quot;per&quot;</span><span class="kw">&gt;</span></span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>            Math: <span class="kw">&lt;scorenum&gt;</span>99<span class="kw">&lt;/scorenum&gt;</span></span>
-<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;/scorerow&gt;</span></span>
-<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/scorelist&gt;</span></span>
-<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>    And your actual scores are as follows:</span>
-<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;scorelist</span> <span class="er">listtype</span><span class="ot">=</span><span class="st">&quot;scores&quot;</span><span class="kw">&gt;</span></span>
-<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;scorerow</span> <span class="er">kind</span><span class="ot">=</span><span class="st">&quot;verbal&quot;</span><span class="kw">&gt;</span></span>
-<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>            Verbal: <span class="kw">&lt;scorenum&gt;</span>680<span class="kw">&lt;/scorenum&gt;</span></span>
-<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;/scorerow&gt;</span></span>
-<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;scorerow</span> <span class="er">kind</span><span class="ot">=</span><span class="st">&quot;math&quot;</span><span class="kw">&gt;</span></span>
-<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>            Math: <span class="kw">&lt;scorenum&gt;</span>800<span class="kw">&lt;/scorenum&gt;</span></span>
-<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;/scorerow&gt;</span></span>
-<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/scorelist&gt;</span></span>
-<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/sat&gt;</span></span></code></pre></div>
+<pre><code>&lt;college&gt;Your score is ready!&lt;/college&gt;
+
+&lt;sat verbal=&quot;ready&quot; math=&quot;ready&quot;&gt;
+  Your percentiles are as follows:
+  &lt;scorelist listtype=&quot;percentiles&quot;&gt;
+    &lt;scorerow kind=&quot;verbal&quot; subkind=&quot;per&quot;&gt;
+      Verbal: &lt;scorenum&gt;84&lt;/scorenum&gt;
+    &lt;/scorerow&gt;
+    &lt;scorerow kind=&quot;math&quot; subkind=&quot;per&quot;&gt;
+      Math: &lt;scorenum&gt;99&lt;/scorenum&gt;
+    &lt;/scorerow&gt;
+  &lt;/scorelist&gt;
+  And your actual scores are as follows:
+  &lt;scorelist listtype=&quot;scores&quot;&gt;
+    &lt;scorerow kind=&quot;verbal&quot;&gt; Verbal: &lt;scorenum&gt;680&lt;/scorenum&gt; &lt;/scorerow&gt;
+    &lt;scorerow kind=&quot;math&quot;&gt; Math: &lt;scorenum&gt;800&lt;/scorenum&gt; &lt;/scorerow&gt;
+  &lt;/scorelist&gt;
+&lt;/sat&gt;</code></pre>
 <p><br></p>
 <h3 id="problem-5.1">Problem 5.1</h3>
-<p>Which of the following expressions evaluate to `“verbal”}? Select all
-that apply.</p>
+<p>Which of the following expressions evaluate to <code>"verbal"</code>?
+Select all that apply.</p>
 <ul class="task-list">
 <li><p><input type="checkbox" disabled="" /> <code>soup.find("scorerow").get("kind")</code></p></li>
 <li><p><input type="checkbox" disabled="" /> <code>soup.find("sat").get("ready")</code></p></li>
@@ -1081,13 +1110,39 @@ aria-labelledby="heading5_1" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer: </strong> Option 1, Option 3, Option 4</p>
+<p>Correct options:</p>
+<ul>
+<li>Option 1 finds the first <code>&lt;scorerow&gt;</code> element and
+retrieves its <code>"kind"</code> attribute, which is
+<code>"verbal"</code> for the first <code>&lt;scorerow&gt;</code>
+encountered in the HTML document.</li>
+<li>Option 2 finds the first <code>&lt;scorerow&gt;</code> tag,
+retrieves its text <code>("Verbal: 84")</code>, splits this text by “:”,
+and takes the first element of the resulting list
+<code>("Verbal")</code>, converting it to lowercase to match
+<code>"verbal"</code></li>
+<li>Option 3 creates a list of <code>"kind"</code> attributes for all
+<code>&lt;scorerow&gt;</code> elements. The second to last (-2) element
+in this list corresponds to the <code>"kind"</code> attribute of the
+first <code>&lt;scorerow&gt;</code> in the second
+<code>&lt;scorelist&gt;</code> tag, which is also
+<code>"verbal"</code></li>
+</ul>
+<p>Incorrect options:</p>
+<ul>
+<li>Option 2 attempts to get an attribute ready from the
+<code>&lt;sat&gt;</code> tag, which does not exist as an attribute.</li>
+<li>Option 5 tries to retrieve a <code>"kind"</code> attribute from a
+<code>&lt;scorelist&gt;</code> tag, but <code>&lt;scorelist&gt;</code>
+does not have a <code>"kind"</code> attribute.</li>
+</ul>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <h3 id="problem-5.2">Problem 5.2</h3>
-<p>(6 pts) Consider the following function.</p>
+<p>Consider the following function.</p>
 <div class="sourceCode" id="cb16"><pre
 class="sourceCode py"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> summer(tree):</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">isinstance</span>(tree, <span class="bu">list</span>):</span>
@@ -1138,6 +1193,20 @@ aria-labelledby="heading5_2" data-bs-parent="#accordionExample">
 <p><strong>Answer: </strong> a: <code>"scorelist"</code>, b:
 <code>"scorelist", attrs={"listtype":"scores"}</code>, c:
 <code>"scorerow", attrs={"kind":"math"}</code></p>
+<p><code>soup.find("scorelist")</code> selects the first
+<code>&lt;scorelist&gt;</code> tag, which includes both verbal and math
+percentiles <code>(84 and 99)</code>. The function
+<code>summer(tree)</code> sums these values to get <code>183</code>.</p>
+<p>This selects the <code>&lt;scorelist&gt;</code> tag with
+<code>listtype="scores"</code>, which contains the actual scores of
+verbal <code>(680)</code> and math <code>(800)</code>. The function sums
+these to get <code>1480</code>.</p>
+<p>This selects all <code>&lt;scorerow&gt;</code>elements with
+<code>kind="math"</code>, capturing both the percentile
+<code>(99)</code> and the actual score <code>(800)</code>. Since tree is
+now a list, <code>summer(tree)</code> iterates through each
+<code>&lt;scorerow&gt;</code> in the list, summing their
+<code>&lt;scorenum&gt;</code> values to reach <code>899</code>.</p>
 </div>
 </div>
 </div>
@@ -1146,15 +1215,16 @@ aria-labelledby="heading5_2" data-bs-parent="#accordionExample">
 <hr />
 <h2 id="problem-6">Problem 6</h2>
 <p>Consider the following list of tokens.</p>
-<p>“<code>py tokens = ["is", "the", "college", "board", "the", "board", "of", "college"] "</code></p>
+<div class="sourceCode" id="cb21"><pre
+class="sourceCode py"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>tokens <span class="op">=</span> [<span class="st">&quot;is&quot;</span>, <span class="st">&quot;the&quot;</span>, <span class="st">&quot;college&quot;</span>, <span class="st">&quot;board&quot;</span>, <span class="st">&quot;the&quot;</span>, <span class="st">&quot;board&quot;</span>, <span class="st">&quot;of&quot;</span>, <span class="st">&quot;college&quot;</span>]</span></code></pre></div>
 <p><br></p>
 <h3 id="problem-6.1">Problem 6.1</h3>
 <p>Recall, a uniform language model is one in which each
 <strong>unique</strong> token has the same chance of being sampled.
 Suppose we instantiate a uniform language model on <code>tokens</code>.
-The probability of the sentence “““the college board is” — that is,
-<span class="math inline">P(\text{the college board is})</span> — is of
-the form <span class="math inline">\frac{1}{a^b}</span>, where <span
+The probability of the sentence “the college board is” — that is, <span
+class="math inline">P(\text{the college board is})</span> — is of the
+form <span class="math inline">\frac{1}{a^b}</span>, where <span
 class="math inline">a</span> and <span class="math inline">b</span> are
 both positive integers.</p>
 <p>What are <span class="math inline">a</span> and <span
@@ -1173,6 +1243,13 @@ aria-labelledby="heading6_1" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer: </strong> a = 5, b = 4</p>
+<p>In a uniform language model, each unique token has the same chance of
+being sampled. Given the list of tokens, there are 5 unique tokens:
+[“is”, “the”, “college”, “board”, “of”]. The probability of sampling any
+one token is <span class="math inline">\frac{1}{5}</span>. For a
+sentence of 4 tokens (“the college board is”), the probability is <span class="math inline">\frac{1}{5^4}</span> because each token is
+independently sampled. Thus, <span class="math inline">a = 5</span> and
+<span class="math inline">b = 4</span>.</p>
 </div>
 </div>
 </div>
@@ -1203,6 +1280,16 @@ aria-labelledby="heading6_2" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer: </strong> (c, d) = (2, 9) or (8, 3)</p>
+<p>In a unigram language model, the probability of sampling a token is
+proportional to its frequency in the token list. The frequencies are:
+“is” = 1, “the” = 3, “college” = 2, “board” = 2, “of” = 1. The sentence
+“the college board is” has probabilities <span class="math inline">\frac{3}{8}</span>, <span class="math inline">\frac{2}{8}</span>, <span class="math inline">\frac{2}{8}</span>, <span class="math inline">\frac{1}{8}</span> for each word respectively, when
+considering the total number of tokens (8). The combined probability is
+<span class="math inline">\frac{3}{8} \cdot \frac{2}{8} \cdot
+\frac{2}{8} \cdot \frac{1}{8} = \frac{6}{512} = \frac{1}{2^9}</span> or,
+simplifying, <span class="math inline">\frac{1}{8^3}</span> since <span class="math inline">512 = 8^3</span>. Therefore, <span class="math inline">c = 2</span> and <span class="math inline">d =
+9</span> or <span class="math inline">c = 8</span> and <span class="math inline">d = 3</span>, depending on how you represent the
+fraction.</p>
 </div>
 </div>
 </div>
@@ -1245,6 +1332,13 @@ aria-labelledby="heading6_3" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer: </strong> Sentence 4</p>
+<p>A bigram model looks at the probability of a word given the previous
+word. Sentence 4, “the college board of college”, likely has higher
+probabilities for its bigrams (“the college”, “college board”, “board
+of”, “of college”) based on the original list of tokens, which contains
+all these pairs. This reasoning assumes that the given pairs appear more
+frequently or are more probable in sequence than the pairs in other
+sentences.</p>
 </div>
 </div>
 </div>
@@ -1288,6 +1382,11 @@ aria-labelledby="heading6_4" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer: </strong> Yes</p>
+<p>In the context of TF-IDF, if a word appears in every sentence, its
+inverse document frequency (IDF) part would be (() = 0), making the
+TF-IDF score 0 for that word across all documents. Since “the” appears
+in all five sentences, its IDF is zero, leading to a column of zeros in
+the TF-IDF matrix for “the”.</p>
 </div>
 </div>
 </div>
@@ -1317,6 +1416,12 @@ aria-labelledby="heading6_5" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer: </strong> Sentence 4</p>
+<p>The word “college” likely has the highest TF-IDF in Sentence 4
+because it appears less frequently across all sentences and is
+relatively more important (i.e., has a higher term frequency) in
+Sentence 4 than in other sentences where it appears. TF-IDF rewards
+words that are unique to a document but penalizes those that are common
+across all documents.</p>
 </div>
 </div>
 </div>
@@ -1352,6 +1457,13 @@ aria-labelledby="heading6_6" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer: </strong> the smallest</p>
+<p>The DF-ITF score is lower for terms that are more unique (appear in
+fewer documents) and have a higher count in the document they appear in.
+A smaller DF-ITF indicates that a term is both important within a
+specific document and distinctive across the corpus. Therefore, the term
+with the smallest DF-ITF in a document is considered the best summary
+for that document, as it balances document-specific significance with
+corpus-wide uniqueness.</p>
 </div>
 </div>
 </div>
@@ -1380,21 +1492,21 @@ predicts 0 every time.</em></p>
 above statement <strong>not guaranteed</strong> to be true?</p>
 <p><em>Note: Treat as our training set.</em></p>
 <p>Option 1:</p>
-<div class="sourceCode" id="cb31"><pre
-class="sourceCode py"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> (sat[<span class="st">&#39;Math&#39;</span>] <span class="op">&gt;</span> sat[<span class="st">&#39;Verbal&#39;</span>]).mean()</span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="fl">0.5</span></span></code></pre></div>
-<p>Option 2:</p>
 <div class="sourceCode" id="cb32"><pre
-class="sourceCode py"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> (sat[<span class="st">&#39;Math&#39;</span>] <span class="op">-</span> sat[<span class="st">&#39;Verbal&#39;</span>]).mean()</span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="dv">0</span></span></code></pre></div>
-<p>Option 3:</p>
+class="sourceCode py"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> (sat[<span class="st">&#39;Math&#39;</span>] <span class="op">&gt;</span> sat[<span class="st">&#39;Verbal&#39;</span>]).mean()</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="fl">0.5</span></span></code></pre></div>
+<p>Option 2:</p>
 <div class="sourceCode" id="cb33"><pre
-class="sourceCode py"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> (sat[<span class="st">&#39;Math&#39;</span>] <span class="op">-</span> sat[<span class="st">&#39;Verbal&#39;</span>] <span class="op">&gt;</span> <span class="dv">0</span>).mean()</span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="fl">0.5</span></span></code></pre></div>
-<p>Option 4:</p>
+class="sourceCode py"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> (sat[<span class="st">&#39;Math&#39;</span>] <span class="op">-</span> sat[<span class="st">&#39;Verbal&#39;</span>]).mean()</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="dv">0</span></span></code></pre></div>
+<p>Option 3:</p>
 <div class="sourceCode" id="cb34"><pre
-class="sourceCode py"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> ((sat[<span class="st">&#39;Math&#39;</span>] <span class="op">/</span> sat[<span class="st">&#39;Verbal&#39;</span>]) <span class="op">&gt;</span> <span class="dv">1</span>).mean() <span class="op">-</span> <span class="fl">0.5</span></span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="dv">0</span></span></code></pre></div>
+class="sourceCode py"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> (sat[<span class="st">&#39;Math&#39;</span>] <span class="op">-</span> sat[<span class="st">&#39;Verbal&#39;</span>] <span class="op">&gt;</span> <span class="dv">0</span>).mean()</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="fl">0.5</span></span></code></pre></div>
+<p>Option 4:</p>
+<div class="sourceCode" id="cb35"><pre
+class="sourceCode py"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> ((sat[<span class="st">&#39;Math&#39;</span>] <span class="op">/</span> sat[<span class="st">&#39;Verbal&#39;</span>]) <span class="op">&gt;</span> <span class="dv">1</span>).mean() <span class="op">-</span> <span class="fl">0.5</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="dv">0</span></span></code></pre></div>
 <ul class="task-list">
 <li><p><input type="radio" disabled="" /> Option 1</p></li>
 <li><p><input type="radio" disabled="" /> Option 2</p></li>
@@ -1761,32 +1873,32 @@ for free lunches in school. The Series <code>lunch_props</code> contains
 <code>"medium"</code>, or <code>"high"</code>. Since we can’t use
 strings as features in a model, we decide to encode these strings using
 the following <code>Pipeline</code>:</p>
-<div class="sourceCode" id="cb35"><pre
-class="sourceCode py"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Note: The FunctionTransformer is only needed to change the result</span></span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="co"># of the OneHotEncoder from a &quot;sparse&quot; matrix to a regular matrix</span></span>
-<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="co"># so that it can be used with StandardScaler;</span></span>
-<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a><span class="co"># it doesn&#39;t change anything mathematically.</span></span>
-<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>pl <span class="op">=</span> Pipeline([</span>
-<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>    (<span class="st">&quot;ohe&quot;</span>, OneHotEncoder(drop<span class="op">=</span><span class="st">&quot;first&quot;</span>)),</span>
-<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>    (<span class="st">&quot;ft&quot;</span>, FunctionTransformer(<span class="kw">lambda</span> X: X.toarray())),</span>
-<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>    (<span class="st">&quot;ss&quot;</span>, StandardScaler())</span>
-<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>])</span></code></pre></div>
+<div class="sourceCode" id="cb36"><pre
+class="sourceCode py"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Note: The FunctionTransformer is only needed to change the result</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="co"># of the OneHotEncoder from a &quot;sparse&quot; matrix to a regular matrix</span></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="co"># so that it can be used with StandardScaler;</span></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="co"># it doesn&#39;t change anything mathematically.</span></span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>pl <span class="op">=</span> Pipeline([</span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>    (<span class="st">&quot;ohe&quot;</span>, OneHotEncoder(drop<span class="op">=</span><span class="st">&quot;first&quot;</span>)),</span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>    (<span class="st">&quot;ft&quot;</span>, FunctionTransformer(<span class="kw">lambda</span> X: X.toarray())),</span>
+<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a>    (<span class="st">&quot;ss&quot;</span>, StandardScaler())</span>
+<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a>])</span></code></pre></div>
 <p>After calling <code>pl.fit(lunch_props)</code>,
 <code>pl.transform(lunch_props)</code> evaluates to the following
 array:</p>
-<div class="sourceCode" id="cb36"><pre
-class="sourceCode py"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>array([[ <span class="fl">1.29099445</span>, <span class="op">-</span><span class="fl">0.37796447</span>],</span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>       [<span class="op">-</span><span class="fl">0.77459667</span>, <span class="op">-</span><span class="fl">0.37796447</span>],</span>
-<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>       [<span class="op">-</span><span class="fl">0.77459667</span>, <span class="op">-</span><span class="fl">0.37796447</span>],</span>
-<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>       [<span class="op">-</span><span class="fl">0.77459667</span>,  <span class="fl">2.64575131</span>],</span>
-<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>       [ <span class="fl">1.29099445</span>, <span class="op">-</span><span class="fl">0.37796447</span>],</span>
-<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>       [ <span class="fl">1.29099445</span>, <span class="op">-</span><span class="fl">0.37796447</span>],</span>
-<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>       [<span class="op">-</span><span class="fl">0.77459667</span>, <span class="op">-</span><span class="fl">0.37796447</span>],</span>
-<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a>       [<span class="op">-</span><span class="fl">0.77459667</span>, <span class="op">-</span><span class="fl">0.37796447</span>]])</span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre
+class="sourceCode py"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>array([[ <span class="fl">1.29099445</span>, <span class="op">-</span><span class="fl">0.37796447</span>],</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>       [<span class="op">-</span><span class="fl">0.77459667</span>, <span class="op">-</span><span class="fl">0.37796447</span>],</span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>       [<span class="op">-</span><span class="fl">0.77459667</span>, <span class="op">-</span><span class="fl">0.37796447</span>],</span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>       [<span class="op">-</span><span class="fl">0.77459667</span>,  <span class="fl">2.64575131</span>],</span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>       [ <span class="fl">1.29099445</span>, <span class="op">-</span><span class="fl">0.37796447</span>],</span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>       [ <span class="fl">1.29099445</span>, <span class="op">-</span><span class="fl">0.37796447</span>],</span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a>       [<span class="op">-</span><span class="fl">0.77459667</span>, <span class="op">-</span><span class="fl">0.37796447</span>],</span>
+<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a>       [<span class="op">-</span><span class="fl">0.77459667</span>, <span class="op">-</span><span class="fl">0.37796447</span>]])</span></code></pre></div>
 <p>and <code>pl.named_steps["ohe"].get_feature_names()</code> evaluates
 to the following array:</p>
-<div class="sourceCode" id="cb37"><pre
-class="sourceCode py"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>array([<span class="st">&quot;x0_low&quot;</span>, <span class="st">&quot;x0_med&quot;</span>], dtype<span class="op">=</span><span class="bu">object</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre
+class="sourceCode py"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>array([<span class="st">&quot;x0_low&quot;</span>, <span class="st">&quot;x0_med&quot;</span>], dtype<span class="op">=</span><span class="bu">object</span>)</span></code></pre></div>
 <p>Fill in the blanks: Given the above information, we can conclude that
 <code>lunch_props</code> has <strong>(a)</strong> value(s) equal to
 <code>"low"</code>, <strong>(b)</strong> value(s) equal to

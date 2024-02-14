@@ -4,7 +4,7 @@ After taking the SAT, Nicole wants to check the College Board's website to see h
 
 Suppose `soup` is a BeautifulSoup object instantiated using the following HTML document.
 
-```html
+```
 <college>Your score is ready!</college>
 
 <sat verbal="ready" math="ready">
@@ -40,21 +40,22 @@ Which of the following expressions evaluate to `"verbal"`? Select all that apply
 
 **Answer: ** Option 1, Option 3, Option 4
 
-`Option 1` expression finds the first `<scorerow>` element and retrieves its kind attribute, which is `"verbal"` for the first `<scorerow>` encountered in the HTML document.
+Correct options:
 
-`Option 2` finds the first `<scorerow>` tag, retrieves its text `("Verbal: 84")`, splits this text by ":", and takes the first element of the resulting list `("Verbal")`, converting it to lowercase to match `"verbal"`
+- Option 1 finds the first `<scorerow>` element and retrieves its `"kind"` attribute, which is `"verbal"` for the first `<scorerow>` encountered in the HTML document.
+- Option 2 finds the first `<scorerow>` tag, retrieves its text `("Verbal: 84")`, splits this text by ":", and takes the first element of the resulting list `("Verbal")`, converting it to lowercase to match `"verbal"`
+- Option 3 creates a list of `"kind"` attributes for all `<scorerow>` elements. The second to last (-2) element in this list corresponds to the `"kind"` attribute of the first `<scorerow>` in the second `<scorelist>` tag, which is also `"verbal"`
 
-`Option 3` expression creates a list of kind attributes for all `<scorerow>` elements. The second to last (-2) element in this list corresponds to the kind attribute of the first `<scorerow>` in the second `<scorelist>` tag, which is also `"verbal"`
+Incorrect options:
 
-`Option 2` attempts to get an attribute ready from the `<sat>` tag, which does not exist as an attribute.
-
-`Option 5` tries to retrieve a kind attribute from a `<scorelist>` tag, but `<scorelist>` does not have a kind attribute.
+- Option 2 attempts to get an attribute ready from the `<sat>` tag, which does not exist as an attribute.
+- Option 5 tries to retrieve a `"kind"` attribute from a `<scorelist>` tag, but `<scorelist>` does not have a `"kind"` attribute.
 
 # END SOLN
 
 # END SUBPROB
 
-# BEGIN SUBPROB(6 pts) Consider the following function.
+# BEGIN SUBPROB Consider the following function.
 
 ```py
 def summer(tree):

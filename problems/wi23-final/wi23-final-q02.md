@@ -91,8 +91,9 @@ The DataFrame `scores_2015`, shown in its entirety below, contains the verbal se
 <center><img src='../assets/images/wi23-final/ny_vs_all.png' width=25%></center>
 
 # BEGIN SUBPROB
+
 What type of test is being proposed above?
-    
+
 ( ) Hypothesis test
 ( ) Permutation test
 

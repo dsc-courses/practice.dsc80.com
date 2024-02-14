@@ -2,13 +2,13 @@
 
 Consider the following list of tokens.
 
-"`py
+```py
 tokens = ["is", "the", "college", "board", "the", "board", "of", "college"]
-"`
+```
 
 # BEGIN SUBPROB
 
-Recall, a uniform language model is one in which each **unique** token has the same chance of being sampled. Suppose we instantiate a uniform language model on `tokens`. The probability of the sentence """the college board is" --- that is, $P(\text{the college board is})$ --- is of the form $\frac{1}{a^b}$, where $a$ and $b$ are both positive integers.
+Recall, a uniform language model is one in which each **unique** token has the same chance of being sampled. Suppose we instantiate a uniform language model on `tokens`. The probability of the sentence "the college board is" --- that is, $P(\text{the college board is})$ --- is of the form $\frac{1}{a^b}$, where $a$ and $b$ are both positive integers.
 
 What are $a$ and $b$?
 
@@ -16,7 +16,7 @@ What are $a$ and $b$?
 
 **Answer: ** a = 5, b = 4
 
-In a uniform language model, each unique token has the same chance of being sampled. Given the list of tokens, there are 5 unique tokens: ["is", "the", "college", "board", "of"]. The probability of sampling any one token is \(\frac{1}{5}\). For a sentence of 4 tokens ("the college board is"), the probability is \(\frac{1}{5^4}\) because each token is independently sampled. Thus, \(a = 5\) and \(b = 4\).
+In a uniform language model, each unique token has the same chance of being sampled. Given the list of tokens, there are 5 unique tokens: ["is", "the", "college", "board", "of"]. The probability of sampling any one token is $\frac{1}{5}$. For a sentence of 4 tokens ("the college board is"), the probability is $\frac{1}{5^4}$ because each token is independently sampled. Thus, $a = 5$ and $b = 4$.
 
 # END SOLN
 
@@ -32,7 +32,7 @@ What are $c$ and $d$?
 
 **Answer: ** (c, d) = (2, 9) or (8, 3)
 
-In a unigram language model, the probability of sampling a token is proportional to its frequency in the token list. The frequencies are: "is" = 1, "the" = 3, "college" = 2, "board" = 2, "of" = 1. The sentence "the college board is" has probabilities \(\frac{3}{8}\), \(\frac{2}{8}\), \(\frac{2}{8}\), \(\frac{1}{8}\) for each word respectively, when considering the total number of tokens (8). The combined probability is \(\frac{3}{8} \times \frac{2}{8} \times \frac{2}{8} \times \frac{1}{8} = \frac{6}{512} = \frac{1}{2^9}\) or, simplifying, \(\frac{1}{8^3}\) since \(512 = 8^3\). Therefore, \(c = 2\) and \(d = 9\) or \(c = 8\) and \(d = 3\), depending on how you represent the fraction.
+In a unigram language model, the probability of sampling a token is proportional to its frequency in the token list. The frequencies are: "is" = 1, "the" = 3, "college" = 2, "board" = 2, "of" = 1. The sentence "the college board is" has probabilities $\frac{3}{8}$, $\frac{2}{8}$, $\frac{2}{8}$, $\frac{1}{8}$ for each word respectively, when considering the total number of tokens (8). The combined probability is $\frac{3}{8} \cdot \frac{2}{8} \cdot \frac{2}{8} \cdot \frac{1}{8} = \frac{6}{512} = \frac{1}{2^9}$ or, simplifying, $\frac{1}{8^3}$ since $512 = 8^3$. Therefore, $c = 2$ and $d = 9$ or $c = 8$ and $d = 3$, depending on how you represent the fraction.
 
 # END SOLN
 
