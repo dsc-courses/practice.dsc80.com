@@ -286,7 +286,7 @@ categorize each task based on its urgency.</p>
 <p>Define a <code>'personal'</code> task to be one whose category is not
 <code>'work'</code> or <code>'consulting'</code>.</p>
 <p>Write a piece of code which adds a new column named
-<code>'personal'</code> to <code>'tasks'</code>. An entry of the column
+<code>'personal'</code> to <code>tasks</code>. An entry of the column
 should be <code>True</code> if the task is a <code>'personal'</code>
 task, and <code>False</code> otherwise.</p>
 <div id="accordionExample" class="accordion">
@@ -302,14 +302,14 @@ aria-labelledby="heading3" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer: </strong>
+<p><strong>Answers: </strong>
 <code>tasks['personal'] = ~tasks['categorical'].isin(['work', 'consulting'])</code></p>
 <p>or</p>
 <p><code>tasks['personal'] = (tasks['Category'] != 'work') &amp; (tasks['Category'] != 'consulting')</code></p>
 <p>Note that there are many different ways of doing this problem. The
 main idea however, is to check whether the category of each task was
 considered <code>'personal'</code> or not, and assign the appropriate
-boolean to the <code>'personal'</code> column of the given task.</p>
+Boolean to the <code>'personal'</code> column of the given task.</p>
 <hr/>
 <h5>Difficulty: ⭐️</h5>
 <p>
