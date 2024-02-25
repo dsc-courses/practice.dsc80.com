@@ -4,6 +4,12 @@ context: This exam was administered in-person. The exam was closed-notes, except
 show_solution: true
 problems:
   - fa23-final/fa23-final-q01
+  - fa23-final/fa23-final-q02
   - fa23-final/fa23-final-q03
   - fa23-final/fa23-final-q04
   - fa23-final/fa23-final-q05
+  - fa23-final/fa23-final-q06
+  - fa23-final/fa23-final-q07
+  - fa23-final/fa23-final-q08
+  - fa23-final/fa23-final-q09
+  - fa23-final/fa23-final-q10
