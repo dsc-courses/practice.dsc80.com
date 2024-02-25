@@ -37,6 +37,8 @@ Lets take a deeper look at `calc_test_stat(df)`.
 
 The function first calculates the mean math scores in each state. Although the `.abs()` method is applied, it is redundant at this stage since no differences have been computed yet. The key operation is `.diff()`, which computes the difference between the mean scores of the two states. Since groupby sorts states alphabetically, it subtracts the mean score of California (appearing first) from Washington (appearing second). The final expression `df.groupby("State")["Math"].mean().abs().diff().iloc[-1]` thus represents mean Washington score − mean California score.
 
+<average>27</average>
+
 # END SOLN
 
 # END SUBPROB
@@ -49,6 +51,8 @@ There is exactly one issue with the implementation of `state_perm`. In **exactly
 # BEGIN SOLN
 
 **Answer: ** Since we are permuting in-place on the `states` DataFrame, we must calculate the observed test statistic before we permute.
+
+<average>81</average>
 
 # END SOLN
     

@@ -44,6 +44,8 @@ Option 2: filters the DataFrame, groups by `State`, and then performs aggregatio
 
 Option 3: does the aggregations for all columns first and then selects the `# Students` column, which is less efficient because it computes aggregations for potentially many columns that are not needed.
 
+<average>75</average>
+
 # END SOLN
 
 # END SUBPROB
@@ -62,6 +64,7 @@ What type of test is being proposed above?
 
 We aim to determine if there's a significant difference between the student distributions in New York and Texas. This requires us to randomly shuffle the group labels and recalculate the means for the permuted groups, making this a permutation test.
 
+<average>90</average>
 
 # END SOLN
     
@@ -79,6 +82,8 @@ Given the information in the above DataFrame, which test statistic is **most lik
 **Answer: ** The Kolmogorov-Smirnov statistic 
 
 Calculating the diference in mean and median only focuses on the central tendency and is unable to consider the full distribution of the data. The Kolmogorov-Smirnov statistic is most likely to yield a significant difference if there are any differences in the distributions beyond just the central tendency. It is more comprehensive as it evaluates differences across the entire range of the distributions, making it a robust choice for comparing the two states' SAT student distributions.
+
+<average>78</average>
 
 # END SOLN
     
@@ -101,6 +106,8 @@ What type of test is being proposed above?
 **Answer: ** Hypothesis test
 
 The key aspect of a hypothesis test is determining whether any observed differences between the sample and population data are due to random chance. Here, we are dealing with one large population data (scores of all students in 2015) and testing if our sample observed data (scores from New York students in 2015) is statistically different, marking this a hypothesis test.
+
+<average>87</average>
 
 # END SOLN
     
@@ -127,6 +134,8 @@ Of the above three possible distance metrics, only one of them has the same rang
 
 # BEGIN SOLN
 **Answer: ** $\text{dis3}$
+
+<average>75</average>
 
 # END SOLN
 

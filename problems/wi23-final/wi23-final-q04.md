@@ -44,6 +44,8 @@ For each expression below, select the list it evaluates to, or select "None of t
 
 This regex pattern `\d+` matches one or more digits anywhere in the string. It doesn't concern itself with the context of the digits, whether they are inside brackets or not. As a result, it extracts all sequences of digits in s, including '10', '3', '15', '4', '5', '3', '91', '8', and '100', which together form list3. This is because \d+ greedily matches all contiguous digits, capturing both the citation numbers and any other numbers present in the text.
 
+<average>81</average>
+
 # END SOLN
 
 # END SUBPROB
@@ -63,7 +65,9 @@ This regex pattern `\d+` matches one or more digits anywhere in the string. It d
 
 **Answer: ** list5
 
-his pattern `[\d+]` is slightly misleading because the square brackets are used to define a character class, and the plus sign inside is treated as a literal character, not as a quantifier. However, since there are no plus signs in s, this detail does not affect the outcome. The character class \d matches any digit, so this pattern effectively matches individual digits throughout the string, resulting in list5. This list contains every single digit found in s, separated as individual string elements.
+This pattern `[\d+]` is slightly misleading because the square brackets are used to define a character class, and the plus sign inside is treated as a literal character, not as a quantifier. However, since there are no plus signs in s, this detail does not affect the outcome. The character class \d matches any digit, so this pattern effectively matches individual digits throughout the string, resulting in list5. This list contains every single digit found in s, separated as individual string elements.
+
+<average>31</average>
 
 # END SOLN
 
@@ -86,6 +90,8 @@ his pattern `[\d+]` is slightly misleading because the square brackets are used 
 
 This pattern is specifically designed to match digits that are enclosed in square brackets. The `\[(\d+)\]` pattern looks for a sequence of one or more digits `\d+` inside square brackets `[]`. The parentheses capture the digits as a group, excluding the brackets from the result. Therefore, it extracts just the citation numbers as they appear in s, matching list2 exactly. This method is precise for extracting citation numbers from a text formatted in the verbose numeric style.
 
+<average>80</average>
+
 # END SOLN
 
 # END SUBPROB
@@ -106,6 +112,8 @@ This pattern is specifically designed to match digits that are enclosed in squar
 **Answer: ** list4
 
 Similar to the previous explanation but with a key difference: the entire pattern of digits within square brackets is captured, including the brackets themselves. The pattern `\[\d+\]` specifically searches for sequences of digits surrounded by square brackets, and the parentheses around the entire pattern ensure that the match includes the brackets. This results in list4, which contains all the citation markers found in s, preserving the brackets to clearly denote them as citations.
+
+<average>91</average>
 
 # END SOLN
 

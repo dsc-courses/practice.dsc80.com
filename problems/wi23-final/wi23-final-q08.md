@@ -27,6 +27,18 @@ Which of the following depicts **testing accuracy vs. `height`**?
 # BEGIN SOLN
 **Answer: ** Option 2, Option 3
 
+We are told that as height increases, the model variance (complexity) also increases.
+
+For the first subpart with the correct answer being `Option 2`: \
+As we increase the complexity of the model, the Classifier is more closely fit to the training data. This means that the Classifier essentially 'memorizes' more of the training data as height increases, meaning that accuracy on the training data will also increase.
+
+<average>84</average>
+
+For the second subpart with the correct answer being `Option 3`:
+Through similar reasoning for the subpart above, the Classifier becomes more closely fit to the training data as height increases, causing overfitting as values of height get higher and higher. This means that the accuracy of the Classifier will increase to a certain point alongside height, but will start to reduce after.
+
+<average>71</average>
+
 # END SOLN
 
 # END SUBPROB
@@ -51,6 +63,26 @@ True or False: It is possible for a hyperparameter value to have the best averag
 
 # BEGIN SOLN
 **Answer: ** `"red"`, True
+
+For the first subpart with the correct answer being `"red"`: \
+From looking at the results of the k-fold cross validation, we see that the color red has the highest, and therefore the best, validation accuracy as it has the highest row mean (across all 4 folds).
+
+<average>91</average>
+
+For the second subpart with the correct answer being `True`: \
+An example is shown below: 
+
+| color    | Fold 1  | Fold 2  | Fold 3  | Fold 4  | average |
+| -------- | ------- | ------- | ------- | ------- | ------- |
+| color 1  | 0.8     |  0      |  0      |   0     | 0.2     |
+| color 2  | 0       |  0.6    |  0      |   0     | 0.15    |
+| color 3  | 0       |  0      |  0.1    |   0     | 0.025   |
+| color 4  | 0       |  0      |  0      |   0.2   | 0.05    |
+| color 5  | 0.7     |  0.5    |  0.01   |   0.1   | 0.3275  |
+
+Where color 5 has the highest average validation accuracy across all folds, but is not the best in any one fold.
+
+<average>94</average>
 
 # END SOLN
 
@@ -101,6 +133,22 @@ How many times is row 5 in the training set used for validation?
     
 # BEGIN SOLN
 **Answer: ** Option 3, Option 6, Option 8
+
+For the first subpart with the correct answer being `Option 3`: \
+The training set is divided into k folds of equal size, resulting in k folds with size $\frac{n}{k}$.
+
+<average>66</average>
+
+For the second subpart with the correct answer being `Option 6`: \
+For each combination of hyperparameters, row 5 is k - 1 times for training, and 1 time for validation. There are $h_1 * h_2$ combinations of hyperparameters, so row 5 is used for training $h_1 * h_2 * (k-1)$ times.
+
+<average>76</average>
+
+For the third subpart with the correct answer being `Option 8`: \
+Building off of the explanation fo rthe previous subpart, row 5 is used for validation 1 times for each combination of hyperparameters, so the correct expression would be $h_1 * h_2$, which is not a provided option.
+
+<average>69</average>
+
 
 # END SOLN
 

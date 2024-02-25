@@ -79,6 +79,8 @@ Option 5:
 Option 6:
 `sat.loc[sat['Year'] == 2007].loc[sat['Math'] == sat['Math'].max()]` Similar to Option 4, this expression finds the maximum math score across all years and then tries to match it to the year 2007, which may not be correct.
 
+<average>71</average>
+
 # END SOLN
     
 # END SUBPROB
@@ -90,6 +92,8 @@ $$\Pi_{\text{Year, State, Verbal}} \left(\sigma_{\text{Year } \geq \: 2014 \text
 
 # BEGIN SOLN
 **Answer: ** `sat.loc[(sat['Year'] >= 2014) & (sat['Math'] <= 600), ['Year', 'State', 'Verbal']]`
+
+<average>85</average>
 
 # END SOLN
 
@@ -117,6 +121,7 @@ Likewise, since every combination of `Year`, `State`, and `# Students` is also u
 
 Recall that `.groupby` function in Pandas automatically sorts data based on the chosen grouping keys. As a result, the `val1` and `val2` DataFrames, created using these groupings, contain the same rows and columns, displayed in the same order.
 
+<average>67</average>
 
 # END SOLN
 
@@ -152,9 +157,16 @@ What goes in blank (c)?
 
 The initial step (in the `state_only` variable) involves identifying the state that has fewer than 11 records in the dataset. This is achieved by the lambda function `lambda df: df.shape[0] < 11`, leaving us with records from only the state that has missing data for certain years.
 
+<average>72</average>
+
 Next, applying `.value_counts()` to `sat["Year"]` produces a Series that enumerates the total occurrences of each year from 2005 to 2015. Converting this Series to a DataFrame with `.to_frame()`, we then merge it with the `state_only` DataFrame. This merging results in a DataFrame (merged) where the years lacking corresponding entries in `state_only` are marked as NaN.
 
+<average>52</average>
+
 Finally, the expression `merged[merged['# Students'].isna()]['Year']` in `missing_years` identifies the specific years that are absent for the one state in the sat dataset. This is determined by selecting years in the merged DataFrame where the `# Students` column has NaN values, indicating missing data for those years.
+
+<average>71</average>
+
 
 # END SOLN
 
@@ -185,6 +197,8 @@ This could mean that the absence of student numbers is linked to specific reason
 
 The nature of this missingness suggests that it's not random or solely dependent on observed data in other columns, but rather it's related to the inherent nature of the `# Students` data itself.
 
+<average>54</average>
+
 # END SOLN
 
 # END SUBPROB
@@ -202,6 +216,8 @@ Given just the information in `sat_complete` --- that is, without including any 
 If a state has reported the number of students taking the SAT, it implies that data collection and reporting were carried out. The administrative decision to report SAT scores (including `Math` scores) may be reflected in the `# Students` column. Conversely, if the `# Students` column is empty or null for a certain state and year, it might indicate an administrative decision not to participate or report data for that period. This decision impacts the availability of `Math` scores.
 
 In this context,  the missing values in `Math` scores are linked to observable conditions or patterns in the dataset (like specific years, states, or availability of other related data).
+
+<average>75</average>
 
 # END SOLN
 
@@ -221,6 +237,8 @@ Suppose we observe a statistically significant result (that is, the $p$-value of
 
 The observation of a statistically significant result (a p-value less than 0.05) in a permutation test suggests there is some association or dependency between the missingness in Y and the values in X. However, this result does not exclude the possibility that the missingness in Y is also influenced by factors not captured in column X, or by the values in Y itself.
 
+<average>71</average>
+
 # END SOLN
 
 # END SUBPROB
@@ -236,6 +254,8 @@ Suppose we do not observe a statistically significant result (that is, the $p$-v
 **Answer: ** True
 
 Not observing a statistically significant result (a p-value greater than 0.05) in a permutation test means that the test did not find strong evidence of a dependency between X and the missingness in Y. However, this does not definitively prove that such a dependency does not exist. In statistical testing, a lack of significant findings is not the same as evidence of no effect or no association.
+
+<average>78</average>
 
 # END SOLN
 

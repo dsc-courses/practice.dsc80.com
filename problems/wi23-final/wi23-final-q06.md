@@ -18,6 +18,8 @@ What are $a$ and $b$?
 
 In a uniform language model, each unique token has the same chance of being sampled. Given the list of tokens, there are 5 unique tokens: ["is", "the", "college", "board", "of"]. The probability of sampling any one token is $\frac{1}{5}$. For a sentence of 4 tokens ("the college board is"), the probability is $\frac{1}{5^4}$ because each token is independently sampled. Thus, $a = 5$ and $b = 4$.
 
+<average>70</average>
+
 # END SOLN
 
 # END SUBPROB
@@ -33,6 +35,8 @@ What are $c$ and $d$?
 **Answer: ** (c, d) = (2, 9) or (8, 3)
 
 In a unigram language model, the probability of sampling a token is proportional to its frequency in the token list. The frequencies are: "is" = 1, "the" = 3, "college" = 2, "board" = 2, "of" = 1. The sentence "the college board is" has probabilities $\frac{3}{8}$, $\frac{2}{8}$, $\frac{2}{8}$, $\frac{1}{8}$ for each word respectively, when considering the total number of tokens (8). The combined probability is $\frac{3}{8} \cdot \frac{2}{8} \cdot \frac{2}{8} \cdot \frac{1}{8} = \frac{6}{512} = \frac{1}{2^9}$ or, simplifying, $\frac{1}{8^3}$ since $512 = 8^3$. Therefore, $c = 2$ and $d = 9$ or $c = 8$ and $d = 3$, depending on how you represent the fraction.
+
+<average>68</average>
 
 # END SOLN
 
@@ -66,6 +70,8 @@ Recall, a bigram language model is an $N$-gram model with $N=2$. Suppose we inst
 
 A bigram model looks at the probability of a word given the previous word. Sentence 4, "the college board of college", likely has higher probabilities for its bigrams ("the college", "college board", "board of", "of college") based on the original list of tokens, which contains all these pairs. This reasoning assumes that the given pairs appear more frequently or are more probable in sequence than the pairs in other sentences.
 
+<average>72</average>
+
 # END SOLN
 
 # END SUBPROB
@@ -95,7 +101,9 @@ Is there a column in the TF-IDF matrix in which all values are 0?
 
 **Answer: ** Yes
 
-In the context of TF-IDF, if a word appears in every sentence, its inverse document frequency (IDF) part would be \(\log(\frac{5}{5}) = 0\), making the TF-IDF score 0 for that word across all documents. Since "the" appears in all five sentences, its IDF is zero, leading to a column of zeros in the TF-IDF matrix for "the".
+In the context of TF-IDF, if a word appears in every sentence, its inverse document frequency (IDF) part would be $(\log(\frac{5}{5}) = 0)$, making the TF-IDF score 0 for that word across all documents. Since "the" appears in all five sentences, its IDF is zero, leading to a column of zeros in the TF-IDF matrix for "the".
+
+<average>49</average>
 
 # END SOLN
 
@@ -117,6 +125,8 @@ In which of the following sentences is "college" the word with the highest TF-ID
 
 The word "college" likely has the highest TF-IDF in Sentence 4 because it appears less frequently across all sentences and is relatively more important (i.e., has a higher term frequency) in Sentence 4 than in other sentences where it appears. TF-IDF rewards words that are unique to a document but penalizes those that are common across all documents.
 
+<average>95</average>
+
 # END SOLN
 
 # END SUBPROB
@@ -137,6 +147,8 @@ Fill in the blank: The term $t$ in document $d$ that best summarizes document $d
 **Answer: ** the smallest
 
 The DF-ITF score is lower for terms that are more unique (appear in fewer documents) and have a higher count in the document they appear in. A smaller DF-ITF indicates that a term is both important within a specific document and distinctive across the corpus. Therefore, the term with the smallest DF-ITF in a document is considered the best summary for that document, as it balances document-specific significance with corpus-wide uniqueness.
+
+<average>90</average>
 
 # END SOLN
 

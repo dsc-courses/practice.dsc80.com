@@ -44,6 +44,22 @@ What goes in blank (c)?
 # BEGIN SOLN
 **Answer: ** 3, 1, 4
 
+For the first subpart with the correct answer being 3: \
+The first column of the transformed array corresponds to the standardized one-hot-encoded `low` column. There are 3 values that are positive, which means there are 3 values that were originally `1` in that column pre-standardization. This means that 3 of the values in `lunch_props` were originally `"low"`.
+
+<average>73</average>
+
+For the second subpart with the correct answer being 1: \
+Using similar reasoning from the explanation for the previous subpart: \
+The second column of the transformed array corresponds to the standardized one-hot-encoded `med` column. There is only 1 value in the transformed column that is positive, which means only 1 of the values in `lunch_props` was originally `"medium"`.
+
+<average>73</average>
+
+For the third subpart with the correct answer being 4: \
+The Series `lunch_props` has 8 values, 3 of which were identified as `"low"` in subpart 1, and 1 of which was identified as `"medium"` in subpart 2. The number of values being `"high"` must therefore be $8 - 3 - 1 = 4$.
+
+<average>70</average>
+
 # END SOLN
 
 # END PROB

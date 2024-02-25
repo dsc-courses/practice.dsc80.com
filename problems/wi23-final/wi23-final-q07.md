@@ -50,6 +50,10 @@ b = 0
 # BEGIN SOLN
 **Answer: ** Option 2
 
+It is possible for the mean of `Math` scores to be larger than the mean of `Verbal` scores, but for more `Verbal` values to be larger than corresponding `Math` values. In the case that the mean of `Math` scores was larger than the mean of `Verbal` scores, but more `Verbal` values are larger than corresponding `Math` scores, predicting 1 would maximize accuracy, but the proposed model would predict 0. This means that option 2 does not guarantee that training accuracy is maximized when `a > b` for this combination.
+
+<average>58</average>
+
 # END SOLN
 
 # END SUBPROB
@@ -63,6 +67,12 @@ What is the RMSE of Classifier 1 on our training set? Give your answer as a **si
 
 # BEGIN SOLN
 **Answer: ** $\frac{2}{3}$
+
+An accuracy of $\frac{5}{9}$ means that the model is such that out of 9 values, 5 are labeled correctly. By extension, this means that 4 out of 9 are not labeled correctly as 0 or 1.
+
+RMSE for this Classifier would thus be $\sqrt\frac{4}{9}$,  which is equal to $\frac{2}{3}$.
+
+<average>55</average>
 
 # END SOLN
 
@@ -79,6 +89,10 @@ While Classifier 1's accuracy on our training set is $\frac{5}{9}$, its accuracy
 
 # BEGIN SOLN
 **Answer: ** Option 2
+
+Since the accuracy of Classifier 1 is much higher on the dataset used to train it than the dataset it was tested on, we can say it is likely that the Classifier was overfit to the training set.
+
+<average>86</average>
 
 # END SOLN
 
@@ -97,6 +111,10 @@ Suppose `conf` is the DataFrame above. Which of the following evaluates to a Ser
 # BEGIN SOLN
 **Answer: ** Option 1
 
+Upon observing the provided DataFrame containing normalized values, we can see that if we add up values along each column of the DataFrame `([0.9+0.1, 0.4+0.6])`, we will get a Series containing the values `[1, 1]`. Such a Series would match the requirement of question - evaluating to a Series of length 2 where the only unique value is 1. In order to sum up the values of the rows in each column in the DataFrame, we need to use `axis=0`.
+
+<average>81</average>
+
 # END SOLN
 
 # END SUBPROB
@@ -109,6 +127,23 @@ Fill in the blank: the ___ of Classifier 2 is guaranteed to be 0.6.
     
 # BEGIN SOLN
 **Answer: ** recall
+
+In the provided confusion matrix for Classifier 2, we can say the following:
+
+Predicted 0 and Actually 0 (0.9) is the True Negative (TN). \
+Predicted 1 and Actually 0 (0.1) is the False Positive (FP). \
+Predicted 0 and Actually 1 (0.4) is the False Negative (FN). \
+Predicted 1 and Actually 1 (0.6) is the True Positive (TP). 
+
+Using the formulas:
+
+precision = $\frac{TP}{TP + FP}$  = $\frac{0.6}{0.6 + 0.1}$ \
+recall = $\frac{TP}{TP + FN}$ = $\frac{0.6}{0.6 + 0.4}$ 
+
+We can see that recall is the correct answer as it evaluates to $0.6$.
+
+<average>77</average>
+
 
 # END SOLN
 
@@ -130,6 +165,26 @@ Hint: If you're unsure on how to proceed, here are some guiding questions:
 
 # BEGIN SOLN
 **Answer: ** $\frac{5}{6}$
+
+Here is one way to solve this problem:
+
+accuracy = $\frac{TP + TN}{TP + TN + FP + FN}$
+
+Given the values from the confusion matrix:
+
+accuracy = $\frac{0.6*\alpha + 0.9*(1 - \alpha)}{\alpha + (1 - \alpha)}$ \
+accuracy = $\frac{0.6*\alpha + 0.9 - 0.9*\alpha}{1}$ \
+accuracy = $0.9 - 0.3*\alpha$
+
+Therefore:
+
+0.65 = $0.9 - 0.3*\alpha$ \
+$0.3*\alpha$  = $0.9 - 0.65$ \
+$0.3*\alpha$  = $0.25$ \
+$\alpha$  = $\frac{0.25}{0.3}$ \
+$\alpha$  = $\frac{5}{6}$
+
+<average>61</average>
 
 # END SOLN
 

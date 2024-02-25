@@ -51,6 +51,8 @@ Incorrect options:
 - Option 2 attempts to get an attribute ready from the `<sat>` tag, which does not exist as an attribute.
 - Option 5 tries to retrieve a `"kind"` attribute from a `<scorelist>` tag, but `<scorelist>` does not have a `"kind"` attribute.
 
+<average>90</average>
+
 # END SOLN
 
 # END SUBPROB
@@ -103,9 +105,15 @@ For each of the following values, fill in the blanks to assign `tree` such that 
 
 `soup.find("scorelist")` selects the first `<scorelist>` tag, which includes both verbal and math percentiles `(84 and 99)`. The function `summer(tree)` sums these values to get `183`.
 
+<average>92</average>
+
 This selects the `<scorelist>` tag with `listtype="scores"`, which contains the actual scores of verbal `(680)` and math `(800)`. The function sums these to get `1480`.
 
+<average>92</average>
+
 This selects all `<scorerow> `elements with `kind="math"`, capturing both the percentile `(99)` and the actual score `(800)`. Since tree is now a list, `summer(tree)` iterates through each `<scorerow>` in the list, summing their `<scorenum>` values to reach `899`.
+
+<average>91</average>
 
 # END SOLN
 
