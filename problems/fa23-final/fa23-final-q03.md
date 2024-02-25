@@ -24,6 +24,9 @@ Are buses more likely to be late in the morning (before $12$pm) or the afternoon
 We have two different populations here - morning buses and afternoon buses. We are measuring one sample - whether a bus is late or not. This means we want to conduct a permutation test to see if the morning and afternoon buses are from the same distribution, so the correct answer is to permute the `'late'` column. Note that option B) is similar, but with `replace = True` so it is bootstrapping, not permutation.
 **Test statistic**:
 Depending on your interpretation of the question, either option A) or C) is correct. First, we can't choose absolute difference as a solution because then we can't answer when buses will be more likely to be late, as we need the test statistic to be directional to determine *which* bus. If you interpret the question to mean which population has the higher average lateness, then you would want to choose option A). If you interpret the question to mean which population has a higher count of late buses, then you choose option C).
+
+<average>56</average>
+
 # END SOLN
 # END SUBPROB
 
@@ -51,6 +54,9 @@ Are buses equally likely to be early or late?
 We now have only one population, which is just all buses. We then want to see if a sample is from that population, so we conduct a hypothesis test under the null. The null would be that buses are equally likely to be early or late, so we can simulate this by randomly generating `[-1, 1]` for all buses. This is what option A) does. 
 **Test statistic**:
 Since we know the number of buses, we can use the number of values below $0$ to determine whether we have more early buses, more late buses, or the same amount. Similarly, the mean will give us a value between $-1$ and $1$, where $0$ means we have the equal early and late buses, while $-1$ represents only early buses, and $1$ represents only late buses.
+
+<average>96</average>
+
 # END SOLN
 # END SUBPROB
 
@@ -76,6 +82,9 @@ Is the `'late'` column MAR dependent on the `'line'` column?
 To determine MAR, we run a permutation test and compare the distributions of the `'line'` column when the `'late'` column is missing or not to see if it changes. If the distributions are similar then the data is likely MCAR, but if the distributions change then it is likely the `'late'` column is MAR on `'line'`.
 **Test statistic**:
 Since we are comparing the distributions of *categorical* data for our permutation test, Total Variation Distance is the best test statistic to use.
+
+<average>57</average>
+
 # END SOLN
 # END SUBPROB
 

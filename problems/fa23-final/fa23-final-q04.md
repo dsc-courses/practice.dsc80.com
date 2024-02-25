@@ -11,6 +11,9 @@ What is the missingness mechanism for the `'next'` column in the `stop` DataFram
 **Answer**: D. Missing by design
 
 When there are missing values for the `'next'` column, it means there is no next stop and the line has reached the end of its route. This could have been designed differently to have an empty string, a string saying "end", etc. Therefore, the missing values are intentionally marked as missing by design.
+
+<average>68</average>
+
 # END SOLN
 # END SUBPROB
 
@@ -20,6 +23,9 @@ Suppose that the missing values in the `'late'` column from the `bus` DataFrame 
 **Answer**: A. NMAR
 
 Since Sam is suspicious of `'late'` values based on the values themselves in `'late'` being negative, this is NMAR.
+
+<average>86</average>
+
 # END SOLN
 # END SUBPROB
 
@@ -29,6 +35,9 @@ Suppose that the missing values in the `'late'` column from the `bus` DataFrame 
 **Answer**: B. MAR
 
 Since Tiffany updated the system at $8$am, the missing values in `'late'` are dependent on the `'time'` column. Therefore it is MAR.
+
+<average>68</average>
+
 # END SOLN
 # END SUBPROB
 
