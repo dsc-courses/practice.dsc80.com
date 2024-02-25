@@ -11,16 +11,12 @@
     div.columns{display: flex; gap: min(4vw, 1.5em);}
     div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    /* The extra [class] is a hack that increases specificity enough to
-       override a similar rule in reveal.js */
-    ul.task-list[class]{list-style: none;}
+    ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
-      font-size: inherit;
       width: 0.8em;
       margin: 0 0.8em 0.2em -1.6em;
       vertical-align: middle;
     }
-    /* CSS for syntax highlighting */
     pre > code.sourceCode { white-space: pre; position: relative; }
     pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -214,7 +210,7 @@ unique to only one state.</em></p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1_1" class="accordion-collapse collapse"
+<div id="collapse1_1" class="accordion-collapse collapse collapse"
 aria-labelledby="heading1_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -247,6 +243,11 @@ then among these, it finds the state for the year 2007.</p>
 Similar to Option 4, this expression finds the maximum math score across
 all years and then tries to match it to the year 2007, which may not be
 correct.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 71%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -266,7 +267,7 @@ relation:</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1_2" class="accordion-collapse collapse"
+<div id="collapse1_2" class="accordion-collapse collapse collapse"
 aria-labelledby="heading1_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -274,6 +275,11 @@ aria-labelledby="heading1_2" data-bs-parent="#accordionExample">
 </header>
 <p><strong>Answer: </strong>
 <code>sat.loc[(sat['Year'] &gt;= 2014) &amp; (sat['Math'] &lt;= 600), ['Year', 'State', 'Verbal']]</code></p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 85%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -297,7 +303,7 @@ they contain the same rows and columns, all in the same order?</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1_3" class="accordion-collapse collapse"
+<div id="collapse1_3" class="accordion-collapse collapse collapse"
 aria-labelledby="heading1_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -319,6 +325,11 @@ sorts data based on the chosen grouping keys. As a result, the
 <code>val1</code> and <code>val2</code> DataFrames, created using these
 groupings, contain the same rows and columns, displayed in the same
 order.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 67%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -352,7 +363,7 @@ not appear in `sat.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1_4" class="accordion-collapse collapse"
+<div id="collapse1_4" class="accordion-collapse collapse collapse"
 aria-labelledby="heading1_4" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -370,6 +381,10 @@ identifying the state that has fewer than 11 records in the dataset.
 This is achieved by the lambda function
 <code>lambda df: df.shape[0] &lt; 11</code>, leaving us with records
 from only the state that has missing data for certain years.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 72%.</p>
 <p>Next, applying <code>.value_counts()</code> to
 <code>sat["Year"]</code> produces a Series that enumerates the total
 occurrences of each year from 2005 to 2015. Converting this Series to a
@@ -377,12 +392,21 @@ DataFrame with <code>.to_frame()</code>, we then merge it with the
 <code>state_only</code> DataFrame. This merging results in a DataFrame
 (merged) where the years lacking corresponding entries in
 <code>state_only</code> are marked as NaN.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 52%.</p>
 <p>Finally, the expression
 <code>merged[merged['# Students'].isna()]['Year']</code> in
 <code>missing_years</code> identifies the specific years that are absent
 for the one state in the sat dataset. This is determined by selecting
 years in the merged DataFrame where the <code># Students</code> column
 has NaN values, indicating missing data for those years.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 71%.</p>
+</p></p></p>
 </div>
 </div>
 </div>
@@ -424,7 +448,7 @@ likely missingness mechanism of the <code>"# Students"</code> column in
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1_5" class="accordion-collapse collapse"
+<div id="collapse1_5" class="accordion-collapse collapse collapse"
 aria-labelledby="heading1_5" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -444,6 +468,11 @@ administrative decisions that led to non-recording of data.</p>
 solely dependent on observed data in other columns, but rather it’s
 related to the inherent nature of the <code># Students</code> data
 itself.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 54%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -466,7 +495,7 @@ likely missingness mechanism of the <code>"Math"</code> column in
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1_6" class="accordion-collapse collapse"
+<div id="collapse1_6" class="accordion-collapse collapse collapse"
 aria-labelledby="heading1_6" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -485,6 +514,11 @@ report data for that period. This decision impacts the availability of
 <p>In this context, the missing values in <code>Math</code> scores are
 linked to observable conditions or patterns in the dataset (like
 specific years, states, or availability of other related data).</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 75%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -509,7 +543,7 @@ class="math inline">Y</span> to be not missing at random.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1_7" class="accordion-collapse collapse"
+<div id="collapse1_7" class="accordion-collapse collapse collapse"
 aria-labelledby="heading1_7" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -522,6 +556,11 @@ dependency between the missingness in Y and the values in X. However,
 this result does not exclude the possibility that the missingness in Y
 is also influenced by factors not captured in column X, or by the values
 in Y itself.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 71%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -544,7 +583,7 @@ class="math inline">Y</span> to be missing at random dependent on column
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1_8" class="accordion-collapse collapse"
+<div id="collapse1_8" class="accordion-collapse collapse collapse"
 aria-labelledby="heading1_8" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -557,6 +596,11 @@ evidence of a dependency between X and the missingness in Y. However,
 this does not definitively prove that such a dependency does not exist.
 In statistical testing, a lack of significant findings is not the same
 as evidence of no effect or no association.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 78%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -599,7 +643,7 @@ class="sourceCode py"><code class="sourceCode python"><span id="cb11-1"><a href=
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse2_1" class="accordion-collapse collapse"
+<div id="collapse2_1" class="accordion-collapse collapse collapse"
 aria-labelledby="heading2_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -616,6 +660,11 @@ making it efficient.</p>
 selects the <code># Students</code> column, which is less efficient
 because it computes aggregations for potentially many columns that are
 not needed.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 75%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -638,7 +687,7 @@ York and Texas are significantly different.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse2_2" class="accordion-collapse collapse"
+<div id="collapse2_2" class="accordion-collapse collapse collapse"
 aria-labelledby="heading2_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -649,6 +698,11 @@ aria-labelledby="heading2_2" data-bs-parent="#accordionExample">
 student distributions in New York and Texas. This requires us to
 randomly shuffle the group labels and recalculate the means for the
 permuted groups, making this a permutation test.</p>
+<hr/>
+<h5>Difficulty: ⭐️</h5>
+<p>
+<p>The average score on this problem was 90%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -673,7 +727,7 @@ Texas } - \text{ median number of students in New York}\big|</span></p></li>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse2_3" class="accordion-collapse collapse"
+<div id="collapse2_3" class="accordion-collapse collapse collapse"
 aria-labelledby="heading2_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -688,6 +742,11 @@ beyond just the central tendency. It is more comprehensive as it
 evaluates differences across the entire range of the distributions,
 making it a robust choice for comparing the two states’ SAT student
 distributions.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 78%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -714,7 +773,7 @@ in 2015 and for all students in 2015.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse2_4" class="accordion-collapse collapse"
+<div id="collapse2_4" class="accordion-collapse collapse collapse"
 aria-labelledby="heading2_4" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -727,6 +786,11 @@ random chance. Here, we are dealing with one large population data
 (scores of all students in 2015) and testing if our sample observed data
 (scores from New York students in 2015) is statistically different,
 marking this a hypothesis test.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 87%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -774,13 +838,18 @@ is it?</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse2_5" class="accordion-collapse collapse"
+<div id="collapse2_5" class="accordion-collapse collapse collapse"
 aria-labelledby="heading2_5" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer: </strong> <span class="math inline">\text{dis3}</span></p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 75%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -831,7 +900,7 @@ Washington score}</span></p></li>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse3_1" class="accordion-collapse collapse"
+<div id="collapse3_1" class="accordion-collapse collapse collapse"
 aria-labelledby="heading3_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -848,6 +917,11 @@ alphabetically, it subtracts the mean score of California (appearing
 first) from Washington (appearing second). The final expression
 <code>df.groupby("State")["Math"].mean().abs().diff().iloc[-1]</code>
 thus represents mean Washington score − mean California score.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 27%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -866,7 +940,7 @@ of the function <code>calc_test_stat</code>.</em></p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse3_2" class="accordion-collapse collapse"
+<div id="collapse3_2" class="accordion-collapse collapse collapse"
 aria-labelledby="heading3_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -875,6 +949,11 @@ aria-labelledby="heading3_2" data-bs-parent="#accordionExample">
 <p><strong>Answer: </strong> Since we are permuting in-place on the
 <code>states</code> DataFrame, we must calculate the observed test
 statistic before we permute.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 81%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -926,7 +1005,7 @@ class="sourceCode py"><code class="sourceCode python"><span id="cb14-1"><a href=
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse4_1" class="accordion-collapse collapse"
+<div id="collapse4_1" class="accordion-collapse collapse collapse"
 aria-labelledby="heading4_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -940,6 +1019,11 @@ extracts all sequences of digits in s, including ‘10’, ‘3’, ‘15’, �
 ‘5’, ‘3’, ‘91’, ‘8’, and ‘100’, which together form list3. This is
 because greedily matches all contiguous digits, capturing both the
 citation numbers and any other numbers present in the text.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 81%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -962,14 +1046,14 @@ citation numbers and any other numbers present in the text.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse4_2" class="accordion-collapse collapse"
+<div id="collapse4_2" class="accordion-collapse collapse collapse"
 aria-labelledby="heading4_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer: </strong> list5</p>
-<p>his pattern <code>[\d+]</code> is slightly misleading because the
+<p>This pattern <code>[\d+]</code> is slightly misleading because the
 square brackets are used to define a character class, and the plus sign
 inside is treated as a literal character, not as a quantifier. However,
 since there are no plus signs in s, this detail does not affect the
@@ -977,6 +1061,11 @@ outcome. The character class atches any digit, so this pattern
 effectively matches individual digits throughout the string, resulting
 in list5. This list contains every single digit found in s, separated as
 individual string elements.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 31%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -999,7 +1088,7 @@ individual string elements.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse4_3" class="accordion-collapse collapse"
+<div id="collapse4_3" class="accordion-collapse collapse collapse"
 aria-labelledby="heading4_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1014,6 +1103,11 @@ excluding the brackets from the result. Therefore, it extracts just the
 citation numbers as they appear in s, matching list2 exactly. This
 method is precise for extracting citation numbers from a text formatted
 in the verbose numeric style.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 80%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -1036,7 +1130,7 @@ in the verbose numeric style.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse4_4" class="accordion-collapse collapse"
+<div id="collapse4_4" class="accordion-collapse collapse collapse"
 aria-labelledby="heading4_4" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1051,6 +1145,11 @@ parentheses around the entire pattern ensure that the match includes the
 brackets. This results in list4, which contains all the citation markers
 found in s, preserving the brackets to clearly denote them as
 citations.</p>
+<hr/>
+<h5>Difficulty: ⭐️</h5>
+<p>
+<p>The average score on this problem was 91%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -1103,7 +1202,7 @@ Select all that apply.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse5_1" class="accordion-collapse collapse"
+<div id="collapse5_1" class="accordion-collapse collapse collapse"
 aria-labelledby="heading5_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1136,6 +1235,11 @@ first <code>&lt;scorerow&gt;</code> in the second
 <code>&lt;scorelist&gt;</code> tag, but <code>&lt;scorelist&gt;</code>
 does not have a <code>"kind"</code> attribute.</li>
 </ul>
+<hr/>
+<h5>Difficulty: ⭐️</h5>
+<p>
+<p>The average score on this problem was 90%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -1184,7 +1288,7 @@ class="sourceCode py"><code class="sourceCode python"><span id="cb20-1"><a href=
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse5_2" class="accordion-collapse collapse"
+<div id="collapse5_2" class="accordion-collapse collapse collapse"
 aria-labelledby="heading5_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1197,16 +1301,29 @@ aria-labelledby="heading5_2" data-bs-parent="#accordionExample">
 <code>&lt;scorelist&gt;</code> tag, which includes both verbal and math
 percentiles <code>(84 and 99)</code>. The function
 <code>summer(tree)</code> sums these values to get <code>183</code>.</p>
+<hr/>
+<h5>Difficulty: ⭐️</h5>
+<p>
+<p>The average score on this problem was 92%.</p>
 <p>This selects the <code>&lt;scorelist&gt;</code> tag with
 <code>listtype="scores"</code>, which contains the actual scores of
 verbal <code>(680)</code> and math <code>(800)</code>. The function sums
 these to get <code>1480</code>.</p>
+<hr/>
+<h5>Difficulty: ⭐️</h5>
+<p>
+<p>The average score on this problem was 92%.</p>
 <p>This selects all <code>&lt;scorerow&gt;</code>elements with
 <code>kind="math"</code>, capturing both the percentile
 <code>(99)</code> and the actual score <code>(800)</code>. Since tree is
 now a list, <code>summer(tree)</code> iterates through each
 <code>&lt;scorerow&gt;</code> in the list, summing their
 <code>&lt;scorenum&gt;</code> values to reach <code>899</code>.</p>
+<hr/>
+<h5>Difficulty: ⭐️</h5>
+<p>
+<p>The average score on this problem was 91%.</p>
+</p></p></p>
 </div>
 </div>
 </div>
@@ -1236,7 +1353,7 @@ class="math inline">b</span>?</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse6_1" class="accordion-collapse collapse"
+<div id="collapse6_1" class="accordion-collapse collapse collapse"
 aria-labelledby="heading6_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1250,6 +1367,11 @@ one token is <span class="math inline">\frac{1}{5}</span>. For a
 sentence of 4 tokens (“the college board is”), the probability is <span class="math inline">\frac{1}{5^4}</span> because each token is
 independently sampled. Thus, <span class="math inline">a = 5</span> and
 <span class="math inline">b = 4</span>.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 70%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -1273,7 +1395,7 @@ class="math inline">d</span>?</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse6_2" class="accordion-collapse collapse"
+<div id="collapse6_2" class="accordion-collapse collapse collapse"
 aria-labelledby="heading6_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1290,6 +1412,11 @@ considering the total number of tokens (8). The combined probability is
 simplifying, <span class="math inline">\frac{1}{8^3}</span> since <span class="math inline">512 = 8^3</span>. Therefore, <span class="math inline">c = 2</span> and <span class="math inline">d =
 9</span> or <span class="math inline">c = 8</span> and <span class="math inline">d = 3</span>, depending on how you represent the
 fraction.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 68%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -1325,7 +1452,7 @@ model on <code>tokens</code>. Which of the following sentences of length
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse6_3" class="accordion-collapse collapse"
+<div id="collapse6_3" class="accordion-collapse collapse collapse"
 aria-labelledby="heading6_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1339,6 +1466,11 @@ of”, “of college”) based on the original list of tokens, which contains
 all these pairs. This reasoning assumes that the given pairs appear more
 frequently or are more probable in sequence than the pairs in other
 sentences.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 72%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -1375,7 +1507,7 @@ values.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse6_4" class="accordion-collapse collapse"
+<div id="collapse6_4" class="accordion-collapse collapse collapse"
 aria-labelledby="heading6_4" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1383,10 +1515,15 @@ aria-labelledby="heading6_4" data-bs-parent="#accordionExample">
 </header>
 <p><strong>Answer: </strong> Yes</p>
 <p>In the context of TF-IDF, if a word appears in every sentence, its
-inverse document frequency (IDF) part would be (() = 0), making the
-TF-IDF score 0 for that word across all documents. Since “the” appears
-in all five sentences, its IDF is zero, leading to a column of zeros in
-the TF-IDF matrix for “the”.</p>
+inverse document frequency (IDF) part would be <span class="math inline">(\log(\frac{5}{5}) = 0)</span>, making the TF-IDF
+score 0 for that word across all documents. Since “the” appears in all
+five sentences, its IDF is zero, leading to a column of zeros in the
+TF-IDF matrix for “the”.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 49%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -1409,7 +1546,7 @@ highest TF-IDF?</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse6_5" class="accordion-collapse collapse"
+<div id="collapse6_5" class="accordion-collapse collapse collapse"
 aria-labelledby="heading6_5" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1422,6 +1559,11 @@ relatively more important (i.e., has a higher term frequency) in
 Sentence 4 than in other sentences where it appears. TF-IDF rewards
 words that are unique to a document but penalizes those that are common
 across all documents.</p>
+<hr/>
+<h5>Difficulty: ⭐️</h5>
+<p>
+<p>The average score on this problem was 95%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -1450,7 +1592,7 @@ document <span class="math inline">d</span> is the term with ____.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse6_6" class="accordion-collapse collapse"
+<div id="collapse6_6" class="accordion-collapse collapse collapse"
 aria-labelledby="heading6_6" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1464,6 +1606,11 @@ specific document and distinctive across the corpus. Therefore, the term
 with the smallest DF-ITF in a document is considered the best summary
 for that document, as it balances document-specific significance with
 corpus-wide uniqueness.</p>
+<hr/>
+<h5>Difficulty: ⭐️</h5>
+<p>
+<p>The average score on this problem was 90%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -1520,13 +1667,28 @@ class="sourceCode py"><code class="sourceCode python"><span id="cb35-1"><a href=
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse7_1" class="accordion-collapse collapse"
+<div id="collapse7_1" class="accordion-collapse collapse collapse"
 aria-labelledby="heading7_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer: </strong> Option 2</p>
+<p>It is possible for the mean of <code>Math</code> scores to be larger
+than the mean of <code>Verbal</code> scores, but for more
+<code>Verbal</code> values to be larger than corresponding
+<code>Math</code> values. In the case that the mean of <code>Math</code>
+scores was larger than the mean of <code>Verbal</code> scores, but more
+<code>Verbal</code> values are larger than corresponding
+<code>Math</code> scores, predicting 1 would maximize accuracy, but the
+proposed model would predict 0. This means that option 2 does not
+guarantee that training accuracy is maximized when <code>a &gt; b</code>
+for this combination.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 58%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -1549,13 +1711,23 @@ answer as a <strong>simplified fraction</strong>.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse7_2" class="accordion-collapse collapse"
+<div id="collapse7_2" class="accordion-collapse collapse collapse"
 aria-labelledby="heading7_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer: </strong> <span class="math inline">\frac{2}{3}</span></p>
+<p>An accuracy of <span class="math inline">\frac{5}{9}</span> means
+that the model is such that out of 9 values, 5 are labeled correctly. By
+extension, this means that 4 out of 9 are not labeled correctly as 0 or
+1.</p>
+<p>RMSE for this Classifier would thus be <span class="math inline">\sqrt\frac{4}{9}</span>, which is equal to <span class="math inline">\frac{2}{3}</span>.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 55%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -1583,13 +1755,21 @@ complexity.</p></li>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse7_3" class="accordion-collapse collapse"
+<div id="collapse7_3" class="accordion-collapse collapse collapse"
 aria-labelledby="heading7_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer: </strong> Option 2</p>
+<p>Since the accuracy of Classifier 1 is much higher on the dataset used
+to train it than the dataset it was tested on, we can say it is likely
+that the Classifier was overfit to the training set.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 86%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -1617,13 +1797,25 @@ the number <code>1</code>?</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse7_4" class="accordion-collapse collapse"
+<div id="collapse7_4" class="accordion-collapse collapse collapse"
 aria-labelledby="heading7_4" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer: </strong> Option 1</p>
+<p>Upon observing the provided DataFrame containing normalized values,
+we can see that if we add up values along each column of the DataFrame
+<code>([0.9+0.1, 0.4+0.6])</code>, we will get a Series containing the
+values <code>[1, 1]</code>. Such a Series would match the requirement of
+question - evaluating to a Series of length 2 where the only unique
+value is 1. In order to sum up the values of the rows in each column in
+the DataFrame, we need to use <code>axis=0</code>.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 81%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -1643,13 +1835,29 @@ aria-labelledby="heading7_4" data-bs-parent="#accordionExample">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse7_5" class="accordion-collapse collapse"
+<div id="collapse7_5" class="accordion-collapse collapse collapse"
 aria-labelledby="heading7_5" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer: </strong> recall</p>
+<p>In the provided confusion matrix for Classifier 2, we can say the
+following:</p>
+<p>Predicted 0 and Actually 0 (0.9) is the True Negative (TN).<br/>
+Predicted 1 and Actually 0 (0.1) is the False Positive (FP).<br/>
+Predicted 0 and Actually 1 (0.4) is the False Negative (FN).<br/>
+Predicted 1 and Actually 1 (0.6) is the True Positive (TP).</p>
+<p>Using the formulas:</p>
+<p>precision = <span class="math inline">\frac{TP}{TP + FP}</span> =
+<span class="math inline">\frac{0.6}{0.6 + 0.1}</span><br/>
+recall = <span class="math inline">\frac{TP}{TP + FN}</span> = <span class="math inline">\frac{0.6}{0.6 + 0.4}</span></p>
+<p>We can see that recall is the correct answer as it evaluates to <span class="math inline">0.6</span>.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 77%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -1688,13 +1896,33 @@ calculation for the accuracy in the previous step?</p></li>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse7_6" class="accordion-collapse collapse"
+<div id="collapse7_6" class="accordion-collapse collapse collapse"
 aria-labelledby="heading7_6" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer: </strong> <span class="math inline">\frac{5}{6}</span></p>
+<p>Here is one way to solve this problem:</p>
+<p>accuracy = <span class="math inline">\frac{TP + TN}{TP + TN + FP +
+FN}</span></p>
+<p>Given the values from the confusion matrix:</p>
+<p>accuracy = <span class="math inline">\frac{0.6*\alpha + 0.9*(1 -
+\alpha)}{\alpha + (1 - \alpha)}</span><br/>
+accuracy = <span class="math inline">\frac{0.6*\alpha + 0.9 -
+0.9*\alpha}{1}</span><br/>
+accuracy = <span class="math inline">0.9 - 0.3*\alpha</span></p>
+<p>Therefore:</p>
+<p>0.65 = <span class="math inline">0.9 - 0.3*\alpha</span><br/>
+<span class="math inline">0.3*\alpha</span> = <span class="math inline">0.9 - 0.65</span><br/>
+<span class="math inline">0.3*\alpha</span> = <span class="math inline">0.25</span><br/>
+<span class="math inline">\alpha</span> = <span class="math inline">\frac{0.25}{0.3}</span><br/>
+<span class="math inline">\alpha</span> = <span class="math inline">\frac{5}{6}</span></p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 61%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -1741,13 +1969,36 @@ vs. <code>height</code></strong>?</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse8_1" class="accordion-collapse collapse"
+<div id="collapse8_1" class="accordion-collapse collapse collapse"
 aria-labelledby="heading8_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer: </strong> Option 2, Option 3</p>
+<p>We are told that as height increases, the model variance (complexity)
+also increases.</p>
+<p>For the first subpart with the correct answer being
+<code>Option 2</code>:<br/>
+As we increase the complexity of the model, the Classifier is more
+closely fit to the training data. This means that the Classifier
+essentially ‘memorizes’ more of the training data as height increases,
+meaning that accuracy on the training data will also increase.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 84%.</p>
+<p>For the second subpart with the correct answer being
+<code>Option 3</code>: Through similar reasoning for the subpart above,
+the Classifier becomes more closely fit to the training data as height
+increases, causing overfitting as values of height get higher and
+higher. This means that the accuracy of the Classifier will increase to
+a certain point alongside height, but will start to reduce after.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 71%.</p>
+</p></p>
 </div>
 </div>
 </div>
@@ -1784,13 +2035,86 @@ validation accuracy in any one particular fold.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse8_2" class="accordion-collapse collapse"
+<div id="collapse8_2" class="accordion-collapse collapse collapse"
 aria-labelledby="heading8_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer: </strong> <code>"red"</code>, True</p>
+<p>For the first subpart with the correct answer being
+<code>"red"</code>:<br/>
+From looking at the results of the k-fold cross validation, we see that
+the color red has the highest, and therefore the best, validation
+accuracy as it has the highest row mean (across all 4 folds).</p>
+<hr/>
+<h5>Difficulty: ⭐️</h5>
+<p>
+<p>The average score on this problem was 91%.</p>
+<p>For the second subpart with the correct answer being
+<code>True</code>:<br/>
+An example is shown below:</p>
+<table>
+<thead>
+<tr class="header">
+<th>color</th>
+<th>Fold 1</th>
+<th>Fold 2</th>
+<th>Fold 3</th>
+<th>Fold 4</th>
+<th>average</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>color 1</td>
+<td>0.8</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0.2</td>
+</tr>
+<tr class="even">
+<td>color 2</td>
+<td>0</td>
+<td>0.6</td>
+<td>0</td>
+<td>0</td>
+<td>0.15</td>
+</tr>
+<tr class="odd">
+<td>color 3</td>
+<td>0</td>
+<td>0</td>
+<td>0.1</td>
+<td>0</td>
+<td>0.025</td>
+</tr>
+<tr class="even">
+<td>color 4</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0.2</td>
+<td>0.05</td>
+</tr>
+<tr class="odd">
+<td>color 5</td>
+<td>0.7</td>
+<td>0.5</td>
+<td>0.01</td>
+<td>0.1</td>
+<td>0.3275</td>
+</tr>
+</tbody>
+</table>
+<p>Where color 5 has the highest average validation accuracy across all
+folds, but is not the best in any one fold.</p>
+<hr/>
+<h5>Difficulty: ⭐️</h5>
+<p>
+<p>The average score on this problem was 94%.</p>
+</p></p>
 </div>
 </div>
 </div>
@@ -1852,13 +2176,42 @@ values of <code>color</code>.</p></li>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse8_3" class="accordion-collapse collapse"
+<div id="collapse8_3" class="accordion-collapse collapse collapse"
 aria-labelledby="heading8_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer: </strong> Option 3, Option 6, Option 8</p>
+<p>For the first subpart with the correct answer being
+<code>Option 3</code>:<br/>
+The training set is divided into k folds of equal size, resulting in k
+folds with size <span class="math inline">\frac{n}{k}</span>.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 66%.</p>
+<p>For the second subpart with the correct answer being
+<code>Option 6</code>:<br/>
+For each combination of hyperparameters, row 5 is k - 1 times for
+training, and 1 time for validation. There are <span class="math inline">h_1 * h_2</span> combinations of hyperparameters, so
+row 5 is used for training <span class="math inline">h_1 * h_2 *
+(k-1)</span> times.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 76%.</p>
+<p>For the third subpart with the correct answer being
+<code>Option 8</code>:<br/>
+Building off of the explanation fo rthe previous subpart, row 5 is used
+for validation 1 times for each combination of hyperparameters, so the
+correct expression would be <span class="math inline">h_1 * h_2</span>,
+which is not a provided option.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 69%.</p>
+</p></p></p>
 </div>
 </div>
 </div>
@@ -1915,13 +2268,47 @@ each box such that the numbers add up to 8.)</em></p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse9" class="accordion-collapse collapse"
+<div id="collapse9" class="accordion-collapse collapse collapse"
 aria-labelledby="heading9" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer: </strong> 3, 1, 4</p>
+<p>For the first subpart with the correct answer being 3:<br/>
+The first column of the transformed array corresponds to the
+standardized one-hot-encoded <code>low</code> column. There are 3 values
+that are positive, which means there are 3 values that were originally
+<code>1</code> in that column pre-standardization. This means that 3 of
+the values in <code>lunch_props</code> were originally
+<code>"low"</code>.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 73%.</p>
+<p>For the second subpart with the correct answer being 1:<br/>
+Using similar reasoning from the explanation for the previous
+subpart:<br/>
+The second column of the transformed array corresponds to the
+standardized one-hot-encoded <code>med</code> column. There is only 1
+value in the transformed column that is positive, which means only 1 of
+the values in <code>lunch_props</code> was originally
+<code>"medium"</code>.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 73%.</p>
+<p>For the third subpart with the correct answer being 4:<br/>
+The Series <code>lunch_props</code> has 8 values, 3 of which were
+identified as <code>"low"</code> in subpart 1, and 1 of which was
+identified as <code>"medium"</code> in subpart 2. The number of values
+being <code>"high"</code> must therefore be <span class="math inline">8
+- 3 - 1 = 4</span>.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 70%.</p>
+</p></p></p>
 </div>
 </div>
 </div>
