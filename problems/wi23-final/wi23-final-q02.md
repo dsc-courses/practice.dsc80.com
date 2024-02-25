@@ -38,11 +38,9 @@ Option 3:
 # BEGIN SOLN
 **Answer: ** Option 2
 
-Option 1: is incorrect because it attempts to select the `# Students` column before grouping by `State`, which is not possible.
-
-Option 2: filters the DataFrame, groups by `State`, and then performs aggregation only on the `# Students` column, making it efficient.
-
-Option 3: does the aggregations for all columns first and then selects the `# Students` column, which is less efficient because it computes aggregations for potentially many columns that are not needed.
+- Option 1 is incorrect because it attempts to select the `"# Students"` column before grouping by `"State"`, which is not possible.
+- Option 2 filters the DataFrame, groups by `"State"`, and then performs aggregation only on the `"# Students"` column, making it efficient.
+- Option 3 does the aggregations for all columns first and then selects the `"# Students"` column, which is correct but less efficient because it computes aggregations for potentially many columns (like `"Math"`) that are not needed.
 
 <average>75</average>
 
@@ -62,7 +60,7 @@ What type of test is being proposed above?
 # BEGIN SOLN
 **Answer: ** Permutation test
 
-We aim to determine if there's a significant difference between the student distributions in New York and Texas. This requires us to randomly shuffle the group labels and recalculate the means for the permuted groups, making this a permutation test.
+Here, we're comparing whether two sample distributions – specifically, (1) the distribution of the number of students per year from 2005-2015 for New York and (2) the distribution of the number of students per year from 2005-2015 for Texas – are significantly different. This is precisely what a permutation test is used for. For the purposes of this test, we have 22 relevant rows of data – 11 for New York and 11 for Texas – and 2 columns, `"State"` and `"# Students"`.
 
 <average>90</average>
 
@@ -79,9 +77,11 @@ Given the information in the above DataFrame, which test statistic is **most lik
 ( ) The Kolmogorov-Smirnov statistic
 
 # BEGIN SOLN
-**Answer: ** The Kolmogorov-Smirnov statistic 
+**Answer: ** The Kolmogorov-Smirnov statistic
 
-Calculating the diference in mean and median only focuses on the central tendency and is unable to consider the full distribution of the data. The Kolmogorov-Smirnov statistic is most likely to yield a significant difference if there are any differences in the distributions beyond just the central tendency. It is more comprehensive as it evaluates differences across the entire range of the distributions, making it a robust choice for comparing the two states' SAT student distributions.
+Here, the means and medians of the two samples are similar, so their observed difference in means and observed difference in medians are both small. This means that a permutation test using either one of those as a test statistic will likely fail to yield a significant difference. However, the standard deviations of both distributions are quite different, which means the shapes of the distributions are quite different. The Kolmogorov-Smirnov statistic measures the distance between two distributions by considering their entire shape, and since these distributions have very different shapes, they will likely have a larger Kolmogorov-Smirnov statistic than expected under the null.
+
+<!-- The difference in means an median only focuses on the central tendency and is unable to consider the full distribution of the data. The Kolmogorov-Smirnov statistic is most likely to yield a significant difference if there are any differences in the distributions beyond just the central tendency. It is more comprehensive as it evaluates differences across the entire range of the distributions, making it a robust choice for comparing the two states' SAT student distributions. -->
 
 <average>78</average>
 
@@ -105,7 +105,7 @@ What type of test is being proposed above?
 # BEGIN SOLN
 **Answer: ** Hypothesis test
 
-The key aspect of a hypothesis test is determining whether any observed differences between the sample and population data are due to random chance. Here, we are dealing with one large population data (scores of all students in 2015) and testing if our sample observed data (scores from New York students in 2015) is statistically different, marking this a hypothesis test.
+One way to think about "standard" hypothesis tests is that they test whether a given sample – in this case, the verbal score distribution of New York students in 2015 – looks like it was drawn from a given population – here, the verbal score distribution of all students in 2015. That's what's happening here.
 
 <average>87</average>
 
@@ -134,6 +134,16 @@ Of the above three possible distance metrics, only one of them has the same rang
 
 # BEGIN SOLN
 **Answer: ** $\text{dis3}$
+
+Let's look at the options carefully:
+
+- $\text{dis1}$ does not have the property that smaller values correspond to more similar vectors. Consider $\vec{a} = [1, 0], \vec{b} = [0, 1], \vec{c} = [1, 0]$. Here, $\text{dis1}(\vec{a}, \vec{b}) = 1 \cdot 0 + 0 \cdot 1 = 0$ and $\text{dis1}(\vec{a}, \vec{c}) = 1 \cdot 1 + 0 \cdot 0 = 1$. $\vec{a}$ and $\vec{c}$ are the exact same vector, but they have a larger $\text{dis1}$ value than $\vec{a}$ and $\vec{b}$, which are very different vectors. $\text{dis1}$ has the property that larger values correspond to more similar vectors, which is what we're looking for.
+- $\text{dis2}$ behaves the same way that $\text{dis1}$ does, in that larger values correspond to more similar vectors. Note that the numerator of $\text{dis2}$ is just $\text{dis1}$.
+- By process of elimination, the answer must be $\text{dis3}$. But, for those who are curious, why does $\text{dis3}$ work? Here's why:
+    - Remember from Math 18 that if $\vec{a}$ and $\vec{b}$ are two vectors, then their dot product can be expressed as $\vec{a} \cdot \vec{b} = | \vec{a} | | \vec{b} | \cos \theta$, where $\theta$ is the angle between the two vectors.
+    - If all of the elements in $\vec{a}$ and $\vec{b}$ are non-negative, then the angle $\theta$ between $\vec{a}$ and $\vec{b}$ must be between 0 and 90 degrees, which means $\cos \theta$ must be between 1 (when $\theta$ is 0) and 0 (when $\theta$ is 90).
+    - Rearranging the dot product, we have that $\cos \theta = \frac{\vec{a} \cdot \vec{b}}{|\vec{a} | | \vec{b} |}$. When $\vec{a}$ and $\vec{b}$ point in the same direction – that is, when they are as similar as possible – $\cos \theta$ is 1, and when they are as different as possible – that is, when they are orthogonal – $\cos \theta$ is 0. This is the exact opposite of the behavior we want in a distance metric, where we want smaller values to correspond to more similar vectors, not larger values. Note that $\cos \theta$ is the same as $\text{dis2}$.
+    - By computing $\text{dis3}(\vec{a}, \vec{b}) = 1 - \cos \theta = 1 - \frac{\vec{a} \cdot \vec{b}}{|\vec{a} | | \vec{b} |}$, we reverse the behavior of $\cos \theta$: when $\vec{a} and $\vec{b}$ point in the same direction, $\text{dis3}(\vec{a}, \vec{b}) = 0$, and when they are very different, $\text{dis3}(\vec{a}, \vec{b}) = 1$. Now, $\text{dis3}(\vec{a}, \vec{b})$ behaves the same way as the TVD, in that a value of 0 means the vectors are identical and a value of 1 means the vectors are very different!
 
 <average>75</average>
 

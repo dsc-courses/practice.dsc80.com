@@ -11,8 +11,11 @@
     div.columns{display: flex; gap: min(4vw, 1.5em);}
     div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
     ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
       width: 0.8em;
       margin: 0 0.8em 0.2em -1.6em;
       vertical-align: middle;
@@ -91,7 +94,7 @@ Fall 2023
 Sam Lau
 </td>
 <td>
-<a href='fa23-midterm/index.html'>Midterm</a> 🆕 <br>
+<a href='fa23-midterm/index.html'>Midterm</a> <br>
 <a href='fa23-final/index.html'>Final (In Progress)</a> 🆕
 </td>
 </tr>

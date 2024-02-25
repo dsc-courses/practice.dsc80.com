@@ -62,10 +62,10 @@ sat.loc[sat['Year'] == 2007].loc[sat['Math'] == sat['Math'].max()]
 **Answer: ** Option 2 and Option 5
 
 Option 1:
-`(sat.loc[(sat["Math"] == sat["Math"].max()) & (sat["Year"] == 2007), "State"].iloc[0])` This expression looks for entries where the math score equals the overall max `Math` score in the dataset and the year is 2007. However, this approach has a limitation: it assumes that the highest math score in the entire dataset occurred in 2007. 
+`(sat.loc[(sat["Math"] == sat["Math"].max()) & (sat["Year"] == 2007), "State"].iloc[0])` This expression looks for entries where the math score equals the overall max `"Math"` score in the dataset and the year is 2007. However, this approach has a limitation: it assumes that the highest math score in the entire dataset occurred in 2007. 
 
 Option 2:
-`sat.loc[sat["Year"] == 2007].set_index("State")["Math"].idxmax()` After boolean indexing for entries made in 2007, it correctly returns the state name with the max `Math` score.
+`sat.loc[sat["Year"] == 2007].set_index("State")["Math"].idxmax()` After boolean indexing for entries made in 2007, it correctly returns the state name with the max `"Math"` score.
 
 Option 3: 
 `sat.groupby("Year")["State"].max().loc[2007]` This finds the maximum state name alphabet-wise, not the state with the highest math score. 
@@ -115,9 +115,9 @@ Are `val1` and `val2` identical? That is, do they contain the same rows and colu
 # BEGIN SOLN
 **Answer: ** Yes
 
-No pair of `Year` and `State` will be appear twice in the DataFrame because each combination of `Year` and `State` are unqiue. Therefore, when grouping by these columns, each group only contains one unique row - the row itself. Thus, using the maximum operation on these groups simply retrieves the original rows.
+No pair of `"Year"` and `"State"` will be appear twice in the DataFrame because each combination of `"Year"` and `"State"` are unqiue. Therefore, when grouping by these columns, each group only contains one unique row - the row itself. Thus, using the maximum operation on these groups simply retrieves the original rows.
 
-Likewise, since every combination of `Year`, `State`, and `# Students` is also unique, the minimum operation, when applied after grouping, yields the same result: the original row for each group.
+Likewise, since every combination of `"Year"`, `"State"`, and `"# Students"` is also unique, the minimum operation, when applied after grouping, yields the same result: the original row for each group.
 
 Recall that `.groupby` function in Pandas automatically sorts data based on the chosen grouping keys. As a result, the `val1` and `val2` DataFrames, created using these groupings, contain the same rows and columns, displayed in the same order.
 
@@ -142,11 +142,7 @@ merged = sat["Year"].value_counts().to_frame().merge(
 missing_years = ___(c)___.to_numpy()
 ```
 
-What goes in blank (a)?
-
-What goes in blank (b)?
-
-What goes in blank (c)?
+What goes in the blanks?
 
 # BEGIN SOLN
 **Answer: ** 
@@ -155,15 +151,27 @@ What goes in blank (c)?
 - b: `left_index=True, right_on='Year', how='left'` (`how='outer'` also works)
 - c: `merged[merged['# Students'].isna()]['Year']`
 
+<br>
+
+#### Blank A
+
 The initial step (in the `state_only` variable) involves identifying the state that has fewer than 11 records in the dataset. This is achieved by the lambda function `lambda df: df.shape[0] < 11`, leaving us with records from only the state that has missing data for certain years.
 
 <average>72</average>
+
+<br>
+
+#### Blank B
 
 Next, applying `.value_counts()` to `sat["Year"]` produces a Series that enumerates the total occurrences of each year from 2005 to 2015. Converting this Series to a DataFrame with `.to_frame()`, we then merge it with the `state_only` DataFrame. This merging results in a DataFrame (merged) where the years lacking corresponding entries in `state_only` are marked as NaN.
 
 <average>52</average>
 
-Finally, the expression `merged[merged['# Students'].isna()]['Year']` in `missing_years` identifies the specific years that are absent for the one state in the sat dataset. This is determined by selecting years in the merged DataFrame where the `# Students` column has NaN values, indicating missing data for those years.
+<br>
+
+#### Blank C
+
+Finally, the expression `merged[merged['# Students'].isna()]['Year']` in `missing_years` identifies the specific years that are absent for the one state in the sat dataset. This is determined by selecting years in the merged DataFrame where the `"# Students"` column has NaN values, indicating missing data for those years.
 
 <average>71</average>
 
@@ -191,11 +199,11 @@ Given just the information in `sat_complete` --- that is, without including any 
 # BEGIN SOLN
 **Answer:** Not missing at random
 
-The fact that there are null values specifically in the cases where SAT data is not available suggests that the missingness of the `# Students` column is systematic. It's not occurring randomly across the dataset, but rather in specific instances where SAT data wasn't recorded or available.
+The fact that there are null values specifically in the cases where SAT data is not available suggests that the missingness of the `"# Students"` column is systematic. It's not occurring randomly across the dataset, but rather in specific instances where SAT data wasn't recorded or available.
 
 This could mean that the absence of student numbers is linked to specific reasons why the data was not recorded or collected, such as certain states not participating in SAT testing in specific years, or administrative decisions that led to non-recording of data.
 
-The nature of this missingness suggests that it's not random or solely dependent on observed data in other columns, but rather it's related to the inherent nature of the `# Students` data itself.
+The nature of this missingness suggests that it's not random or solely dependent on observed data in other columns, but rather it's related to the inherent nature of the `"# Students"` data itself.
 
 <average>54</average>
 
@@ -213,9 +221,9 @@ Given just the information in `sat_complete` --- that is, without including any 
 # BEGIN SOLN
 **Answer: ** Missing at random
 
-If a state has reported the number of students taking the SAT, it implies that data collection and reporting were carried out. The administrative decision to report SAT scores (including `Math` scores) may be reflected in the `# Students` column. Conversely, if the `# Students` column is empty or null for a certain state and year, it might indicate an administrative decision not to participate or report data for that period. This decision impacts the availability of `Math` scores.
+If a state has reported the number of students taking the SAT, it implies that data collection and reporting were carried out. The administrative decision to report SAT scores (including `"Math"` scores) may be reflected in the `"# Students"` column. Conversely, if the `"# Students"` column is empty or null for a certain state and year, it might indicate an administrative decision not to participate or report data for that period. This decision impacts the availability of `"Math"` scores.
 
-In this context,  the missing values in `Math` scores are linked to observable conditions or patterns in the dataset (like specific years, states, or availability of other related data).
+In this context,  the missing values in `"Math"` scores are linked to observable conditions or patterns in the dataset (like specific years, states, or availability of other related data).
 
 <average>75</average>
 

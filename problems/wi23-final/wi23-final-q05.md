@@ -43,8 +43,8 @@ Which of the following expressions evaluate to `"verbal"`? Select all that apply
 Correct options:
 
 - Option 1 finds the first `<scorerow>` element and retrieves its `"kind"` attribute, which is `"verbal"` for the first `<scorerow>` encountered in the HTML document.
-- Option 2 finds the first `<scorerow>` tag, retrieves its text `("Verbal: 84")`, splits this text by ":", and takes the first element of the resulting list `("Verbal")`, converting it to lowercase to match `"verbal"`
-- Option 3 creates a list of `"kind"` attributes for all `<scorerow>` elements. The second to last (-2) element in this list corresponds to the `"kind"` attribute of the first `<scorerow>` in the second `<scorelist>` tag, which is also `"verbal"`
+- Option 2 finds the first `<scorerow>` tag, retrieves its text `("Verbal: 84")`, splits this text by ":", and takes the first element of the resulting list `("Verbal")`, converting it to lowercase to match `"verbal"`.
+- Option 3 creates a list of `"kind"` attributes for all `<scorerow>` elements. The second to last (-2) element in this list corresponds to the `"kind"` attribute of the first `<scorerow>` in the second `<scorelist>` tag, which is also `"verbal"`.
 
 Incorrect options:
 
@@ -76,10 +76,8 @@ For each of the following values, fill in the blanks to assign `tree` such that 
 - Desired value: `84`
 
 ```py
-    tree = soup.find(_____)
+    tree = soup.find("scorerow")
 ```
-
-`"scorerow"`
 
 - Desired value: `183`
 

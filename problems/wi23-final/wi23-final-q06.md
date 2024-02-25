@@ -101,7 +101,11 @@ Is there a column in the TF-IDF matrix in which all values are 0?
 
 **Answer: ** Yes
 
-In the context of TF-IDF, if a word appears in every sentence, its inverse document frequency (IDF) part would be $(\log(\frac{5}{5}) = 0)$, making the TF-IDF score 0 for that word across all documents. Since "the" appears in all five sentences, its IDF is zero, leading to a column of zeros in the TF-IDF matrix for "the".
+Recall,
+
+$$\text{tf-idf}(t, d) = \text{term frequency}(t, d) \cdot \text{inverse document frequency}(t)$$
+
+In the context of TF-IDF, if a word appears in every sentence, its inverse document frequency (IDF) would be $\log(\frac{5}{5}) = 0$. Since a word's TF-IDF in a document is its TF (term frequency) in that document multiplied by its IDF, if the word's IDF is 0, it's TF-IDF is also 0. Since "the" appears in all five sentences, its IDF is zero, leading to a column of zeros in the TF-IDF matrix for "the".
 
 <average>49</average>
 
@@ -123,7 +127,7 @@ In which of the following sentences is "college" the word with the highest TF-ID
 
 **Answer: ** Sentence 4
 
-The word "college" likely has the highest TF-IDF in Sentence 4 because it appears less frequently across all sentences and is relatively more important (i.e., has a higher term frequency) in Sentence 4 than in other sentences where it appears. TF-IDF rewards words that are unique to a document but penalizes those that are common across all documents.
+Remember, the IDF of a word is the same for all documents, since $\text{idf}(t) = \log \left( \frac{\text{number of documents}}{number of documents containing $t$} \right)$. This means that the sentence where "college" is the word with the highest TF-IDF is the same as the sentence where "college" is the word with the highest TF, or term frequency. Sentence 4 is the only sentence where "college" appears twice; in all other sentences, "college" appears at most once. (Since all of these sentences have the same length, we know that if "college" appears more times in Sentence 4 than it does in other sentences, then "college"'s term frequency in Sentence 4, $\frac{2}{5}$, is also larger than in any other sentence.) As such, the answer is Sentence 4.
 
 <average>95</average>
 
@@ -144,9 +148,15 @@ Fill in the blank: The term $t$ in document $d$ that best summarizes document $d
 
 # BEGIN SOLN
 
-**Answer: ** the smallest
+**Answer: ** the smallest DF-IDF in document $d$
 
-The DF-ITF score is lower for terms that are more unique (appear in fewer documents) and have a higher count in the document they appear in. A smaller DF-ITF indicates that a term is both important within a specific document and distinctive across the corpus. Therefore, the term with the smallest DF-ITF in a document is considered the best summary for that document, as it balances document-specific significance with corpus-wide uniqueness.
+The key idea behind TF-IDF, as we learned in class, is that $t$ is a good summary of $d$ if $t$ occurs commonly in $d$ but rarely across all documents.
+
+When $t$ occurs often in $d$, then $\frac{\text{\# of occurrences of $t$ in $d$}}{\text{total \# of words in $d$}}$ is large, which means $\frac{\text{total \# of words in $d$}}{\text{\# of occurrences of $t$ in $d$}}$ and hence $\log \left( \frac{\text{total \# of words in $d$}}{\text{\# of occurrences of $t$ in $d$}} \right)$ is small.
+
+Similarly, if $t$ is rare across all documents, then $\frac{\text{\# of documents in which $t$ appears}}{\text{total \# of documents}}$ is small.
+
+Putting the above two pieces together, we have that $\text{df-itf}(t, d)$ is small when $t$ occurs commonly in $d$ but rarely overall, which means that the term $t$ that best summarizes $d$ is the term with the smallest DF-IDF in $d$.
 
 <average>90</average>
 

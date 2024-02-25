@@ -11,12 +11,16 @@
     div.columns{display: flex; gap: min(4vw, 1.5em);}
     div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
     ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
       width: 0.8em;
       margin: 0 0.8em 0.2em -1.6em;
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
     pre > code.sourceCode { white-space: pre; position: relative; }
     pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -210,7 +214,7 @@ unique to only one state.</em></p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1_1" class="accordion-collapse collapse collapse"
+<div id="collapse1_1" class="accordion-collapse collapse"
 aria-labelledby="heading1_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -220,13 +224,13 @@ aria-labelledby="heading1_1" data-bs-parent="#accordionExample">
 <p>Option 1:
 <code>(sat.loc[(sat["Math"] == sat["Math"].max()) &amp; (sat["Year"] == 2007), "State"].iloc[0])</code>
 This expression looks for entries where the math score equals the
-overall max <code>Math</code> score in the dataset and the year is 2007.
-However, this approach has a limitation: it assumes that the highest
-math score in the entire dataset occurred in 2007.</p>
+overall max <code>"Math"</code> score in the dataset and the year is
+2007. However, this approach has a limitation: it assumes that the
+highest math score in the entire dataset occurred in 2007.</p>
 <p>Option 2:
 <code>sat.loc[sat["Year"] == 2007].set_index("State")["Math"].idxmax()</code>
 After boolean indexing for entries made in 2007, it correctly returns
-the state name with the max <code>Math</code> score.</p>
+the state name with the max <code>"Math"</code> score.</p>
 <p>Option 3: <code>sat.groupby("Year")["State"].max().loc[2007]</code>
 This finds the maximum state name alphabet-wise, not the state with the
 highest math score.</p>
@@ -267,7 +271,7 @@ relation:</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1_2" class="accordion-collapse collapse collapse"
+<div id="collapse1_2" class="accordion-collapse collapse"
 aria-labelledby="heading1_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -303,21 +307,21 @@ they contain the same rows and columns, all in the same order?</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1_3" class="accordion-collapse collapse collapse"
+<div id="collapse1_3" class="accordion-collapse collapse"
 aria-labelledby="heading1_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer: </strong> Yes</p>
-<p>No pair of <code>Year</code> and <code>State</code> will be appear
-twice in the DataFrame because each combination of <code>Year</code> and
-<code>State</code> are unqiue. Therefore, when grouping by these
-columns, each group only contains one unique row - the row itself. Thus,
-using the maximum operation on these groups simply retrieves the
-original rows.</p>
-<p>Likewise, since every combination of <code>Year</code>,
-<code>State</code>, and <code># Students</code> is also unique, the
+<p>No pair of <code>"Year"</code> and <code>"State"</code> will be
+appear twice in the DataFrame because each combination of
+<code>"Year"</code> and <code>"State"</code> are unqiue. Therefore, when
+grouping by these columns, each group only contains one unique row - the
+row itself. Thus, using the maximum operation on these groups simply
+retrieves the original rows.</p>
+<p>Likewise, since every combination of <code>"Year"</code>,
+<code>"State"</code>, and <code>"# Students"</code> is also unique, the
 minimum operation, when applied after grouping, yields the same result:
 the original row for each group.</p>
 <p>Recall that <code>.groupby</code> function in Pandas automatically
@@ -353,9 +357,7 @@ not appear in `sat.</p>
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>missing_years <span class="op">=</span> ___(c)___.to_numpy()</span></code></pre></div>
-<p>What goes in blank (a)?</p>
-<p>What goes in blank (b)?</p>
-<p>What goes in blank (c)?</p>
+<p>What goes in the blanks?</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading1_4">
@@ -363,7 +365,7 @@ not appear in `sat.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1_4" class="accordion-collapse collapse collapse"
+<div id="collapse1_4" class="accordion-collapse collapse"
 aria-labelledby="heading1_4" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -376,6 +378,8 @@ aria-labelledby="heading1_4" data-bs-parent="#accordionExample">
 (<code>how='outer'</code> also works)</li>
 <li>c: <code>merged[merged['# Students'].isna()]['Year']</code></li>
 </ul>
+<p><br/></p>
+<h4 id="blank-a">Blank A</h4>
 <p>The initial step (in the <code>state_only</code> variable) involves
 identifying the state that has fewer than 11 records in the dataset.
 This is achieved by the lambda function
@@ -385,6 +389,8 @@ from only the state that has missing data for certain years.</p>
 <h5>Difficulty: ⭐️⭐️⭐️</h5>
 <p>
 <p>The average score on this problem was 72%.</p>
+<p><br/></p>
+<h4 id="blank-b">Blank B</h4>
 <p>Next, applying <code>.value_counts()</code> to
 <code>sat["Year"]</code> produces a Series that enumerates the total
 occurrences of each year from 2005 to 2015. Converting this Series to a
@@ -396,11 +402,13 @@ DataFrame with <code>.to_frame()</code>, we then merge it with the
 <h5>Difficulty: ⭐️⭐️⭐️</h5>
 <p>
 <p>The average score on this problem was 52%.</p>
+<p><br/></p>
+<h4 id="blank-c">Blank C</h4>
 <p>Finally, the expression
 <code>merged[merged['# Students'].isna()]['Year']</code> in
 <code>missing_years</code> identifies the specific years that are absent
 for the one state in the sat dataset. This is determined by selecting
-years in the merged DataFrame where the <code># Students</code> column
+years in the merged DataFrame where the <code>"# Students"</code> column
 has NaN values, indicating missing data for those years.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️⭐️</h5>
@@ -448,7 +456,7 @@ likely missingness mechanism of the <code>"# Students"</code> column in
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1_5" class="accordion-collapse collapse collapse"
+<div id="collapse1_5" class="accordion-collapse collapse"
 aria-labelledby="heading1_5" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -457,7 +465,7 @@ aria-labelledby="heading1_5" data-bs-parent="#accordionExample">
 <p><strong>Answer:</strong> Not missing at random</p>
 <p>The fact that there are null values specifically in the cases where
 SAT data is not available suggests that the missingness of the
-<code># Students</code> column is systematic. It’s not occurring
+<code>"# Students"</code> column is systematic. It’s not occurring
 randomly across the dataset, but rather in specific instances where SAT
 data wasn’t recorded or available.</p>
 <p>This could mean that the absence of student numbers is linked to
@@ -466,7 +474,7 @@ certain states not participating in SAT testing in specific years, or
 administrative decisions that led to non-recording of data.</p>
 <p>The nature of this missingness suggests that it’s not random or
 solely dependent on observed data in other columns, but rather it’s
-related to the inherent nature of the <code># Students</code> data
+related to the inherent nature of the <code>"# Students"</code> data
 itself.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️⭐️</h5>
@@ -495,7 +503,7 @@ likely missingness mechanism of the <code>"Math"</code> column in
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1_6" class="accordion-collapse collapse collapse"
+<div id="collapse1_6" class="accordion-collapse collapse"
 aria-labelledby="heading1_6" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -505,13 +513,13 @@ aria-labelledby="heading1_6" data-bs-parent="#accordionExample">
 <p>If a state has reported the number of students taking the SAT, it
 implies that data collection and reporting were carried out. The
 administrative decision to report SAT scores (including
-<code>Math</code> scores) may be reflected in the
-<code># Students</code> column. Conversely, if the
-<code># Students</code> column is empty or null for a certain state and
-year, it might indicate an administrative decision not to participate or
-report data for that period. This decision impacts the availability of
-<code>Math</code> scores.</p>
-<p>In this context, the missing values in <code>Math</code> scores are
+<code>"Math"</code> scores) may be reflected in the
+<code>"# Students"</code> column. Conversely, if the
+<code>"# Students"</code> column is empty or null for a certain state
+and year, it might indicate an administrative decision not to
+participate or report data for that period. This decision impacts the
+availability of <code>"Math"</code> scores.</p>
+<p>In this context, the missing values in <code>"Math"</code> scores are
 linked to observable conditions or patterns in the dataset (like
 specific years, states, or availability of other related data).</p>
 <hr/>
@@ -543,7 +551,7 @@ class="math inline">Y</span> to be not missing at random.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1_7" class="accordion-collapse collapse collapse"
+<div id="collapse1_7" class="accordion-collapse collapse"
 aria-labelledby="heading1_7" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -583,7 +591,7 @@ class="math inline">Y</span> to be missing at random dependent on column
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1_8" class="accordion-collapse collapse collapse"
+<div id="collapse1_8" class="accordion-collapse collapse"
 aria-labelledby="heading1_8" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -643,23 +651,25 @@ class="sourceCode py"><code class="sourceCode python"><span id="cb11-1"><a href=
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse2_1" class="accordion-collapse collapse collapse"
+<div id="collapse2_1" class="accordion-collapse collapse"
 aria-labelledby="heading2_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer: </strong> Option 2</p>
-<p>Option 1: is incorrect because it attempts to select the
-<code># Students</code> column before grouping by <code>State</code>,
-which is not possible.</p>
-<p>Option 2: filters the DataFrame, groups by <code>State</code>, and
-then performs aggregation only on the <code># Students</code> column,
-making it efficient.</p>
-<p>Option 3: does the aggregations for all columns first and then
-selects the <code># Students</code> column, which is less efficient
-because it computes aggregations for potentially many columns that are
-not needed.</p>
+<ul>
+<li>Option 1 is incorrect because it attempts to select the
+<code>"# Students"</code> column before grouping by
+<code>"State"</code>, which is not possible.</li>
+<li>Option 2 filters the DataFrame, groups by <code>"State"</code>, and
+then performs aggregation only on the <code>"# Students"</code> column,
+making it efficient.</li>
+<li>Option 3 does the aggregations for all columns first and then
+selects the <code>"# Students"</code> column, which is correct but less
+efficient because it computes aggregations for potentially many columns
+(like <code>"Math"</code>) that are not needed.</li>
+</ul>
 <hr/>
 <h5>Difficulty: ⭐️⭐️</h5>
 <p>
@@ -687,17 +697,21 @@ York and Texas are significantly different.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse2_2" class="accordion-collapse collapse collapse"
+<div id="collapse2_2" class="accordion-collapse collapse"
 aria-labelledby="heading2_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer: </strong> Permutation test</p>
-<p>We aim to determine if there’s a significant difference between the
-student distributions in New York and Texas. This requires us to
-randomly shuffle the group labels and recalculate the means for the
-permuted groups, making this a permutation test.</p>
+<p>Here, we’re comparing whether two sample distributions –
+specifically, (1) the distribution of the number of students per year
+from 2005-2015 for New York and (2) the distribution of the number of
+students per year from 2005-2015 for Texas – are significantly
+different. This is precisely what a permutation test is used for. For
+the purposes of this test, we have 22 relevant rows of data – 11 for New
+York and 11 for Texas – and 2 columns, <code>"State"</code> and
+<code>"# Students"</code>.</p>
 <hr/>
 <h5>Difficulty: ⭐️</h5>
 <p>
@@ -727,21 +741,24 @@ Texas } - \text{ median number of students in New York}\big|</span></p></li>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse2_3" class="accordion-collapse collapse collapse"
+<div id="collapse2_3" class="accordion-collapse collapse"
 aria-labelledby="heading2_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer: </strong> The Kolmogorov-Smirnov statistic</p>
-<p>Calculating the diference in mean and median only focuses on the
-central tendency and is unable to consider the full distribution of the
-data. The Kolmogorov-Smirnov statistic is most likely to yield a
-significant difference if there are any differences in the distributions
-beyond just the central tendency. It is more comprehensive as it
-evaluates differences across the entire range of the distributions,
-making it a robust choice for comparing the two states’ SAT student
-distributions.</p>
+<p>Here, the means and medians of the two samples are similar, so their
+observed difference in means and observed difference in medians are both
+small. This means that a permutation test using either one of those as a
+test statistic will likely fail to yield a significant difference.
+However, the standard deviations of both distributions are quite
+different, which means the shapes of the distributions are quite
+different. The Kolmogorov-Smirnov statistic measures the distance
+between two distributions by considering their entire shape, and since
+these distributions have very different shapes, they will likely have a
+larger Kolmogorov-Smirnov statistic than expected under the null.</p>
+<!-- The difference in means an median only focuses on the central tendency and is unable to consider the full distribution of the data. The Kolmogorov-Smirnov statistic is most likely to yield a significant difference if there are any differences in the distributions beyond just the central tendency. It is more comprehensive as it evaluates differences across the entire range of the distributions, making it a robust choice for comparing the two states' SAT student distributions. -->
 <hr/>
 <h5>Difficulty: ⭐️⭐️</h5>
 <p>
@@ -773,19 +790,18 @@ in 2015 and for all students in 2015.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse2_4" class="accordion-collapse collapse collapse"
+<div id="collapse2_4" class="accordion-collapse collapse"
 aria-labelledby="heading2_4" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer: </strong> Hypothesis test</p>
-<p>The key aspect of a hypothesis test is determining whether any
-observed differences between the sample and population data are due to
-random chance. Here, we are dealing with one large population data
-(scores of all students in 2015) and testing if our sample observed data
-(scores from New York students in 2015) is statistically different,
-marking this a hypothesis test.</p>
+<p>One way to think about “standard” hypothesis tests is that they test
+whether a given sample – in this case, the verbal score distribution of
+New York students in 2015 – looks like it was drawn from a given
+population – here, the verbal score distribution of all students in
+2015. That’s what’s happening here.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️</h5>
 <p>
@@ -838,13 +854,60 @@ is it?</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse2_5" class="accordion-collapse collapse collapse"
+<div id="collapse2_5" class="accordion-collapse collapse"
 aria-labelledby="heading2_5" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer: </strong> <span class="math inline">\text{dis3}</span></p>
+<p>Let’s look at the options carefully:</p>
+<ul>
+<li><span class="math inline">\text{dis1}</span> does not have the
+property that smaller values correspond to more similar vectors.
+Consider <span class="math inline">\vec{a} = [1, 0], \vec{b} = [0, 1],
+\vec{c} = [1, 0]</span>. Here, <span class="math inline">\text{dis1}(\vec{a}, \vec{b}) = 1 \cdot 0 + 0 \cdot
+1 = 0</span> and <span class="math inline">\text{dis1}(\vec{a}, \vec{c})
+= 1 \cdot 1 + 0 \cdot 0 = 1</span>. <span class="math inline">\vec{a}</span> and <span class="math inline">\vec{c}</span> are the exact same vector, but they
+have a larger <span class="math inline">\text{dis1}</span> value than
+<span class="math inline">\vec{a}</span> and <span class="math inline">\vec{b}</span>, which are very different vectors.
+<span class="math inline">\text{dis1}</span> has the property that
+larger values correspond to more similar vectors, which is what we’re
+looking for.</li>
+<li><span class="math inline">\text{dis2}</span> behaves the same way
+that <span class="math inline">\text{dis1}</span> does, in that larger
+values correspond to more similar vectors. Note that the numerator of
+<span class="math inline">\text{dis2}</span> is just <span class="math inline">\text{dis1}</span>.</li>
+<li>By process of elimination, the answer must be <span class="math inline">\text{dis3}</span>. But, for those who are curious,
+why does <span class="math inline">\text{dis3}</span> work? Here’s why:
+<ul>
+<li>Remember from Math 18 that if <span class="math inline">\vec{a}</span> and <span class="math inline">\vec{b}</span> are two vectors, then their dot
+product can be expressed as <span class="math inline">\vec{a} \cdot
+\vec{b} = | \vec{a} | | \vec{b} | \cos \theta</span>, where <span class="math inline">\theta</span> is the angle between the two
+vectors.</li>
+<li>If all of the elements in <span class="math inline">\vec{a}</span>
+and <span class="math inline">\vec{b}</span> are non-negative, then the
+angle <span class="math inline">\theta</span> between <span class="math inline">\vec{a}</span> and <span class="math inline">\vec{b}</span> must be between 0 and 90 degrees,
+which means <span class="math inline">\cos \theta</span> must be between
+1 (when <span class="math inline">\theta</span> is 0) and 0 (when <span class="math inline">\theta</span> is 90).</li>
+<li>Rearranging the dot product, we have that <span class="math inline">\cos \theta = \frac{\vec{a} \cdot \vec{b}}{|\vec{a}
+| | \vec{b} |}</span>. When <span class="math inline">\vec{a}</span> and
+<span class="math inline">\vec{b}</span> point in the same direction –
+that is, when they are as similar as possible – <span class="math inline">\cos \theta</span> is 1, and when they are as
+different as possible – that is, when they are orthogonal – <span class="math inline">\cos \theta</span> is 0. This is the exact opposite
+of the behavior we want in a distance metric, where we want smaller
+values to correspond to more similar vectors, not larger values. Note
+that <span class="math inline">\cos \theta</span> is the same as <span class="math inline">\text{dis2}</span>.</li>
+<li>By computing <span class="math inline">\text{dis3}(\vec{a}, \vec{b})
+= 1 - \cos \theta = 1 - \frac{\vec{a} \cdot \vec{b}}{|\vec{a} | |
+\vec{b} |}</span>, we reverse the behavior of <span class="math inline">\cos \theta</span>: when $ and <span class="math inline">\vec{b}</span> point in the same direction, <span class="math inline">\text{dis3}(\vec{a}, \vec{b}) = 0</span>, and when
+they are very different, <span class="math inline">\text{dis3}(\vec{a},
+\vec{b}) = 1</span>. Now, <span class="math inline">\text{dis3}(\vec{a},
+\vec{b})</span> behaves the same way as the TVD, in that a value of 0
+means the vectors are identical and a value of 1 means the vectors are
+very different!</li>
+</ul></li>
+</ul>
 <hr/>
 <h5>Difficulty: ⭐️⭐️</h5>
 <p>
@@ -900,7 +963,7 @@ Washington score}</span></p></li>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse3_1" class="accordion-collapse collapse collapse"
+<div id="collapse3_1" class="accordion-collapse collapse"
 aria-labelledby="heading3_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -940,7 +1003,7 @@ of the function <code>calc_test_stat</code>.</em></p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse3_2" class="accordion-collapse collapse collapse"
+<div id="collapse3_2" class="accordion-collapse collapse"
 aria-labelledby="heading3_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -966,7 +1029,7 @@ read research papers on data science. While reading these papers, she
 notices that there are many citations interspersed that refer to other
 research papers, and she’d like to read the cited papers as well.</p>
 <p>In the papers that Nicole is reading, citations are formatted in the
-<em>verbost numeric</em> style. An excerpt from one such paper is stored
+<em>verbose numeric</em> style. An excerpt from one such paper is stored
 in the string <code>s</code> below.</p>
 <div class="sourceCode" id="cb13"><pre
 class="sourceCode py"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> <span class="st">&#39;&#39;&#39;</span></span>
@@ -991,11 +1054,11 @@ class="sourceCode py"><code class="sourceCode python"><span id="cb14-1"><a href=
 <h3 id="problem-4.1">Problem 4.1</h3>
 <p><code>re.findall(r'\d+', s)</code></p>
 <ul class="task-list">
-<li><p><input type="radio" disabled="" /> list1</p></li>
-<li><p><input type="radio" disabled="" /> list2</p></li>
-<li><p><input type="radio" disabled="" /> list3</p></li>
-<li><p><input type="radio" disabled="" /> list4</p></li>
-<li><p><input type="radio" disabled="" /> list5</p></li>
+<li><p><input type="radio" disabled="" /> <code>list1</code></p></li>
+<li><p><input type="radio" disabled="" /> <code>list2</code></p></li>
+<li><p><input type="radio" disabled="" /> <code>list3</code></p></li>
+<li><p><input type="radio" disabled="" /> <code>list4</code></p></li>
+<li><p><input type="radio" disabled="" /> <code>list5</code></p></li>
 <li><p><input type="radio" disabled="" /> None of the above</p></li>
 </ul>
 <div id="accordionExample" class="accordion">
@@ -1005,20 +1068,23 @@ class="sourceCode py"><code class="sourceCode python"><span id="cb14-1"><a href=
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse4_1" class="accordion-collapse collapse collapse"
+<div id="collapse4_1" class="accordion-collapse collapse"
 aria-labelledby="heading4_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer: </strong> list3</p>
+<p><strong>Answer: </strong> <code>list3</code></p>
 <p>This regex pattern <code>\d+</code> matches one or more digits
 anywhere in the string. It doesn’t concern itself with the context of
 the digits, whether they are inside brackets or not. As a result, it
-extracts all sequences of digits in s, including ‘10’, ‘3’, ‘15’, ‘4’,
-‘5’, ‘3’, ‘91’, ‘8’, and ‘100’, which together form list3. This is
-because greedily matches all contiguous digits, capturing both the
-citation numbers and any other numbers present in the text.</p>
+extracts all sequences of digits in s, including <code>'10'</code>,
+<code>'3'</code>, <code>'15'</code>, <code>'4'</code>, <code>'5'</code>,
+<code>'3'</code>, <code>'91'</code>, <code>'8'</code>, and
+<code>'100'</code>, which together form <code>list3</code>. This is
+because <code>\d+</code> greedily matches all contiguous digits,
+capturing both the citation numbers and any other numbers present in the
+text.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️</h5>
 <p>
@@ -1032,11 +1098,11 @@ citation numbers and any other numbers present in the text.</p>
 <h3 id="problem-4.2">Problem 4.2</h3>
 <p><code>re.findall(r'[\d+]', s)</code></p>
 <ul class="task-list">
-<li><p><input type="radio" disabled="" /> list1</p></li>
-<li><p><input type="radio" disabled="" /> list2</p></li>
-<li><p><input type="radio" disabled="" /> list3</p></li>
-<li><p><input type="radio" disabled="" /> list4</p></li>
-<li><p><input type="radio" disabled="" /> list5</p></li>
+<li><p><input type="radio" disabled="" /> <code>list1</code></p></li>
+<li><p><input type="radio" disabled="" /> <code>list2</code></p></li>
+<li><p><input type="radio" disabled="" /> <code>list3</code></p></li>
+<li><p><input type="radio" disabled="" /> <code>list4</code></p></li>
+<li><p><input type="radio" disabled="" /> <code>list5</code></p></li>
 <li><p><input type="radio" disabled="" /> None of the above</p></li>
 </ul>
 <div id="accordionExample" class="accordion">
@@ -1046,21 +1112,22 @@ citation numbers and any other numbers present in the text.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse4_2" class="accordion-collapse collapse collapse"
+<div id="collapse4_2" class="accordion-collapse collapse"
 aria-labelledby="heading4_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer: </strong> list5</p>
+<p><strong>Answer: </strong> <code>list5</code></p>
 <p>This pattern <code>[\d+]</code> is slightly misleading because the
 square brackets are used to define a character class, and the plus sign
 inside is treated as a literal character, not as a quantifier. However,
-since there are no plus signs in s, this detail does not affect the
-outcome. The character class atches any digit, so this pattern
-effectively matches individual digits throughout the string, resulting
-in list5. This list contains every single digit found in s, separated as
-individual string elements.</p>
+since there are no plus signs in <code>s</code>, this detail does not
+affect the outcome. The character class <code>\d</code> matches any
+digit, so this pattern effectively matches individual digits throughout
+the string, resulting in <code>list5</code>. This list contains every
+single digit found in <code>s</code>, separated as individual string
+elements.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️⭐️⭐️</h5>
 <p>
@@ -1074,11 +1141,11 @@ individual string elements.</p>
 <h3 id="problem-4.3">Problem 4.3</h3>
 <p><code>re.findall(r'\[(\d+)\]', s)</code></p>
 <ul class="task-list">
-<li><p><input type="radio" disabled="" /> list1</p></li>
-<li><p><input type="radio" disabled="" /> list2</p></li>
-<li><p><input type="radio" disabled="" /> list3</p></li>
-<li><p><input type="radio" disabled="" /> list4</p></li>
-<li><p><input type="radio" disabled="" /> list5</p></li>
+<li><p><input type="radio" disabled="" /> <code>list1</code></p></li>
+<li><p><input type="radio" disabled="" /> <code>list2</code></p></li>
+<li><p><input type="radio" disabled="" /> <code>list3</code></p></li>
+<li><p><input type="radio" disabled="" /> <code>list4</code></p></li>
+<li><p><input type="radio" disabled="" /> <code>list5</code></p></li>
 <li><p><input type="radio" disabled="" /> None of the above</p></li>
 </ul>
 <div id="accordionExample" class="accordion">
@@ -1088,21 +1155,21 @@ individual string elements.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse4_3" class="accordion-collapse collapse collapse"
+<div id="collapse4_3" class="accordion-collapse collapse"
 aria-labelledby="heading4_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer: </strong> list2</p>
+<p><strong>Answer: </strong> <code>list2</code></p>
 <p>This pattern is specifically designed to match digits that are
 enclosed in square brackets. The <code>\[(\d+)\]</code> pattern looks
 for a sequence of one or more digits <code>\d+</code> inside square
 brackets <code>[]</code>. The parentheses capture the digits as a group,
 excluding the brackets from the result. Therefore, it extracts just the
-citation numbers as they appear in s, matching list2 exactly. This
-method is precise for extracting citation numbers from a text formatted
-in the verbose numeric style.</p>
+citation numbers as they appear in <code>s</code>, matching
+<code>list2</code> exactly. This method is precise for extracting
+citation numbers from a text formatted in the verbose numeric style.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️</h5>
 <p>
@@ -1116,11 +1183,11 @@ in the verbose numeric style.</p>
 <h3 id="problem-4.4">Problem 4.4</h3>
 <p><code>re.findall(r'(\[\d+\])', s)</code></p>
 <ul class="task-list">
-<li><p><input type="radio" disabled="" /> list1</p></li>
-<li><p><input type="radio" disabled="" /> list2</p></li>
-<li><p><input type="radio" disabled="" /> list3</p></li>
-<li><p><input type="radio" disabled="" /> list4</p></li>
-<li><p><input type="radio" disabled="" /> list5</p></li>
+<li><p><input type="radio" disabled="" /> <code>list1</code></p></li>
+<li><p><input type="radio" disabled="" /> <code>list2</code></p></li>
+<li><p><input type="radio" disabled="" /> <code>list3</code></p></li>
+<li><p><input type="radio" disabled="" /> <code>list4</code></p></li>
+<li><p><input type="radio" disabled="" /> <code>list5</code></p></li>
 <li><p><input type="radio" disabled="" /> None of the above</p></li>
 </ul>
 <div id="accordionExample" class="accordion">
@@ -1130,21 +1197,21 @@ in the verbose numeric style.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse4_4" class="accordion-collapse collapse collapse"
+<div id="collapse4_4" class="accordion-collapse collapse"
 aria-labelledby="heading4_4" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer: </strong> list4</p>
+<p><strong>Answer: </strong> <code>list4</code></p>
 <p>Similar to the previous explanation but with a key difference: the
 entire pattern of digits within square brackets is captured, including
 the brackets themselves. The pattern <code>\[\d+\]</code> specifically
 searches for sequences of digits surrounded by square brackets, and the
 parentheses around the entire pattern ensure that the match includes the
-brackets. This results in list4, which contains all the citation markers
-found in s, preserving the brackets to clearly denote them as
-citations.</p>
+brackets. This results in <code>list4</code>, which contains all the
+citation markers found in <code>s</code>, preserving the brackets to
+clearly denote them as citations.</p>
 <hr/>
 <h5>Difficulty: ⭐️</h5>
 <p>
@@ -1202,7 +1269,7 @@ Select all that apply.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse5_1" class="accordion-collapse collapse collapse"
+<div id="collapse5_1" class="accordion-collapse collapse"
 aria-labelledby="heading5_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1219,13 +1286,13 @@ encountered in the HTML document.</li>
 retrieves its text <code>("Verbal: 84")</code>, splits this text by “:”,
 and takes the first element of the resulting list
 <code>("Verbal")</code>, converting it to lowercase to match
-<code>"verbal"</code></li>
+<code>"verbal"</code>.</li>
 <li>Option 3 creates a list of <code>"kind"</code> attributes for all
 <code>&lt;scorerow&gt;</code> elements. The second to last (-2) element
 in this list corresponds to the <code>"kind"</code> attribute of the
 first <code>&lt;scorerow&gt;</code> in the second
 <code>&lt;scorelist&gt;</code> tag, which is also
-<code>"verbal"</code></li>
+<code>"verbal"</code>.</li>
 </ul>
 <p>Incorrect options:</p>
 <ul>
@@ -1264,8 +1331,7 @@ desired value. The first example has been done for you.</p>
 <li>Desired value: <code>84</code></li>
 </ul>
 <div class="sourceCode" id="cb17"><pre
-class="sourceCode py"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>    tree <span class="op">=</span> soup.find(_____)</span></code></pre></div>
-<p><code>"scorerow"</code></p>
+class="sourceCode py"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>    tree <span class="op">=</span> soup.find(<span class="st">&quot;scorerow&quot;</span>)</span></code></pre></div>
 <ul>
 <li>Desired value: <code>183</code></li>
 </ul>
@@ -1288,7 +1354,7 @@ class="sourceCode py"><code class="sourceCode python"><span id="cb20-1"><a href=
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse5_2" class="accordion-collapse collapse collapse"
+<div id="collapse5_2" class="accordion-collapse collapse"
 aria-labelledby="heading5_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1353,7 +1419,7 @@ class="math inline">b</span>?</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse6_1" class="accordion-collapse collapse collapse"
+<div id="collapse6_1" class="accordion-collapse collapse"
 aria-labelledby="heading6_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1395,7 +1461,7 @@ class="math inline">d</span>?</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse6_2" class="accordion-collapse collapse collapse"
+<div id="collapse6_2" class="accordion-collapse collapse"
 aria-labelledby="heading6_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1452,7 +1518,7 @@ model on <code>tokens</code>. Which of the following sentences of length
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse6_3" class="accordion-collapse collapse collapse"
+<div id="collapse6_3" class="accordion-collapse collapse"
 aria-labelledby="heading6_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1507,18 +1573,22 @@ values.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse6_4" class="accordion-collapse collapse collapse"
+<div id="collapse6_4" class="accordion-collapse collapse"
 aria-labelledby="heading6_4" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer: </strong> Yes</p>
+<p>Recall,</p>
+<p><span class="math display">\text{tf-idf}(t, d) = \text{term
+frequency}(t, d) \cdot \text{inverse document frequency}(t)</span></p>
 <p>In the context of TF-IDF, if a word appears in every sentence, its
-inverse document frequency (IDF) part would be <span class="math inline">(\log(\frac{5}{5}) = 0)</span>, making the TF-IDF
-score 0 for that word across all documents. Since “the” appears in all
-five sentences, its IDF is zero, leading to a column of zeros in the
-TF-IDF matrix for “the”.</p>
+inverse document frequency (IDF) would be <span class="math inline">\log(\frac{5}{5}) = 0</span>. Since a word’s TF-IDF
+in a document is its TF (term frequency) in that document multiplied by
+its IDF, if the word’s IDF is 0, it’s TF-IDF is also 0. Since “the”
+appears in all five sentences, its IDF is zero, leading to a column of
+zeros in the TF-IDF matrix for “the”.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️⭐️⭐️</h5>
 <p>
@@ -1546,19 +1616,23 @@ highest TF-IDF?</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse6_5" class="accordion-collapse collapse collapse"
+<div id="collapse6_5" class="accordion-collapse collapse"
 aria-labelledby="heading6_5" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer: </strong> Sentence 4</p>
-<p>The word “college” likely has the highest TF-IDF in Sentence 4
-because it appears less frequently across all sentences and is
-relatively more important (i.e., has a higher term frequency) in
-Sentence 4 than in other sentences where it appears. TF-IDF rewards
-words that are unique to a document but penalizes those that are common
-across all documents.</p>
+<p>Remember, the IDF of a word is the same for all documents, since $(t)
+= ( )$. This means that the sentence where “college” is the word with
+the highest TF-IDF is the same as the sentence where “college” is the
+word with the highest TF, or term frequency. Sentence 4 is the only
+sentence where “college” appears twice; in all other sentences,
+“college” appears at most once. (Since all of these sentences have the
+same length, we know that if “college” appears more times in Sentence 4
+than it does in other sentences, then “college”’s term frequency in
+Sentence 4, <span class="math inline">\frac{2}{5}</span>, is also larger
+than in any other sentence.) As such, the answer is Sentence 4.</p>
 <hr/>
 <h5>Difficulty: ⭐️</h5>
 <p>
@@ -1592,20 +1666,28 @@ document <span class="math inline">d</span> is the term with ____.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse6_6" class="accordion-collapse collapse collapse"
+<div id="collapse6_6" class="accordion-collapse collapse"
 aria-labelledby="heading6_6" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer: </strong> the smallest</p>
-<p>The DF-ITF score is lower for terms that are more unique (appear in
-fewer documents) and have a higher count in the document they appear in.
-A smaller DF-ITF indicates that a term is both important within a
-specific document and distinctive across the corpus. Therefore, the term
-with the smallest DF-ITF in a document is considered the best summary
-for that document, as it balances document-specific significance with
-corpus-wide uniqueness.</p>
+<p><strong>Answer: </strong> the smallest DF-IDF in document <span class="math inline">d</span></p>
+<p>The key idea behind TF-IDF, as we learned in class, is that <span class="math inline">t</span> is a good summary of <span class="math inline">d</span> if <span class="math inline">t</span>
+occurs commonly in <span class="math inline">d</span> but rarely across
+all documents.</p>
+<p>When <span class="math inline">t</span> occurs often in <span class="math inline">d</span>, then <span class="math inline">\frac{\text{\# of occurrences of $t$ in
+$d$}}{\text{total \# of words in $d$}}</span> is large, which means
+<span class="math inline">\frac{\text{total \# of words in
+$d$}}{\text{\# of occurrences of $t$ in $d$}}</span> and hence <span class="math inline">\log \left( \frac{\text{total \# of words in
+$d$}}{\text{\# of occurrences of $t$ in $d$}} \right)</span> is
+small.</p>
+<p>Similarly, if <span class="math inline">t</span> is rare across all
+documents, then <span class="math inline">\frac{\text{\# of documents in
+which $t$ appears}}{\text{total \# of documents}}</span> is small.</p>
+<p>Putting the above two pieces together, we have that <span class="math inline">\text{df-itf}(t, d)</span> is small when <span class="math inline">t</span> occurs commonly in <span class="math inline">d</span> but rarely overall, which means that the
+term <span class="math inline">t</span> that best summarizes <span class="math inline">d</span> is the term with the smallest DF-IDF in
+<span class="math inline">d</span>.</p>
 <hr/>
 <h5>Difficulty: ⭐️</h5>
 <p>
@@ -1628,8 +1710,8 @@ verbal score (0).</p></li>
 </ul>
 <p><br></p>
 <h3 id="problem-7.1">Problem 7.1</h3>
-<p>(2 pts) The simplest possible classifier we could build is one that
-predicts the same label (1 or 0) every time, independent of all other
+<p>The simplest possible classifier we could build is one that predicts
+the same label (1 or 0) every time, independent of all other
 features.</p>
 <p>Consider the following statement:</p>
 <p><em>If <code>a &gt; b</code>, then the constant classifier that
@@ -1637,7 +1719,7 @@ maximizes training accuracy predicts 1 every time; otherwise, it
 predicts 0 every time.</em></p>
 <p>For which combination of <code>a</code> and <code>b</code> is the
 above statement <strong>not guaranteed</strong> to be true?</p>
-<p><em>Note: Treat as our training set.</em></p>
+<p><em>Note: Treat <code>sat</code> as our training set.</em></p>
 <p>Option 1:</p>
 <div class="sourceCode" id="cb32"><pre
 class="sourceCode py"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> (sat[<span class="st">&#39;Math&#39;</span>] <span class="op">&gt;</span> sat[<span class="st">&#39;Verbal&#39;</span>]).mean()</span>
@@ -1667,23 +1749,57 @@ class="sourceCode py"><code class="sourceCode python"><span id="cb35-1"><a href=
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse7_1" class="accordion-collapse collapse collapse"
+<div id="collapse7_1" class="accordion-collapse collapse"
 aria-labelledby="heading7_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer: </strong> Option 2</p>
-<p>It is possible for the mean of <code>Math</code> scores to be larger
-than the mean of <code>Verbal</code> scores, but for more
-<code>Verbal</code> values to be larger than corresponding
-<code>Math</code> values. In the case that the mean of <code>Math</code>
-scores was larger than the mean of <code>Verbal</code> scores, but more
-<code>Verbal</code> values are larger than corresponding
-<code>Math</code> scores, predicting 1 would maximize accuracy, but the
-proposed model would predict 0. This means that option 2 does not
-guarantee that training accuracy is maximized when <code>a &gt; b</code>
-for this combination.</p>
+<p>Conceptually, we’re looking for a combination of <code>a</code> and
+<code>b</code> such that when <code>a &gt; b</code>, it’s true that
+<strong>in more than 50% of states, the <code>"Math"</code> value is
+larger than the <code>"Verbal"</code> value</strong>. Let’s look at all
+four options through this lens:</p>
+<ul>
+<li>Option 1: <code>sat['Math'] &gt; sat['Verbal']</code> is a Series of
+Boolean values, containing <code>True</code> for all states where the
+<code>"Math"</code> value is larger than the <code>"Verbal"</code> value
+and <code>False</code> for all other states. The mean of this series,
+then, is the proportion of states satisfying this criteria, and since
+<code>b</code> is <code>0.5</code>, <code>a &gt; b</code> is
+<code>True</code> only when the bolded condition above is
+<code>True</code>.</li>
+<li>Option 3 is the same as Option 1 – note that <span class="math inline">x &gt; y</span> is equivalent to <span class="math inline">x - y &gt; 0</span>.</li>
+<li>Option 4: <code>sat['Math'] / sat['Verbal']</code> is a Series that
+contains values greater than 1 whenever a state’s <code>"Math"</code>
+value is larger than its <code>"Verbal"</code> value and less than or
+equal to 1 in all other cases. As in the other options that work,
+<code>(sat['Math'] / sat['Verbal']) &gt; 1</code> is a Boolean Series
+with <code>True</code> for all states with a larger <code>"Math"</code>
+value than <code>"Verbal"</code> values; <code>a &gt; b</code> compares
+the proportion of <code>True</code> values in this Series to 0.5. (Here,
+<span class="math inline">p - 0.5 &gt; 0</span> is the same as <span class="math inline">p &gt; 0.5</span>.)</li>
+</ul>
+<p>Then, by process of elimination, Option 2 must be the correct option
+– that is, it must be the only option that <strong>doesn’t</strong>
+work. But why? <code>sat['Math'] - sat['Verbal']</code> is a Series
+containing the difference between each state’s <code>"Math"</code> and
+<code>"Verbal"</code> values, and <code>.mean()</code> computes the mean
+of these differences. The issue is that here, we don’t care about
+<em>how different</em> each state’s <code>"Math"</code> and
+<code>"Verbal"</code> values are; rather, we just care about the
+proportion of states with a bigger <code>"Math"</code> value than
+<code>"Verbal"</code> value. It could be the case that 90% of states
+have a larger <code>"Math"</code> value than <code>"Verbal"</code>
+value, but one state has such a big <code>"Verbal"</code> value that it
+makes the mean difference between <code>"Math"</code> and
+<code>"Verbal"</code> scores negative. (A property you’ll learn about in
+future probability courses is that this is equal to the difference in
+the mean <code>"Math"</code> value for all states and the mean
+<code>"Verbal"</code> value for all states – this is called the
+“linearity of expectation” – but you don’t need to know that to answer
+this question.)</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️⭐️</h5>
 <p>
@@ -1711,7 +1827,7 @@ answer as a <strong>simplified fraction</strong>.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse7_2" class="accordion-collapse collapse collapse"
+<div id="collapse7_2" class="accordion-collapse collapse"
 aria-labelledby="heading7_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1722,7 +1838,14 @@ aria-labelledby="heading7_2" data-bs-parent="#accordionExample">
 that the model is such that out of 9 values, 5 are labeled correctly. By
 extension, this means that 4 out of 9 are not labeled correctly as 0 or
 1.</p>
-<p>RMSE for this Classifier would thus be <span class="math inline">\sqrt\frac{4}{9}</span>, which is equal to <span class="math inline">\frac{2}{3}</span>.</p>
+<p>Remember, RMSE is defined as</p>
+<p><span class="math display">\text{RMSE} = \sqrt{\frac{1}{n} \sum_{i =
+1}^n (y_i - H(x_i))^2}</span></p>
+<p>where <span class="math inline">y_i</span> represents the <span class="math inline">i</span>th actual value and <span class="math inline">H(x_i)</span> represents the <span class="math inline">i</span>th prediction. Here, <span class="math inline">y_i</span> is either 0 or 1 and $H(x_i) is also
+either 0 or 1. We’re told that <span class="math inline">\frac{5}{9}</span> of the time, <span class="math inline">y_i</span> and <span class="math inline">H(x_i)</span> are the same; in those cases, <span class="math inline">(y_i - H(x_i))^2 = 0^2 = 0</span>. We’re also told
+that <span class="math inline">\frac{4}{9}</span> of the time, <span class="math inline">y_i</span> and <span class="math inline">H(x_i)</span> are different; in those cases, <span class="math inline">(y_i - H(x_i))^2 = 1</span>. So,</p>
+<p><span class="math display">\text{RMSE} = \sqrt{\frac{5}{9} \cdot 0 +
+\frac{4}{9} \cdot 1} = \sqrt{\frac{4}{9}} = \frac{2}{3}</span></p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️⭐️</h5>
 <p>
@@ -1755,7 +1878,7 @@ complexity.</p></li>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse7_3" class="accordion-collapse collapse collapse"
+<div id="collapse7_3" class="accordion-collapse collapse"
 aria-labelledby="heading7_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1763,8 +1886,11 @@ aria-labelledby="heading7_3" data-bs-parent="#accordionExample">
 </header>
 <p><strong>Answer: </strong> Option 2</p>
 <p>Since the accuracy of Classifier 1 is much higher on the dataset used
-to train it than the dataset it was tested on, we can say it is likely
-that the Classifier was overfit to the training set.</p>
+to train it than the dataset it was tested on, it’s likely Classifer 1
+overfit to the training set because it was too complex. To fix the
+issue, we need to decrease its complexity, so that it focuses on
+learning the general structure of the data in the training set and not
+too much on the random noise in the training set.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️</h5>
 <p>
@@ -1797,20 +1923,18 @@ the number <code>1</code>?</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse7_4" class="accordion-collapse collapse collapse"
+<div id="collapse7_4" class="accordion-collapse collapse"
 aria-labelledby="heading7_4" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer: </strong> Option 1</p>
-<p>Upon observing the provided DataFrame containing normalized values,
-we can see that if we add up values along each column of the DataFrame
-<code>([0.9+0.1, 0.4+0.6])</code>, we will get a Series containing the
-values <code>[1, 1]</code>. Such a Series would match the requirement of
-question - evaluating to a Series of length 2 where the only unique
-value is 1. In order to sum up the values of the rows in each column in
-the DataFrame, we need to use <code>axis=0</code>.</p>
+<p>Note that the columns of <code>conf</code> sum to 1 – <span class="math inline">0.9 + 0.1 = 1</span>, and <span class="math inline">0.4 + 0.6 = 1</span>. To create a Series with just
+the value 1, then, we need to sum the columns of <code>conf</code>,
+which we can do using <code>conf.sum(axis=0)</code>.
+<code>conf.sum(axis=1)</code> would sum the rows of
+<code>conf</code>.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️</h5>
 <p>
@@ -1835,24 +1959,28 @@ the DataFrame, we need to use <code>axis=0</code>.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse7_5" class="accordion-collapse collapse collapse"
+<div id="collapse7_5" class="accordion-collapse collapse"
 aria-labelledby="heading7_5" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer: </strong> recall</p>
-<p>In the provided confusion matrix for Classifier 2, we can say the
-following:</p>
-<p>Predicted 0 and Actually 0 (0.9) is the True Negative (TN).<br/>
-Predicted 1 and Actually 0 (0.1) is the False Positive (FP).<br/>
-Predicted 0 and Actually 1 (0.4) is the False Negative (FN).<br/>
-Predicted 1 and Actually 1 (0.6) is the True Positive (TP).</p>
-<p>Using the formulas:</p>
-<p>precision = <span class="math inline">\frac{TP}{TP + FP}</span> =
-<span class="math inline">\frac{0.6}{0.6 + 0.1}</span><br/>
-recall = <span class="math inline">\frac{TP}{TP + FN}</span> = <span class="math inline">\frac{0.6}{0.6 + 0.4}</span></p>
-<p>We can see that recall is the correct answer as it evaluates to <span class="math inline">0.6</span>.</p>
+<p>The number 0.6 appears in the bottom-right corner of
+<code>conf</code>. Since <code>conf</code> is column-normalized, the
+value 0.6 represents the proportion of values in the second column that
+were predicted to be 1. The second column contains values that were
+actually 1, so 0.6 is really <strong>the proportion of values that were
+actually 1 that were predicted to be 1</strong>, that is, <span class="math inline">\frac{\text{actually 1 and predicted
+1}}{\text{actually 1}}</span>. This is the definition of recall!</p>
+<p>If you’d like to think in terms of true positives, etc., then
+remember that: - True Positives (TP) are values that were actually 1 and
+were predicted to be 1. - True Negatives (TN) are values that were
+actually 0 and were predicted to be 0. - False Positives (FP) are values
+that were actually 0 and were predicted to be 1. - False Negatives (FN)
+are values that were actually 1 and were predicted to be 0.</p>
+<p>Recall is <span class="math inline">\frac{\text{TP}}{\text{TP} +
+\text{FN}}</span>.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️</h5>
 <p>
@@ -1896,7 +2024,7 @@ calculation for the accuracy in the previous step?</p></li>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse7_6" class="accordion-collapse collapse collapse"
+<div id="collapse7_6" class="accordion-collapse collapse"
 aria-labelledby="heading7_6" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1907,15 +2035,15 @@ aria-labelledby="heading7_6" data-bs-parent="#accordionExample">
 <p>accuracy = <span class="math inline">\frac{TP + TN}{TP + TN + FP +
 FN}</span></p>
 <p>Given the values from the confusion matrix:</p>
-<p>accuracy = <span class="math inline">\frac{0.6*\alpha + 0.9*(1 -
-\alpha)}{\alpha + (1 - \alpha)}</span><br/>
-accuracy = <span class="math inline">\frac{0.6*\alpha + 0.9 -
-0.9*\alpha}{1}</span><br/>
-accuracy = <span class="math inline">0.9 - 0.3*\alpha</span></p>
+<p>accuracy = <span class="math inline">\frac{0.6 \cdot \alpha + 0.9
+\cdot (1 - \alpha)}{\alpha + (1 - \alpha)}</span><br/>
+accuracy = <span class="math inline">\frac{0.6 \cdot \alpha + 0.9 - 0.9
+\cdot \alpha}{1}</span><br/>
+accuracy = <span class="math inline">0.9 - 0.3 \cdot \alpha</span></p>
 <p>Therefore:</p>
-<p>0.65 = <span class="math inline">0.9 - 0.3*\alpha</span><br/>
-<span class="math inline">0.3*\alpha</span> = <span class="math inline">0.9 - 0.65</span><br/>
-<span class="math inline">0.3*\alpha</span> = <span class="math inline">0.25</span><br/>
+<p>0.65 = <span class="math inline">0.9 - 0.3 \cdot \alpha</span><br/>
+<span class="math inline">0.3 \cdot \alpha</span> = <span class="math inline">0.9 - 0.65</span><br/>
+<span class="math inline">0.3 \cdot \alpha</span> = <span class="math inline">0.25</span><br/>
 <span class="math inline">\alpha</span> = <span class="math inline">\frac{0.25}{0.3}</span><br/>
 <span class="math inline">\alpha</span> = <span class="math inline">\frac{5}{6}</span></p>
 <hr/>
@@ -1935,8 +2063,10 @@ we will aim to build a classifier that takes in demographic information
 about a state from a particular year and predicts whether or not the
 state’s mean math score is higher than its mean verbal score that
 year.</p>
-<p>In honor of the rotisserie chicken event on UCSD’s campus a few weeks
-ago, <code>sklearn</code> released a new classifier class called
+<p>In honor of the
+<a href="https://www.reddit.com/r/UCSD/comments/11o0w9r/chicken_event/">rotisserie
+chicken event</a> on UCSD’s campus a few weeks ago, <code>sklearn</code>
+released a new classifier class called
 <code>ChickenClassifier</code>.</p>
 <p><br></p>
 <h3 id="problem-8.1">Problem 8.1</h3>
@@ -1969,42 +2099,37 @@ vs. <code>height</code></strong>?</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse8_1" class="accordion-collapse collapse collapse"
+<div id="collapse8_1" class="accordion-collapse collapse"
 aria-labelledby="heading8_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer: </strong> Option 2, Option 3</p>
-<p>We are told that as height increases, the model variance (complexity)
-also increases.</p>
-<p>For the first subpart with the correct answer being
-<code>Option 2</code>:<br/>
-As we increase the complexity of the model, the Classifier is more
-closely fit to the training data. This means that the Classifier
-essentially ‘memorizes’ more of the training data as height increases,
-meaning that accuracy on the training data will also increase.</p>
+<p><strong>Answer: </strong> Option 2 depicts training accuracy
+vs. <code>height</code>; Option 3 depicts testing accuract
+vs. <code>height</code></p>
+<p>We are told that as <code>height</code> increases, the model variance
+(complexity) also increases.</p>
+<p>As we increase the complexity of our classifier, it will do a better
+job of fitting to the training set because it’s able to “memorize” the
+patterns in the training set. As such, as <code>height</code> increases,
+training accuracy increases, which we see in Option 2.</p>
+<p>However, after a certain point, increasing <code>height</code> will
+make our classifier overfit too closely to our training set and not
+general enough to match the patterns in other similar datasets, meaning
+that after a certain point, increasing <code>height</code> will actually
+decrease our classifier’s accuracy on our testing set. The only option
+that shows accuracy increase and then decrease is Option 3.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️</h5>
 <p>
-<p>The average score on this problem was 84%.</p>
-<p>For the second subpart with the correct answer being
-<code>Option 3</code>: Through similar reasoning for the subpart above,
-the Classifier becomes more closely fit to the training data as height
-increases, causing overfitting as values of height get higher and
-higher. This means that the accuracy of the Classifier will increase to
-a certain point alongside height, but will start to reduce after.</p>
-<hr/>
-<h5>Difficulty: ⭐️⭐️⭐️</h5>
-<p>
-<p>The average score on this problem was 71%.</p>
-</p></p>
+<p>The average score on this problem was 75%.</p>
+</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-8.2">Problem 8.2</h3>
 <p><code>ChickenClassifier</code>s have another hyperparameter,
 <code>color</code>, for which there are four possible values:
 <code>"yellow"</code>, <code>"brown"</code>, <code>"red"</code>, and
@@ -2013,6 +2138,8 @@ we perform <span class="math inline">k</span>-fold cross-validation with
 <span class="math inline">k=4</span>. The results are given in the table
 below.</p>
 <center><img src='../assets/images/wi23-final/CV.png' width=30%></center>
+<p><br></p>
+<h3 id="problem-8.2">Problem 8.2</h3>
 <p>Which value of <code>color</code> has the best average validation
 accuracy?</p>
 <ul class="task-list">
@@ -2021,6 +2148,34 @@ accuracy?</p>
 <li><p><input type="radio" disabled="" /> <code>"red"</code></p></li>
 <li><p><input type="radio" disabled="" /> <code>"orange"</code></p></li>
 </ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading8_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8_2" aria-expanded="true" aria-controls="collapse8_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse8_2" class="accordion-collapse collapse"
+aria-labelledby="heading8_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> <code>"red"</code></p>
+<p>From looking at the results of the k-fold cross validation, we see
+that the color red has the highest, and therefore the best, validation
+accuracy as it has the highest row mean (across all 4 folds).</p>
+<hr/>
+<h5>Difficulty: ⭐️</h5>
+<p>
+<p>The average score on this problem was 91%.</p>
+</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-8.3">Problem 8.3</h3>
 <p>True or False: It is possible for a hyperparameter value to have the
 best average validation accuracy across all folds, but not have the best
 validation accuracy in any one particular fold.</p>
@@ -2030,30 +2185,19 @@ validation accuracy in any one particular fold.</p>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading8_2">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8_2" aria-expanded="true" aria-controls="collapse8_2">
+<h2 class="accordion-header" id="heading8_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8_3" aria-expanded="true" aria-controls="collapse8_3">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse8_2" class="accordion-collapse collapse collapse"
-aria-labelledby="heading8_2" data-bs-parent="#accordionExample">
+<div id="collapse8_3" class="accordion-collapse collapse"
+aria-labelledby="heading8_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer: </strong> <code>"red"</code>, True</p>
-<p>For the first subpart with the correct answer being
-<code>"red"</code>:<br/>
-From looking at the results of the k-fold cross validation, we see that
-the color red has the highest, and therefore the best, validation
-accuracy as it has the highest row mean (across all 4 folds).</p>
-<hr/>
-<h5>Difficulty: ⭐️</h5>
-<p>
-<p>The average score on this problem was 91%.</p>
-<p>For the second subpart with the correct answer being
-<code>True</code>:<br/>
-An example is shown below:</p>
+<p><strong>Answer:</strong> True</p>
+<p>An example is shown below:</p>
 <table>
 <thead>
 <tr class="header">
@@ -2108,57 +2252,44 @@ An example is shown below:</p>
 </tr>
 </tbody>
 </table>
-<p>Where color 5 has the highest average validation accuracy across all
-folds, but is not the best in any one fold.</p>
+<p>In the example, color 5 has the highest average validation accuracy
+across all folds, but is not the best in any one fold.</p>
 <hr/>
 <h5>Difficulty: ⭐️</h5>
 <p>
 <p>The average score on this problem was 94%.</p>
-</p></p>
+</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-8.3">Problem 8.3</h3>
+<h3 id="problem-8.4">Problem 8.4</h3>
 <p>Now, instead of finding the best <code>height</code> and best
 <code>color</code> individually, we decide to perform a grid search that
 uses <span class="math inline">k</span>-fold cross-validation to find
 the combination of <code>height</code> and <code>color</code> with the
 best average validation accuracy.</p>
-<p>For the purposes of this question, assume that: - We are performing
-<span class="math inline">k</span>-fold cross validation.</p>
+<p>For the purposes of this question, assume that:</p>
 <ul>
-<li><p>Our training set contains <span class="math inline">n</span>
-rows, where <span class="math inline">n</span> is greater than 5 and is
-a multiple of <span class="math inline">k</span>.</p></li>
-<li><p>There are <span class="math inline">h_1</span> possible values of
+<li>We are performing <span class="math inline">k</span>-fold cross
+validation.</li>
+<li>Our training set contains <span class="math inline">n</span> rows,
+where <span class="math inline">n</span> is greater than 5 and is a
+multiple of <span class="math inline">k</span>.</li>
+<li>There are <span class="math inline">h_1</span> possible values of
 <code>height</code> and <span class="math inline">h_2</span> possible
-values of <code>color</code>.</p></li>
+values of <code>color</code>.</li>
 </ul>
-<p>What is the size of each fold?</p>
-<ul class="task-list">
-<li><p><input type="radio" disabled="" /> <span class="math inline">k</span></p></li>
-<li><p><input type="radio" disabled="" /> <span class="math inline">\frac{k}{n}</span></p></li>
-<li><p><input type="radio" disabled="" /> <span class="math inline">\frac{n}{k}</span></p></li>
-<li><p><input type="radio" disabled="" /> <span class="math inline">\frac{n}{k} \cdot (k - 1)</span></p></li>
-<li><p><input type="radio" disabled="" /> <span class="math inline">h_1h_2k</span></p></li>
-<li><p><input type="radio" disabled="" /> <span class="math inline">h_1h_2(k-1)</span></p></li>
-<li><p><input type="radio" disabled="" /> <span class="math inline">\frac{nh_1h_2}{k}</span></p></li>
-<li><p><input type="radio" disabled="" /> None of the above</p></li>
+<p>Consider the following three subparts:</p>
+<ul>
+<li>A. What is the size of each fold?</li>
+<li>B. How many times is row 5 in the training set used for
+training?</li>
+<li>C. How many times is row 5 in the training set used for
+validation?</li>
 </ul>
-<p>How many times is row 5 in the training set used for training?</p>
-<ul class="task-list">
-<li><p><input type="radio" disabled="" /> <span class="math inline">k</span></p></li>
-<li><p><input type="radio" disabled="" /> <span class="math inline">\frac{k}{n}</span></p></li>
-<li><p><input type="radio" disabled="" /> <span class="math inline">\frac{n}{k}</span></p></li>
-<li><p><input type="radio" disabled="" /> <span class="math inline">\frac{n}{k} \cdot (k - 1)</span></p></li>
-<li><p><input type="radio" disabled="" /> <span class="math inline">h_1h_2k</span></p></li>
-<li><p><input type="radio" disabled="" /> <span class="math inline">h_1h_2(k-1)</span></p></li>
-<li><p><input type="radio" disabled="" /> <span class="math inline">\frac{nh_1h_2}{k}</span></p></li>
-<li><p><input type="radio" disabled="" /> None of the above</p></li>
-</ul>
-<p>How many times is row 5 in the training set used for validation?</p>
+<p>Choose from the following options.</p>
 <ul class="task-list">
 <li><p><input type="radio" disabled="" /> <span class="math inline">k</span></p></li>
 <li><p><input type="radio" disabled="" /> <span class="math inline">\frac{k}{n}</span></p></li>
@@ -2171,42 +2302,45 @@ values of <code>color</code>.</p></li>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading8_3">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8_3" aria-expanded="true" aria-controls="collapse8_3">
+<h2 class="accordion-header" id="heading8_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8_4" aria-expanded="true" aria-controls="collapse8_4">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse8_3" class="accordion-collapse collapse collapse"
-aria-labelledby="heading8_3" data-bs-parent="#accordionExample">
+<div id="collapse8_4" class="accordion-collapse collapse"
+aria-labelledby="heading8_4" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer: </strong> Option 3, Option 6, Option 8</p>
-<p>For the first subpart with the correct answer being
-<code>Option 3</code>:<br/>
-The training set is divided into k folds of equal size, resulting in k
+<p><strong>Answer: </strong> A: Option 3 (<span class="math inline">\frac{n}{k}</span>), B: Option 6 (<span class="math inline">h_1h_2(k-1)</span>), C: Option 8 (None of the
+above)</p>
+<p><br/></p>
+<h5 id="a.-what-is-the-size-of-each-fold">A. What is the size of each
+fold?</h5>
+<p>The training set is divided into <span class="math inline">k</span>
+folds of equal size, resulting in <span class="math inline">k</span>
 folds with size <span class="math inline">\frac{n}{k}</span>.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️⭐️</h5>
 <p>
 <p>The average score on this problem was 66%.</p>
-<p>For the second subpart with the correct answer being
-<code>Option 6</code>:<br/>
-For each combination of hyperparameters, row 5 is k - 1 times for
-training, and 1 time for validation. There are <span class="math inline">h_1 * h_2</span> combinations of hyperparameters, so
-row 5 is used for training <span class="math inline">h_1 * h_2 *
-(k-1)</span> times.</p>
+<p><br/></p>
+<h5 id="b.-how-many-times-is-row-5-in-the-training-set-used-for-training">B.
+How many times is row 5 in the training set used for training?</h5>
+<p>For each combination of hyperparameters, row 5 is <span class="math inline">k - 1</span> times for training and <span class="math inline">1</span> time for validation. There are <span class="math inline">h_1 \cdot h_2</span> combinations of
+hyperparameters, so row 5 is used for training <span class="math inline">h_1 \cdot h_2 \cdot (k-1)</span> times.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️</h5>
 <p>
 <p>The average score on this problem was 76%.</p>
-<p>For the third subpart with the correct answer being
-<code>Option 8</code>:<br/>
-Building off of the explanation fo rthe previous subpart, row 5 is used
-for validation 1 times for each combination of hyperparameters, so the
-correct expression would be <span class="math inline">h_1 * h_2</span>,
-which is not a provided option.</p>
+<p><br/></p>
+<h5 id="c.-how-many-times-is-row-5-in-the-training-set-used-for-validation">C.
+How many times is row 5 in the training set used for validation?</h5>
+<p>Building off of the explanation for the previous subpart, row 5 is
+used for validation 1 times for each combination of hyperparameters, so
+the correct expression would be <span class="math inline">h_1 \cdot
+h_2</span>, which is not a provided option.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️⭐️</h5>
 <p>
@@ -2258,9 +2392,7 @@ class="sourceCode py"><code class="sourceCode python"><span id="cb38-1"><a href=
 <code>"medium"</code>, and <strong>(c)</strong> value(s) equal to
 <code>"high"</code>. <em>(Note: You should write one positive integer in
 each box such that the numbers add up to 8.)</em></p>
-<p>What goes in blank (a)?</p>
-<p>What goes in blank (b)?</p>
-<p>What goes in blank (c)?</p>
+<p>What goes in the blanks?</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading9">
@@ -2268,38 +2400,25 @@ each box such that the numbers add up to 8.)</em></p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse9" class="accordion-collapse collapse collapse"
+<div id="collapse9" class="accordion-collapse collapse"
 aria-labelledby="heading9" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer: </strong> 3, 1, 4</p>
-<p>For the first subpart with the correct answer being 3:<br/>
-The first column of the transformed array corresponds to the
+<p>The first column of the transformed array corresponds to the
 standardized one-hot-encoded <code>low</code> column. There are 3 values
 that are positive, which means there are 3 values that were originally
 <code>1</code> in that column pre-standardization. This means that 3 of
 the values in <code>lunch_props</code> were originally
 <code>"low"</code>.</p>
-<hr/>
-<h5>Difficulty: ⭐️⭐️⭐️</h5>
-<p>
-<p>The average score on this problem was 73%.</p>
-<p>For the second subpart with the correct answer being 1:<br/>
-Using similar reasoning from the explanation for the previous
-subpart:<br/>
-The second column of the transformed array corresponds to the
+<p>The second column of the transformed array corresponds to the
 standardized one-hot-encoded <code>med</code> column. There is only 1
 value in the transformed column that is positive, which means only 1 of
 the values in <code>lunch_props</code> was originally
 <code>"medium"</code>.</p>
-<hr/>
-<h5>Difficulty: ⭐️⭐️⭐️</h5>
-<p>
-<p>The average score on this problem was 73%.</p>
-<p>For the third subpart with the correct answer being 4:<br/>
-The Series <code>lunch_props</code> has 8 values, 3 of which were
+<p>The Series <code>lunch_props</code> has 8 values, 3 of which were
 identified as <code>"low"</code> in subpart 1, and 1 of which was
 identified as <code>"medium"</code> in subpart 2. The number of values
 being <code>"high"</code> must therefore be <span class="math inline">8
@@ -2307,8 +2426,8 @@ being <code>"high"</code> must therefore be <span class="math inline">8
 <hr/>
 <h5>Difficulty: ⭐️⭐️⭐️</h5>
 <p>
-<p>The average score on this problem was 70%.</p>
-</p></p></p>
+<p>The average score on this problem was 73%.</p>
+</p>
 </div>
 </div>
 </div>
