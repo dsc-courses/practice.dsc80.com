@@ -27,6 +27,8 @@ Suppose that overall, Dylan produced an average of $41$ CO$_2$/kg of food he ate
 - C. Definitely True. This is definitely be true because we see that Giorgia's overall average CO$_2$/kg is lower than Dylan's, even though her separate amounts in both categories are greater. This is because both Dylan and Giorgia had different proportions of their food be made up of `'bean'` foods. In this case, since the case where `'bean'` is `True` produces less CO$_2$/kg, Giorgia must have a higher proportion of her food being `'bean'` foods in order to average out with a lower CO$_2$/kg than Dylan.
 - D. More info needed. Similar to part B, we only know about the CO$_2$/kg proportion, and not the actual amounts. Even though Dylan has a higher average CO$_2$/kg output, if he ate less kg of food than Giorgia he may emit less kg of CO$_2$ overall.
 
+<average>75</average>
+
 # END SOLN
 # END SUBPROB
 
@@ -66,6 +68,9 @@ Next we find whether Simpson's paradox occurs above or below this value where th
 $$ 10(1) + 80(0) = 10$$
 
 so our solution will be between $\frac{39}{70}$ and $1$. 
+
+<average>59</average>
+
 # END SOLN
 # END SUBPROB
 

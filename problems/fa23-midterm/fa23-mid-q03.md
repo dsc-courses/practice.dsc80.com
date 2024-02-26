@@ -32,6 +32,8 @@ Let's look one by one.
 
 Note that discrete continuous is not a real feature type!
 
+<average>66</average>
+
 # END SOLN
 # END SUBPROB
 
@@ -63,6 +65,8 @@ Again, let's look one by one.
 - C. Missing completely at random or, possibly, Missing at Random. The argument for MAR is as follows: this means missing values depend on another column in the DataFrame. The missing values depend on the index since index $0$ can only be selected if `i = 0`, but index $29$ could be chosen if `i` is any value between $0$ and $29$, so it has a higher probability of being chosen. The original solution was MCAR as we did not account for edge case of `i` being small, but it is technically MAR. Credit was given for either answer.
 - D. Not missing at random. This means missing values depend on the column they're missing from. The missing values here are all values that are not the $30$ lowest in `'Weight'`, and so they depend on the column itself.
 - E. Missing completely at random or Missing at random. If the data was assumed to be evenly distributed, then the data is missing completely at random since the six age groups would all be chosen from uniformly. However, if the data was assumed to possibly have skewed age data, then samples from small sample size age groups had a higher probability of being chosen than those of large sample size age group. Credit was given for either answer.
+
+<average>86</average>
 
 # END SOLN
 # END SUBPROB

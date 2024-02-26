@@ -18,8 +18,10 @@ df.groupby(____)[____].sum()
 **Answer**: `df.groupby(['date', 'name'])['weight'].sum()`
 
 To satisfy "each day and each person", we need to group by both the `'date'` and `'name'` columns by passing them in as a list. Then to get "kg of food eaten", we must select the `'weight'` column with the second blank. The `sum()` method then will get the "total" amount as a Series (where you have `'date'` and `'name'` as indices and the sum as the value).
-# END SOLN
 
+<average>87</average>
+
+# END SOLN
 # END SUBPROB
 
 # BEGIN SUBPROB
@@ -33,8 +35,12 @@ df.____
 **Answer**: `df.loc[df['name'] == 'Tina']`
 
 We can use the `loc` accessor to select the rows from `df` under a specific condition, where rows satisfying the condition as `True` will be selected. In this case, to get the rows where "Tina was the person eating", our conditional is when a value from the column `df['name']` is equal to the string `'Tina'`.
+
+<average>67</average>
+
 # END SOLN
 # END SUBPROB
+
 # BEGIN SUBPROB
 Find all the unique people who **did not** eat any food containing the word "beans".
 ```py
@@ -59,6 +65,8 @@ We want to ensure that they didn't eat any `'beans'`, which would be true if all
 
 The code then selects the `'name'` column and returns an array with its unique values, giving us the unique people who didn't eat any `'beans'`.
 
+<average>39</average>
+
 # END SOLN
 # END SUBPROB
 
@@ -82,6 +90,8 @@ Like the problem before, we need to start with the bottom line before working on
 
 Knowing we have a helper function `f`, we can use the `apply` method on the `'food'` column `df['food']` to pass each value in food through `f`. Then, we can use `f` to calculate the number of words per value in `'food'`, where the input to `f` (that is, `x`) is a single value. Since we are given that words are separated by whitespace, we can just call `x.split()` to get a list with each word in its own index. The `len` of that list is therefore the count of words.
 
+<average>82</average>
+
 # END SOLN
 # END SUBPROB
 
@@ -103,6 +113,9 @@ To begin, we are merging `df` and `foods` as `df2`, but we need to figure out ho
 Now that we have `df2` that has all the columns of `df` as well as a column of the `'co2/kg'` for each row, we can calculate the CO<sub>2</sub> production per person. We see that we are given code that groups the dataframe by person name, selects some column `'c'` that isn't in `df2` yet, and then sums the values. This seems to handle the **total** kg of CO<sub>2</sub> **per person** by calling and `groupby('name')` and the `.sum()` aggregation method. That tells us we need to make a new column in `df2` named `'c'`, representing the kg of CO<sub>2</sub> per meal/row. We are already given the `assign` method in the code, so we know that in that blank we need `c = [some Series containing CO2 weights]`. We have the `'weight'` and `'co2/kg'` columns in `df2`, so multiplying these would give us the end CO<sub>2</sub> for `'c'`. This looks like `df2['weight'] * df2['co2/kg']`.
 
 Finally, we must recall that we are expected to handle the case where there is no matching value in the merge. Since we are doing a left join, we keep every value in `df` and might fill in some values of `foods` with `NaN` values. That means `df2['co2/kg']` needs to have `NaN` values replaced with `100`, and that can be done with `fillna(100)`. That makes our final solution `c=df2['weight'] * df2['co2/kg'].fillna(100)`.
+
+<average>65</average>
+
 # END SOLN
 # END SUBPROB
 # END PROB
