@@ -1,12 +1,12 @@
 # BEGIN PROB
 Consider the following corpus:
 
-| Document number | Content                           |
+| **Document number** | Content                           |
 |-----------------|-----------------------------------|
-| 1               | 'yesterday rainy today sunny'     |
-| 2               | 'yesterday sunny today sunny'     |
-| 3               | 'today rainy yesterday today'     |
-| 4               | 'yesterday yesterday today today' |
+| **1**               | yesterday rainy today sunny     |
+| **2**               | yesterday sunny today sunny     |
+| **3**               | today rainy yesterday today     |
+| **4**               | yesterday yesterday today today |
 
 # BEGIN SUBPROB
 Using a bag-of-words representation, which two documents have the largest dot product? Show your work, then write your final answer in the blanks below.
@@ -16,12 +16,14 @@ Documents ____ and ____
 **Answer**: Documents 3 and 4
 
 The bag-of-words representation for the documents is:
-| Document | yesterday | rainy | today | sunny |
+
+| **Document number** | yesterday | rainy | today | sunny |
 |----------|-----------|-------|-------|-------|
-| 1        | 1         | 1     | 1     | 1     |
-| 2        | 1         | 0     | 1     | 2     |
-| 3        | 1         | 1     | 2     | 0     |
-| 4        | 2         | 0     | 2     | 0     |
+| **1**        | 1         | 1     | 1     | 1     |
+| **2**        | 1         | 0     | 1     | 2     |
+| **3**        | 1         | 1     | 2     | 0     |
+| **4**        | 2         | 0     | 2     | 0     |
+
 The dot product between documents $3$ and $4$ is $6$, which is the highest among all pairs of documents.
 
 <average>84</average>
@@ -42,15 +44,25 @@ The dot product between documents $2$ and $3$ is: $$1 + 0 + 2 + 0 = 3$$ The magn
 # END SUBPROB
 
 # BEGIN SUBPROB
+
 Which words have a TF-IDF score $0$ for all four documents? Assume that we use base-2 logarithms. **Select all the words that apply.**
-- yesterday
-- rainy
-- today
-- sunny
+
+[ ] yesterday
+[ ] rainy
+[ ] today
+[ ] sunny
+
 # BEGIN SOLN
+
 **Answer**: yesterday and today
 
-We are looking at the TF-IDF score for each document and seeing if it is zero. Since IDF for one document would just be $1$ if the word is in the document and $0$ otherwise, we can just check the value of IDF. Since we are using base-2 logarithms, the TF-IDF score is $0$ when the IDF score is $1$. Therefore we need to find the words that appear in every document, which are yesterday and today.
+Remember,
+
+$$\text{tf-idf}(t, d) = \text{tf}(t, d) \cdot \text{idf}(t)$$
+
+where $\text{tf}(d, t)$, the term frequency of term $t$ in document $d$, is the proportion of terms in $d$ that are equal to $t$, and $\text{idf}(t) = \log \left( \frac{\text{number of documents}}{\text{number of documents containing $t$}} \right)$.
+
+In order for $\text{tf-idf}(t, d)$ to be 0, either $t$ must not be in document $d$ (meaning $\text{tf}(t, d) = 0$), or $t$ is in every document (meaning $\text{idf}(t) = \log(\frac{n}{n}) = \log(1) = 0$). In this case, we're looking for words that have a $\text{tf-idf}$ of 0 across all documents, which means we're looking for words that have a $\text{idf}(t)$ of 0, meaning they're in every document. The words that are in every document are yesterday and today.
 
 <average>94</average>
 

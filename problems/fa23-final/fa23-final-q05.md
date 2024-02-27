@@ -1,6 +1,6 @@
 # BEGIN PROB
 Giorgia defines the following variables:
-```
+```py
 a = bus['late'].mean()
 b = bus['late'].std()
 ```
@@ -9,24 +9,20 @@ She applies the imputation methods below to the `'late'` column, then recalculat
 # BEGIN SUBPROB
 Mean imputation
 # BEGIN SOLN
-**Answer** `a` - ($=$). `b` - ($-$).
+**Answer**: `a`'s new value will be exactly the same as before ($=$); `b`'s new value will be lower than before ($-$) 
 
-`a`:
-Since `a` is already calculated from the mean of `'late'`, adding the mean does not move the mean.
-`b`:
-Since we are adding more data right at the mean, we are lowering the standard deviation as a higher number of samples are gathered right at the mean. 
+By replacing all of the missing values in the `'late'` column with the observed mean, the mean value won't change. However, the squared distances of values to the mean, on average, will decrease, because the imputed dataset will be less spread out, so the standard deviation will decrease.
+
 # END SOLN
 # END SUBPROB
 
 # BEGIN SUBPROB
 Probabilistic imputation
 # BEGIN SOLN
-**Answer** `a` - ($\approx$). `b` - ($\approx$).
+**Answer**: `a`'s new value will be approximately the same as before ($\approx$); `b`'s new value will be approximately the same as before ($\approx$)
 
-`a`:
-Since we are drawing at random from the original distribution, the mean could go up or down, but will generally stay about the same since the distribution we sample from has the same mean.
-`b`:
-Since we are drawing at random from the original distribution, the standard deviation could go up or down, but will generally stay about the same since the distribution we sample from has the same standard deviation.
+Now, to fill in missing values, we're sampling at random from the originally observed set of values. The shape of the imputed distribution will be similar to the shape of the original distribution, so its mean and standard deviation will be similar to that of the original distribution (though not necessarily exactly equal).
+
 # END SOLN
 # END SUBPROB
 

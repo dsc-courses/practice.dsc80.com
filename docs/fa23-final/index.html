@@ -11,12 +11,79 @@
     div.columns{display: flex; gap: min(4vw, 1.5em);}
     div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
     ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
       width: 0.8em;
       margin: 0 0.8em 0.2em -1.6em;
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../assets/theme.css" />
   <script defer=""
@@ -70,26 +137,27 @@ except students were allowed to bring a single two-sided notes sheet. No
 calculators were allowed. Students had <strong>180 minutes</strong> to
 take this exam.</p>
 <hr />
+<p>The <code>bus</code> table (left) records bus arrivals over <span
+class="math inline">1</span> day for all the bust stops within a <span
+class="math inline">2</span> mile radius of UCSD. The data dictionary
+(right) describes each column.</p>
+<center><img src='../../assets/images/fa23-final/dsc80_final_bus.png' width=65%></center>
+<p>The <code>stop</code> table (left) contains information for al the
+bus lines in San Diego (not just the ones near UCSD). The data
+dictionary (right) describes each column.</p>
+<center><img src='../../assets/images/fa23-final/dsc80_final_stop.png' width=65%></center>
+<hr />
 <h2 id="problem-1">Problem 1</h2>
 <p>Fill in Python code below so that the last line of each code snippet
 evaluates to each desired result, using the <code>bus</code> and
 <code>stop</code> DataFrames describe on Page 1 of the Reference Sheet.
 <strong>You may not use <code>for</code> or <code>while</code> loops in
 any answer for this question.</strong></p>
-<p>The <code>bus</code> table (left) records bus arrivals over <span
-class="math inline">1</span> day for all the bust stops within a <span
-class="math inline">2</span> mile radius of UCSD. The data dictionary
-(right) describes each column.</p>
-<center><img src='../../assets/images/fa23-final/dsc80_final_bus.png' width=55%></center>
-<p>The <code>stop</code> table (left) contains information for al the
-bus lines in San Diego (not just the ones near UCSD). The data
-dictionary (right) describes each column.</p>
-<center><img src='../../assets/images/fa23-final/dsc80_final_stop.png' width=55%></center>
 <p><br></p>
 <h3 id="problem-1.1">Problem 1.1</h3>
 <p>Compute the median minutes late for the <span
-class="math inline">101</span> bus.
-<code>bus.loc[____].median()</code></p>
+class="math inline">101</span> bus.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>bus.loc[____].median()</span></code></pre></div>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading1_1">
@@ -97,7 +165,7 @@ class="math inline">101</span> bus.
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1_1" class="accordion-collapse collapse collapse"
+<div id="collapse1_1" class="accordion-collapse collapse"
 aria-labelledby="heading1_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -105,12 +173,17 @@ aria-labelledby="heading1_1" data-bs-parent="#accordionExample">
 </header>
 <p><strong>Answer</strong>:
 <code>bus.loc[bus['line'] == 101, 'late'].median()</code></p>
-<p><code>.loc[]</code> will grab the rows of the first parameter and
-columns of the second parameter. In this case, we want all the rows that
+<p><code>.loc[]</code> will grab the rows of the first argument and
+columns of the second argument. In this case, we want all the rows that
 belong to bus <span class="math inline">101</span>, so we filter by
 <code>bus['line'] == 101</code>. We then want to see how late the buses
 are, so we grab the <code>'late'</code> column in the second
-parameter.</p>
+argument.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 72%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -118,10 +191,10 @@ parameter.</p>
 <p><br></p>
 <h3 id="problem-1.2">Problem 1.2</h3>
 <p>Compute a copy of <code>bus</code> with only the bus lines that made
-at least one stop containing the string ‘Myers Ln’.</p>
-<pre><code>def f(x):
-    return ____
-bus.groupby(____).____(f)</code></pre>
+at least one stop containing the string <code>'Myers Ln'</code>.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(x):</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> ____</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>bus.groupby(____).____(f)</span></code></pre></div>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading1_2">
@@ -129,31 +202,42 @@ bus.groupby(____).____(f)</code></pre>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1_2" class="accordion-collapse collapse collapse"
+<div id="collapse1_2" class="accordion-collapse collapse"
 aria-labelledby="heading1_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer</strong>:</p>
-<pre><code>def f(x):
-    return any(x['stop'].str.contains('Meyers Ln'))
-bus.groupby('line').filter(f)</code></pre>
-<p>We can start with the bottom <code>groupby</code> function because we
-know we are asked to look per bus line, so we want to aggregate the data
-by ‘line’. Then, since we are going to make a copy of the original
-DataFrame with only the bus lines meeting our criteria,
-<code>filter</code> will keep rows that meet what we want. Then, we just
-need to define our criteria in <code>f(x)</code>, which is that the rows
-of data, <code>x</code>, have a stop containing the string ‘Myers Ln’.
-This can be done by looking at the <code>'stop'</code> column and using
-the Series string functions to check across all values if the string
-‘Meyers Ln’ is included with <code>.str.contains('Meyers Ln')</code>.
-This will return a boolean Series, and we can check if “at least one”
-stop contains the string by passing the boolean Series into the
-<code>any</code> function. This will then return <code>True</code> or
-<code>False</code>, which determines if that bus line is kept in our
-computed DataFrame.</p>
+<div id="cb1" class="sourceCode">
+<pre class="sourceCode py"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" href="#cb1-1" tabindex="-1"></a><span class="kw">def</span> f(x):</span>
+<span id="cb1-2"><a aria-hidden="true" href="#cb1-2" tabindex="-1"></a>    <span class="cf">return</span> x[<span class="st">'stop'</span>].<span class="bu">str</span>.contains(<span class="st">'Myers Ln'</span>).<span class="bu">sum</span>() <span class="op">&gt;</span> <span class="dv">0</span></span>
+<span id="cb1-3"><a aria-hidden="true" href="#cb1-3" tabindex="-1"></a>bus.groupby(<span class="st">'line'</span>).<span class="bu">filter</span>(f)</span></code></pre>
+</div>
+<p>We can start with the bottom <code>groupby</code> method call – since
+know we are asked to look <strong>per</strong> bus line, we will perform
+our calculations separately for each bus line (<code>'line'</code>).
+Then, remember that we’re asked to keep all of the rows for certain bus
+lines, meaning that we will need to <code>filter</code> bus lines by
+some criteria. To decide which bus lines to keep in our DataFrame, we
+must define a function <code>f</code> that takes in a DataFrame
+<code>x</code> (which contains all of the rows for one particular bus
+line) and returns <code>True</code> if we want to keep that line or
+<code>False</code> otherwise. Here, <code>f(x)</code> should return
+<code>True</code> if at least one of the values in
+<code>x['stop']</code> contains the string <code>'Myers Ln'</code>.
+<code>x['stop'].str.contains('Myers Ln')</code> will give us a Boolean
+Series with <code>True</code> for each <code>'stop'</code> in
+<code>x</code> that contains <code>'Myers Ln'</code>, and
+<code>x['stop'].str.contains('Myers Ln').sum() &gt; 0</code> will check
+whether there’s at least one <code>True</code> in that Boolean Series.
+This will then return <code>True</code> or <code>False</code>, which
+determines if that bus line is kept in our computed DataFrame.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 58%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -161,9 +245,9 @@ computed DataFrame.</p>
 <p><br></p>
 <h3 id="problem-1.3">Problem 1.3</h3>
 <p>Compute the number of buses in <code>bus</code> whose next stop is
-‘UTC’.</p>
-<pre><code>x = stop.merge(____, on = ____, how = ____)
-x[____].shape[0]</code></pre>
+<code>'UTC'</code>.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> stop.merge(____, on <span class="op">=</span> ____, how <span class="op">=</span> ____)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>x[____].shape[<span class="dv">0</span>]</span></code></pre></div>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading1_3">
@@ -171,24 +255,32 @@ x[____].shape[0]</code></pre>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1_3" class="accordion-collapse collapse collapse"
+<div id="collapse1_3" class="accordion-collapse collapse"
 aria-labelledby="heading1_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer</strong>:</p>
-<pre><code>x = stop.merge(bus, on = ['line', 'stop'], how = 'inner')
-x[x['next'] == 'UTC'].shape[0]</code></pre>
+<div id="cb1" class="sourceCode">
+<pre class="sourceCode py"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" href="#cb1-1" tabindex="-1"></a>x <span class="op">=</span> stop.merge(bus, on <span class="op">=</span> [<span class="st">'line'</span>, <span class="st">'stop'</span>], how <span class="op">=</span> <span class="st">'inner'</span>)</span>
+<span id="cb1-2"><a aria-hidden="true" href="#cb1-2" tabindex="-1"></a>x[x[<span class="st">'next'</span>] <span class="op">==</span> <span class="st">'UTC'</span>].shape[<span class="dv">0</span>]</span></code></pre>
+</div>
 <p>OR</p>
-<pre><code>x = stop.merge(bus, on = ['line', 'stop'], how = 'right')
-x[x['next'] == 'UTC'].shape[0]</code></pre>
+<div id="cb2" class="sourceCode">
+<pre class="sourceCode py"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" href="#cb2-1" tabindex="-1"></a>x <span class="op">=</span> stop.merge(bus, on <span class="op">=</span> [<span class="st">'line'</span>, <span class="st">'stop'</span>], how <span class="op">=</span> <span class="st">'right'</span>)</span>
+<span id="cb2-2"><a aria-hidden="true" href="#cb2-2" tabindex="-1"></a>x[x[<span class="st">'next'</span>] <span class="op">==</span> <span class="st">'UTC'</span>].shape[<span class="dv">0</span>]</span></code></pre>
+</div>
 <p>OR</p>
-<pre><code>x = stop.merge(bus, on = ['line', 'stop'], how = 'left')
-x[(x['next'] == 'UTC') &amp; (~x['time'].isna())].shape[0]</code></pre>
+<div id="cb3" class="sourceCode">
+<pre class="sourceCode py"><code class="sourceCode python"><span id="cb3-1"><a aria-hidden="true" href="#cb3-1" tabindex="-1"></a>x <span class="op">=</span> stop.merge(bus, on <span class="op">=</span> [<span class="st">'line'</span>, <span class="st">'stop'</span>], how <span class="op">=</span> <span class="st">'left'</span>)</span>
+<span id="cb3-2"><a aria-hidden="true" href="#cb3-2" tabindex="-1"></a>x[(x[<span class="st">'next'</span>] <span class="op">==</span> <span class="st">'UTC'</span>) <span class="op">&amp;</span> (<span class="op">~</span>x[<span class="st">'time'</span>].isna())].shape[<span class="dv">0</span>]</span></code></pre>
+</div>
 <p>OR</p>
-<pre><code>x = stop.merge(bus, on = 'line', how = 'left')
-x[(x['next'] == 'UTC') &amp; (x['stop_x'] == x['stop_y'])].shape[0]</code></pre>
+<div id="cb4" class="sourceCode">
+<pre class="sourceCode py"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" href="#cb4-1" tabindex="-1"></a>x <span class="op">=</span> stop.merge(bus, on <span class="op">=</span> <span class="st">'line'</span>, how <span class="op">=</span> <span class="st">'left'</span>)</span>
+<span id="cb4-2"><a aria-hidden="true" href="#cb4-2" tabindex="-1"></a>x[(x[<span class="st">'next'</span>] <span class="op">==</span> <span class="st">'UTC'</span>) <span class="op">&amp;</span> (x[<span class="st">'stop_x'</span>] <span class="op">==</span> x[<span class="st">'stop_y'</span>])].shape[<span class="dv">0</span>]</span></code></pre>
+</div>
 <p>The top solution is our internal solution, the additional three are
 student solutions that we also accepted. First, we merge the
 <code>stop</code> DataFrame with the <code>bus</code> DataFrame because
@@ -199,28 +291,36 @@ number of bus lines that are at a specific stop. We then choose to do an
 inner merge, but a right merge has the same effect because the buses in
 <code>bus</code> are all in the scope of <code>stop</code>, but
 <code>stop</code> has extra bus lines we don’t care about for this
-question. Finally, we filter our DataFrame <code>x</code> by checking
-which <code>['line', 'stop']</code> combinations are headed to ‘UTC’
-next by looking at the <code>'next'</code> column.</p>
+question. Finally, we query our DataFrame <code>x</code> by checking
+which <code>['line', 'stop']</code> combinations are headed to
+<code>'UTC'</code> next by looking at the <code>'next'</code>
+column.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 64%.</p>
+</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <h3 id="problem-1.4">Problem 1.4</h3>
-<p>Computer the number of unique pairs of bust stops that are exactly
-two stops away from each other. For example, if you only use the first
-four rows of the <code>stop</code> table, then your code should evaluate
-to the numebr <span class="math inline">2</span>, since you can go from
-‘Gilman Dr &amp; Mandeville Ln’ to ‘La Jolla Village Dr &amp; Lebon Dr’
-and from ‘Gilman Dr &amp; Mandeville Ln’ to ‘Villa La Jolla Dr &amp;
-Holidat Ct’ in two stops. <em>Hint</em>: The
-<code>suffixes = (1, 2)</code> argument to <code>merge</code> appends a
-<span class="math inline">1</span> to column labels in the left table
-and a <span class="math inline">2</span> to column labels in the right
-table whenever the merged tables share column labels.</p>
-<pre><code>m = ____.merge(____, left_on = ____, right_on = ____, how = ____, suffixes = (1, 2))
-(m[____].drop_duplicates().shape[0])</code></pre>
+<p>Computer the number of unique pairs of bus stops that are exactly two
+stops away from each other. For example, if you only use the first four
+rows of the <code>stop</code> table, then your code should evaluate to
+the number <span class="math inline">2</span>, since you can go from
+<code>'Gilman Dr &amp; Mandeville Ln'</code> to
+<code>'La Jolla Village Dr &amp; Lebon Dr'</code> and from
+<code>'Gilman Dr &amp; Mandeville Ln'</code> to
+<code>'Villa La Jolla Dr &amp; Holiday Ct'</code> in two stops.
+<em>Hint</em>: The <code>suffixes = (1, 2)</code> argument to
+<code>merge</code> appends a <span class="math inline">1</span> to
+column labels in the left table and a <span class="math inline">2</span>
+to column labels in the right table whenever the merged tables share
+column labels.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>m <span class="op">=</span> ____.merge(____, left_on <span class="op">=</span> ____, right_on <span class="op">=</span> ____, how <span class="op">=</span> ____, suffixes<span class="op">=</span>(<span class="dv">1</span>, <span class="dv">2</span>))</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>(m[____].drop_duplicates().shape[<span class="dv">0</span>])</span></code></pre></div>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading1_4">
@@ -228,15 +328,17 @@ table whenever the merged tables share column labels.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1_4" class="accordion-collapse collapse collapse"
+<div id="collapse1_4" class="accordion-collapse collapse"
 aria-labelledby="heading1_4" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer</strong>:</p>
-<pre><code>m = stop.merge(stop, left_on = 'next', right_on = 'stop', how = 'inner', suffixes = (1, 2))
-(m[['stop1', 'next2']].drop_duplicates().shape[0])</code></pre>
+<div id="cb1" class="sourceCode">
+<pre class="sourceCode py"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" href="#cb1-1" tabindex="-1"></a>m <span class="op">=</span> stop.merge(stop, left_on <span class="op">=</span> <span class="st">'next'</span>, right_on <span class="op">=</span> <span class="st">'stop'</span>, how <span class="op">=</span> <span class="st">'inner'</span>, suffixes<span class="op">=</span>(<span class="dv">1</span>, <span class="dv">2</span>))</span>
+<span id="cb1-2"><a aria-hidden="true" href="#cb1-2" tabindex="-1"></a>(m[[<span class="st">'stop1'</span>, <span class="st">'next2'</span>]].drop_duplicates().shape[<span class="dv">0</span>])</span></code></pre>
+</div>
 <p>We want to look at all stops in San Diego, so we will not be using
 the <code>bus</code> DataFrame for this question. Instead, we will merge
 <code>stop</code> with itself, but on the left we will merge on the
@@ -252,6 +354,11 @@ with a DataFrame of stops that we want, we just grab the correctly
 formatted output by selecting the <code>['stop1', 'next2']</code>
 columns from <code>m</code>, recalling that we use <span class="math inline">1</span> and <span class="math inline">2</span> to
 distinguish the columns from the left and right DataFrames.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 54%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -259,6 +366,125 @@ distinguish the columns from the left and right DataFrames.</p>
 <p><br></p>
 <hr />
 <h2 id="problem-2">Problem 2</h2>
+<p>Sunan wants to work with the <code>'time'</code> column in
+<code>bus</code>, but the times aren’t consistently formatted. He writes
+the following code:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> convert(y1, y2, y3):</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">int</span>(y1), <span class="bu">int</span>(y2) <span class="cf">if</span> y2 <span class="cf">else</span> <span class="dv">0</span>, y3</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parse(x):</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Fill me in</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>bus[<span class="st">&#39;time&#39;</span>].<span class="bu">apply</span>(parse)</span></code></pre></div>
+<p>Sunan wants the last line of his code to output a Series containing
+tuples with parsed information from the <code>'time'</code> column. Each
+tuple should have three elements: the hour, minute, and either
+<code>'am'</code> or <code>'pm'</code> for each time. For example, the
+first two values in the <code>'time'</code> column are
+<code>'12pm'</code> and <code>'1:15pm'</code>, so the first two tuplies
+in the Series should be: <code>(12, 0, 'pm')</code> and
+<code>(1, 15, 'pm')</code>.</p>
+<p>Select <strong>all</strong> the correct implementations of the
+function <code>parse</code>. Assume that each value in the
+<code>'time'</code> column starts with aone or two digits for the hour,
+followed by an optional colon and an optional two digits for the minute,
+followed by either “am” or “pm”.</p>
+<p><em>Hint:</em> Calling <code>.groups()</code> on a regular expression
+match object returns the groups of the match as a tuple. For nested
+groups, the outermost group is returned first. For example:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> re.match(<span class="vs">r&#39;(..(...))&#39;</span>, <span class="st">&#39;hello&#39;</span>).groups()</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>(<span class="st">&#39;hello&#39;</span>, <span class="st">&#39;llo&#39;</span>)</span></code></pre></div>
+<p>Option A:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parse(x):</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    res <span class="op">=</span> x[:<span class="op">-</span><span class="dv">2</span>].split(<span class="st">&#39;:&#39;</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> convert(res[<span class="dv">0</span>], res[<span class="dv">1</span>] <span class="cf">if</span> <span class="bu">len</span>(res) <span class="op">==</span> <span class="dv">2</span> <span class="cf">else</span> <span class="dv">0</span>, x[<span class="op">-</span><span class="dv">2</span>:])</span></code></pre></div>
+<p>Option B:</p>
+<pre><code>def parse(x):
+    res = re.match(r&#39;(\d+):(\d+)([apm]{2}&#39;, x).groups()
+    return convert(res[0], res[1], res[2])</code></pre>
+<p>Option C:</p>
+<pre><code>def parse(x):
+    res = re.match(r&#39;(\d+)(:(\d+))?(am|pm)&#39;, x).groups()
+    return convert(res[0], res[2], res[3])</code></pre>
+<p>Option D:</p>
+<pre><code>def parse(x):
+    res = re.match(r&#39;(.+(.{3})?)(..)&#39;, x).groups()
+    return convert(res[0], res[1], res[2])</code></pre>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="true" aria-controls="collapse2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse2" class="accordion-collapse collapse"
+aria-labelledby="heading2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer</strong>: Options A and C</p>
+<ul>
+<li>Option A: First, we grab everything but <code>'am'</code> /
+<code>'pm'</code> with <code>x[:-2]</code>. Then splitting on
+<code>':'</code> means that values such as <code>'1:15'</code> become a
+list like <code>['1', '15']</code>, while single numbers such as
+<code>'12'</code> become a list like <code>['12']</code>. We then pass
+in the hour value, the minute value or <code>0</code> if there is none,
+and then the <code>'am'</code> / <code>'pm'</code> value by grabbing
+just the last two indices of <code>x</code>.</li>
+<li>Option B: We use regex to define groups from <code>x</code> and
+return a list of those groups using <code>.groups()</code>. The regex
+matches to any number of integers <code>'(\d+)'</code> as the first
+group, then a colon <code>':'</code>, another group of any number of
+integers <code>'(\d+)'</code>, then a final group that matches exactly
+twice to characters from “apm”, which can be “am” or “pm” with
+<code>'([apm]{2})'</code>. The problem with this solution is that while
+it does correctly match to input such as <code>'1:15pm'</code>, it would
+not match to <code>'12pm'</code> because there is no <code>':'</code>
+character.</li>
+<li>Option C: We use regex to define groups from <code>x</code> and
+return a list of those groups using <code>.groups()</code>. The regex
+matches to any number of integers <code>'(\d+)'</code> as the first
+group, then looks for a colon <code>':'</code> as the second group, and
+matches another group to any number of integers following it with
+<code>'(\d+)'</code>. The <code>'?'</code> character makes the previous
+matches optional, so if there is no <code>':'</code> followed by
+integers then it will return <code>None</code> for groups 2 and 3 and
+still match the rest of the string. Finally, it matches one last group
+that is any two characters after the previous groups. This solution
+works because the full regex matches the format <code>'1:15pm'</code>,
+while the <code>'?'</code> checks so if there is no <code>':'</code> it
+can still match something formatted like <code>'12pm'</code>. It also
+passes in the group indices 0, 2, and 3 because group 1 will just be
+<code>':'</code> or <code>None</code>, so we want to skip it.</li>
+<li>Option D: We use regex to define groups from <code>x</code> and
+return a list of those groups using <code>.groups()</code>. The regex
+matches any character unlimited times with <code>'.+'</code> as the
+first group, then has another group that takes 3 of any character after
+the first group from <code>'(.{3})?</code>, and this group is optional
+because of the ending <code>'?'</code>. Finally, the last two characters
+are the last group <code>'(..)'</code>. This solution does not work
+because while the intention is that <code>'.+'</code> grabs the hour and
+<code>'(.{3})?'</code> grabs the colon and minutes if present, the
+<code>'.+'</code> just grabs everything because the <code>'+'</code>
+matches unlimited times. Therefore, <code>'1:15pm'</code> returns the
+groups <code>['1:15', None, 'pm']</code>, which doesn’t work with our
+<code>convert</code> function.</li>
+</ul>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 81%.</p>
+</p>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="problem-3">Problem 3</h2>
 <p>Dylan wants to answer the following questions using hypothesis tests
 on the <code>bus</code> DataFrame. For each test, select the
 <strong>one</strong> correct procedure to simulate a single sample under
@@ -267,66 +493,71 @@ statistic for the hypothesis test among the choices given. Assume that
 the <code>'time'</code> column of the <code>bus</code> DataFrame has
 already been parsed into timestamps.</p>
 <p><br></p>
-<h3 id="problem-2.1">Problem 2.1</h3>
-<p>Are buses more likely to be late in the morning (before <span
-class="math inline">12</span>pm) or the afternoon (after <span
-class="math inline">12</span>pm)? <em>Note: while the problem says there
-is only one solution, post-exam two options for test statistic were
-given credit. Pick one of the two.</em></p>
+<h3 id="problem-3.1">Problem 3.1</h3>
+<p>Are buses more likely to be late in the morning (before 12 PM) or the
+afternoon (after 12 PM)? <em>Note: while the problem says there is only
+one solution, post-exam two options for the test statistic were given
+credit. Pick one of the two.</em></p>
 <p><strong>Simulation procedure</strong>:</p>
 <ul class="task-list">
-<li><p><input type="radio" disabled="" /> A. <code>np.random.choice([-1, 1], bus.shape[0])</code></p></li>
-<li><p><input type="radio" disabled="" /> B.
-<code>np.random.choice(bus['late'], bus.shape[0], replace = True)</code></p></li>
-<li><p><input type="radio" disabled="" /> C. Randomly permute the <code>'late'</code> column</p></li>
+<li><p><input type="radio" disabled="" /> <code>np.random.choice([-1, 1], bus.shape[0])</code></p></li>
+<li><p><input type="radio" disabled="" /> <code>np.random.choice(bus['late'], bus.shape[0], replace = True)</code></p></li>
+<li><p><input type="radio" disabled="" /> Randomly permute the <code>'late'</code> column</p></li>
 </ul>
-<p><strong>Test statistic</strong></p>
+<p><strong>Test statistic</strong>:</p>
 <ul class="task-list">
-<li><p><input type="radio" disabled="" /> A. Difference in means</p></li>
-<li><p><input type="radio" disabled="" /> B. Absolute difference in means</p></li>
-<li><p><input type="radio" disabled="" /> C. Difference in proportions</p></li>
-<li><p><input type="radio" disabled="" /> D. Absolute difference in proportions</p></li>
+<li><p><input type="radio" disabled="" /> Difference in means</p></li>
+<li><p><input type="radio" disabled="" /> Absolute difference in means</p></li>
+<li><p><input type="radio" disabled="" /> Difference in proportions</p></li>
+<li><p><input type="radio" disabled="" /> Absolute difference in proportions</p></li>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading2_1">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_1" aria-expanded="true" aria-controls="collapse2_1">
+<h2 class="accordion-header" id="heading3_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_1" aria-expanded="true" aria-controls="collapse3_1">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse2_1" class="accordion-collapse collapse collapse"
-aria-labelledby="heading2_1" data-bs-parent="#accordionExample">
+<div id="collapse3_1" class="accordion-collapse collapse"
+aria-labelledby="heading3_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer</strong>: Simulation procedure - C). Test statistic -
-A) or C).</p>
-<p><strong>Simulation procedure</strong>: We have two different
-populations here - morning buses and afternoon buses. We are measuring
-one sample - whether a bus is late or not. This means we want to conduct
-a permutation test to see if the morning and afternoon buses are from
-the same distribution, so the correct answer is to permute the
-<code>'late'</code> column. Note that option B) is similar, but with
-<code>replace = True</code> so it is bootstrapping, not permutation.
-<strong>Test statistic</strong>: Depending on your interpretation of the
-question, either option A) or C) is correct. First, we can’t choose
-absolute difference as a solution because then we can’t answer when
-buses will be more likely to be late, as we need the test statistic to
-be directional to determine <em>which</em> bus. If you interpret the
-question to mean which population has the higher average lateness, then
-you would want to choose option A). If you interpret the question to
-mean which population has a higher count of late buses, then you choose
-option C).</p>
+<p><strong>Answer</strong>: Simulation procedure: Randomly permute the
+<code>'late'</code> column; Test statistic: Difference in means or
+difference in proportions</p>
+<p><strong>Simulation procedure</strong>: We have two samples here: a
+sample of <code>'late'</code> values for buses in the morning and a
+sample of <code>'late'</code> values for buses in the afternoon. The
+question is whether the observed difference between these two samples is
+statistically significant, making this a permutation test. Note that
+Option B is similar, but with <code>replace=True</code> so it is
+bootstrapping, not permuting.</p>
+<p><strong>Test statistic</strong>: Depending on your interpretation of
+the question, either difference in means or difference in proportions is
+correct. First, we can’t choose absolute difference as a solution
+because then we can’t answer when buses will be more likely to be late,
+as we need the test statistic to be directional to determine
+<em>which</em> bus category is more likely to be late. If you interpret
+the question to mean which group of buses has the higher average
+lateness, then you would want to choose the difference in means; if you
+interpret the question to mean which group of buses has a higher count
+of late buses, then you choose difference in proportions.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 56%.</p>
+</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-2.2">Problem 2.2</h3>
+<h3 id="problem-3.2">Problem 3.2</h3>
 <p>Are buses equally likely to be early or late? <em>Note: while the
-problem says there is only one solution, post-exam two options for test
-statistic were given credit. Pick one of the two.</em></p>
+problem says there is only one solution, post-exam two options for the
+test statistic were given credit. Pick one of the two.</em></p>
 <p><strong>Simulation procedure</strong>:</p>
 <ul class="task-list">
 <li><p><input type="radio" disabled="" /> A. <code>np.random.choice([-1, 1], bus.shape[0])</code></p></li>
@@ -334,7 +565,7 @@ statistic were given credit. Pick one of the two.</em></p>
 <code>np.random.choice(bus['late'], bus.shape[0], replace = True)</code></p></li>
 <li><p><input type="radio" disabled="" /> C. Randomly permute the <code>'late'</code> column</p></li>
 </ul>
-<p><strong>Test statistic</strong></p>
+<p><strong>Test statistic</strong>:</p>
 <ul class="task-list">
 <li><p><input type="radio" disabled="" /> A. Number of values below <span class="math inline">0</span></p></li>
 <li><p><input type="radio" disabled="" /> B. <code>np.mean</code></p></li>
@@ -344,85 +575,109 @@ statistic were given credit. Pick one of the two.</em></p>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading2_2">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_2" aria-expanded="true" aria-controls="collapse2_2">
+<h2 class="accordion-header" id="heading3_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_2" aria-expanded="true" aria-controls="collapse3_2">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse2_2" class="accordion-collapse collapse collapse"
-aria-labelledby="heading2_2" data-bs-parent="#accordionExample">
+<div id="collapse3_2" class="accordion-collapse collapse"
+aria-labelledby="heading3_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer</strong>: Simulation procedure - A). Test statistic -
-A) or B).</p>
-<p><strong>Simulation procedure</strong>: We now have only one
-population, which is just all buses. We then want to see if a sample is
-from that population, so we conduct a hypothesis test under the null.
-The null would be that buses are equally likely to be early or late, so
-we can simulate this by randomly generating <code>[-1, 1]</code> for all
-buses. This is what option A) does. <strong>Test statistic</strong>:
-Since we know the number of buses, we can use the number of values below
-<span class="math inline">0</span> to determine whether we have more
-early buses, more late buses, or the same amount. Similarly, the mean
-will give us a value between <span class="math inline">-1</span> and
-<span class="math inline">1</span>, where <span class="math inline">0</span> means we have the equal early and late
-buses, while <span class="math inline">-1</span> represents only early
-buses, and <span class="math inline">1</span> represents only late
-buses.</p>
+<p><strong>Answer</strong>: Simulation procedure:
+<code>np.random.choice([-1, 1], bus.shape[0])</code>; Test statistic:
+Number of values below <span class="math inline">0</span> or
+<code>np.mean</code></p>
+<p><strong>Simulation procedure</strong>: The sample we have here is
+something like 152 early buses, 125 late buses (these numbers are made
+up – in practice, these two numbers need to add to
+<code>bus.shape[0]</code>). The question is whether this sample looks
+like it was drawn from a population that is 50-50 (an equal number of
+early and late buses), which makes this a hypothesis test. In terms of
+examples from class, this most closely resembles the very first
+hypothesis testing example we looked at – the “coin flipping”
+example.</p>
+<p><code>np.random.choice([-1, 1], bus.shape[0])</code> will return an
+array of length <code>bus.shape[0]</code>, where each element is equally
+likely to be either <code>-1</code> (late) or <code>1</code> (early).
+(Note that we could also take <code>-1</code> to mean early and
+<code>1</code> to mean late – it doesn’t really matter.)</p>
+<p><strong>Test statistic</strong>: Each time we simulate an arrays of
+<code>-1</code>s and <code>1</code>s, we’d like to compute a statistic
+that helps us differentiate between the number of late (<code>-1</code>)
+and the number of early (<code>1</code>) simulated buses. The number of
+values below <span class="math inline">0</span> will give us the number
+of late simulated buses, so we could use that. The mean of the
+<code>-1</code>s and <code>1</code>s will give us a value that is
+negative if there were more late buses and positive if there were more
+early buses, so we could use that too.</p>
+<hr/>
+<h5>Difficulty: ⭐️</h5>
+<p>
+<p>The average score on this problem was 96%.</p>
+</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-2.3">Problem 2.3</h3>
+<h3 id="problem-3.3">Problem 3.3</h3>
 <p>Is the <code>'late'</code> column MAR dependent on the
 <code>'line'</code> column?</p>
 <p><strong>Simulation procedure</strong>:</p>
 <ul class="task-list">
-<li><p><input type="radio" disabled="" /> A. <code>np.random.choice([-1, 1], bus.shape[0])</code></p></li>
-<li><p><input type="radio" disabled="" /> B.
-<code>np.random.choice(bus['late'], bus.shape[0], replace = True)</code></p></li>
-<li><p><input type="radio" disabled="" /> C. Randomly permute the <code>'late'</code> column</p></li>
+<li><p><input type="radio" disabled="" /> <code>np.random.choice([-1, 1], bus.shape[0])</code></p></li>
+<li><p><input type="radio" disabled="" /> <code>np.random.choice(bus['late'], bus.shape[0], replace = True)</code></p></li>
+<li><p><input type="radio" disabled="" /> Randomly permute the <code>'late'</code> column</p></li>
 </ul>
-<p><strong>Test statistic</strong></p>
+<p><strong>Test statistic</strong>:</p>
 <ul class="task-list">
-<li><p><input type="radio" disabled="" /> A. Absolute difference in means</p></li>
-<li><p><input type="radio" disabled="" /> B. Absolute difference in proportions</p></li>
-<li><p><input type="radio" disabled="" /> C. TVD</p></li>
-<li><p><input type="radio" disabled="" /> D. K-S statistic</p></li>
+<li><p><input type="radio" disabled="" /> Absolute difference in means</p></li>
+<li><p><input type="radio" disabled="" /> Absolute difference in proportions</p></li>
+<li><p><input type="radio" disabled="" /> TVD</p></li>
+<li><p><input type="radio" disabled="" /> K-S statistic</p></li>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading2_3">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_3" aria-expanded="true" aria-controls="collapse2_3">
+<h2 class="accordion-header" id="heading3_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_3" aria-expanded="true" aria-controls="collapse3_3">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse2_3" class="accordion-collapse collapse collapse"
-aria-labelledby="heading2_3" data-bs-parent="#accordionExample">
+<div id="collapse3_3" class="accordion-collapse collapse"
+aria-labelledby="heading3_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer</strong>: Simulation procedure - C). Test statistic -
-C).</p>
-<p><strong>Simulation procedure</strong>: To determine MAR, we run a
-permutation test and compare the distributions of the
-<code>'line'</code> column when the <code>'late'</code> column is
-missing or not to see if it changes. If the distributions are similar
-then the data is likely MCAR, but if the distributions change then it is
-likely the <code>'late'</code> column is MAR on <code>'line'</code>.
+<p><strong>Answer</strong>: Simulation procedure: Randomly permute the
+<code>'late'</code> column; Test statistic: TVD</p>
+<p><strong>Simulation procedure</strong>: To determine if
+<code>'late'</code> is missing at random dependent on the
+<code>'line'</code> column, we conduct a permutation test and compare
+(1) the distribution of the <code>'line'</code> column when the
+<code>'late'</code> column is missing to (2) the distribution of the
+<code>'line'</code> column when the <code>'late'</code> column is not
+missing to see whether they’re significantly different. If the
+distributions are indeed significantly different, then it is likely that
+the <code>'late'</code> column is MAR dependent on <code>'line'</code>.
 <strong>Test statistic</strong>: Since we are comparing the
-distributions of <em>categorical</em> data for our permutation test,
-Total Variation Distance is the best test statistic to use.</p>
+distributions of <em>categorical</em> data (<code>'line'</code> is
+categorical) for our permutation test, Total Variation Distance is the
+best test statistic to use.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 57%.</p>
+</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-2.4">Problem 2.4</h3>
+<h3 id="problem-3.4">Problem 3.4</h3>
 <p>Is the <code>'late'</code> column MAR dependent on the
 <code>'time'</code> column?</p>
 <p><strong>Simulation procedure</strong>:</p>
@@ -432,7 +687,7 @@ Total Variation Distance is the best test statistic to use.</p>
 <code>np.random.choice(bus['late'], bus.shape[0], replace = True)</code></p></li>
 <li><p><input type="radio" disabled="" /> C. Randomly permute the <code>'late'</code> column</p></li>
 </ul>
-<p><strong>Test statistic</strong></p>
+<p><strong>Test statistic</strong>:</p>
 <ul class="task-list">
 <li><p><input type="radio" disabled="" /> A. Absolute difference in proportions</p></li>
 <li><p><input type="radio" disabled="" /> B. TVD</p></li>
@@ -440,122 +695,30 @@ Total Variation Distance is the best test statistic to use.</p>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading2_4">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_4" aria-expanded="true" aria-controls="collapse2_4">
+<h2 class="accordion-header" id="heading3_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_4" aria-expanded="true" aria-controls="collapse3_4">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse2_4" class="accordion-collapse collapse collapse"
-aria-labelledby="heading2_4" data-bs-parent="#accordionExample">
+<div id="collapse3_4" class="accordion-collapse collapse"
+aria-labelledby="heading3_4" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer</strong>: Simulation procedure - C). Test statistic -
-C).</p>
-<p><strong>Simulation procedure</strong>: Again, to determine MAR, we
-run a permutation test and compare the distributions of the
-<code>'time'</code> column when the <code>'late'</code> column is
-missing or not to see if it changes. If the distributions are similar
-then the data is likely MCAR, but if the distributions change then it is
-likely the <code>'late'</code> column is MAR on <code>'time'</code>.
-<strong>Test statistic</strong>: Since we are comparing the
-distributions of <em>numerical</em> data for our permutation test, K-S
-statistic is the best test statistic to use.</p>
-</div>
-</div>
-</div>
-</div>
-<p><br></p>
-<hr />
-<h2 id="problem-3">Problem 3</h2>
-<p>Answer the following questions about missingness mechanisms. For each
-question, choose one of the following options:</p>
-<ul>
-<li>NMAR</li>
-<li>MAR</li>
-<li>MCAR</li>
-<li>Missing by design <br></li>
-</ul>
-<h3 id="problem-3.1">Problem 3.1</h3>
-<p>What is the missingness mechanism for the <code>'next'</code> column
-in the <code>stop</code> DataFrame?</p>
-<div id="accordionExample" class="accordion">
-<div class="accordion-item">
-<h2 class="accordion-header" id="heading3_1">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_1" aria-expanded="true" aria-controls="collapse3_1">
-Click to view the solution.
-</button>
-</h2>
-<div id="collapse3_1" class="accordion-collapse collapse collapse"
-aria-labelledby="heading3_1" data-bs-parent="#accordionExample">
-<div class="accordion-body">
-<header id="title-block-header">
-<h1 class="title"> </h1>
-</header>
-<p><strong>Answer</strong>: D. Missing by design</p>
-<p>When there are missing values for the <code>'next'</code> column, it
-means there is no next stop and the line has reached the end of its
-route. This could have been designed differently to have an empty
-string, a string saying “end”, etc. Therefore, the missing values are
-intentionally marked as missing by design.</p>
-</div>
-</div>
-</div>
-</div>
-<p><br></p>
-<h3 id="problem-3.2">Problem 3.2</h3>
-<p>Suppose that the missing values in the <code>'late'</code> column
-from the <code>bus</code> DataFrame are missing because Same got
-suspicious of negative values and deleted a few of them. What is the
-missingness mechanism for the values in the <code>'late'</code>
-column?</p>
-<div id="accordionExample" class="accordion">
-<div class="accordion-item">
-<h2 class="accordion-header" id="heading3_2">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_2" aria-expanded="true" aria-controls="collapse3_2">
-Click to view the solution.
-</button>
-</h2>
-<div id="collapse3_2" class="accordion-collapse collapse collapse"
-aria-labelledby="heading3_2" data-bs-parent="#accordionExample">
-<div class="accordion-body">
-<header id="title-block-header">
-<h1 class="title"> </h1>
-</header>
-<p><strong>Answer</strong>: A. NMAR</p>
-<p>Since Sam is suspicious of <code>'late'</code> values based on the
-values themselves in <code>'late'</code> being negative, this is
-NMAR.</p>
-</div>
-</div>
-</div>
-</div>
-<p><br></p>
-<h3 id="problem-3.3">Problem 3.3</h3>
-<p>Suppose that the missing values in the <code>'late'</code> column
-from the <code>bus</code> DataFrame are missing because Tiffany made an
-update to the GPS system at <span class="math inline">8</span>am and the
-system was down for <span class="math inline">15</span> minutes
-afterwards. What is the missingness mechanism for the values in the
-<code>late</code> column?</p>
-<div id="accordionExample" class="accordion">
-<div class="accordion-item">
-<h2 class="accordion-header" id="heading3_3">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_3" aria-expanded="true" aria-controls="collapse3_3">
-Click to view the solution.
-</button>
-</h2>
-<div id="collapse3_3" class="accordion-collapse collapse collapse"
-aria-labelledby="heading3_3" data-bs-parent="#accordionExample">
-<div class="accordion-body">
-<header id="title-block-header">
-<h1 class="title"> </h1>
-</header>
-<p><strong>Answer</strong>: B. MAR</p>
-<p>Since Tiffany updated the system at <span class="math inline">8</span>am, the missing values in
-<code>'late'</code> are dependent on the <code>'time'</code> column.
-Therefore it is MAR.</p>
+<p><strong>Answer</strong>: Simulation procedure: Randomly permute the
+<code>'late'</code> column; Test statistic: K-S statistic</p>
+<p><strong>Simulation procedure</strong>: Like in the previous part, to
+determine if <code>'late'</code> is missing at random dependent on the
+<code>'time'</code> column, we conduct a permutation test and compare
+(1) the distribution of the <code>'time'</code> column when the
+<code>'late'</code> column is missing to (2) the distribution of the
+<code>'time'</code> column when the <code>'late'</code> column is not
+missing to see whether they’re significantly different.</p>
+<p><strong>Test statistic</strong>: Since we are comparing the
+distributions of <em>numerical</em> data (<code>'time'</code> is
+numerical) for our permutation test, K-S statistic is the best test
+statistic to use of the options provided.</p>
 </div>
 </div>
 </div>
@@ -563,9 +726,116 @@ Therefore it is MAR.</p>
 <p><br></p>
 <hr />
 <h2 id="problem-4">Problem 4</h2>
+<p>Answer the following questions about missingness mechanisms. For each
+question, choose either not missing at random (NMAR), missing at random
+(MAR), missing completely at random (MCAR), or missing by design
+(MD).</p>
+<p><br></p>
+<h3 id="problem-4.1">Problem 4.1</h3>
+<p>What is the missingness mechanism for the <code>'next'</code> column
+in the <code>stop</code> DataFrame?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_1" aria-expanded="true" aria-controls="collapse4_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_1" class="accordion-collapse collapse"
+aria-labelledby="heading4_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer</strong>: Missing by design (MD)</p>
+<p>When there are missing values for the <code>'next'</code> column, it
+means there is no next stop and the line has reached the end of its
+route. This could have been designed differently to have an empty
+string, a string saying <code>"end"</code>, etc. Therefore, the missing
+values are intentionally marked as missing by design.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 68%.</p>
+</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-4.2">Problem 4.2</h3>
+<p>Suppose that the missing values in the <code>'late'</code> column
+from the <code>bus</code> DataFrame are missing because Sam got
+suspicious of negative values and deleted a few of them. What is the
+missingness mechanism for the values in the <code>'late'</code>
+column?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_2" aria-expanded="true" aria-controls="collapse4_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_2" class="accordion-collapse collapse"
+aria-labelledby="heading4_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer</strong>: Not missing at random (NMAR)</p>
+<p>Since Sam deleted <code>'late'</code> values that were negative, the
+missingness of <code>'late'</code> values depends on the values
+themselves, making the missingness mechanism not missing at random.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 86%.</p>
+</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-4.3">Problem 4.3</h3>
+<p>Suppose that the missing values in the <code>'late'</code> column
+from the <code>bus</code> DataFrame are missing because Tiffany made an
+update to the GPS system at 8 AM and the system was down for <span
+class="math inline">15</span> minutes afterwards. What is the
+missingness mechanism for the values in the <code>late</code>
+column?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_3" aria-expanded="true" aria-controls="collapse4_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_3" class="accordion-collapse collapse"
+aria-labelledby="heading4_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer</strong>: Missing at random (MAR)</p>
+<p>Since Tiffany updated the system at 8 AM, the missing values in
+<code>'late'</code> are dependent on the <code>'time'</code> column.
+Therefore, <code>'late'</code> values are missing at random.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 68%.</p>
+</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-5">Problem 5</h2>
 <p>Giorgia defines the following variables:</p>
-<pre><code>a = bus[&#39;late&#39;].mean()
-b = bus[&#39;late&#39;].std()</code></pre>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode py"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> bus[<span class="st">&#39;late&#39;</span>].mean()</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> bus[<span class="st">&#39;late&#39;</span>].std()</span></code></pre></div>
 <p>She applies the imputation methods below to the <code>'late'</code>
 column, then recalculates <code>a</code> and <code>b</code>. For each
 imputation method, choose whether the new values of <code>a</code> and
@@ -575,55 +845,1026 @@ class="math inline">=</span>), or approximately the same (<span
 class="math inline">\approx</span>) as the original values of
 <code>a</code> and <code>b</code>.</p>
 <p><br></p>
-<h3 id="problem-4.1">Problem 4.1</h3>
+<h3 id="problem-5.1">Problem 5.1</h3>
 <p>Mean imputation</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading4_1">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_1" aria-expanded="true" aria-controls="collapse4_1">
+<h2 class="accordion-header" id="heading5_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_1" aria-expanded="true" aria-controls="collapse5_1">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse4_1" class="accordion-collapse collapse collapse"
-aria-labelledby="heading4_1" data-bs-parent="#accordionExample">
+<div id="collapse5_1" class="accordion-collapse collapse"
+aria-labelledby="heading5_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer</strong> <code>a</code> - (<span class="math inline">=</span>). <code>b</code> - (<span class="math inline">-</span>).</p>
-<p><code>a</code>: Since <code>a</code> is already calculated from the
-mean of <code>'late'</code>, adding the mean does not move the mean.
-<code>b</code>: Since we are adding more data right at the mean, we are
-lowering the standard deviation as a higher number of samples are
-gathered right at the mean.</p>
+<p><strong>Answer</strong>: <code>a</code>’s new value will be exactly
+the same as before (<span class="math inline">=</span>);
+<code>b</code>’s new value will be lower than before (<span class="math inline">-</span>)</p>
+<p>By replacing all of the missing values in the <code>'late'</code>
+column with the observed mean, the mean value won’t change. However, the
+squared distances of values to the mean, on average, will decrease,
+because the imputed dataset will be less spread out, so the standard
+deviation will decrease.</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-4.2">Problem 4.2</h3>
+<h3 id="problem-5.2">Problem 5.2</h3>
 <p>Probabilistic imputation</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading4_2">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_2" aria-expanded="true" aria-controls="collapse4_2">
+<h2 class="accordion-header" id="heading5_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_2" aria-expanded="true" aria-controls="collapse5_2">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse4_2" class="accordion-collapse collapse collapse"
-aria-labelledby="heading4_2" data-bs-parent="#accordionExample">
+<div id="collapse5_2" class="accordion-collapse collapse"
+aria-labelledby="heading5_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer</strong> <code>a</code> - (<span class="math inline">\approx</span>). <code>b</code> - (<span class="math inline">\approx</span>).</p>
-<p><code>a</code>: Since we are drawing at random from the original
-distribution, the mean could go up or down, but will generally stay
-about the same since the distribution we sample from has the same mean.
-<code>b</code>: Since we are drawing at random from the original
-distribution, the standard deviation could go up or down, but will
-generally stay about the same since the distribution we sample from has
-the same standard deviation.</p>
+<p><strong>Answer</strong>: <code>a</code>’s new value will be
+approximately the same as before (<span class="math inline">\approx</span>); <code>b</code>’s new value will be
+approximately the same as before (<span class="math inline">\approx</span>)</p>
+<p>Now, to fill in missing values, we’re sampling at random from the
+originally observed set of values. The shape of the imputed distribution
+will be similar to the shape of the original distribution, so its mean
+and standard deviation will be similar to that of the original
+distribution (though not necessarily exactly equal).</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-6">Problem 6</h2>
+<p>Consider three classifiers with the following confusion matrices:
+<center><img src='../../assets/images/fa23-final/dsc80_final_models.png' width=65%></center></p>
+<p><br></p>
+<h3 id="problem-6.1">Problem 6.1</h3>
+<p>Which model has the highest accuracy?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> Model A</p></li>
+<li><p><input type="radio" disabled="" /> Model B</p></li>
+<li><p><input type="radio" disabled="" /> Model C</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading6_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_1" aria-expanded="true" aria-controls="collapse6_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse6_1" class="accordion-collapse collapse"
+aria-labelledby="heading6_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer</strong>: Model B</p>
+<p>Accuracy is defined as <span class="math inline">\frac{\text{number\;of\;correct\;predictions}}{\text{number\;of\;total\;predictions}}</span>,
+so we sum the (Yes, Yes) and (No, No) cells to get the number of correct
+predictions and divide that by the sum of all cells as the number of
+total predictions. We see that Model B has the highest accuracy of 0.9
+with that formula. (Note that for simplicity, the confusion matrices are
+such that the sum of all values is 100 in all three cases.)</p>
+<hr/>
+<h5>Difficulty: ⭐️</h5>
+<p>
+<p>The average score on this problem was 98%.</p>
+</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-6.2">Problem 6.2</h3>
+<p>Which model has the highest precision?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> Model A</p></li>
+<li><p><input type="radio" disabled="" /> Model B</p></li>
+<li><p><input type="radio" disabled="" /> Model C</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading6_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_2" aria-expanded="true" aria-controls="collapse6_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse6_2" class="accordion-collapse collapse"
+aria-labelledby="heading6_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer</strong>: Model C</p>
+<p>Precision is defined as <span class="math inline">\frac{\text{number
+of correctly predicted yes values}}{\text{total number of yes
+predictions}}</span>, so the number of correctly predicted yes values is
+the (Yes, Yes) cell, while the total number of yes predictions is the
+sum of the Yes column. We see that Model C has the highest precision,
+<span class="math inline">\frac{80}{85}</span>, with that formula.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 86%.</p>
+</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-6.3">Problem 6.3</h3>
+<p>Which model has the highest recall?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> Model A</p></li>
+<li><p><input type="radio" disabled="" /> Model B</p></li>
+<li><p><input type="radio" disabled="" /> Model C</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading6_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_3" aria-expanded="true" aria-controls="collapse6_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse6_3" class="accordion-collapse collapse"
+aria-labelledby="heading6_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer</strong>: Model B</p>
+<p>Recall is defined as <span class="math inline">\frac{\text{number of
+correctly predicted yes values}}{\text{total number of values actually
+yes}}</span>, so the number of correctly predicted yes values is the
+(Yes, Yes) cell, while the total number of values that are actually yes
+is the sum of the Yes row. We see that Model B has the highest recall,
+<span class="math inline">1</span>, with that formula.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 83%.</p>
+</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-7">Problem 7</h2>
+<p>Alan set up a web page for his DSC 80 note swith the following
+HTML:</p>
+<pre><code>&lt;html&gt;
+    &lt;body&gt;
+        &lt;div id = &quot;hero&quot;&gt;DSC 80 NOTES&lt;/div&gt;
+        &lt;div class=&quot;notes&quot;&gt;
+            &lt;div class=&quot;notes&quot;&gt;
+                &lt;p&gt;Lecture 1: 5/5 stars!&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;lecture notes&quot;&gt;
+                &lt;p&gt;Lecture 2: 6/5 stars!!&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;lecture&quot;&gt;
+            &lt;p&gt;Lecture 3: 10/5 stars!!!!&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt; </code></pre>
+<p>Assume that the web page is parsed into a BeautifulSoup objected
+named <code>soup</code>. Fill in each of the expressions below to
+evaluate to the desired string. Pay careful attention to the indexes
+after each call to <code>find_all</code>! <br></p>
+<h3 id="problem-7.1">Problem 7.1</h3>
+<p>Desired string: <code>"Lecture 1: 5/5 stars!"</code></p>
+<div class="sourceCode" id="cb13"><pre
+class="sourceCode py"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>soup.find_all(____)[<span class="dv">0</span>].text</span></code></pre></div>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading7_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_1" aria-expanded="true" aria-controls="collapse7_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse7_1" class="accordion-collapse collapse"
+aria-labelledby="heading7_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer</strong>: <code>soup.find_all('p')[0].text</code></p>
+<p><code>"Lecture 1: 5/5 stars!"</code> is surrounded by
+<code>&lt;p&gt;</code> tags, and <code>find_all</code> will get every
+instance of these tags as a list. Since
+<code>"Lecture 1: 5/5 stars!"</code> is the first instance, we can get
+it from its index in the list, <code>[0]</code>. Then we grab just the
+text using <code>.text</code>.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 87%.</p>
+</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-7.2">Problem 7.2</h3>
+<p>Desired string: <code>"Lecture 2: 6/5 stars!!"</code></p>
+<div class="sourceCode" id="cb14"><pre
+class="sourceCode py"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>soup.find_all(____)[<span class="dv">3</span>].text</span></code></pre></div>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading7_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_2" aria-expanded="true" aria-controls="collapse7_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse7_2" class="accordion-collapse collapse"
+aria-labelledby="heading7_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer</strong>:
+<code>soup.find_all('div')[3].text</code></p>
+<p><code>"Lecture 2: 6/5 stars!!"</code> appears as the text surrounded
+by the fourth <code>&lt;div&gt;</code> tag, and since we are grabbing
+index <code>[3]</code> we need to <code>find_all('div')</code>. Then
+<code>.text</code> grabs the text portion.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 82%.</p>
+</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-7.3">Problem 7.3</h3>
+<p>Desired string: <code>"Lecture 3: 10/5 stars!!!!"</code></p>
+<div class="sourceCode" id="cb15"><pre
+class="sourceCode py"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>soup.find_all(____)[<span class="dv">1</span>].text</span></code></pre></div>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading7_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_3" aria-expanded="true" aria-controls="collapse7_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse7_3" class="accordion-collapse collapse"
+aria-labelledby="heading7_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer</strong>:
+<code>soup.find_all('div', class_='lecture')[1].text</code></p>
+<p>We need to return a list with
+<code>"Lecture 3: 10/5 stars!!!!"</code> as the second index since we
+access it with <code>[1]</code>. We see that we have two instances of
+<code>'lecture'</code> attributes in <code>div</code> tags: one with
+<code>class="lecture notes"</code> and <code>class="lecture"</code>.
+Note that <code>class="lecture notes"</code> actually means that the tag
+has two <code>class</code> attributes, one of <code>"lecture"</code> and
+one of <code>"notes"</code>. The <code>class_='lecture'</code> optional
+argument in <code>find_all</code> will find all tags that have a
+<code>'lecture'</code> attribute, meaning that it’ll find both the
+<code>class="lecture notes"</code> tag and the
+<code>class="lecture"</code> tag. So,
+<code>soup.find_all('div', class_='lecture')</code> will find the two
+aforementioned <code>&lt;div&gt;</code>s, <code>[1]</code> will find the
+second one (which is the one we want), and <code>.text</code> will find
+<code>"Lecture 3: 10/5 stars!!!!"</code>.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 74%.</p>
+</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-8">Problem 8</h2>
+<p>Consider the following corpus:</p>
+<table>
+<thead>
+<tr class="header">
+<th><strong>Document number</strong></th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>1</strong></td>
+<td>yesterday rainy today sunny</td>
+</tr>
+<tr class="even">
+<td><strong>2</strong></td>
+<td>yesterday sunny today sunny</td>
+</tr>
+<tr class="odd">
+<td><strong>3</strong></td>
+<td>today rainy yesterday today</td>
+</tr>
+<tr class="even">
+<td><strong>4</strong></td>
+<td>yesterday yesterday today today</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<h3 id="problem-8.1">Problem 8.1</h3>
+<p>Using a bag-of-words representation, which two documents have the
+largest dot product? Show your work, then write your final answer in the
+blanks below.</p>
+<p>Documents ____ and ____</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading8_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8_1" aria-expanded="true" aria-controls="collapse8_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse8_1" class="accordion-collapse collapse"
+aria-labelledby="heading8_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer</strong>: Documents 3 and 4</p>
+<p>The bag-of-words representation for the documents is:</p>
+<table>
+<thead>
+<tr class="header">
+<th><strong>Document number</strong></th>
+<th>yesterday</th>
+<th>rainy</th>
+<th>today</th>
+<th>sunny</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>1</strong></td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td><strong>2</strong></td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td><strong>3</strong></td>
+<td>1</td>
+<td>1</td>
+<td>2</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td><strong>4</strong></td>
+<td>2</td>
+<td>0</td>
+<td>2</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p>The dot product between documents <span class="math inline">3</span>
+and <span class="math inline">4</span> is <span class="math inline">6</span>, which is the highest among all pairs of
+documents.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 84%.</p>
+</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-8.2">Problem 8.2</h3>
+<p>Using a bag-of-words representation, what is the cosine similarity
+between documents <span class="math inline">2</span> and <span
+class="math inline">3</span>? Show your work below, then write your
+final answer in the blank below.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading8_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8_2" aria-expanded="true" aria-controls="collapse8_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse8_2" class="accordion-collapse collapse"
+aria-labelledby="heading8_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer</strong>: <span class="math inline">\frac{1}{2}</span></p>
+<p>The dot product between documents <span class="math inline">2</span>
+and <span class="math inline">3</span> is: <span class="math display">1
++ 0 + 2 + 0 = 3</span> The magnitude of document <span class="math inline">2</span> is equal to document <span class="math inline">3</span> and is: <span class="math display">\sqrt{1^2 + 0 ^2 + 1^2 + 2^2} = \sqrt{6}</span> So,
+the cosine similarity is <span class="math display">\frac{3}{\sqrt{6}\times\sqrt{6}} =
+\frac{1}{2}</span></p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 70%.</p>
+</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-8.3">Problem 8.3</h3>
+<p>Which words have a TF-IDF score <span class="math inline">0</span>
+for all four documents? Assume that we use base-2 logarithms.
+<strong>Select all the words that apply.</strong></p>
+<ul class="task-list">
+<li><p><input type="checkbox" disabled="" /> yesterday</p></li>
+<li><p><input type="checkbox" disabled="" /> rainy</p></li>
+<li><p><input type="checkbox" disabled="" /> today</p></li>
+<li><p><input type="checkbox" disabled="" /> sunny</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading8_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8_3" aria-expanded="true" aria-controls="collapse8_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse8_3" class="accordion-collapse collapse"
+aria-labelledby="heading8_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer</strong>: yesterday and today</p>
+<p>Remember,</p>
+<p><span class="math display">\text{tf-idf}(t, d) = \text{tf}(t, d)
+\cdot \text{idf}(t)</span></p>
+<p>where <span class="math inline">\text{tf}(d, t)</span>, the term
+frequency of term <span class="math inline">t</span> in document <span class="math inline">d</span>, is the proportion of terms in <span class="math inline">d</span> that are equal to <span class="math inline">t</span>, and <span class="math inline">\text{idf}(t) = \log \left( \frac{\text{number of
+documents}}{\text{number of documents containing $t$}}
+\right)</span>.</p>
+<p>In order for <span class="math inline">\text{tf-idf}(t, d)</span> to
+be 0, either <span class="math inline">t</span> must not be in document
+<span class="math inline">d</span> (meaning <span class="math inline">\text{tf}(t, d) = 0</span>), or <span class="math inline">t</span> is in every document (meaning <span class="math inline">\text{idf}(t) = \log(\frac{n}{n}) = \log(1) =
+0</span>). In this case, we’re looking for words that have a <span class="math inline">\text{tf-idf}</span> of 0 across all documents,
+which means we’re looking for words that have a <span class="math inline">\text{idf}(t)</span> of 0, meaning they’re in every
+document. The words that are in every document are yesterday and
+today.</p>
+<hr/>
+<h5>Difficulty: ⭐️</h5>
+<p>
+<p>The average score on this problem was 94%.</p>
+</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-9">Problem 9</h2>
+<p>Every week, Lauren goes to her local grocery store and buys a varying
+amount of vegetable but always buys exactly one pound of meat (either
+beef, fish, or chicken). We use a linear regression model to predict her
+total grocery bill. We’ve collected a dataset containing the pounds of
+vegetables bought, the type of meat bought, and the total bill. Below we
+display the first few rows of the dataset and two plots generated using
+the entire training set.</p>
+<center><img src='../../assets/images/fa23-final/dsc80_final_q9.png' width=65%></center>
+<p><br></p>
+<h3 id="problem-9.1">Problem 9.1</h3>
+<p>Suppose we fit the following linear regression models to predict
+<code>'total'</code> using the squared loss function. Based on the data
+and visualizations shown above, for each of the following models <span
+class="math inline">H(x)</span>, determine whether <strong>each fitted
+model coefficient <span class="math inline">w^*</span></strong> is
+positive (<span class="math inline">+</span>), negative (<span
+class="math inline">-</span>), or exactly 0. The notation <span
+class="math inline">\text{meat=beef}</span> refers to the one-hot
+encoded <code>'meat'</code> column with value <span
+class="math inline">1</span> if the original value in the
+<code>'meat'</code> column was <code>'beef'</code> and <span
+class="math inline">0</span> otherwise. Likewise, <span
+class="math inline">\text{meat=chicken}</span> and <span
+class="math inline">\text{meat=fish}</span> are the one-hot encoded
+<code>'meat'</code> columns for <code>'chicken'</code> and
+<code>'fish'</code>, respectively.</p>
+<p>For example, in part (iv), you’ll need to provide three answers: one
+for <span class="math inline">w_0^*</span> (either positive, negative,
+or 0), one for <span class="math inline">w_1^*</span> (either positive,
+negative, or 0), and one for <span class="math inline">w_2^*</span>
+(either positive, negative, or 0).</p>
+<ol type="i">
+<li><span class="math inline">H(x) = w_0</span></li>
+<li><span class="math inline">H(x) = w_0 + w_1 \cdot
+\text{veg}</span></li>
+<li><span class="math inline">H(x) = w_0 + w_1 \cdot
+\text{(meat=chicken)}</span></li>
+<li><span class="math inline">H(x) = w_0 + w_1 \cdot \text{(meat=beef)}
++ w_2 \cdot \text{(meat=chicken)}</span></li>
+<li><span class="math inline">H(x) = w_0 + w_1 \cdot \text{(meat=beef)}
++ w_2 \cdot \text{(meat=chicken)} + w_3 \cdot
+\text{(meat=fish)}</span></li>
+</ol>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading9_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_1" aria-expanded="true" aria-controls="collapse9_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse9_1" class="accordion-collapse collapse"
+aria-labelledby="heading9_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Model i. <span class="math inline">H(x) = w_0</span></strong>
+<br/><strong>Answer</strong>: <span class="math inline">w_0^*</span> must
+be positive</p>
+<p>If <span class="math inline">H(x) = w_0</span>, then <span class="math inline">w_0^*</span> will be the mean <code>'total'</code>
+value in our dataset, and since all of our observed <code>'total'</code>
+values are positive, their mean – and hence, <span class="math inline">w_0^*</span> – must also be positive.</p>
+<p><br/></p>
+<p><strong>Model ii. <span class="math inline">H(x) = w_0 + w_1 \cdot
+\text{veg}</span></strong> <br/><strong>Answer</strong>: <span class="math inline">w_0^*</span> must be positive; <span class="math inline">w_1^*</span> must be positive</p>
+<p>Of the three graphs provided, the middle one shows the relationship
+between <code>'total'</code> and <code>'veg'</code>. We see that if we
+were to draw a line of best fit, the <span class="math inline">y</span>-intercept (<span class="math inline">w_0^*</span>) would be positive, and so would the
+slope (<span class="math inline">w_1^*</span>).</p>
+<p><br/></p>
+<p><strong>Model iii. <span class="math inline">H(x) = w_0 + w_1 \cdot
+\text{(meat=chicken)}</span></strong> <br/><strong>Answer</strong>: <span class="math inline">w_0^*</span> must be positive; <span class="math inline">w_1^*</span> must be negative</p>
+<p>Here’s the key to solving this part (and the following few): the
+input <span class="math inline">x</span> has a <code>'meat'</code> of
+<code>'chicken'</code>, <span class="math inline">H(x) = w_0 +
+w_1</span>. If the input <span class="math inline">x</span> has a
+<code>'meat'</code> of something other than <code>'chicken'</code>, then
+<span class="math inline">H(x) = w_0</span>. So:</p>
+<ul>
+<li><span class="math inline">w_0^*</span>, the optimal <span class="math inline">w_0</span>, should be a constant
+<code>'total'</code> prediction that makes sense for non-chicken inputs,
+and</li>
+<li><span class="math inline">w_1^*</span>, the optimal <span class="math inline">w_1</span>, should be a number we add to <span class="math inline">w_0^*</span> to adjust the constant
+<code>'total'</code> prediction for chickens.</li>
+</ul>
+<p>For all three <code>'meat'</code> categories, the average observed
+<code>'total'</code> value is positive, so it would make sense that for
+non-chickens, the constant prediction <span class="math inline">w_0^*</span> is positive. Based on the third graph,
+it seems that <code>'chicken'</code>s tend to have a lower
+<code>'total'</code> value on average than the other two categories, so
+if the input <span class="math inline">x</span> is a
+<code>'chicken'</code> (that is, if <span class="math inline">\text{meat=chicken} = 1</span>), then the constant
+<code>'total'</code> prediction should be less than the constant
+<code>'total'</code> prediction for other <code>'meat'</code>s. Since we
+want <code>w_0^* + w_1^*</code> to be less than <span class="math inline">w_0^*</span>, <span class="math inline">w_1^*</span>
+must then be negative.</p>
+<p><br/></p>
+<p><strong>Model iv. <span class="math inline">H(x) = w_0 + w_1 \cdot
+\text{(meat=beef)} + w_2 \cdot \text{(meat=chicken)}</span></strong>
+<br/><strong>Answer</strong>: <span class="math inline">w_0^*</span> must
+be positive; <span class="math inline">w_1^*</span> must be negative;
+<span class="math inline">w_2^*</span> must be negative</p>
+<p><span class="math inline">H(x)</span> makes one of three
+predictions:</p>
+<ul>
+<li>If <span class="math inline">x</span> has a <code>'meat'</code>
+value of <code>'chicken'</code>, then it predicts <span class="math inline">w_0 + w_2</span>.</li>
+<li>If <span class="math inline">x</span> has a <code>'meat'</code>
+value of <code>'beef'</code>, then it predicts <span class="math inline">w_0 + w_1</span>.</li>
+<li>If <span class="math inline">x</span> has a <code>'meat'</code>
+value of <code>'fish'</code>, then it predicts <span class="math inline">w_0</span>.</li>
+</ul>
+<p>Think of <span class="math inline">w_1^*</span> and <span class="math inline">w_2^*</span> – the optimal <span class="math inline">w_1</span> and <span class="math inline">w_2</span>
+– as being adjustments to the mean <code>'total'</code> amount for
+<code>'fish'</code>. Per the third graph, <code>'fish'</code> have the
+highest mean <code>'total'</code> amount of the three
+<code>'meat'</code> types, so <span class="math inline">w_0^*</span>
+should be positive while <span class="math inline">w_1^*</span> and
+<span class="math inline">w_2^*</span> should be negative.</p>
+<p><br/></p>
+<p><strong>Model v. <span class="math inline">H(x) = w_0 + w_1 \cdot
+\text{(meat=beef)} + w_2 \cdot \text{(meat=chicken)} + w_3 \cdot
+\text{(meat=fish)}</span></strong> <br/><strong>Answer</strong>: Not
+enough information for any of the four coefficients!</p>
+<p>Like in the previous part, <span class="math inline">H(x)</span>
+makes one of three predictions:</p>
+<ul>
+<li>If <span class="math inline">x</span> has a <code>'meat'</code>
+value of <code>'chicken'</code>, then it predicts <span class="math inline">w_0 + w_2</span>.</li>
+<li>If <span class="math inline">x</span> has a <code>'meat'</code>
+value of <code>'beef'</code>, then it predicts <span class="math inline">w_0 + w_1</span>.</li>
+<li>If <span class="math inline">x</span> has a <code>'meat'</code>
+value of <code>'fish'</code>, then it predicts <span class="math inline">w_0 + w_3</span>.</li>
+</ul>
+<p>Since the mean minimizes mean squared error for the constant model,
+we’d expect <span class="math inline">w_0^* + w_2^*</span> to be the
+mean <code>'total'</code> for <code>'chicken'</code>, <span class="math inline">w_0^* + w_1^*</span> to be the mean
+<code>'total'</code> for <code>'beef'</code>, and <span class="math inline">w_0^* + w_3^*</span> to be the mean total for
+<code>'fish'</code>. The issue is that there are infinitely many
+combinations of <span class="math inline">w_0^*, w_1^*, w_2^*,
+w_3^*</span> that allow this to happen!</p>
+<p>Pretend, for example, that:</p>
+<ul>
+<li>The mean <code>'total'</code> for <code>'chicken</code> is 8.</li>
+<li>The mean <code>'total'</code> for <code>'beef'</code> is 12.</li>
+<li>The mean <code>'total'</code> for <code>'fish'</code> is 15.</li>
+</ul>
+<p>Then, <span class="math inline">w_0^* = -10, w_1^* = 22, w_2^* = 18,
+w_3^* = 25</span> and <span class="math inline">w_0^* = 20, w_1^* = -8,
+w_2^* = -12, w_3^* = -5</span> work, but the signs of the coefficients
+are inconsistent. As such, it’s impossible to tell!</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-9.2">Problem 9.2</h3>
+<p>Suppose we fit the model <span class="math inline">H(x) = w_0 + w_1
+\cdot \text{veg} + w_2 \cdot \text{(meat=beef)} + w_3 \cdot
+\text{(meat=fish)}</span>. After fitting, we find that <span
+class="math inline">\vec{w^*}=[-3, 5, 8, 12]</span></p>
+<p>What is the prediction of this model on the <strong>first</strong>
+point in our dataset?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> -3</p></li>
+<li><p><input type="radio" disabled="" /> 2</p></li>
+<li><p><input type="radio" disabled="" /> 5</p></li>
+<li><p><input type="radio" disabled="" /> 10</p></li>
+<li><p><input type="radio" disabled="" /> 13</p></li>
+<li><p><input type="radio" disabled="" /> 22</p></li>
+<li><p><input type="radio" disabled="" /> 25</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading9_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_2" aria-expanded="true" aria-controls="collapse9_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse9_2" class="accordion-collapse collapse"
+aria-labelledby="heading9_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer</strong>: 10</p>
+<p>Plugging in our weights <span class="math inline">\vec{w}^*</span> to
+the model <span class="math inline">H(x)</span> and filling in data from
+the row</p>
+<table>
+<thead>
+<tr class="header">
+<th>veg</th>
+<th>meat</th>
+<th>total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>beef</td>
+<td>13</td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
+<p>gives us <span class="math inline">-3 + 5(1) + 8(1) + 12(0) =
+10</span>.</p>
+<hr/>
+<h5>Difficulty: ⭐️</h5>
+<p>
+<p>The average score on this problem was 93%.</p>
+</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-9.3">Problem 9.3</h3>
+<p>Following the same model <span class="math inline">H(x)</span> and
+weights from the previous problem, what is the loss of this model on the
+<strong>second</strong> point in our dataset, using squared error
+loss?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> 0</p></li>
+<li><p><input type="radio" disabled="" /> 1</p></li>
+<li><p><input type="radio" disabled="" /> 5</p></li>
+<li><p><input type="radio" disabled="" /> 6</p></li>
+<li><p><input type="radio" disabled="" /> 8</p></li>
+<li><p><input type="radio" disabled="" /> 24</p></li>
+<li><p><input type="radio" disabled="" /> 25</p></li>
+<li><p><input type="radio" disabled="" /> 169</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading9_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_3" aria-expanded="true" aria-controls="collapse9_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse9_3" class="accordion-collapse collapse"
+aria-labelledby="heading9_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer</strong>: 25</p>
+<p>The squared loss for a single point is <span class="math inline">(\text{actual} - \text{predicted})^2</span>. Here,
+our actual <code>'total'</code> value is 19, and our predicted value
+<code>'total'</code> value is <span class="math inline">-3 + 5(3) + 8(0)
++ 12(1) = -3 + 15 + 12 = 24</span>, so the squared loss is <span class="math inline">(19 - 24)^2 = (-5)^2 = 25</span>.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 84%.</p>
+</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-9.4">Problem 9.4</h3>
+<p>Determine how each change below affects model bias and variance
+compared to the model <span class="math inline">H(x)</span> described at
+the top of this page. <strong>For each change (i., ii., iii., iv.),
+choose all of the following that apply: increase bias, decrease bias,
+increase variance, decrease variance.</strong></p>
+<ol type="i">
+<li>Add degree <span class="math inline">3</span> polynomial
+features.</li>
+<li>Add a feature of numbers chosen at random between <span
+class="math inline">0</span> and <span
+class="math inline">1</span>.</li>
+<li>Collect <span class="math inline">100</span> more points for the
+training set.</li>
+<li>Don’t use the <code>'veg'</code> feature.</li>
+</ol>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading9_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_4" aria-expanded="true" aria-controls="collapse9_4">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse9_4" class="accordion-collapse collapse"
+aria-labelledby="heading9_4" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<ul>
+<li><ol type="i">
+<li><strong>Answer: Decrease bias, increase variance</strong>. Note that
+adding degree 3 polynomial features will increase the complexity of our
+model. Increasing model complexity decreases model bias, but increases
+model variance (because the fitted model will vary more from training
+set to training set than it would without the degree 3 feature).</li>
+</ol></li>
+<li><ol start="2" type="i">
+<li><strong>Answer: Increase variance</strong>. We’re adding a new
+feature that will contribute nothing of quality to our model’s
+predictions, other than make them vary more from training set to
+training set.</li>
+</ol></li>
+<li><ol start="3" type="i">
+<li><strong>Answer: Decrease variance</strong>. Think of our training
+set as being a sample drawn from some population. The larger our
+training sets are, the less our model will vary from training set to
+training set, hence, reducing model variance.</li>
+</ol></li>
+<li><ol start="4" type="i">
+<li><strong>Answer: Increase bias, decrease variance</strong>. Removing
+the <span class="math inline">\text{veg}</span> feature would reduce the
+complexity of our model, which would increase model bias but decrease
+model complexity.</li>
+</ol></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-9.5">Problem 9.5</h3>
+<p>Suppose we predict <code>'total'</code> from <code>'veg'</code> using
+<span class="math inline">8</span> models with different degree
+polynomial features (degrees <span class="math inline">0</span> through
+<span class="math inline">7</span>). Which of the following plots
+display the training and validation errors of these models? Assume that
+we plot the degree of the polynomial features on the x-axis, mean
+squared error loss on the y-axis, and the plots share y-axes limits.</p>
+<center><img src='../../assets/images/fa23-final/dsc80_final_plots.png' width=65%></center>
+<p>Training Error:</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> A</p></li>
+<li><p><input type="radio" disabled="" /> B</p></li>
+<li><p><input type="radio" disabled="" /> C</p></li>
+<li><p><input type="radio" disabled="" /> D</p></li>
+</ul>
+<p>Validation Error:</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> A</p></li>
+<li><p><input type="radio" disabled="" /> B</p></li>
+<li><p><input type="radio" disabled="" /> C</p></li>
+<li><p><input type="radio" disabled="" /> D</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading9_5">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_5" aria-expanded="true" aria-controls="collapse9_5">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse9_5" class="accordion-collapse collapse"
+aria-labelledby="heading9_5" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer</strong>: Training error: C; Validation Error: B</p>
+<p><strong>Training Error</strong>: As we increase the complexity of our
+model, it will gain the ability to memorize the patterns in our training
+set to a greater degree, meaning that its performance will get better
+and better (here, meaning that its MSE will get lower and lower).</p>
+<p><strong>Validation Error</strong>: As we increase the complexity of
+our model, there will be a point at which it becomes “too complex” and
+overfits to insignificant patterns in the training set. The second graph
+from the start of Problem 9 tells us that the relationship between
+<code>'total'</code> and <code>'veg'</code> is roughly quadratic,
+meaning it’s best modeled using degree <span class="math inline">2</span> polynomial features. Using a degree greater
+than <span class="math inline">2</span> will lead to overfitting and,
+therefore, worse validation set performance. Plot B shows MSE decrease
+until <span class="math inline">d = 2</span> and increase afterwards,
+which matches the previous explanation.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 88%.</p>
+</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-10">Problem 10</h2>
+<p><br></p>
+<h3 id="problem-10.1">Problem 10.1</h3>
+<p>Suppose we fit decision trees of varying depths to predict
+<code>'y'</code> using <code>'x1'</code> and <code>'x2'</code>. The
+entire training set is shown in the table below.
+<center><img src='../../assets/images/fa23-final/dsc_80_final_q10.png' width=15%></center></p>
+<p>For each option below, select <strong>one</strong> answer from the
+list:</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> 0</p></li>
+<li><p><input type="radio" disabled="" /> 0.5</p></li>
+<li><p><input type="radio" disabled="" /> 1</p></li>
+<li><p><input type="radio" disabled="" /> 2</p></li>
+</ul>
+<ol type="i">
+<li>The entropy of a node containing all the training points.</li>
+<li>The lowest possible entropy of a node in a fitted tree with depth
+<span class="math inline">1</span> (two leaf nodes).</li>
+<li>The lowest possible entropy of a node in a fitted tree with depth
+<span class="math inline">2</span> (four leaf nodes).</li>
+</ol>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading10_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10_1" aria-expanded="true" aria-controls="collapse10_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse10_1" class="accordion-collapse collapse"
+aria-labelledby="heading10_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<ul>
+<li><ol type="i">
+<li><strong>Answer: 1</strong>. Remember, the entropy of a node is <span class="math inline">- \sum_{C} p_C \log_2 p_C</span>, where <span class="math inline">C</span> represents a class (that is, a
+<code>'y'</code> value) and <span class="math inline">p_C</span>
+represents the proportion of points in that node belonging to class
+<span class="math inline">C</span>. In our training set, there are two
+classes, 0 and 1, each contaning a proportion <span class="math inline">p_0 = p_1 = \frac{1}{2}</span> of the values. So,
+the entropy of a node that contains our entire training set is <span class="math display">-\frac{1}{2} \log_2 \left( \frac{1}{2} \right) -
+\frac{1}{2} \log_2 \left( \frac{1}{2} \right) = - \log_2  \left(
+\frac{1}{2} \right) = \log_2 2 = 1</span></li>
+</ol></li>
+<li><ol start="2" type="i">
+<li><strong>Answer: 0</strong>. The lowest possible entropy of a node is
+achieved when the node is “pure” – that is, when it only contains points
+from a single class (a single <code>'y'</code> value). In such a node,
+the one class <span class="math inline">C</span> has a proportion <span class="math inline">p_C = 1</span> of the points, and the corresponding
+entropy is <span class="math display">-p_C \log_2 p_C = -1 \log_2 1 = -
+1 \cdot 0 = 0</span></li>
+</ol></li>
+<li><ol start="3" type="i">
+<li><strong>Answer: 0</strong>. The reasoning from ii applies here,
+too.</li>
+</ol></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-10.2">Problem 10.2</h3>
+<p>Suppose we write the following code:</p>
+<div class="sourceCode" id="cb16"><pre
+class="sourceCode py"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>hyperparameters <span class="op">=</span> {</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;n_estimators&#39;</span>: [<span class="dv">10</span>, <span class="dv">100</span>, <span class="dv">1000</span>], <span class="co"># number of trees per forest</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;max_depth&#39;</span>: [<span class="va">None</span>, <span class="dv">100</span>, <span class="dv">10</span>]     <span class="co"># max depth of each tree</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>grids <span class="op">=</span> GridSearchCV(</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>    RandomForestClassifier(), param_grid<span class="op">=</span>hyperparameters,</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>    cv<span class="op">=</span><span class="dv">3</span>, <span class="co"># 3-fold cross-validation</span></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>grids.fit(X_train, y_train)</span></code></pre></div>
+<p>Answer the following questions with a single number.</p>
+<ol type="i">
+<li>How many random forests are fit in total?</li>
+<li>How many decision trees are fit in total?</li>
+<li>How many times in total is the first point in <code>X_train</code>
+used to train a decision tree?</li>
+</ol>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading10_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10_2" aria-expanded="true" aria-controls="collapse10_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse10_2" class="accordion-collapse collapse"
+aria-labelledby="heading10_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<ul>
+<li><ol type="i">
+<li><strong>Answer: 27</strong>. Since we’re performing 3-fold
+cross-validation, a random forest with each combination of
+hyperparameters is fit 3 times. There are <span class="math inline">3
+\cdot 3 = 9</span> combinations of hyperparameters, because there are 3
+values for <code>n_estimators</code> and 3 values for
+<code>max_depth</code>. So, the total number of random forests fit is
+<span class="math inline">3 \cdot 3 \cdot 3 = 27</span>.</li>
+</ol></li>
+<li><ol start="2" type="i">
+<li><strong>Answer: 9990</strong>. The number of decision trees fit in a
+particular random forest comes from the <code>n_estimators</code>
+hyperparameter. For instance, a random forest that has
+<code>n_estimators=10</code> is made up of 10 decision trees. The
+question is, then, how many times do we fit a random forest with 10
+decision trees (10 because it’s the first value in
+<code>n_estimators</code>)? The answer is 9, which is the value of <span class="math inline">k</span> (3) multiplied by the number of values for
+<code>max_depth</code> that are being tested – remember, <span class="math inline">k</span> times, we fit a random forest with each
+combination of <code>n_estimators</code> and <code>max_depth</code>. So,
+9 times, a random forest with 10 decision trees is fit – but also, 9
+times, a random forest with 100 decision trees is fit, and 9 times, a
+random forest with 1000 decision trees is fit. So, how many total
+decision trees are fit? <span class="math display">9 \cdot (10 + 100 +
+1000) = 9 \cdot 1110 = 9990</span></li>
+</ol></li>
+<li><ol start="3" type="i">
+<li><strong>Answer: 6660</strong>. Since we’re performing <span class="math inline">k</span>-fold cross-validation, our training set is
+split into 3 “folds”. For each combination of hyperparameters, we fit a
+random forest 3 times – once using fold 1 as a training set and folds 2
+and 3 to validate, once using fold 2 as a training set and folds 2 and 3
+to validate, and once using fold 3 as a training set and folds 1 and 2
+to validate. The first point in <code>X_train</code> belongs to just one
+of these three folds, meaning for every combination of hyperparameters
+it’s used for training twice (and validation once). For
+<code>n_estimators=10</code>, <code>X_train</code> is used for training
+a random forest <span class="math inline">3 \cdot 2</span> times, which
+means it’s used for training a decision tree <span class="math inline">10 \cdot 3 \cdot 2</span> times. Following this
+logic for <code>n_estimators=100</code> and
+<code>n_estimators=1000</code> and summing the results gives us <span class="math display">(10 + 100 + 1000) (3 \cdot 2) = 1110 \cdot 6 =
+6660</span> So, the first point in <code>X_train</code> is used to train
+a decision tree 6660 times.</li>
+</ol></li>
+</ul>
 </div>
 </div>
 </div>

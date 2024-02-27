@@ -1,4 +1,4 @@
-# BEGN PROB
+# BEGIN PROB
 Alan set up a web page for his DSC 80 note swith the following HTML:
 ```
 <html>
@@ -18,16 +18,18 @@ Alan set up a web page for his DSC 80 note swith the following HTML:
 	</body>
 </html>	
 ```
-Assume that the web page is parsed into a BeautifulSoup called `soup`.
-Fill in each of the expressions below to evaluate to the desired string. Pay careful attention to the indexes after each call to `find_all()`!
+Assume that the web page is parsed into a BeautifulSoup objected named `soup`.
+Fill in each of the expressions below to evaluate to the desired string. Pay careful attention to the indexes after each call to `find_all`!
 # BEGIN SUBPROB
-"Lecture 1: 5/5 stars!"
+Desired string: `"Lecture 1: 5/5 stars!"`
 
-`soup.find_all(____)[0].text`
+```py
+soup.find_all(____)[0].text
+```
 # BEGIN SOLN
 **Answer**: `soup.find_all('p')[0].text`
 
-"Lecture 1: 5/5 stars!" is surrounded by `<p>` tags, and `find_all` will get every instance of these tags as a list. Since "Lecture 1: 5/5 stars!" is the first instance, we can get it from the index of the list, `[0]`. Then we grab just the text from `.text`.
+`"Lecture 1: 5/5 stars!"` is surrounded by `<p>` tags, and `find_all` will get every instance of these tags as a list. Since `"Lecture 1: 5/5 stars!"` is the first instance, we can get it from its index in the list, `[0]`. Then we grab just the text using `.text`.
 
 <average>87</average>
 
@@ -35,13 +37,15 @@ Fill in each of the expressions below to evaluate to the desired string. Pay car
 # END SUBPROB
 
 # BEGIN SUBPROB
-"Lecture 2: 6/5 stars!!"
+Desired string: `"Lecture 2: 6/5 stars!!"`
 
-`soup.find_all(____)[3].text`
-# BEGN SOLN
+```py
+soup.find_all(____)[3].text
+```
+# BEGIN SOLN
 **Answer**: `soup.find_all('div')[3].text`
 
-"Lecture 2: 6/5 stars!!" appears as the text surrounded by the fourth `<div>` tag, and since we are grabbing index `[3]` we need to `find_all('div')`. Then `.text` grabs the text portion.
+`"Lecture 2: 6/5 stars!!"` appears as the text surrounded by the fourth `<div>` tag, and since we are grabbing index `[3]` we need to `find_all('div')`. Then `.text` grabs the text portion.
 
 <average>82</average>
 
@@ -49,13 +53,15 @@ Fill in each of the expressions below to evaluate to the desired string. Pay car
 # END SUBPROB
 
 # BEGIN SUBPROB
-"Lecture 3: 10/5 stars!!!!"
+Desired string: `"Lecture 3: 10/5 stars!!!!"`
 
-`soup.find_all(____)[1].text`
+```py
+soup.find_all(____)[1].text
+```
 # BEGIN SOLN
-**Answer**: `soup.find_all(class_='lecture')[1].text`
+**Answer**: `soup.find_all('div', class_='lecture')[1].text`
 
-We need to return a list with "Lecture 3: 10/5 stars!!!!" as the second index since we access it with `[1]`. We see that we have two instances of lecture attributes, with `class="lecture notes"` and `class="lecture"`. We can use the `class_` parameter to match only with specific class attributes, and the string we pass in will look if the class contains the string, not specific matches. Therefore `class_='lecture'` will match with both of the cases listed above, and the second one, at index `[1]`, is the one we want.
+We need to return a list with `"Lecture 3: 10/5 stars!!!!"` as the second index since we access it with `[1]`. We see that we have two instances of `'lecture'` attributes in `div` tags: one with `class="lecture notes"` and `class="lecture"`. Note that `class="lecture notes"` actually means that the tag has two `class` attributes, one of `"lecture"` and one of `"notes"`. The `class_='lecture'` optional argument in `find_all` will find all tags that have a `'lecture'` attribute, meaning that it'll find both the `class="lecture notes"` tag and the `class="lecture"` tag. So, `soup.find_all('div', class_='lecture')` will find the two aforementioned `<div>`s, `[1]` will find the second one (which is the one we want), and `.text` will find `"Lecture 3: 10/5 stars!!!!"`.
 
 <average>74</average>
 

@@ -32,7 +32,7 @@ This site contains practice problems taken from old DSC 80 exams. Each exam link
       <td>Sam Lau</td>
       <td><a href='fa23-midterm/index.html'>Midterm</a>
           <br>
-          <a href='fa23-final/index.html'>Final (in progress)</a>
+          <a href='fa23-final/index.html'>Final (now complete!)</a>
       </td>
     </tr>
     <tr>
