@@ -76,7 +76,7 @@ def write_prob_files(probs, out_dir):
         os.mkdir(out_dir)
 
     for i, prob in enumerate(probs):
-        save_file_name = os.path.join(out_dir, 'q' + str(i+1).zfill(2) + '.md')
+        save_file_name = os.path.join(out_dir, f'{out_dir}-q' + str(i+1).zfill(2) + '.md')
         with open(save_file_name, 'w') as f:
             f.write(prob)
 

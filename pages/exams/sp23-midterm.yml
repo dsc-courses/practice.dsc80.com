@@ -1,0 +1,11 @@
+title: 'Spring 2023 Midterm Exam'
+instructors: Tauhidur Rahman
+context: This exam was administered in-person. The exam was closed-notes, except students were allowed to bring a single two-sided cheat sheet. No calculators were allowed. Students had **50 minutes** to take this exam.
+show_solution: true
+problems:
+  - sp23-midterm/sp23-midterm-q01
+  # - sp23-midterm/sp23-midterm-q02
+  # - sp23-midterm/sp23-midterm-q03
+  # - sp23-midterm/sp23-midterm-q04
+  # - sp23-midterm/sp23-midterm-q05
+  # - sp23-midterm/sp23-midterm-q06
