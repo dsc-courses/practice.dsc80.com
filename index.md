@@ -28,11 +28,17 @@ This site contains practice problems taken from old DSC 80 exams. Each exam link
   </thead>
   <tbody>
     <tr>
+      <th scope="row">Winter 2024</th>
+      <td>Suraj Rampure</td>
+      <td><a href='wi24-midterm/index.html'>Midterm 🆕</a>
+      </td>
+    </tr>
+    <tr>
       <th scope="row">Fall 2023</th>
       <td>Sam Lau</td>
       <td><a href='fa23-midterm/index.html'>Midterm</a>
           <br>
-          <a href='fa23-final/index.html'>Final (now complete!)</a>
+          <a href='fa23-final/index.html'>Final 🆕</a>
       </td>
     </tr>
     <tr>
@@ -40,7 +46,7 @@ This site contains practice problems taken from old DSC 80 exams. Each exam link
       <td>Suraj Rampure</td>
       <td><a href='wi23-midterm/index.html'>Midterm</a>
           <br>
-          <a href='wi23-final/index.html'>Final (now complete!)</a>
+          <a href='wi23-final/index.html'>Final 🆕</a>
       </td>
     </tr>
     <tr>

@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Winter 2024 Midterm Exam</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="../assets/theme.css" />
+  <script defer=""
+  src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Winter 2024 Midterm Exam</h1>
+</header>
+<p><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<!-- add after bootstrap.min.css -->
+<link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css"/>
+<!-- add after bootstrap.min.js or bootstrap.bundle.min.js -->
+<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script></p>
+<!-- for difficulty gauges-->
+<script src="https://cdn.plot.ly/plotly-2.16.1.min.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B947E6J6H4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-B947E6J6H4');
+</script>
+<p><a href="../index.html">← return to practice.dsc80.com</a></p>
+<hr />
+<p><strong>Instructor(s):</strong> Suraj Rampure</p>
+<p>This exam was administered in-person. The exam was closed-notes,
+except students were allowed to bring a single two-sided notes sheet. No
+calculators were allowed. Students had <strong>80 minutes</strong> to
+take this exam.</p>
+<hr />
+<p>In this exam, we’ll work with the DataFrame <code>dogs</code>, which
+contains one row for every registered pet dog in Zurich, Switzerland in
+2017.</p>
+<p>The first few rows of <code>dogs</code> are shown below, but
+<code>dogs</code> has many more rows than are shown.</p>
+<center><img src="../../assets/images/wi24-midterm/df.png" width=750></center>
+<p><br></p>
+<ul>
+<li><code>"owner_id" (int)</code>: A unique ID for each owner. Note
+that, for example, there are two rows in the preview for
+<code>4215</code>, meaning that owner has at least 2 dogs.
+<strong>Assume that if an <code>"owner_id"</code> appears in
+<code>dogs</code> multiple times, the corresponding
+<code>"owner_age"</code>, <code>"owner_sex"</code>, and
+<code>"district"</code> are always the same.</strong></li>
+<li><code>"owner_age" (str)</code>: The age group of the owner; either
+<code>"11-20"</code>, <code>"21-30"</code>, …, or <code>"91-100"</code>
+(9 possibilities in total).</li>
+<li><code>"owner_sex" (str)</code>: The birth sex of the owner; either
+<code>"m"</code> (male) or <code>"f"</code> (female).</li>
+<li><code>"district" (int)</code>: The city district the owner lives in;
+a positive integer between <code>1</code> and <code>12</code>
+(inclusive).</li>
+<li><code>"primary_breed" (str)</code>: The primary breed of the
+dog.</li>
+<li><code>"secondary_breed" (str)</code>: The secondary breed of the
+dog. If this column is not null, the dog is a “mixed breed” dog;
+otherwise, the dog is a “purebred” dog.</li>
+<li><code>"dog_sex" (str)</code>: The birth sex of the dog; either
+<code>"m"</code> (male) or <code>"f"</code> (female).</li>
+<li><code>"birth_year" (int)</code>: The birth year of the dog.</li>
+</ul>
+<p><strong>Throughout the exam, assume we have already run
+<code>import pandas as pd</code> and
+<code>import numpy as np</code>.</strong></p>
+<hr />
+<h2 id="problem-1">Problem 1</h2>
+<p><br></p>
+<h3 id="problem-1.1">Problem 1.1</h3>
+<p>Only one of the following variables is of a numerical feature type;
+the rest are categorical. Which one is it?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> <code>"owner_id"</code></p></li>
+<li><p><input type="radio" disabled="" /> <code>"owner_age"</code></p></li>
+<li><p><input type="radio" disabled="" /> <code>"district"</code></p></li>
+<li><p><input type="radio" disabled="" /> <code>"dog_sex"</code></p></li>
+<li><p><input type="radio" disabled="" /> <code>"birth_year"</code></p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_1" aria-expanded="true" aria-controls="collapse1_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_1" class="accordion-collapse collapse"
+aria-labelledby="heading1_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer</strong>: <code>"birth_year"</code></p>
+<p>Some of the other columns may be stored as numbers, like
+<code>'"district"</code>, but they are not numerical – you can’t do
+arithmetic with them. <code>"birth_year"</code> is the only column on
+which arithmetic operations are well-defined, making it numerical.</p>
+<p>Many students answered <code>"owner_age"</code>, but the values in
+<code>"owner_age"</code> are age categories, not actual ages.
+<code>"district"</code> is incorrect because districts are nominal
+categories, like phone numbers, zip codes, and Social Security
+Numbers.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-1.2">Problem 1.2</h3>
+<p>Suppose <code>"21-30"</code> is the most common value in the
+<code>"owner_age"</code> column. Just for this part, suppose we also
+have access to a <code>"owner_age_years"</code> column that contains the
+actual age of each owner in years, e.g. <code>36</code> instead of
+<code>"31-40"</code>.</p>
+<p>True or False: The most common value in the
+<code>"owner_age_years"</code> column must be between <code>21</code>
+and <code>30</code>, inclusive.</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> True</p></li>
+<li><p><input type="radio" disabled="" /> False</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_2" aria-expanded="true" aria-controls="collapse1_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_2" class="accordion-collapse collapse"
+aria-labelledby="heading1_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer</strong>: It could be the case that 21-30 is the most
+common age category, but 33 is the single most common age. What if
+everyone in the 31-40 age category is aged 33, but everyone in the 21-30
+age category is “spaced out”?</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-1.3">Problem 1.3</h3>
+<p>Fill in the blank so that <code>most_common</code> evaluates to the
+most common district in <code>dogs</code>. Assume there are no ties.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>most_common <span class="op">=</span> ____</span></code></pre></div>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_3" aria-expanded="true" aria-controls="collapse1_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_3" class="accordion-collapse collapse"
+aria-labelledby="heading1_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer</strong>:</p>
+<div id="cb1" class="sourceCode">
+<pre class="sourceCode py"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" href="#cb1-1" tabindex="-1"></a>dogs[<span class="st">"district"</span>].value_counts().idxmax()</span></code></pre>
+</div>
+<p>Above, we presented one possible solution, but there are many:</p>
+<ul>
+<li><code>dogs["district"].value_counts().idxmax()</code></li>
+<li><code>dogs["district"].value_counts().index[0]</code></li>
+<li><code>dogs.groupby("district").size().sort_values(ascending=False).index[0]</code></li>
+<li><code>dogs.groupby("district").count()["owner_id"].sort_values(ascending=False).index[0]</code></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-1.4">Problem 1.4</h3>
+<p>Fill in the blank so that <code>female_breeds</code> evaluates to a
+Series containing the primary breeds of all female dogs.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>female_breeds <span class="op">=</span> dogs.____</span></code></pre></div>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_4" aria-expanded="true" aria-controls="collapse1_4">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_4" class="accordion-collapse collapse"
+aria-labelledby="heading1_4" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer</strong>:</p>
+<div id="cb1" class="sourceCode">
+<pre class="sourceCode py"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" href="#cb1-1" tabindex="-1"></a>loc[dogs[<span class="st">"dog_sex"</span>] <span class="op">==</span> <span class="st">"f"</span>, <span class="st">"primary_breed"</span>]</span></code></pre>
+</div>
+<p>Another possible answer is:</p>
+<p>``<code>py query("dog_sex == 'f'")["primary_breed"]</code></p>
+<p>Note that the question <em>didn’t</em> ask for unique primary
+breeds.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-1.5">Problem 1.5</h3>
+<p>Fill in the blank so that <code>midpoints</code> evaluates to a
+Series that contains the midpoint of each dog owner’s age group as a
+float. For example, the midpoint of the age group <code>"51-60"</code>
+is <code>55.5</code>. Your answer must fit on one line, and cannot use
+the <code>def</code> keyword.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>midpoints <span class="op">=</span> dogs[<span class="st">&quot;owner_age&quot;</span>].____</span></code></pre></div>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_5">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_5" aria-expanded="true" aria-controls="collapse1_5">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_5" class="accordion-collapse collapse"
+aria-labelledby="heading1_5" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer</strong>:</p>
+<div id="cb1" class="sourceCode">
+<pre class="sourceCode py"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" href="#cb1-1" tabindex="-1"></a><span class="bu">str</span>.split(<span class="st">"-"</span>).<span class="bu">str</span>[<span class="dv">0</span>].astype(<span class="bu">float</span>) <span class="op">+</span> <span class="fl">4.5</span></span></code></pre>
+</div>
+<p>There are many possible solutions. Many students tried to average the
+two numbers, which is correct:</p>
+<div id="cb2" class="sourceCode">
+<pre class="sourceCode py"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" href="#cb2-1" tabindex="-1"></a><span class="bu">apply</span>(<span class="kw">lambda</span> x: <span class="fl">0.5</span> <span class="op">*</span> (<span class="bu">int</span>(x.split(<span class="st">"-"</span>)[<span class="dv">0</span>]) <span class="op">+</span> <span class="bu">int</span>(x.split(<span class="st">"-"</span>)[<span class="dv">1</span>])))</span></code></pre>
+</div>
+<p>However, we thought it’s much easier to just add 4.5 to the first
+number (which is what the “answer” presented does), or even concatenate
+the first digit with the string “5.5” – these are all equivalent to the
+midpoint.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-2">Problem 2</h2>
+<p>Gabriel owns 3 dogs with a primary breed of <code>"Beagle"</code>. No
+other owner has more than 2 <code>"Beagle"</code>s.</p>
+<p>Fill in the blanks so that <code>gabriels_district</code> evaluates
+to the district that Gabriel lives in.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>gabriels_district <span class="op">=</span> (</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    dogs.__(i)__</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    .agg({<span class="st">&quot;district&quot;</span>: __(ii)__, </span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>            <span class="st">&quot;primary_breed&quot;</span>: <span class="kw">lambda</span> x: __(iii)__})</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    .sort_values(<span class="st">&quot;primary_breed&quot;</span>)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    [<span class="st">&quot;district&quot;</span>]</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    .__(iv)__</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<p>What goes in the blanks?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="true" aria-controls="collapse2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse2" class="accordion-collapse collapse"
+aria-labelledby="heading2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer</strong>:</p>
+<ul>
+<li>(i): <code>groupby("owner_id")</code>. The idea is to condense the
+DataFrame into one row per <code>"owner_id"</code> such that we know the
+number of <code>"Beagle"</code>s that each owner has. Since Gabriel has
+the most <code>"Beagle"</code>s, if we can sort by number of
+<code>"Beagle"</code>s, Gabriel will be at the bottom (if we sort in
+increasing order).</li>
+<li>(ii): <code>max</code>, <code>min</code>, <code>mean</code>, or
+<code>median</code> (among other possibilities). Since all of the
+<code>"district"</code> rows for a particular <code>"owner_id"</code>
+are going to be the same, essentially any aggregation method that takes
+in a Series of identical district numbers – like
+<code>[3, 3, 3, 3]</code> – and returns the number will work.</li>
+<li>(iii): This function needs to take in a Series, <code>x</code>, and
+return the number of elements in the Series that are the string
+<code>"Beagle"</code>. One possible solution is:
+<code>py     (x == "Beagle").sum()</code></li>
+<li>(iv): <code>iloc[-1]</code>. Since we’re sorting by number of
+<code>"Beagle"</code>s in increasing order, Gabriel will be at the
+bottom.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="problem-3">Problem 3</h2>
+<p>Jasmine is a veterinarian. Below, you’ll find information about some
+of the dogs in her care, separated by district and breed.</p>
+<center><img src="../../assets/images/wi24-midterm/simp-dist.png" width=500></center>
+<p><br></p>
+<h3 id="problem-3.1">Problem 3.1</h3>
+<p>What is the mean weight of all beagles in the table above, across
+both districts? Give your answer as a positive integer.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading3_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_1" aria-expanded="true" aria-controls="collapse3_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse3_1" class="accordion-collapse collapse"
+aria-labelledby="heading3_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer</strong>: <span class="math inline">30</span></p>
+<p>This is a weighted mean:</p>
+<p><span class="math display">\frac{25 \cdot 3 + 45 \cdot 1}{3 + 1} =
+\frac{120}{4} = 30</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-3.2">Problem 3.2</h3>
+<p>Notice that the table above has two unknowns, <span
+class="math inline">x</span> and <span class="math inline">y</span>.
+Find <strong>positive integers</strong> <span
+class="math inline">x</span> and <span class="math inline">y</span> such
+that the mean weight of all beagles is equal to the mean weight of all
+cocker spaniels, where <span class="math inline">x</span> is as small as
+possible.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading3_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_2" aria-expanded="true" aria-controls="collapse3_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse3_2" class="accordion-collapse collapse"
+aria-labelledby="heading3_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer</strong>: <span class="math inline">x = 31, y =
+20</span></p>
+<p>The mean weight for all beagles is 30. Since the mean weight for
+cocker spaniels in District 1 is below 30 (it’s 20), the mean weight for
+cocker spaniels in District 2 needs to be above 30 so that it’s possible
+for the mean weight for all cocker spaniels to match the mean weight of
+all beagles. The smallest <span class="math inline">x</span> that allows
+us to match the mean weight, then, is the smallest integer greater than
+30, which is 31.</p>
+<p>Once we establish that we’re going to use <span class="math inline">x
+= 31</span>, this becomes an algebra problem.</p>
+<p><span class="math display">\begin{align*}\frac{20 \cdot 2 + 31y}{2 +
+y} &amp;= 30 \\
+\implies 40 + 31y &amp;= 60 + 30y \\ \implies y &amp;= 20
+\end{align*}</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-3.3">Problem 3.3</h3>
+<p>There are two possible ways in which Simpson’s paradox could appear
+in the table above:</p>
+<ul>
+<li>Way 1: In each district, the mean weight of beagles is greater than
+the mean weight of cocker spaniels, but overall, the mean weight of all
+beagles is less than the mean weight of all cocker spaniels.</li>
+<li>Way 2: For each breed, the mean weight of dogs in District 2 is
+greater than the mean weight of dogs in District 1, but overall, the
+mean weight of all dogs in District 2 is less than the mean weight of
+all dogs in District 1.</li>
+</ul>
+<p>Is it possible to pick <strong>positive integer</strong> values of
+<span class="math inline">x</span> and <span
+class="math inline">y</span> such that both ways of Simpson’s paradox
+mentioned above occur at the same time?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> Yes, it’s possible.</p></li>
+<li><p><input type="radio" disabled="" /> No, it’s not possible.</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading3_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_3" aria-expanded="true" aria-controls="collapse3_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse3_3" class="accordion-collapse collapse"
+aria-labelledby="heading3_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer</strong>: No, it’s not possible.</p>
+<p>In the first part, we already established that we need <span class="math inline">x \geq 31</span> in order for the mean weight of all
+cocker spaniels to be greater than the mean weight of all beagles. But
+if <span class="math inline">x = 31</span>, then the mean weight of all
+district 2 dogs has to be somewhere between 31 and 45, which no matter
+what, is going to be bigger than the mean weight of all district 1 dogs,
+which is 23. This means that we can’t have Simpson’s paradox both
+ways.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-4">Problem 4</h2>
+<p>The DataFrame <code>observed_counts</code>, shown in its entirety
+below, describes the number of dogs with each combination of owner sex
+and dog sex in <code>dogs</code>.</p>
+<center><img src="../../assets/images/wi24-midterm/sex-dist.png" width=225></center>
+<p>For instance, there are 2300 dogs that are female and have a male
+owner.</p>
+<p><br></p>
+<h3 id="problem-4.1">Problem 4.1</h3>
+<p>Consider the following two hypotheses. - <strong>Null
+Hypothesis</strong>: The distribution of dog sex for female owners is
+equal to the distribution of dog sex for male owners. -
+<strong>Alternative Hypothesis</strong>: The distribution of dog sex for
+female owners is not equal to the distribution of dog sex for male
+owners.</p>
+<p>Suppose <code>counts</code> is a DataFrame with the same format as
+<code>observed_counts</code> containing a simulated sample drawn under
+the null hypothesis.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>col_norm <span class="op">=</span> counts <span class="op">/</span> counts.<span class="bu">sum</span>()</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>stat1 <span class="op">=</span> col_norm.diff().<span class="bu">abs</span>().iloc[<span class="dv">1</span>, <span class="dv">0</span>]</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>stat2 <span class="op">=</span> col_norm.diff(axis<span class="op">=</span><span class="dv">1</span>).<span class="bu">abs</span>().iloc[<span class="dv">0</span>, <span class="dv">1</span>]</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>stat3 <span class="op">=</span> col_norm.diff(axis<span class="op">=</span><span class="dv">1</span>).<span class="bu">abs</span>().iloc[:, <span class="dv">1</span>].<span class="bu">sum</span>() <span class="op">/</span> <span class="dv">2</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>row_norm <span class="op">=</span> counts.<span class="bu">apply</span>(<span class="kw">lambda</span> s: s <span class="op">/</span> s.<span class="bu">sum</span>(), axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>stat4 <span class="op">=</span> row_norm.diff().<span class="bu">abs</span>().iloc[<span class="dv">1</span>, <span class="dv">0</span>]</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>stat5 <span class="op">=</span> row_norm.diff(axis<span class="op">=</span><span class="dv">1</span>).<span class="bu">abs</span>().iloc[<span class="dv">0</span>, <span class="dv">1</span>]</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>stat6 <span class="op">=</span> row_norm.diff(axis<span class="op">=</span><span class="dv">1</span>).<span class="bu">abs</span>().iloc[:, <span class="dv">1</span>].<span class="bu">sum</span>() <span class="op">/</span> <span class="dv">2</span></span></code></pre></div>
+<p>Which of the variables defined above are valid test statistics for
+these two hypotheses? Select all that apply.</p>
+<ul class="task-list">
+<li><p><input type="checkbox" disabled="" /> <code>stat1</code></p></li>
+<li><p><input type="checkbox" disabled="" /> <code>stat2</code></p></li>
+<li><p><input type="checkbox" disabled="" /> <code>stat3</code></p></li>
+<li><p><input type="checkbox" disabled="" /> <code>stat4</code></p></li>
+<li><p><input type="checkbox" disabled="" /> <code>stat5</code></p></li>
+<li><p><input type="checkbox" disabled="" /> <code>stat6</code></p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_1" aria-expanded="true" aria-controls="collapse4_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_1" class="accordion-collapse collapse"
+aria-labelledby="heading4_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer</strong>: <code>stat4</code> only</p>
+<p>Note that here, we’re comparing the <strong>rows</strong> of
+<code>counts</code>. To turn each row into a valid distribution that
+sums to 1, we need to divide each row by the sum of itself. That means
+that none of <code>stat1</code>, <code>stat2</code>, nor
+<code>stat3</code> work for these two hypotheses, since these three
+statistics have columns that add to 1, not rows.</p>
+<p><code>stat4</code> is the option that works for these two hypotheses.
+It normalizes the rows so that they sum to 1, and then finds the
+absolute difference in proportions between the proportion of female dogs
+in both groups. Remember that when there are only two categories, the
+TVD is equal to the absolute difference in proportions for one of the
+categories!</p>
+<p><code>stat5</code> doesn’t work because it tries to subtract elements
+in the same distribution from one another, whereas the goal is to
+compare the corresponding proportions in different distributions.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-4.2">Problem 4.2</h3>
+<p>Now, consider the following two hypotheses.</p>
+<ul>
+<li><strong>Null Hypothesis</strong>: The distribution of owner sex for
+female dogs is equal to the distribution of owner sex for male
+dogs.</li>
+<li><strong>Alternative Hypothesis</strong>: The distribution of owner
+sex for female dogs is not equal to the distribution of owner sex for
+male dogs.</li>
+</ul>
+<p>Which of the variables from part (a) above are valid test statistics
+for these two hypotheses? Select all that apply.</p>
+<ul class="task-list">
+<li><p><input type="checkbox" disabled="" /> <code>stat1</code></p></li>
+<li><p><input type="checkbox" disabled="" /> <code>stat2</code></p></li>
+<li><p><input type="checkbox" disabled="" /> <code>stat3</code></p></li>
+<li><p><input type="checkbox" disabled="" /> <code>stat4</code></p></li>
+<li><p><input type="checkbox" disabled="" /> <code>stat5</code></p></li>
+<li><p><input type="checkbox" disabled="" /> <code>stat6</code></p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_2" aria-expanded="true" aria-controls="collapse4_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_2" class="accordion-collapse collapse"
+aria-labelledby="heading4_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer</strong>: <code>stat2</code> and
+<code>stat3</code></p>
+<p>See above.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<p>For your convenience, we show <code>observed_counts</code> again
+below.</p>
+<center><img src="../../assets/images/wi24-midterm/sex-dist.png" width=225></center>
+<p><br></p>
+<h3 id="problem-4.3">Problem 4.3</h3>
+<p>A “matching pairing” is a combination of dog and owner that both have
+the same sex. For example, the first row in the DataFrame below is a
+matching pairing, while the second is a non-matching pairing.</p>
+<center><img src="../../assets/images/wi24-midterm/matching.png" width=600></center>
+<p>Now, consider the following pair of hypotheses.</p>
+<ul>
+<li><strong>Null Hypothesis</strong>: The number of matching pairings is
+the same as the number of non-matching pairings.</li>
+<li><strong>Alternative Hypothesis</strong>: The number of matching
+pairings is greater than the number of non-matching pairings.</li>
+</ul>
+<p>Suppose we choose the following test statistic.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_stat(counts):</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    s <span class="op">=</span> counts <span class="op">/</span> counts.<span class="bu">sum</span>().<span class="bu">sum</span>()</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">1</span> <span class="op">-</span> <span class="dv">2</span> <span class="op">*</span> (s.iloc[<span class="dv">0</span>, <span class="dv">1</span>] <span class="op">+</span> s.iloc[<span class="dv">1</span>, <span class="dv">0</span>])</span></code></pre></div>
+<ul>
+<li><ol type="i">
+<li>What is the observed statistic for our test? That is, what does
+<code>test_stat(observed_counts)</code> evaluate to? Give your answer as
+a simplified fraction.</li>
+</ol></li>
+<li><ol start="2" type="i">
+<li>Suppose we simulate 10,000 test statistics by drawing samples under
+the null and store them in the array <code>stats</code>. Furthermore,
+suppose <code>obs</code> is the observed statistic you found above.
+Which of the following correctly computes the p-value for our test?</li>
+</ol></li>
+</ul>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> <code>(stats &gt;= obs).mean()</code></p></li>
+<li><p><input type="radio" disabled="" /> <code>(stats &gt; obs).mean()</code></p></li>
+<li><p><input type="radio" disabled="" /> <code>(stats &lt;= obs).mean()</code></p></li>
+<li><p><input type="radio" disabled="" /> <code>(stats &lt; obs).mean()</code></p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_3" aria-expanded="true" aria-controls="collapse4_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_3" class="accordion-collapse collapse"
+aria-labelledby="heading4_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer</strong>: (i): <span class="math inline">\frac{2}{35}</span>, (ii):
+<code>(stats &gt;= obs).mean()</code></p>
+<p>To understand the answer to (i), we need to understand what
+<code>test_stat</code> is computing. Since
+<code>counts.sum().sum()</code> is the total number of entries in
+<code>counts</code> – 7000 in <code>observed_counts</code>, for instance
+– <code>s</code> is a version of counts where all of the numbers are
+turned into proportions out of the overall total. Then,
+<code>s.iloc[0, 1] + s.iloc[1, 0]</code> is the proportion of pairings
+that are non-matching.</p>
+<p>So, to compute this numerically, we have <span class="math display">1
+- 2 \cdot \left( \frac{23}{70} + \frac{10}{30} \right) = 1 - 2 \cdot
+\frac{33}{70} = 1 - \frac{66}{70} = \frac{4}{70} =
+\frac{2}{35}</span></p>
+<p>Note that <code>1 - 2 * (s.iloc[0, 1] + s.iloc[1, 0])</code> ends up
+simplifying to
+<code>s.iloc[0, 0] + s.iloc[1, 1] - (s.iloc[0, 1] + s.iloc[1, 0])</code>,
+which means in words, the test statistic is <strong>the difference
+between the proportion of matching pairings and non-matching
+pairings</strong>.</p>
+<p>When the difference in proportions (matching minus non-matching) is
+large, it means there are more matching pairings than non-matching
+pairings. Our alternative hypothesis is that there are more matching
+pairings, so we look at the proportion of simulated statistics that are
+at least as large as our observed, hence <code>&gt;=</code>.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-4.4">Problem 4.4</h3>
+<p>Select the true statement below.</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> The tests in parts 4.1, 4.2, and 4.3 are all standard hypothesis
+tests.</p></li>
+<li><p><input type="radio" disabled="" /> The tests in parts 4.1, 4.2, and 4.3 are all permutation tests.</p></li>
+<li><p><input type="radio" disabled="" /> The tests in parts 4.1 and 4.2 are standard hypothesis tests, while
+the test in part 4.3 is a permutation test.</p></li>
+<li><p><input type="radio" disabled="" /> The tests in parts 4.1 and 4.2 are permutation tests, while the test
+in part 4.3 is a standard hypothesis test.</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_4" aria-expanded="true" aria-controls="collapse4_4">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_4" class="accordion-collapse collapse"
+aria-labelledby="heading4_4" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer</strong>: The tests in parts 4.1 and 4.2 are
+permutation tests, while the test in part 4.3 is a standard hypothesis
+test.</p>
+<p>In 4.1 and 4.2, we were testing whether two sample distributions
+appeared to be drawn from the same population distribution, and in 4.3,
+we were testing whether a sample distribution (the distribution of
+matching vs. non-matching) was drawn from a specified population
+distribution (<code>[0.5, 0.5]</code>). Think of 4.3 like a standard
+coin-flipping example from Lecture 6.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-5">Problem 5</h2>
+<p>In this question only, assume that there are more than 12 districts
+in <code>dogs</code>.</p>
+<p>Suppose we merge the <code>dogs</code> DataFrame with itself as
+follows.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># on=&quot;x&quot; is the same as specifying both left_on=&quot;x&quot; and right_on=&quot;x&quot;.</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>double <span class="op">=</span> dogs.merge(dogs, on<span class="op">=</span><span class="st">&quot;district&quot;</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># sort_index sorts a Series in increasing order of its index.</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>square <span class="op">=</span> double[<span class="st">&quot;district&quot;</span>].value_counts().value_counts().sort_index()</span></code></pre></div>
+<p>The first few rows of <code>square</code> are shown below.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span>     <span class="dv">5500</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span>      <span class="dv">215</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="dv">9</span>       <span class="dv">40</span></span></code></pre></div>
+<p><br></p>
+<h3 id="problem-5.1">Problem 5.1</h3>
+<p>In <code>dogs</code>, there are 12 rows with a
+<code>"district"</code> of <code>8</code>. How many rows of
+<code>double</code> have a <code>"district"</code> of <code>8</code>?
+Give your answer as a positive integer.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading5_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_1" aria-expanded="true" aria-controls="collapse5_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse5_1" class="accordion-collapse collapse"
+aria-labelledby="heading5_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer</strong>: <span class="math inline">144</span></p>
+<p>When we merge <code>dogs</code> with <code>dogs</code> on
+<code>"district"</code>, each <code>8</code> in the first
+<code>dogs</code> DataFrame will be combined with each <code>8</code> in
+the second <code>dogs</code> DataFrame. Since there are 12 in the first
+and 12 in the second, there are <span class="math inline">12 \cdot 12 =
+144</span> combinations.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-5.2">Problem 5.2</h3>
+<p>What does the following expression evaluate to? Give your answer as a
+positive integer.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>dogs.groupby(<span class="st">&quot;district&quot;</span>).<span class="bu">filter</span>(<span class="kw">lambda</span> df: df.shape[<span class="dv">0</span>] <span class="op">==</span> <span class="dv">3</span>).shape[<span class="dv">0</span>]</span></code></pre></div>
+<p><em>Hint: Unlike in 5.1, your answer to 5.2 depends on the values in
+<code>square</code>.</em></p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading5_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_2" aria-expanded="true" aria-controls="collapse5_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse5_2" class="accordion-collapse collapse"
+aria-labelledby="heading5_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer</strong>: <span class="math inline">120</span></p>
+<p><code>square</code> is telling us that: - There are 5500 districts
+that appeared just 1x in <code>dogs</code>. - There are 215 districts
+that appeared 2x in <code>dogs</code> (2x, not 4x, because of the logic
+explained in the 5a rubric item). - There are 40 districts that appeared
+3x in <code>dogs</code>.</p>
+<p>The expression given in this question is keeping all of the rows
+corresponding to districts that appear 3 times. There are 40 districts
+that appear 3 times. So, the total number of rows in this DataFrame is
+<span class="math inline">40 \cdot 3 = 120</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-6">Problem 6</h2>
+<p><br></p>
+<h3 id="problem-6.1">Problem 6.1</h3>
+<p>What is the most likely missingness mechanism of the
+<code>"secondary_breed"</code> column in <code>dogs</code>?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> Missing by design</p></li>
+<li><p><input type="radio" disabled="" /> Not missing at random</p></li>
+<li><p><input type="radio" disabled="" /> Missing at random</p></li>
+<li><p><input type="radio" disabled="" /> Missing completely at random</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading6_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_1" aria-expanded="true" aria-controls="collapse6_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse6_1" class="accordion-collapse collapse"
+aria-labelledby="heading6_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer</strong>: Anything other than MCAR</p>
+<p>The original answer we had in mind was missing by design. Secondary
+breeds are missing for purebred dogs – that is, dogs that don’t have a
+secondary breed. There is nothing you could “fill in” here.</p>
+<p>However, you can make reasonable arguments for both MAR and NMAR, so
+we’ll give those answers full credit too. For instance, one could argue
+that certain breeds are less likely to be mixed with other breeds, so
+the missingness is dependent on primary breed.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<p>Using the <code>"birth_years"</code> column in <code>dogs</code>,
+Yutian computes the age of each dog and stores it in the
+<code>"age"</code> column of <code>dogs</code>. She also categorizes
+dogs into three “breed classes" based on their primary breed –
+<code>"Retriever"</code>, <code>"Terrier"</code>, or
+<code>"Other"</code> – and stores these in the <code>"class"</code>
+column of <code>dogs</code>.</p>
+<p>The following bar chart shows the distribution of breed classes by
+missingness of age:</p>
+<center><img src="../../assets/images/wi24-midterm/dist-missingness.png" width=400></center>
+<p>The following bar chart shows the mean observed age for each breed
+class:</p>
+<center><img src="../../assets/images/wi24-midterm/mean-ages.png" width=400></center>
+<p><br></p>
+<h3 id="problem-6.2">Problem 6.2</h3>
+<p>What is the most likely missingness mechanism of ages?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> Missing by design</p></li>
+<li><p><input type="radio" disabled="" /> Not missing at random</p></li>
+<li><p><input type="radio" disabled="" /> Missing at random</p></li>
+<li><p><input type="radio" disabled="" /> Missing completely at random</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading6_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_2" aria-expanded="true" aria-controls="collapse6_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse6_2" class="accordion-collapse collapse"
+aria-labelledby="heading6_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer</strong>: Missing at random</p>
+<p>The distributions of breed classes look quite different when age is
+missing vs. when age is not missing. Hence, the missingness of ages
+likely depends on breed classes.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-6.3">Problem 6.3</h3>
+<p>Name a test statistic we could use to perform a statistical test to
+assess whether the missingness of ages depends on breed classes.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading6_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_3" aria-expanded="true" aria-controls="collapse6_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse6_3" class="accordion-collapse collapse"
+aria-labelledby="heading6_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer</strong>: Total variation distance</p>
+<p>Breed class is a categorical variable, and hence its distribution is
+categorical. The tool we have for comparing categorical distributions
+(in this case, the distribution of breed class when age is missing
+vs. the distribution of breed class when age is not missing) is the
+TVD.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-6.4">Problem 6.4</h3>
+<p>Let <span class="math inline">O</span> be the mean of the observed
+ages in <code>dogs</code>, that is, the mean of the ages that aren’t
+missing. Let <span class="math inline">T</span> be the true mean of the
+ages in <code>dogs</code>, that is, the mean we’d compute if none of the
+ages were missing.</p>
+<p>What is the relationship between <span class="math inline">O</span>
+and <span class="math inline">T</span>?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> <span class="math inline">O &lt; T</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">O \approx T</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">O = T</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">O &gt; T</span></p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading6_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_4" aria-expanded="true" aria-controls="collapse6_4">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse6_4" class="accordion-collapse collapse"
+aria-labelledby="heading6_4" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer</strong>: <span class="math inline">O &lt;
+T</span></p>
+<p>In the ages we get to observe (that is, when age is not missing), we
+have way fewer terrier values than in the ages we don’t get to observe.
+Terriers weigh more on average than the other breed classes. This means
+we’re missing values that are larger, so when we take the average of the
+values we have access to, it’ll be lower than the true mean.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<p>Consider the following strategy for imputing missing ages.</p>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode py"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fill_missing(dogs):</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> dogs.assign(</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    age<span class="op">=</span>dogs.groupby(<span class="st">&quot;class&quot;</span>)[<span class="st">&quot;age&quot;</span>]</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>            .transform(<span class="kw">lambda</span> x: x.fillna(x.value_counts().idxmax()))</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<p><br></p>
+<h3 id="problem-6.5">Problem 6.5</h3>
+<p>In one sentence, describe this imputation strategy.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading6_5">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_5" aria-expanded="true" aria-controls="collapse6_5">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse6_5" class="accordion-collapse collapse"
+aria-labelledby="heading6_5" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer</strong>: This is filling in missing ages in each
+breed class with the most common observed age in that breed class</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-6.6">Problem 6.6</h3>
+<p><code>small_dogs</code> is a subset of <code>dogs</code> shown in its
+entirety below.</p>
+<center><img src="../../assets/images/wi24-midterm/with-miss.png" width=200></center>
+<p>If we call <code>fill_missing</code> on <code>small_dogs</code>, what
+values would the four null values in the <code>"age"</code> column of
+<code>small_dogs</code> be replaced with?</p>
+<ul>
+<li>row 2: ___</li>
+<li>row 3: ___</li>
+<li>row 4: ___</li>
+<li>row 7: ___</li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading6_6">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_6" aria-expanded="true" aria-controls="collapse6_6">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse6_6" class="accordion-collapse collapse"
+aria-labelledby="heading6_6" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer</strong>:</p>
+<ul>
+<li>row 2: 5. The most common observed age for the <code>"Other"</code>
+breed class is 5.</li>
+<li>row 3: 5. The most common observed age for the <code>"Other"</code>
+breed class is 5.</li>
+<li>row 4: 12. The most common observed age for the
+<code>"Terrier"</code> breed class is 12.</li>
+<li>row 7: 7. The most common observed age for the
+<code>"Retriever"</code> breed class is 7.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="section"><span class="math display"> </span></h2>
+<h4
+id="feedback-find-an-error-still-confused-have-a-suggestion-let-us-know-here.">👋
+Feedback: Find an error? Still confused? Have a suggestion?
+<a href="https://forms.gle/WZ71FchnXU1K154d7">Let us know
+here</u></a>.</h4>
+<hr />
+</body>
+</html>
