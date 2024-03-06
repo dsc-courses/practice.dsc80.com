@@ -34,7 +34,7 @@ What are $c$ and $d$?
 
 **Answer: ** (c, d) = (2, 9) or (8, 3)
 
-In a unigram language model, the probability of sampling a token is proportional to its frequency in the token list. The frequencies are: "is" = 1, "the" = 3, "college" = 2, "board" = 2, "of" = 1. The sentence "the college board is" has probabilities $\frac{3}{8}$, $\frac{2}{8}$, $\frac{2}{8}$, $\frac{1}{8}$ for each word respectively, when considering the total number of tokens (8). The combined probability is $\frac{3}{8} \cdot \frac{2}{8} \cdot \frac{2}{8} \cdot \frac{1}{8} = \frac{6}{512} = \frac{1}{2^9}$ or, simplifying, $\frac{1}{8^3}$ since $512 = 8^3$. Therefore, $c = 2$ and $d = 9$ or $c = 8$ and $d = 3$, depending on how you represent the fraction.
+In a unigram language model, the probability of sampling a token is proportional to its frequency in the token list. The frequencies are: "is" = 1, "the" = 2, "college" = 2, "board" = 2, "of" = 1. The sentence "the college board is" has probabilities $\frac{2}{8}$, $\frac{2}{8}$, $\frac{2}{8}$, $\frac{1}{8}$ for each word respectively, when considering the total number of tokens (8). The combined probability is $\frac{2}{8} \cdot \frac{2}{8} \cdot \frac{2}{8} \cdot \frac{1}{8} = \frac{8}{512} = \frac{1}{2^9}$ or, simplifying, $\frac{1}{8^3}$ since $512 = 8^3$. Therefore, $c = 2$ and $d = 9$ or $c = 8$ and $d = 3$, depending on how you represent the fraction.
 
 <average>68</average>
 
