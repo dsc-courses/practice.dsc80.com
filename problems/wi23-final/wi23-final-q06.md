@@ -68,7 +68,32 @@ Recall, a bigram language model is an $N$-gram model with $N=2$. Suppose we inst
 
 **Answer: ** Sentence 4
 
-A bigram model looks at the probability of a word given the previous word. Sentence 4, "the college board of college", likely has higher probabilities for its bigrams ("the college", "college board", "board of", "of college") based on the original list of tokens, which contains all these pairs. This reasoning assumes that the given pairs appear more frequently or are more probable in sequence than the pairs in other sentences.
+Remember, our corpus was:
+
+```py
+["is", "the", "college", "board", "the", "board", "of", "college"]
+```
+
+In order for a sentence to be sampled, it must be made up of bigrams that appeared in the corpus. This automatically rules out Sentence 1, because `"of the"` never appears in the corpus and Sentence 5, because `"board is"` never appears in the corpus.
+
+Then, let's compute the probabilities of the other three sentences:
+
+Sentence 2:
+
+$$\begin{align*} P(\text{the board the board the}) &= P(\text{the}) \cdot P(\text{board | the}) \cdot P(\text{the | board}) \cdot P(\text{board | the}) \cdot P(\text{the | board}) \\ &= \frac{2}{8} \cdot \frac{1}{2} \cdot \frac{1}{2} \cdot \frac{1}{2} \cdot \frac{1}{2} \\ &= \frac{1}{64}
+\end{align*}$$
+
+Sentence 3:
+
+$$\begin{align*} P(\text{board the college board of}) &= P(\text{board}) \cdot P(\text{the | board}) \cdot P(\text{college | the}) \cdot P(\text{board | college}) \cdot P(\text{of | board}) \\ 
+&= \frac{2}{8} \cdot \frac{1}{2} \cdot \frac{1}{2} \cdot 1 \cdot \frac{1}{2} \\ &= \frac{1}{32}$$
+
+Sentence 4:
+
+$$\begin{align*} P(\text{the college board of college}) &= P(\text{the}) \cdot P(\text{college | the}) \cdot P(\text{board | college}) \cdot P(\text{of | board}) \cdot P(\text{college | of}) \\
+&= \frac{2}{8} \cdot \frac{1}{2} \cdot 1 \cdot \frac{1}{2} \cdot 1 \\ &= \frac{1}{16} \end{align*}$$
+
+Thus, Sentence 4 is most likely to be sampled.
 
 <average>72</average>
 

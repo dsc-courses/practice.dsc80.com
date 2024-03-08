@@ -1776,14 +1776,23 @@ the entropy of a node that contains our entire training set is <span class="math
 achieved when the node is “pure” – that is, when it only contains points
 from a single class (a single <code>'y'</code> value). In such a node,
 the one class <span class="math inline">C</span> has a proportion <span class="math inline">p_C = 1</span> of the points, and the corresponding
-entropy is <span class="math display">-p_C \log_2 p_C = -1 \log_2 1 = -
-1 \cdot 0 = 0</span></li>
+entropy is <span class="math inline">-p_C \log_2 p_C = -1 \log_2 1 = - 1
+\cdot 0 = 0</span>. Here, we can construct a pure node by asking a
+question like <span class="math inline">x_2 \leq 1</span>. There are two
+points with <span class="math inline">x_2 \leq 1</span>; they have <span class="math inline">y</span> values of <span class="math inline">[0,
+0]</span>. There are six points with <span class="math inline">x_2 &gt;
+1</span>; they have <span class="math inline">y</span> values of <span class="math inline">[0, 0, 1, 1, 1, 1]</span>. The entropy of the <span class="math inline">[0, 0]</span> node is 0.</li>
 </ol></li>
 <li><ol start="3" type="i">
 <li><strong>Answer: 0</strong>. The reasoning from ii applies here,
 too.</li>
 </ol></li>
 </ul>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 52%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -1865,6 +1874,11 @@ logic for <code>n_estimators=100</code> and
 a decision tree 6660 times.</li>
 </ol></li>
 </ul>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 41%.</p>
+</p>
 </div>
 </div>
 </div>

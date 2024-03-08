@@ -11,8 +11,11 @@
     div.columns{display: flex; gap: min(4vw, 1.5em);}
     div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
     ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
       width: 0.8em;
       margin: 0 0.8em 0.2em -1.6em;
       vertical-align: middle;
@@ -211,7 +214,7 @@ unique to only one state.</em></p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1_1" class="accordion-collapse collapse collapse"
+<div id="collapse1_1" class="accordion-collapse collapse"
 aria-labelledby="heading1_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -268,7 +271,7 @@ relation:</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1_2" class="accordion-collapse collapse collapse"
+<div id="collapse1_2" class="accordion-collapse collapse"
 aria-labelledby="heading1_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -304,7 +307,7 @@ they contain the same rows and columns, all in the same order?</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1_3" class="accordion-collapse collapse collapse"
+<div id="collapse1_3" class="accordion-collapse collapse"
 aria-labelledby="heading1_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -362,7 +365,7 @@ not appear in `sat.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1_4" class="accordion-collapse collapse collapse"
+<div id="collapse1_4" class="accordion-collapse collapse"
 aria-labelledby="heading1_4" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -453,7 +456,7 @@ likely missingness mechanism of the <code>"# Students"</code> column in
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1_5" class="accordion-collapse collapse collapse"
+<div id="collapse1_5" class="accordion-collapse collapse"
 aria-labelledby="heading1_5" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -500,7 +503,7 @@ likely missingness mechanism of the <code>"Math"</code> column in
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1_6" class="accordion-collapse collapse collapse"
+<div id="collapse1_6" class="accordion-collapse collapse"
 aria-labelledby="heading1_6" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -548,7 +551,7 @@ class="math inline">Y</span> to be not missing at random.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1_7" class="accordion-collapse collapse collapse"
+<div id="collapse1_7" class="accordion-collapse collapse"
 aria-labelledby="heading1_7" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -588,7 +591,7 @@ class="math inline">Y</span> to be missing at random dependent on column
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1_8" class="accordion-collapse collapse collapse"
+<div id="collapse1_8" class="accordion-collapse collapse"
 aria-labelledby="heading1_8" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -648,7 +651,7 @@ class="sourceCode py"><code class="sourceCode python"><span id="cb11-1"><a href=
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse2_1" class="accordion-collapse collapse collapse"
+<div id="collapse2_1" class="accordion-collapse collapse"
 aria-labelledby="heading2_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -694,7 +697,7 @@ York and Texas are significantly different.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse2_2" class="accordion-collapse collapse collapse"
+<div id="collapse2_2" class="accordion-collapse collapse"
 aria-labelledby="heading2_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -738,7 +741,7 @@ Texas } - \text{ median number of students in New York}\big|</span></p></li>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse2_3" class="accordion-collapse collapse collapse"
+<div id="collapse2_3" class="accordion-collapse collapse"
 aria-labelledby="heading2_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -787,7 +790,7 @@ in 2015 and for all students in 2015.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse2_4" class="accordion-collapse collapse collapse"
+<div id="collapse2_4" class="accordion-collapse collapse"
 aria-labelledby="heading2_4" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -851,7 +854,7 @@ is it?</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse2_5" class="accordion-collapse collapse collapse"
+<div id="collapse2_5" class="accordion-collapse collapse"
 aria-labelledby="heading2_5" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -960,7 +963,7 @@ Washington score}</span></p></li>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse3_1" class="accordion-collapse collapse collapse"
+<div id="collapse3_1" class="accordion-collapse collapse"
 aria-labelledby="heading3_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1000,7 +1003,7 @@ of the function <code>calc_test_stat</code>.</em></p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse3_2" class="accordion-collapse collapse collapse"
+<div id="collapse3_2" class="accordion-collapse collapse"
 aria-labelledby="heading3_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1065,7 +1068,7 @@ class="sourceCode py"><code class="sourceCode python"><span id="cb14-1"><a href=
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse4_1" class="accordion-collapse collapse collapse"
+<div id="collapse4_1" class="accordion-collapse collapse"
 aria-labelledby="heading4_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1109,7 +1112,7 @@ text.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse4_2" class="accordion-collapse collapse collapse"
+<div id="collapse4_2" class="accordion-collapse collapse"
 aria-labelledby="heading4_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1152,7 +1155,7 @@ elements.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse4_3" class="accordion-collapse collapse collapse"
+<div id="collapse4_3" class="accordion-collapse collapse"
 aria-labelledby="heading4_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1194,7 +1197,7 @@ citation numbers from a text formatted in the verbose numeric style.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse4_4" class="accordion-collapse collapse collapse"
+<div id="collapse4_4" class="accordion-collapse collapse"
 aria-labelledby="heading4_4" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1266,7 +1269,7 @@ Select all that apply.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse5_1" class="accordion-collapse collapse collapse"
+<div id="collapse5_1" class="accordion-collapse collapse"
 aria-labelledby="heading5_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1351,7 +1354,7 @@ class="sourceCode py"><code class="sourceCode python"><span id="cb20-1"><a href=
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse5_2" class="accordion-collapse collapse collapse"
+<div id="collapse5_2" class="accordion-collapse collapse"
 aria-labelledby="heading5_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1416,7 +1419,7 @@ class="math inline">b</span>?</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse6_1" class="accordion-collapse collapse collapse"
+<div id="collapse6_1" class="accordion-collapse collapse"
 aria-labelledby="heading6_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1458,7 +1461,7 @@ class="math inline">d</span>?</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse6_2" class="accordion-collapse collapse collapse"
+<div id="collapse6_2" class="accordion-collapse collapse"
 aria-labelledby="heading6_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1515,20 +1518,45 @@ model on <code>tokens</code>. Which of the following sentences of length
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse6_3" class="accordion-collapse collapse collapse"
+<div id="collapse6_3" class="accordion-collapse collapse"
 aria-labelledby="heading6_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer: </strong> Sentence 4</p>
-<p>A bigram model looks at the probability of a word given the previous
-word. Sentence 4, “the college board of college”, likely has higher
-probabilities for its bigrams (“the college”, “college board”, “board
-of”, “of college”) based on the original list of tokens, which contains
-all these pairs. This reasoning assumes that the given pairs appear more
-frequently or are more probable in sequence than the pairs in other
-sentences.</p>
+<p>Remember, our corpus was:</p>
+<div id="cb1" class="sourceCode">
+<pre class="sourceCode py"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" href="#cb1-1" tabindex="-1"></a>[<span class="st">"is"</span>, <span class="st">"the"</span>, <span class="st">"college"</span>, <span class="st">"board"</span>, <span class="st">"the"</span>, <span class="st">"board"</span>, <span class="st">"of"</span>, <span class="st">"college"</span>]</span></code></pre>
+</div>
+<p>In order for a sentence to be sampled, it must be made up of bigrams
+that appeared in the corpus. This automatically rules out Sentence 1,
+because <code>"of the"</code> never appears in the corpus and Sentence
+5, because <code>"board is"</code> never appears in the corpus.</p>
+<p>Then, let’s compute the probabilities of the other three
+sentences:</p>
+<p>Sentence 2:</p>
+<p><span class="math display">\begin{align*} P(\text{the board the board
+the}) &amp;= P(\text{the}) \cdot P(\text{board | the}) \cdot P(\text{the
+| board}) \cdot P(\text{board | the}) \cdot P(\text{the | board}) \\
+&amp;= \frac{2}{8} \cdot \frac{1}{2} \cdot \frac{1}{2} \cdot \frac{1}{2}
+\cdot \frac{1}{2} \\ &amp;= \frac{1}{64}
+\end{align*}</span></p>
+<p>Sentence 3:</p>
+<p><span class="math display">\begin{align*} P(\text{board the college
+board of}) &amp;= P(\text{board}) \cdot P(\text{the | board}) \cdot
+P(\text{college | the}) \cdot P(\text{board | college}) \cdot P(\text{of
+| board}) \\
+&amp;= \frac{2}{8} \cdot \frac{1}{2} \cdot \frac{1}{2} \cdot 1 \cdot
+\frac{1}{2} \\ &amp;= \frac{1}{32}</span></p>
+<p>Sentence 4:</p>
+<p><span class="math display">\begin{align*} P(\text{the college board
+of college}) &amp;= P(\text{the}) \cdot P(\text{college | the}) \cdot
+P(\text{board | college}) \cdot P(\text{of | board}) \cdot
+P(\text{college | of}) \\
+&amp;= \frac{2}{8} \cdot \frac{1}{2} \cdot 1 \cdot \frac{1}{2} \cdot 1
+\\ &amp;= \frac{1}{16} \end{align*}</span></p>
+<p>Thus, Sentence 4 is most likely to be sampled.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️⭐️</h5>
 <p>
@@ -1570,7 +1598,7 @@ values.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse6_4" class="accordion-collapse collapse collapse"
+<div id="collapse6_4" class="accordion-collapse collapse"
 aria-labelledby="heading6_4" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1613,7 +1641,7 @@ highest TF-IDF?</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse6_5" class="accordion-collapse collapse collapse"
+<div id="collapse6_5" class="accordion-collapse collapse"
 aria-labelledby="heading6_5" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1663,7 +1691,7 @@ document <span class="math inline">d</span> is the term with ____.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse6_6" class="accordion-collapse collapse collapse"
+<div id="collapse6_6" class="accordion-collapse collapse"
 aria-labelledby="heading6_6" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1746,7 +1774,7 @@ class="sourceCode py"><code class="sourceCode python"><span id="cb35-1"><a href=
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse7_1" class="accordion-collapse collapse collapse"
+<div id="collapse7_1" class="accordion-collapse collapse"
 aria-labelledby="heading7_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1824,7 +1852,7 @@ answer as a <strong>simplified fraction</strong>.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse7_2" class="accordion-collapse collapse collapse"
+<div id="collapse7_2" class="accordion-collapse collapse"
 aria-labelledby="heading7_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1875,7 +1903,7 @@ complexity.</p></li>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse7_3" class="accordion-collapse collapse collapse"
+<div id="collapse7_3" class="accordion-collapse collapse"
 aria-labelledby="heading7_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1920,7 +1948,7 @@ the number <code>1</code>?</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse7_4" class="accordion-collapse collapse collapse"
+<div id="collapse7_4" class="accordion-collapse collapse"
 aria-labelledby="heading7_4" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1956,7 +1984,7 @@ which we can do using <code>conf.sum(axis=0)</code>.
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse7_5" class="accordion-collapse collapse collapse"
+<div id="collapse7_5" class="accordion-collapse collapse"
 aria-labelledby="heading7_5" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -2021,7 +2049,7 @@ calculation for the accuracy in the previous step?</p></li>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse7_6" class="accordion-collapse collapse collapse"
+<div id="collapse7_6" class="accordion-collapse collapse"
 aria-labelledby="heading7_6" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -2096,7 +2124,7 @@ vs. <code>height</code></strong>?</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse8_1" class="accordion-collapse collapse collapse"
+<div id="collapse8_1" class="accordion-collapse collapse"
 aria-labelledby="heading8_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -2152,7 +2180,7 @@ accuracy?</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse8_2" class="accordion-collapse collapse collapse"
+<div id="collapse8_2" class="accordion-collapse collapse"
 aria-labelledby="heading8_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -2187,7 +2215,7 @@ validation accuracy in any one particular fold.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse8_3" class="accordion-collapse collapse collapse"
+<div id="collapse8_3" class="accordion-collapse collapse"
 aria-labelledby="heading8_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -2304,7 +2332,7 @@ validation?</li>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse8_4" class="accordion-collapse collapse collapse"
+<div id="collapse8_4" class="accordion-collapse collapse"
 aria-labelledby="heading8_4" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -2397,7 +2425,7 @@ each box such that the numbers add up to 8.)</em></p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse9" class="accordion-collapse collapse collapse"
+<div id="collapse9" class="accordion-collapse collapse"
 aria-labelledby="heading9" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">

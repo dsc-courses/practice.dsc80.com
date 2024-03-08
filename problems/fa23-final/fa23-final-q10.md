@@ -18,7 +18,7 @@ iii. The lowest possible entropy of a node in a fitted tree with depth $2$ (four
 # BEGIN SOLN
 
 - i. **Answer: 1**. Remember, the entropy of a node is $- \sum_{C} p_C \log_2 p_C$, where $C$ represents a class (that is, a `'y'` value) and $p_C$ represents the proportion of points in that node belonging to class $C$. In our training set, there are two classes, 0 and 1, each contaning a proportion $p_0 = p_1 = \frac{1}{2}$ of the values. So, the entropy of a node that contains our entire training set is $$-\frac{1}{2} \log_2 \left( \frac{1}{2} \right) - \frac{1}{2} \log_2 \left( \frac{1}{2} \right) = - \log_2  \left( \frac{1}{2} \right) = \log_2 2 = 1$$
-- ii. **Answer: 0**. The lowest possible entropy of a node is achieved when the node is "pure" – that is, when it only contains points from a single class (a single `'y'` value). In such a node, the one class $C$ has a proportion $p_C = 1$ of the points, and the corresponding entropy is $$-p_C \log_2 p_C = -1 \log_2 1 = - 1 \cdot 0 = 0$$
+- ii. **Answer: 0**. The lowest possible entropy of a node is achieved when the node is "pure" – that is, when it only contains points from a single class (a single `'y'` value). In such a node, the one class $C$ has a proportion $p_C = 1$ of the points, and the corresponding entropy is $-p_C \log_2 p_C = -1 \log_2 1 = - 1 \cdot 0 = 0$. Here, we can construct a pure node by asking a question like $x_2 \leq 1$. There are two points with $x_2 \leq 1$; they have $y$ values of $[0, 0]$. There are six points with $x_2 > 1$; they have $y$ values of $[0, 0, 1, 1, 1, 1]$. The entropy of the $[0, 0]$ node is 0.
 - iii. **Answer: 0**. The reasoning from ii applies here, too.
 
 <average>52</average>
