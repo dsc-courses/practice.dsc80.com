@@ -129,7 +129,7 @@ def test_stat(counts):
 
 To understand the answer to (i), we need to understand what `test_stat` is computing. Since `counts.sum().sum()` is the total number of entries in `counts` – 7000 in `observed_counts`, for instance – `s` is a version of counts where all of the numbers are turned into proportions out of the overall total. Then, `s.iloc[0, 1] + s.iloc[1, 0]` is the proportion of pairings that are non-matching. 
 
-So, to compute this numerically, we have $$1 - 2 \cdot \left( \frac{23}{70} + \frac{10}{30} \right) = 1 - 2 \cdot \frac{33}{70} = 1 - \frac{66}{70} = \frac{4}{70} = \frac{2}{35}$$
+So, to compute this numerically, we have $$1 - 2 \cdot \left( \frac{23}{70} + \frac{10}{70} \right) = 1 - 2 \cdot \frac{33}{70} = 1 - \frac{66}{70} = \frac{4}{70} = \frac{2}{35}$$
 
 Note that `1 - 2 * (s.iloc[0, 1] + s.iloc[1, 0])` ends up simplifying to `s.iloc[0, 0] + s.iloc[1, 1] - (s.iloc[0, 1] + s.iloc[1, 0])`, which means in words, the test statistic is **the difference between the proportion of matching pairings and non-matching pairings**.
 
