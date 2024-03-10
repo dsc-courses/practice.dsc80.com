@@ -4,22 +4,83 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>Spring 2023 Midterm Exam</title>
+  <title>Spring 2023 Final Exam</title>
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
     div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    /* The extra [class] is a hack that increases specificity enough to
-       override a similar rule in reveal.js */
-    ul.task-list[class]{list-style: none;}
+    ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
-      font-size: inherit;
       width: 0.8em;
       margin: 0 0.8em 0.2em -1.6em;
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../assets/theme.css" />
   <script defer=""
@@ -46,7 +107,7 @@
 </head>
 <body>
 <header id="title-block-header">
-<h1 class="title">Spring 2023 Midterm Exam</h1>
+<h1 class="title">Spring 2023 Final Exam</h1>
 </header>
 <p><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
@@ -69,27 +130,23 @@
 <hr />
 <p><strong>Instructor(s):</strong> Tauhidur Rahman</p>
 <p>This exam was administered in-person. The exam was closed-notes,
-except students were allowed to bring a single two-sided cheat sheet. No
+except students were allowed to bring two two-sided cheat sheets. No
 calculators were allowed. Students had <strong>180 minutes</strong> to
 take this exam.</p>
 <hr />
 <h2 id="problem-1">Problem 1</h2>
 <p>Consider the following Code Snippet:</p>
-<pre><code>re.findall(r&#39;--(a)--&#39;, 
-           &#39;my cat is hungry, concatenate!, catastrophe! What a cat!&#39;)</code></pre>
+<p><code>re.findall(r'__(a)__', 'my cat is hungry, concatenate!, catastrophe! What a cat!')</code></p>
 <p><br></p>
 <h3 id="problem-1.1">Problem 1.1</h3>
-<p>Which regular expression in <strong>(a)</strong> will generate the
-following output?</p>
-<pre><code>Output: [&#39;my&#39;, &#39;a&#39;] </code></pre>
-<p>( )</p>
-<pre><code>\b([a-z]*)cat\b</code></pre>
-<p>( )</p>
-<pre><code>\b[a-z]*\scat\b</code></pre>
-<p>( )</p>
-<pre><code>([a-z]*)\scat\b</code></pre>
-<p>( )</p>
-<pre><code>\b([a-z]*\scat)\b</code></pre>
+<p>Which regular expression in <strong>__(a)__</strong> will generate
+the following output? <code>Output: ['my', 'a']</code></p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> <code>\b([a-z]*)cat\b</code></p></li>
+<li><p><input type="radio" disabled="" /> <code>\b[a-z]*\scat\b</code></p></li>
+<li><p><input type="radio" disabled="" /> <code>([a-z]*)\scat\b</code></p></li>
+<li><p><input type="radio" disabled="" /> <code>\b([a-z]*\scat)\b</code></p></li>
+</ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading1_1">
@@ -97,29 +154,28 @@ following output?</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1_1" class="accordion-collapse collapse"
+<div id="collapse1_1" class="accordion-collapse collapse collapse"
 aria-labelledby="heading1_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p><strong>Answer:</strong> C - <code>([a-z]*)\scat\b</code></p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <h3 id="problem-1.2">Problem 1.2</h3>
-<p>Which regular expression in <strong>(a)</strong> will generate the
-following output?</p>
-<pre><code>Output: [&#39;concatenate&#39;]</code></pre>
-<p>( )</p>
-<pre><code>\b.*cat.*\b</code></pre>
-<p>( )</p>
-<pre><code>[a-z]*cat[a-z]*</code></pre>
-<p>( )</p>
-<pre><code>[a-z]+cat[a-z]+</code></pre>
-<p>( )</p>
-<pre><code>\b[a-z]*cat[a-z]*\b</code></pre>
+<p>Which regular expression in <strong>__(a)__</strong> will generate
+the following output?</p>
+<p><code>Output: ['concatenate']</code></p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> <code>\b.*cat.*\b</code></p></li>
+<li><p><input type="radio" disabled="" /> <code>[a-z]*cat[a-z]*</code></p></li>
+<li><p><input type="radio" disabled="" /> <code>[a-z]+cat[a-z]+</code></p></li>
+<li><p><input type="radio" disabled="" /> <code>\b[a-z]*cat[a-z]*\b</code></p></li>
+</ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading1_2">
@@ -127,29 +183,28 @@ following output?</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1_2" class="accordion-collapse collapse"
+<div id="collapse1_2" class="accordion-collapse collapse collapse"
 aria-labelledby="heading1_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p><strong>Answer:</strong> C - <code>[a-z]+cat[a-z]+</code></p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <h3 id="problem-1.3">Problem 1.3</h3>
-<p>Which regular expression in <strong>(a)</strong> will generate the
-following output?</p>
-<pre><code>Output: [&#39;cat&#39;, &#39;concatenate&#39;, &#39;catastrophe&#39;, &#39;cat&#39;]</code></pre>
-<p>( )</p>
-<pre><code>.*cat.*</code></pre>
-<p>( )</p>
-<pre><code>\b.*cat.*\b</code></pre>
-<p>( )</p>
-<pre><code>\b[a-z]*cat[a-z]*\b</code></pre>
-<p>( )</p>
-<pre><code>\b[a-z]+cat[a-z]+\b</code></pre>
+<p>Which regular expression in <strong>__(a)__</strong> will generate
+the following output?</p>
+<p><code>Output: ['cat', 'concatenate', 'catastrophe', 'cat']</code></p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> <code>.*cat.*</code></p></li>
+<li><p><input type="radio" disabled="" /> <code>\b.*cat.*\b</code></p></li>
+<li><p><input type="radio" disabled="" /> <code>\b[a-z]*cat[a-z]*\b</code></p></li>
+<li><p><input type="radio" disabled="" /> <code>\b[a-z]+cat[a-z]+\b</code></p></li>
+</ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading1_3">
@@ -157,12 +212,1110 @@ following output?</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1_3" class="accordion-collapse collapse"
+<div id="collapse1_3" class="accordion-collapse collapse collapse"
 aria-labelledby="heading1_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p><strong>Answer:</strong> C - <code>\b[a-z]*cat[a-z]*\b</code></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-2">Problem 2</h2>
+<p>Sam Altman has trained a Logistic Regression model to classify emails
+into “Spam” / “Non-Spam” categories/classes. Here, ‘Spam’ is the
+positive class. Once the model is trained, Sam opted to evaluate the
+model performance on the testing set. The Logistic Regression outputs a
+value between 0 and 1. When the output of the Logistic Regression model
+is greater than or equal to the threshold, the email is classified as a
+‘Spam’ email. By varying the threshold, Sam creates the following
+Precision-Recall graph.</p>
+<center><img  src='../assets/images/sp23-final/q2_prgraph.png'  width=40%></center>
+<p><br></p>
+<h3 id="problem-2.1">Problem 2.1</h3>
+<p>Which point corresponds to the <strong>highest</strong> threshold
+value?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> A</p></li>
+<li><p><input type="radio" disabled="" /> B</p></li>
+<li><p><input type="radio" disabled="" /> C</p></li>
+<li><p><input type="radio" disabled="" /> D</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading2_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_1" aria-expanded="true" aria-controls="collapse2_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse2_1" class="accordion-collapse collapse collapse"
+aria-labelledby="heading2_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer:</strong> B</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-2.2">Problem 2.2</h3>
+<p>Consider the following confusion matrix with “Spam” and “Not Spam”
+classes where ‘Spam’ is the positive class.</p>
+<center><img  src='../assets/images/sp23-final/q2b.png'  width=40%></center>
+<p>Suppose the recall of Sam’s classifier is 0.75 and the precision of
+Sam’s classifier is 0.6. What are the values of X and Y? Give your
+answers as positive integers.</p>
+<p><code>X</code> ____</p>
+<p><code>Y</code> ____</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading2_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_2" aria-expanded="true" aria-controls="collapse2_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse2_2" class="accordion-collapse collapse collapse"
+aria-labelledby="heading2_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer:</strong> X = 15, Y = 10</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-2.3">Problem 2.3</h3>
+<p>Suppose you want to predict if people are depressed based on their
+Electrocardiogram ECG signal. To train your model, you sampled ECG data
+from 100 people, with 80% of them not being depressed. Which of the
+following metrics is definitely not suitable for evaluating this binary
+classification model? Select all that apply.</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> Precision</p></li>
+<li><p><input type="radio" disabled="" /> Recall</p></li>
+<li><p><input type="radio" disabled="" /> Accuracy</p></li>
+<li><p><input type="radio" disabled="" /> F1 Score</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading2_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_3" aria-expanded="true" aria-controls="collapse2_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse2_3" class="accordion-collapse collapse collapse"
+aria-labelledby="heading2_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer:</strong> Accuracy</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-2.4">Problem 2.4</h3>
+<p>For the purposes of such a binary depression classification task,
+which is more important?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> high precision</p></li>
+<li><p><input type="radio" disabled="" /> high recall</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading2_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_4" aria-expanded="true" aria-controls="collapse2_4">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse2_4" class="accordion-collapse collapse collapse"
+aria-labelledby="heading2_4" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer:</strong> High recall</p>
+<p>High recall is relatively more important for medical tests generally.
+A high recall ensures that you are capturing the people who have the
+conditions. If your system fails to detect the conditions, the condition
+goes undiagnosed and unaddressed.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-2.5">Problem 2.5</h3>
+<p>For the purposes of determining whether someone committed a crime,
+which is more important?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> high precision</p></li>
+<li><p><input type="radio" disabled="" /> high recall</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading2_5">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_5" aria-expanded="true" aria-controls="collapse2_5">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse2_5" class="accordion-collapse collapse collapse"
+aria-labelledby="heading2_5" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer:</strong> High precision</p>
+<p>High precision is relatively more important since you don’t want to
+punish someone who did not commit the crime.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-2.6">Problem 2.6</h3>
+<p>In the context of a spam detector, an important email from a
+legitimate source ending up in one’s spam folder is an example of
+what?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> True positive</p></li>
+<li><p><input type="radio" disabled="" /> False positive</p></li>
+<li><p><input type="radio" disabled="" /> False negative</p></li>
+<li><p><input type="radio" disabled="" /> True negative</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading2_6">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_6" aria-expanded="true" aria-controls="collapse2_6">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse2_6" class="accordion-collapse collapse collapse"
+aria-labelledby="heading2_6" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer:</strong> False positive</p>
+<p>Since the email was classified by the spam detector as spam, it is
+“positive”. However, since it was not actually spam, it’s a “false”
+positive.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-3">Problem 3</h2>
+<p>Suraj is exploring the relationship between the applied voltage and
+resulting current of an electrical element called Diode. At first, he
+decides to fit a Linear Regression model on some training data stored in
+DataFrame <code>diode</code>. <code>diode</code> has two columns, named
+<code>"Voltage"</code> and <code>"Current"</code>, respectively.</p>
+<center><img  src='../assets/images/sp23-final/q3.png'  width=40%></center>
+<p><br></p>
+<h3 id="problem-3.1">Problem 3.1</h3>
+<p>In the following code, Suraj implements k-fold cross validation. He
+stores all the validation root mean squared error (RMSE) values of each
+fold in <code>errs_dataframe</code> Dataframe.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>errs <span class="op">=</span> cross_val_score(LinearRegression(), diode[[<span class="st">&#39;voltage&#39;</span>]], diode[<span class="st">&#39;current&#39;</span>], cv<span class="op">=</span><span class="dv">5</span>, scoring<span class="op">=</span><span class="st">&#39;neg_root_mean_squared_error&#39;</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>errs_dataframe <span class="op">=</span> pd.DataFrame(<span class="op">-</span>errs,columns<span class="op">=</span>[<span class="st">&#39;rmse&#39;</span>], index<span class="op">=</span>[<span class="ss">f&#39;Fold </span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">&#39;</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">6</span>)])</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>errs_dataframe</span></code></pre></div>
+<p>Based on the information in <code>errs_dataframe</code>, which one is
+a true statement?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> The validation RMSE of Fold 5 is the lowest.</p></li>
+<li><p><input type="radio" disabled="" /> The validation RMSE of Fold 5 is the highest.</p></li>
+<li><p><input type="radio" disabled="" /> The validation RMSE of Fold 1 is significantly higher than the
+validation RMSE of fold 5.</p></li>
+<li><p><input type="radio" disabled="" /> The validation RMSE of all the folds (i.e., Fold 1-5) are similar to
+each other.</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading3_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_1" aria-expanded="true" aria-controls="collapse3_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse3_1" class="accordion-collapse collapse collapse"
+aria-labelledby="heading3_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer:</strong> B - The validation RMSE of Fold 5 is the
+highest.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-3.2">Problem 3.2</h3>
+<p>Consider the following piece of code where we implement a
+hyperparameter search with GridSearchCV():</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> GridSearchCV</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.tree <span class="im">import</span> DecisionTreeClassifier</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>diabetes <span class="op">=</span> pd.read_csv(<span class="st">&#39;data/diabetes.csv&#39;</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(diabetes[[<span class="st">&#39;Glucose&#39;</span>, <span class="st">&#39;BMI&#39;</span>]], diabetes[<span class="st">&#39;Outcome&#39;</span>])</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>hyperparameters <span class="op">=</span> {</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="st">&#39;max_depth&#39;</span>: [<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">10</span>, <span class="dv">13</span>, <span class="dv">15</span>, <span class="dv">18</span>, <span class="va">None</span>],</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="st">&#39;min_samples_split&#39;</span>: [<span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">50</span>],</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="st">&#39;criterion&#39;</span>: [<span class="st">&#39;gini&#39;</span>, <span class="st">&#39;entropy&#39;</span>]</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>searcher <span class="op">=</span> GridSearchCV(DecisionTreeClassifier(), hyperparameters, cv<span class="op">=</span><span class="dv">8</span>)</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>searcher.fit(X_train, y_train)</span></code></pre></div>
+<p>In total, how many decision tree models were trained under the hood
+for this hyperparameter search?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> 8</p></li>
+<li><p><input type="radio" disabled="" /> 100</p></li>
+<li><p><input type="radio" disabled="" /> 200</p></li>
+<li><p><input type="radio" disabled="" /> 800</p></li>
+<li><p><input type="radio" disabled="" /> 1600</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading3_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_2" aria-expanded="true" aria-controls="collapse3_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse3_2" class="accordion-collapse collapse collapse"
+aria-labelledby="heading3_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer:</strong> 800</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-3.3">Problem 3.3</h3>
+<p>Consider the same piece of code from the previous problem.</p>
+<p>After fitting the searcher, you run the following line of code. What
+would this line of code evaluate to?</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>searcher.cv_results_[<span class="st">&#39;mean_test_score&#39;</span>].shape[<span class="dv">0</span>]</span></code></pre></div>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> 8</p></li>
+<li><p><input type="radio" disabled="" /> 100</p></li>
+<li><p><input type="radio" disabled="" /> 200</p></li>
+<li><p><input type="radio" disabled="" /> 800</p></li>
+<li><p><input type="radio" disabled="" /> 1600</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading3_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_3" aria-expanded="true" aria-controls="collapse3_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse3_3" class="accordion-collapse collapse collapse"
+aria-labelledby="heading3_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer:</strong> 100</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-4">Problem 4</h2>
+<p><br></p>
+<h3 id="problem-4.1">Problem 4.1</h3>
+<p>Rahul is trying to scrape the website of an online bookstore ‘The
+Book Club’.</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode html"><code class="sourceCode html"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;HTML&gt;</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;H1&gt;</span>The Book Club<span class="kw">&lt;/H1&gt;</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;BODY</span> <span class="er">BGCOLOR</span><span class="ot">=</span><span class="st">&quot;FFFFFF&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>Email us at <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;mailto:support@thebookclub.com&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>support@thebookclub.com<span class="kw">&lt;/a&gt;</span>.</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;div&gt;</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;ol</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;row&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;li</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;book_list&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;article</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;product_pod&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;image_container&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>                    <span class="kw">&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">&quot;pic1.jpeg&quot;</span> <span class="er">alt</span><span class="ot">=</span><span class="st">&quot;A Light in the Attic&quot;</span> </span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="ot">                    class=</span><span class="st">&quot;thumbnail&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;p</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;star-rating Three&quot;</span><span class="kw">&gt;&lt;/p&gt;</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;h3&gt;</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;cat/index.html&quot;</span> <span class="er">title</span><span class="ot">=</span><span class="st">&quot;A Light in the Attic&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>            A Light in the Attic</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;/a&gt;</span></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;/h3&gt;</span></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;product_price&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;p</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;price_color&quot;</span><span class="kw">&gt;</span>£51.77<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>                </span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;p</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;instock availability&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>                    <span class="kw">&lt;i</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;icon-ok&quot;</span><span class="kw">&gt;&lt;/i&gt;</span></span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>                    In stock</span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;/p&gt;</span></span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;/article&gt;</span></span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/li&gt;</span></span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/ol&gt;</span></span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/div&gt;</span></span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/BODY&gt;</span></span>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/HTML&gt;</span></span></code></pre></div>
+<p>Which is the equivalent Document Object Model (DOM) tree of this HTML
+file?</p>
+<center><img  src='../assets/images/sp23-final/q4.png'  width=40%></center>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> Tree A</p></li>
+<li><p><input type="radio" disabled="" /> Tree B</p></li>
+<li><p><input type="radio" disabled="" /> Tree C</p></li>
+<li><p><input type="radio" disabled="" /> Tree D</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_1" aria-expanded="true" aria-controls="collapse4_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_1" class="accordion-collapse collapse collapse"
+aria-labelledby="heading4_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer:</strong> Tree D</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-4.2">Problem 4.2</h3>
+<p>Rahul wants to extract the <code>‘instock availability’</code> status
+of the book titled ‘A Light in the Attic’. Which of the following
+expressions will evaluate to <code>"In Stock"</code>? Assume that Rahul
+has already parsed the HTML into a BeautifulSoup object stored in the
+variable named <code>soup</code>.</p>
+<p>Code Snippet A</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    soup.find(<span class="st">&#39;p&#39;</span>,attrs <span class="op">=</span> {<span class="st">&#39;class&#39;</span>: <span class="st">&#39;instock availability&#39;</span>})<span class="op">\</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    .get(<span class="st">&#39;icon-ok&#39;</span>).strip()</span></code></pre></div>
+<p>Code Snippet B</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>    soup.find(<span class="st">&#39;p&#39;</span>,attrs <span class="op">=</span> {<span class="st">&#39;class&#39;</span>: <span class="st">&#39;instock availability&#39;</span>}).text.strip()</span></code></pre></div>
+<p>Code Snippet C</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>    soup.find(<span class="st">&#39;p&#39;</span>,attrs <span class="op">=</span> {<span class="st">&#39;class&#39;</span>: <span class="st">&#39;instock availability&#39;</span>}).find(<span class="st">&#39;i&#39;</span>)<span class="op">\</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    .text.strip()</span></code></pre></div>
+<p>Code Snippet D</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>    soup.find(<span class="st">&#39;div&#39;</span>, attrs <span class="op">=</span> {<span class="st">&#39;class&#39;</span>:<span class="st">&#39;product_price&#39;</span>})<span class="op">\</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    .find(<span class="st">&#39;p&#39;</span>,attrs <span class="op">=</span> {<span class="st">&#39;class&#39;</span>: <span class="st">&#39;instock availability&#39;</span>})<span class="op">\</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    .find(<span class="st">&#39;i&#39;</span>).text.strip()</span></code></pre></div>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_2" aria-expanded="true" aria-controls="collapse4_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_2" class="accordion-collapse collapse collapse"
+aria-labelledby="heading4_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer:</strong> Code Snippet B</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-4.3">Problem 4.3</h3>
+<p>Rahul also wants to extract the number of stars that the book titled
+‘A Light in the Attic’ received. If you look at the HTML file, you will
+notice that the book received a star rating of three. Which code snippet
+will evaluate to <code>"Three"</code>?</p>
+<p>Code Snippet A</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>    soup.find(<span class="st">&#39;article&#39;</span>).get(<span class="st">&#39;class&#39;</span>).strip()</span></code></pre></div>
+<p>Code Snippet B</p>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode py"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>    soup.find(<span class="st">&#39;p&#39;</span>).text.split(<span class="st">&#39; &#39;</span>)</span></code></pre></div>
+<p>Code Snippet C</p>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode py"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>    soup.find(<span class="st">&#39;p&#39;</span>).get(<span class="st">&#39;class&#39;</span>)[<span class="dv">1</span>]</span></code></pre></div>
+<p>None of the above</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_3" aria-expanded="true" aria-controls="collapse4_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_3" class="accordion-collapse collapse collapse"
+aria-labelledby="heading4_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer:</strong> Code Snippet C</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-5">Problem 5</h2>
+<p><br></p>
+<h3 id="problem-5.1">Problem 5.1</h3>
+<p>Which are examples of nested data formats? Select all that apply.</p>
+<ul class="task-list">
+<li><p><input type="checkbox" disabled="" /> XML</p></li>
+<li><p><input type="checkbox" disabled="" /> CSV</p></li>
+<li><p><input type="checkbox" disabled="" /> JSON</p></li>
+<li><p><input type="checkbox" disabled="" /> HTML</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading5_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_1" aria-expanded="true" aria-controls="collapse5_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse5_1" class="accordion-collapse collapse collapse"
+aria-labelledby="heading5_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer:</strong> XML, JSON, HTML</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-5.2">Problem 5.2</h3>
+<p>To measure the similarity between two word vectors <span
+class="math inline">\vec{a}</span> and <span
+class="math inline">\vec{b}</span>, we compute their normalized dot
+product, also known as their cosine similarity.</p>
+<p><span class="math inline">\text{Cosine Similarity} = \cos \theta =
+\boxed{\frac{\vec{a} \cdot \vec{b}}{|\vec{a}| | \vec{b}|}}</span></p>
+<p>Which equation describes the cosine distance metric?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> <span class="math inline">\cos \theta - 1</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">1- \cos \theta</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">\cos \theta \cdot |\vec{a}| |
+\vec{b}|</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">(\cos \theta)^{-1}</span></p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading5_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_2" aria-expanded="true" aria-controls="collapse5_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse5_2" class="accordion-collapse collapse collapse"
+aria-labelledby="heading5_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer:</strong> <span class="math inline">1 -
+cos(\theta)</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-5.3">Problem 5.3</h3>
+<p>Chen downloaded 4 independent reviews of a new vacuum cleaner from
+Amazon (as shown in the 4 sentences below).</p>
+<pre><code>    Sentence 1: &#39;if i could give this vacuum zero stars i would&#39;
+    Sentence 2: &#39;i will not order again this vacuum is garbage&#39;
+    Sentence 3: &#39;Love Love Love i love this product&#39;
+    Sentence 4: &#39;this little vacuum is so much fun to use i love it&#39;</code></pre>
+<p><em>X</em> is the ‘Term frequency-Inverse Document Frequency
+(TF-IDF)’ of the word ‘vacuum’ in sentence 1.</p>
+<p>Chen replaces sentence 3 with the following new sentence/review.</p>
+<pre><code>    New Sentence 3: &#39;Love Love Love i love this vacuum&#39;</code></pre>
+<p><em>Y</em> is the ‘TF-IDF’ of the word ‘vacuum’ in sentence 1 after
+the sentence 3 is replaced by the new sentence 3.</p>
+<p>Given the above information, which of the following statements is
+true?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> <span class="math inline">X=Y</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">X&gt;Y&gt;0</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">X&gt;0</span> and <span class="math inline">Y=0</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">X&gt;0</span> and <span class="math inline">Y&gt;X</span></p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading5_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_3" aria-expanded="true" aria-controls="collapse5_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse5_3" class="accordion-collapse collapse collapse"
+aria-labelledby="heading5_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer:</strong> <span class="math inline">X &gt; 0</span>
+&amp; <span class="math inline">Y = 0</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-5.4">Problem 5.4</h3>
+<p>Consider the five expressions in the following Series, sentences.</p>
+<div class="sourceCode" id="cb14"><pre
+class="sourceCode py"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>sentences <span class="op">=</span> pd.Series([</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;buffalo monkey giraffe buffalo buffalo buffalo&#39;</span>,</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;buffalo giraffe&#39;</span>,</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;giraffe monkey&#39;</span>,</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;deer monkey&#39;</span>,</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;buffalo&#39;</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>])</span></code></pre></div>
+<p>We convert all the expressions in the sentences series to a bag of
+words representation with the following words (also known as
+dictionary):</p>
+<div class="sourceCode" id="cb15"><pre
+class="sourceCode py"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>{buffalo, monkey, giraffe, deer}</span></code></pre></div>
+<p>Which expression will achieve the highest similarity with</p>
+<p><code>sentences.iloc[0]</code> if we use the <strong>un-normalized
+dot product</strong> between the bag of words (i.e., <span
+class="math inline">\vec{a} \cdot \vec{b}</span>) as the similarity
+metric?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> ‘buffalo giraffe’</p></li>
+<li><p><input type="radio" disabled="" /> ‘giraffe monkey’</p></li>
+<li><p><input type="radio" disabled="" /> ‘deer monkey’</p></li>
+<li><p><input type="radio" disabled="" /> ‘buffalo’</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading5_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_4" aria-expanded="true" aria-controls="collapse5_4">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse5_4" class="accordion-collapse collapse collapse"
+aria-labelledby="heading5_4" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer:</strong> ‘buffalo giraffe’</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-5.5">Problem 5.5</h3>
+<p>Which expression will achieve the highest similarity with</p>
+<p><code>sentences.iloc[0]</code> if we use <strong>cosine
+similarity</strong> between the bag of words as the similarity metric?
+<em>Hint:</em> <span class="math inline">\sqrt{18}=3\sqrt{2}</span>,
+<span class="math inline">\frac{2}{\sqrt{2}}=\sqrt{2}</span>, <span
+class="math inline">4\sqrt{2}=5.65</span>*</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> ‘buffalo giraffe’</p></li>
+<li><p><input type="radio" disabled="" /> ‘giraffe monkey’</p></li>
+<li><p><input type="radio" disabled="" /> ‘deer monkey’</p></li>
+<li><p><input type="radio" disabled="" /> ‘buffalo’</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading5_5">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_5" aria-expanded="true" aria-controls="collapse5_5">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse5_5" class="accordion-collapse collapse collapse"
+aria-labelledby="heading5_5" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer:</strong> ‘buffalo’</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-6">Problem 6</h2>
+<p>In this question, we will work with a publicly available forest fire
+dataset. A preview of the <code>forest</code> DataFrame is provided
+below, along with a description of the column names.</p>
+<p><code>forest</code> Dataframe:
+<center><img  src='../assets/images/sp23-final/q6.png'  width=40%>
+</center></p>
+<p><code>"month"</code> - month of the year: jan to dec
+<code>"day"</code> - day of the week: mon to sun <code>"temp"</code> -
+temperature in Celsius degrees: 2.2 to 33.30 <code>"RH"</code> -
+relative humidity in percentage: 15.0 to 100 <code>"wind"</code> - wind
+speed in km/h: 0.40 to 9.40 <code>"rain"</code> - outside rain in mm/m2
+: 0.0 to 6.4 <code>"area"</code> - the burned area of the forest in
+logarithmic scale <code>"is_julaugsep"</code> - whether the forest fire
+event happened in the months of July, August, or September.</p>
+<p><br></p>
+<h3 id="problem-6.1">Problem 6.1</h3>
+<p>Alex wants to explore if there is any statistically significant
+relationship between the burned area of the forest <code>"area"</code>
+and the <code>"is_julaugsep"</code> variable. At first, he plots the two
+probability distributions (as shown in the figure below):</p>
+<center><img  src='../assets/images/sp23-final/q6_density.png'  width=40%> </center>
+<p>Alex decides to perform a permutation test with the following
+hypotheses.</p>
+<ul>
+<li><p><strong>Null Hypothesis</strong>: The burned area for forest fire
+events in the July-Aug-Sep months are drawn from the same distribution
+as the burned area for forest fire events in the rest of the year. Any
+observed differences are due to random chance.</p></li>
+<li><p><strong>Alternative Hypothesis</strong>: The forest fire events
+in the July-Aug-Sep months has lower average burned area than the forest
+fire events in the rest of the year.</p></li>
+</ul>
+<p>Which one of the following is the best test statistic in this
+case?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> Total Variation Distance (TVD) between the distributions</p></li>
+<li><p><input type="radio" disabled="" /> Kolmogorov-Smirnov (K-S) distance between the distributions</p></li>
+<li><p><input type="radio" disabled="" /> The signed difference between the mean burned area of
+Non-July-Aug-Sep months, minus the mean burned area of July-Aug-Sep
+months</p></li>
+<li><p><input type="radio" disabled="" /> The unsigned (absolute) difference between the mean burned area of
+Non-July-Aug-Sep months, minus the mean burned area of July-Aug-Sep
+months</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading6_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_1" aria-expanded="true" aria-controls="collapse6_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse6_1" class="accordion-collapse collapse collapse"
+aria-labelledby="heading6_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer:</strong> C - The signed difference between the mean
+burned area of Non-July-Aug-Sep months, minus the mean burned area of
+July-Aug-Sep months.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-6.2">Problem 6.2</h3>
+<p>Hasan noticed some missing data in the <code>"temp"</code> column.
+After talking to Prof. Ana who lead the data collection efforts, Hasan
+came to know that the temperature sensor had to be taken down and
+re-calibrated in some of the high temperature days which resulted in
+missing values. what can be said about the missingness in the
+<code>"temp"</code> column?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> Missing Completely at Random</p></li>
+<li><p><input type="radio" disabled="" /> Not Missing at Random</p></li>
+<li><p><input type="radio" disabled="" /> Missing at Random</p></li>
+<li><p><input type="radio" disabled="" /> Missing by Design</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading6_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_2" aria-expanded="true" aria-controls="collapse6_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse6_2" class="accordion-collapse collapse collapse"
+aria-labelledby="heading6_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer:</strong> Not Missing at Random</p>
+<p>The <code>"temp"</code> column is missing if its own value is too
+high. Since missingness depends on itself, it is NMAR.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<p><br></p>
+<h3 id="problem-6.3">Problem 6.3</h3>
+<p>Now, Hasan wants to fill in the missing values in the
+<code>"temp"</code> column. Which data imputation strategy is most
+appropriate here?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> Data imputation by random sampling where we randomly sample one value
+from the observed values in the <code>"temp"</code> column for each
+missing values in the same column</p></li>
+<li><p><input type="radio" disabled="" /> Mean imputation where we replace the missing value by mean of the
+observed values in <code>"temp"</code> column</p></li>
+<li><p><input type="radio" disabled="" /> Conditional mean imputation based on <code>"is_julaugsep"</code>
+column</p></li>
+<li><p><input type="radio" disabled="" /> Data imputation can not be performed based on the <code>forest</code>
+dataframe</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading6_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_3" aria-expanded="true" aria-controls="collapse6_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse6_3" class="accordion-collapse collapse collapse"
+aria-labelledby="heading6_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer:</strong> D - Data imputation can not be performed
+based on the <code>forest</code> dataframe.</p>
+<p>Since the missing value depends on itself (NMAR), there is no other
+data in <code>forest</code> that can be used for imputation.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-6.4">Problem 6.4</h3>
+<p>Mark, at first, trains a linear regression model with
+<code>"temp"</code> and <code>"RH"</code> columns to predict
+<code>"area"</code>. Later, Mark identifies that dew point temperature
+<code>"Td"</code> is an informative feature for predicting
+<code>"area"</code>. He adds a new column to the <code>forest</code>
+Dataframe called <code>"Td"</code> where Td can be expressed by the
+following equation: <span class="math inline">Td = temp -
+\frac{100-RH}{5}</span>. Lastly, Mark trains a second linear regression
+model with <code>"temp"</code>, <code>"RH"</code>, <code>"Td"</code>
+columns in order to predict <code>"area"</code>. Based on this, what can
+be said about the second model?</p>
+<ul class="task-list">
+<li><p><input type="checkbox" disabled="" /> The accuracy of the second model is likely to be lower than the first
+one.</p></li>
+<li><p><input type="checkbox" disabled="" /> The coefficient of the second model can not be interpreted.</p></li>
+<li><p><input type="checkbox" disabled="" /> The performance (e.g., rmse or R2 value) of the second model will be
+the same as the first one.</p></li>
+<li><p><input type="checkbox" disabled="" /> The first linear regression model suffers from
+‘Multicollinearity’</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading6_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_4" aria-expanded="true" aria-controls="collapse6_4">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse6_4" class="accordion-collapse collapse collapse"
+aria-labelledby="heading6_4" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer:</strong> Options 2 and 3.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-7">Problem 7</h2>
+<p><br></p>
+<h3 id="problem-7.1">Problem 7.1</h3>
+<p>Consider a DataFrame <code>df</code> containing sales data for a
+company with the following columns: <code>"Year"</code>,
+<code>"Month"</code>, <code>"Product"</code>, <code>"Region"</code>, and
+<code>"Revenue"</code>. The <code>"Revenue"</code> column represents the
+sales revenue for each product in a specific region during a particular
+month of a year. You want to create a pivot table to summarize the total
+revenue for each product in each year. Which of the following options
+correctly achieve this? Select all that apply.</p>
+<ul class="task-list">
+<li><p><input type="checkbox" disabled="" /> None</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading7_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_1" aria-expanded="true" aria-controls="collapse7_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse7_1" class="accordion-collapse collapse collapse"
+aria-labelledby="heading7_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer:</strong> Options 1 and 4</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-7.2">Problem 7.2</h3>
+<p>Let’s consider the two DataFrames: <code>timeuse1</code> and
+<code>timeuse2</code>. Both DataFrames have 10 rows in it.</p>
+<center><img  src='../assets/images/sp23-final/q7.png'  width=40%></center>
+<p><strong>1</strong> The following code uses <code>pd.concat</code> to
+combine the two DataFrames.</p>
+<div class="sourceCode" id="cb16"><pre
+class="sourceCode py"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>    pd.concat([timeuse1.set_index(<span class="st">&#39;Country&#39;</span>),</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>        timeuse2.set_index(<span class="st">&#39;Country_name&#39;</span>)], axis<span class="op">=</span><span class="dv">1</span>)</span></code></pre></div>
+<p>How many NaN values would the resulting DataFame have?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading7_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_2" aria-expanded="true" aria-controls="collapse7_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse7_2" class="accordion-collapse collapse collapse"
+aria-labelledby="heading7_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer: </strong> 20</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-7.3">Problem 7.3</h3>
+<p><strong>2</strong> The following code uses <code>merge()</code> to
+combine the two DataFrames from the question above.</p>
+<div class="sourceCode" id="cb17"><pre
+class="sourceCode py"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>    timeuse1.merge(timeuse2, left_on<span class="op">=</span><span class="st">&#39;Country&#39;</span>, </span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>        right_on<span class="op">=</span><span class="st">&#39;Country_name&#39;</span>, how<span class="op">=</span><span class="st">&#39;inner&#39;</span>)</span></code></pre></div>
+<p>How many NaN values would the resulting DataFame have?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading7_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_3" aria-expanded="true" aria-controls="collapse7_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse7_3" class="accordion-collapse collapse collapse"
+aria-labelledby="heading7_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer:</strong> 0</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-7.4">Problem 7.4</h3>
+<p><strong>3</strong> What would the following code evaluate to?</p>
+<div class="sourceCode" id="cb18"><pre
+class="sourceCode py"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>    timeuse1.merge(timeuse2, left_on<span class="op">=</span><span class="st">&#39;Country&#39;</span>,</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>        right_on<span class="op">=</span><span class="st">&#39;Country_name&#39;</span>, how<span class="op">=</span><span class="st">&#39;outer&#39;</span>).shape[<span class="dv">0</span>]</span></code></pre></div>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading7_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_4" aria-expanded="true" aria-controls="collapse7_4">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse7_4" class="accordion-collapse collapse collapse"
+aria-labelledby="heading7_4" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer:</strong> 14</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-8">Problem 8</h2>
+<p><br></p>
+<h3 id="problem-8.1">Problem 8.1</h3>
+<p>A pharmaceutical company conducted a clinical trial to compare the
+efficacy of two drugs, Drug A and Drug B, in treating a specific medical
+condition. The trial involved two groups of patients, Group X and Group
+Y. The results of the trial are as follows:</p>
+<p>Group X:</p>
+<ul>
+<li>Drug A: 80% success rate (120 patients out of 150)</li>
+<li>Drug B: 75% success rate (225 patients out of 300)</li>
+</ul>
+<p>Group Y:</p>
+<ul>
+<li>Drug A: 70% success rate (70 patients out of 100)</li>
+<li>Drug B: 60% success rate (120 patients out of 200)</li>
+</ul>
+<p>Based on these results, which drug would you conclude is more
+effective overall?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> Drug A</p></li>
+<li><p><input type="radio" disabled="" /> Drug B</p></li>
+<li><p><input type="radio" disabled="" /> It is impossible to determine from the given data</p></li>
+<li><p><input type="radio" disabled="" /> The results are contradictory, and no conclusion can be made</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading8_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8_1" aria-expanded="true" aria-controls="collapse8_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse8_1" class="accordion-collapse collapse collapse"
+aria-labelledby="heading8_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer:</strong> Drug A</p>
+<p><span class="math inline">\frac{190}{250} &gt;
+\frac{345}{500}</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-8.2">Problem 8.2</h3>
+<p>Justify your answer in words.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading8_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8_2" aria-expanded="true" aria-controls="collapse8_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse8_2" class="accordion-collapse collapse collapse"
+aria-labelledby="heading8_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer:</strong> A trick question! Although the results may
+seem like an example of Simpson’s Paradox, it is not because the trend
+within each group is consistent (A is always better) and A is more
+effective overall. Since we’re asked to determine which drug is more
+effective <strong>overall</strong>, we should calculate the success rate
+of Drug A and Drug B across both groups. The comparison is <span class="math display">\frac{190}{250} &gt; \frac{345}{500}</span>, so
+Drug A is more effective overall.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-9">Problem 9</h2>
+<p>Let’s recall Project 1, where the concept of redemption score was
+introduced. According to this idea, the course could reward for showing
+improvement in their understanding of the earlier ideas in the course on
+the final exam. Suppose the final exam was worth 80 points. A total of
+40 points were associated with questions 2, 4, 6, 8, and 9, which were
+the redemption questions. The class’s mean score on just the redemption
+questions was 0.8, with a standard deviation of 0.2. Suppose the midterm
+exam was worth 70 points. The class’s mean score on the midterm exam was
+0.6, with a standard deviation of 0.5. Tiffany, a student in the course,
+earned a <span class="math inline">\frac{60}{80}</span> on the final
+exam, including a <span class="math inline">\frac{30}{40}</span> on the
+redemption questions, and a <span
+class="math inline">\frac{50}{70}</span> on the midterm exam.</p>
+<p><br></p>
+<h3 id="problem-9.1">Problem 9.1</h3>
+<p>Should her final exam score be replaced using the rule in Project
+1?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> Yes</p></li>
+<li><p><input type="radio" disabled="" /> No</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading9_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_1" aria-expanded="true" aria-controls="collapse9_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse9_1" class="accordion-collapse collapse collapse"
+aria-labelledby="heading9_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer:</strong> No</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-9.2">Problem 9.2</h3>
+<p>Which metric did you use in Project 1 to conclude that?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading9_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_2" aria-expanded="true" aria-controls="collapse9_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse9_2" class="accordion-collapse collapse collapse"
+aria-labelledby="heading9_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer:</strong> z-score</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-9.3">Problem 9.3</h3>
+<p>Suppose Tony Stark has implemented a decision tree classifier from
+scratch and trained it using different criteria and maximum depths in a
+10-fold cross-validation. Based on the results table below, which row
+(numbered 1 to 8) should he choose as his final model?</p>
+<center><img  src='../assets/images/sp23-final/q9.png'  width=40%>  </center>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading9_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_3" aria-expanded="true" aria-controls="collapse9_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse9_3" class="accordion-collapse collapse collapse"
+aria-labelledby="heading9_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer:</strong> 7</p>
 </div>
 </div>
 </div>
