@@ -31,6 +31,8 @@ What goes in the blanks?
     ```
 - (iv): `iloc[-1]`. Since we're sorting by number of `"Beagle"`s in increasing order, Gabriel will be at the bottom.
 
+<average>63</average>
+
 # END SOLUTION
 
 # END PROB

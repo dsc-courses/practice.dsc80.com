@@ -19,6 +19,8 @@ Some of the other columns may be stored as numbers, like `'"district"`, but they
 
 Many students answered `"owner_age"`, but the values in `"owner_age"` are age categories, not actual ages. `"district"` is incorrect because districts are nominal categories, like phone numbers, zip codes, and Social Security Numbers.
 
+<average>76</average>
+
 # END SOLUTION
 
 # END SUBPROB
@@ -39,6 +41,8 @@ must be between `21` and `30`, inclusive.
 # BEGIN SOLUTION
 
 **Answer**: It could be the case that 21-30 is the most common age category, but 33 is the single most common age. What if everyone in the 31-40 age category is aged 33, but everyone in the 21-30 age category is "spaced out"?
+
+<average>71</average>
 
 # END SOLUTION
 
@@ -68,6 +72,8 @@ Above, we presented one possible solution, but there are many:
 - `dogs.groupby("district").size().sort_values(ascending=False).index[0]`
 - `dogs.groupby("district").count()["owner_id"].sort_values(ascending=False).index[0]`
 
+<average>72</average>
+
 # END SOLUTION
 
 # END SUBPROB
@@ -96,6 +102,8 @@ query("dog_sex == 'f'")["primary_breed"]`
 
 Note that the question _didn't_ ask for unique primary breeds.
 
+<average>79</average>
+
 # END SOLUTION
 
 # END SUBPROB
@@ -123,6 +131,8 @@ apply(lambda x: 0.5 * (int(x.split("-")[0]) + int(x.split("-")[1])))
 ```
 
 However, we thought it's much easier to just add 4.5 to the first number (which is what the "answer" presented does), or even concatenate the first digit with the string "5.5" – these are all equivalent to the midpoint.
+
+<average>68</average>
 
 # END SOLUTION
 

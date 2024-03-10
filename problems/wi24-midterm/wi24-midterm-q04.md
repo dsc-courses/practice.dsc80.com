@@ -52,6 +52,8 @@ Note that here, we're comparing the **rows** of `counts`. To turn each row into 
 
 `stat5` doesn't work because it tries to subtract elements in the same distribution from one another, whereas the goal is to compare the corresponding proportions in different distributions.
 
+<average>63</average>
+
 # END SOLUTION
 
 # END SUBPROB
@@ -80,6 +82,8 @@ these two hypotheses? Select all that apply.
 **Answer**: `stat2` and `stat3`
 
 See above.
+
+<average>65</average>
 
 # END SOLUTION
 
@@ -135,6 +139,8 @@ Note that `1 - 2 * (s.iloc[0, 1] + s.iloc[1, 0])` ends up simplifying to `s.iloc
 
 When the difference in proportions (matching minus non-matching) is large, it means there are more matching pairings than non-matching pairings. Our alternative hypothesis is that there are more matching pairings, so we look at the proportion of simulated statistics that are at least as large as our observed, hence `>=`.
 
+<average>65</average>
+
 # END SOLUTION
 
 # END SUBPROB
@@ -153,6 +159,8 @@ Select the true statement below.
 **Answer**: The tests in parts 4.1 and 4.2 are permutation tests, while the test in part 4.3 is a standard hypothesis test.
 
 In 4.1 and 4.2, we were testing whether two sample distributions appeared to be drawn from the same population distribution, and in 4.3, we were testing whether a sample distribution (the distribution of matching vs. non-matching) was drawn from a specified population distribution (`[0.5, 0.5]`). Think of 4.3 like a standard coin-flipping example from Lecture 6.
+
+<average>46</average>
 
 # END SOLUTION
 

@@ -11,11 +11,8 @@
     div.columns{display: flex; gap: min(4vw, 1.5em);}
     div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    /* The extra [class] is a hack that increases specificity enough to
-       override a similar rule in reveal.js */
-    ul.task-list[class]{list-style: none;}
+    ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
-      font-size: inherit;
       width: 0.8em;
       margin: 0 0.8em 0.2em -1.6em;
       vertical-align: middle;
@@ -192,7 +189,7 @@ the rest are categorical. Which one is it?</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1_1" class="accordion-collapse collapse"
+<div id="collapse1_1" class="accordion-collapse collapse collapse"
 aria-labelledby="heading1_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -208,6 +205,11 @@ which arithmetic operations are well-defined, making it numerical.</p>
 <code>"district"</code> is incorrect because districts are nominal
 categories, like phone numbers, zip codes, and Social Security
 Numbers.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 76%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -233,7 +235,7 @@ and <code>30</code>, inclusive.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1_2" class="accordion-collapse collapse"
+<div id="collapse1_2" class="accordion-collapse collapse collapse"
 aria-labelledby="heading1_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -243,6 +245,11 @@ aria-labelledby="heading1_2" data-bs-parent="#accordionExample">
 common age category, but 33 is the single most common age. What if
 everyone in the 31-40 age category is aged 33, but everyone in the 21-30
 age category is “spaced out”?</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 71%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -259,7 +266,7 @@ most common district in <code>dogs</code>. Assume there are no ties.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1_3" class="accordion-collapse collapse"
+<div id="collapse1_3" class="accordion-collapse collapse collapse"
 aria-labelledby="heading1_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -276,6 +283,11 @@ aria-labelledby="heading1_3" data-bs-parent="#accordionExample">
 <li><code>dogs.groupby("district").size().sort_values(ascending=False).index[0]</code></li>
 <li><code>dogs.groupby("district").count()["owner_id"].sort_values(ascending=False).index[0]</code></li>
 </ul>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 72%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -292,7 +304,7 @@ Series containing the primary breeds of all female dogs.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1_4" class="accordion-collapse collapse"
+<div id="collapse1_4" class="accordion-collapse collapse collapse"
 aria-labelledby="heading1_4" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -306,6 +318,11 @@ aria-labelledby="heading1_4" data-bs-parent="#accordionExample">
 <p>``<code>py query("dog_sex == 'f'")["primary_breed"]</code></p>
 <p>Note that the question <em>didn’t</em> ask for unique primary
 breeds.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 79%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -325,7 +342,7 @@ the <code>def</code> keyword.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1_5" class="accordion-collapse collapse"
+<div id="collapse1_5" class="accordion-collapse collapse collapse"
 aria-labelledby="heading1_5" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -344,6 +361,11 @@ two numbers, which is correct:</p>
 number (which is what the “answer” presented does), or even concatenate
 the first digit with the string “5.5” – these are all equivalent to the
 midpoint.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 68%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -371,7 +393,7 @@ to the district that Gabriel lives in.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse2" class="accordion-collapse collapse"
+<div id="collapse2" class="accordion-collapse collapse collapse"
 aria-labelledby="heading2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -399,6 +421,11 @@ return the number of elements in the Series that are the string
 <code>"Beagle"</code>s in increasing order, Gabriel will be at the
 bottom.</li>
 </ul>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 63%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -419,7 +446,7 @@ both districts? Give your answer as a positive integer.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse3_1" class="accordion-collapse collapse"
+<div id="collapse3_1" class="accordion-collapse collapse collapse"
 aria-labelledby="heading3_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -429,6 +456,11 @@ aria-labelledby="heading3_1" data-bs-parent="#accordionExample">
 <p>This is a weighted mean:</p>
 <p><span class="math display">\frac{25 \cdot 3 + 45 \cdot 1}{3 + 1} =
 \frac{120}{4} = 30</span></p>
+<hr/>
+<h5>Difficulty: ⭐️</h5>
+<p>
+<p>The average score on this problem was 91%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -449,7 +481,7 @@ possible.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse3_2" class="accordion-collapse collapse"
+<div id="collapse3_2" class="accordion-collapse collapse collapse"
 aria-labelledby="heading3_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -470,6 +502,11 @@ us to match the mean weight, then, is the smallest integer greater than
 y} &amp;= 30 \\
 \implies 40 + 31y &amp;= 60 + 30y \\ \implies y &amp;= 20
 \end{align*}</span></p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 51%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -502,7 +539,7 @@ mentioned above occur at the same time?</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse3_3" class="accordion-collapse collapse"
+<div id="collapse3_3" class="accordion-collapse collapse collapse"
 aria-labelledby="heading3_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -516,6 +553,11 @@ district 2 dogs has to be somewhere between 31 and 45, which no matter
 what, is going to be bigger than the mean weight of all district 1 dogs,
 which is 23. This means that we can’t have Simpson’s paradox both
 ways.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 59%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -566,7 +608,7 @@ these two hypotheses? Select all that apply.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse4_1" class="accordion-collapse collapse"
+<div id="collapse4_1" class="accordion-collapse collapse collapse"
 aria-labelledby="heading4_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -588,6 +630,11 @@ categories!</p>
 <p><code>stat5</code> doesn’t work because it tries to subtract elements
 in the same distribution from one another, whereas the goal is to
 compare the corresponding proportions in different distributions.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 63%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -620,7 +667,7 @@ for these two hypotheses? Select all that apply.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse4_2" class="accordion-collapse collapse"
+<div id="collapse4_2" class="accordion-collapse collapse collapse"
 aria-labelledby="heading4_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -629,6 +676,11 @@ aria-labelledby="heading4_2" data-bs-parent="#accordionExample">
 <p><strong>Answer</strong>: <code>stat2</code> and
 <code>stat3</code></p>
 <p>See above.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 65%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -680,7 +732,7 @@ Which of the following correctly computes the p-value for our test?</li>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse4_3" class="accordion-collapse collapse"
+<div id="collapse4_3" class="accordion-collapse collapse collapse"
 aria-labelledby="heading4_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -711,6 +763,11 @@ large, it means there are more matching pairings than non-matching
 pairings. Our alternative hypothesis is that there are more matching
 pairings, so we look at the proportion of simulated statistics that are
 at least as large as our observed, hence <code>&gt;=</code>.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 65%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -734,7 +791,7 @@ in part 4.3 is a standard hypothesis test.</p></li>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse4_4" class="accordion-collapse collapse"
+<div id="collapse4_4" class="accordion-collapse collapse collapse"
 aria-labelledby="heading4_4" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -749,6 +806,11 @@ we were testing whether a sample distribution (the distribution of
 matching vs. non-matching) was drawn from a specified population
 distribution (<code>[0.5, 0.5]</code>). Think of 4.3 like a standard
 coin-flipping example from Lecture 6.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 46%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -782,7 +844,7 @@ Give your answer as a positive integer.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse5_1" class="accordion-collapse collapse"
+<div id="collapse5_1" class="accordion-collapse collapse collapse"
 aria-labelledby="heading5_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -813,7 +875,7 @@ positive integer.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse5_2" class="accordion-collapse collapse"
+<div id="collapse5_2" class="accordion-collapse collapse collapse"
 aria-labelledby="heading5_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -853,7 +915,7 @@ that appear 3 times. So, the total number of rows in this DataFrame is
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse6_1" class="accordion-collapse collapse"
+<div id="collapse6_1" class="accordion-collapse collapse collapse"
 aria-labelledby="heading6_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -867,6 +929,11 @@ secondary breed. There is nothing you could “fill in” here.</p>
 we’ll give those answers full credit too. For instance, one could argue
 that certain breeds are less likely to be mixed with other breeds, so
 the missingness is dependent on primary breed.</p>
+<hr/>
+<h5>Difficulty: ⭐️</h5>
+<p>
+<p>The average score on this problem was 92%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -901,7 +968,7 @@ class:</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse6_2" class="accordion-collapse collapse"
+<div id="collapse6_2" class="accordion-collapse collapse collapse"
 aria-labelledby="heading6_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -911,6 +978,11 @@ aria-labelledby="heading6_2" data-bs-parent="#accordionExample">
 <p>The distributions of breed classes look quite different when age is
 missing vs. when age is not missing. Hence, the missingness of ages
 likely depends on breed classes.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 86%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -926,7 +998,7 @@ assess whether the missingness of ages depends on breed classes.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse6_3" class="accordion-collapse collapse"
+<div id="collapse6_3" class="accordion-collapse collapse collapse"
 aria-labelledby="heading6_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -938,6 +1010,11 @@ categorical. The tool we have for comparing categorical distributions
 (in this case, the distribution of breed class when age is missing
 vs. the distribution of breed class when age is not missing) is the
 TVD.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 47%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -964,7 +1041,7 @@ and <span class="math inline">T</span>?</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse6_4" class="accordion-collapse collapse"
+<div id="collapse6_4" class="accordion-collapse collapse collapse"
 aria-labelledby="heading6_4" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -977,6 +1054,11 @@ have way fewer terrier values than in the ages we don’t get to observe.
 Terriers are older on average than the other breed classes. This means
 we’re missing values that are larger, so when we take the average of the
 values we have access to, it’ll be lower than the true mean.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 35%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -999,7 +1081,7 @@ class="sourceCode py"><code class="sourceCode python"><span id="cb10-1"><a href=
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse6_5" class="accordion-collapse collapse"
+<div id="collapse6_5" class="accordion-collapse collapse collapse"
 aria-labelledby="heading6_5" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1007,6 +1089,11 @@ aria-labelledby="heading6_5" data-bs-parent="#accordionExample">
 </header>
 <p><strong>Answer</strong>: This is filling in missing ages in each
 breed class with the most common observed age in that breed class</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 77%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -1032,7 +1119,7 @@ values would the four null values in the <code>"age"</code> column of
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse6_6" class="accordion-collapse collapse"
+<div id="collapse6_6" class="accordion-collapse collapse collapse"
 aria-labelledby="heading6_6" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1049,6 +1136,11 @@ breed class is 5.</li>
 <li>row 7: 7. The most common observed age for the
 <code>"Retriever"</code> breed class is 7.</li>
 </ul>
+<hr/>
+<h5>Difficulty: ⭐️</h5>
+<p>
+<p>The average score on this problem was 90%.</p>
+</p>
 </div>
 </div>
 </div>
