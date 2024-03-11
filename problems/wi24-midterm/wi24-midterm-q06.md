@@ -18,6 +18,8 @@ The original answer we had in mind was missing by design. Secondary breeds are m
 
 However, you can make reasonable arguments for both MAR and NMAR, so we'll give those answers full credit too. For instance, one could argue that certain breeds are less likely to be mixed with other breeds, so the missingness is dependent on primary breed.
 
+<average>92</average>
+
 # END SOLUTION
 
 # END SUBPROB
@@ -53,6 +55,8 @@ What is the most likely missingness mechanism of ages?
 
 The distributions of breed classes look quite different when age is missing vs. when age is not missing. Hence, the missingness of ages likely depends on breed classes.
 
+<average>86</average>
+
 # END SOLUTION
 
 # END SUBPROB
@@ -67,6 +71,8 @@ assess whether the missingness of ages depends on breed classes.
 **Answer**: Total variation distance
 
 Breed class is a categorical variable, and hence its distribution is categorical. The tool we have for comparing categorical distributions (in this case, the distribution of breed class when age is missing vs. the distribution of breed class when age is not missing) is the TVD.
+
+<average>47</average>
 
 # END SOLUTION
 
@@ -91,6 +97,8 @@ What is the relationship between $O$ and $T$?
 
 In the ages we get to observe (that is, when age is not missing), we have way fewer terrier values than in the ages we don't get to observe. Terriers are older on average than the other breed classes. This means we're missing values that are larger, so when we take the average of the values we have access to, it'll be lower than the true mean.
 
+<average>35</average>
+
 # END SOLUTION
 
 # END SUBPROB
@@ -112,6 +120,8 @@ In one sentence, describe this imputation strategy.
 # BEGIN SOLUTION
 
 **Answer**: This is filling in missing ages in each breed class with the most common observed age in that breed class
+
+<average>77</average>
 
 # END SOLUTION
 
@@ -140,6 +150,7 @@ null values in the `"age"` column of `small_dogs` be replaced with?
 - row 4: 12. The most common observed age for the `"Terrier"` breed class is 12.
 - row 7: 7. The most common observed age for the `"Retriever"` breed class is 7.
 
+<average>90</average>
 
 # END SOLUTION
 
