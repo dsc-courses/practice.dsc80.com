@@ -14,6 +14,17 @@ Should her final exam score be replaced using the rule in Project 1?
 # BEGIN SOLN
 **Answer:** No
 
+Recall that z-score = $\frac{score - mean}{standard\ deviation}$
+
+Tiffany's raw redemption score: $\frac{30}{40}$
+Tiffany's redemption z-score:  $\frac{\frac{30}{40} - 0.8}{0.2} = -0.25$ 
+
+Tiffany's raw midterm score: $\frac{50}{70}$
+Tiffany's midterm z-score:  $\frac{\frac{50}{70} - 0.6}{0.5} ~ 0.23$ 
+
+Since Tiffany's redemption z-score is lower than her redemption z-score, she 
+should not get her final exam score replaced.
+
 # END SOLN
 
 # END SUBPROB
@@ -35,6 +46,13 @@ Suppose Tony Stark has implemented a decision tree classifier from scratch and t
 
 # BEGIN SOLN
 **Answer:** 7
+
+The decision for the best selection of model hyperparameters in a cross validation 
+is based on the how well the model performs on the validation data. the accuracy of the 
+models on the test data in irrelevant, since that can only be found after a model is selected.
+
+The model with the best performance on the validation data (highest accuracy on validation data), 
+corresponds to the model indicated in row 7.
 
 # END SOLN
 

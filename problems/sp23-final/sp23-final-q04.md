@@ -59,6 +59,10 @@ Which is the equivalent Document Object Model (DOM) tree of this HTML file?
 # BEGIN SOLN
 **Answer:** Tree D
 
+Following tree D in the image from top to bottom, we can follow the nesting
+of tags in the HTML file to verify that the DOM tree D matches the syntax of 
+the HTML file.
+
 # END SOLN
 
 # END SUBPROB
@@ -94,6 +98,16 @@ Code Snippet D
 # BEGIN SOLN
 **Answer:** Code Snippet B
 
+Code Snippet B is the only option that finds the tag `p` with the attribute 
+`class` being equal to `instock availability` and then getting the text contained 
+in that tag, which is equal to `‘instock availability’`.
+
+Option A will cause an error because of `.get('icon-ok')` since `'icon-ok'` is
+not the name of the attribute, but is instead the value of the `class` attribute.
+
+Option C and D will both get the text of the `i` tag, which is `''` and is 
+therefore incorrect.
+
 # END SOLN
 
 # END SUBPROB
@@ -121,6 +135,14 @@ None of the above
 
 # BEGIN SOLN
 **Answer:** Code Snippet C
+
+Code Snippet C finds the first occurence of the tag `p`, gets the contents of 
+its `class` attribute as a list, and returns the last element, which is the rating `'Three'` as desired.
+
+Option A will error because `.get('class')` returns `['product_pod']` and strip cannot be used on a list, 
+but also the content of the list does not bring us closer to the desired result.
+
+Option B gets the text contained within the first `p` tag as a list, which is `['']`.
 
 # END SOLN
 

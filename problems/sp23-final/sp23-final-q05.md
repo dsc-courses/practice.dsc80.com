@@ -11,6 +11,8 @@ Which are examples of nested data formats? Select all that apply.
 
 # BEGIN SOLN
 **Answer:** XML, JSON, HTML
+
+CSV is not a nested data format, but is in a flat format, representing data in a 2d structure.
   
 # END SOLN
 
@@ -31,6 +33,10 @@ Which equation describes the cosine distance metric?
 
 # BEGIN SOLN
 **Answer:** $1 - cos(\theta)$
+
+Cosine similarity ranges from 0 to 1, and therefore cosine dissimilarity (or distance)
+must be the difference between 1 and the cosine similarity (consider that cosine similarity of 
+0 should mean distance of 1, and vice versa). Therefore cosine distance is $1 - cos(\theta)$.
 
 # END SOLN
 
@@ -66,7 +72,18 @@ Given the above information, which of the following statements is true?
 
 # BEGIN SOLN
 **Answer:** $X > 0$ & $Y = 0$
-  
+
+To find X: \
+TF = $\frac{1}{10}$ \
+IDF = $log_2\frac{4}{3}$ \
+TF-IDF ~ 0.415 \
+So X > 0  
+
+To find Y: \
+TF = $\frac{1}{10}$ \
+IDF = $log_2\frac{4}{4}$ \
+TF-IDF = 0 \
+So Y = 0  
 
 # END SOLN
 
@@ -104,6 +121,30 @@ Which expression will achieve the highest similarity with
 # BEGIN SOLN
 **Answer:** 'buffalo giraffe'
 
+Bag of words for `sentences.iloc[0]` ('buffalo monkey giraffe buffalo buffalo buffalo') is 
+(4, 1, 1, 0)
+
+Bag of words and products for the expressions are: 
+
+'buffalo giraffe': \
+bow: (1, 0, 1, 0) \
+product: 5
+
+'giraffe monkey': \
+bow: (0, 1, 1, 0) \
+product: 2
+
+'deer monkey': \
+bow: (0, 1, 0, 1) \
+product: 1
+
+'buffalo': \
+bow: (1, 0, 0, 0) \
+product: 4
+
+So 'buffalo giraffe' maximizes the similarity metric.
+
+
 # END SOLN
 
 # END SUBPROB
@@ -122,6 +163,29 @@ Which expression will achieve the highest similarity with
 
 # BEGIN SOLN
 **Answer:** 'buffalo'
+
+Bag of words for `sentences.iloc[0]` ('buffalo monkey giraffe buffalo buffalo buffalo') is 
+(4, 1, 1, 0), so the norm is $\sqrt{18} = 3\sqrt{2}$
+
+Calculating the cosine similarity for each expression:
+
+'buffalo giraffe': \
+bow: (1, 0, 1, 0) \
+similarity: $\frac{5}{6}$
+
+'giraffe monkey': \
+bow: (0, 1, 1, 0) \
+similarity: $\frac{1}{3}$
+
+'deer monkey': \
+bow: (0, 1, 0, 1) \
+similarity: $\frac{1}{6}$
+
+'buffalo': \
+bow: (1, 0, 0, 0) \
+similarity: $\frac{2\sqrt{2}}{3}$
+
+So 'buffalo' maximizes the similarity metric.
 
 # END SOLN
 

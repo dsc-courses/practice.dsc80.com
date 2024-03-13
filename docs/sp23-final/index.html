@@ -17,7 +17,6 @@
       margin: 0 0.8em 0.2em -1.6em;
       vertical-align: middle;
     }
-    /* CSS for syntax highlighting */
     pre > code.sourceCode { white-space: pre; position: relative; }
     pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -161,6 +160,15 @@ aria-labelledby="heading1_1" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer:</strong> C - <code>([a-z]*)\scat\b</code></p>
+<p>This regular expression selects the sections of matches that consist
+of zero or more lowercase letters that are followed by a space and then
+followed by cat as a whole word (not with cat as a substring of a larger
+word), essentially selecting words followed by a space and the word cat.
+Thus this option correctly selects <code>['my', 'a']</code>.</p>
+<p>Option 1 would select <code>['', '']</code><br/>
+Option 2 would select <code>['my cat', 'a cat']</code><br/>
+Option 4 would select <code>['my cat', 'a cat']</code><br/>
+</p>
 </div>
 </div>
 </div>
@@ -190,6 +198,18 @@ aria-labelledby="heading1_2" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer:</strong> C - <code>[a-z]+cat[a-z]+</code></p>
+<p>This regular expression selects matches where one or more lowercase
+letters are followed by the substring cat, and then followed by one or
+more lowercase letters, essentially selecting words with cat as a
+substring but not a prefix. Thus this option correctly selects
+<code>['concatenate']</code>.</p>
+<p>Option 1 would select
+<code>['my cat is hungry, concatenate!, catastrophe! What a cat']</code><br/>
+Option 2 would select
+<code>['cat', 'concatenate', 'catastrophe', 'cat']</code><br/>
+Option 4 would select
+<code>['cat', 'concatenate', 'catastrophe', 'cat']</code><br/>
+</p>
 </div>
 </div>
 </div>
@@ -219,6 +239,17 @@ aria-labelledby="heading1_3" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer:</strong> C - <code>\b[a-z]*cat[a-z]*\b</code></p>
+<p>This regular expression selects matches where a word boundary is
+followed by 0 or more lowercase letters, cat, and then follwoed by 0 or
+more lowercase letters followed by a word coundary, essentially
+selecting words containing cat. Thus this option correctly selects
+<code>['cat', 'concatenate', 'catastrophe', 'cat']</code>.</p>
+<p>Option 1 would select
+<code>['my cat is hungry, concatenate!, catastrophe! What a cat!']</code><br/>
+Option 2 would select
+<code>['my cat is hungry, concatenate!, catastrophe! What a cat!']</code><br/>
+Option 4 would select <code>['concatenate']</code><br/>
+</p>
 </div>
 </div>
 </div>
@@ -259,6 +290,13 @@ aria-labelledby="heading2_1" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer:</strong> B</p>
+<p>Remember that precision measures the predicted positive values that
+were actually positive, while recall measures actually positive values
+that were predicted as being positive. The highest threshold is 1, and
+we would expect that when the model predicts 1 the email is actually
+likely Spam, but that the model does not predict 1 for every Spam email.
+This means that at the highest threshold, precision is almost perfect
+while recall is extremely low, corresponding to point B on the plot.</p>
 </div>
 </div>
 </div>
@@ -287,6 +325,24 @@ aria-labelledby="heading2_2" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer:</strong> X = 15, Y = 10</p>
+<p>We are given that <span class="math inline">FN = 5</span> and <span class="math inline">TN = 50</span><br/>
+Remember that <span class="math inline">Precision =
+\frac{TP}{(TP+FP)}</span> and <span class="math inline">Recall =
+\frac{TP}{(TP+FN)}</span></p>
+<p>To calculate TP (X) use the formula for recall:<br/>
+<span class="math inline">0.75 = \frac{TP}{(TP+5)}</span><br/>
+<span class="math inline">0.75 \cdot (TP+5)* = TP</span><br/>
+<span class="math inline">0.75 \cdot TP+ 5 \cdot 0.75 = TP</span><br/>
+<span class="math inline">0.25 \cdot TP = 3.75</span><br/>
+<span class="math inline">TP = 15</span><br/>
+Therefore X = 15</p>
+<p>To calculate FP (Y) use the formula for precision:<br/>
+<span class="math inline">0.6 = \frac{15}{(15+FP)}</span><br/>
+<span class="math inline">0.6 \cdot (15+FP)* = 15</span><br/>
+<span class="math inline">0.6 \cdot 15 + 0.6 \cdot FP = 15</span><br/>
+<span class="math inline">0.6 \cdot FP = 6</span><br/>
+<span class="math inline">FP = 10</span><br/>
+Therefore Y = 10</p>
 </div>
 </div>
 </div>
@@ -318,6 +374,13 @@ aria-labelledby="heading2_3" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer:</strong> Accuracy</p>
+<p>Because the the data set is imbalanced (80% of the data belongs to
+one class), accuracy is not a suitable metric to evaluate this
+classification model. This is because accuracy does not differentiate
+between if the accuracy was achieved on predictions made for the
+majority or the minority class, and it is highly likely in a biased
+dataset that a high accuracy is achieved based on making correct
+predictions solely for the majority, but not the minority class.</p>
 </div>
 </div>
 </div>
@@ -345,9 +408,12 @@ aria-labelledby="heading2_4" data-bs-parent="#accordionExample">
 </header>
 <p><strong>Answer:</strong> High recall</p>
 <p>High recall is relatively more important for medical tests generally.
-A high recall ensures that you are capturing the people who have the
-conditions. If your system fails to detect the conditions, the condition
-goes undiagnosed and unaddressed.</p>
+High recall minimizes FN, while high precision minimizes FP. A high
+recall ensures that you are capturing the people who have the condition,
+and it is usually worse in these settings to think someone does not have
+a condition when they actually do, than the other way around. If your
+system fails to detect the condition, the condition goes undiagnosed and
+unaddressed, so it is more important to minimize FN.</p>
 </div>
 </div>
 </div>
@@ -374,8 +440,10 @@ aria-labelledby="heading2_5" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer:</strong> High precision</p>
-<p>High precision is relatively more important since you don’t want to
-punish someone who did not commit the crime.</p>
+<p>High precision is relatively more important since you do not want to
+punish someone who did not commit the crime (want to minimize FP). See
+the previous explanation for more details about the differences between
+high recall and high precision.</p>
 </div>
 </div>
 </div>
@@ -405,9 +473,10 @@ aria-labelledby="heading2_6" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer:</strong> False positive</p>
-<p>Since the email was classified by the spam detector as spam, it is
-“positive”. However, since it was not actually spam, it’s a “false”
-positive.</p>
+<p>For a spam detector, detetcted an email as Spam is equivalnet to
+assigning it as belonging to the positive class. Since the email was
+classified by the spam detector as spam, it is positive. However, since
+it was not actually spam, it is a false positive.</p>
 </div>
 </div>
 </div>
@@ -456,6 +525,14 @@ aria-labelledby="heading3_1" data-bs-parent="#accordionExample">
 </header>
 <p><strong>Answer:</strong> B - The validation RMSE of Fold 5 is the
 highest.</p>
+<p>To answer this question, we can use the plot showing the actual data
+in each fold, along with the fact that we are fitting a linear
+regression model. We can see that a line fitted on all the folds would
+likely fit datapoints from the fifth fold worse than points from the
+first four folds. This is because the first four folds appear to fall
+along a relatively linear pattern amongst themselves, compared to when
+the fifth fold is included in our considerations. Thus the validation
+RMSE would be highest for the fifth fold.</p>
 </div>
 </div>
 </div>
@@ -503,6 +580,14 @@ aria-labelledby="heading3_2" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer:</strong> 800</p>
+<p>The code specifies 10 options for <code>max_depth</code>, 5 options
+for <code>max_depth</code>, 2 options for <code>criterion</code>, and
+the cross validation parameter in GridSearchCV is set to 8. Therefore
+the total number of trained models is equal to the total number of
+combinations of <code>max_depth</code>, <code>max_depth</code>, and
+<code>criterion</code>, times 8 for the number of cross validation
+folds:</p>
+<p><span class="math inline">10 \cdot 5 \cdot 2 \cdot 8 = 800</span></p>
 </div>
 </div>
 </div>
@@ -534,6 +619,13 @@ aria-labelledby="heading3_3" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer:</strong> 100</p>
+<p>Taking the mean test score from all 8 cross validation folds for the
+models gives 1 value for each combination of <code>max_depth</code>,
+<code>max_depth</code>, and <code>criterion</code>. Therefore the code
+will evaluate to the total number of combinations of
+<code>max_depth</code>, <code>max_depth</code>, and
+<code>criterion</code>:</p>
+<p><span class="math inline">10 \cdot 5 \cdot 2 = 100</span></p>
 </div>
 </div>
 </div>
@@ -609,6 +701,9 @@ aria-labelledby="heading4_1" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer:</strong> Tree D</p>
+<p>Following tree D in the image from top to bottom, we can follow the
+nesting of tags in the HTML file to verify that the DOM tree D matches
+the syntax of the HTML file.</p>
 </div>
 </div>
 </div>
@@ -646,6 +741,15 @@ aria-labelledby="heading4_2" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer:</strong> Code Snippet B</p>
+<p>Code Snippet B is the only option that finds the tag <code>p</code>
+with the attribute <code>class</code> being equal to
+<code>instock availability</code> and then getting the text contained in
+that tag, which is equal to <code>‘instock availability’</code>.</p>
+<p>Option A will cause an error because of <code>.get('icon-ok')</code>
+since <code>'icon-ok'</code> is not the name of the attribute, but is
+instead the value of the <code>class</code> attribute.</p>
+<p>Option C and D will both get the text of the <code>i</code> tag,
+which is <code>''</code> and is therefore incorrect.</p>
 </div>
 </div>
 </div>
@@ -679,6 +783,16 @@ aria-labelledby="heading4_3" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer:</strong> Code Snippet C</p>
+<p>Code Snippet C finds the first occurence of the tag <code>p</code>,
+gets the contents of its <code>class</code> attribute as a list, and
+returns the last element, which is the rating <code>'Three'</code> as
+desired.</p>
+<p>Option A will error because <code>.get('class')</code> returns
+<code>['product_pod']</code> and strip cannot be used on a list, but
+also the content of the list does not bring us closer to the desired
+result.</p>
+<p>Option B gets the text contained within the first <code>p</code> tag
+as a list, which is <code>['']</code>.</p>
 </div>
 </div>
 </div>
@@ -709,6 +823,8 @@ aria-labelledby="heading5_1" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer:</strong> XML, JSON, HTML</p>
+<p>CSV is not a nested data format, but is in a flat format,
+representing data in a 2d structure.</p>
 </div>
 </div>
 </div>
@@ -744,6 +860,10 @@ aria-labelledby="heading5_2" data-bs-parent="#accordionExample">
 </header>
 <p><strong>Answer:</strong> <span class="math inline">1 -
 cos(\theta)</span></p>
+<p>Cosine similarity ranges from 0 to 1, and therefore cosine
+dissimilarity (or distance) must be the difference between 1 and the
+cosine similarity (consider that cosine similarity of 0 should mean
+distance of 1, and vice versa). Therefore cosine distance is <span class="math inline">1 - cos(\theta)</span>.</p>
 </div>
 </div>
 </div>
@@ -785,6 +905,16 @@ aria-labelledby="heading5_3" data-bs-parent="#accordionExample">
 </header>
 <p><strong>Answer:</strong> <span class="math inline">X &gt; 0</span>
 &amp; <span class="math inline">Y = 0</span></p>
+<p>To find X:<br/>
+TF = <span class="math inline">\frac{1}{10}</span><br/>
+IDF = <span class="math inline">log_2\frac{4}{3}</span><br/>
+TF-IDF ~ 0.415<br/>
+So X &gt; 0</p>
+<p>To find Y:<br/>
+TF = <span class="math inline">\frac{1}{10}</span><br/>
+IDF = <span class="math inline">log_2\frac{4}{4}</span><br/>
+TF-IDF = 0<br/>
+So Y = 0</p>
 </div>
 </div>
 </div>
@@ -830,6 +960,22 @@ aria-labelledby="heading5_4" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer:</strong> ‘buffalo giraffe’</p>
+<p>Bag of words for <code>sentences.iloc[0]</code> (‘buffalo monkey
+giraffe buffalo buffalo buffalo’) is (4, 1, 1, 0)</p>
+<p>Bag of words and products for the expressions are:</p>
+<p>‘buffalo giraffe’:<br/>
+bow: (1, 0, 1, 0)<br/>
+product: 5</p>
+<p>‘giraffe monkey’:<br/>
+bow: (0, 1, 1, 0)<br/>
+product: 2</p>
+<p>‘deer monkey’:<br/>
+bow: (0, 1, 0, 1)<br/>
+product: 1</p>
+<p>‘buffalo’:<br/>
+bow: (1, 0, 0, 0)<br/>
+product: 4</p>
+<p>So ‘buffalo giraffe’ maximizes the similarity metric.</p>
 </div>
 </div>
 </div>
@@ -862,6 +1008,22 @@ aria-labelledby="heading5_5" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer:</strong> ‘buffalo’</p>
+<p>Bag of words for <code>sentences.iloc[0]</code> (‘buffalo monkey
+giraffe buffalo buffalo buffalo’) is (4, 1, 1, 0), so the norm is <span class="math inline">\sqrt{18} = 3\sqrt{2}</span></p>
+<p>Calculating the cosine similarity for each expression:</p>
+<p>‘buffalo giraffe’:<br/>
+bow: (1, 0, 1, 0)<br/>
+similarity: <span class="math inline">\frac{5}{6}</span></p>
+<p>‘giraffe monkey’:<br/>
+bow: (0, 1, 1, 0)<br/>
+similarity: <span class="math inline">\frac{1}{3}</span></p>
+<p>‘deer monkey’:<br/>
+bow: (0, 1, 0, 1)<br/>
+similarity: <span class="math inline">\frac{1}{6}</span></p>
+<p>‘buffalo’:<br/>
+bow: (1, 0, 0, 0)<br/>
+similarity: <span class="math inline">\frac{2\sqrt{2}}{3}</span></p>
+<p>So ‘buffalo’ maximizes the similarity metric.</p>
 </div>
 </div>
 </div>
@@ -929,6 +1091,10 @@ aria-labelledby="heading6_1" data-bs-parent="#accordionExample">
 <p><strong>Answer:</strong> C - The signed difference between the mean
 burned area of Non-July-Aug-Sep months, minus the mean burned area of
 July-Aug-Sep months.</p>
+<p>Since the two distributions here are numerical (burned areas is
+numerical), and the shapes of the distributions are similar (based on
+the the probability density plot), we should use the signed difference
+in means as the test statistic.</p>
 </div>
 </div>
 </div>
@@ -1041,6 +1207,13 @@ aria-labelledby="heading6_4" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer:</strong> Options 2 and 3.</p>
+<p>Because the variable <code>Td</code> is derived form a linear
+combination of the features <code>temp</code> and <code>RH</code>, the
+second model will have multicollinearity. This means that although the
+performance of the second model will be the same as that of the first,
+the coefficients of the second model cannot be interpreted, unlike in
+the first model.</p>
+<p>Therefore the correct answers are options 2 and 3.</p>
 </div>
 </div>
 </div>
@@ -1075,6 +1248,12 @@ aria-labelledby="heading7_1" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer:</strong> Options 1 and 4</p>
+<p>Options 1 and 4 have the same behavior, in that they create pivot
+tables that display the sum of revenue for each product in each year
+(<code>index</code> and <code>column</code> are interchangeable).
+Options 3 and 4 are incorrect because they use columns such as
+<code>Region</code> and <code>Month</code> that are not necessary to
+generate the information that is desired in the pivot table.</p>
 </div>
 </div>
 </div>
@@ -1104,6 +1283,18 @@ aria-labelledby="heading7_2" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer: </strong> 20</p>
+<p>The values in the index of <code>timeuse1</code> that are not in
+<code>timeuse2</code> are Estonia, Spain, France, and Italy. These 4
+indices contribute to <span class="math inline">4 \cdot 3 = 12</span>
+NaN values in the concatenated DataFrame, since <code>timeuse2</code>
+has 3 non-index columns.</p>
+<p>The values in the index of <code>timeuse2</code> that are not in
+<code>timeuse1</code> are Slovenia, Finland, United Kingdom, and Norway.
+These 4 indices contribute to <span class="math inline">4 \cdot 2 =
+8</span> NaN values in the concatenated DataFrame, since
+<code>timeuse1</code> has 2 non-index columns.</p>
+<p>So the total number of NaN values in the concatenated DataFrame is
+<span class="math inline">12 + 8 = 20</span></p>
 </div>
 </div>
 </div>
@@ -1130,6 +1321,11 @@ aria-labelledby="heading7_3" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer:</strong> 0</p>
+<p>The resulting DataFrame would have no NaN values. This is because the
+merged DataFrame used an inner merge, and would only contain rows with
+the same country name in both DataFrames, contributing non Nans, and
+none of the rows in either unmerged DataFrame starts off with NaN
+values.</p>
 </div>
 </div>
 </div>
@@ -1154,6 +1350,10 @@ aria-labelledby="heading7_4" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer:</strong> 14</p>
+<p>Using an outer join results in a row for each unique country name
+across both datasets. This number is equal to 14, so the code above,
+which returns the number of rows in the outer joined DataFrame, would
+evaluate to 14.</p>
 </div>
 </div>
 </div>
@@ -1199,8 +1399,10 @@ aria-labelledby="heading8_1" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer:</strong> Drug A</p>
-<p><span class="math inline">\frac{190}{250} &gt;
-\frac{345}{500}</span></p>
+<p>The overall success rate of drug A is <span class="math inline">\frac{120+70}{150+100}</span> = <span class="math inline">\frac{190}{250}</span><br/>
+The overall success rate of drug B is <span class="math inline">\frac{75+60}{300+200}</span> = <span class="math inline">\frac{345}{500}</span></p>
+<p><span class="math inline">\frac{190}{250} &gt; \frac{345}{500}</span>
+so Drug A is likely more effective overall.</p>
 </div>
 </div>
 </div>
@@ -1222,7 +1424,7 @@ aria-labelledby="heading8_2" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer:</strong> A trick question! Although the results may
-seem like an example of Simpson’s Paradox, it is not because the trend
+seem like an example of Simpson’s Paradox, it is not, because the trend
 within each group is consistent (A is always better) and A is more
 effective overall. Since we’re asked to determine which drug is more
 effective <strong>overall</strong>, we should calculate the success rate
@@ -1270,6 +1472,16 @@ aria-labelledby="heading9_1" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer:</strong> No</p>
+<p>Recall that z-score = <span class="math inline">\frac{score -
+mean}{standard\ deviation}</span></p>
+<p>Tiffany’s raw redemption score: <span class="math inline">\frac{30}{40}</span> Tiffany’s redemption z-score:
+<span class="math inline">\frac{\frac{30}{40} - 0.8}{0.2} =
+-0.25</span></p>
+<p>Tiffany’s raw midterm score: <span class="math inline">\frac{50}{70}</span> Tiffany’s midterm z-score:
+<span class="math inline">\frac{\frac{50}{70} - 0.6}{0.5} ~
+0.23</span></p>
+<p>Since Tiffany’s redemption z-score is lower than her redemption
+z-score, she should not get her final exam score replaced.</p>
 </div>
 </div>
 </div>
@@ -1316,6 +1528,13 @@ aria-labelledby="heading9_3" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer:</strong> 7</p>
+<p>The decision for the best selection of model hyperparameters in a
+cross validation is based on the how well the model performs on the
+validation data. the accuracy of the models on the test data in
+irrelevant, since that can only be found after a model is selected.</p>
+<p>The model with the best performance on the validation data (highest
+accuracy on validation data), corresponds to the model indicated in row
+7.</p>
 </div>
 </div>
 </div>

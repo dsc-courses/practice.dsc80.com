@@ -28,6 +28,14 @@ Based on the information in `errs_dataframe`, which one is a true statement?
 # BEGIN SOLN
 **Answer:** B - The validation RMSE of Fold 5 is the highest.
 
+To answer this question, we can use the plot showing the actual data in each fold, 
+along with the fact that we are fitting a linear regression model. We can see 
+that a line fitted on all the folds would likely fit datapoints from the fifth 
+fold worse than points from the first four folds. This is because the first four 
+folds appear to fall along a relatively linear pattern amongst themselves, compared 
+to when the fifth fold is included in our considerations. Thus the validation 
+RMSE would be highest for the fifth fold.
+
 # END SOLN
 
 # END SUBPROB
@@ -65,6 +73,14 @@ In total, how many decision tree models were trained under the hood for this hyp
 # BEGIN SOLN
 **Answer:** 800
 
+The code specifies 10 options for `max_depth`, 5 options for `max_depth`, 
+2 options for `criterion`, and the cross validation parameter in GridSearchCV is 
+set to 8. Therefore the total number of trained models is equal to the total
+number of combinations of `max_depth`, `max_depth`, and `criterion`, times 8 for 
+the number of cross validation folds:
+
+$10 \cdot 5  \cdot 2  \cdot 8 = 800$
+
 # END SOLN
 
 # END SUBPROB
@@ -86,6 +102,13 @@ searcher.cv_results_['mean_test_score'].shape[0]
 
 # BEGIN SOLN
 **Answer:** 100
+
+Taking the mean test score from all 8 cross validation folds for the models 
+gives 1 value for each combination of `max_depth`, `max_depth`, and `criterion`. 
+Therefore the code will evaluate to the total number of combinations of `max_depth`, 
+`max_depth`, and `criterion`:
+
+$10 \cdot 5  \cdot 2  = 100$
 
 # END SOLN
 

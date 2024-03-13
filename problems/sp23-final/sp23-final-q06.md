@@ -36,6 +36,9 @@ Which one of the following is the best test statistic in this case?
 # BEGIN SOLN
 **Answer:** C - The signed difference between the mean burned area of Non-July-Aug-Sep months, minus the mean burned area of July-Aug-Sep months.
 
+Since the two distributions here are numerical (burned areas is numerical), and the shapes of the distributions 
+are similar (based on the the probability density plot), we should use the signed difference in means as the test statistic.
+
 # END SOLN
 
 # END SUBPROB
@@ -87,6 +90,13 @@ Mark, at first, trains a linear regression model with `"temp"` and `"RH"` column
 
 # BEGIN SOLN
 **Answer:** Options 2 and 3.
+
+Because the variable `Td` is derived form a linear combination of the features 
+`temp` and `RH`, the second model will have multicollinearity. This means that 
+although the performance of the second model will be the same as that of the first, 
+the coefficients of the second model cannot be interpreted, unlike in the first model.
+
+Therefore the correct answers are options 2 and 3.
 
 # END SOLN
 
