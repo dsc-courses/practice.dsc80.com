@@ -42,6 +42,13 @@ This site contains practice problems taken from old DSC 80 exams. Each exam link
       </td>
     </tr>
     <tr>
+      <th scope="row">Spring 2023</th>
+      <td>Tauhidur Rahman</td>
+      <td> 
+          <a href='sp23-final/index.html'>Final 🆕</a>
+      </td>
+    </tr>
+    <tr>
       <th scope="row">Winter 2023</th>
       <td>Suraj Rampure</td>
       <td><a href='wi23-midterm/index.html'>Midterm</a>
