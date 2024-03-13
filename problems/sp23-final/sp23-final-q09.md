@@ -20,9 +20,9 @@ Tiffany's raw redemption score: $\frac{30}{40}$
 Tiffany's redemption z-score:  $\frac{\frac{30}{40} - 0.8}{0.2} = -0.25$ 
 
 Tiffany's raw midterm score: $\frac{50}{70}$
-Tiffany's midterm z-score:  $\frac{\frac{50}{70} - 0.6}{0.5} ~ 0.23$ 
+Tiffany's midterm z-score:  $\frac{\frac{50}{70} - 0.6}{0.5} \approx 0.23$ 
 
-Since Tiffany's redemption z-score is lower than her redemption z-score, she 
+Since Tiffany's redemption z-score is lower than her midterm z-score, she 
 should not get her final exam score replaced.
 
 # END SOLN

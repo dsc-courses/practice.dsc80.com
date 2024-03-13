@@ -76,7 +76,7 @@ Given the above information, which of the following statements is true?
 To find X: \
 TF = $\frac{1}{10}$ \
 IDF = $log_2\frac{4}{3}$ \
-TF-IDF ~ 0.415 \
+TF-IDF $\approx$ 0.415 \
 So X > 0  
 
 To find Y: \
