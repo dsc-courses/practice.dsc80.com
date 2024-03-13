@@ -6,12 +6,19 @@ In this question, we will work with a publicly available forest fire dataset. A 
 <center><img  src='../assets/images/sp23-final/q6.png'  width=40%> </center>
 
 `"month"` - month of the year: jan to dec
+
 `"day"` - day of the week: mon to sun
+
 `"temp"` - temperature in Celsius degrees: 2.2 to 33.30
+
 `"RH"` - relative humidity in percentage: 15.0 to 100
+
 `"wind"` - wind speed in km/h: 0.40 to 9.40
+
 `"rain"` - outside rain in mm/m2 : 0.0 to 6.4
+
 `"area"` - the burned area of the forest in logarithmic scale
+
 `"is_julaugsep"` - whether the forest fire event happened in the months of July, August, or September.
 
 # BEGIN SUBPROB

@@ -32,6 +32,8 @@ integer.
 
 When we merge `dogs` with `dogs` on `"district"`, each `8` in the first `dogs` DataFrame will be combined with each `8` in the second `dogs` DataFrame. Since there are 12 in the first and 12 in the second, there are $12 \cdot 12 = 144$ combinations.
 
+<average>49</average>
+
 # END SOLUTION
 
 # END SUBPROB
@@ -58,6 +60,8 @@ in `square`.*
 - There are 40 districts that appeared 3x in `dogs`.
 
 The expression given in this question is keeping all of the rows corresponding to districts that appear 3 times. There are 40 districts that appear 3 times. So, the total number of rows in this DataFrame is $40 \cdot 3 = 120$.
+
+<average>16</average>
 
 # END SOLUTION
 

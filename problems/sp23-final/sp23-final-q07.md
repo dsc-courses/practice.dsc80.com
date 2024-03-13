@@ -4,29 +4,29 @@
 
 Consider a DataFrame `df` containing sales data for a company with the following columns: `"Year"`, `"Month"`, `"Product"`, `"Region"`, and `"Revenue"`. The `"Revenue"` column represents the sales revenue for each product in a specific region during a particular month of a year. You want to create a pivot table to summarize the total revenue for each product in each year. Which of the following options correctly achieve this? Select all that apply.
 
-[ ] 
+Option A
 ```py
 pd.pivot_table(df, values='Revenue', index='Product',
 columns='Year', aggfunc=np.sum)
 ```
-[ ]
+Option B
 ```py
 pd.pivot_table(df, values='Revenue', index=['Year', 'Product'],
 columns='Region', aggfunc=np.sum)
 ```
-[ ]
+Option C
 ```py
 pd.pivot_table(df, values='Revenue', index=['Product', 'Year'],
 columns='Month', aggfunc=np.sum)
 ```
-[ ]
+Option D
 ```py
 pd.pivot_table(df, values='Revenue', index='Year',
 columns='Product', aggfunc=np.sum)
 ```
 
 # BEGIN SOLN
-**Answer:** Options 1 and 4
+**Answer:** Options A and D
 
 Options 1 and 4 have the same behavior, in that they create pivot tables that 
 display the sum of revenue for each product in each year (`index` and `column` are interchangeable). 
@@ -43,7 +43,7 @@ Let's consider the two DataFrames: `timeuse1` and `timeuse2`. Both DataFrames ha
 
 <center><img  src='../assets/images/sp23-final/q7.png'  width=40%></center>
 
-**1** The following code uses `pd.concat` to combine the two DataFrames.
+The following code uses `pd.concat` to combine the two DataFrames.
 ```py
 	pd.concat([timeuse1.set_index('Country'),
 		timeuse2.set_index('Country_name')], axis=1)
@@ -70,7 +70,7 @@ So the total number of NaN values in the concatenated DataFrame is $12 + 8 = 20$
 
 # BEGIN SUBPROB
 
-**2** The following code uses `merge()` to combine the two DataFrames from the question above.
+The following code uses `merge()` to combine the two DataFrames from the question above.
 
 ```py
 	timeuse1.merge(timeuse2, left_on='Country', 
@@ -93,7 +93,7 @@ unmerged DataFrame starts off with NaN values.
 
 # BEGIN SUBPROB
  
-**3** What would the following code evaluate to?
+What would the following code evaluate to?
 
 ```py
 	timeuse1.merge(timeuse2, left_on='Country',

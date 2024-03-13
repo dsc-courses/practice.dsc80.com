@@ -37,10 +37,6 @@ Consider the following confusion matrix with "Spam" and "Not Spam" classes where
 Suppose the recall of Sam's classifier is 0.75 and the precision of Sam's classifier is 0.6. 
 What are the values of X and Y? Give your answers as positive integers.
 
-`X` ____
-
-`Y` ____
-
 # BEGIN SOLN
 **Answer:** X = 15, Y = 10
 

@@ -22,7 +22,9 @@ CSV is not a nested data format, but is in a flat format, representing data in a
 
 To measure the similarity between two word vectors $\vec{a}$ and $\vec{b}$, we compute their normalized dot product, also known as their cosine similarity.
 
-$\text{Cosine Similarity} = \cos  \theta = \boxed{\frac{\vec{a} \cdot  \vec{b}}{|\vec{a}| | \vec{b}|}}$
+$$
+\text{Cosine Similarity} = \cos  \theta = \boxed{\frac{\vec{a} \cdot  \vec{b}}{|\vec{a}| | \vec{b}|}}
+$$
 
 Which equation describes the cosine distance metric?
 
@@ -113,10 +115,10 @@ Which expression will achieve the highest similarity with
 
 `sentences.iloc[0]` if we use the **un-normalized dot product** between the bag of words (i.e., $\vec{a} \cdot  \vec{b}$) as the similarity metric?
 
-( ) 'buffalo giraffe'
-( ) 'giraffe monkey'
-( ) 'deer monkey'
-( ) 'buffalo'
+( ) `'buffalo giraffe'`
+( ) `'giraffe monkey'`
+( ) `'deer monkey'`
+( ) `'buffalo'`
 
 # BEGIN SOLN
 **Answer:** 'buffalo giraffe'
@@ -156,10 +158,10 @@ Which expression will achieve the highest similarity with
 `sentences.iloc[0]` if we use **cosine similarity** between the bag of words as the similarity metric?
 *Hint:* $\sqrt{18}=3\sqrt{2}$, $\frac{2}{\sqrt{2}}=\sqrt{2}$, $4\sqrt{2}=5.65$*
 
-( ) 'buffalo giraffe'
-( ) 'giraffe monkey'
-( ) 'deer monkey'
-( ) 'buffalo'
+( ) `'buffalo giraffe'`
+( ) `'giraffe monkey'`
+( ) `'deer monkey'`
+( ) `'buffalo'`
 
 # BEGIN SOLN
 **Answer:** 'buffalo'

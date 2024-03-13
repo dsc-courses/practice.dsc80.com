@@ -28,19 +28,19 @@ def parse(x):
 	return convert(res[0], res[1] if len(res) == 2 else 0, x[-2:])
 ```
 Option B:
-```
+```py
 def parse(x):
 	res = re.match(r'(\d+):(\d+)([apm]{2}', x).groups()
 	return convert(res[0], res[1], res[2])
 ```
 Option C:
-```
+```py
 def parse(x):
 	res = re.match(r'(\d+)(:(\d+))?(am|pm)', x).groups()
 	return convert(res[0], res[2], res[3])
 ```
 Option D:
-```
+```py
 def parse(x):
 	res = re.match(r'(.+(.{3})?)(..)', x).groups()
 	return convert(res[0], res[1], res[2])

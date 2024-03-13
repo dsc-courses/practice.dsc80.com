@@ -4,7 +4,7 @@
 
 Rahul is trying to scrape the website of an online bookstore 'The Book Club'.
   
-```html
+```
 <HTML>
 <H1>The Book Club</H1>
 <BODY BGCOLOR="FFFFFF">
