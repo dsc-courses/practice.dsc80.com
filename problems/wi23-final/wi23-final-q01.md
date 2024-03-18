@@ -86,6 +86,9 @@ Option 6:
 # END SUBPROB
 
 # BEGIN SUBPROB
+
+<span style="color: red"><b>Note that this problem is no longer in scope.</b></span>
+
 In the box, write a **one-line expression** that evaluates to a DataFrame that is equivalent to the following relation:
 
 $$\Pi_{\text{Year, State, Verbal}} \left(\sigma_{\text{Year } \geq \: 2014 \text{ and Math } \leq \: 600} \left( \text{sat} \right) \right)$$
