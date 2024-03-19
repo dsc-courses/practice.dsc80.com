@@ -86,7 +86,7 @@ $$\begin{align*} P(\text{the board the board the}) &= P(\text{the}) \cdot P(\tex
 Sentence 3:
 
 $$\begin{align*} P(\text{board the college board of}) &= P(\text{board}) \cdot P(\text{the | board}) \cdot P(\text{college | the}) \cdot P(\text{board | college}) \cdot P(\text{of | board}) \\ 
-&= \frac{2}{8} \cdot \frac{1}{2} \cdot \frac{1}{2} \cdot \frac{1}{2} \cdot \frac{1}{2} \\ &= \frac{1}{64}\end{align*}$$
+&= \frac{2}{8} \cdot \frac{1}{2} \cdot \frac{1}{2} \cdot 1 \cdot \frac{1}{2} \\ &= \frac{1}{32}\end{align*}$$
 
 Sentence 4:
 
