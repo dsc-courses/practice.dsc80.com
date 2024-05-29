@@ -11,8 +11,11 @@
     div.columns{display: flex; gap: min(4vw, 1.5em);}
     div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
     ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
       width: 0.8em;
       margin: 0 0.8em 0.2em -1.6em;
       vertical-align: middle;
@@ -154,7 +157,7 @@ the following output? <code>Output: ['my', 'a']</code></p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1_1" class="accordion-collapse collapse collapse"
+<div id="collapse1_1" class="accordion-collapse collapse"
 aria-labelledby="heading1_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -192,7 +195,7 @@ the following output?</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1_2" class="accordion-collapse collapse collapse"
+<div id="collapse1_2" class="accordion-collapse collapse"
 aria-labelledby="heading1_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -233,7 +236,7 @@ the following output?</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1_3" class="accordion-collapse collapse collapse"
+<div id="collapse1_3" class="accordion-collapse collapse"
 aria-labelledby="heading1_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -284,7 +287,7 @@ value?</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse2_1" class="accordion-collapse collapse collapse"
+<div id="collapse2_1" class="accordion-collapse collapse"
 aria-labelledby="heading2_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -317,7 +320,7 @@ answers as positive integers.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse2_2" class="accordion-collapse collapse collapse"
+<div id="collapse2_2" class="accordion-collapse collapse"
 aria-labelledby="heading2_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -366,7 +369,7 @@ classification model? Select all that apply.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse2_3" class="accordion-collapse collapse collapse"
+<div id="collapse2_3" class="accordion-collapse collapse"
 aria-labelledby="heading2_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -399,7 +402,7 @@ which is more important?</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse2_4" class="accordion-collapse collapse collapse"
+<div id="collapse2_4" class="accordion-collapse collapse"
 aria-labelledby="heading2_4" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -432,7 +435,7 @@ which is more important?</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse2_5" class="accordion-collapse collapse collapse"
+<div id="collapse2_5" class="accordion-collapse collapse"
 aria-labelledby="heading2_5" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -465,7 +468,7 @@ what?</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse2_6" class="accordion-collapse collapse collapse"
+<div id="collapse2_6" class="accordion-collapse collapse"
 aria-labelledby="heading2_6" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -516,7 +519,7 @@ each other.</p></li>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse3_1" class="accordion-collapse collapse collapse"
+<div id="collapse3_1" class="accordion-collapse collapse"
 aria-labelledby="heading3_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -572,7 +575,7 @@ for this hyperparameter search?</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse3_2" class="accordion-collapse collapse collapse"
+<div id="collapse3_2" class="accordion-collapse collapse"
 aria-labelledby="heading3_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -611,7 +614,7 @@ would this line of code evaluate to?</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse3_3" class="accordion-collapse collapse collapse"
+<div id="collapse3_3" class="accordion-collapse collapse"
 aria-labelledby="heading3_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -692,7 +695,7 @@ file?</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse4_1" class="accordion-collapse collapse collapse"
+<div id="collapse4_1" class="accordion-collapse collapse"
 aria-labelledby="heading4_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -732,7 +735,7 @@ variable named <code>soup</code>.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse4_2" class="accordion-collapse collapse collapse"
+<div id="collapse4_2" class="accordion-collapse collapse"
 aria-labelledby="heading4_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -774,7 +777,7 @@ class="sourceCode py"><code class="sourceCode python"><span id="cb11-1"><a href=
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse4_3" class="accordion-collapse collapse collapse"
+<div id="collapse4_3" class="accordion-collapse collapse"
 aria-labelledby="heading4_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -814,7 +817,7 @@ as a list, which is <code>['']</code>.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse5_1" class="accordion-collapse collapse collapse"
+<div id="collapse5_1" class="accordion-collapse collapse"
 aria-labelledby="heading5_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -852,7 +855,7 @@ product, also known as their cosine similarity.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse5_2" class="accordion-collapse collapse collapse"
+<div id="collapse5_2" class="accordion-collapse collapse"
 aria-labelledby="heading5_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -897,7 +900,7 @@ true?</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse5_3" class="accordion-collapse collapse collapse"
+<div id="collapse5_3" class="accordion-collapse collapse"
 aria-labelledby="heading5_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -953,7 +956,7 @@ metric?</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse5_4" class="accordion-collapse collapse collapse"
+<div id="collapse5_4" class="accordion-collapse collapse"
 aria-labelledby="heading5_4" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1001,7 +1004,7 @@ class="math inline">4\sqrt{2}=5.65</span>*</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse5_5" class="accordion-collapse collapse collapse"
+<div id="collapse5_5" class="accordion-collapse collapse"
 aria-labelledby="heading5_5" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1085,7 +1088,7 @@ months</p></li>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse6_1" class="accordion-collapse collapse collapse"
+<div id="collapse6_1" class="accordion-collapse collapse"
 aria-labelledby="heading6_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1123,7 +1126,7 @@ missing values. what can be said about the missingness in the
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse6_2" class="accordion-collapse collapse collapse"
+<div id="collapse6_2" class="accordion-collapse collapse"
 aria-labelledby="heading6_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1160,7 +1163,7 @@ dataframe</p></li>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse6_3" class="accordion-collapse collapse collapse"
+<div id="collapse6_3" class="accordion-collapse collapse"
 aria-labelledby="heading6_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1203,7 +1206,7 @@ the same as the first one.</p></li>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse6_4" class="accordion-collapse collapse collapse"
+<div id="collapse6_4" class="accordion-collapse collapse"
 aria-labelledby="heading6_4" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1257,7 +1260,7 @@ class="sourceCode py"><code class="sourceCode python"><span id="cb19-1"><a href=
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse7_1" class="accordion-collapse collapse collapse"
+<div id="collapse7_1" class="accordion-collapse collapse"
 aria-labelledby="heading7_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1292,7 +1295,7 @@ class="sourceCode py"><code class="sourceCode python"><span id="cb20-1"><a href=
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse7_2" class="accordion-collapse collapse collapse"
+<div id="collapse7_2" class="accordion-collapse collapse"
 aria-labelledby="heading7_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1330,7 +1333,7 @@ class="sourceCode py"><code class="sourceCode python"><span id="cb21-1"><a href=
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse7_3" class="accordion-collapse collapse collapse"
+<div id="collapse7_3" class="accordion-collapse collapse"
 aria-labelledby="heading7_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1359,7 +1362,7 @@ class="sourceCode py"><code class="sourceCode python"><span id="cb22-1"><a href=
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse7_4" class="accordion-collapse collapse collapse"
+<div id="collapse7_4" class="accordion-collapse collapse"
 aria-labelledby="heading7_4" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1408,7 +1411,7 @@ effective overall?</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse8_1" class="accordion-collapse collapse collapse"
+<div id="collapse8_1" class="accordion-collapse collapse"
 aria-labelledby="heading8_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1433,7 +1436,7 @@ so Drug A is likely more effective overall.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse8_2" class="accordion-collapse collapse collapse"
+<div id="collapse8_2" class="accordion-collapse collapse"
 aria-labelledby="heading8_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1481,7 +1484,7 @@ class="math inline">\frac{50}{70}</span> on the midterm exam.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse9_1" class="accordion-collapse collapse collapse"
+<div id="collapse9_1" class="accordion-collapse collapse"
 aria-labelledby="heading9_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1512,7 +1515,7 @@ she should not get her final exam score replaced.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse9_2" class="accordion-collapse collapse collapse"
+<div id="collapse9_2" class="accordion-collapse collapse"
 aria-labelledby="heading9_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
@@ -1537,7 +1540,7 @@ scratch and trained it using different criteria and maximum depths in a
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse9_3" class="accordion-collapse collapse collapse"
+<div id="collapse9_3" class="accordion-collapse collapse"
 aria-labelledby="heading9_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">

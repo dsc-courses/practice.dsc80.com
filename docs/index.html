@@ -11,8 +11,11 @@
     div.columns{display: flex; gap: min(4vw, 1.5em);}
     div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
     ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
       width: 0.8em;
       margin: 0 0.8em 0.2em -1.6em;
       vertical-align: middle;
@@ -61,7 +64,6 @@ paper</strong> as you go, then check all your answers at the end. It’s
 especially important that you practice on paper, since your exams will
 also be on paper. Even though you will see some multiple choice bubbles,
 you intentionally cannot select them.</p>
-<!-- <div class="alert alert-danger" role="alert"><b>Note</b>: The exam that will be most representative of the Winter 2023 Final Exam is the Spring 2022 Final Exam. The other exams will still provide useful practice, though!</div> -->
 <center>
 <table class="table" style="width:60%">
 <colgroup>
@@ -91,7 +93,8 @@ Winter 2024
 Suraj Rampure
 </td>
 <td>
-<a href='wi24-midterm/index.html'>Midterm 🆕</a>
+<a href='wi24-midterm/index.html'>Midterm</a> <br>
+<a href='wi24-final/index.html'>Final 🆕</a>
 </td>
 </tr>
 <tr>
@@ -103,7 +106,7 @@ Sam Lau
 </td>
 <td>
 <a href='fa23-midterm/index.html'>Midterm</a> <br>
-<a href='fa23-final/index.html'>Final 🆕</a>
+<a href='fa23-final/index.html'>Final</a>
 </td>
 </tr>
 <tr>
@@ -114,7 +117,7 @@ Spring 2023
 Tauhidur Rahman
 </td>
 <td>
-<a href='sp23-final/index.html'>Final 🆕</a>
+<a href='sp23-final/index.html'>Final</a>
 </td>
 </tr>
 <tr>
@@ -126,7 +129,7 @@ Suraj Rampure
 </td>
 <td>
 <a href='wi23-midterm/index.html'>Midterm</a> <br>
-<a href='wi23-final/index.html'>Final 🆕</a>
+<a href='wi23-final/index.html'>Final</a>
 </td>
 </tr>
 <tr>
