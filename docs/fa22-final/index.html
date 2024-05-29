@@ -621,32 +621,32 @@ to generate a biased estimate of the true mean.</p>
 <h2 id="problem-3">Problem 3</h2>
 <p>The questions below reference the following HTML.</p>
 <div class="sourceCode" id="cb7"><pre
-class="sourceCode html"><code class="sourceCode html"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;html&gt;</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;head&gt;</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;title&gt;</span>ZOMBO<span class="kw">&lt;/title&gt;</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/head&gt;</span></span>
+class="sourceCode html"><code class="sourceCode html"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">html</span><span class="dt">&gt;</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">title</span><span class="dt">&gt;</span>ZOMBO<span class="dt">&lt;/</span><span class="kw">title</span><span class="dt">&gt;</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">head</span><span class="dt">&gt;</span></span>
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;body&gt;</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;h1&gt;</span>Welcome to Zombo.com<span class="kw">&lt;/h1&gt;</span></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;div</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;greeting&quot;</span><span class="kw">&gt;</span></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;ul&gt;</span></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;li&gt;</span>This is Zombo.com, welcome!<span class="kw">&lt;/li&gt;</span></span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;li&gt;</span>This is Zombo.com<span class="kw">&lt;/li&gt;</span></span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;li&gt;</span>Welcome to Zombo.com<span class="kw">&lt;/li&gt;</span></span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;li&gt;</span>You can do anything at Zombo.com -- anything at all!<span class="kw">&lt;/li&gt;</span></span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;li&gt;</span>The only limit is yourself.<span class="kw">&lt;/li&gt;</span></span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;/ul&gt;</span></span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;/div&gt;</span></span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;div</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;footnotes&quot;</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;faded&quot;</span><span class="kw">&gt;</span></span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;h3&gt;</span>Footnotes<span class="kw">&lt;/h3&gt;</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">body</span><span class="dt">&gt;</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">h1</span><span class="dt">&gt;</span>Welcome to Zombo.com<span class="dt">&lt;/</span><span class="kw">h1</span><span class="dt">&gt;</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">div</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;greeting&quot;</span><span class="dt">&gt;</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>            <span class="dt">&lt;</span><span class="kw">ul</span><span class="dt">&gt;</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>                <span class="dt">&lt;</span><span class="kw">li</span><span class="dt">&gt;</span>This is Zombo.com, welcome!<span class="dt">&lt;/</span><span class="kw">li</span><span class="dt">&gt;</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>                <span class="dt">&lt;</span><span class="kw">li</span><span class="dt">&gt;</span>This is Zombo.com<span class="dt">&lt;/</span><span class="kw">li</span><span class="dt">&gt;</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>                <span class="dt">&lt;</span><span class="kw">li</span><span class="dt">&gt;</span>Welcome to Zombo.com<span class="dt">&lt;/</span><span class="kw">li</span><span class="dt">&gt;</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>                <span class="dt">&lt;</span><span class="kw">li</span><span class="dt">&gt;</span>You can do anything at Zombo.com -- anything at all!<span class="dt">&lt;/</span><span class="kw">li</span><span class="dt">&gt;</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>                <span class="dt">&lt;</span><span class="kw">li</span><span class="dt">&gt;</span>The only limit is yourself.<span class="dt">&lt;/</span><span class="kw">li</span><span class="dt">&gt;</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>            <span class="dt">&lt;/</span><span class="kw">ul</span><span class="dt">&gt;</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">div</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;footnotes&quot;</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;faded&quot;</span><span class="dt">&gt;</span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>            <span class="dt">&lt;</span><span class="kw">h3</span><span class="dt">&gt;</span>Footnotes<span class="dt">&lt;/</span><span class="kw">h3</span><span class="dt">&gt;</span></span>
 <span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;ol</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;footnotes&quot;</span><span class="kw">&gt;</span></span>
-<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;li&gt;</span>Please consider <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;paypal.html&quot;</span><span class="kw">&gt;</span>donating!<span class="kw">&lt;/a&gt;&lt;/li&gt;</span></span>
-<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;li&gt;</span>Made in California with <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;https://reactj.org&quot;</span><span class="kw">&gt;</span>React.<span class="kw">&lt;/a&gt;&lt;li&gt;</span></span>
-<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;/ol&gt;</span></span>
-<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;/div&gt;</span></span>
-<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/body&gt;</span></span>
-<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>            <span class="dt">&lt;</span><span class="kw">ol</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;footnotes&quot;</span><span class="dt">&gt;</span></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>                <span class="dt">&lt;</span><span class="kw">li</span><span class="dt">&gt;</span>Please consider <span class="dt">&lt;</span><span class="kw">a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;paypal.html&quot;</span><span class="dt">&gt;</span>donating!<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;&lt;/</span><span class="kw">li</span><span class="dt">&gt;</span></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>                <span class="dt">&lt;</span><span class="kw">li</span><span class="dt">&gt;</span>Made in California with <span class="dt">&lt;</span><span class="kw">a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;https://reactj.org&quot;</span><span class="dt">&gt;</span>React.<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;&lt;</span><span class="kw">li</span><span class="dt">&gt;</span></span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>            <span class="dt">&lt;/</span><span class="kw">ol</span><span class="dt">&gt;</span></span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">body</span><span class="dt">&gt;</span></span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">html</span><span class="dt">&gt;</span></span></code></pre></div>
 <p><br></p>
 <h3 id="problem-3.1">Problem 3.1</h3>
 <p>Consider the node representing the <code>body</code> tag in the

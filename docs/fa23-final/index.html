@@ -401,17 +401,18 @@ groups, the outermost group is returned first. For example:</p>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    res <span class="op">=</span> x[:<span class="op">-</span><span class="dv">2</span>].split(<span class="st">&#39;:&#39;</span>)</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> convert(res[<span class="dv">0</span>], res[<span class="dv">1</span>] <span class="cf">if</span> <span class="bu">len</span>(res) <span class="op">==</span> <span class="dv">2</span> <span class="cf">else</span> <span class="dv">0</span>, x[<span class="op">-</span><span class="dv">2</span>:])</span></code></pre></div>
 <p>Option B:</p>
-<pre><code>def parse(x):
-    res = re.match(r&#39;(\d+):(\d+)([apm]{2}&#39;, x).groups()
-    return convert(res[0], res[1], res[2])</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parse(x):</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    res <span class="op">=</span> re.match(<span class="vs">r&#39;(\d+):(\d+)([apm]</span><span class="sc">{2}</span><span class="vs">&#39;</span>, x).groups()</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> convert(res[<span class="dv">0</span>], res[<span class="dv">1</span>], res[<span class="dv">2</span>])</span></code></pre></div>
 <p>Option C:</p>
-<pre><code>def parse(x):
-    res = re.match(r&#39;(\d+)(:(\d+))?(am|pm)&#39;, x).groups()
-    return convert(res[0], res[2], res[3])</code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parse(x):</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    res <span class="op">=</span> re.match(<span class="vs">r&#39;(\d+)(:(\d+))?(am|pm)&#39;</span>, x).groups()</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> convert(res[<span class="dv">0</span>], res[<span class="dv">2</span>], res[<span class="dv">3</span>])</span></code></pre></div>
 <p>Option D:</p>
-<pre><code>def parse(x):
-    res = re.match(r&#39;(.+(.{3})?)(..)&#39;, x).groups()
-    return convert(res[0], res[1], res[2])</code></pre>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode py"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parse(x):</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    res <span class="op">=</span> re.match(<span class="vs">r&#39;(.+(.</span><span class="sc">{3}</span><span class="vs">)?)(..)&#39;</span>, x).groups()</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> convert(res[<span class="dv">0</span>], res[<span class="dv">1</span>], res[<span class="dv">2</span>])</span></code></pre></div>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading2">
