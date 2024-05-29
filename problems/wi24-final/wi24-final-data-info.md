@@ -3,8 +3,8 @@ The DSC 80 staff are looking into hotels — some in San Diego, for their family
 **In Question 1 only**, you will work with the DataFrame `hotels`. Each row of `hotels` contains information about a different hotel in San Diego. Specifically, for each hotel, we have:
 
 - `"Hotel Name" (str)`: The name of the hotel. **Assume hotel names are unique.**
-- `"Location" (str):` The hotel's neighborhood in San Diego
-- `"Chain" (str):` The chain the hotel is a part of; either `"Hilton", "Marriott", "Hyatt", or "Other".` A hotel chain is a group of hotels owned or operated by a shared company
+- `"Location" (str):` The hotel's neighborhood in San Diego.
+- `"Chain" (str):` The chain the hotel is a part of; either `"Hilton", "Marriott", "Hyatt", or "Other".` A hotel chain is a group of hotels owned or operated by a shared company.
 - `"Number of Rooms" (int)`: The number of rooms the hotel has.
 
 The first few rows of `hotels` are shown below, but hotels has many more rows than are shown.

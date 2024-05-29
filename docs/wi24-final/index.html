@@ -148,10 +148,10 @@ hotel, we have:</p>
 <li><code>"Hotel Name" (str)</code>: The name of the hotel.
 <strong>Assume hotel names are unique.</strong></li>
 <li><code>"Location" (str):</code> The hotel’s neighborhood in San
-Diego</li>
+Diego.</li>
 <li><code>"Chain" (str):</code> The chain the hotel is a part of; either
 <code>"Hilton", "Marriott", "Hyatt", or "Other".</code> A hotel chain is
-a group of hotels owned or operated by a shared company</li>
+a group of hotels owned or operated by a shared company.</li>
 <li><code>"Number of Rooms" (int)</code>: The number of rooms the hotel
 has.</li>
 </ul>
@@ -552,9 +552,12 @@ aria-labelledby="heading2_3" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answers:</strong> 1. permutation test 2. either the
-(absolute) difference in means or the K-S statistic, depending on the
-shapes of the observed distributions</p>
+<p><strong>Answers:</strong></p>
+<ol type="1">
+<li>permutation test</li>
+<li>either the (absolute) difference in means or the K-S statistic,
+depending on the shapes of the observed distributions</li>
+</ol>
 <p>In part 1, we use a permutation test because we’re comparing two
 sampled distributions (the values of <code>age</code> for rows with
 missing vs. present values of <code>is_business</code>), rather than
@@ -723,7 +726,7 @@ is greater or equal to the sample. This indicates that we’re doing a
 one-tailed test, and since to reject the null hypothesis and provide
 some evidence towards the alternate hypothesis, the p-value should be
 lower, the alternate hypothesis should be the complement of
-<code>obs &gt;= sum</code>.</p>
+<code>obs &gt;= sm</code>.</p>
 <p>For part 3, the answer is “all primary occupants” because our
 sampling procedure doesn’t sample just from (full or partial) business
 travelers, but from the entire DataFrame. (In the line where we sample,
@@ -972,11 +975,11 @@ color.</p>
 <p><br></p>
 <h3 id="problem-4.3">Problem 4.3</h3>
 <p>Fill in blanks (i) and (ii) in <code>site</code> so that the
-following all evaluate to True:</p>
+following all evaluate to <code>True</code>:</p>
 <ul>
-<li><code>len(site.find all("div", class ="chain")) == 2</code></li>
+<li><code>len(site.find_all("div", class_ ="chain")) == 2</code></li>
 <li><code>chain_color("Hyatt") == "purple"</code></li>
-<li><code>site.find all("div")[-1].text == ""</code></li>
+<li><code>site.find_all("div")[-1].text == ""</code></li>
 </ul>
 <ol type="1">
 <li>What goes in blank (i)?</li>
@@ -1200,6 +1203,15 @@ which are <code>"beach"</code>.</p>
 <span class="math inline">\frac{9}{10}</span>, when using a base-2
 logarithm to compute the IDF. How many of the reviews on TripAdvisor for
 this hotel contain the term <code>"beach"</code>?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> 3</p></li>
+<li><p><input type="radio" disabled="" /> 6</p></li>
+<li><p><input type="radio" disabled="" /> 8</p></li>
+<li><p><input type="radio" disabled="" /> 12</p></li>
+<li><p><input type="radio" disabled="" /> 16</p></li>
+<li><p><input type="radio" disabled="" /> 24</p></li>
+<li><p><input type="radio" disabled="" /> 32</p></li>
+</ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading6_2">
@@ -1763,7 +1775,7 @@ What’s the squared loss of your prediction above? Give your answer as a
 number with no variables.</li>
 <li>True or False: Because your answer to (ii) above is not 0, it means
 there were no hotels in the Marriott chain with an average listing price
-of $250 in the training set. ( ) True ( ) False</li>
+of $250 in the training set. d ( ) True ( ) False</li>
 </ol>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
@@ -1877,6 +1889,15 @@ are True.</p>
 </div>
 <p><br></p>
 <h3 id="problem-11.3">Problem 11.3</h3>
+<p>As a reminder,</p>
+<p><span class="math display">H_{1}(x) = w_1 \cdot \texttt{price} + w_2
+\cdot \texttt{is\_Marriott} + w_3 \cdot \texttt{is\_Hilton} + w_4 \cdot
+\texttt{is\_Other}</span></p>
+<p><span class="math display">\vec{w}^* = \begin{bmatrix}−0.5 \\ 200 \\
+300 \\ 50 \end{bmatrix}</span></p>
+<p><span class="math display">H_2(x) = \beta_0 + \beta_1 \cdot
+\texttt{price} + \beta_2 \cdot \texttt{is\_Marriott} + \beta_3 \cdot
+\texttt{is\_Hilton}</span></p>
 <p>After fitting his model, Aritra finds <span
 class="math inline">\beta_{0}^{*} = 50.</span> Given that, what are
 <span class="math inline">\beta_{1}^{*}</span>, <span

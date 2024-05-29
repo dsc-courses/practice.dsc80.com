@@ -26,6 +26,14 @@ The answer is simply the proportion of words in the sentence that are the word `
 
 The TF-IDF of `"beach"` in Gabriel’s favorite review is $\frac{9}{10}$, when using a base-2 logarithm to compute the IDF. How many of the reviews on TripAdvisor for this hotel contain the term `"beach"`?
 
+( ) 3
+( ) 6
+( ) 8
+( ) 12
+( ) 16
+( ) 24
+( ) 32
+
 # BEGIN SOLUTION
 
 **Answer:** 12

@@ -57,11 +57,11 @@ The solution finds all `div` elements whose `name` attribute is equal to the fun
 
 # BEGIN SUBPROB
 
-Fill in blanks (i) and (ii) in `site` so that the following all evaluate to True:
+Fill in blanks (i) and (ii) in `site` so that the following all evaluate to `True`:
 
-- `len(site.find all("div", class ="chain")) == 2`
+- `len(site.find_all("div", class_ ="chain")) == 2`
 - `chain_color("Hyatt") == "purple"`
-- `site.find all("div")[-1].text == ""`
+- `site.find_all("div")[-1].text == ""`
 
 1. What goes in blank (i)?
 2. What goes in blank (ii)?

@@ -13,6 +13,7 @@ After fitting her model, $\vec{w}^* = \begin{bmatrix}−0.5 \\ 200 \\ 300 \\ 50 
 1. The Marriott Marquis San Diego Marina, a hotel in the Marriott chain, has an average listing price of $250.  How many open rooms does $H_1$ predict it has? Give your answer as a number with no variables.
 2. The Marriott Marquis San Diego Marina actually has 45 open rooms. What’s the squared loss of your prediction above? Give your answer as a number with no variables.
 3. True or False: Because your answer to (ii) above is not 0, it means there were no hotels in the Marriott chain with an average listing price of $250 in the training set.
+ d
 ( ) True
 ( ) False
 
@@ -70,6 +71,14 @@ In model $H_1$, there is redundant information in the one-hot encoded features, 
 # END SUBPROB
 
 # BEGIN SUBPROB
+
+As a reminder, 
+
+$$H_{1}(x) = w_1 \cdot \texttt{price} + w_2 \cdot \texttt{is\_Marriott} + w_3 \cdot \texttt{is\_Hilton} + w_4 \cdot \texttt{is\_Other}$$
+
+$$\vec{w}^* = \begin{bmatrix}−0.5 \\ 200 \\ 300 \\ 50 \end{bmatrix}$$
+
+$$H_2(x) = \beta_0 + \beta_1 \cdot \texttt{price} + \beta_2 \cdot \texttt{is\_Marriott} + \beta_3 \cdot \texttt{is\_Hilton}$$
 
 After fitting his model, Aritra finds $\beta_{0}^{*} = 50.$ Given that, what are $\beta_{1}^{*}$, $\beta_{2}^{*}$, and $\beta_{3}^{*}$? Give your answers as numbers with no variables.
 
