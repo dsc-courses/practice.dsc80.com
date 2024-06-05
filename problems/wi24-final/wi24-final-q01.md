@@ -124,7 +124,19 @@ Consider the code below.
 
 1. If we replace `???` with `"inner"` in the code above, which of the following will be equal to `combined.shape[0]`?
 
+( ) `min(cond1.sum(), cond2.sum())`
+( ) `(cond1 & cond2).sum()`
+( ) `cond1.sum() + cond2.sum()`
+( ) `cond1.sum() + cond2.sum() - (cond1 & cond2).sum()`
+( ) `cond1.sum() + (cond1 & cond2).sum()`
+
 2. If we replace `???` with `"outer"` in the code above, which of the following will be equal to `combined.shape[0]`?
+
+( ) `min(cond1.sum(), cond2.sum())`
+( ) `(cond1 & cond2).sum()`
+( ) `cond1.sum() + cond2.sum()`
+( ) `cond1.sum() + cond2.sum() - (cond1 & cond2).sum()`
+( ) `cond1.sum() + (cond1 & cond2).sum()`
 
 # BEGIN SOLUTION
 
