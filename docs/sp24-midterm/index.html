@@ -137,6 +137,39 @@ except students were allowed to bring a single two-sided notes sheet. No
 calculators were allowed. Students had <strong>80 minutes</strong> to
 take this exam.</p>
 <hr />
+<p>The <code>h</code> table records addresses within San Diego. Only 50
+addresses are recorded. The index of the dataframe contains the numbers
+1-50 as unique integers.</p>
+<ul>
+<li><code>"number" (int)</code>: Street address number</li>
+<li><code>"street" (str)</code>: Street name</li>
+</ul>
+<center><img src="../../assets/images/sp24-midterm/h.png" width=400></center>
+<p>The <code>o</code> table records information on power outages within
+San Diego in April 2024. Only 100 outages are recorded. The index of the
+dataframe contains the numbers 1-100 as unique integers.</p>
+<ul>
+<li><code>"time" (pd.Timestamp)</code>: When the outage began</li>
+<li><code>"duration" (int)</code>: How long the outage lasted in
+minutes</li>
+</ul>
+<center><img src="../../assets/images/sp24-midterm/o.png" width=400></center>
+<p>The <code>j</code> table is a table that links outages to addresses.
+Each entry in the <code>j</code> table contains the <code>hid</code> of
+the affected address and the <code>oid</code> of the outage. For
+example, the first row of the table records that the outage with an
+<code>oid</code> of 1 caused the power to go out at addresses with
+<code>hid</code> 61 and 88. A single outage can affect multiple
+addresses. There are no missing values and no duplicated rows in this
+table, and all values are positive integers. This table records all the
+addresses affected by all of the outages in 2024 so far.</p>
+<ul>
+<li><code>"hid" (int)</code>: The <code>hid</code> of the affected
+address</li>
+<li><code>"oid" (int)</code>: The <code>oid</code> of the outage</li>
+</ul>
+<center><img src="../../assets/images/sp24-midterm/j.png" width=200></center>
+<hr />
 <h2 id="problem-1">Problem 1</h2>
 <p>Fill in Python code below so that the last line of each part
 evaluates to each desired result using the tables <code>h</code>,
@@ -328,41 +361,107 @@ ranges. To approach this problem, it’s easiest to come up with smaller
 versions of <code>h</code>, <code>j</code>, and <code>o</code>, then
 perform the join by hand. For example, consider the following example
 <code>h</code>, <code>j</code>, and <code>o</code> tables:</p>
-<center>
-| **hid** |
-|---------|
-| 1       |
-| 2       |
-| 3       |
-</center>
-<center>
-| **hid** | **oid** |
-|---------|---------|
-| 1       | 1       |
-| 2       | 1       |
-| 2       | 10      |
-| 2       | 11      |
-| 10      | 3       |
-| 11      | 3       |
-</center>
-<center>
-| **oid** |
-|---------|
-| 1       |
-| 2       |
-| 3       |
-</center>
+<table>
+<thead>
+<tr class="header">
+<th><strong>hid</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+</tr>
+<tr class="even">
+<td>2</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<table>
+<thead>
+<tr class="header">
+<th><strong>hid</strong></th>
+<th><strong>oid</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>10</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>11</td>
+</tr>
+<tr class="odd">
+<td>10</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td>11</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<table>
+<thead>
+<tr class="header">
+<th><strong>oid</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+</tr>
+<tr class="even">
+<td>2</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+</tr>
+</tbody>
+</table>
 <p>In this example, <code>whoa</code> would look like the following
 (omitting other columns besides <code>hid</code> and <code>oid</code>
 for brevity):</p>
-<center>
-| **hid** | **oid** |
-|---------|---------|
-| 1       | 1       |
-| 2       | 1       |
-| NaN     | 2       |
-| NaN     | 3       |
-</center>
+<table>
+<thead>
+<tr class="header">
+<th><strong>hid</strong></th>
+<th><strong>oid</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>NaN</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td>NaN</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
 <p>There are 3 cases where rows will be kept for <code>whoa</code>:</p>
 <ol type="1">
 <li>When both <code>hid</code> and <code>oid</code> match in the three

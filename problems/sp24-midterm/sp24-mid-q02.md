@@ -40,15 +40,14 @@ Write a **single expression** that evaluates to the number of rows in `whoa`. In
 
 We know that `h` has the numbers 1-50 as unique integers in its index, and `o` has the numbers 1-100 as unique integers in its index. However, the `hid` and `oid` columns in `j` have values outside these ranges. To approach this problem, it's easiest to come up with smaller versions of `h`, `j`, and `o`, then perform the join by hand. For example, consider the following example `h`, `j`, and `o` tables:
 
-<center>
 | **hid** |
 |---------|
 | 1       |
 | 2       |
 | 3       |
-</center>
 
-<center>
+---
+
 | **hid** | **oid** |
 |---------|---------|
 | 1       | 1       |
@@ -57,26 +56,24 @@ We know that `h` has the numbers 1-50 as unique integers in its index, and `o` h
 | 2       | 11      |
 | 10      | 3       |
 | 11      | 3       |
-</center>
 
-<center>
+---
+
 | **oid** |
 |---------|
 | 1       |
 | 2       |
 | 3       |
-</center>
+
 
 In this example, `whoa` would look like the following (omitting other columns besides `hid` and `oid` for brevity):
 
-<center>
 | **hid** | **oid** |
 |---------|---------|
 | 1       | 1       |
 | 2       | 1       |
 | NaN     | 2       |
 | NaN     | 3       |
-</center>
 
 There are 3 cases where rows will be kept for `whoa`:
 
