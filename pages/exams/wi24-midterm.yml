@@ -4,9 +4,9 @@ context: This exam was administered in-person. The exam was closed-notes, except
 show_solution: true
 data_info: wi24-midterm/wi24-mid-data-info
 problems:
-  - wi24-midterm/wi24-midterm-q01
-  - wi24-midterm/wi24-midterm-q02
-  - wi24-midterm/wi24-midterm-q03
-  - wi24-midterm/wi24-midterm-q04
-  - wi24-midterm/wi24-midterm-q05
-  - wi24-midterm/wi24-midterm-q06
+  - wi24-midterm/wi24-mid-q01
+  - wi24-midterm/wi24-mid-q02
+  - wi24-midterm/wi24-mid-q03
+  - wi24-midterm/wi24-mid-q04
+  - wi24-midterm/wi24-mid-q05
+  - wi24-midterm/wi24-mid-q06
