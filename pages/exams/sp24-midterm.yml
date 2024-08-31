@@ -2,7 +2,7 @@ title: 'Spring 2024 Midterm Exam'
 instructors: Sam Lau
 context: This exam was administered in-person. The exam was closed-notes, except students were allowed to bring a single two-sided notes sheet. No calculators were allowed. Students had **80 minutes** to take this exam.
 show_solution: true
-data_info: sp24-midterm/sp24-midterm-data-info
+data_info: sp24-midterm/sp24-mid-data-info
 problems:
   - sp24-midterm/sp24-mid-q01
   - sp24-midterm/sp24-mid-q02
