@@ -2,6 +2,7 @@ title: 'Spring 2024 Final Exam'
 instructors: Sam Lau
 context: This exam was administered in-person. The exam was closed-notes, except students were allowed to bring two two-sided cheat sheets. No calculators were allowed. Students had **180 minutes** to take this exam.
 show_solution: true
+data_info: sp24-final/sp24-final-data-info
 problems:
   - sp24-final/sp24-final-q01
   - sp24-final/sp24-final-q02

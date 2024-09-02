@@ -137,6 +137,46 @@ except students were allowed to bring two two-sided cheat sheets. No
 calculators were allowed. Students had <strong>180 minutes</strong> to
 take this exam.</p>
 <hr />
+<p>The Open e-commerce dataset contains data about people’s Amazon.com
+purchases. To collect the data, the researchers asked participants to
+fill out a survey. Only participants who completed the survey were
+recorded in the data. In one part of the survey, participants were given
+instructions to download their Amazon purchase history and share it with
+the researchers. Since this step was not required, not all participants
+shared their Amazon purchase history with the researchers. The dataset
+contains two tables, <code>df</code> and <code>survey</code>. The
+<code>df</code> table was created from participants’ purchase history
+and records individual items purchased from Amazon.</p>
+<center><img src="../../assets/images/sp24-final/df.png" style="width: 100%; height: auto;"></center>
+<ul>
+<li><p><code>"date" (pd.Timestamp)</code>: The date that the purchase
+was made.</p></li>
+<li><p><code>"code" (float)</code>: Cost of one item in US
+dollars.</p></li>
+<li><p><code>"q" (float)</code>: Quantity of items purchased in the
+order.</p></li>
+<li><p><code>"state" (str)</code>: US state where the order was shipped.
+If the item was an electronic gift card, the researchers recorded
+<code>NaN</code>.</p></li>
+<li><p><code>"name" (str)</code>: Name of the item.</p></li>
+<li><p><code>"cat" (str)</code>: Category of the item.</p></li>
+<li><p><code>"id" (str)</code>: Participant ID.</p></li>
+</ul>
+<center><img src="../../assets/images/sp24-final/survey.png" style="width: 100%; height: auto;"></center>
+<ul>
+<li><p><code>"id" (str)</code>: Participant ID. Some values in this
+column don’t appear in the <code>id</code> column of
+<code>df</code>.</p></li>
+<li><p><code>"age" (str)</code>: Age of participant.</p></li>
+<li><p><code>"income" (str)</code>: Income of participant.</p></li>
+<li><p><code>"state" (str)</code>: US state where order was
+shipped.</p></li>
+<li><p><code>"marijuana" (str)</code>: Whether the participant reported
+that they smoke marijuana (Yes) or don’t smoke marijuana (No).</p></li>
+<li><p><code>"diabetes" (str)</code>: Whether the participant reported
+that they have diabetes (Yes) or don’t have diabetes (No).</p></li>
+</ul>
+<hr />
 <h2 id="problem-1">Problem 1</h2>
 <p>Fill in Python code below so that the last line of each code snippet
 evaluates to each desired result, using the <code>df</code> and
