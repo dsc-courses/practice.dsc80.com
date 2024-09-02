@@ -2,7 +2,7 @@
 
 Suppose you fit four different models to predict whether someone has an income greater than \$100,000 a year using their purchase history. You split the data into a training and test set and use 3-fold cross-validation. The table below shows all the calculated accuracies for each model (higher accuracy is better).
 
-<center><img src="../../assets/images/sp24-final/train-valid-test.png" style="width: 60%; height: auto;"></center>
+<center><img src="../../assets/images/sp24-final/train-valid-test.png" style="width: 40%; height: auto;"></center>
 
 
 # BEGIN SUBPROB
