@@ -38,7 +38,7 @@ w_0:
 
 # BEGIN SUBPROB
 
-`boot` = $w_0 + w_1 \cdot \text{sandals}$
+`boot` = $w_0 + w_1 \cdot \text{sandal}$
 
 w_0:
 
