@@ -38,7 +38,7 @@ w_0:
 
 # BEGIN SUBPROB
 
-`boot` = w_0 + w_1 \cdot \text{sandals}
+`boot` = $w_0 + w_1 \cdot \text{sandals}$
 
 w_0:
 
@@ -73,7 +73,7 @@ w_1: -1
 
 # BEGIN SUBPROB
 
-`boot` = w_0 + w_1 \cdot (\text{summer=1})
+`boot` = $w_0 + w_1 \cdot (\text{summer=1})$
 
 w_0:
 
@@ -109,7 +109,7 @@ w_1: -80
 
 # BEGIN SUBPROB
 
-`sandal` = \( w_0 + w_1 \cdot (\text{summer=1}) \)
+`sandal` = $w_0 + w_1 \cdot (\text{summer=1})$
 
 w_0:
 
@@ -145,7 +145,7 @@ w_1: 80
 
 # BEGIN SUBPROB
 
-`sandal` = w_0 + w_1 \cdot (\text{summer=1}) + w_2 \cdot (\text{winter=1})
+`sandal` = $w_0 + w_1 \cdot (\text{summer=1}) + w_2 \cdot (\text{winter=1})$
 
 w_0:
 
