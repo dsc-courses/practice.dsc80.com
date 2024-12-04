@@ -60,9 +60,7 @@ What is the TF-IDF for the word `paperboard` in document 1?
 
 # BEGIN SOLN
 
-**Answer:** \frac{1}{22}
-
-\frac{1}{22} \log \left(\frac{40}{20} \right) = \frac{1}{22}
+**Answer:** $$\frac{1}{22} \log \left(\frac{40}{20} \right) = \frac{1}{22}$$
 
 # END SOLN
 
