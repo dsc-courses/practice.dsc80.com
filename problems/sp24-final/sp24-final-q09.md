@@ -10,7 +10,7 @@ DataFrame shown below:
 You also have the following outputs:
 
 ```python
->>> bow_df.sum(axis=0)    
+>>> bow_df.sum(axis=0)    >>> bow_df.sum(axis=1)    >>> bow_df[0, 'pur']
 pur            5          0     21                  0
 gum           41          1     22
 sugar          2          2     22                  >>> (bow_df['paperboard'] > 0).sum()

@@ -936,7 +936,7 @@ shown below:</p>
 <center><img src="../../assets/images/sp24-final/bow.png" width=400></center>
 <p>You also have the following outputs:</p>
 <div class="sourceCode" id="cb16"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> bow_df.<span class="bu">sum</span>(axis<span class="op">=</span><span class="dv">0</span>)    </span>
+class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> bow_df.<span class="bu">sum</span>(axis<span class="op">=</span><span class="dv">0</span>)    <span class="op">&gt;&gt;&gt;</span> bow_df.<span class="bu">sum</span>(axis<span class="op">=</span><span class="dv">1</span>)    <span class="op">&gt;&gt;&gt;</span> bow_df[<span class="dv">0</span>, <span class="st">&#39;pur&#39;</span>]</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>pur            <span class="dv">5</span>          <span class="dv">0</span>     <span class="dv">21</span>                  <span class="dv">0</span></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>gum           <span class="dv">41</span>          <span class="dv">1</span>     <span class="dv">22</span></span>
 <span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>sugar          <span class="dv">2</span>          <span class="dv">2</span>     <span class="dv">22</span>                  <span class="op">&gt;&gt;&gt;</span> (bow_df[<span class="st">&#39;paperboard&#39;</span>] <span class="op">&gt;</span> <span class="dv">0</span>).<span class="bu">sum</span>()</span>
