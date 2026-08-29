@@ -51,44 +51,24 @@ I. `OneHotEncoder(___)`
 
 J. `LinearRegression()`
 
-K. `ColumnTransformer([("one", ___, [___]), ("two", ___, [___])], ___)`
+K. `ColumnTransformer([("one", ___, ["AppointmentTime"]), ("two", ___, ["Department"])], ___)`
 
 L. `ColumnTransformer([("one", ___, [___]), ("two", ___, [___]), ("three", ___, [___])], ___)`
 
-M. `make_pipeline(___, ___, ___)`
+M. `make_pipeline(___, ___)`
 
-N. `make_pipeline(___, ___)`
+N. `make_pipeline(___, ___, ___)`
 
 # BEGIN SOLUTION
 
-**Answer:**
+**Answer:** `pl = N` where `N = make_pipeline(K, E, J)` and:
 
-`pl = M` where:
-
-- **M:** `make_pipeline(L, E, J)`
-- **L:** `ColumnTransformer([("one", M_inner, ["AppointmentTime"]), ("two", I, ["Department"])], C)` — using nested references:
-  - **H:** `FunctionTransformer(hour)`
-  - **F:** `Binarizer(threshold = 11)`
-  - Inner pipeline for `"AppointmentTime"`: `make_pipeline(H, F)`
-  - **I:** `OneHotEncoder(A)` i.e. `OneHotEncoder(drop='first')`
-  - **C:** `remainder='passthrough'`
-  - **E:** `StandardScaler()`
-  - **J:** `LinearRegression()`
-
-So the full pipeline is:
-
-```py
-pl = make_pipeline(
-    ColumnTransformer([
-        ("one", make_pipeline(FunctionTransformer(hour), Binarizer(threshold=11)), ["AppointmentTime"]),
-        ("two", OneHotEncoder(drop='first'), ["Department"])
-    ], remainder='passthrough'),
-    StandardScaler(),
-    LinearRegression()
-)
-```
-
-`FunctionTransformer(hour)` extracts the hour from `"AppointmentTime"`. `Binarizer(threshold=11)` encodes afternoon appointments (hour $\geq 12$) as 1. `OneHotEncoder(drop='first')` encodes `"Department"` without collinearity. `remainder='passthrough'` keeps `"NumProviders"` and `"Credentials"`. `StandardScaler()` makes coefficients comparable.
+- `K = ColumnTransformer([("one", M, ["AppointmentTime"]), ("two", I, ["Department"])], C)`
+- `M = make_pipeline(H, F)` with `H = FunctionTransformer(hour)` and `F = Binarizer(threshold=11)`
+- `I = OneHotEncoder(A)` i.e. `OneHotEncoder(drop='first')`
+- `C = remainder='passthrough'`
+- `E = StandardScaler()`
+- `J = LinearRegression()`
 
 # END SOLUTION
 

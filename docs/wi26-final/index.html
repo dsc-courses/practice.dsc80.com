@@ -219,12 +219,6 @@ aria-labelledby="heading1_1" data-bs-parent="#accordionExample">
 timestamp columns)</li>
 <li><code>wait_time, axis=1</code></li>
 </ol>
-<p>When using <code>.apply()</code> with <code>axis=1</code>, each row
-is passed to the function as a Series. We need to replicate the
-vectorized calculation row-by-row: subtract the later of
-<code>"ArrivalTime"</code> and <code>"AppointmentTime"</code> from
-<code>"StartTime"</code>, take <code>.seconds</code>, and divide by
-60.</p>
 </div>
 </div>
 </div>
@@ -252,9 +246,6 @@ aria-labelledby="heading1_2" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer:</strong> <code>float</code></p>
-<p>Dividing the number of seconds by <code>60</code> produces a
-floating-point number, so the resulting column has dtype
-<code>float</code>.</p>
 </div>
 </div>
 </div>
@@ -305,9 +296,6 @@ aria-labelledby="heading1_4" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer:</strong> Zero and Positive</p>
-<p>Since <code>"StartTime"</code> is always at or after both
-<code>"ArrivalTime"</code> and <code>"AppointmentTime"</code>, the wait
-time in minutes is always zero or positive.</p>
 </div>
 </div>
 </div>
@@ -323,17 +311,18 @@ time in minutes is always zero or positive.</p>
 <h2 id="problem-2">Problem 2</h2>
 <p>Doctors love having letters after their names! These letters usually
 represent degrees, titles, or certifications. We’ll refer to them
-collectively as <strong>credentials</strong>. In the
-<code>"Provider"</code> column of <code>med</code>, each provider has at
-least one credential. Credentials appear after the name and are
-separated by commas. For example, the preview of <code>med</code> shows
-that Dr. Takashi Hirase has two credentials (MD and MPH).</p>
+collectively as credentials. In the <code>"Provider"</code> column of
+<code>med</code>, each provider has at least one credential. Credentials
+appear after the name and are separated by commas. For example, the
+preview of <code>med</code> shows that Dr. Takashi Hirase has two
+credentials (MD and MPH).</p>
 <p><br></p>
 <h3 id="problem-2.1">Problem 2.1</h3>
-<p>Write one line of code that evaluates to a Series containing the
-number of credentials for each provider in the <code>"Provider"</code>
-column of <code>med</code>. You must use <code>.split()</code> and you
-may not define any lambda functions.</p>
+<p>Write <strong>one line</strong> of code that evaluates to a Series
+containing the number of credentials for each provider in the
+<code>"Provider"</code> column of <code>med</code>. You
+<strong>must</strong> use <code>.split()</code> and you may
+<strong>not</strong> define any lambda functions.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading2_1">
@@ -347,21 +336,17 @@ aria-labelledby="heading2_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer:</strong>
-<code>med["Provider"].str.split(", ").apply(len) - 1</code></p>
-<p>Each credential after the provider’s name is preceded by
-<code>", "</code>, so splitting on <code>", "</code> gives one more
-piece than the number of credentials. Subtracting 1 gives the credential
-count.</p>
+<p><strong>Answer:</strong> ‘med.str.split(", ").apply(len) - 1’</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <h3 id="problem-2.2">Problem 2.2</h3>
-<p>Write a different single line of code that evaluates to the same
-Series. This time, you may not use <code>.split()</code> and you may not
-define any lambda functions.</p>
+<p>Write a different <strong>single line</strong> of code that evaluates
+to the same Series. This time, you may <strong>not</strong> use
+<code>.split()</code> and you may <strong>not</strong> define any lambda
+functions.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading2_2">
@@ -375,11 +360,7 @@ aria-labelledby="heading2_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer:</strong>
-<code>med["Provider"].str.count(", ")</code></p>
-<p>Each credential beyond the first adds one <code>", "</code> to the
-string, so counting occurrences of <code>", "</code> gives the number of
-credentials.</p>
+<p><strong>Answer:</strong> ‘med.str.count(", ")’</p>
 </div>
 </div>
 </div>
@@ -415,9 +396,6 @@ aria-labelledby="heading3_1" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer:</strong> <span class="math inline">\frac{11}{12}</span></p>
-<p>A decision tree can achieve perfect classification on 11 of the 12
-rows; at least one row cannot be separated from the rest using only
-<code>"Age"</code> and <code>"NumProviders"</code>.</p>
 </div>
 </div>
 </div>
@@ -428,21 +406,16 @@ rows; at least one row cannot be separated from the rest using only
 associated with using <code>"Age" &gt;= 15</code> as the root node of
 the decision tree.</p>
 <ul class="task-list">
-<li><p><input type="radio" disabled="" /> <span class="math inline">\frac{2}{12}
-\left(-\frac{2}{2}\log_2\frac{2}{2} -
-\frac{0}{2}\log_2\frac{0}{2}\right) +
-\frac{10}{12}\left(-\frac{6}{10}\log_2\frac{6}{10} -
-\frac{4}{10}\log_2\frac{4}{10}\right)</span></p></li>
-<li><p><input type="radio" disabled="" /> <span class="math inline">\frac{2}{6}\left(-\frac{2}{5}\log_2\frac{2}{5} -
-\frac{3}{5}\log_2\frac{3}{5}\right) +
-\frac{3}{6}\left(-\frac{2}{2}\log_2\frac{2}{2} -
+<li><p><input type="radio" disabled="" /> <span class="math inline">\frac{1}{6}\left(-\frac{2}{5}\log_2\frac{2}{5} -
+\frac{3}{5}\log_2\frac{3}{5}\right)</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">-\frac{2}{5}\log_2\frac{2}{5} -
+\frac{3}{5}\log_2\frac{3}{5}</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">\frac{1}{6}\left(-\frac{1}{2}\log_2\frac{1}{2} -
 \frac{1}{2}\log_2\frac{1}{2}\right)</span></p></li>
-<li><p><input type="radio" disabled="" /> <span class="math inline">-\frac{6}{12}\log_2\frac{6}{12} -
-\frac{6}{12}\log_2\frac{6}{12}</span></p></li>
-<li><p><input type="radio" disabled="" /> <span class="math inline">\frac{1}{2}\left(-\frac{1}{2}\log_2\frac{1}{2} -
-\frac{1}{2}\log_2\frac{1}{2}\right) +
-\frac{1}{2}\left(-\frac{1}{2}\log_2\frac{1}{2} -
-\frac{1}{2}\log_2\frac{1}{2}\right)</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">-\frac{1}{2}\log_2\frac{1}{2} -
+\frac{1}{2}\log_2\frac{1}{2}</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">\frac{5}{6}\left(-\frac{2}{5}\log_2\frac{2}{5} -
+\frac{3}{5}\log_2\frac{3}{5}\right)</span></p></li>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
@@ -457,22 +430,15 @@ aria-labelledby="heading3_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer:</strong> <span class="math inline">\frac{2}{12}
-\left(-\frac{2}{2}\log_2\frac{2}{2} -
-\frac{0}{2}\log_2\frac{0}{2}\right) +
-\frac{10}{12}\left(-\frac{6}{10}\log_2\frac{6}{10} -
-\frac{4}{10}\log_2\frac{4}{10}\right)</span></p>
-<p>Splitting on <code>"Age" &gt;= 15</code> gives a left group of 2 rows
-(both <code>"Wait"</code> = 0, entropy 0) and a right group of 10 rows
-(6 waits, 4 no-waits). The weighted entropy weights each child group’s
-entropy by its proportion of the 12 total rows.</p>
+<p><strong>Answer:</strong> <span class="math inline">\frac{5}{6}\left(-\frac{2}{5}\log_2\frac{2}{5} -
+\frac{3}{5}\log_2\frac{3}{5}\right)</span></p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <h3 id="problem-3.3">Problem 3.3</h3>
-<p>All but one of the following question splits the data in such a way
+<p>All but one of the following questions splits the data in such a way
 that the weighted entropy is the same. Which question yields a
 <strong>different</strong> weighted entropy than the others?</p>
 <ul class="task-list">
@@ -496,9 +462,6 @@ aria-labelledby="heading3_3" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer:</strong> <code>"NumProviders" &lt;= 3</code></p>
-<p>All of the listed splits except <code>"NumProviders" &lt;= 3</code>
-produce the same weighted entropy of 1. The split at 3 providers gives a
-different weighted entropy (about 0.918).</p>
 </div>
 </div>
 </div>
@@ -522,8 +485,6 @@ aria-labelledby="heading3_4" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer:</strong> <span class="math inline">1</span></p>
-<p>Each of the splits other than <code>"NumProviders" &lt;= 3</code> has
-weighted entropy 1.</p>
 </div>
 </div>
 </div>
@@ -570,11 +531,6 @@ aria-labelledby="heading4_1" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer:</strong> <code>0</code></p>
-<p>When <code>min_entropy = 0</code>, nodes are always allowed to split
-(as long as other stopping criteria permit), so the tree can fit the
-training data as well as possible. This gives the highest training
-accuracy among the candidates, and the function breaks ties by choosing
-the first value that achieves the highest score.</p>
 </div>
 </div>
 </div>
@@ -602,9 +558,6 @@ aria-labelledby="heading4_2" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer:</strong> lower; overfitting</p>
-<p>With <code>min_entropy = 0</code>, the tree can grow until it fits
-the training data very closely, which typically leads to overfitting and
-lower test accuracy than training accuracy.</p>
 </div>
 </div>
 </div>
@@ -631,9 +584,6 @@ aria-labelledby="heading4_3" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer:</strong> increases; decreases</p>
-<p>A larger <code>min_entropy</code> prevents splits on low-entropy
-nodes, producing a simpler tree. Simpler models have higher bias and
-lower variance.</p>
 </div>
 </div>
 </div>
@@ -680,14 +630,7 @@ aria-labelledby="heading5_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answers:</strong></p>
-<ol type="1">
-<li><span class="math inline">1</span></li>
-<li><span class="math inline">1</span></li>
-<li><span class="math inline">1</span></li>
-</ol>
-<p>On this dataset, every point is correctly classified by its 3 nearest
-neighbors, so accuracy, precision, and recall are all 1.</p>
+<p><strong>Answers:</strong> <span class="math inline">0.8</span>, <span class="math inline">0.8</span>, <span class="math inline">1</span></p>
 </div>
 </div>
 </div>
@@ -716,15 +659,7 @@ aria-labelledby="heading5_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answers:</strong></p>
-<ol type="1">
-<li><span class="math inline">0.8</span></li>
-<li><span class="math inline">0.8</span></li>
-<li><span class="math inline">1</span></li>
-</ol>
-<p>Four of the five positive-class points are correctly classified; one
-positive point is misclassified. This gives accuracy and precision of
-0.8 and recall of 1.</p>
+<p><strong>Answers:</strong> <span class="math inline">1</span>, <span class="math inline">1</span>, <span class="math inline">1</span></p>
 </div>
 </div>
 </div>
@@ -747,9 +682,6 @@ aria-labelledby="heading5_3" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer:</strong> <span class="math inline">0.8</span></p>
-<p>With <span class="math inline">k = 15</span>, the classifier uses a
-majority vote over nearly the entire dataset, yielding the same accuracy
-on both scatter plots.</p>
 </div>
 </div>
 </div>
@@ -803,11 +735,11 @@ those answer choices empty.</p>
 <p>I. <code>OneHotEncoder(___)</code></p>
 <p>J. <code>LinearRegression()</code></p>
 <p>K.
-<code>ColumnTransformer([("one", ___, [___]), ("two", ___, [___])], ___)</code></p>
+<code>ColumnTransformer([("one", ___, ["AppointmentTime"]), ("two", ___, ["Department"])], ___)</code></p>
 <p>L.
 <code>ColumnTransformer([("one", ___, [___]), ("two", ___, [___]), ("three", ___, [___])], ___)</code></p>
-<p>M. <code>make_pipeline(___, ___, ___)</code></p>
-<p>N. <code>make_pipeline(___, ___)</code></p>
+<p>M. <code>make_pipeline(___, ___)</code></p>
+<p>N. <code>make_pipeline(___, ___, ___)</code></p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading6">
@@ -821,44 +753,19 @@ aria-labelledby="heading6" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer:</strong></p>
-<p><code>pl = M</code> where:</p>
+<p><strong>Answer:</strong> <code>pl = N</code> where
+<code>N = make_pipeline(K, E, J)</code> and:</p>
 <ul>
-<li><strong>M:</strong> <code>make_pipeline(L, E, J)</code></li>
-<li><strong>L:</strong>
-<code>ColumnTransformer([("one", M_inner, ["AppointmentTime"]), ("two", I, ["Department"])], C)</code>
-— using nested references:
-<ul>
-<li><strong>H:</strong> <code>FunctionTransformer(hour)</code></li>
-<li><strong>F:</strong> <code>Binarizer(threshold = 11)</code></li>
-<li>Inner pipeline for <code>"AppointmentTime"</code>:
-<code>make_pipeline(H, F)</code></li>
-<li><strong>I:</strong> <code>OneHotEncoder(A)</code>
+<li><code>K = ColumnTransformer([("one", M, ["AppointmentTime"]), ("two", I, ["Department"])], C)</code></li>
+<li><code>M = make_pipeline(H, F)</code> with
+<code>H = FunctionTransformer(hour)</code> and
+<code>F = Binarizer(threshold=11)</code></li>
+<li><code>I = OneHotEncoder(A)</code>
 i.e. <code>OneHotEncoder(drop='first')</code></li>
-<li><strong>C:</strong> <code>remainder='passthrough'</code></li>
-<li><strong>E:</strong> <code>StandardScaler()</code></li>
-<li><strong>J:</strong> <code>LinearRegression()</code></li>
-</ul></li>
+<li><code>C = remainder='passthrough'</code></li>
+<li><code>E = StandardScaler()</code></li>
+<li><code>J = LinearRegression()</code></li>
 </ul>
-<p>So the full pipeline is:</p>
-<div id="cb1" class="sourceCode">
-<pre class="sourceCode py"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" href="#cb1-1" tabindex="-1"></a>pl <span class="op">=</span> make_pipeline(</span>
-<span id="cb1-2"><a aria-hidden="true" href="#cb1-2" tabindex="-1"></a>    ColumnTransformer([</span>
-<span id="cb1-3"><a aria-hidden="true" href="#cb1-3" tabindex="-1"></a>        (<span class="st">"one"</span>, make_pipeline(FunctionTransformer(hour), Binarizer(threshold<span class="op">=</span><span class="dv">11</span>)), [<span class="st">"AppointmentTime"</span>]),</span>
-<span id="cb1-4"><a aria-hidden="true" href="#cb1-4" tabindex="-1"></a>        (<span class="st">"two"</span>, OneHotEncoder(drop<span class="op">=</span><span class="st">'first'</span>), [<span class="st">"Department"</span>])</span>
-<span id="cb1-5"><a aria-hidden="true" href="#cb1-5" tabindex="-1"></a>    ], remainder<span class="op">=</span><span class="st">'passthrough'</span>),</span>
-<span id="cb1-6"><a aria-hidden="true" href="#cb1-6" tabindex="-1"></a>    StandardScaler(),</span>
-<span id="cb1-7"><a aria-hidden="true" href="#cb1-7" tabindex="-1"></a>    LinearRegression()</span>
-<span id="cb1-8"><a aria-hidden="true" href="#cb1-8" tabindex="-1"></a>)</span></code></pre>
-</div>
-<p><code>FunctionTransformer(hour)</code> extracts the hour from
-<code>"AppointmentTime"</code>. <code>Binarizer(threshold=11)</code>
-encodes afternoon appointments (hour <span class="math inline">\geq
-12</span>) as 1. <code>OneHotEncoder(drop='first')</code> encodes
-<code>"Department"</code> without collinearity.
-<code>remainder='passthrough'</code> keeps <code>"NumProviders"</code>
-and <code>"Credentials"</code>. <code>StandardScaler()</code> makes
-coefficients comparable.</p>
 </div>
 </div>
 </div>
@@ -866,18 +773,18 @@ coefficients comparable.</p>
 <hr />
 <h2 id="problem-7">Problem 7</h2>
 <p>Suppose we derive a numerical feature
-<code>"AppointmentTimeSeconds"</code> which measures the
+<code>"AppointmentTimeSeconds"</code> which measures the<br />
 <code>"AppointmentTime"</code> in seconds since midnight. Then we use
-linear regression to fit a prediction rule of the form:</p>
-<p><span class="math display">\text{predicted
-`&quot;WaitTime&quot;&#39;} = w_0 + w_1 \cdot \text{`&quot;Age&quot;`} +
-w_2 \cdot \text{`&quot;NumProviders&quot;`} + w_3 \cdot
-\text{`&quot;AppointmentTimeSeconds&quot;`}</span></p>
+linear regression to fit a prediction rule of the form: <span
+class="math display">\text{predicted }\texttt{&quot;WaitTime&quot;} =
+w_0 + w_1\cdot\texttt{&quot;Age&quot;} +
+w_2\cdot\texttt{&quot;NumProviders&quot;} +
+w_3\cdot\texttt{&quot;AppointmentTimeSeconds&quot;}</span></p>
 <p>Consider each of the following changes to the model above, and
-determine which coefficients in the fit model <strong>may
-change</strong>. Select all coefficients that may change. Note that we
-are changing the original model each time, not stacking changes on top
-of one another.</p>
+determine which coefficients in the fit model may change. <strong>Select
+all</strong> coefficients that may change. Note that we are changing the
+original model each time, not stacking changes on top of one
+another.</p>
 <p><br></p>
 <h3 id="problem-7.1">Problem 7.1</h3>
 <p>Change <code>"AppointmentTimeSeconds"</code> to
@@ -902,21 +809,15 @@ aria-labelledby="heading7_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer:</strong> <span class="math inline">w_0</span> and
-<span class="math inline">w_3</span></p>
-<p>Scaling <code>"AppointmentTimeSeconds"</code> to minutes scales that
-feature by a factor of 60, which changes <span class="math inline">w_3</span> (and typically <span class="math inline">w_0</span> to preserve predictions). <span class="math inline">w_1</span> and <span class="math inline">w_2</span>
-are unchanged because their features are unaffected.</p>
+<p><strong>Answer:</strong> <span class="math inline">w_3</span></p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <h3 id="problem-7.2">Problem 7.2</h3>
-<p>Add a new feature, which is <span class="math inline">3 \cdot
-\text{`&quot;Age&quot;`} + \text{`&quot;NumProviders&quot;`}</span>.</p>
+<p>Remove the intercept term <span class="math inline">w_0</span>.</p>
 <ul class="task-list">
-<li><p><input type="checkbox" disabled="" /> <span class="math inline">w_0</span></p></li>
 <li><p><input type="checkbox" disabled="" /> <span class="math inline">w_1</span></p></li>
 <li><p><input type="checkbox" disabled="" /> <span class="math inline">w_2</span></p></li>
 <li><p><input type="checkbox" disabled="" /> <span class="math inline">w_3</span></p></li>
@@ -934,18 +835,15 @@ aria-labelledby="heading7_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer:</strong> <span class="math inline">w_0</span>, <span class="math inline">w_1</span>, <span class="math inline">w_2</span>,
-and <span class="math inline">w_3</span></p>
-<p>Adding a new feature that is a linear combination of existing
-features introduces multicollinearity, so all coefficients may
-change.</p>
+<p><strong>Answer:</strong> <span class="math inline">w_1</span>, <span class="math inline">w_2</span>, <span class="math inline">w_3</span></p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <h3 id="problem-7.3">Problem 7.3</h3>
-<p>Add a new feature, which is <code>"Age"/"NumProviders"</code>.</p>
+<p>Add a new feature, which is <span
+class="math inline">3\cdot\texttt{&quot;Age&quot;}+\texttt{&quot;NumProviders&quot;}</span>.</p>
 <ul class="task-list">
 <li><p><input type="checkbox" disabled="" /> <span class="math inline">w_0</span></p></li>
 <li><p><input type="checkbox" disabled="" /> <span class="math inline">w_1</span></p></li>
@@ -965,18 +863,17 @@ aria-labelledby="heading7_3" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer:</strong> <span class="math inline">w_0</span>, <span class="math inline">w_1</span>, <span class="math inline">w_2</span>,
-and <span class="math inline">w_3</span></p>
-<p>Adding a nonlinear combination of existing features can change the
-optimal fit for all coefficients.</p>
+<p><strong>Answer:</strong> <span class="math inline">w_1</span>, <span class="math inline">w_2</span></p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <h3 id="problem-7.4">Problem 7.4</h3>
-<p>Remove the intercept term <span class="math inline">w_0</span>.</p>
+<p>Add a new feature, which is <span
+class="math inline">\texttt{&quot;Age&quot;}/\texttt{&quot;NumProviders&quot;}</span>.</p>
 <ul class="task-list">
+<li><p><input type="checkbox" disabled="" /> <span class="math inline">w_0</span></p></li>
 <li><p><input type="checkbox" disabled="" /> <span class="math inline">w_1</span></p></li>
 <li><p><input type="checkbox" disabled="" /> <span class="math inline">w_2</span></p></li>
 <li><p><input type="checkbox" disabled="" /> <span class="math inline">w_3</span></p></li>
@@ -994,9 +891,8 @@ aria-labelledby="heading7_4" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer:</strong> <span class="math inline">w_1</span>, <span class="math inline">w_2</span>, and <span class="math inline">w_3</span></p>
-<p>Removing the intercept forces the regression through the origin,
-which generally changes all remaining slope coefficients.</p>
+<p><strong>Answer:</strong> <span class="math inline">w_0</span>, <span class="math inline">w_1</span>, <span class="math inline">w_2</span>,
+<span class="math inline">w_3</span></p>
 </div>
 </div>
 </div>
@@ -1011,14 +907,20 @@ which generally changes all remaining slope coefficients.</p>
 column to <code>med</code> called <code>"EstimatedWaitTime"</code> which
 contains the median <code>"WaitTime"</code> for appointments with the
 same <code>"Provider"</code>.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>med[<span class="st">&quot;EstimatedWaitTime&quot;</span>] <span class="op">=</span> (med.groupby(__(a)__)[__(b)__]</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>                            .__(c)__(__(d)__))</span></code></pre></div>
-<ol type="1">
-<li><p>What goes in blank (a)?</p></li>
-<li><p>What goes in blank (b)?</p></li>
-<li><p>What goes in blank (c)?</p></li>
-<li><p>What goes in blank (d)?</p></li>
-</ol>
+<pre><code>med[&quot;EstimatedWaitTime&quot;] = (med.groupby(__(a)__)[__(b)__]
+                               .__(c)__(__(d)__))</code></pre>
+<table>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>(a)</code>:</td>
+<td style="text-align: left;"><code>(b)</code>:</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>(c)</code>:</td>
+<td style="text-align: left;"><code>(d)</code>:</td>
+</tr>
+</tbody>
+</table>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading8_1">
@@ -1032,16 +934,10 @@ aria-labelledby="heading8_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answers:</strong></p>
-<ol type="1">
-<li><code>"Provider"</code></li>
-<li><code>"WaitTime"</code></li>
-<li><code>transform</code></li>
-<li><code>np.median</code></li>
-</ol>
-<p><code>.groupby("Provider")["WaitTime"].transform(np.median)</code>
-computes the median wait time for each provider and broadcasts it back
-to every row with that provider.</p>
+<p><strong>Answer:</strong> ’"Provider"`</p>
+<p><strong>Answer:</strong> ’"WaitTime"`</p>
+<p><strong>Answer:</strong> ‘transform’</p>
+<p><strong>Answer:</strong> ‘np.median’</p>
 </div>
 </div>
 </div>
@@ -1058,17 +954,15 @@ than 75 percent of appointments in a given <code>"Department"</code>
 have a <code>"Wait"</code>, the <code>"Department"</code> should not
 appear in the Series. Recall that <code>np.percentile(x, 95)</code>
 calculates the 95th percentile of <code>x</code>.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>(med.groupby(__(a)__).__(b)__(__(c)__)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a> .groupby(__(d)__)[__(e)__].__(f)__(__(g)__))</span></code></pre></div>
-<ol type="1">
-<li><p>What goes in blank (a)?</p></li>
-<li><p>What goes in blank (b)?</p></li>
-<li><p>What goes in blank (c)?</p></li>
-<li><p>What goes in blank (d)?</p></li>
-<li><p>What goes in blank (e)?</p></li>
-<li><p>What goes in blank (f)?</p></li>
-<li><p>What goes in blank (g)?</p></li>
-</ol>
+<pre><code>    (med.groupby(__(a)__).__(b)__(__(c)__)
+        .groupby(__(d)__)[__(e)__].__(f)__(__(g)__))</code></pre>
+<p><code>(a)</code>:</p>
+<p><code>(b)</code>:</p>
+<p><code>(c)</code>:</p>
+<p><code>(d)</code>:</p>
+<p><code>(e)</code>:</p>
+<p><code>(f)</code>:</p>
+<p><code>(g)</code>:</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading8_2">
@@ -1082,20 +976,13 @@ aria-labelledby="heading8_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answers:</strong></p>
-<ol type="1">
-<li><code>"Department"</code></li>
-<li><code>filter</code></li>
-<li><code>lambda df: df["Wait"].mean() &gt;= 0.75</code></li>
-<li><code>"Department"</code></li>
-<li><code>"WaitTime"</code></li>
-<li><code>agg</code></li>
-<li><code>lambda s: np.percentile(s, 95)</code></li>
-</ol>
-<p>First, <code>.groupby("Department").filter(...)</code> keeps only
-departments where at least 75% of appointments have a wait. Then, group
-again by department and aggregate the 95th percentile of
-<code>"WaitTime"</code>.</p>
+<p><strong>Answer:</strong> ’"Department"`</p>
+<p><strong>Answer:</strong> ‘filter’</p>
+<p><strong>Answer:</strong> ‘lambda df: df.mean() &gt;= 0.75’</p>
+<p><strong>Answer:</strong> ’"Department"`</p>
+<p><strong>Answer:</strong> ’"WaitTime"`</p>
+<p><strong>Answer:</strong> ‘agg’ or ‘aggregate’ or ‘apply’</p>
+<p><strong>Answer:</strong> ‘lambda s: np.percentile(s, 95)’</p>
 </div>
 </div>
 </div>
@@ -1136,10 +1023,7 @@ aria-labelledby="heading9_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer:</strong> missing by design (MD)</p>
-<p>Complex procedures intentionally leave <code>"Billed"</code> empty at
-appointment time because billing happens later. This missingness is
-built into the data collection process.</p>
+<p><strong>Answer:</strong> missing not at random (MNAR)</p>
 </div>
 </div>
 </div>
@@ -1147,17 +1031,17 @@ built into the data collection process.</p>
 <p><br></p>
 <h3 id="problem-9.2">Problem 9.2</h3>
 <p>Now suppose we merge the billing DataFrame with <code>med</code> on
-<code>"MRN"</code> and <code>"AppointmentTime"</code>.</p>
-<p>We want to do a permutation test at the 0.05 significance level to
-decide if the missingness mechanism of the <code>"Billed"</code> column
-is more likely MCAR or MAR dependent on <code>"Department"</code>. Which
-of the following test statistics could be used for this permutation
-test? Select all that apply.</p>
+<code>"MRN"</code> and <code>"AppointmentTime"</code>. We want to do a
+permutation test at the 0.05 significance level to decide if the
+missingness mechanism of the <code>"Billed"</code> column is more likely
+MCAR or MAR dependent on <code>"Department"</code>. Which of the
+following test statistics could be used for this permutation test?
+Select all that apply.</p>
 <ul class="task-list">
-<li><p><input type="checkbox" disabled="" /> K-S statistic</p></li>
 <li><p><input type="checkbox" disabled="" /> difference of means</p></li>
 <li><p><input type="checkbox" disabled="" /> absolute difference of means</p></li>
 <li><p><input type="checkbox" disabled="" /> total variation distance (TVD)</p></li>
+<li><p><input type="checkbox" disabled="" /> K-S statistic</p></li>
 <li><p><input type="checkbox" disabled="" /> none of these</p></li>
 </ul>
 <div id="accordionExample" class="accordion">
@@ -1173,13 +1057,7 @@ aria-labelledby="heading9_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer:</strong> absolute difference of means and total
-variation distance (TVD)</p>
-<p>To compare MCAR vs. MAR dependent on <code>"Department"</code>, we
-can compare the distribution of missingness (or
-<code>"Department"</code>) across groups. TVD and absolute difference of
-means are appropriate for comparing distributions or group means of an
-indicator for missingness.</p>
+<p><strong>Answer:</strong> total variation distance (TVD)</p>
 </div>
 </div>
 </div>
@@ -1189,10 +1067,10 @@ indicator for missingness.</p>
 <p>Suppose the p-value comes out to 0.03. What can we conclude? Select
 all that apply.</p>
 <ul class="task-list">
-<li><p><input type="checkbox" disabled="" /> The missingness mechanism is not MD.</p></li>
-<li><p><input type="checkbox" disabled="" /> The missingness mechanism is not MNAR.</p></li>
 <li><p><input type="checkbox" disabled="" /> The missingness mechanism is more likely MCAR than MAR.</p></li>
 <li><p><input type="checkbox" disabled="" /> The missingness mechanism is more likely MAR than MCAR.</p></li>
+<li><p><input type="checkbox" disabled="" /> The missingness mechanism is not MD.</p></li>
+<li><p><input type="checkbox" disabled="" /> The missingness mechanism is not MNAR.</p></li>
 <li><p><input type="checkbox" disabled="" /> None of the above is a valid conclusion.</p></li>
 </ul>
 <div id="accordionExample" class="accordion">
@@ -1210,9 +1088,6 @@ aria-labelledby="heading9_3" data-bs-parent="#accordionExample">
 </header>
 <p><strong>Answer:</strong> The missingness mechanism is more likely MAR
 than MCAR.</p>
-<p>At the 0.05 significance level, a p-value of 0.03 provides evidence
-against the null hypothesis that missingness is MCAR, suggesting MAR is
-more likely.</p>
 </div>
 </div>
 </div>
@@ -1246,10 +1121,6 @@ aria-labelledby="heading9_4" data-bs-parent="#accordionExample">
 </header>
 <p><strong>Answer:</strong> probabilistic imputation, conditional on
 <code>"Department"</code></p>
-<p>Probabilistic imputation samples from the conditional distribution of
-<code>"Billed"</code> given <code>"Department"</code>, which better
-preserves both the mean and standard deviation than filling with a
-single value.</p>
 </div>
 </div>
 </div>
@@ -1271,11 +1142,11 @@ class="sourceCode py"><code class="sourceCode python"><span id="cb10-1"><a href=
 <p><br></p>
 <h3 id="problem-10.1">Problem 10.1</h3>
 <ul>
-<li><code>dr_z</code> has 90 rows, all representing distinct
+<li><code>dr_z</code> has 100 rows, all representing distinct
 patients.</li>
-<li><code>dr_g</code> has 70 rows, all representing distinct
+<li><code>dr_g</code> has 80 rows, all representing distinct
 patients.</li>
-<li>30 patients appear in both DataFrames.</li>
+<li>20 patients appear in both DataFrames.</li>
 </ul>
 <ol type="1">
 <li><p><code>how = "inner"</code>:</p></li>
@@ -1296,16 +1167,7 @@ aria-labelledby="heading10_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answers:</strong></p>
-<ol type="1">
-<li>30</li>
-<li>130</li>
-<li>90</li>
-<li>70</li>
-</ol>
-<p>Inner keeps only shared patients (30). Outer keeps all patients from
-both (90 + 70 − 30 = 130). Left keeps all 90 from <code>dr_z</code>.
-Right keeps all 70 from <code>dr_g</code>.</p>
+<p><strong>Answers:</strong> 20, 160, 100, 80</p>
 </div>
 </div>
 </div>
@@ -1313,12 +1175,12 @@ Right keeps all 70 from <code>dr_g</code>.</p>
 <p><br></p>
 <h3 id="problem-10.2">Problem 10.2</h3>
 <ul>
-<li><code>dr_z</code> has 20 rows, all representing distinct
+<li><code>dr_z</code> has 50 rows, all representing distinct
 patients.</li>
-<li><code>dr_g</code> has 65 rows, all representing distinct
+<li><code>dr_g</code> has 15 rows, all representing distinct
 patients.</li>
-<li>All patients appearing in <code>dr_z</code> also appear in
-<code>dr_g</code>.</li>
+<li>All patients appearing in <code>dr_g</code> also appear in
+<code>dr_z</code>.</li>
 </ul>
 <ol type="1">
 <li><p><code>how = "inner"</code>:</p></li>
@@ -1339,16 +1201,7 @@ aria-labelledby="heading10_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answers:</strong></p>
-<ol type="1">
-<li>20</li>
-<li>65</li>
-<li>20</li>
-<li>65</li>
-</ol>
-<p>Every <code>dr_z</code> patient is in <code>dr_g</code>, so inner and
-left both have 20 rows. Outer and right include all 65 patients in
-<code>dr_g</code>.</p>
+<p><strong>Answers:</strong> 15, 50, 50, 15</p>
 </div>
 </div>
 </div>
@@ -1382,19 +1235,7 @@ aria-labelledby="heading10_3" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answers:</strong></p>
-<ol type="1">
-<li>40</li>
-<li>140</li>
-<li>80</li>
-<li>100</li>
-</ol>
-<p>With duplicate rows, each shared patient contributes <span class="math inline">2 \times 2 = 4</span> rows to an inner join (<span class="math inline">10 \times 4 = 40</span>). An outer join gives <span class="math inline">60 + 80 - 40 = 140</span> rows. A left join keeps
-all 60 <code>dr_z</code> rows (20 shared-patient rows each match 2
-<code>dr_g</code> rows for 40 total, plus 40 <code>dr_z</code>-only
-rows). A right join keeps all 80 <code>dr_g</code> rows (20
-shared-patient rows each match 2 <code>dr_z</code> rows for 40 total,
-plus 60 <code>dr_g</code>-only rows).</p>
+<p><strong>Answers:</strong> 40, 140, 80, 100</p>
 </div>
 </div>
 </div>
@@ -1404,14 +1245,13 @@ plus 60 <code>dr_g</code>-only rows).</p>
 <h2 id="problem-11">Problem 11</h2>
 <p>Suppose we train a unigram, bigram, and trigram model on the
 following corpus.</p>
-<div class="sourceCode" id="cb11"><pre
-class="sourceCode py"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>corpus <span class="op">=</span> <span class="st">&quot;Patient is ill. Patient is in pain. Ill patient will recover in time.&quot;</span></span></code></pre></div>
+<pre><code>corpus = &quot;Patient is ill. Patient is in pain. Ill patient will recover 
+          in time.&quot;</code></pre>
 <p>We tokenized the corpus as follows before training our models.</p>
-<div class="sourceCode" id="cb12"><pre
-class="sourceCode py"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>corpus.lower().split()</span></code></pre></div>
+<pre><code>corpus.lower().split()</code></pre>
 <p>Now, we’d like to determine the probability of generating the
 sentence below, according to each model.</p>
-<p><code>"Patient is in time."</code></p>
+<pre><code>&quot;Patient is in time.&quot;</code></pre>
 <p>For each part, give your answer as a simplified fraction (preferred)
 or a product of simplified fractions.</p>
 <p><br></p>
@@ -1431,12 +1271,7 @@ aria-labelledby="heading11_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer:</strong> <span class="math inline">\frac{3}{13} \cdot
-\frac{2}{13} \cdot \frac{2}{13} \cdot \frac{1}{13}</span></p>
-<p>After lowercasing and splitting, the corpus has 13 tokens: three
-<code>"patient"</code>, two <code>"is"</code>, two <code>"in"</code>,
-and one each of the remaining tokens. The unigram model multiplies the
-marginal probabilities of each word in the sentence.</p>
+<p><strong>Answer:</strong> ‘3/13 * 2/13 * 2/13 * 1/13’</p>
 </div>
 </div>
 </div>
@@ -1458,10 +1293,7 @@ aria-labelledby="heading11_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer:</strong> <span class="math inline">\frac{1}{26}</span></p>
-<p>Under the bigram model, multiply the probability of the first token
-by each subsequent conditional probability. This product simplifies to
-<span class="math inline">\frac{1}{26}</span>.</p>
+<p><strong>Answer:</strong> ‘1/26’</p>
 </div>
 </div>
 </div>
@@ -1483,10 +1315,7 @@ aria-labelledby="heading11_3" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer:</strong> <span class="math inline">0</span></p>
-<p>The trigram <code>"is in time."</code> (or another required trigram
-in the sentence) never appears in the training corpus, so the trigram
-model assigns probability 0 to the sentence.</p>
+<p><strong>Answer:</strong> ‘0’</p>
 </div>
 </div>
 </div>
@@ -1496,53 +1325,52 @@ model assigns probability 0 to the sentence.</p>
 <h2 id="problem-12">Problem 12</h2>
 <p>On the website for UC San Diego Health, each provider has their own
 page. We’ve scraped the HTML from one provider’s web page, which you can
-find at the end of this exam. We then instantiated a
-<code>BeautifulSoup</code> object, <code>soup</code>, from this
-HTML.</p>
-<div class="sourceCode" id="cb13"><pre
-class="sourceCode html"><code class="sourceCode html"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">html</span><span class="ot"> lang</span><span class="op">=</span><span class="st">&quot;en&quot;</span><span class="dt">&gt;</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">head</span><span class="dt">&gt;</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">link</span><span class="ot"> href</span><span class="op">=</span><span class="st">&quot;/assets/static/heroData-BGejBwUx.css&quot;</span><span class="ot"> rel</span><span class="op">=</span><span class="st">&quot;stylesheet&quot;</span><span class="dt">/&gt;</span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">title</span><span class="dt">&gt;</span>Caitlin MacMillen, DO | Primary Care, Family Medicine, Osteopathic Medicine | UC San Diego Health<span class="dt">&lt;/</span><span class="kw">title</span><span class="dt">&gt;</span></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">meta</span><span class="ot"> content</span><span class="op">=</span><span class="st">&quot;width=device-width, initial-scale=1, maximum-scale=5&quot;</span><span class="ot"> name</span><span class="op">=</span><span class="st">&quot;viewport&quot;</span><span class="dt">/&gt;</span></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">meta</span><span class="ot"> content</span><span class="op">=</span><span class="st">&quot;Caitlin MacMillen is a Physician in San Diego with UC San Diego Health and specializing in Osteopathic Manipulative Treatment (OMT), Women&#39;s Health, Care for All Ages, Comprehensive Care for the Individual and Family, Overall Health and Well-Being, Family Planning.&quot;</span><span class="ot"> name</span><span class="op">=</span><span class="st">&quot;description&quot;</span><span class="dt">/&gt;</span></span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">meta</span><span class="ot"> content</span><span class="op">=</span><span class="st">&quot;32.875663,-117.2133647&quot;</span><span class="ot"> name</span><span class="op">=</span><span class="st">&quot;geo.position&quot;</span><span class="dt">/&gt;</span></span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">meta</span><span class="ot"> content</span><span class="op">=</span><span class="st">&quot;San Diego,CA&quot;</span><span class="ot"> name</span><span class="op">=</span><span class="st">&quot;geo.placename&quot;</span><span class="dt">/&gt;</span></span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">meta</span><span class="ot"> content</span><span class="op">=</span><span class="st">&quot;US-CA&quot;</span><span class="ot"> name</span><span class="op">=</span><span class="st">&quot;geo.region&quot;</span><span class="dt">/&gt;</span></span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">script</span><span class="dt">&gt;</span><span class="bu">window</span><span class="op">.</span><span class="at">yextAnalyticsEnabled</span><span class="op">=</span><span class="kw">false</span><span class="op">;</span><span class="bu">window</span><span class="op">.</span><span class="at">enableYextAnalytics</span><span class="op">=</span>()<span class="kw">=&gt;</span>{<span class="bu">window</span><span class="op">.</span><span class="at">yextAnalyticsEnabled</span><span class="op">=</span><span class="kw">true</span>}<span class="dt">&lt;/</span><span class="kw">script</span><span class="dt">&gt;</span></span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">script</span><span class="ot"> type=</span><span class="st">&quot;application/ld+json&quot;</span><span class="dt">&gt;</span>{</span>
-<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;@context&quot;</span><span class="op">:</span> <span class="st">&quot;https://schema.org&quot;</span><span class="op">,</span></span>
-<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;@graph&quot;</span><span class="op">:</span> [</span>
-<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>    {</span>
-<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;@type&quot;</span><span class="op">:</span> <span class="st">&quot;Physician&quot;</span><span class="op">,</span></span>
-<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;@id&quot;</span><span class="op">:</span> <span class="st">&quot;https://providers.ucsd.edu/details/33243/primary-care-family-medicine-osteopathic-medicine&quot;</span><span class="op">,</span></span>
-<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;name&quot;</span><span class="op">:</span> <span class="st">&quot;Caitlin MacMillen, DO&quot;</span><span class="op">,</span></span>
-<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;usNPI&quot;</span><span class="op">:</span> <span class="st">&quot;1518321629&quot;</span><span class="op">,</span></span>
-<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;telephone&quot;</span><span class="op">:</span> <span class="st">&quot;(858) 657-8600&quot;</span><span class="op">,</span></span>
-<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;isAcceptingNewPatients&quot;</span><span class="op">:</span> <span class="kw">false</span><span class="op">,</span></span>
-<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;url&quot;</span><span class="op">:</span> <span class="st">&quot;https://providers.ucsd.edu/details/33243/primary-care-family-medicine-osteopathic-medicine&quot;</span><span class="op">,</span></span>
-<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;knowsLanguage&quot;</span><span class="op">:</span> [{<span class="st">&quot;@type&quot;</span><span class="op">:</span> <span class="st">&quot;Language&quot;</span><span class="op">,</span> <span class="st">&quot;name&quot;</span><span class="op">:</span> <span class="st">&quot;English&quot;</span>}]<span class="op">,</span></span>
-<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;knowsAbout&quot;</span><span class="op">:</span> [<span class="st">&quot;Osteopathic Manipulative Treatment (OMT)&quot;</span><span class="op">,</span> <span class="st">&quot;Women&#39;s Health&quot;</span><span class="op">,</span> <span class="st">&quot;Care for All Ages&quot;</span><span class="op">,</span> <span class="st">&quot;Comprehensive Care for the Individual and Family&quot;</span><span class="op">,</span> <span class="st">&quot;Overall Health and Well-Being&quot;</span><span class="op">,</span> <span class="st">&quot;Family Planning&quot;</span>]<span class="op">,</span></span>
-<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;address&quot;</span><span class="op">:</span> {</span>
-<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;@type&quot;</span><span class="op">:</span> <span class="st">&quot;PostalAddress&quot;</span><span class="op">,</span></span>
-<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;streetAddress&quot;</span><span class="op">:</span> <span class="st">&quot;9333 Genesee Avenue&quot;</span><span class="op">,</span></span>
-<span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;addressLocality&quot;</span><span class="op">:</span> <span class="st">&quot;San Diego&quot;</span><span class="op">,</span></span>
-<span id="cb13-28"><a href="#cb13-28" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;addressRegion&quot;</span><span class="op">:</span> <span class="st">&quot;California&quot;</span><span class="op">,</span></span>
-<span id="cb13-29"><a href="#cb13-29" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;postalCode&quot;</span><span class="op">:</span> <span class="st">&quot;92121&quot;</span><span class="op">,</span></span>
-<span id="cb13-30"><a href="#cb13-30" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;addressCountry&quot;</span><span class="op">:</span> <span class="st">&quot;US&quot;</span></span>
-<span id="cb13-31"><a href="#cb13-31" aria-hidden="true" tabindex="-1"></a>      }<span class="op">,</span></span>
-<span id="cb13-32"><a href="#cb13-32" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;aggregateRating&quot;</span><span class="op">:</span> {<span class="st">&quot;@type&quot;</span><span class="op">:</span> <span class="st">&quot;AggregateRating&quot;</span><span class="op">,</span> <span class="st">&quot;ratingValue&quot;</span><span class="op">:</span> <span class="fl">4.93</span><span class="op">,</span> <span class="st">&quot;bestRating&quot;</span><span class="op">:</span> <span class="dv">5</span><span class="op">,</span> <span class="st">&quot;ratingCount&quot;</span><span class="op">:</span> <span class="dv">188</span>}</span>
-<span id="cb13-33"><a href="#cb13-33" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb13-34"><a href="#cb13-34" aria-hidden="true" tabindex="-1"></a>  ]</span>
-<span id="cb13-35"><a href="#cb13-35" aria-hidden="true" tabindex="-1"></a>}<span class="dt">&lt;/</span><span class="kw">script</span><span class="dt">&gt;</span></span>
-<span id="cb13-36"><a href="#cb13-36" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">script</span><span class="ot"> data-entity-id</span><span class="op">=</span><span class="st">&quot;16281938&quot;</span><span class="ot"> id</span><span class="op">=</span><span class="st">&quot;yext-entity-data&quot;</span><span class="dt">&gt;&lt;/</span><span class="kw">script</span><span class="dt">&gt;</span></span>
-<span id="cb13-37"><a href="#cb13-37" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">script</span><span class="ot"> async</span><span class="op">=</span><span class="st">&quot;&quot;</span><span class="ot"> src</span><span class="op">=</span><span class="st">&quot;https://siteimproveanalytics.com/js/siteanalyze_14686.js&quot;</span><span class="dt">&gt;&lt;/</span><span class="kw">script</span><span class="dt">&gt;</span></span>
-<span id="cb13-38"><a href="#cb13-38" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">script</span><span class="ot"> crossorigin</span><span class="op">=</span><span class="st">&quot;anonymous&quot;</span><span class="ot"> src</span><span class="op">=</span><span class="st">&quot;https://kit.fontawesome.com/aa9c700570.js&quot;</span><span class="dt">&gt;&lt;/</span><span class="kw">script</span><span class="dt">&gt;</span></span>
-<span id="cb13-39"><a href="#cb13-39" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">head</span><span class="dt">&gt;</span></span>
-<span id="cb13-40"><a href="#cb13-40" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">body</span><span class="dt">&gt;</span></span>
-<span id="cb13-41"><a href="#cb13-41" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> id</span><span class="op">=</span><span class="st">&quot;reactele&quot;</span><span class="dt">&gt;&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
-<span id="cb13-42"><a href="#cb13-42" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">body</span><span class="dt">&gt;</span></span>
-<span id="cb13-43"><a href="#cb13-43" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">html</span><span class="dt">&gt;</span></span></code></pre></div>
+find below. We then instantiated a <code>BeautifulSoup</code> object,
+<code>soup</code>, from this HTML.</p>
+<div class="sourceCode" id="cb14"><pre
+class="sourceCode html"><code class="sourceCode html"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">html</span><span class="ot"> lang</span><span class="op">=</span><span class="st">&quot;en&quot;</span><span class="dt">&gt;</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">link</span><span class="ot"> href</span><span class="op">=</span><span class="st">&quot;/assets/static/heroData-BGejBwUx.css&quot;</span><span class="ot"> rel</span><span class="op">=</span><span class="st">&quot;stylesheet&quot;</span><span class="dt">/&gt;</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">title</span><span class="dt">&gt;</span>Caitlin MacMillen, DO | Primary Care, Family Medicine, Osteopathic Medicine | UC San Diego Health<span class="dt">&lt;/</span><span class="kw">title</span><span class="dt">&gt;</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">meta</span><span class="ot"> content</span><span class="op">=</span><span class="st">&quot;width=device-width, initial-scale=1, maximum-scale=5&quot;</span><span class="ot"> name</span><span class="op">=</span><span class="st">&quot;viewport&quot;</span><span class="dt">/&gt;</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">meta</span><span class="ot"> content</span><span class="op">=</span><span class="st">&quot;Caitlin MacMillen is a Physician in San Diego with UC San Diego Health and specializing in Osteopathic Manipulative Treatment (OMT), Women&#39;s Health, Care for All Ages, Comprehensive Care for the Individual and Family, Overall Health and Well-Being, Family Planning.&quot;</span><span class="ot"> name</span><span class="op">=</span><span class="st">&quot;description&quot;</span><span class="dt">/&gt;</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">meta</span><span class="ot"> content</span><span class="op">=</span><span class="st">&quot;32.875663,-117.2133647&quot;</span><span class="ot"> name</span><span class="op">=</span><span class="st">&quot;geo.position&quot;</span><span class="dt">/&gt;</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">meta</span><span class="ot"> content</span><span class="op">=</span><span class="st">&quot;San Diego,CA&quot;</span><span class="ot"> name</span><span class="op">=</span><span class="st">&quot;geo.placename&quot;</span><span class="dt">/&gt;</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">meta</span><span class="ot"> content</span><span class="op">=</span><span class="st">&quot;US-CA&quot;</span><span class="ot"> name</span><span class="op">=</span><span class="st">&quot;geo.region&quot;</span><span class="dt">/&gt;</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">script</span><span class="dt">&gt;</span><span class="bu">window</span><span class="op">.</span><span class="at">yextAnalyticsEnabled</span><span class="op">=</span><span class="kw">false</span><span class="op">;</span><span class="bu">window</span><span class="op">.</span><span class="at">enableYextAnalytics</span><span class="op">=</span>()<span class="kw">=&gt;</span>{<span class="bu">window</span><span class="op">.</span><span class="at">yextAnalyticsEnabled</span><span class="op">=</span><span class="kw">true</span>}<span class="dt">&lt;/</span><span class="kw">script</span><span class="dt">&gt;</span></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">script</span><span class="ot"> type=</span><span class="st">&quot;application/ld+json&quot;</span><span class="dt">&gt;</span>{</span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;@context&quot;</span><span class="op">:</span> <span class="st">&quot;https://schema.org&quot;</span><span class="op">,</span></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;@graph&quot;</span><span class="op">:</span> [</span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;@type&quot;</span><span class="op">:</span> <span class="st">&quot;Physician&quot;</span><span class="op">,</span></span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;@id&quot;</span><span class="op">:</span> <span class="st">&quot;https://providers.ucsd.edu/details/33243/primary-care-family-medicine-osteopathic-medicine&quot;</span><span class="op">,</span></span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;name&quot;</span><span class="op">:</span> <span class="st">&quot;Caitlin MacMillen, DO&quot;</span><span class="op">,</span></span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;usNPI&quot;</span><span class="op">:</span> <span class="st">&quot;1518321629&quot;</span><span class="op">,</span></span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;telephone&quot;</span><span class="op">:</span> <span class="st">&quot;(858) 657-8600&quot;</span><span class="op">,</span></span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;isAcceptingNewPatients&quot;</span><span class="op">:</span> <span class="kw">false</span><span class="op">,</span></span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;url&quot;</span><span class="op">:</span> <span class="st">&quot;https://providers.ucsd.edu/details/33243/primary-care-family-medicine-osteopathic-medicine&quot;</span><span class="op">,</span></span>
+<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;knowsLanguage&quot;</span><span class="op">:</span> [{<span class="st">&quot;@type&quot;</span><span class="op">:</span> <span class="st">&quot;Language&quot;</span><span class="op">,</span> <span class="st">&quot;name&quot;</span><span class="op">:</span> <span class="st">&quot;English&quot;</span>}]<span class="op">,</span></span>
+<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;knowsAbout&quot;</span><span class="op">:</span> [<span class="st">&quot;Osteopathic Manipulative Treatment (OMT)&quot;</span><span class="op">,</span> <span class="st">&quot;Women&#39;s Health&quot;</span><span class="op">,</span> <span class="st">&quot;Care for All Ages&quot;</span><span class="op">,</span> <span class="st">&quot;Comprehensive Care for the Individual and Family&quot;</span><span class="op">,</span> <span class="st">&quot;Overall Health and Well-Being&quot;</span><span class="op">,</span> <span class="st">&quot;Family Planning&quot;</span>]<span class="op">,</span></span>
+<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;address&quot;</span><span class="op">:</span> {</span>
+<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;@type&quot;</span><span class="op">:</span> <span class="st">&quot;PostalAddress&quot;</span><span class="op">,</span></span>
+<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;streetAddress&quot;</span><span class="op">:</span> <span class="st">&quot;9333 Genesee Avenue&quot;</span><span class="op">,</span></span>
+<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;addressLocality&quot;</span><span class="op">:</span> <span class="st">&quot;San Diego&quot;</span><span class="op">,</span></span>
+<span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;addressRegion&quot;</span><span class="op">:</span> <span class="st">&quot;California&quot;</span><span class="op">,</span></span>
+<span id="cb14-29"><a href="#cb14-29" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;postalCode&quot;</span><span class="op">:</span> <span class="st">&quot;92121&quot;</span><span class="op">,</span></span>
+<span id="cb14-30"><a href="#cb14-30" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;addressCountry&quot;</span><span class="op">:</span> <span class="st">&quot;US&quot;</span></span>
+<span id="cb14-31"><a href="#cb14-31" aria-hidden="true" tabindex="-1"></a>      }<span class="op">,</span></span>
+<span id="cb14-32"><a href="#cb14-32" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;aggregateRating&quot;</span><span class="op">:</span> {<span class="st">&quot;@type&quot;</span><span class="op">:</span> <span class="st">&quot;AggregateRating&quot;</span><span class="op">,</span> <span class="st">&quot;ratingValue&quot;</span><span class="op">:</span> <span class="fl">4.93</span><span class="op">,</span> <span class="st">&quot;bestRating&quot;</span><span class="op">:</span> <span class="dv">5</span><span class="op">,</span> <span class="st">&quot;ratingCount&quot;</span><span class="op">:</span> <span class="dv">188</span>}</span>
+<span id="cb14-33"><a href="#cb14-33" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb14-34"><a href="#cb14-34" aria-hidden="true" tabindex="-1"></a>  ]</span>
+<span id="cb14-35"><a href="#cb14-35" aria-hidden="true" tabindex="-1"></a>}<span class="dt">&lt;/</span><span class="kw">script</span><span class="dt">&gt;</span></span>
+<span id="cb14-36"><a href="#cb14-36" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">script</span><span class="ot"> data-entity-id</span><span class="op">=</span><span class="st">&quot;16281938&quot;</span><span class="ot"> id</span><span class="op">=</span><span class="st">&quot;yext-entity-data&quot;</span><span class="dt">&gt;&lt;/</span><span class="kw">script</span><span class="dt">&gt;</span></span>
+<span id="cb14-37"><a href="#cb14-37" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">script</span><span class="ot"> async</span><span class="op">=</span><span class="st">&quot;&quot;</span><span class="ot"> src</span><span class="op">=</span><span class="st">&quot;https://siteimproveanalytics.com/js/siteanalyze_14686.js&quot;</span><span class="dt">&gt;&lt;/</span><span class="kw">script</span><span class="dt">&gt;</span></span>
+<span id="cb14-38"><a href="#cb14-38" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">script</span><span class="ot"> crossorigin</span><span class="op">=</span><span class="st">&quot;anonymous&quot;</span><span class="ot"> src</span><span class="op">=</span><span class="st">&quot;https://kit.fontawesome.com/aa9c700570.js&quot;</span><span class="dt">&gt;&lt;/</span><span class="kw">script</span><span class="dt">&gt;</span></span>
+<span id="cb14-39"><a href="#cb14-39" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb14-40"><a href="#cb14-40" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">body</span><span class="dt">&gt;</span></span>
+<span id="cb14-41"><a href="#cb14-41" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> id</span><span class="op">=</span><span class="st">&quot;reactele&quot;</span><span class="dt">&gt;&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb14-42"><a href="#cb14-42" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">body</span><span class="dt">&gt;</span></span>
+<span id="cb14-43"><a href="#cb14-43" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">html</span><span class="dt">&gt;</span></span></code></pre></div>
 <p><br></p>
 <h3 id="problem-12.1">Problem 12.1</h3>
 <p>Consider the DOM tree for this document. How many children does the
@@ -1569,8 +1397,6 @@ aria-labelledby="heading12_1" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer:</strong> 2</p>
-<p>The root <code>&lt;html&gt;</code> element has two children:
-<code>&lt;head&gt;</code> and <code>&lt;body&gt;</code>.</p>
 </div>
 </div>
 </div>
@@ -1578,8 +1404,8 @@ aria-labelledby="heading12_1" data-bs-parent="#accordionExample">
 <p><br></p>
 <h3 id="problem-12.2">Problem 12.2</h3>
 <p>What does the following line of code evaluate to?</p>
-<div class="sourceCode" id="cb14"><pre
-class="sourceCode py"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(soup.find_all(<span class="st">&quot;script&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre
+class="sourceCode py"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(soup.find_all(<span class="st">&quot;script&quot;</span>))</span></code></pre></div>
 <ul class="task-list">
 <li><p><input type="radio" disabled="" /> 1</p></li>
 <li><p><input type="radio" disabled="" /> 2</p></li>
@@ -1601,8 +1427,7 @@ aria-labelledby="heading12_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer:</strong> 4</p>
-<p>There are four <code>&lt;script&gt;</code> tags in the document.</p>
+<p><strong>Answer:</strong> 5</p>
 </div>
 </div>
 </div>
@@ -1629,8 +1454,6 @@ aria-labelledby="heading12_3" data-bs-parent="#accordionExample">
 </header>
 <p><strong>Answer:</strong>
 <code>soup.find("meta", attrs={"name": "geo.position"}).get("content").split(",")[0]</code></p>
-<p>The latitude is stored in the <code>content</code> attribute of the
-<code>&lt;meta name="geo.position"&gt;</code> tag, before the comma.</p>
 </div>
 </div>
 </div>
@@ -1641,10 +1464,10 @@ aria-labelledby="heading12_3" data-bs-parent="#accordionExample">
 the JSON object with keys <code>"@context"</code> and
 <code>"@graph"</code>. Fill in the blank in the code below to read this
 JSON object in as a Python dictionary, <code>dr_m</code>.</p>
-<div class="sourceCode" id="cb15"><pre
-class="sourceCode py"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>dr_m_string <span class="op">=</span> ___________</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>dr_m <span class="op">=</span> json.loads(dr_m_string)</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>dr_m</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre
+class="sourceCode py"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>dr_m_string <span class="op">=</span> ___________</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>dr_m <span class="op">=</span> json.loads(dr_m_string)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>dr_m</span></code></pre></div>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading12_4">
@@ -1659,16 +1482,15 @@ aria-labelledby="heading12_4" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer:</strong>
-<code>soup.find("script", attrs={"type": "application/ld+json"}).text</code></p>
-<p>The JSON data is stored as the text content of the
-<code>&lt;script type="application/ld+json"&gt;</code> tag.</p>
+<code>soup.find("script", attrs={"type": "application/ld+json"}).text</code>
+(or <code>soup.find_all("script")[1].text</code>)</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <h3 id="problem-12.5">Problem 12.5</h3>
-<p>Write one line of code that extracts the postal code from
+<p>Write one line of code that extracts the street address from
 <code>dr_m</code>, as a string.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
@@ -1684,9 +1506,7 @@ aria-labelledby="heading12_5" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer:</strong>
-<code>dr_m["@graph"][0]["address"]["postalCode"]</code></p>
-<p>The postal code is nested inside the first element of the
-<code>"@graph"</code> list.</p>
+<code>dr_m["@graph"][0]["address"]["streetAddress"]</code></p>
 </div>
 </div>
 </div>
@@ -1701,9 +1521,9 @@ not find a match, but <code>re.match("h", "hello")</code> does.</p>
 <p><br></p>
 <h3 id="problem-13.1">Problem 13.1</h3>
 <p>The string <code>"UC San Diego Health"</code> has exactly two
-lowercase <code>e</code>’s. Write a regular expression pattern,
+lowercase <code>a</code>’s. Write a regular expression pattern,
 <code>pat</code>, so that <code>re.match(pat, s)</code> finds a match if
-and only if <code>s</code> has exactly two lowercase <code>e</code>’s.
+and only if <code>s</code> has exactly two lowercase <code>a</code>’s.
 Write clearly!</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
@@ -1718,10 +1538,7 @@ aria-labelledby="heading13_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer:</strong> <code>pat = r"[^e]*e[^e]*e[^e]*$"</code></p>
-<p>The pattern requires exactly two lowercase <code>e</code>’s with any
-non-<code>e</code> characters (or none) between and around them, and
-<code>$</code> anchors the match to the end of the string.</p>
+<p><strong>Answer:</strong> <code>pat = r"[^a]*a[^a]*a[^a]*$"</code></p>
 </div>
 </div>
 </div>
@@ -1775,9 +1592,6 @@ aria-labelledby="heading13_2" data-bs-parent="#accordionExample">
 </header>
 <p><strong>Answer:</strong>
 <code>pat = r"([A-Z]\d\d(\.[A-Z0-9]{1,4})?)$"</code></p>
-<p>The code starts with one capital letter and two digits. Optionally, a
-decimal point is followed by 1 to 4 alphanumeric characters. The
-<code>$</code> anchor ensures the entire string matches.</p>
 </div>
 </div>
 </div>

@@ -10,9 +10,9 @@ dr_z.merge(dr_g, on="MRN", how=???)
 
 # BEGIN SUBPROB
 
-- `dr_z` has 90 rows, all representing distinct patients.
-- `dr_g` has 70 rows, all representing distinct patients.
-- 30 patients appear in both DataFrames.
+- `dr_z` has 100 rows, all representing distinct patients.
+- `dr_g` has 80 rows, all representing distinct patients.
+- 20 patients appear in both DataFrames.
 
 1. `how = "inner"`:
 
@@ -24,14 +24,7 @@ dr_z.merge(dr_g, on="MRN", how=???)
 
 # BEGIN SOLUTION
 
-**Answers:**
-
-1. 30
-2. 130
-3. 90
-4. 70
-
-Inner keeps only shared patients (30). Outer keeps all patients from both (90 + 70 − 30 = 130). Left keeps all 90 from `dr_z`. Right keeps all 70 from `dr_g`.
+**Answers:** 20, 160, 100, 80
 
 # END SOLUTION
 
@@ -39,9 +32,9 @@ Inner keeps only shared patients (30). Outer keeps all patients from both (90 + 
 
 # BEGIN SUBPROB
 
-- `dr_z` has 20 rows, all representing distinct patients.
-- `dr_g` has 65 rows, all representing distinct patients.
-- All patients appearing in `dr_z` also appear in `dr_g`.
+- `dr_z` has 50 rows, all representing distinct patients.
+- `dr_g` has 15 rows, all representing distinct patients.
+- All patients appearing in `dr_g` also appear in `dr_z`.
 
 1. `how = "inner"`:
 
@@ -53,14 +46,7 @@ Inner keeps only shared patients (30). Outer keeps all patients from both (90 + 
 
 # BEGIN SOLUTION
 
-**Answers:**
-
-1. 20
-2. 65
-3. 20
-4. 65
-
-Every `dr_z` patient is in `dr_g`, so inner and left both have 20 rows. Outer and right include all 65 patients in `dr_g`.
+**Answers:** 15, 50, 50, 15
 
 # END SOLUTION
 
@@ -82,14 +68,7 @@ Every `dr_z` patient is in `dr_g`, so inner and left both have 20 rows. Outer an
 
 # BEGIN SOLUTION
 
-**Answers:**
-
-1. 40
-2. 140
-3. 80
-4. 100
-
-With duplicate rows, each shared patient contributes $2 \times 2 = 4$ rows to an inner join ($10 \times 4 = 40$). An outer join gives $60 + 80 - 40 = 140$ rows. A left join keeps all 60 `dr_z` rows (20 shared-patient rows each match 2 `dr_g` rows for 40 total, plus 40 `dr_z`-only rows). A right join keeps all 80 `dr_g` rows (20 shared-patient rows each match 2 `dr_z` rows for 40 total, plus 60 `dr_g`-only rows).
+**Answers:** 40, 140, 80, 100
 
 # END SOLUTION
 

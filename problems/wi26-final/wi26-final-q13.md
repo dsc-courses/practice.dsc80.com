@@ -4,13 +4,11 @@ The function `re.match(pat, s)` checks for the regular expression `pat` only at 
 
 # BEGIN SUBPROB
 
-The string `"UC San Diego Health"` has exactly two lowercase `e`'s. Write a regular expression pattern, `pat`, so that `re.match(pat, s)` finds a match if and only if `s` has exactly two lowercase `e`'s. Write clearly!
+The string `"UC San Diego Health"` has exactly two lowercase `a`'s. Write a regular expression pattern, `pat`, so that `re.match(pat, s)` finds a match if and only if `s` has exactly two lowercase `a`'s. Write clearly!
 
 # BEGIN SOLUTION
 
-**Answer:** `pat = r"[^e]*e[^e]*e[^e]*$"`
-
-The pattern requires exactly two lowercase `e`'s with any non-`e` characters (or none) between and around them, and `$` anchors the match to the end of the string.
+**Answer:** `pat = r"[^a]*a[^a]*a[^a]*$"`
 
 # END SOLUTION
 
@@ -45,8 +43,6 @@ Write clearly!
 # BEGIN SOLUTION
 
 **Answer:** `pat = r"([A-Z]\d\d(\.[A-Z0-9]{1,4})?)$"`
-
-The code starts with one capital letter and two digits. Optionally, a decimal point is followed by 1 to 4 alphanumeric characters. The `$` anchor ensures the entire string matches.
 
 # END SOLUTION
 

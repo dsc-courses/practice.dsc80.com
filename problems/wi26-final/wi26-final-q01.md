@@ -29,8 +29,6 @@ med["WaitTime"] = med.apply(__(b)__)
 1. `(x["StartTime"] - max(x["ArrivalTime"], x["AppointmentTime"])).seconds / 60` (or an equivalent expression using `.max(axis=1)` on the two timestamp columns)
 2. `wait_time, axis=1`
 
-When using `.apply()` with `axis=1`, each row is passed to the function as a Series. We need to replicate the vectorized calculation row-by-row: subtract the later of `"ArrivalTime"` and `"AppointmentTime"` from `"StartTime"`, take `.seconds`, and divide by 60.
-
 # END SOLUTION
 
 # END SUBPROB
@@ -47,8 +45,6 @@ What is the data type of the `"WaitTime"` column?
 # BEGIN SOLUTION
 
 **Answer:** `float`
-
-Dividing the number of seconds by `60` produces a floating-point number, so the resulting column has dtype `float`.
 
 # END SOLUTION
 
@@ -81,8 +77,6 @@ What kind of values can appear in the `"WaitTime"` column? Select all that apply
 # BEGIN SOLUTION
 
 **Answer:** Zero and Positive
-
-Since `"StartTime"` is always at or after both `"ArrivalTime"` and `"AppointmentTime"`, the wait time in minutes is always zero or positive.
 
 # END SOLUTION
 

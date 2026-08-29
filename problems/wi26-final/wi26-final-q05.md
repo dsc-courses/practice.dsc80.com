@@ -18,13 +18,7 @@ Suppose the training data consists only of the 25 points shown below. Determine 
 
 # BEGIN SOLUTION
 
-**Answers:**
-
-1. $1$
-2. $1$
-3. $1$
-
-On this dataset, every point is correctly classified by its 3 nearest neighbors, so accuracy, precision, and recall are all 1.
+**Answers:** $0.8$, $0.8$, $1$
 
 # END SOLUTION
 
@@ -44,13 +38,7 @@ Now suppose the training data consists only of the 25 points shown below. Determ
 
 # BEGIN SOLUTION
 
-**Answers:**
-
-1. $0.8$
-2. $0.8$
-3. $1$
-
-Four of the five positive-class points are correctly classified; one positive point is misclassified. This gives accuracy and precision of 0.8 and recall of 1.
+**Answers:** $1$, $1$, $1$
 
 # END SOLUTION
 
@@ -63,8 +51,6 @@ Finally, consider a 15-nearest neighbor classifier, which has the same accuracy 
 # BEGIN SOLUTION
 
 **Answer:** $0.8$
-
-With $k = 15$, the classifier uses a majority vote over nearly the entire dataset, yielding the same accuracy on both scatter plots.
 
 # END SOLUTION
 

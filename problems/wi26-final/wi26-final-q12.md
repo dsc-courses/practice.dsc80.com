@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-On the website for UC San Diego Health, each provider has their own page. We've scraped the HTML from one provider's web page, which you can find at the end of this exam. We then instantiated a `BeautifulSoup` object, `soup`, from this HTML.
+On the website for UC San Diego Health, each provider has their own page. We've scraped the HTML from one provider's web page, which you can find below. We then instantiated a `BeautifulSoup` object, `soup`, from this HTML.
 
 ```html
 <html lang="en">
@@ -63,8 +63,6 @@ Consider the DOM tree for this document. How many children does the root node ha
 
 **Answer:** 2
 
-The root `<html>` element has two children: `<head>` and `<body>`.
-
 # END SOLUTION
 
 # END SUBPROB
@@ -86,9 +84,7 @@ len(soup.find_all("script"))
 
 # BEGIN SOLUTION
 
-**Answer:** 4
-
-There are four `<script>` tags in the document.
+**Answer:** 5
 
 # END SOLUTION
 
@@ -101,8 +97,6 @@ The latitude and longitude for the provider's office location are included in th
 # BEGIN SOLUTION
 
 **Answer:** `soup.find("meta", attrs={"name": "geo.position"}).get("content").split(",")[0]`
-
-The latitude is stored in the `content` attribute of the `<meta name="geo.position">` tag, before the comma.
 
 # END SOLUTION
 
@@ -120,9 +114,7 @@ dr_m
 
 # BEGIN SOLUTION
 
-**Answer:** `soup.find("script", attrs={"type": "application/ld+json"}).text`
-
-The JSON data is stored as the text content of the `<script type="application/ld+json">` tag.
+**Answer:** `soup.find("script", attrs={"type": "application/ld+json"}).text` (or `soup.find_all("script")[1].text`)
 
 # END SOLUTION
 
@@ -130,13 +122,11 @@ The JSON data is stored as the text content of the `<script type="application/ld
 
 # BEGIN SUBPROB
 
-Write one line of code that extracts the postal code from `dr_m`, as a string.
+Write one line of code that extracts the street address from `dr_m`, as a string.
 
 # BEGIN SOLUTION
 
-**Answer:** `dr_m["@graph"][0]["address"]["postalCode"]`
-
-The postal code is nested inside the first element of the `"@graph"` list.
+**Answer:** `dr_m["@graph"][0]["address"]["streetAddress"]`
 
 # END SOLUTION
 

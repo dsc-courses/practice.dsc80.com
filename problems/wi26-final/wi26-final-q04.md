@@ -33,8 +33,6 @@ What should the function return on an input list of `[0, 0.2, 0.4, 0.6, 0.8, 1]`
 
 **Answer:** `0`
 
-When `min_entropy = 0`, nodes are always allowed to split (as long as other stopping criteria permit), so the tree can fit the training data as well as possible. This gives the highest training accuracy among the candidates, and the function breaks ties by choosing the first value that achieves the highest score.
-
 # END SOLUTION
 
 # END SUBPROB
@@ -50,8 +48,6 @@ Circle one word in each box: If we train a decision tree with the value selected
 
 **Answer:** lower; overfitting
 
-With `min_entropy = 0`, the tree can grow until it fits the training data very closely, which typically leads to overfitting and lower test accuracy than training accuracy.
-
 # END SOLUTION
 
 # END SUBPROB
@@ -66,8 +62,6 @@ Circle one word in each box: In general, increasing the value of `min_entropy` _
 # BEGIN SOLUTION
 
 **Answer:** increases; decreases
-
-A larger `min_entropy` prevents splits on low-entropy nodes, producing a simpler tree. Simpler models have higher bias and lower variance.
 
 # END SOLUTION
 
