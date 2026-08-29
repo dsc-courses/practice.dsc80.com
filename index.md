@@ -26,6 +26,11 @@ This site contains practice problems taken from old DSC 80 exams. Each exam link
   </thead>
   <tbody>
     <tr>
+      <th scope="row">Winter 2026</th>
+      <td>Suraj Rampure</td>
+      <td><a href='wi26-final/index.html'>Final 🆕</a></td>
+    </tr>
+    <tr>
       <th scope="row">Winter 2024</th>
       <td>Suraj Rampure</td>
       <td><a href='wi24-midterm/index.html'>Midterm</a>

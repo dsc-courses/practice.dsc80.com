@@ -6,6 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <title>Spring 2023 Final Exam</title>
   <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -21,6 +24,7 @@
       vertical-align: middle;
     }
     /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
     pre > code.sourceCode { white-space: pre; position: relative; }
     pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -87,7 +91,7 @@
   </style>
   <link rel="stylesheet" href="../assets/theme.css" />
   <script defer=""
-  src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
   <script>document.addEventListener("DOMContentLoaded", function () {
  var mathElements = document.getElementsByClassName("math");
  var macros = [];
@@ -103,10 +107,7 @@
 }}});
   </script>
   <link rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css" />
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
+  href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css" />
 </head>
 <body>
 <header id="title-block-header">
@@ -334,7 +335,7 @@ Remember that <span class="math inline">Precision =
 <p>To calculate TP (X) use the formula for recall:<br/>
 <span class="math inline">0.75 = \frac{TP}{(TP+5)}</span><br/>
 <span class="math inline">0.75 \cdot (TP+5)* = TP</span><br/>
-<span class="math inline">0.75 \cdot TP+ 5 \cdot 0.75 = TP</span><br/>
+<span class="math inline">0.75 \cdot TP+ 5 \cdot 0.75  = TP</span><br/>
 <span class="math inline">0.25 \cdot TP = 3.75</span><br/>
 <span class="math inline">TP = 15</span><br/>
 Therefore X = 15</p>
@@ -589,7 +590,8 @@ the total number of trained models is equal to the total number of
 combinations of <code>max_depth</code>, <code>max_depth</code>, and
 <code>criterion</code>, times 8 for the number of cross validation
 folds:</p>
-<p><span class="math inline">10 \cdot 5 \cdot 2 \cdot 8 = 800</span></p>
+<p><span class="math inline">10 \cdot 5  \cdot 2  \cdot 8 =
+800</span></p>
 </div>
 </div>
 </div>
@@ -627,7 +629,7 @@ models gives 1 value for each combination of <code>max_depth</code>,
 will evaluate to the total number of combinations of
 <code>max_depth</code>, <code>max_depth</code>, and
 <code>criterion</code>:</p>
-<p><span class="math inline">10 \cdot 5 \cdot 2 = 100</span></p>
+<p><span class="math inline">10 \cdot 5  \cdot 2  = 100</span></p>
 </div>
 </div>
 </div>
@@ -842,11 +844,11 @@ product, also known as their cosine similarity.</p>
 </span></p>
 <p>Which equation describes the cosine distance metric?</p>
 <ul class="task-list">
-<li><p><input type="radio" disabled="" /> <span class="math inline">\cos \theta - 1</span></p></li>
-<li><p><input type="radio" disabled="" /> <span class="math inline">1- \cos \theta</span></p></li>
-<li><p><input type="radio" disabled="" /> <span class="math inline">\cos \theta \cdot |\vec{a}| |
+<li><p><input type="radio" disabled="" /> <span class="math inline">\cos  \theta - 1</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">1- \cos  \theta</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">\cos  \theta  \cdot |\vec{a}| |
 \vec{b}|</span></p></li>
-<li><p><input type="radio" disabled="" /> <span class="math inline">(\cos \theta)^{-1}</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">(\cos  \theta)^{-1}</span></p></li>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
@@ -941,7 +943,7 @@ class="sourceCode py"><code class="sourceCode python"><span id="cb15-1"><a href=
 <p>Which expression will achieve the highest similarity with</p>
 <p><code>sentences.iloc[0]</code> if we use the <strong>un-normalized
 dot product</strong> between the bag of words (i.e., <span
-class="math inline">\vec{a} \cdot \vec{b}</span>) as the similarity
+class="math inline">\vec{a} \cdot  \vec{b}</span>) as the similarity
 metric?</p>
 <ul class="task-list">
 <li><p><input type="radio" disabled="" /> <code>'buffalo giraffe'</code></p></li>

@@ -6,6 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <title>Fall 2023 Final Exam</title>
   <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -21,6 +24,7 @@
       vertical-align: middle;
     }
     /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
     pre > code.sourceCode { white-space: pre; position: relative; }
     pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -87,7 +91,7 @@
   </style>
   <link rel="stylesheet" href="../assets/theme.css" />
   <script defer=""
-  src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
   <script>document.addEventListener("DOMContentLoaded", function () {
  var mathElements = document.getElementsByClassName("math");
  var macros = [];
@@ -103,10 +107,7 @@
 }}});
   </script>
   <link rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css" />
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
+  href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css" />
 </head>
 <body>
 <header id="title-block-header">
@@ -394,7 +395,7 @@ followed by either “am” or “pm”.</p>
 <p><em>Hint:</em> Calling <code>.groups()</code> on a regular expression
 match object returns the groups of the match as a tuple. For nested
 groups, the outermost group is returned first. For example:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> re.match(<span class="vs">r&#39;(..(...))&#39;</span>, <span class="st">&#39;hello&#39;</span>).groups()</span>
+<div class="sourceCode" id="cb6"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> re.match(<span class="vs">r&#39;</span><span class="kw">(</span><span class="dv">..</span><span class="kw">(</span><span class="dv">...</span><span class="kw">))</span><span class="vs">&#39;</span>, <span class="st">&#39;hello&#39;</span>).groups()</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>(<span class="st">&#39;hello&#39;</span>, <span class="st">&#39;llo&#39;</span>)</span></code></pre></div>
 <p>Option A:</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parse(x):</span>
@@ -402,16 +403,16 @@ groups, the outermost group is returned first. For example:</p>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> convert(res[<span class="dv">0</span>], res[<span class="dv">1</span>] <span class="cf">if</span> <span class="bu">len</span>(res) <span class="op">==</span> <span class="dv">2</span> <span class="cf">else</span> <span class="dv">0</span>, x[<span class="op">-</span><span class="dv">2</span>:])</span></code></pre></div>
 <p>Option B:</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parse(x):</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    res <span class="op">=</span> re.match(<span class="vs">r&#39;(\d+):(\d+)([apm]</span><span class="sc">{2}</span><span class="vs">&#39;</span>, x).groups()</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    res <span class="op">=</span> re.match(<span class="vs">r&#39;</span><span class="kw">(</span><span class="dv">\d</span><span class="op">+</span><span class="kw">)</span><span class="vs">:</span><span class="kw">(</span><span class="dv">\d</span><span class="op">+</span><span class="kw">)(</span><span class="pp">[apm]</span><span class="op">{2}</span><span class="vs">&#39;</span>, x).groups()</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> convert(res[<span class="dv">0</span>], res[<span class="dv">1</span>], res[<span class="dv">2</span>])</span></code></pre></div>
 <p>Option C:</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parse(x):</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    res <span class="op">=</span> re.match(<span class="vs">r&#39;(\d+)(:(\d+))?(am|pm)&#39;</span>, x).groups()</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    res <span class="op">=</span> re.match(<span class="vs">r&#39;</span><span class="kw">(</span><span class="dv">\d</span><span class="op">+</span><span class="kw">)(</span><span class="vs">:</span><span class="kw">(</span><span class="dv">\d</span><span class="op">+</span><span class="kw">))</span><span class="op">?</span><span class="kw">(</span><span class="vs">am</span><span class="cf">|</span><span class="vs">pm</span><span class="kw">)</span><span class="vs">&#39;</span>, x).groups()</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> convert(res[<span class="dv">0</span>], res[<span class="dv">2</span>], res[<span class="dv">3</span>])</span></code></pre></div>
 <p>Option D:</p>
 <div class="sourceCode" id="cb10"><pre
 class="sourceCode py"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parse(x):</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    res <span class="op">=</span> re.match(<span class="vs">r&#39;(.+(.</span><span class="sc">{3}</span><span class="vs">)?)(..)&#39;</span>, x).groups()</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    res <span class="op">=</span> re.match(<span class="vs">r&#39;</span><span class="kw">(</span><span class="dv">.</span><span class="op">+</span><span class="kw">(</span><span class="dv">.</span><span class="op">{3}</span><span class="kw">)</span><span class="op">?</span><span class="kw">)(</span><span class="dv">..</span><span class="kw">)</span><span class="vs">&#39;</span>, x).groups()</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> convert(res[<span class="dv">0</span>], res[<span class="dv">1</span>], res[<span class="dv">2</span>])</span></code></pre></div>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
@@ -1159,25 +1160,25 @@ second one (which is the one we want), and <code>.text</code> will find
 <p>Consider the following corpus:</p>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th><strong>Document number</strong></th>
 <th>Content</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td><strong>1</strong></td>
 <td>yesterday rainy today sunny</td>
 </tr>
-<tr class="even">
+<tr>
 <td><strong>2</strong></td>
 <td>yesterday sunny today sunny</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><strong>3</strong></td>
 <td>today rainy yesterday today</td>
 </tr>
-<tr class="even">
+<tr>
 <td><strong>4</strong></td>
 <td>yesterday yesterday today today</td>
 </tr>
@@ -1206,7 +1207,7 @@ aria-labelledby="heading8_1" data-bs-parent="#accordionExample">
 <p>The bag-of-words representation for the documents is:</p>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th><strong>Document number</strong></th>
 <th>yesterday</th>
 <th>rainy</th>
@@ -1215,28 +1216,28 @@ aria-labelledby="heading8_1" data-bs-parent="#accordionExample">
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td><strong>1</strong></td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
 </tr>
-<tr class="even">
+<tr>
 <td><strong>2</strong></td>
 <td>1</td>
 <td>0</td>
 <td>1</td>
 <td>2</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><strong>3</strong></td>
 <td>1</td>
 <td>1</td>
 <td>2</td>
 <td>0</td>
 </tr>
-<tr class="even">
+<tr>
 <td><strong>4</strong></td>
 <td>2</td>
 <td>0</td>
@@ -1533,14 +1534,14 @@ the model <span class="math inline">H(x)</span> and filling in data from
 the row</p>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>veg</th>
 <th>meat</th>
 <th>total</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>1</td>
 <td>beef</td>
 <td>13</td>

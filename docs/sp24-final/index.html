@@ -6,6 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <title>Spring 2024 Final Exam</title>
   <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -21,8 +24,9 @@
       vertical-align: middle;
     }
     /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
     pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
     .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -87,7 +91,7 @@
   </style>
   <link rel="stylesheet" href="../assets/theme.css" />
   <script defer=""
-  src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
   <script>document.addEventListener("DOMContentLoaded", function () {
  var mathElements = document.getElementsByClassName("math");
  var macros = [];
@@ -103,10 +107,7 @@
 }}});
   </script>
   <link rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css" />
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
+  href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css" />
 </head>
 <body>
 <header id="title-block-header">
@@ -394,34 +395,34 @@ ounces from the 5 product names below.</p>
 <col style="width: 27%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th><strong>Index</strong></th>
 <th><strong>Product Name</strong></th>
 <th><strong>Expected Output</strong></th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>0</td>
 <td>Adult Dog Food 18-Count, 3.5 oz Pouches</td>
 <td>3.5</td>
 </tr>
-<tr class="even">
+<tr>
 <td>1</td>
 <td>Gardetto’s Snack Mix, 1.75 Ounce</td>
 <td>1.75</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>2</td>
 <td>Colgate Whitening Toothpaste, 3 oz Tube</td>
 <td>3</td>
 </tr>
-<tr class="even">
+<tr>
 <td>3</td>
 <td>Adult Dog Food, 13.2 oz. Cans 24 Pack</td>
 <td>13.2</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>4</td>
 <td>Keratin Hair Spray 2!6 oz</td>
 <td>6</td>
@@ -435,7 +436,7 @@ that <strong>will not</strong> be matched correctly.</p>
 <h3 id="problem-4.1">Problem 4.1</h3>
 <p>Snippet:</p>
 <div class="sourceCode" id="cb6"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>regex <span class="op">=</span> <span class="vs">r&#39;([\d.]+) oz&#39;</span></span>
+class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>regex <span class="op">=</span> <span class="vs">r&#39;</span><span class="kw">(</span><span class="pp">[</span><span class="dv">\d</span><span class="pp">.]</span><span class="op">+</span><span class="kw">)</span><span class="vs"> oz&#39;</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>names.<span class="bu">str</span>.findall(regex)</span></code></pre></div>
 <ul class="task-list">
 <li><p><input type="checkbox" disabled="" /> 0</p></li>
@@ -468,7 +469,7 @@ aria-labelledby="heading4_1" data-bs-parent="#accordionExample">
 <h3 id="problem-4.2">Problem 4.2</h3>
 <p>Snippet:</p>
 <div class="sourceCode" id="cb7"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>regex <span class="op">=</span> <span class="vs">r&#39;(\d+?.\d+) oz|Ounce&#39;</span></span>
+class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>regex <span class="op">=</span> <span class="vs">r&#39;</span><span class="kw">(</span><span class="dv">\d</span><span class="op">+?</span><span class="dv">.\d</span><span class="op">+</span><span class="kw">)</span><span class="vs"> oz</span><span class="cf">|</span><span class="vs">Ounce&#39;</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>names.<span class="bu">str</span>.findall(regex)</span></code></pre></div>
 <ul class="task-list">
 <li><p><input type="checkbox" disabled="" /> 0</p></li>

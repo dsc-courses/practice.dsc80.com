@@ -1,0 +1,1795 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Winter 2026 Final Exam</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="../assets/theme.css" />
+  <script defer=""
+  src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Winter 2026 Final Exam</h1>
+</header>
+<p><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<!-- add after bootstrap.min.css -->
+<link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css"/>
+<!-- add after bootstrap.min.js or bootstrap.bundle.min.js -->
+<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script></p>
+<!-- for difficulty gauges-->
+<script src="https://cdn.plot.ly/plotly-2.16.1.min.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B947E6J6H4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-B947E6J6H4');
+</script>
+<p><a href="../index.html">← return to practice.dsc80.com</a></p>
+<hr />
+<p><strong>Instructor(s):</strong> Suraj Rampure</p>
+<p>This exam was administered in-person. The exam was closed-notes,
+except students were allowed to bring two double-sided handwritten notes
+sheets. No calculators were allowed. Students had <strong>180
+minutes</strong> to take this exam. Questions 1, 2, 8, 9, and 10 are
+marked with an <strong>M</strong>; these test midterm material and were
+used for the redemption opportunity.</p>
+<hr />
+<p>In this exam, you will work with a dataset of medical appointments at
+UC San Diego Health, to try to predict the amount of time patients had
+to wait for their appointments to start.</p>
+<p>In the DataFrame <code>med</code>, each row represents a single
+medical appointment attended by a patient (no-shows are not included).
+The columns are:</p>
+<ul>
+<li><code>"MRN"</code> (<code>str</code>): Medical record number, a
+unique identifier for the patient within the UC San Diego Health
+system.</li>
+<li><code>"Age"</code> (<code>int</code>): The age of the patient.</li>
+<li><code>"Department"</code> (<code>str</code>): The medical department
+where the appointment took place.</li>
+<li><code>"Provider"</code> (<code>str</code>): The medical provider
+(doctor, or similar) for the appointment.</li>
+<li><code>"NumProviders"</code> (<code>int</code>): The number of
+medical providers working in that department at the time of the
+appointment.</li>
+<li><code>"AppointmentTime"</code> (<code>pd.Timestamp</code>): The time
+at which the appointment was scheduled to begin, using a 24-hour clock.
+Ends in one of <code>:00:00</code>, <code>:15:00</code>,
+<code>:30:00</code>, <code>:45:00</code>.</li>
+<li><code>"ArrivalTime"</code> (<code>pd.Timestamp</code>): The time at
+which the patient arrived, to the nearest minute. Patients may arrive
+before or after their scheduled appointment time.</li>
+<li><code>"StartTime"</code> (<code>pd.Timestamp</code>): The time at
+which the appointment actually began, to the nearest minute. The start
+time is always at or after the arrival time and the scheduled
+appointment time.</li>
+</ul>
+<p>There are no missing values in <code>med</code>. The first five rows
+of <code>med</code> are shown below, though <code>med</code> has many
+more.</p>
+<center><img src="../../assets/images/wi26-final/preview.jpg" width=750></center>
+<p>Throughout the exam, assume that we have already run the necessary
+import statements.</p>
+<hr />
+<h2 id="problem-1">Problem 1</h2>
+<p>To start, we need to calculate patient wait times, which are not
+provided in our data. Suppose we execute the line of code below to add a
+<code>"WaitTime"</code> column to <code>med</code>.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>med[<span class="st">&quot;WaitTime&quot;</span>] <span class="op">=</span> (med[<span class="st">&quot;StartTime&quot;</span>] <span class="op">-</span> med[[<span class="st">&quot;ArrivalTime&quot;</span>, <span class="st">&quot;AppointmentTime&quot;</span>]].<span class="bu">max</span>(axis<span class="op">=</span><span class="dv">1</span>)).dt.seconds <span class="op">/</span> <span class="dv">60</span></span></code></pre></div>
+<p>Note that when we subtract two <code>pd.Timestamp</code> objects, the
+result is a <code>pd.Timedelta</code> object, whose
+<code>.seconds</code> attribute gives the time difference in seconds.
+There is no way to access the time difference in minutes directly.</p>
+<p><br></p>
+<h3 id="problem-1.1">Problem 1.1</h3>
+<p>Fill in the blanks in the code below so that the
+<code>"WaitTime"</code> column remains exactly the same as calculated
+above. In other words, the code below should give an equivalent way to
+calculate <code>"WaitTime"</code>.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> wait_time(x):</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> __(a)__</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>med[<span class="st">&quot;WaitTime&quot;</span>] <span class="op">=</span> med.<span class="bu">apply</span>(__(b)__)</span></code></pre></div>
+<ol type="1">
+<li><p>What goes in blank (a)?</p></li>
+<li><p>What goes in blank (b)?</p></li>
+</ol>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_1" aria-expanded="true" aria-controls="collapse1_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_1" class="accordion-collapse collapse"
+aria-labelledby="heading1_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answers:</strong></p>
+<ol type="1">
+<li><code>(x["StartTime"] - max(x["ArrivalTime"], x["AppointmentTime"])).seconds / 60</code>
+(or an equivalent expression using <code>.max(axis=1)</code> on the two
+timestamp columns)</li>
+<li><code>wait_time, axis=1</code></li>
+</ol>
+<p>When using <code>.apply()</code> with <code>axis=1</code>, each row
+is passed to the function as a Series. We need to replicate the
+vectorized calculation row-by-row: subtract the later of
+<code>"ArrivalTime"</code> and <code>"AppointmentTime"</code> from
+<code>"StartTime"</code>, take <code>.seconds</code>, and divide by
+60.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-1.2">Problem 1.2</h3>
+<p>What is the data type of the <code>"WaitTime"</code> column?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> <code>pd.Timestamp</code></p></li>
+<li><p><input type="radio" disabled="" /> <code>pd.Timedelta</code></p></li>
+<li><p><input type="radio" disabled="" /> <code>int</code></p></li>
+<li><p><input type="radio" disabled="" /> <code>float</code></p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_2" aria-expanded="true" aria-controls="collapse1_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_2" class="accordion-collapse collapse"
+aria-labelledby="heading1_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer:</strong> <code>float</code></p>
+<p>Dividing the number of seconds by <code>60</code> produces a
+floating-point number, so the resulting column has dtype
+<code>float</code>.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-1.3">Problem 1.3</h3>
+<p>Determine the value of the following expression.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">list</span>(med[<span class="st">&quot;WaitTime&quot;</span>].iloc[:<span class="dv">5</span>])</span></code></pre></div>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_3" aria-expanded="true" aria-controls="collapse1_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_3" class="accordion-collapse collapse"
+aria-labelledby="heading1_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer:</strong>
+<code>[20.0, 27.0, 28.0, 5.0, 61.0]</code></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-1.4">Problem 1.4</h3>
+<p>What kind of values can appear in the <code>"WaitTime"</code> column?
+Select all that apply.</p>
+<ul class="task-list">
+<li><p><input type="checkbox" disabled="" /> Negative</p></li>
+<li><p><input type="checkbox" disabled="" /> Zero</p></li>
+<li><p><input type="checkbox" disabled="" /> Positive</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_4" aria-expanded="true" aria-controls="collapse1_4">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_4" class="accordion-collapse collapse"
+aria-labelledby="heading1_4" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer:</strong> Zero and Positive</p>
+<p>Since <code>"StartTime"</code> is always at or after both
+<code>"ArrivalTime"</code> and <code>"AppointmentTime"</code>, the wait
+time in minutes is always zero or positive.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<p>Now that we’ve added a <code>"WaitTime"</code> column to
+<code>med</code>, we’ll also add a <code>"Wait"</code> column containing
+<code>int</code> values, defined as follows.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>med[<span class="st">&quot;Wait&quot;</span>] <span class="op">=</span> (med[<span class="st">&quot;WaitTime&quot;</span>] <span class="op">&gt;</span> <span class="dv">0</span>).astype(<span class="bu">int</span>)</span></code></pre></div>
+<p>For the rest of the exam, <code>med</code> has
+<code>"WaitTime"</code> and <code>"Wait"</code> columns.</p>
+<hr />
+<h2 id="problem-2">Problem 2</h2>
+<p>Doctors love having letters after their names! These letters usually
+represent degrees, titles, or certifications. We’ll refer to them
+collectively as <strong>credentials</strong>. In the
+<code>"Provider"</code> column of <code>med</code>, each provider has at
+least one credential. Credentials appear after the name and are
+separated by commas. For example, the preview of <code>med</code> shows
+that Dr. Takashi Hirase has two credentials (MD and MPH).</p>
+<p><br></p>
+<h3 id="problem-2.1">Problem 2.1</h3>
+<p>Write one line of code that evaluates to a Series containing the
+number of credentials for each provider in the <code>"Provider"</code>
+column of <code>med</code>. You must use <code>.split()</code> and you
+may not define any lambda functions.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading2_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_1" aria-expanded="true" aria-controls="collapse2_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse2_1" class="accordion-collapse collapse"
+aria-labelledby="heading2_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer:</strong>
+<code>med["Provider"].str.split(", ").apply(len) - 1</code></p>
+<p>Each credential after the provider’s name is preceded by
+<code>", "</code>, so splitting on <code>", "</code> gives one more
+piece than the number of credentials. Subtracting 1 gives the credential
+count.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-2.2">Problem 2.2</h3>
+<p>Write a different single line of code that evaluates to the same
+Series. This time, you may not use <code>.split()</code> and you may not
+define any lambda functions.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading2_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_2" aria-expanded="true" aria-controls="collapse2_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse2_2" class="accordion-collapse collapse"
+aria-labelledby="heading2_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer:</strong>
+<code>med["Provider"].str.count(", ")</code></p>
+<p>Each credential beyond the first adds one <code>", "</code> to the
+string, so counting occurrences of <code>", "</code> gives the number of
+credentials.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<p>Finally, we’ll add this Series to <code>med</code> as a new column
+called <code>"Credentials"</code>. This column is included in
+<code>med</code> for the rest of the exam.</p>
+<hr />
+<h2 id="problem-3">Problem 3</h2>
+<p>Consider the small subset of <code>med</code> shown in full below.
+Recall that the <code>"Wait"</code> column was added after Question 1.
+The data is sorted by <code>"Age"</code>.</p>
+<center><img src="../../assets/images/wi26-final/wait.jpg" width=350></center>
+<p><br></p>
+<h3 id="problem-3.1">Problem 3.1</h3>
+<p>If we train a decision tree on this data to predict
+<code>"Wait"</code> based on <code>"Age"</code> and
+<code>"NumProviders"</code>, what is the maximum possible accuracy the
+decision tree could achieve? Give your answer as an exact decimal or
+simplified fraction.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading3_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_1" aria-expanded="true" aria-controls="collapse3_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse3_1" class="accordion-collapse collapse"
+aria-labelledby="heading3_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer:</strong> <span class="math inline">\frac{11}{12}</span></p>
+<p>A decision tree can achieve perfect classification on 11 of the 12
+rows; at least one row cannot be separated from the rest using only
+<code>"Age"</code> and <code>"NumProviders"</code>.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-3.2">Problem 3.2</h3>
+<p>Select the expression below that gives the weighted entropy
+associated with using <code>"Age" &gt;= 15</code> as the root node of
+the decision tree.</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> <span class="math inline">\frac{2}{12}
+\left(-\frac{2}{2}\log_2\frac{2}{2} -
+\frac{0}{2}\log_2\frac{0}{2}\right) +
+\frac{10}{12}\left(-\frac{6}{10}\log_2\frac{6}{10} -
+\frac{4}{10}\log_2\frac{4}{10}\right)</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">\frac{2}{6}\left(-\frac{2}{5}\log_2\frac{2}{5} -
+\frac{3}{5}\log_2\frac{3}{5}\right) +
+\frac{3}{6}\left(-\frac{2}{2}\log_2\frac{2}{2} -
+\frac{1}{2}\log_2\frac{1}{2}\right)</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">-\frac{6}{12}\log_2\frac{6}{12} -
+\frac{6}{12}\log_2\frac{6}{12}</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">\frac{1}{2}\left(-\frac{1}{2}\log_2\frac{1}{2} -
+\frac{1}{2}\log_2\frac{1}{2}\right) +
+\frac{1}{2}\left(-\frac{1}{2}\log_2\frac{1}{2} -
+\frac{1}{2}\log_2\frac{1}{2}\right)</span></p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading3_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_2" aria-expanded="true" aria-controls="collapse3_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse3_2" class="accordion-collapse collapse"
+aria-labelledby="heading3_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer:</strong> <span class="math inline">\frac{2}{12}
+\left(-\frac{2}{2}\log_2\frac{2}{2} -
+\frac{0}{2}\log_2\frac{0}{2}\right) +
+\frac{10}{12}\left(-\frac{6}{10}\log_2\frac{6}{10} -
+\frac{4}{10}\log_2\frac{4}{10}\right)</span></p>
+<p>Splitting on <code>"Age" &gt;= 15</code> gives a left group of 2 rows
+(both <code>"Wait"</code> = 0, entropy 0) and a right group of 10 rows
+(6 waits, 4 no-waits). The weighted entropy weights each child group’s
+entropy by its proportion of the 12 total rows.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-3.3">Problem 3.3</h3>
+<p>All but one of the following question splits the data in such a way
+that the weighted entropy is the same. Which question yields a
+<strong>different</strong> weighted entropy than the others?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> <code>"NumProviders" &lt;= 2</code></p></li>
+<li><p><input type="radio" disabled="" /> <code>"NumProviders" &lt;= 3</code></p></li>
+<li><p><input type="radio" disabled="" /> <code>"NumProviders" &lt;= 4</code></p></li>
+<li><p><input type="radio" disabled="" /> <code>"NumProviders" &lt;= 5</code></p></li>
+<li><p><input type="radio" disabled="" /> <code>"NumProviders" &lt;= 6</code></p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading3_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_3" aria-expanded="true" aria-controls="collapse3_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse3_3" class="accordion-collapse collapse"
+aria-labelledby="heading3_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer:</strong> <code>"NumProviders" &lt;= 3</code></p>
+<p>All of the listed splits except <code>"NumProviders" &lt;= 3</code>
+produce the same weighted entropy of 1. The split at 3 providers gives a
+different weighted entropy (about 0.918).</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-3.4">Problem 3.4</h3>
+<p>What is the weighted entropy associated with any one of the questions
+you did <strong>not</strong> pick in part (c)? Give your answer as an
+exact decimal or simplified fraction.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading3_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_4" aria-expanded="true" aria-controls="collapse3_4">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse3_4" class="accordion-collapse collapse"
+aria-labelledby="heading3_4" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer:</strong> <span class="math inline">1</span></p>
+<p>Each of the splits other than <code>"NumProviders" &lt;= 3</code> has
+weighted entropy 1.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-4">Problem 4</h2>
+<p><code>sklearn</code> is considering adding a new hyperparameter to
+its <code>DecisionTreeClassifier</code> class. The new hyperparameter,
+<code>min_entropy</code>, is used to determine when a node should be
+split. A node will be split when its entropy is greater than or equal to
+<code>min_entropy</code>. Otherwise, the node will be a leaf node.</p>
+<p>Suppose we create training and testing datasets as follows.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> med.drop(columns<span class="op">=</span>[<span class="st">&quot;Wait&quot;</span>])</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> med[<span class="st">&quot;Wait&quot;</span>]</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y, test_size<span class="op">=</span><span class="fl">0.2</span>)</span></code></pre></div>
+<p><br></p>
+<h3 id="problem-4.1">Problem 4.1</h3>
+<p>The function below selects a value for <code>min_entropy</code> based
+on an input list of candidate values.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> find_min_entropy(candidates):</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    highest_score <span class="op">=</span> <span class="op">-</span><span class="dv">1</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    out <span class="op">=</span> <span class="op">-</span><span class="dv">1</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> min_e <span class="kw">in</span> candidates:</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>        dt <span class="op">=</span> DecisionTreeClassifier(min_entropy<span class="op">=</span>min_e)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>        dt.fit(X_train, y_train)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> dt.score(X_train, y_train) <span class="op">&gt;=</span> highest_score:</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>            highest_score <span class="op">=</span> dt.score(X_train, y_train)</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>            out <span class="op">=</span> min_e</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> out</span></code></pre></div>
+<p>What should the function return on an input list of
+<code>[0, 0.2, 0.4, 0.6, 0.8, 1]</code>?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_1" aria-expanded="true" aria-controls="collapse4_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_1" class="accordion-collapse collapse"
+aria-labelledby="heading4_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer:</strong> <code>0</code></p>
+<p>When <code>min_entropy = 0</code>, nodes are always allowed to split
+(as long as other stopping criteria permit), so the tree can fit the
+training data as well as possible. This gives the highest training
+accuracy among the candidates, and the function breaks ties by choosing
+the first value that achieves the highest score.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-4.2">Problem 4.2</h3>
+<p>Circle one word in each box: If we train a decision tree with the
+value selected in part (a) for <code>min_entropy</code>, the test
+accuracy will likely be ____ than the train accuracy due to ____.</p>
+<ol type="1">
+<li>higher / lower</li>
+<li>underfitting / overfitting</li>
+</ol>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_2" aria-expanded="true" aria-controls="collapse4_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_2" class="accordion-collapse collapse"
+aria-labelledby="heading4_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer:</strong> lower; overfitting</p>
+<p>With <code>min_entropy = 0</code>, the tree can grow until it fits
+the training data very closely, which typically leads to overfitting and
+lower test accuracy than training accuracy.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-4.3">Problem 4.3</h3>
+<p>Circle one word in each box: In general, increasing the value of
+<code>min_entropy</code> ____ bias and ____ variance.</p>
+<ol type="1">
+<li>increases / decreases</li>
+<li>increases / decreases</li>
+</ol>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_3" aria-expanded="true" aria-controls="collapse4_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_3" class="accordion-collapse collapse"
+aria-labelledby="heading4_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer:</strong> increases; decreases</p>
+<p>A larger <code>min_entropy</code> prevents splits on low-entropy
+nodes, producing a simpler tree. Simpler models have higher bias and
+lower variance.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-5">Problem 5</h2>
+<p>In Lab 9, you learned about <span
+class="math inline">k</span>-nearest neighbors regression. A related
+machine learning algorithm is <span class="math inline">k</span>-nearest
+neighbors classification, in which predictions are made by finding the
+<span class="math inline">k</span> points in the training data that are
+nearest to the point we are trying to classify. We predict the class
+that the majority of those <span class="math inline">k</span> points
+belong to (similar to the way in which decision trees in a random forest
+vote on a prediction). In this problem, we’ll use the standard Euclidean
+(<span class="math inline">L_2</span>) distance to measure the distance
+between points.</p>
+<p>In this problem, we’ll try to predict <code>"Wait"</code> based on
+<code>"Age"</code> and <code>"AppointmentHour"</code>, where
+<code>"AppointmentHour"</code> is the hour from the
+<code>"AppointmentTime"</code> column.</p>
+<p><br></p>
+<h3 id="problem-5.1">Problem 5.1</h3>
+<p>Suppose the training data consists only of the 25 points shown below.
+Determine the accuracy, precision, and recall of a 3-nearest neighbors
+classifier on this data.</p>
+<center><img src="../../assets/images/wi26-final/scatter1.png" width=450></center>
+<ol type="1">
+<li><p>Accuracy:</p></li>
+<li><p>Precision:</p></li>
+<li><p>Recall:</p></li>
+</ol>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading5_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_1" aria-expanded="true" aria-controls="collapse5_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse5_1" class="accordion-collapse collapse"
+aria-labelledby="heading5_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answers:</strong></p>
+<ol type="1">
+<li><span class="math inline">1</span></li>
+<li><span class="math inline">1</span></li>
+<li><span class="math inline">1</span></li>
+</ol>
+<p>On this dataset, every point is correctly classified by its 3 nearest
+neighbors, so accuracy, precision, and recall are all 1.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-5.2">Problem 5.2</h3>
+<p>Now suppose the training data consists only of the 25 points shown
+below. Determine the accuracy, precision, and recall of a 3-nearest
+neighbors classifier on this data.</p>
+<center><img src="../../assets/images/wi26-final/scatter2.png" width=450></center>
+<ol type="1">
+<li><p>Accuracy:</p></li>
+<li><p>Precision:</p></li>
+<li><p>Recall:</p></li>
+</ol>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading5_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_2" aria-expanded="true" aria-controls="collapse5_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse5_2" class="accordion-collapse collapse"
+aria-labelledby="heading5_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answers:</strong></p>
+<ol type="1">
+<li><span class="math inline">0.8</span></li>
+<li><span class="math inline">0.8</span></li>
+<li><span class="math inline">1</span></li>
+</ol>
+<p>Four of the five positive-class points are correctly classified; one
+positive point is misclassified. This gives accuracy and precision of
+0.8 and recall of 1.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-5.3">Problem 5.3</h3>
+<p>Finally, consider a 15-nearest neighbor classifier, which has the
+same accuracy on both datasets. What is that accuracy?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading5_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_3" aria-expanded="true" aria-controls="collapse5_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse5_3" class="accordion-collapse collapse"
+aria-labelledby="heading5_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer:</strong> <span class="math inline">0.8</span></p>
+<p>With <span class="math inline">k = 15</span>, the classifier uses a
+majority vote over nearly the entire dataset, yielding the same accuracy
+on both scatter plots.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-6">Problem 6</h2>
+<p>We want to use linear regression to predict <code>"WaitTime"</code>
+based on</p>
+<ul>
+<li><code>"NumProviders"</code>,</li>
+<li><code>"Credentials"</code> (from Question 2),</li>
+<li><code>"Department"</code>,</li>
+<li>and whether <code>"AppointmentTime"</code> is in the morning (before
+12:00) or afternoon (12:00 or later).</li>
+</ul>
+<p>We want to ensure that the coefficients are interpretable and can be
+used to determine the most impactful single feature in the model’s
+predictions.</p>
+<p>Fill in the code below to fit an appropriate <code>Pipeline</code> to
+the data in <code>med</code>, which we will think of as our training
+data for this problem.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> hour(df):</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    df.iloc[:, <span class="dv">0</span>] <span class="op">=</span> df.iloc[:, <span class="dv">0</span>].dt.hour</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> df</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> med[[<span class="st">&quot;NumProviders&quot;</span>, <span class="st">&quot;Credentials&quot;</span>, <span class="st">&quot;Department&quot;</span>, <span class="st">&quot;AppointmentTime&quot;</span>]]</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> med[<span class="st">&quot;WaitTime&quot;</span>]</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>pl <span class="op">=</span> ____</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>pl.fit(X, y)</span></code></pre></div>
+<p>There is only one blank in the code above, which should be filled
+with a capital letter corresponding to one of the answer choice options
+given below. This answer choice will have blanks of its own, which you
+should also fill in. Every time you use an answer choice, fill in the
+blanks in that answer choice with one of the following:</p>
+<ul>
+<li>a capital letter corresponding to an answer choice option,</li>
+<li>a string, or</li>
+<li>an integer.</li>
+</ul>
+<p>Some answer choices will be unused. You should leave any blanks in
+those answer choices empty.</p>
+<p><strong>Answer choice options:</strong></p>
+<p>A. <code>drop = 'first'</code></p>
+<p>B. <code>remainder = 'drop'</code></p>
+<p>C. <code>remainder = 'passthrough'</code></p>
+<p>D. <code>PolynomialFeatures(___)</code></p>
+<p>E. <code>StandardScaler()</code></p>
+<p>F. <code>Binarizer(threshold = ___)</code></p>
+<p>G. <code>CountVectorizer()</code></p>
+<p>H. <code>FunctionTransformer(hour)</code></p>
+<p>I. <code>OneHotEncoder(___)</code></p>
+<p>J. <code>LinearRegression()</code></p>
+<p>K.
+<code>ColumnTransformer([("one", ___, [___]), ("two", ___, [___])], ___)</code></p>
+<p>L.
+<code>ColumnTransformer([("one", ___, [___]), ("two", ___, [___]), ("three", ___, [___])], ___)</code></p>
+<p>M. <code>make_pipeline(___, ___, ___)</code></p>
+<p>N. <code>make_pipeline(___, ___)</code></p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading6">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6" aria-expanded="true" aria-controls="collapse6">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse6" class="accordion-collapse collapse"
+aria-labelledby="heading6" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer:</strong></p>
+<p><code>pl = M</code> where:</p>
+<ul>
+<li><strong>M:</strong> <code>make_pipeline(L, E, J)</code></li>
+<li><strong>L:</strong>
+<code>ColumnTransformer([("one", M_inner, ["AppointmentTime"]), ("two", I, ["Department"])], C)</code>
+— using nested references:
+<ul>
+<li><strong>H:</strong> <code>FunctionTransformer(hour)</code></li>
+<li><strong>F:</strong> <code>Binarizer(threshold = 11)</code></li>
+<li>Inner pipeline for <code>"AppointmentTime"</code>:
+<code>make_pipeline(H, F)</code></li>
+<li><strong>I:</strong> <code>OneHotEncoder(A)</code>
+i.e. <code>OneHotEncoder(drop='first')</code></li>
+<li><strong>C:</strong> <code>remainder='passthrough'</code></li>
+<li><strong>E:</strong> <code>StandardScaler()</code></li>
+<li><strong>J:</strong> <code>LinearRegression()</code></li>
+</ul></li>
+</ul>
+<p>So the full pipeline is:</p>
+<div id="cb1" class="sourceCode">
+<pre class="sourceCode py"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" href="#cb1-1" tabindex="-1"></a>pl <span class="op">=</span> make_pipeline(</span>
+<span id="cb1-2"><a aria-hidden="true" href="#cb1-2" tabindex="-1"></a>    ColumnTransformer([</span>
+<span id="cb1-3"><a aria-hidden="true" href="#cb1-3" tabindex="-1"></a>        (<span class="st">"one"</span>, make_pipeline(FunctionTransformer(hour), Binarizer(threshold<span class="op">=</span><span class="dv">11</span>)), [<span class="st">"AppointmentTime"</span>]),</span>
+<span id="cb1-4"><a aria-hidden="true" href="#cb1-4" tabindex="-1"></a>        (<span class="st">"two"</span>, OneHotEncoder(drop<span class="op">=</span><span class="st">'first'</span>), [<span class="st">"Department"</span>])</span>
+<span id="cb1-5"><a aria-hidden="true" href="#cb1-5" tabindex="-1"></a>    ], remainder<span class="op">=</span><span class="st">'passthrough'</span>),</span>
+<span id="cb1-6"><a aria-hidden="true" href="#cb1-6" tabindex="-1"></a>    StandardScaler(),</span>
+<span id="cb1-7"><a aria-hidden="true" href="#cb1-7" tabindex="-1"></a>    LinearRegression()</span>
+<span id="cb1-8"><a aria-hidden="true" href="#cb1-8" tabindex="-1"></a>)</span></code></pre>
+</div>
+<p><code>FunctionTransformer(hour)</code> extracts the hour from
+<code>"AppointmentTime"</code>. <code>Binarizer(threshold=11)</code>
+encodes afternoon appointments (hour <span class="math inline">\geq
+12</span>) as 1. <code>OneHotEncoder(drop='first')</code> encodes
+<code>"Department"</code> without collinearity.
+<code>remainder='passthrough'</code> keeps <code>"NumProviders"</code>
+and <code>"Credentials"</code>. <code>StandardScaler()</code> makes
+coefficients comparable.</p>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="problem-7">Problem 7</h2>
+<p>Suppose we derive a numerical feature
+<code>"AppointmentTimeSeconds"</code> which measures the
+<code>"AppointmentTime"</code> in seconds since midnight. Then we use
+linear regression to fit a prediction rule of the form:</p>
+<p><span class="math display">\text{predicted
+`&quot;WaitTime&quot;&#39;} = w_0 + w_1 \cdot \text{`&quot;Age&quot;`} +
+w_2 \cdot \text{`&quot;NumProviders&quot;`} + w_3 \cdot
+\text{`&quot;AppointmentTimeSeconds&quot;`}</span></p>
+<p>Consider each of the following changes to the model above, and
+determine which coefficients in the fit model <strong>may
+change</strong>. Select all coefficients that may change. Note that we
+are changing the original model each time, not stacking changes on top
+of one another.</p>
+<p><br></p>
+<h3 id="problem-7.1">Problem 7.1</h3>
+<p>Change <code>"AppointmentTimeSeconds"</code> to
+<code>"AppointmentTimeMinutes"</code>, which is measured in minutes
+since midnight.</p>
+<ul class="task-list">
+<li><p><input type="checkbox" disabled="" /> <span class="math inline">w_0</span></p></li>
+<li><p><input type="checkbox" disabled="" /> <span class="math inline">w_1</span></p></li>
+<li><p><input type="checkbox" disabled="" /> <span class="math inline">w_2</span></p></li>
+<li><p><input type="checkbox" disabled="" /> <span class="math inline">w_3</span></p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading7_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_1" aria-expanded="true" aria-controls="collapse7_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse7_1" class="accordion-collapse collapse"
+aria-labelledby="heading7_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer:</strong> <span class="math inline">w_0</span> and
+<span class="math inline">w_3</span></p>
+<p>Scaling <code>"AppointmentTimeSeconds"</code> to minutes scales that
+feature by a factor of 60, which changes <span class="math inline">w_3</span> (and typically <span class="math inline">w_0</span> to preserve predictions). <span class="math inline">w_1</span> and <span class="math inline">w_2</span>
+are unchanged because their features are unaffected.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-7.2">Problem 7.2</h3>
+<p>Add a new feature, which is <span class="math inline">3 \cdot
+\text{`&quot;Age&quot;`} + \text{`&quot;NumProviders&quot;`}</span>.</p>
+<ul class="task-list">
+<li><p><input type="checkbox" disabled="" /> <span class="math inline">w_0</span></p></li>
+<li><p><input type="checkbox" disabled="" /> <span class="math inline">w_1</span></p></li>
+<li><p><input type="checkbox" disabled="" /> <span class="math inline">w_2</span></p></li>
+<li><p><input type="checkbox" disabled="" /> <span class="math inline">w_3</span></p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading7_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_2" aria-expanded="true" aria-controls="collapse7_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse7_2" class="accordion-collapse collapse"
+aria-labelledby="heading7_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer:</strong> <span class="math inline">w_0</span>, <span class="math inline">w_1</span>, <span class="math inline">w_2</span>,
+and <span class="math inline">w_3</span></p>
+<p>Adding a new feature that is a linear combination of existing
+features introduces multicollinearity, so all coefficients may
+change.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-7.3">Problem 7.3</h3>
+<p>Add a new feature, which is <code>"Age"/"NumProviders"</code>.</p>
+<ul class="task-list">
+<li><p><input type="checkbox" disabled="" /> <span class="math inline">w_0</span></p></li>
+<li><p><input type="checkbox" disabled="" /> <span class="math inline">w_1</span></p></li>
+<li><p><input type="checkbox" disabled="" /> <span class="math inline">w_2</span></p></li>
+<li><p><input type="checkbox" disabled="" /> <span class="math inline">w_3</span></p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading7_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_3" aria-expanded="true" aria-controls="collapse7_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse7_3" class="accordion-collapse collapse"
+aria-labelledby="heading7_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer:</strong> <span class="math inline">w_0</span>, <span class="math inline">w_1</span>, <span class="math inline">w_2</span>,
+and <span class="math inline">w_3</span></p>
+<p>Adding a nonlinear combination of existing features can change the
+optimal fit for all coefficients.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-7.4">Problem 7.4</h3>
+<p>Remove the intercept term <span class="math inline">w_0</span>.</p>
+<ul class="task-list">
+<li><p><input type="checkbox" disabled="" /> <span class="math inline">w_1</span></p></li>
+<li><p><input type="checkbox" disabled="" /> <span class="math inline">w_2</span></p></li>
+<li><p><input type="checkbox" disabled="" /> <span class="math inline">w_3</span></p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading7_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_4" aria-expanded="true" aria-controls="collapse7_4">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse7_4" class="accordion-collapse collapse"
+aria-labelledby="heading7_4" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer:</strong> <span class="math inline">w_1</span>, <span class="math inline">w_2</span>, and <span class="math inline">w_3</span></p>
+<p>Removing the intercept forces the regression through the origin,
+which generally changes all remaining slope coefficients.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-8">Problem 8</h2>
+<p><br></p>
+<h3 id="problem-8.1">Problem 8.1</h3>
+<p>We suspect that some <code>"Provider"</code>s have longer
+<code>"WaitTime"</code>s than others. Fill in the blanks below to add a
+column to <code>med</code> called <code>"EstimatedWaitTime"</code> which
+contains the median <code>"WaitTime"</code> for appointments with the
+same <code>"Provider"</code>.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>med[<span class="st">&quot;EstimatedWaitTime&quot;</span>] <span class="op">=</span> (med.groupby(__(a)__)[__(b)__]</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>                            .__(c)__(__(d)__))</span></code></pre></div>
+<ol type="1">
+<li><p>What goes in blank (a)?</p></li>
+<li><p>What goes in blank (b)?</p></li>
+<li><p>What goes in blank (c)?</p></li>
+<li><p>What goes in blank (d)?</p></li>
+</ol>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading8_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8_1" aria-expanded="true" aria-controls="collapse8_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse8_1" class="accordion-collapse collapse"
+aria-labelledby="heading8_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answers:</strong></p>
+<ol type="1">
+<li><code>"Provider"</code></li>
+<li><code>"WaitTime"</code></li>
+<li><code>transform</code></li>
+<li><code>np.median</code></li>
+</ol>
+<p><code>.groupby("Provider")["WaitTime"].transform(np.median)</code>
+computes the median wait time for each provider and broadcasts it back
+to every row with that provider.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-8.2">Problem 8.2</h3>
+<p>We suspect that some <code>"Department"</code>s are frequently
+running behind schedule and may occasionally have very high wait times.
+Fill in the blanks below so the result is a Series, indexed by
+<code>"Department"</code>, containing the 95th percentile of
+<code>"WaitTime"</code> for each <code>"Department"</code> in which at
+least 75 percent of appointments have a <code>"Wait"</code>. If less
+than 75 percent of appointments in a given <code>"Department"</code>
+have a <code>"Wait"</code>, the <code>"Department"</code> should not
+appear in the Series. Recall that <code>np.percentile(x, 95)</code>
+calculates the 95th percentile of <code>x</code>.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>(med.groupby(__(a)__).__(b)__(__(c)__)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a> .groupby(__(d)__)[__(e)__].__(f)__(__(g)__))</span></code></pre></div>
+<ol type="1">
+<li><p>What goes in blank (a)?</p></li>
+<li><p>What goes in blank (b)?</p></li>
+<li><p>What goes in blank (c)?</p></li>
+<li><p>What goes in blank (d)?</p></li>
+<li><p>What goes in blank (e)?</p></li>
+<li><p>What goes in blank (f)?</p></li>
+<li><p>What goes in blank (g)?</p></li>
+</ol>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading8_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8_2" aria-expanded="true" aria-controls="collapse8_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse8_2" class="accordion-collapse collapse"
+aria-labelledby="heading8_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answers:</strong></p>
+<ol type="1">
+<li><code>"Department"</code></li>
+<li><code>filter</code></li>
+<li><code>lambda df: df["Wait"].mean() &gt;= 0.75</code></li>
+<li><code>"Department"</code></li>
+<li><code>"WaitTime"</code></li>
+<li><code>agg</code></li>
+<li><code>lambda s: np.percentile(s, 95)</code></li>
+</ol>
+<p>First, <code>.groupby("Department").filter(...)</code> keeps only
+departments where at least 75% of appointments have a wait. Then, group
+again by department and aggregate the 95th percentile of
+<code>"WaitTime"</code>.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-9">Problem 9</h2>
+<p>Suppose we have access to another DataFrame that contains billing
+information. The rows are the same as in <code>med</code>, but there are
+only three columns, <code>"MRN"</code>, <code>"AppointmentTime"</code>,
+and <code>"Billed"</code>. The <code>"Billed"</code> column contains the
+amount that the patient was billed for their medical services at the
+time of the appointment.</p>
+<p><br></p>
+<h3 id="problem-9.1">Problem 9.1</h3>
+<p>Suppose patients are billed for services at the time of their
+appointment, unless the services are very complex (such as a surgical
+procedure). For complex procedures, the <code>"Billed"</code> column is
+left empty, and patients are charged for services at a later date. In
+this scenario, what is the most likely missingness mechanism of the
+<code>"Billed"</code> column?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> missing by design (MD)</p></li>
+<li><p><input type="radio" disabled="" /> missing not at random (MNAR)</p></li>
+<li><p><input type="radio" disabled="" /> missing at random (MAR)</p></li>
+<li><p><input type="radio" disabled="" /> missing completely at random (MCAR)</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading9_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_1" aria-expanded="true" aria-controls="collapse9_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse9_1" class="accordion-collapse collapse"
+aria-labelledby="heading9_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer:</strong> missing by design (MD)</p>
+<p>Complex procedures intentionally leave <code>"Billed"</code> empty at
+appointment time because billing happens later. This missingness is
+built into the data collection process.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-9.2">Problem 9.2</h3>
+<p>Now suppose we merge the billing DataFrame with <code>med</code> on
+<code>"MRN"</code> and <code>"AppointmentTime"</code>.</p>
+<p>We want to do a permutation test at the 0.05 significance level to
+decide if the missingness mechanism of the <code>"Billed"</code> column
+is more likely MCAR or MAR dependent on <code>"Department"</code>. Which
+of the following test statistics could be used for this permutation
+test? Select all that apply.</p>
+<ul class="task-list">
+<li><p><input type="checkbox" disabled="" /> K-S statistic</p></li>
+<li><p><input type="checkbox" disabled="" /> difference of means</p></li>
+<li><p><input type="checkbox" disabled="" /> absolute difference of means</p></li>
+<li><p><input type="checkbox" disabled="" /> total variation distance (TVD)</p></li>
+<li><p><input type="checkbox" disabled="" /> none of these</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading9_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_2" aria-expanded="true" aria-controls="collapse9_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse9_2" class="accordion-collapse collapse"
+aria-labelledby="heading9_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer:</strong> absolute difference of means and total
+variation distance (TVD)</p>
+<p>To compare MCAR vs. MAR dependent on <code>"Department"</code>, we
+can compare the distribution of missingness (or
+<code>"Department"</code>) across groups. TVD and absolute difference of
+means are appropriate for comparing distributions or group means of an
+indicator for missingness.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-9.3">Problem 9.3</h3>
+<p>Suppose the p-value comes out to 0.03. What can we conclude? Select
+all that apply.</p>
+<ul class="task-list">
+<li><p><input type="checkbox" disabled="" /> The missingness mechanism is not MD.</p></li>
+<li><p><input type="checkbox" disabled="" /> The missingness mechanism is not MNAR.</p></li>
+<li><p><input type="checkbox" disabled="" /> The missingness mechanism is more likely MCAR than MAR.</p></li>
+<li><p><input type="checkbox" disabled="" /> The missingness mechanism is more likely MAR than MCAR.</p></li>
+<li><p><input type="checkbox" disabled="" /> None of the above is a valid conclusion.</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading9_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_3" aria-expanded="true" aria-controls="collapse9_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse9_3" class="accordion-collapse collapse"
+aria-labelledby="heading9_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer:</strong> The missingness mechanism is more likely MAR
+than MCAR.</p>
+<p>At the 0.05 significance level, a p-value of 0.03 provides evidence
+against the null hypothesis that missingness is MCAR, suggesting MAR is
+more likely.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-9.4">Problem 9.4</h3>
+<p>Suppose additionally that on March 1, 2026, UC San Diego Health
+experienced a technical outage and all the billing data for that day was
+lost. Which imputation strategy is most appropriate if we want to make
+sure the mean and standard deviation don’t change much as a result of
+the imputation?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> mean imputation</p></li>
+<li><p><input type="radio" disabled="" /> probabilistic imputation</p></li>
+<li><p><input type="radio" disabled="" /> mean imputation, conditional on <code>"Department"</code></p></li>
+<li><p><input type="radio" disabled="" /> probabilistic imputation, conditional on
+<code>"Department"</code></p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading9_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_4" aria-expanded="true" aria-controls="collapse9_4">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse9_4" class="accordion-collapse collapse"
+aria-labelledby="heading9_4" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer:</strong> probabilistic imputation, conditional on
+<code>"Department"</code></p>
+<p>Probabilistic imputation samples from the conditional distribution of
+<code>"Billed"</code> given <code>"Department"</code>, which better
+preserves both the mean and standard deviation than filling with a
+single value.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-10">Problem 10</h2>
+<p>Dr. Zheng and Dr. Golder are two medical doctors at UC San Diego
+Health. They each create a DataFrame of patients they have seen in the
+last year. Suppose that these DataFrames are called <code>dr_z</code>
+and <code>dr_g</code> and that each DataFrame includes a
+<code>"MRN"</code> column, which uniquely identifies patients.</p>
+<p>Consider each of the following scenarios describing the overlap of
+<code>dr_z</code> and <code>dr_g</code>, and in each scenario, determine
+the number of rows in the DataFrame created by merging <code>dr_z</code>
+with <code>dr_g</code> using inner, outer, left, and right joins.</p>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode py"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>dr_z.merge(dr_g, on<span class="op">=</span><span class="st">&quot;MRN&quot;</span>, how<span class="op">=</span>???)</span></code></pre></div>
+<p><br></p>
+<h3 id="problem-10.1">Problem 10.1</h3>
+<ul>
+<li><code>dr_z</code> has 90 rows, all representing distinct
+patients.</li>
+<li><code>dr_g</code> has 70 rows, all representing distinct
+patients.</li>
+<li>30 patients appear in both DataFrames.</li>
+</ul>
+<ol type="1">
+<li><p><code>how = "inner"</code>:</p></li>
+<li><p><code>how = "outer"</code>:</p></li>
+<li><p><code>how = "left"</code>:</p></li>
+<li><p><code>how = "right"</code>:</p></li>
+</ol>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading10_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10_1" aria-expanded="true" aria-controls="collapse10_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse10_1" class="accordion-collapse collapse"
+aria-labelledby="heading10_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answers:</strong></p>
+<ol type="1">
+<li>30</li>
+<li>130</li>
+<li>90</li>
+<li>70</li>
+</ol>
+<p>Inner keeps only shared patients (30). Outer keeps all patients from
+both (90 + 70 − 30 = 130). Left keeps all 90 from <code>dr_z</code>.
+Right keeps all 70 from <code>dr_g</code>.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-10.2">Problem 10.2</h3>
+<ul>
+<li><code>dr_z</code> has 20 rows, all representing distinct
+patients.</li>
+<li><code>dr_g</code> has 65 rows, all representing distinct
+patients.</li>
+<li>All patients appearing in <code>dr_z</code> also appear in
+<code>dr_g</code>.</li>
+</ul>
+<ol type="1">
+<li><p><code>how = "inner"</code>:</p></li>
+<li><p><code>how = "outer"</code>:</p></li>
+<li><p><code>how = "left"</code>:</p></li>
+<li><p><code>how = "right"</code>:</p></li>
+</ol>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading10_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10_2" aria-expanded="true" aria-controls="collapse10_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse10_2" class="accordion-collapse collapse"
+aria-labelledby="heading10_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answers:</strong></p>
+<ol type="1">
+<li>20</li>
+<li>65</li>
+<li>20</li>
+<li>65</li>
+</ol>
+<p>Every <code>dr_z</code> patient is in <code>dr_g</code>, so inner and
+left both have 20 rows. Outer and right include all 65 patients in
+<code>dr_g</code>.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-10.3">Problem 10.3</h3>
+<ul>
+<li><code>dr_z</code> has 60 rows, representing 30 patients each
+appearing twice.</li>
+<li><code>dr_g</code> has 80 rows, representing 40 patients each
+appearing twice.</li>
+<li>There are 10 patients that appear in both <code>dr_z</code> and
+<code>dr_g</code>.</li>
+</ul>
+<ol type="1">
+<li><p><code>how = "inner"</code>:</p></li>
+<li><p><code>how = "outer"</code>:</p></li>
+<li><p><code>how = "left"</code>:</p></li>
+<li><p><code>how = "right"</code>:</p></li>
+</ol>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading10_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10_3" aria-expanded="true" aria-controls="collapse10_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse10_3" class="accordion-collapse collapse"
+aria-labelledby="heading10_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answers:</strong></p>
+<ol type="1">
+<li>40</li>
+<li>140</li>
+<li>80</li>
+<li>100</li>
+</ol>
+<p>With duplicate rows, each shared patient contributes <span class="math inline">2 \times 2 = 4</span> rows to an inner join (<span class="math inline">10 \times 4 = 40</span>). An outer join gives <span class="math inline">60 + 80 - 40 = 140</span> rows. A left join keeps
+all 60 <code>dr_z</code> rows (20 shared-patient rows each match 2
+<code>dr_g</code> rows for 40 total, plus 40 <code>dr_z</code>-only
+rows). A right join keeps all 80 <code>dr_g</code> rows (20
+shared-patient rows each match 2 <code>dr_z</code> rows for 40 total,
+plus 60 <code>dr_g</code>-only rows).</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-11">Problem 11</h2>
+<p>Suppose we train a unigram, bigram, and trigram model on the
+following corpus.</p>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode py"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>corpus <span class="op">=</span> <span class="st">&quot;Patient is ill. Patient is in pain. Ill patient will recover in time.&quot;</span></span></code></pre></div>
+<p>We tokenized the corpus as follows before training our models.</p>
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode py"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>corpus.lower().split()</span></code></pre></div>
+<p>Now, we’d like to determine the probability of generating the
+sentence below, according to each model.</p>
+<p><code>"Patient is in time."</code></p>
+<p>For each part, give your answer as a simplified fraction (preferred)
+or a product of simplified fractions.</p>
+<p><br></p>
+<h3 id="problem-11.1">Problem 11.1</h3>
+<p>Determine the probability of the sentence above, according to the
+unigram model.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading11_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse11_1" aria-expanded="true" aria-controls="collapse11_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse11_1" class="accordion-collapse collapse"
+aria-labelledby="heading11_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer:</strong> <span class="math inline">\frac{3}{13} \cdot
+\frac{2}{13} \cdot \frac{2}{13} \cdot \frac{1}{13}</span></p>
+<p>After lowercasing and splitting, the corpus has 13 tokens: three
+<code>"patient"</code>, two <code>"is"</code>, two <code>"in"</code>,
+and one each of the remaining tokens. The unigram model multiplies the
+marginal probabilities of each word in the sentence.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-11.2">Problem 11.2</h3>
+<p>Determine the probability of the sentence above, according to the
+bigram model.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading11_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse11_2" aria-expanded="true" aria-controls="collapse11_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse11_2" class="accordion-collapse collapse"
+aria-labelledby="heading11_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer:</strong> <span class="math inline">\frac{1}{26}</span></p>
+<p>Under the bigram model, multiply the probability of the first token
+by each subsequent conditional probability. This product simplifies to
+<span class="math inline">\frac{1}{26}</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-11.3">Problem 11.3</h3>
+<p>Determine the probability of the sentence above, according to the
+trigram model.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading11_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse11_3" aria-expanded="true" aria-controls="collapse11_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse11_3" class="accordion-collapse collapse"
+aria-labelledby="heading11_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer:</strong> <span class="math inline">0</span></p>
+<p>The trigram <code>"is in time."</code> (or another required trigram
+in the sentence) never appears in the training corpus, so the trigram
+model assigns probability 0 to the sentence.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-12">Problem 12</h2>
+<p>On the website for UC San Diego Health, each provider has their own
+page. We’ve scraped the HTML from one provider’s web page, which you can
+find at the end of this exam. We then instantiated a
+<code>BeautifulSoup</code> object, <code>soup</code>, from this
+HTML.</p>
+<div class="sourceCode" id="cb13"><pre
+class="sourceCode html"><code class="sourceCode html"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">html</span><span class="ot"> lang</span><span class="op">=</span><span class="st">&quot;en&quot;</span><span class="dt">&gt;</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">link</span><span class="ot"> href</span><span class="op">=</span><span class="st">&quot;/assets/static/heroData-BGejBwUx.css&quot;</span><span class="ot"> rel</span><span class="op">=</span><span class="st">&quot;stylesheet&quot;</span><span class="dt">/&gt;</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">title</span><span class="dt">&gt;</span>Caitlin MacMillen, DO | Primary Care, Family Medicine, Osteopathic Medicine | UC San Diego Health<span class="dt">&lt;/</span><span class="kw">title</span><span class="dt">&gt;</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">meta</span><span class="ot"> content</span><span class="op">=</span><span class="st">&quot;width=device-width, initial-scale=1, maximum-scale=5&quot;</span><span class="ot"> name</span><span class="op">=</span><span class="st">&quot;viewport&quot;</span><span class="dt">/&gt;</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">meta</span><span class="ot"> content</span><span class="op">=</span><span class="st">&quot;Caitlin MacMillen is a Physician in San Diego with UC San Diego Health and specializing in Osteopathic Manipulative Treatment (OMT), Women&#39;s Health, Care for All Ages, Comprehensive Care for the Individual and Family, Overall Health and Well-Being, Family Planning.&quot;</span><span class="ot"> name</span><span class="op">=</span><span class="st">&quot;description&quot;</span><span class="dt">/&gt;</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">meta</span><span class="ot"> content</span><span class="op">=</span><span class="st">&quot;32.875663,-117.2133647&quot;</span><span class="ot"> name</span><span class="op">=</span><span class="st">&quot;geo.position&quot;</span><span class="dt">/&gt;</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">meta</span><span class="ot"> content</span><span class="op">=</span><span class="st">&quot;San Diego,CA&quot;</span><span class="ot"> name</span><span class="op">=</span><span class="st">&quot;geo.placename&quot;</span><span class="dt">/&gt;</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">meta</span><span class="ot"> content</span><span class="op">=</span><span class="st">&quot;US-CA&quot;</span><span class="ot"> name</span><span class="op">=</span><span class="st">&quot;geo.region&quot;</span><span class="dt">/&gt;</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">script</span><span class="dt">&gt;</span><span class="bu">window</span><span class="op">.</span><span class="at">yextAnalyticsEnabled</span><span class="op">=</span><span class="kw">false</span><span class="op">;</span><span class="bu">window</span><span class="op">.</span><span class="at">enableYextAnalytics</span><span class="op">=</span>()<span class="kw">=&gt;</span>{<span class="bu">window</span><span class="op">.</span><span class="at">yextAnalyticsEnabled</span><span class="op">=</span><span class="kw">true</span>}<span class="dt">&lt;/</span><span class="kw">script</span><span class="dt">&gt;</span></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">script</span><span class="ot"> type=</span><span class="st">&quot;application/ld+json&quot;</span><span class="dt">&gt;</span>{</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;@context&quot;</span><span class="op">:</span> <span class="st">&quot;https://schema.org&quot;</span><span class="op">,</span></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;@graph&quot;</span><span class="op">:</span> [</span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;@type&quot;</span><span class="op">:</span> <span class="st">&quot;Physician&quot;</span><span class="op">,</span></span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;@id&quot;</span><span class="op">:</span> <span class="st">&quot;https://providers.ucsd.edu/details/33243/primary-care-family-medicine-osteopathic-medicine&quot;</span><span class="op">,</span></span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;name&quot;</span><span class="op">:</span> <span class="st">&quot;Caitlin MacMillen, DO&quot;</span><span class="op">,</span></span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;usNPI&quot;</span><span class="op">:</span> <span class="st">&quot;1518321629&quot;</span><span class="op">,</span></span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;telephone&quot;</span><span class="op">:</span> <span class="st">&quot;(858) 657-8600&quot;</span><span class="op">,</span></span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;isAcceptingNewPatients&quot;</span><span class="op">:</span> <span class="kw">false</span><span class="op">,</span></span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;url&quot;</span><span class="op">:</span> <span class="st">&quot;https://providers.ucsd.edu/details/33243/primary-care-family-medicine-osteopathic-medicine&quot;</span><span class="op">,</span></span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;knowsLanguage&quot;</span><span class="op">:</span> [{<span class="st">&quot;@type&quot;</span><span class="op">:</span> <span class="st">&quot;Language&quot;</span><span class="op">,</span> <span class="st">&quot;name&quot;</span><span class="op">:</span> <span class="st">&quot;English&quot;</span>}]<span class="op">,</span></span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;knowsAbout&quot;</span><span class="op">:</span> [<span class="st">&quot;Osteopathic Manipulative Treatment (OMT)&quot;</span><span class="op">,</span> <span class="st">&quot;Women&#39;s Health&quot;</span><span class="op">,</span> <span class="st">&quot;Care for All Ages&quot;</span><span class="op">,</span> <span class="st">&quot;Comprehensive Care for the Individual and Family&quot;</span><span class="op">,</span> <span class="st">&quot;Overall Health and Well-Being&quot;</span><span class="op">,</span> <span class="st">&quot;Family Planning&quot;</span>]<span class="op">,</span></span>
+<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;address&quot;</span><span class="op">:</span> {</span>
+<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;@type&quot;</span><span class="op">:</span> <span class="st">&quot;PostalAddress&quot;</span><span class="op">,</span></span>
+<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;streetAddress&quot;</span><span class="op">:</span> <span class="st">&quot;9333 Genesee Avenue&quot;</span><span class="op">,</span></span>
+<span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;addressLocality&quot;</span><span class="op">:</span> <span class="st">&quot;San Diego&quot;</span><span class="op">,</span></span>
+<span id="cb13-28"><a href="#cb13-28" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;addressRegion&quot;</span><span class="op">:</span> <span class="st">&quot;California&quot;</span><span class="op">,</span></span>
+<span id="cb13-29"><a href="#cb13-29" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;postalCode&quot;</span><span class="op">:</span> <span class="st">&quot;92121&quot;</span><span class="op">,</span></span>
+<span id="cb13-30"><a href="#cb13-30" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;addressCountry&quot;</span><span class="op">:</span> <span class="st">&quot;US&quot;</span></span>
+<span id="cb13-31"><a href="#cb13-31" aria-hidden="true" tabindex="-1"></a>      }<span class="op">,</span></span>
+<span id="cb13-32"><a href="#cb13-32" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;aggregateRating&quot;</span><span class="op">:</span> {<span class="st">&quot;@type&quot;</span><span class="op">:</span> <span class="st">&quot;AggregateRating&quot;</span><span class="op">,</span> <span class="st">&quot;ratingValue&quot;</span><span class="op">:</span> <span class="fl">4.93</span><span class="op">,</span> <span class="st">&quot;bestRating&quot;</span><span class="op">:</span> <span class="dv">5</span><span class="op">,</span> <span class="st">&quot;ratingCount&quot;</span><span class="op">:</span> <span class="dv">188</span>}</span>
+<span id="cb13-33"><a href="#cb13-33" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb13-34"><a href="#cb13-34" aria-hidden="true" tabindex="-1"></a>  ]</span>
+<span id="cb13-35"><a href="#cb13-35" aria-hidden="true" tabindex="-1"></a>}<span class="dt">&lt;/</span><span class="kw">script</span><span class="dt">&gt;</span></span>
+<span id="cb13-36"><a href="#cb13-36" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">script</span><span class="ot"> data-entity-id</span><span class="op">=</span><span class="st">&quot;16281938&quot;</span><span class="ot"> id</span><span class="op">=</span><span class="st">&quot;yext-entity-data&quot;</span><span class="dt">&gt;&lt;/</span><span class="kw">script</span><span class="dt">&gt;</span></span>
+<span id="cb13-37"><a href="#cb13-37" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">script</span><span class="ot"> async</span><span class="op">=</span><span class="st">&quot;&quot;</span><span class="ot"> src</span><span class="op">=</span><span class="st">&quot;https://siteimproveanalytics.com/js/siteanalyze_14686.js&quot;</span><span class="dt">&gt;&lt;/</span><span class="kw">script</span><span class="dt">&gt;</span></span>
+<span id="cb13-38"><a href="#cb13-38" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">script</span><span class="ot"> crossorigin</span><span class="op">=</span><span class="st">&quot;anonymous&quot;</span><span class="ot"> src</span><span class="op">=</span><span class="st">&quot;https://kit.fontawesome.com/aa9c700570.js&quot;</span><span class="dt">&gt;&lt;/</span><span class="kw">script</span><span class="dt">&gt;</span></span>
+<span id="cb13-39"><a href="#cb13-39" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb13-40"><a href="#cb13-40" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">body</span><span class="dt">&gt;</span></span>
+<span id="cb13-41"><a href="#cb13-41" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> id</span><span class="op">=</span><span class="st">&quot;reactele&quot;</span><span class="dt">&gt;&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb13-42"><a href="#cb13-42" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">body</span><span class="dt">&gt;</span></span>
+<span id="cb13-43"><a href="#cb13-43" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">html</span><span class="dt">&gt;</span></span></code></pre></div>
+<p><br></p>
+<h3 id="problem-12.1">Problem 12.1</h3>
+<p>Consider the DOM tree for this document. How many children does the
+root node have?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> 1</p></li>
+<li><p><input type="radio" disabled="" /> 2</p></li>
+<li><p><input type="radio" disabled="" /> 3</p></li>
+<li><p><input type="radio" disabled="" /> 4</p></li>
+<li><p><input type="radio" disabled="" /> 5</p></li>
+<li><p><input type="radio" disabled="" /> none of these</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading12_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse12_1" aria-expanded="true" aria-controls="collapse12_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse12_1" class="accordion-collapse collapse"
+aria-labelledby="heading12_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer:</strong> 2</p>
+<p>The root <code>&lt;html&gt;</code> element has two children:
+<code>&lt;head&gt;</code> and <code>&lt;body&gt;</code>.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-12.2">Problem 12.2</h3>
+<p>What does the following line of code evaluate to?</p>
+<div class="sourceCode" id="cb14"><pre
+class="sourceCode py"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(soup.find_all(<span class="st">&quot;script&quot;</span>))</span></code></pre></div>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> 1</p></li>
+<li><p><input type="radio" disabled="" /> 2</p></li>
+<li><p><input type="radio" disabled="" /> 3</p></li>
+<li><p><input type="radio" disabled="" /> 4</p></li>
+<li><p><input type="radio" disabled="" /> 5</p></li>
+<li><p><input type="radio" disabled="" /> none of these</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading12_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse12_2" aria-expanded="true" aria-controls="collapse12_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse12_2" class="accordion-collapse collapse"
+aria-labelledby="heading12_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer:</strong> 4</p>
+<p>There are four <code>&lt;script&gt;</code> tags in the document.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-12.3">Problem 12.3</h3>
+<p>The latitude and longitude for the provider’s office location are
+included in the document. Write one line of code that uses
+<code>soup.find()</code> (not <code>soup.find_all()</code>) to extract
+the latitude from <code>soup</code>, as a string
+(<code>"32.875663"</code>).</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading12_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse12_3" aria-expanded="true" aria-controls="collapse12_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse12_3" class="accordion-collapse collapse"
+aria-labelledby="heading12_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer:</strong>
+<code>soup.find("meta", attrs={"name": "geo.position"}).get("content").split(",")[0]</code></p>
+<p>The latitude is stored in the <code>content</code> attribute of the
+<code>&lt;meta name="geo.position"&gt;</code> tag, before the comma.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-12.4">Problem 12.4</h3>
+<p>You’ll notice that the HTML includes some JSON-formatted data. Locate
+the JSON object with keys <code>"@context"</code> and
+<code>"@graph"</code>. Fill in the blank in the code below to read this
+JSON object in as a Python dictionary, <code>dr_m</code>.</p>
+<div class="sourceCode" id="cb15"><pre
+class="sourceCode py"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>dr_m_string <span class="op">=</span> ___________</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>dr_m <span class="op">=</span> json.loads(dr_m_string)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>dr_m</span></code></pre></div>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading12_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse12_4" aria-expanded="true" aria-controls="collapse12_4">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse12_4" class="accordion-collapse collapse"
+aria-labelledby="heading12_4" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer:</strong>
+<code>soup.find("script", attrs={"type": "application/ld+json"}).text</code></p>
+<p>The JSON data is stored as the text content of the
+<code>&lt;script type="application/ld+json"&gt;</code> tag.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-12.5">Problem 12.5</h3>
+<p>Write one line of code that extracts the postal code from
+<code>dr_m</code>, as a string.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading12_5">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse12_5" aria-expanded="true" aria-controls="collapse12_5">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse12_5" class="accordion-collapse collapse"
+aria-labelledby="heading12_5" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer:</strong>
+<code>dr_m["@graph"][0]["address"]["postalCode"]</code></p>
+<p>The postal code is nested inside the first element of the
+<code>"@graph"</code> list.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-13">Problem 13</h2>
+<p>The function <code>re.match(pat, s)</code> checks for the regular
+expression <code>pat</code> only at the beginning of string
+<code>s</code>. For example, <code>re.match("o", "hello")</code> does
+not find a match, but <code>re.match("h", "hello")</code> does.</p>
+<p><br></p>
+<h3 id="problem-13.1">Problem 13.1</h3>
+<p>The string <code>"UC San Diego Health"</code> has exactly two
+lowercase <code>e</code>’s. Write a regular expression pattern,
+<code>pat</code>, so that <code>re.match(pat, s)</code> finds a match if
+and only if <code>s</code> has exactly two lowercase <code>e</code>’s.
+Write clearly!</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading13_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse13_1" aria-expanded="true" aria-controls="collapse13_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse13_1" class="accordion-collapse collapse"
+aria-labelledby="heading13_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer:</strong> <code>pat = r"[^e]*e[^e]*e[^e]*$"</code></p>
+<p>The pattern requires exactly two lowercase <code>e</code>’s with any
+non-<code>e</code> characters (or none) between and around them, and
+<code>$</code> anchors the match to the end of the string.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-13.2">Problem 13.2</h3>
+<p>ICD-10-CM codes (International Classification of Diseases, Tenth
+Revision, Clinical Modification) are codes used in the medical field to
+classify diagnoses, symptoms, and causes of death. Below are a few
+examples of ICD-10-CM codes and their associated meanings:</p>
+<ul>
+<li>J45.909: Unspecified asthma, uncomplicated</li>
+<li>F32.9: Major depressive disorder, single episode, unspecified</li>
+<li>G20: Parkinson’s disease</li>
+<li>H43.391: Eye floaters, right eye</li>
+<li>S80.01XS: Contusion of right knee, initial encounter</li>
+</ul>
+<p>ICD-10-CM codes consist of 3 to 8 characters following a certain
+format:</p>
+<ul>
+<li>Codes begin with a capital letter followed by two digits, which
+together specify the broad category of the medical condition.</li>
+<li>This may be followed by a decimal point and additional capital
+letters and numbers, which give more specific details about the medical
+condition.</li>
+</ul>
+<p>Write a regular expression pattern, <code>pat</code>, so that
+<code>re.match(pat, s)</code> finds a match if and only if
+<code>s</code> is formatted like an ICD-10-CM code.</p>
+<p>The following are some examples of incorrectly formatted codes that
+should <strong>not</strong> be matched.</p>
+<ul>
+<li>F27.</li>
+<li>TX3.120</li>
+<li>M27.56829</li>
+<li>L220.9</li>
+</ul>
+<p>Write clearly!</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading13_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse13_2" aria-expanded="true" aria-controls="collapse13_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse13_2" class="accordion-collapse collapse"
+aria-labelledby="heading13_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer:</strong>
+<code>pat = r"([A-Z]\d\d(\.[A-Z0-9]{1,4})?)$"</code></p>
+<p>The code starts with one capital letter and two digits. Optionally, a
+decimal point is followed by 1 to 4 alphanumeric characters. The
+<code>$</code> anchor ensures the entire string matches.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="section"><span class="math display"> </span></h2>
+<h4
+id="feedback-find-an-error-still-confused-have-a-suggestion-let-us-know-here.">👋
+Feedback: Find an error? Still confused? Have a suggestion?
+<a href="https://forms.gle/WZ71FchnXU1K154d7">Let us know
+here</u></a>.</h4>
+<hr />
+</body>
+</html>
