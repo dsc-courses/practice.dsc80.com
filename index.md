@@ -27,7 +27,7 @@ This site contains practice problems taken from old DSC 80 exams. Each exam link
   <tbody>
     <tr>
       <th scope="row">Winter 2026</th>
-      <td>Suraj Rampure</td>
+      <td>Janine Tiefenbruck</td>
       <td><a href='wi26-final/index.html'>Final 🆕</a></td>
     </tr>
     <tr>
