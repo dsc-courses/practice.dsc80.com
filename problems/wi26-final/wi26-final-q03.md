@@ -2,7 +2,7 @@
 
 Consider the small subset of `med` shown in full below. Recall that the `"Wait"` column was added after Question 1. The data is sorted by `"Age"`.
 
-<center><img src="../../assets/images/wi26-final/wait.jpg" width=350></center>
+<center><img src="../../assets/images/wi26-final/q3-table.png" width=350></center>
 
 # BEGIN SUBPROB
 
