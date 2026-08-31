@@ -1,0 +1,12 @@
+title: "Summer 2026 Midterm Exam"
+instructors: Janine Tiefenbruck
+context: |
+  This exam was administered online. Students were allowed one page of double-sided handwritten notes. No calculators were allowed. Students had **60 minutes** to take this exam.
+show_solution: true
+problems:
+  - su26-midterm/q01
+  - su26-midterm/q02
+  - su26-midterm/q03
+  - su26-midterm/q04
+  - su26-midterm/q05
+  - su26-midterm/q06
