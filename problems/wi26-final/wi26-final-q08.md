@@ -2,28 +2,31 @@
 
 # BEGIN SUBPROB
 
-We suspect that some `"Provider"`s have longer `"WaitTime"`s than
-others. Fill in the blanks below to add a column to `med` called
-`"EstimatedWaitTime"` which contains the median `"WaitTime"` for
-appointments with the same `"Provider"`.
+We suspect that some `"Provider"`s have longer `"WaitTime"`s than others. Fill in the blanks below to add a column to `med` called `"EstimatedWaitTime"` which contains the median `"WaitTime"` for appointments with the same `"Provider"`.
 
-    med["EstimatedWaitTime"] = (med.groupby(__(a)__)[__(b)__]
-                                   .__(c)__(__(d)__))
+```py
+med["EstimatedWaitTime"] = (med.groupby(__(a)__)[__(b)__]
+                               .__(c)__(__(d)__))
+```
 
-  -------- --------
-  `(a)`:   `(b)`:
-  `(c)`:   `(d)`:
-  -------- --------
+1. What goes in blank (a)?
+
+2. What goes in blank (b)?
+
+3. What goes in blank (c)?
+
+4. What goes in blank (d)?
 
 # BEGIN SOLUTION
 
-**Answer:** '\"Provider\"\`
+**Answers:**
 
-**Answer:** '\"WaitTime\"\`
+1. `"Provider"`
+2. `"WaitTime"`
+3. `transform`
+4. `np.median`
 
-**Answer:** 'transform'
-
-**Answer:** 'np.median'
+`.groupby("Provider")["WaitTime"]` groups wait times by provider. `.transform(np.median)` computes the median wait time for each provider and broadcasts it back to every row with that provider — exactly what we need for `"EstimatedWaitTime"`.
 
 # END SOLUTION
 
@@ -31,47 +34,40 @@ appointments with the same `"Provider"`.
 
 # BEGIN SUBPROB
 
-We suspect that some `"Department"`s are frequently running behind
-schedule and may occasionally have very high wait times. Fill in the
-blanks below so the result is a Series, indexed by `"Department"`,
-containing the 95th percentile of `"WaitTime"` for each `"Department"`
-in which at least 75 percent of appointments have a `"Wait"`. If less
-than 75 percent of appointments in a given `"Department"` have a
-`"Wait"`, the `"Department"` should not appear in the Series. Recall
-that `np.percentile(x, 95)` calculates the 95th percentile of `x`.
+We suspect that some `"Department"`s are frequently running behind schedule and may occasionally have very high wait times. Fill in the blanks below so the result is a Series, indexed by `"Department"`, containing the 95th percentile of `"WaitTime"` for each `"Department"` in which at least 75 percent of appointments have a `"Wait"`. If less than 75 percent of appointments in a given `"Department"` have a `"Wait"`, the `"Department"` should not appear in the Series. Recall that `np.percentile(x, 95)` calculates the 95th percentile of `x`.
 
-        (med.groupby(__(a)__).__(b)__(__(c)__)
-            .groupby(__(d)__)[__(e)__].__(f)__(__(g)__))
+```py
+(med.groupby(__(a)__).__(b)__(__(c)__)
+ .groupby(__(d)__)[__(e)__].__(f)__(__(g)__))
+```
 
-`(a)`:
+1. What goes in blank (a)?
 
-`(b)`:
+2. What goes in blank (b)?
 
-`(c)`:
+3. What goes in blank (c)?
 
-`(d)`:
+4. What goes in blank (d)?
 
-`(e)`:
+5. What goes in blank (e)?
 
-`(f)`:
+6. What goes in blank (f)?
 
-`(g)`:
+7. What goes in blank (g)?
 
 # BEGIN SOLUTION
 
-**Answer:** '\"Department\"\`
+**Answers:**
 
-**Answer:** 'filter'
+1. `"Department"`
+2. `filter`
+3. `lambda df: df["Wait"].mean() >= 0.75`
+4. `"Department"`
+5. `"WaitTime"`
+6. `agg` (or `aggregate` or `apply`)
+7. `lambda s: np.percentile(s, 95)`
 
-**Answer:** 'lambda df: df.mean() \>= 0.75'
-
-**Answer:** '\"Department\"\`
-
-**Answer:** '\"WaitTime\"\`
-
-**Answer:** 'agg' or 'aggregate' or 'apply'
-
-**Answer:** 'lambda s: np.percentile(s, 95)'
+First, `.groupby("Department").filter(...)` keeps only departments where at least 75% of appointments have a wait (`"Wait"` mean $\geq 0.75$). Then we group again by `"Department"`, select `"WaitTime"`, and aggregate with the 95th percentile. Departments that fail the filter are excluded from the final Series.
 
 # END SOLUTION
 

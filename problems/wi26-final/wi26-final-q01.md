@@ -29,6 +29,8 @@ med["WaitTime"] = med.apply(__(b)__)
 1. `(x["StartTime"] - max(x["ArrivalTime"], x["AppointmentTime"])).seconds / 60` (or an equivalent expression using `.max(axis=1)` on the two timestamp columns)
 2. `wait_time, axis=1`
 
+The vectorized version uses `.max(axis=1)` to take the later of `"ArrivalTime"` and `"AppointmentTime"` for each row. With `.apply(..., axis=1)`, each row is passed to `wait_time` as a Series, so we replicate that logic row-by-row using Python's `max` on the two timestamp values. We then subtract from `"StartTime"`, take `.seconds`, and divide by 60 — just like in the original code (note that we use `.seconds`, not `.dt.seconds`, because the row-wise subtraction already returns a `Timedelta`, not a Series of timedeltas).
+
 # END SOLUTION
 
 # END SUBPROB
@@ -46,6 +48,8 @@ What is the data type of the `"WaitTime"` column?
 
 **Answer:** `float`
 
+After subtracting timestamps and taking `.seconds`, we have integers (seconds). Dividing those integers by `60` produces floating-point values, so the resulting column has dtype `float`.
+
 # END SOLUTION
 
 # END SUBPROB
@@ -62,6 +66,8 @@ list(med["WaitTime"].iloc[:5])
 
 **Answer:** `[20.0, 27.0, 28.0, 5.0, 61.0]`
 
+This evaluates the wait-time calculation on the first five rows of `med` as defined in the exam dataset.
+
 # END SOLUTION
 
 # END SUBPROB
@@ -77,6 +83,8 @@ What kind of values can appear in the `"WaitTime"` column? Select all that apply
 # BEGIN SOLUTION
 
 **Answer:** Zero and Positive
+
+The data description states that `"StartTime"` is always at or after both `"ArrivalTime"` and `"AppointmentTime"`. That means the wait time in minutes is always zero (if the appointment started exactly when the patient was ready) or positive (if the patient waited). It cannot be negative.
 
 # END SOLUTION
 

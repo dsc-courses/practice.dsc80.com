@@ -219,6 +219,16 @@ aria-labelledby="heading1_1" data-bs-parent="#accordionExample">
 timestamp columns)</li>
 <li><code>wait_time, axis=1</code></li>
 </ol>
+<p>The vectorized version uses <code>.max(axis=1)</code> to take the
+later of <code>"ArrivalTime"</code> and <code>"AppointmentTime"</code>
+for each row. With <code>.apply(..., axis=1)</code>, each row is passed
+to <code>wait_time</code> as a Series, so we replicate that logic
+row-by-row using Python’s <code>max</code> on the two timestamp values.
+We then subtract from <code>"StartTime"</code>, take
+<code>.seconds</code>, and divide by 60 — just like in the original code
+(note that we use <code>.seconds</code>, not <code>.dt.seconds</code>,
+because the row-wise subtraction already returns a
+<code>Timedelta</code>, not a Series of timedeltas).</p>
 </div>
 </div>
 </div>
@@ -246,6 +256,10 @@ aria-labelledby="heading1_2" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer:</strong> <code>float</code></p>
+<p>After subtracting timestamps and taking <code>.seconds</code>, we
+have integers (seconds). Dividing those integers by <code>60</code>
+produces floating-point values, so the resulting column has dtype
+<code>float</code>.</p>
 </div>
 </div>
 </div>
@@ -269,6 +283,8 @@ aria-labelledby="heading1_3" data-bs-parent="#accordionExample">
 </header>
 <p><strong>Answer:</strong>
 <code>[20.0, 27.0, 28.0, 5.0, 61.0]</code></p>
+<p>This evaluates the wait-time calculation on the first five rows of
+<code>med</code> as defined in the exam dataset.</p>
 </div>
 </div>
 </div>
@@ -296,6 +312,11 @@ aria-labelledby="heading1_4" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer:</strong> Zero and Positive</p>
+<p>The data description states that <code>"StartTime"</code> is always
+at or after both <code>"ArrivalTime"</code> and
+<code>"AppointmentTime"</code>. That means the wait time in minutes is
+always zero (if the appointment started exactly when the patient was
+ready) or positive (if the patient waited). It cannot be negative.</p>
 </div>
 </div>
 </div>
@@ -311,11 +332,11 @@ aria-labelledby="heading1_4" data-bs-parent="#accordionExample">
 <h2 id="problem-2">Problem 2</h2>
 <p>Doctors love having letters after their names! These letters usually
 represent degrees, titles, or certifications. We’ll refer to them
-collectively as credentials. In the <code>"Provider"</code> column of
-<code>med</code>, each provider has at least one credential. Credentials
-appear after the name and are separated by commas. For example, the
-preview of <code>med</code> shows that Dr. Takashi Hirase has two
-credentials (MD and MPH).</p>
+collectively as <strong>credentials</strong>. In the
+<code>"Provider"</code> column of <code>med</code>, each provider has at
+least one credential. Credentials appear after the name and are
+separated by commas. For example, the preview of <code>med</code> shows
+that Dr. Takashi Hirase has two credentials (MD and MPH).</p>
 <p><br></p>
 <h3 id="problem-2.1">Problem 2.1</h3>
 <p>Write <strong>one line</strong> of code that evaluates to a Series
@@ -336,7 +357,14 @@ aria-labelledby="heading2_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer:</strong> ‘med.str.split(", ").apply(len) - 1’</p>
+<p><strong>Answer:</strong>
+<code>med["Provider"].str.split(", ").apply(len) - 1</code></p>
+<p>Each credential after the provider’s name is preceded by
+<code>", "</code>. Splitting on <code>", "</code> gives one more piece
+than the number of credentials (the provider’s name is the first piece).
+Subtracting 1 gives the credential count. For example,
+<code>"Takashi Hirase, MD, MPH"</code> splits into 3 pieces, so there
+are 2 credentials.</p>
 </div>
 </div>
 </div>
@@ -360,7 +388,11 @@ aria-labelledby="heading2_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer:</strong> ‘med.str.count(", ")’</p>
+<p><strong>Answer:</strong>
+<code>med["Provider"].str.count(", ")</code></p>
+<p>Each credential beyond the first adds exactly one <code>", "</code>
+to the string, so counting occurrences of <code>", "</code> gives the
+number of credentials directly.</p>
 </div>
 </div>
 </div>
@@ -396,6 +428,10 @@ aria-labelledby="heading3_1" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer:</strong> <span class="math inline">\frac{11}{12}</span></p>
+<p>There are 12 rows in the dataset. A decision tree can achieve perfect
+classification on 11 of them, but at least one row cannot be separated
+from the rest using only <code>"Age"</code> and
+<code>"NumProviders"</code>. So the best possible accuracy is <span class="math inline">\frac{11}{12}</span>.</p>
 </div>
 </div>
 </div>
@@ -432,6 +468,17 @@ aria-labelledby="heading3_2" data-bs-parent="#accordionExample">
 </header>
 <p><strong>Answer:</strong> <span class="math inline">\frac{5}{6}\left(-\frac{2}{5}\log_2\frac{2}{5} -
 \frac{3}{5}\log_2\frac{3}{5}\right)</span></p>
+<p>Splitting on <code>"Age" &gt;= 15</code> puts 2 rows in the left
+child (both with <code>"Wait"</code> = 0, so entropy 0) and 10 rows in
+the right child (6 with <code>"Wait"</code> = 1 and 4 with
+<code>"Wait"</code> = 0). The weighted entropy is:</p>
+<p><span class="math display">\frac{2}{12}(0) +
+\frac{10}{12}\left(-\frac{6}{10}\log_2\frac{6}{10} -
+\frac{4}{10}\log_2\frac{4}{10}\right) =
+\frac{5}{6}\left(-\frac{2}{5}\log_2\frac{2}{5} -
+\frac{3}{5}\log_2\frac{3}{5}\right)</span></p>
+<p>The other expressions either use the wrong group sizes or compute
+unweighted entropy.</p>
 </div>
 </div>
 </div>
@@ -462,6 +509,9 @@ aria-labelledby="heading3_3" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer:</strong> <code>"NumProviders" &lt;= 3</code></p>
+<p>All of the listed splits except <code>"NumProviders" &lt;= 3</code>
+produce the same weighted entropy of 1. The split at 3 providers gives a
+different weighted entropy (about 0.918).</p>
 </div>
 </div>
 </div>
@@ -485,6 +535,9 @@ aria-labelledby="heading3_4" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer:</strong> <span class="math inline">1</span></p>
+<p>Each of the splits other than <code>"NumProviders" &lt;= 3</code> has
+weighted entropy 1. This happens when each child node is evenly split
+between the two classes (maximum entropy for binary classification).</p>
 </div>
 </div>
 </div>
@@ -531,6 +584,12 @@ aria-labelledby="heading4_1" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer:</strong> <code>0</code></p>
+<p>When <code>min_entropy = 0</code>, nodes are allowed to split
+whenever their entropy is nonnegative, so the tree can grow as much as
+other stopping criteria allow. This gives the highest possible training
+accuracy among the candidates. The function breaks ties by keeping the
+first value that achieves the highest score, so it returns
+<code>0</code>.</p>
 </div>
 </div>
 </div>
@@ -558,6 +617,11 @@ aria-labelledby="heading4_2" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer:</strong> lower; overfitting</p>
+<p>With <code>min_entropy = 0</code>, the tree can fit the training data
+very closely (including noise), which typically leads to
+<strong>overfitting</strong>. Overfit models often have
+<strong>lower</strong> test accuracy than training accuracy because they
+do not generalize as well.</p>
 </div>
 </div>
 </div>
@@ -584,6 +648,10 @@ aria-labelledby="heading4_3" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer:</strong> increases; decreases</p>
+<p>A larger <code>min_entropy</code> prevents splits on low-entropy
+nodes, producing a simpler tree. Simpler models have <strong>higher
+bias</strong> (they may underfit) and <strong>lower variance</strong>
+(they are less sensitive to small changes in the training data).</p>
 </div>
 </div>
 </div>
@@ -631,6 +699,12 @@ aria-labelledby="heading5_1" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answers:</strong> <span class="math inline">0.8</span>, <span class="math inline">0.8</span>, <span class="math inline">1</span></p>
+<p>For each point, the 3 nearest neighbors are found using Euclidean
+distance in the <code>"Age"</code>–<code>"AppointmentHour"</code> plane.
+Four of the five positive-class points are correctly classified; one
+positive point is misclassified. That gives accuracy <span class="math inline">\frac{20}{25} = 0.8</span>. Precision is <span class="math inline">\frac{4}{5} = 0.8</span> (4 true positives out of 5
+predicted positives), and recall is <span class="math inline">\frac{4}{4} = 1</span> (all actual positives were
+found).</p>
 </div>
 </div>
 </div>
@@ -660,6 +734,8 @@ aria-labelledby="heading5_2" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answers:</strong> <span class="math inline">1</span>, <span class="math inline">1</span>, <span class="math inline">1</span></p>
+<p>On this dataset, every point is correctly classified by its 3 nearest
+neighbors, so accuracy, precision, and recall are all 1.</p>
 </div>
 </div>
 </div>
@@ -682,6 +758,9 @@ aria-labelledby="heading5_3" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer:</strong> <span class="math inline">0.8</span></p>
+<p>With <span class="math inline">k = 15</span>, the classifier uses a
+majority vote over nearly the entire dataset (25 points). This yields
+accuracy <span class="math inline">0.8</span> on both scatter plots.</p>
 </div>
 </div>
 </div>
@@ -766,6 +845,18 @@ i.e. <code>OneHotEncoder(drop='first')</code></li>
 <li><code>E = StandardScaler()</code></li>
 <li><code>J = LinearRegression()</code></li>
 </ul>
+<p><code>FunctionTransformer(hour)</code> extracts the hour from
+<code>"AppointmentTime"</code>. <code>Binarizer(threshold=11)</code>
+encodes afternoon appointments (hour <span class="math inline">\geq
+12</span>) as 1 and morning as 0.
+<code>OneHotEncoder(drop='first')</code> encodes
+<code>"Department"</code> without creating a redundant dummy column.
+<code>remainder='passthrough'</code> keeps <code>"NumProviders"</code>
+and <code>"Credentials"</code> as numeric features.
+<code>StandardScaler()</code> puts all features on a comparable scale so
+that coefficient magnitudes reflect relative impact on
+<code>"WaitTime"</code>. <code>LinearRegression()</code> is the final
+estimator.</p>
 </div>
 </div>
 </div>
@@ -773,18 +864,18 @@ i.e. <code>OneHotEncoder(drop='first')</code></li>
 <hr />
 <h2 id="problem-7">Problem 7</h2>
 <p>Suppose we derive a numerical feature
-<code>"AppointmentTimeSeconds"</code> which measures the<br />
+<code>"AppointmentTimeSeconds"</code> which measures the
 <code>"AppointmentTime"</code> in seconds since midnight. Then we use
-linear regression to fit a prediction rule of the form: <span
-class="math display">\text{predicted }\texttt{&quot;WaitTime&quot;} =
-w_0 + w_1\cdot\texttt{&quot;Age&quot;} +
-w_2\cdot\texttt{&quot;NumProviders&quot;} +
-w_3\cdot\texttt{&quot;AppointmentTimeSeconds&quot;}</span></p>
+linear regression to fit a prediction rule of the form:</p>
+<p><span class="math display">\text{predicted
+`&quot;WaitTime&quot;&#39;} = w_0 + w_1 \cdot \text{`&quot;Age&quot;`} +
+w_2 \cdot \text{`&quot;NumProviders&quot;`} + w_3 \cdot
+\text{`&quot;AppointmentTimeSeconds&quot;`}</span></p>
 <p>Consider each of the following changes to the model above, and
-determine which coefficients in the fit model may change. <strong>Select
-all</strong> coefficients that may change. Note that we are changing the
-original model each time, not stacking changes on top of one
-another.</p>
+determine which coefficients in the fit model <strong>may
+change</strong>. Select all coefficients that may change. Note that we
+are changing the original model each time, not stacking changes on top
+of one another.</p>
 <p><br></p>
 <h3 id="problem-7.1">Problem 7.1</h3>
 <p>Change <code>"AppointmentTimeSeconds"</code> to
@@ -810,6 +901,10 @@ aria-labelledby="heading7_1" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer:</strong> <span class="math inline">w_3</span></p>
+<p>Changing the unit from seconds to minutes scales the appointment-time
+feature by a factor of 60. To produce the same predictions, <span class="math inline">w_3</span> must change (it becomes 60 times
+smaller). The other features are unchanged, so <span class="math inline">w_0</span>, <span class="math inline">w_1</span>,
+and <span class="math inline">w_2</span> do not need to change.</p>
 </div>
 </div>
 </div>
@@ -835,15 +930,19 @@ aria-labelledby="heading7_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer:</strong> <span class="math inline">w_1</span>, <span class="math inline">w_2</span>, <span class="math inline">w_3</span></p>
+<p><strong>Answer:</strong> <span class="math inline">w_1</span>, <span class="math inline">w_2</span>, and <span class="math inline">w_3</span></p>
+<p>Removing the intercept forces the regression through the origin. The
+optimal slope coefficients generally all change when the intercept is
+removed, because the model can no longer shift predictions up or down
+independently of the features.</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <h3 id="problem-7.3">Problem 7.3</h3>
-<p>Add a new feature, which is <span
-class="math inline">3\cdot\texttt{&quot;Age&quot;}+\texttt{&quot;NumProviders&quot;}</span>.</p>
+<p>Add a new feature, which is <span class="math inline">3 \cdot
+\text{`&quot;Age&quot;`} + \text{`&quot;NumProviders&quot;`}</span>.</p>
 <ul class="task-list">
 <li><p><input type="checkbox" disabled="" /> <span class="math inline">w_0</span></p></li>
 <li><p><input type="checkbox" disabled="" /> <span class="math inline">w_1</span></p></li>
@@ -863,15 +962,20 @@ aria-labelledby="heading7_3" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer:</strong> <span class="math inline">w_1</span>, <span class="math inline">w_2</span></p>
+<p><strong>Answer:</strong> <span class="math inline">w_1</span> and
+<span class="math inline">w_2</span></p>
+<p>The new feature is a linear combination of <code>"Age"</code> and
+<code>"NumProviders"</code>, which introduces multicollinearity. There
+are many equivalent ways to distribute the effect across the old and new
+features, so <span class="math inline">w_1</span> and <span class="math inline">w_2</span> may change. <span class="math inline">w_0</span> and <span class="math inline">w_3</span>
+are not necessarily affected.</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <h3 id="problem-7.4">Problem 7.4</h3>
-<p>Add a new feature, which is <span
-class="math inline">\texttt{&quot;Age&quot;}/\texttt{&quot;NumProviders&quot;}</span>.</p>
+<p>Add a new feature, which is <code>"Age"/"NumProviders"</code>.</p>
 <ul class="task-list">
 <li><p><input type="checkbox" disabled="" /> <span class="math inline">w_0</span></p></li>
 <li><p><input type="checkbox" disabled="" /> <span class="math inline">w_1</span></p></li>
@@ -892,7 +996,10 @@ aria-labelledby="heading7_4" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer:</strong> <span class="math inline">w_0</span>, <span class="math inline">w_1</span>, <span class="math inline">w_2</span>,
-<span class="math inline">w_3</span></p>
+and <span class="math inline">w_3</span></p>
+<p>Adding a nonlinear combination of existing features changes the shape
+of the relationship the model can capture, so all coefficients in the
+fit model may change.</p>
 </div>
 </div>
 </div>
@@ -907,20 +1014,14 @@ aria-labelledby="heading7_4" data-bs-parent="#accordionExample">
 column to <code>med</code> called <code>"EstimatedWaitTime"</code> which
 contains the median <code>"WaitTime"</code> for appointments with the
 same <code>"Provider"</code>.</p>
-<pre><code>med[&quot;EstimatedWaitTime&quot;] = (med.groupby(__(a)__)[__(b)__]
-                               .__(c)__(__(d)__))</code></pre>
-<table>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>(a)</code>:</td>
-<td style="text-align: left;"><code>(b)</code>:</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>(c)</code>:</td>
-<td style="text-align: left;"><code>(d)</code>:</td>
-</tr>
-</tbody>
-</table>
+<div class="sourceCode" id="cb8"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>med[<span class="st">&quot;EstimatedWaitTime&quot;</span>] <span class="op">=</span> (med.groupby(__(a)__)[__(b)__]</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>                               .__(c)__(__(d)__))</span></code></pre></div>
+<ol type="1">
+<li><p>What goes in blank (a)?</p></li>
+<li><p>What goes in blank (b)?</p></li>
+<li><p>What goes in blank (c)?</p></li>
+<li><p>What goes in blank (d)?</p></li>
+</ol>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading8_1">
@@ -934,10 +1035,18 @@ aria-labelledby="heading8_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer:</strong> ’"Provider"`</p>
-<p><strong>Answer:</strong> ’"WaitTime"`</p>
-<p><strong>Answer:</strong> ‘transform’</p>
-<p><strong>Answer:</strong> ‘np.median’</p>
+<p><strong>Answers:</strong></p>
+<ol type="1">
+<li><code>"Provider"</code></li>
+<li><code>"WaitTime"</code></li>
+<li><code>transform</code></li>
+<li><code>np.median</code></li>
+</ol>
+<p><code>.groupby("Provider")["WaitTime"]</code> groups wait times by
+provider. <code>.transform(np.median)</code> computes the median wait
+time for each provider and broadcasts it back to every row with that
+provider — exactly what we need for
+<code>"EstimatedWaitTime"</code>.</p>
 </div>
 </div>
 </div>
@@ -954,15 +1063,17 @@ than 75 percent of appointments in a given <code>"Department"</code>
 have a <code>"Wait"</code>, the <code>"Department"</code> should not
 appear in the Series. Recall that <code>np.percentile(x, 95)</code>
 calculates the 95th percentile of <code>x</code>.</p>
-<pre><code>    (med.groupby(__(a)__).__(b)__(__(c)__)
-        .groupby(__(d)__)[__(e)__].__(f)__(__(g)__))</code></pre>
-<p><code>(a)</code>:</p>
-<p><code>(b)</code>:</p>
-<p><code>(c)</code>:</p>
-<p><code>(d)</code>:</p>
-<p><code>(e)</code>:</p>
-<p><code>(f)</code>:</p>
-<p><code>(g)</code>:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>(med.groupby(__(a)__).__(b)__(__(c)__)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a> .groupby(__(d)__)[__(e)__].__(f)__(__(g)__))</span></code></pre></div>
+<ol type="1">
+<li><p>What goes in blank (a)?</p></li>
+<li><p>What goes in blank (b)?</p></li>
+<li><p>What goes in blank (c)?</p></li>
+<li><p>What goes in blank (d)?</p></li>
+<li><p>What goes in blank (e)?</p></li>
+<li><p>What goes in blank (f)?</p></li>
+<li><p>What goes in blank (g)?</p></li>
+</ol>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading8_2">
@@ -976,13 +1087,23 @@ aria-labelledby="heading8_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer:</strong> ’"Department"`</p>
-<p><strong>Answer:</strong> ‘filter’</p>
-<p><strong>Answer:</strong> ‘lambda df: df.mean() &gt;= 0.75’</p>
-<p><strong>Answer:</strong> ’"Department"`</p>
-<p><strong>Answer:</strong> ’"WaitTime"`</p>
-<p><strong>Answer:</strong> ‘agg’ or ‘aggregate’ or ‘apply’</p>
-<p><strong>Answer:</strong> ‘lambda s: np.percentile(s, 95)’</p>
+<p><strong>Answers:</strong></p>
+<ol type="1">
+<li><code>"Department"</code></li>
+<li><code>filter</code></li>
+<li><code>lambda df: df["Wait"].mean() &gt;= 0.75</code></li>
+<li><code>"Department"</code></li>
+<li><code>"WaitTime"</code></li>
+<li><code>agg</code> (or <code>aggregate</code> or
+<code>apply</code>)</li>
+<li><code>lambda s: np.percentile(s, 95)</code></li>
+</ol>
+<p>First, <code>.groupby("Department").filter(...)</code> keeps only
+departments where at least 75% of appointments have a wait
+(<code>"Wait"</code> mean <span class="math inline">\geq 0.75</span>).
+Then we group again by <code>"Department"</code>, select
+<code>"WaitTime"</code>, and aggregate with the 95th percentile.
+Departments that fail the filter are excluded from the final Series.</p>
 </div>
 </div>
 </div>
@@ -1024,6 +1145,10 @@ aria-labelledby="heading9_1" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer:</strong> missing not at random (MNAR)</p>
+<p>Whether <code>"Billed"</code> is missing depends on the complexity of
+the procedure — information that is not recorded in the dataset. Since
+the missingness is related to an unobserved variable (procedure
+complexity), it is <strong>MNAR</strong>.</p>
 </div>
 </div>
 </div>
@@ -1031,12 +1156,12 @@ aria-labelledby="heading9_1" data-bs-parent="#accordionExample">
 <p><br></p>
 <h3 id="problem-9.2">Problem 9.2</h3>
 <p>Now suppose we merge the billing DataFrame with <code>med</code> on
-<code>"MRN"</code> and <code>"AppointmentTime"</code>. We want to do a
-permutation test at the 0.05 significance level to decide if the
-missingness mechanism of the <code>"Billed"</code> column is more likely
-MCAR or MAR dependent on <code>"Department"</code>. Which of the
-following test statistics could be used for this permutation test?
-Select all that apply.</p>
+<code>"MRN"</code> and <code>"AppointmentTime"</code>.</p>
+<p>We want to do a permutation test at the 0.05 significance level to
+decide if the missingness mechanism of the <code>"Billed"</code> column
+is more likely MCAR or MAR dependent on <code>"Department"</code>. Which
+of the following test statistics could be used for this permutation
+test? Select all that apply.</p>
 <ul class="task-list">
 <li><p><input type="checkbox" disabled="" /> difference of means</p></li>
 <li><p><input type="checkbox" disabled="" /> absolute difference of means</p></li>
@@ -1058,6 +1183,12 @@ aria-labelledby="heading9_2" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer:</strong> total variation distance (TVD)</p>
+<p>To compare MCAR vs. MAR dependent on <code>"Department"</code>, we
+can compare the distribution of <code>"Department"</code> (or an
+indicator for missingness) across groups. <strong>TVD</strong> measures
+how different two distributions are and is appropriate for this kind of
+permutation test on categorical data, as discussed in the imputation and
+hypothesis testing lectures.</p>
 </div>
 </div>
 </div>
@@ -1088,6 +1219,10 @@ aria-labelledby="heading9_3" data-bs-parent="#accordionExample">
 </header>
 <p><strong>Answer:</strong> The missingness mechanism is more likely MAR
 than MCAR.</p>
+<p>At the 0.05 significance level, a p-value of 0.03 provides evidence
+against the null hypothesis that missingness is MCAR. That suggests
+missingness is <strong>more likely MAR than MCAR</strong>. We cannot
+conclude anything about MD or MNAR from this test alone.</p>
 </div>
 </div>
 </div>
@@ -1121,6 +1256,12 @@ aria-labelledby="heading9_4" data-bs-parent="#accordionExample">
 </header>
 <p><strong>Answer:</strong> probabilistic imputation, conditional on
 <code>"Department"</code></p>
+<p><strong>Probabilistic imputation</strong> samples from a distribution
+rather than filling every missing value with a single number, which
+better preserves variation in the data. Doing it <strong>conditional on
+<code>"Department"</code></strong> accounts for differences in billing
+across departments. Plain mean imputation would collapse variance and
+distort the standard deviation.</p>
 </div>
 </div>
 </div>
@@ -1168,6 +1309,13 @@ aria-labelledby="heading10_1" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answers:</strong> 20, 160, 100, 80</p>
+<ul>
+<li><strong>Inner:</strong> only the 20 shared patients.</li>
+<li><strong>Outer:</strong> all patients from both tables: <span class="math inline">100 + 80 - 20 = 160</span>.</li>
+<li><strong>Left:</strong> all 100 rows from <code>dr_z</code> (shared
+rows get matched columns from <code>dr_g</code>).</li>
+<li><strong>Right:</strong> all 80 rows from <code>dr_g</code>.</li>
+</ul>
 </div>
 </div>
 </div>
@@ -1202,6 +1350,10 @@ aria-labelledby="heading10_2" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answers:</strong> 15, 50, 50, 15</p>
+<p>Every <code>dr_g</code> patient is in <code>dr_z</code>, so inner and
+right both have 15 rows. Outer and left include all 50 patients from
+<code>dr_z</code> (the 35 <code>dr_z</code>-only patients appear with
+missing <code>dr_g</code> columns in a left join).</p>
 </div>
 </div>
 </div>
@@ -1236,6 +1388,11 @@ aria-labelledby="heading10_3" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answers:</strong> 40, 140, 80, 100</p>
+<p>With duplicate rows, each shared patient contributes <span class="math inline">2 \times 2 = 4</span> rows to an inner join (<span class="math inline">10 \times 4 = 40</span>). Outer: <span class="math inline">60 + 80 - 40 = 140</span>. Left keeps all 60
+<code>dr_z</code> rows (20 shared-patient rows each match 2
+<code>dr_g</code> rows → 40 matched rows, plus 40 <code>dr_z</code>-only
+rows). Right keeps all 80 <code>dr_g</code> rows (40 matched + 60
+<code>dr_g</code>-only).</p>
 </div>
 </div>
 </div>
@@ -1271,7 +1428,15 @@ aria-labelledby="heading11_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer:</strong> ‘3/13 * 2/13 * 2/13 * 1/13’</p>
+<p><strong>Answer:</strong> <span class="math inline">\frac{3}{13} \cdot
+\frac{2}{13} \cdot \frac{2}{13} \cdot \frac{1}{13}</span></p>
+<p>After tokenization, the corpus has 13 tokens: <code>"patient"</code>
+appears 3 times, <code>"is"</code> and <code>"in"</code> each appear 2
+times, and <code>"time."</code> appears once. Under a unigram model, we
+multiply the probability of each token independently:</p>
+<p><span class="math display">P(\text{patient}) \cdot P(\text{is}) \cdot
+P(\text{in}) \cdot P(\text{time.}) = \frac{3}{13} \cdot \frac{2}{13}
+\cdot \frac{2}{13} \cdot \frac{1}{13}</span></p>
 </div>
 </div>
 </div>
@@ -1293,7 +1458,26 @@ aria-labelledby="heading11_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer:</strong> ‘1/26’</p>
+<p><strong>Answer:</strong> <span class="math inline">\frac{1}{26}</span></p>
+<p>For a bigram model, we use the unigram probability of the first token
+and then multiply conditional probabilities for each subsequent token.
+From the corpus:</p>
+<ul>
+<li><span class="math inline">P(\text{patient}) =
+\frac{3}{13}</span></li>
+<li><span class="math inline">P(\text{is} \mid \text{patient}) =
+\frac{2}{3}</span> (2 of 3 times <code>"patient"</code> is followed by
+<code>"is"</code>)</li>
+<li><span class="math inline">P(\text{in} \mid \text{is}) =
+\frac{1}{2}</span> (1 of 2 times <code>"is"</code> is followed by
+<code>"in"</code>)</li>
+<li><span class="math inline">P(\text{time.} \mid \text{in}) =
+\frac{1}{2}</span> (1 of 2 times <code>"in"</code> is followed by
+<code>"time."</code>)</li>
+</ul>
+<p>Multiplying gives <span class="math inline">\frac{3}{13} \cdot
+\frac{2}{3} \cdot \frac{1}{2} \cdot \frac{1}{2} =
+\frac{1}{26}</span>.</p>
 </div>
 </div>
 </div>
@@ -1315,7 +1499,14 @@ aria-labelledby="heading11_3" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer:</strong> ‘0’</p>
+<p><strong>Answer:</strong> <span class="math inline">0</span></p>
+<p>A trigram model conditions each token on the previous two tokens. The
+sentence <code>"patient is in time."</code> requires the trigram
+<code>("is", "in", "time.")</code>, but in the training corpus
+<code>"is"</code> followed by <code>"in"</code> is always followed by
+<code>"pain."</code>, never <code>"time."</code>. Since this trigram
+never appears in the corpus, its probability is 0, so the probability of
+the entire sentence is 0.</p>
 </div>
 </div>
 </div>
@@ -1397,6 +1588,9 @@ aria-labelledby="heading12_1" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer:</strong> 2</p>
+<p>The root of the DOM tree is the <code>&lt;html&gt;</code> element. It
+has two direct children: <code>&lt;head&gt;</code> and
+<code>&lt;body&gt;</code>.</p>
 </div>
 </div>
 </div>
@@ -1428,6 +1622,10 @@ aria-labelledby="heading12_2" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer:</strong> 5</p>
+<p><code>soup.find_all("script")</code> returns every
+<code>&lt;script&gt;</code> tag in the document. There are five: the
+inline analytics script, the JSON-LD script, the yext entity script, the
+Siteimprove analytics script, and the Font Awesome script.</p>
 </div>
 </div>
 </div>
@@ -1454,6 +1652,12 @@ aria-labelledby="heading12_3" data-bs-parent="#accordionExample">
 </header>
 <p><strong>Answer:</strong>
 <code>soup.find("meta", attrs={"name": "geo.position"}).get("content").split(",")[0]</code></p>
+<p>The latitude and longitude are stored together in the
+<code>"content"</code> attribute of the
+<code>&lt;meta name="geo.position"&gt;</code> tag as
+<code>"32.875663,-117.2133647"</code>. We locate that tag with
+<code>soup.find()</code>, read <code>"content"</code>, and split on the
+comma to get the latitude (the first value).</p>
 </div>
 </div>
 </div>
@@ -1484,6 +1688,12 @@ aria-labelledby="heading12_4" data-bs-parent="#accordionExample">
 <p><strong>Answer:</strong>
 <code>soup.find("script", attrs={"type": "application/ld+json"}).text</code>
 (or <code>soup.find_all("script")[1].text</code>)</p>
+<p>The structured provider data is embedded in a
+<code>&lt;script type="application/ld+json"&gt;</code> tag. We extract
+the text inside that tag and pass it to <code>json.loads</code>.
+Indexing into <code>find_all("script")[1]</code> also works because the
+JSON-LD script is the second <code>&lt;script&gt;</code> tag in the
+document.</p>
 </div>
 </div>
 </div>
@@ -1507,6 +1717,11 @@ aria-labelledby="heading12_5" data-bs-parent="#accordionExample">
 </header>
 <p><strong>Answer:</strong>
 <code>dr_m["@graph"][0]["address"]["streetAddress"]</code></p>
+<p>After parsing the JSON, the provider information is in the
+<code>"@graph"</code> list. The first entry contains an
+<code>"address"</code> dictionary, and <code>"streetAddress"</code>
+holds the street address string
+(<code>"9333 Genesee Avenue"</code>).</p>
 </div>
 </div>
 </div>
@@ -1539,6 +1754,22 @@ aria-labelledby="heading13_1" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer:</strong> <code>pat = r"[^a]*a[^a]*a[^a]*$"</code></p>
+<p>The pattern matches strings with exactly two lowercase
+<code>a</code>’s from start to end:</p>
+<ul>
+<li><code>[^a]*</code> — zero or more characters that are not lowercase
+<code>a</code></li>
+<li><code>a</code> — the first lowercase <code>a</code></li>
+<li><code>[^a]*</code> — zero or more non-<code>a</code> characters
+between the two <code>a</code>’s</li>
+<li><code>a</code> — the second lowercase <code>a</code></li>
+<li><code>[^a]*$</code> — zero or more non-<code>a</code> characters
+until the end of the string</li>
+</ul>
+<p>This allows any other characters (including uppercase letters) but
+requires exactly two lowercase <code>a</code>’s. For example,
+<code>"UC San Diego Health"</code> matches because it has two lowercase
+<code>a</code>’s and no others.</p>
 </div>
 </div>
 </div>
@@ -1592,6 +1823,19 @@ aria-labelledby="heading13_2" data-bs-parent="#accordionExample">
 </header>
 <p><strong>Answer:</strong>
 <code>pat = r"([A-Z]\d\d(\.[A-Z0-9]{1,4})?)$"</code></p>
+<p>The pattern breaks down as follows:</p>
+<ul>
+<li><code>[A-Z]\d\d</code> — one capital letter followed by exactly two
+digits (the required 3-character base code, e.g. <code>G20</code>)</li>
+<li><code>(\.[A-Z0-9]{1,4})?</code> — optionally, a decimal point
+followed by 1 to 4 uppercase letters or digits (the extension,
+e.g. <code>.909</code> or <code>.01XS</code>)</li>
+<li><code>$</code> — end of string, so nothing extra is allowed</li>
+</ul>
+<p>This gives codes of length 3–8 and rejects invalid examples like
+<code>F27.</code> (trailing dot with no extension), <code>TX3.120</code>
+(two letters at the start), <code>M27.56829</code> (extension too long),
+and <code>L220.9</code> (three digits before the optional decimal).</p>
 </div>
 </div>
 </div>

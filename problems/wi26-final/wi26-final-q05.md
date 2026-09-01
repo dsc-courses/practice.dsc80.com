@@ -20,6 +20,8 @@ Suppose the training data consists only of the 25 points shown below. Determine 
 
 **Answers:** $0.8$, $0.8$, $1$
 
+For each point, the 3 nearest neighbors are found using Euclidean distance in the `"Age"`–`"AppointmentHour"` plane. Four of the five positive-class points are correctly classified; one positive point is misclassified. That gives accuracy $\frac{20}{25} = 0.8$. Precision is $\frac{4}{5} = 0.8$ (4 true positives out of 5 predicted positives), and recall is $\frac{4}{4} = 1$ (all actual positives were found).
+
 # END SOLUTION
 
 # END SUBPROB
@@ -40,6 +42,8 @@ Now suppose the training data consists only of the 25 points shown below. Determ
 
 **Answers:** $1$, $1$, $1$
 
+On this dataset, every point is correctly classified by its 3 nearest neighbors, so accuracy, precision, and recall are all 1.
+
 # END SOLUTION
 
 # END SUBPROB
@@ -51,6 +55,8 @@ Finally, consider a 15-nearest neighbor classifier, which has the same accuracy 
 # BEGIN SOLUTION
 
 **Answer:** $0.8$
+
+With $k = 15$, the classifier uses a majority vote over nearly the entire dataset (25 points). This yields accuracy $0.8$ on both scatter plots.
 
 # END SOLUTION
 

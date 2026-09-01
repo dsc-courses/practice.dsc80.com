@@ -70,6 +70,8 @@ N. `make_pipeline(___, ___, ___)`
 - `E = StandardScaler()`
 - `J = LinearRegression()`
 
+`FunctionTransformer(hour)` extracts the hour from `"AppointmentTime"`. `Binarizer(threshold=11)` encodes afternoon appointments (hour $\geq 12$) as 1 and morning as 0. `OneHotEncoder(drop='first')` encodes `"Department"` without creating a redundant dummy column. `remainder='passthrough'` keeps `"NumProviders"` and `"Credentials"` as numeric features. `StandardScaler()` puts all features on a comparable scale so that coefficient magnitudes reflect relative impact on `"WaitTime"`. `LinearRegression()` is the final estimator.
+
 # END SOLUTION
 
 # END PROB

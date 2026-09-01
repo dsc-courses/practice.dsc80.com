@@ -63,6 +63,8 @@ Consider the DOM tree for this document. How many children does the root node ha
 
 **Answer:** 2
 
+The root of the DOM tree is the `<html>` element. It has two direct children: `<head>` and `<body>`.
+
 # END SOLUTION
 
 # END SUBPROB
@@ -86,6 +88,8 @@ len(soup.find_all("script"))
 
 **Answer:** 5
 
+`soup.find_all("script")` returns every `<script>` tag in the document. There are five: the inline analytics script, the JSON-LD script, the yext entity script, the Siteimprove analytics script, and the Font Awesome script.
+
 # END SOLUTION
 
 # END SUBPROB
@@ -97,6 +101,8 @@ The latitude and longitude for the provider's office location are included in th
 # BEGIN SOLUTION
 
 **Answer:** `soup.find("meta", attrs={"name": "geo.position"}).get("content").split(",")[0]`
+
+The latitude and longitude are stored together in the `"content"` attribute of the `<meta name="geo.position">` tag as `"32.875663,-117.2133647"`. We locate that tag with `soup.find()`, read `"content"`, and split on the comma to get the latitude (the first value).
 
 # END SOLUTION
 
@@ -116,6 +122,8 @@ dr_m
 
 **Answer:** `soup.find("script", attrs={"type": "application/ld+json"}).text` (or `soup.find_all("script")[1].text`)
 
+The structured provider data is embedded in a `<script type="application/ld+json">` tag. We extract the text inside that tag and pass it to `json.loads`. Indexing into `find_all("script")[1]` also works because the JSON-LD script is the second `<script>` tag in the document.
+
 # END SOLUTION
 
 # END SUBPROB
@@ -127,6 +135,8 @@ Write one line of code that extracts the street address from `dr_m`, as a string
 # BEGIN SOLUTION
 
 **Answer:** `dr_m["@graph"][0]["address"]["streetAddress"]`
+
+After parsing the JSON, the provider information is in the `"@graph"` list. The first entry contains an `"address"` dictionary, and `"streetAddress"` holds the street address string (`"9333 Genesee Avenue"`).
 
 # END SOLUTION
 
