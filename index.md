@@ -40,7 +40,7 @@ This site contains practice problems taken from old DSC 80 exams. Each exam link
       <td>Suraj Rampure</td>
       <td><a href='wi24-midterm/index.html'>Midterm</a>
           <br>
-          <a href='wi24-final/index.html'>Final 🆕</a>
+          <a href='wi24-final/index.html'>Final</a>
       </td>
     </tr>
     <tr>
