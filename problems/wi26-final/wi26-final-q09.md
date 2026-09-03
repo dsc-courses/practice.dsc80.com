@@ -15,7 +15,7 @@ Suppose patients are billed for services at the time of their appointment, unles
 
 **Answer:** missing not at random (MNAR)
 
-Whether `"Billed"` is missing depends on the complexity of the procedure — information that is not recorded in the dataset. Since the missingness is related to an unobserved variable (procedure complexity), it is **MNAR**.
+The missingness of `"Billed"` is connected to the value of the missing data itself: more complex procedures (like surgeries) tend to be more expensive, so the appointments with the largest billing amounts are precisely the ones left empty. Because whether a value is missing depends on what that value would have been, this is **MNAR**.
 
 # END SOLUTION
 

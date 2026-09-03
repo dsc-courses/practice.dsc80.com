@@ -699,12 +699,14 @@ aria-labelledby="heading5_1" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answers:</strong> <span class="math inline">0.8</span>, <span class="math inline">0.8</span>, <span class="math inline">1</span></p>
-<p>For each point, the 3 nearest neighbors are found using Euclidean
-distance in the <code>"Age"</code>–<code>"AppointmentHour"</code> plane.
-Four of the five positive-class points are correctly classified; one
-positive point is misclassified. That gives accuracy <span class="math inline">\frac{20}{25} = 0.8</span>. Precision is <span class="math inline">\frac{4}{5} = 0.8</span> (4 true positives out of 5
-predicted positives), and recall is <span class="math inline">\frac{4}{4} = 1</span> (all actual positives were
-found).</p>
+<p>There are 20 class-1 points and 5 class-0 points in this dataset.
+With <span class="math inline">k = 3</span>, every point’s 3 nearest
+neighbors are all class 1, so the classifier predicts class 1 for all 25
+points. This gives a confusion matrix of TP = 20, FP = 5, TN = 0, FN =
+0.</p>
+<p><span class="math display">\text{Accuracy} = \frac{20}{25} =
+\frac{4}{5} = 0.8 \qquad \text{Precision} = \frac{20}{25} = \frac{4}{5}
+= 0.8 \qquad \text{Recall} = \frac{20}{20} = 1</span></p>
 </div>
 </div>
 </div>
@@ -758,9 +760,13 @@ aria-labelledby="heading5_3" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer:</strong> <span class="math inline">0.8</span></p>
-<p>With <span class="math inline">k = 15</span>, the classifier uses a
-majority vote over nearly the entire dataset (25 points). This yields
-accuracy <span class="math inline">0.8</span> on both scatter plots.</p>
+<p>Both datasets have 20 class-1 points and 5 class-0 points. With <span class="math inline">k = 15</span> neighbors, the majority is determined
+by a vote of 15 — but there are only 5 class-0 points in the entire
+dataset. So no matter which point we classify, at most 5 of the 15
+nearest neighbors can be class 0, meaning the majority is always class
+1. The classifier therefore predicts class 1 for every point, giving
+accuracy <span class="math inline">\frac{20}{25} = 0.8</span> on both
+scatter plots.</p>
 </div>
 </div>
 </div>
@@ -867,10 +873,10 @@ estimator.</p>
 <code>"AppointmentTimeSeconds"</code> which measures the
 <code>"AppointmentTime"</code> in seconds since midnight. Then we use
 linear regression to fit a prediction rule of the form:</p>
-<p><span class="math display">\text{predicted
-`&quot;WaitTime&quot;&#39;} = w_0 + w_1 \cdot \text{`&quot;Age&quot;`} +
-w_2 \cdot \text{`&quot;NumProviders&quot;`} + w_3 \cdot
-\text{`&quot;AppointmentTimeSeconds&quot;`}</span></p>
+<p><span class="math display">\text{predicted }
+\texttt{&quot;WaitTime&quot;} = w_0 + w_1 \cdot \texttt{&quot;Age&quot;}
++ w_2 \cdot \texttt{&quot;NumProviders&quot;} + w_3 \cdot
+\texttt{&quot;AppointmentTimeSeconds&quot;}</span></p>
 <p>Consider each of the following changes to the model above, and
 determine which coefficients in the fit model <strong>may
 change</strong>. Select all coefficients that may change. Note that we
@@ -942,7 +948,7 @@ independently of the features.</p>
 <p><br></p>
 <h3 id="problem-7.3">Problem 7.3</h3>
 <p>Add a new feature, which is <span class="math inline">3 \cdot
-\text{`&quot;Age&quot;`} + \text{`&quot;NumProviders&quot;`}</span>.</p>
+\texttt{&quot;Age&quot;} + \texttt{&quot;NumProviders&quot;}</span>.</p>
 <ul class="task-list">
 <li><p><input type="checkbox" disabled="" /> <span class="math inline">w_0</span></p></li>
 <li><p><input type="checkbox" disabled="" /> <span class="math inline">w_1</span></p></li>
@@ -1035,13 +1041,9 @@ aria-labelledby="heading8_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answers:</strong></p>
-<ol type="1">
-<li><code>"Provider"</code></li>
-<li><code>"WaitTime"</code></li>
-<li><code>transform</code></li>
-<li><code>np.median</code></li>
-</ol>
+<p><strong>Answers:</strong> (a) <code>"Provider"</code>, (b)
+<code>"WaitTime"</code>, (c) <code>transform</code>, (d)
+<code>np.median</code></p>
 <p><code>.groupby("Provider")["WaitTime"]</code> groups wait times by
 provider. <code>.transform(np.median)</code> computes the median wait
 time for each provider and broadcasts it back to every row with that
@@ -1087,17 +1089,12 @@ aria-labelledby="heading8_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answers:</strong></p>
-<ol type="1">
-<li><code>"Department"</code></li>
-<li><code>filter</code></li>
-<li><code>lambda df: df["Wait"].mean() &gt;= 0.75</code></li>
-<li><code>"Department"</code></li>
-<li><code>"WaitTime"</code></li>
-<li><code>agg</code> (or <code>aggregate</code> or
-<code>apply</code>)</li>
-<li><code>lambda s: np.percentile(s, 95)</code></li>
-</ol>
+<p><strong>Answers:</strong> (a) <code>"Department"</code>, (b)
+<code>filter</code>, (c)
+<code>lambda df: df["Wait"].mean() &gt;= 0.75</code>, (d)
+<code>"Department"</code>, (e) <code>"WaitTime"</code>, (f)
+<code>agg</code> (or <code>aggregate</code> or <code>apply</code>), (g)
+<code>lambda s: np.percentile(s, 95)</code></p>
 <p>First, <code>.groupby("Department").filter(...)</code> keeps only
 departments where at least 75% of appointments have a wait
 (<code>"Wait"</code> mean <span class="math inline">\geq 0.75</span>).
@@ -1145,10 +1142,12 @@ aria-labelledby="heading9_1" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>Answer:</strong> missing not at random (MNAR)</p>
-<p>Whether <code>"Billed"</code> is missing depends on the complexity of
-the procedure — information that is not recorded in the dataset. Since
-the missingness is related to an unobserved variable (procedure
-complexity), it is <strong>MNAR</strong>.</p>
+<p>The missingness of <code>"Billed"</code> is connected to the value of
+the missing data itself: more complex procedures (like surgeries) tend
+to be more expensive, so the appointments with the largest billing
+amounts are precisely the ones left empty. Because whether a value is
+missing depends on what that value would have been, this is
+<strong>MNAR</strong>.</p>
 </div>
 </div>
 </div>

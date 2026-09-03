@@ -20,7 +20,9 @@ Suppose the training data consists only of the 25 points shown below. Determine 
 
 **Answers:** $0.8$, $0.8$, $1$
 
-For each point, the 3 nearest neighbors are found using Euclidean distance in the `"Age"`–`"AppointmentHour"` plane. Four of the five positive-class points are correctly classified; one positive point is misclassified. That gives accuracy $\frac{20}{25} = 0.8$. Precision is $\frac{4}{5} = 0.8$ (4 true positives out of 5 predicted positives), and recall is $\frac{4}{4} = 1$ (all actual positives were found).
+There are 20 class-1 points and 5 class-0 points in this dataset. With $k = 3$, every point's 3 nearest neighbors are all class 1, so the classifier predicts class 1 for all 25 points. This gives a confusion matrix of TP = 20, FP = 5, TN = 0, FN = 0.
+
+$$\text{Accuracy} = \frac{20}{25} = \frac{4}{5} = 0.8 \qquad \text{Precision} = \frac{20}{25} = \frac{4}{5} = 0.8 \qquad \text{Recall} = \frac{20}{20} = 1$$
 
 # END SOLUTION
 
@@ -56,7 +58,7 @@ Finally, consider a 15-nearest neighbor classifier, which has the same accuracy 
 
 **Answer:** $0.8$
 
-With $k = 15$, the classifier uses a majority vote over nearly the entire dataset (25 points). This yields accuracy $0.8$ on both scatter plots.
+Both datasets have 20 class-1 points and 5 class-0 points. With $k = 15$ neighbors, the majority is determined by a vote of 15 — but there are only 5 class-0 points in the entire dataset. So no matter which point we classify, at most 5 of the 15 nearest neighbors can be class 0, meaning the majority is always class 1. The classifier therefore predicts class 1 for every point, giving accuracy $\frac{20}{25} = 0.8$ on both scatter plots.
 
 # END SOLUTION
 

@@ -19,12 +19,7 @@ med["EstimatedWaitTime"] = (med.groupby(__(a)__)[__(b)__]
 
 # BEGIN SOLUTION
 
-**Answers:**
-
-1. `"Provider"`
-2. `"WaitTime"`
-3. `transform`
-4. `np.median`
+**Answers:** (a) `"Provider"`, (b) `"WaitTime"`, (c) `transform`, (d) `np.median`
 
 `.groupby("Provider")["WaitTime"]` groups wait times by provider. `.transform(np.median)` computes the median wait time for each provider and broadcasts it back to every row with that provider — exactly what we need for `"EstimatedWaitTime"`.
 
@@ -57,15 +52,7 @@ We suspect that some `"Department"`s are frequently running behind schedule and 
 
 # BEGIN SOLUTION
 
-**Answers:**
-
-1. `"Department"`
-2. `filter`
-3. `lambda df: df["Wait"].mean() >= 0.75`
-4. `"Department"`
-5. `"WaitTime"`
-6. `agg` (or `aggregate` or `apply`)
-7. `lambda s: np.percentile(s, 95)`
+**Answers:** (a) `"Department"`, (b) `filter`, (c) `lambda df: df["Wait"].mean() >= 0.75`, (d) `"Department"`, (e) `"WaitTime"`, (f) `agg` (or `aggregate` or `apply`), (g) `lambda s: np.percentile(s, 95)`
 
 First, `.groupby("Department").filter(...)` keeps only departments where at least 75% of appointments have a wait (`"Wait"` mean $\geq 0.75$). Then we group again by `"Department"`, select `"WaitTime"`, and aggregate with the 95th percentile. Departments that fail the filter are excluded from the final Series.
 
